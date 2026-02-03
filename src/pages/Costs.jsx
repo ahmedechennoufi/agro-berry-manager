@@ -80,9 +80,18 @@ const Costs = () => {
     return 'Engrais Poudre Sol'; // default
   };
 
+  // Liste des pesticides connus (override localStorage)
+  const KNOWN_PESTICIDES = ['OIKOS', 'SWITCH', 'TIOSOL', 'ACRAMITE', 'ACTARA', 'AFRAW', 'ALFABET', 
+    'ALIETTE FLASH', 'BENEVIA', 'CIDELY TOP', 'DICARZOL', 'EXIREL', 'JOKER', 'KAISER', 'KOBUS', 
+    'KRISANT', 'LIMOCIDE', 'LUNA SENSATION', 'MAVRIK', 'MILBEKNOCK', 'MOLATHION', 'MOVENTO', 
+    'ORTIVA', 'PIRIMOR', 'PIXEL', 'PROBLAD', 'PROCLAIM', 'RADIANT', 'SAPHYR', 'SCELTA', 
+    'SIGNUM', 'SIVANTO PRIME', 'STROBY', 'TALENDO', 'TELDOR', 'TIMOREX GOLD', 'VERIMARK'];
+
   // Smart category: TOUJOURS vérifier la catégorie produit en priorité
   const getSmartCategory = (m) => {
-    const product = products.find(p => p.name === m.product || p.name?.toUpperCase() === m.product?.toUpperCase());
+    const productName = (m.product || '').toUpperCase();
+    if (KNOWN_PESTICIDES.some(p => productName.includes(p))) return 'Pesticides';
+    const product = products.find(p => p.name === m.product || p.name?.toUpperCase() === productName);
     const prodCat = product?.category || '';
     if (prodCat === 'PHYTOSANITAIRES') return 'Pesticides';
     if (prodCat === 'BOURDONS') return 'Bourdons';
