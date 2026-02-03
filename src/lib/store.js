@@ -13,8 +13,12 @@ const STORAGE_KEYS = {
   inventory: 'agro_inventory_v3',
   coutData: 'agro_cout_data_v3',
   stockHistory: 'agro_stock_history_v3',
-  initialized: 'agro_initialized_v3'
+  initialized: 'agro_initialized_v3',
+  dataVersion: 'agro_data_version'
 };
+
+// ⬇️ Increment this number each time initialData.json is updated
+const CURRENT_DATA_VERSION = 53; // v5.3
 
 // === INITIALISATION ===
 export const initializeData = () => {
@@ -31,7 +35,36 @@ export const initializeData = () => {
     localStorage.setItem(STORAGE_KEYS.melanges, JSON.stringify([]));
     localStorage.setItem(STORAGE_KEYS.coutData, JSON.stringify(coutDataJson.cultures || {}));
     localStorage.setItem(STORAGE_KEYS.initialized, 'true');
+    localStorage.setItem(STORAGE_KEYS.dataVersion, String(CURRENT_DATA_VERSION));
     console.log('✅ Données initialisées');
+  }
+  
+  // Auto-update: merge new data without erasing user data
+  const savedVersion = parseInt(localStorage.getItem(STORAGE_KEYS.dataVersion) || '0');
+  if (savedVersion < CURRENT_DATA_VERSION) {
+    console.log(`🔄 Mise à jour données v${savedVersion} → v${CURRENT_DATA_VERSION}...`);
+    
+    // Merge movements: keep user-added ones + replace initialData ones
+    const existingMovements = JSON.parse(localStorage.getItem(STORAGE_KEYS.movements) || '[]');
+    const newMovements = initialData.movements || [];
+    const newIds = new Set(newMovements.map(m => m.id));
+    
+    // Keep movements added manually by user (IDs not in initialData)
+    const userMovements = existingMovements.filter(m => !newIds.has(m.id));
+    const mergedMovements = [...newMovements, ...userMovements];
+    localStorage.setItem(STORAGE_KEYS.movements, JSON.stringify(mergedMovements));
+    
+    // Merge products: add new ones, keep existing
+    const existingProducts = JSON.parse(localStorage.getItem(STORAGE_KEYS.products) || '[]');
+    const newProducts = initialData.products || [];
+    const existingNames = new Set(existingProducts.map(p => p.name));
+    const addedProducts = newProducts.filter(p => !existingNames.has(p.name));
+    if (addedProducts.length > 0) {
+      localStorage.setItem(STORAGE_KEYS.products, JSON.stringify([...existingProducts, ...addedProducts]));
+    }
+    
+    localStorage.setItem(STORAGE_KEYS.dataVersion, String(CURRENT_DATA_VERSION));
+    console.log(`✅ Mise à jour terminée: ${mergedMovements.length} mouvements (${userMovements.length} manuels conservés)`);
   }
   
   // Check if coutData exists, if not initialize it
@@ -660,8 +693,16 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     '2025-10-25': 'OCTOBRE',
     '2025-11-25': 'NOVEMBRE',
     '2025-12-25': 'DECEMBRE',
+    '2025-12-31': 'DECEMBRE_2025',
     '2026-01-25': 'JANVIER',
-    '2026-02-25': 'FEVRIER'
+    '2026-01-31': 'JANVIER',
+    '2026-02-25': 'FEVRIER',
+    '2026-02-28': 'FEVRIER',
+    '2026-03-31': 'MARS',
+    '2026-04-30': 'AVRIL',
+    '2026-05-31': 'MAI',
+    '2026-06-30': 'JUIN',
+    '2026-07-31': 'JUILLET'
   };
 
   // Initialiser avec tous les produits

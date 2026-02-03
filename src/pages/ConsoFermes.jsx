@@ -11,6 +11,23 @@ const ConsoFermes = () => {
   const [search, setSearch] = useState('');
   const [filterCategory, setFilterCategory] = useState('ALL');
 
+  // Months for the dropdown (campagne + calendaire)
+  const CONSO_MONTHS = [
+    { id: 'SEPTEMBRE', name: 'Septembre 2025' },
+    { id: 'OCTOBRE', name: 'Octobre 2025' },
+    { id: 'NOVEMBRE', name: 'Novembre 2025' },
+    { id: 'DECEMBRE', name: 'Déc 2025 (campagne)' },
+    { id: 'DECEMBRE_2025', name: 'Déc 2025 (26→31)' },
+    { id: 'JANVIER', name: 'Janvier 2026' },
+    { id: 'FEVRIER', name: 'Février 2026' },
+    { id: 'MARS', name: 'Mars 2026' },
+    { id: 'AVRIL', name: 'Avril 2026' },
+    { id: 'MAI', name: 'Mai 2026' },
+    { id: 'JUIN', name: 'Juin 2026' },
+    { id: 'JUILLET', name: 'Juillet 2026' },
+    { id: 'AOUT', name: 'Août 2026' }
+  ];
+
   // Get period dates based on selected month
   const periodDates = useMemo(() => {
     const monthMap = {
@@ -18,14 +35,15 @@ const ConsoFermes = () => {
       'OCTOBRE': { start: '2025-09-26', end: '2025-10-25', prevInv: '2025-09-25' },
       'NOVEMBRE': { start: '2025-10-26', end: '2025-11-25', prevInv: '2025-10-25' },
       'DECEMBRE': { start: '2025-11-26', end: '2025-12-25', prevInv: '2025-11-25' },
-      'JANVIER': { start: '2025-12-26', end: '2026-01-25', prevInv: '2025-12-25' },
-      'FEVRIER': { start: '2026-01-26', end: '2026-02-25', prevInv: '2026-01-25' },
-      'MARS': { start: '2026-02-26', end: '2026-03-25', prevInv: '2026-02-25' },
-      'AVRIL': { start: '2026-03-26', end: '2026-04-25', prevInv: '2026-03-25' },
-      'MAI': { start: '2026-04-26', end: '2026-05-25', prevInv: '2026-04-25' },
-      'JUIN': { start: '2026-05-26', end: '2026-06-25', prevInv: '2026-05-25' },
-      'JUILLET': { start: '2026-06-26', end: '2026-07-25', prevInv: '2026-06-25' },
-      'AOUT': { start: '2026-07-26', end: '2026-08-25', prevInv: '2026-07-25' }
+      'DECEMBRE_2025': { start: '2025-12-26', end: '2025-12-31', prevInv: '2025-12-25' },
+      'JANVIER': { start: '2026-01-01', end: '2026-01-31', prevInv: '2025-12-31' },
+      'FEVRIER': { start: '2026-02-01', end: '2026-02-28', prevInv: '2026-01-31' },
+      'MARS': { start: '2026-03-01', end: '2026-03-31', prevInv: '2026-02-28' },
+      'AVRIL': { start: '2026-04-01', end: '2026-04-30', prevInv: '2026-03-31' },
+      'MAI': { start: '2026-05-01', end: '2026-05-31', prevInv: '2026-04-30' },
+      'JUIN': { start: '2026-06-01', end: '2026-06-30', prevInv: '2026-05-31' },
+      'JUILLET': { start: '2026-07-01', end: '2026-07-31', prevInv: '2026-06-30' },
+      'AOUT': { start: '2026-08-01', end: '2026-08-31', prevInv: '2026-07-31' }
     };
     return monthMap[selectedMonth] || monthMap['JANVIER'];
   }, [selectedMonth]);
@@ -198,7 +216,7 @@ const ConsoFermes = () => {
         </div>
         <div className="flex gap-3">
           <Select value={selectedMonth} onChange={setSelectedMonth}
-            options={MONTHS.map(m => ({ value: m.id, label: m.name }))} className="w-40" />
+            options={CONSO_MONTHS.map(m => ({ value: m.id, label: m.name }))} className="w-56" />
           <Button variant="secondary" onClick={handleExport}>📥 Export</Button>
         </div>
       </div>
