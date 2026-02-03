@@ -5,7 +5,7 @@ import { FARMS, COST_CATEGORIES, CULTURES, SUPERFICIES_DETAIL, FARM_CULTURES } f
 import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
 
 const Costs = () => {
-  const { products, movements } = useApp();
+  const { products, movements, readOnly } = useApp();
   const [selectedFarm, setSelectedFarm] = useState('AGRO BERRY 1');
   const [selectedCulture, setSelectedCulture] = useState('Myrtille');
   const [selectedCategory, setSelectedCategory] = useState('Engrais Poudre Sol');
@@ -256,9 +256,9 @@ const Costs = () => {
               </p>
             </div>
           </div>
-          <Button variant="secondary" onClick={handleReset} className="!bg-white/20 !text-white border-0">
+          {!readOnly && <Button variant="secondary" onClick={handleReset} className="!bg-white/20 !text-white border-0">
             🔄 Reset
-          </Button>
+          </Button>}
         </div>
 
         {/* Farm & Culture selector */}

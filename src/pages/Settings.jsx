@@ -5,7 +5,7 @@ import { downloadJSON, readFile } from '../lib/utils';
 import { exportAllData, importAllData, clearAllData, getProducts, getMovements, getSuppliers, getConsommations, getStockAB1, getStockAB2, getStockAB3 } from '../lib/store';
 
 const Settings = () => {
-  const { products, movements, loadData, showNotif } = useApp();
+  const { products, movements, loadData, showNotif, readOnly } = useApp();
   const fileInputRef = useRef(null);
   const [importing, setImporting] = useState(false);
 
@@ -209,19 +209,21 @@ const Settings = () => {
         </Button>
       </Card>
 
-      {/* Reset */}
-      <Card>
-        <h3 className="font-semibold text-ios-dark mb-2">🔄 Réinitialiser</h3>
-        <p className="text-sm text-ios-gray mb-3">Recharger les données initiales importées</p>
-        <Button variant="orange" onClick={handleResetToInitial}>Réinitialiser</Button>
-      </Card>
+      {!readOnly && <>
+        {/* Reset */}
+        <Card>
+          <h3 className="font-semibold text-ios-dark mb-2">🔄 Réinitialiser</h3>
+          <p className="text-sm text-ios-gray mb-3">Recharger les données initiales importées</p>
+          <Button variant="orange" onClick={handleResetToInitial}>Réinitialiser</Button>
+        </Card>
 
-      {/* Danger Zone */}
-      <Card className="border-2 border-red-100">
-        <h3 className="font-semibold text-ios-red mb-2">⚠️ Zone Danger</h3>
-        <p className="text-sm text-ios-gray mb-3">Supprimer toutes les données. Cette action est irréversible !</p>
-        <Button variant="danger" onClick={handleClear}>Tout supprimer</Button>
-      </Card>
+        {/* Danger Zone */}
+        <Card className="border-2 border-red-100">
+          <h3 className="font-semibold text-ios-red mb-2">⚠️ Zone Danger</h3>
+          <p className="text-sm text-ios-gray mb-3">Supprimer toutes les données. Cette action est irréversible !</p>
+          <Button variant="danger" onClick={handleClear}>Tout supprimer</Button>
+        </Card>
+      </>}
 
       {/* About */}
       <Card>

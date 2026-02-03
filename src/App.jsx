@@ -18,6 +18,12 @@ import * as store from './lib/store';
 const AppContext = createContext();
 export const useApp = () => useContext(AppContext);
 
+// Mode lecture seule si ?view=1 dans l'URL
+const isReadOnly = () => {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('view') === '1';
+};
+
 function App() {
   const [currentPage, setCurrentPage] = useState('dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -85,8 +91,10 @@ function App() {
     showNotif('Mouvement supprimé');
   };
 
+  const readOnly = isReadOnly();
+
   const contextValue = {
-    products, movements, loadData, showNotif,
+    products, movements, loadData, showNotif, readOnly,
     addProduct, updateProduct, deleteProduct, addMovement, updateMovement, deleteMovement,
     setPage: setCurrentPage
   };
@@ -150,6 +158,12 @@ function App() {
           </div>
           
           <div className="p-4 md:p-6 lg:p-8 max-w-7xl mx-auto">
+            {readOnly && (
+              <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center gap-2">
+                <span className="text-lg">🔒</span>
+                <span className="text-blue-700 text-sm font-medium">Mode consultation — Lecture seule</span>
+              </div>
+            )}
             {renderPage()}
           </div>
         </main>

@@ -5,7 +5,7 @@ import { CATEGORIES, UNITS } from '../lib/constants';
 import { getDefaultThreshold, setDefaultThreshold } from '../lib/store';
 
 const Products = () => {
-  const { products, addProduct, updateProduct, deleteProduct } = useApp();
+  const { products, addProduct, updateProduct, deleteProduct, readOnly } = useApp();
   const [showModal, setShowModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
@@ -55,10 +55,10 @@ const Products = () => {
           <h1 className="text-3xl font-bold text-gray-900">Produits</h1>
           <p className="text-gray-500 mt-1">{products.length} produits • Seuil alerte: {getDefaultThreshold()}</p>
         </div>
-        <div className="flex gap-2">
+        {!readOnly && <div className="flex gap-2">
           <Button variant="secondary" onClick={() => setShowSettingsModal(true)}>⚙️ Seuils</Button>
           <Button onClick={openNew}>+ Nouveau</Button>
-        </div>
+        </div>}
       </div>
       
       {/* Filters */}
@@ -96,7 +96,7 @@ const Products = () => {
       {/* Products Grid */}
       {filteredProducts.length === 0 ? (
         <Card>
-          <EmptyState icon="📦" message="Aucun produit trouvé" action={<Button onClick={openNew}>+ Ajouter</Button>} />
+          <EmptyState icon="📦" message="Aucun produit trouvé" action={!readOnly && <Button onClick={openNew}>+ Ajouter</Button>} />
         </Card>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -117,8 +117,10 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => handleEdit(p)} className="p-2 rounded-lg hover:bg-gray-100 text-blue-500">✏️</button>
-                  <button onClick={() => handleDelete(p.id)} className="p-2 rounded-lg hover:bg-gray-100 text-red-500">🗑</button>
+                  {!readOnly && <>
+                    <button onClick={() => handleEdit(p)} className="p-2 rounded-lg hover:bg-gray-100 text-blue-500">✏️</button>
+                    <button onClick={() => handleDelete(p.id)} className="p-2 rounded-lg hover:bg-gray-100 text-red-500">🗑</button>
+                  </>}
                 </div>
               </div>
             </Card>

@@ -6,7 +6,7 @@ import { fmt, fmtMoney, downloadExcel, today } from '../lib/utils';
 import { getSuppliers, addSupplier, getAveragePrice, calculateFarmStock, calculateWarehouseStock, getMelangeHistory, addMelangeToHistory, cancelMelange } from '../lib/store';
 
 const Movements = () => {
-  const { products, movements, addMovement, updateMovement, deleteMovement, showNotif, loadData } = useApp();
+  const { products, movements, addMovement, updateMovement, deleteMovement, showNotif, loadData, readOnly } = useApp();
   const suppliers = getSuppliers();
   
   // Filters
@@ -517,10 +517,12 @@ const Movements = () => {
             🧪 Mélanges ({activeMelanges})
           </Button>
           <Button variant="secondary" onClick={handleExport}>📥 Export</Button>
-          <Button onClick={() => openModal('entry')}>📥 Entrée</Button>
-          <Button variant="blue" onClick={() => openModal('exit')}>📤 Sortie</Button>
-          <Button variant="danger" onClick={() => openModal('consumption')}>🔥 Conso</Button>
-          <Button className="bg-purple-600 hover:bg-purple-700" onClick={() => openModal('transfer')}>↔️ Transfert</Button>
+          {!readOnly && <>
+            <Button onClick={() => openModal('entry')}>📥 Entrée</Button>
+            <Button variant="blue" onClick={() => openModal('exit')}>📤 Sortie</Button>
+            <Button variant="danger" onClick={() => openModal('consumption')}>🔥 Conso</Button>
+            <Button className="bg-purple-600 hover:bg-purple-700" onClick={() => openModal('transfer')}>↔️ Transfert</Button>
+          </>}
         </div>
       </div>
 
@@ -628,8 +630,10 @@ const Movements = () => {
                         {m.notes && <span className="text-xs text-purple-500 ml-1">🧪</span>}
                       </td>
                       <td>
-                        <button onClick={() => handleEdit(m)} className="p-1.5 rounded hover:bg-blue-50 text-blue-500 mr-1">✏️</button>
-                        <button onClick={() => handleDelete(m.id)} className="p-1.5 rounded hover:bg-red-50 text-red-500">🗑</button>
+                        {!readOnly && <>
+                          <button onClick={() => handleEdit(m)} className="p-1.5 rounded hover:bg-blue-50 text-blue-500 mr-1">✏️</button>
+                          <button onClick={() => handleDelete(m.id)} className="p-1.5 rounded hover:bg-red-50 text-red-500">🗑</button>
+                        </>}
                       </td>
                     </tr>
                   );
