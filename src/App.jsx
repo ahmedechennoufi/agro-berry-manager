@@ -1,54 +1,56 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, useContext, createContext } from 'react';
 import Sidebar from './components/Sidebar';
 import { Toast } from './components/UI';
-import * as store from './lib/store';
-
-// Pages
 import Dashboard from './pages/Dashboard';
+import ConsoFermes from './pages/ConsoFermes';
 import Stock from './pages/Stock';
 import Movements from './pages/Movements';
 import Farms from './pages/Farms';
 import Transfers from './pages/Transfers';
-import Consumption from './pages/Consumption';
+import Saisie from './pages/Saisie';
+import Melange from './pages/Melange';
 import Costs from './pages/Costs';
-import History from './pages/History';
-import Comparison from './pages/Comparison';
+import Inventory from './pages/Inventory';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
+import * as store from './lib/store';
 
-// Context
 const AppContext = createContext();
-
 export const useApp = () => useContext(AppContext);
 
-// Provider
-const AppProvider = ({ children }) => {
+function App() {
+  const [currentPage, setCurrentPage] = useState('dashboard');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
+    const saved = localStorage.getItem('sidebar_collapsed');
+    return saved === 'true';
+  });
+  const [notification, setNotification] = useState(null);
   const [products, setProducts] = useState([]);
   const [movements, setMovements] = useState([]);
-  const [inventory, setInventory] = useState([]);
-  const [notification, setNotification] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Charger les données au démarrage
+  // Save collapsed state
   useEffect(() => {
-    loadData();
-  }, []);
+    localStorage.setItem('sidebar_collapsed', sidebarCollapsed);
+  }, [sidebarCollapsed]);
 
   const loadData = () => {
     setProducts(store.getProducts());
     setMovements(store.getMovements());
-    setInventory(store.getInventory());
   };
 
-  const showNotif = (message, type = 'success') => {
-    setNotification({ message, type });
-  };
+  useEffect(() => { 
+    store.initializeData();
+    loadData();
+    setLoading(false);
+  }, []);
 
-  const hideNotif = () => setNotification(null);
+  const showNotif = (msg, type = 'success') => setNotification({ msg, type });
 
-  // CRUD Products
   const addProduct = (product) => {
     const newProduct = store.addProduct(product);
-    setProducts(store.getProducts());
+    setProducts(prev => [...prev, newProduct]);
     showNotif('Produit ajouté');
     return newProduct;
   };
@@ -65,11 +67,9 @@ const AppProvider = ({ children }) => {
     showNotif('Produit supprimé');
   };
 
-  // CRUD Movements
   const addMovement = (movement) => {
     const newMovement = store.addMovement(movement);
-    setMovements(store.getMovements());
-    showNotif('Mouvement enregistré');
+    setMovements(prev => [...prev, newMovement]);
     return newMovement;
   };
 
@@ -85,131 +85,85 @@ const AppProvider = ({ children }) => {
     showNotif('Mouvement supprimé');
   };
 
-  // Inventory
-  const setInventoryItem = (month, product, data) => {
-    store.setInventoryItem(month, product, data);
-    setInventory(store.getInventory());
+  const contextValue = {
+    products, movements, loadData, showNotif,
+    addProduct, updateProduct, deleteProduct, addMovement, updateMovement, deleteMovement,
+    setPage: setCurrentPage
   };
-
-  // Import/Export
-  const exportData = () => store.exportAllData();
-  
-  const importData = (data) => {
-    const success = store.importAllData(data);
-    if (success) {
-      loadData();
-      showNotif('Données importées');
-    } else {
-      showNotif('Erreur d\'import', 'error');
-    }
-    return success;
-  };
-
-  const importFromOldApp = () => {
-    const success = store.importFromOldApp();
-    if (success) {
-      loadData();
-      showNotif('Données importées depuis l\'ancienne application');
-    } else {
-      showNotif('Erreur d\'import', 'error');
-    }
-    return success;
-  };
-
-  const clearData = () => {
-    store.clearAllData();
-    loadData();
-    showNotif('Données effacées');
-  };
-
-  const value = {
-    products,
-    movements,
-    inventory,
-    notification,
-    showNotif,
-    addProduct,
-    updateProduct,
-    deleteProduct,
-    addMovement,
-    updateMovement,
-    deleteMovement,
-    setInventoryItem,
-    exportData,
-    importData,
-    importFromOldApp,
-    clearData,
-    loadData
-  };
-
-  return (
-    <AppContext.Provider value={value}>
-      {children}
-      {notification && (
-        <Toast 
-          message={notification.message} 
-          type={notification.type} 
-          onClose={hideNotif} 
-        />
-      )}
-    </AppContext.Provider>
-  );
-};
-
-// Main App
-const App = () => {
-  const [currentPage, setCurrentPage] = useState('dashboard');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const renderPage = () => {
     switch (currentPage) {
       case 'dashboard': return <Dashboard />;
+      case 'consofermes': return <ConsoFermes />;
       case 'stock': return <Stock />;
       case 'movements': return <Movements />;
       case 'farms': return <Farms />;
       case 'transfers': return <Transfers />;
-      case 'consumption': return <Consumption />;
+      case 'saisie': return <Saisie />;
+      case 'melange': return <Melange />;
       case 'costs': return <Costs />;
-      case 'history': return <History />;
-      case 'comparison': return <Comparison />;
+      case 'inventory': return <Inventory />;
       case 'products': return <Products />;
       case 'settings': return <Settings />;
       default: return <Dashboard />;
     }
   };
 
+  if (loading) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-[#f5f5f7]">
+        <div className="text-center">
+          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-3xl mb-4 animate-pulse shadow-lg">
+            🫐
+          </div>
+          <p className="text-gray-500">Chargement...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <AppProvider>
-      <div className="flex min-h-screen">
+    <AppContext.Provider value={contextValue}>
+      <div className="flex h-screen bg-[#f5f5f7] overflow-hidden">
         <Sidebar 
-          currentPage={currentPage}
+          currentPage={currentPage} 
           setCurrentPage={setCurrentPage}
           isOpen={sidebarOpen}
           setIsOpen={setSidebarOpen}
+          isCollapsed={sidebarCollapsed}
+          setIsCollapsed={setSidebarCollapsed}
         />
         
-        <main className="flex-1 min-h-screen">
+        <main className="flex-1 overflow-auto">
           {/* Mobile header */}
-          <header className="md:hidden bg-white border-b p-4 flex items-center gap-4 sticky top-0 z-30">
+          <div className="lg:hidden sticky top-0 z-30 bg-white/90 backdrop-blur-lg p-4 flex items-center gap-4 border-b border-gray-200/50 shadow-sm">
             <button 
-              onClick={() => setSidebarOpen(true)}
-              className="p-2 hover:bg-gray-100 rounded-lg"
+              onClick={() => setSidebarOpen(true)} 
+              className="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center text-white hover:bg-green-600 transition-colors"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              ☰
             </button>
-            <h1 className="font-bold text-gray-800">Agro Berry Manager</h1>
-          </header>
+            <div className="flex items-center gap-2">
+              <span className="text-lg">🫐</span>
+              <h1 className="font-semibold text-gray-900">Agro Berry</h1>
+            </div>
+          </div>
           
-          {/* Page content */}
-          <div className="p-4 md:p-8">
+          <div className="p-4 md:p-6 lg:p-8 max-w-7xl mx-auto">
             {renderPage()}
           </div>
         </main>
+
+        {notification && (
+          <Toast 
+            message={notification.msg} 
+            type={notification.type} 
+            onClose={() => setNotification(null)} 
+          />
+        )}
       </div>
-    </AppProvider>
+    </AppContext.Provider>
   );
-};
+}
 
 export default App;

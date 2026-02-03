@@ -1,0 +1,4823 @@
+{
+  "cultures": {
+    "Agro Berry 1": {
+      "Myrtille": {
+        "Pesticides": [
+          {
+            "nature": "ADJUVANT",
+            "nom": "CODACIDE OIL",
+            "prix": 82.6,
+            "qte": [
+              25.5,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 1
+          },
+          {
+            "nature": "FONGICIDES",
+            "nom": "SWITCH 62,5 WG",
+            "prix": 1897.6,
+            "qte": [
+              0,
+              0,
+              18,
+              16.45,
+              0
+            ],
+            "id": 2
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SIGNUM WG",
+            "prix": 900,
+            "qte": [
+              0,
+              27,
+              0,
+              25.5,
+              0
+            ],
+            "id": 3
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "STROBY WG",
+            "prix": 950,
+            "qte": [
+              0,
+              0,
+              5.8,
+              0,
+              0
+            ],
+            "id": 4
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KAISER 10 SC",
+            "prix": 1100,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 5
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TIMOREX GOLD",
+            "prix": 800,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 6
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PRIORI TOP",
+            "prix": 1080,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 7
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "LUNA SENSATION",
+            "prix": 4448.5,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 8
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TELDOR WG 50",
+            "prix": 960,
+            "qte": [
+              0,
+              0,
+              28,
+              0,
+              0
+            ],
+            "id": 9
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROBLAD",
+            "prix": 424,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 10
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TALENDO",
+            "prix": 1312,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 11
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALFABET",
+            "prix": 500,
+            "qte": [
+              8,
+              6.4,
+              0,
+              0,
+              0
+            ],
+            "id": 12
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "AFRAW",
+            "prix": 550,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 13
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TIOSOL 800",
+            "prix": 60,
+            "qte": [
+              24.1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 14
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MERJANE 80 WG",
+            "prix": 120,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 15
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALIETTE FLASH",
+            "prix": 389,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 16
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROPLANT",
+            "prix": 271.6,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 17
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "OXYLOUKOS",
+            "prix": 110,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 18
+          },
+          {
+            "nature": "INSECTICIDES",
+            "nom": "RADIANT 120 SC",
+            "prix": 3496,
+            "qte": [
+              12.4,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 19
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MOVENTO 100 SC",
+            "prix": 1350,
+            "qte": [
+              0,
+              2.25,
+              0,
+              1.6,
+              0
+            ],
+            "id": 20
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KRISANT",
+            "prix": 800,
+            "qte": [
+              0,
+              8,
+              0,
+              0,
+              0
+            ],
+            "id": 21
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PIXEL 18 EC",
+            "prix": 190,
+            "qte": [
+              3.1,
+              21,
+              23.16,
+              0,
+              0
+            ],
+            "id": 22
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VERTIMEC",
+            "prix": 1333,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 23
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EXIREL TM",
+            "prix": 2000,
+            "qte": [
+              11.1,
+              21.6,
+              0,
+              0,
+              0
+            ],
+            "id": 24
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BENEVIA",
+            "prix": 2200,
+            "qte": [
+              0,
+              0,
+              13.5,
+              0,
+              0
+            ],
+            "id": 25
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "OIKOS",
+            "prix": 2500,
+            "qte": [
+              0,
+              22,
+              22,
+              22,
+              0
+            ],
+            "id": 26
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROCLAIM",
+            "prix": 377.72,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 27
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VERIMARK",
+            "prix": 4133.33,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 28
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "JOKER",
+            "prix": 850,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 29
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KOBUS",
+            "prix": 5800,
+            "qte": [
+              4.24,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 30
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "DICARZOL",
+            "prix": 2000,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 31
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MAVRIK",
+            "prix": 788,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 32
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MALATHION 50",
+            "prix": 110,
+            "qte": [
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "id": 33
+          }
+        ],
+        "Engrais Foliaire": [
+          {
+            "nature": "ENGRAIS FOLIAIRES",
+            "nom": "KELPAK",
+            "prix": 120,
+            "qte": [
+              12,
+              28.5,
+              0,
+              0,
+              0
+            ],
+            "id": 99
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KELP BIO",
+            "prix": 104.17,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 100
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EFFICIENT",
+            "prix": 66.67,
+            "qte": [
+              0,
+              52.5,
+              0,
+              0,
+              0
+            ],
+            "id": 101
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "CITOCALCUIM",
+            "prix": 291.67,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 102
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "GREENSTIM",
+            "prix": 270,
+            "qte": [
+              44,
+              10.5,
+              12,
+              0,
+              0
+            ],
+            "id": 103
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROSILICON",
+            "prix": 165,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 104
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOMEX",
+            "prix": 93.86,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 105
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              0,
+              25.5,
+              0,
+              0
+            ],
+            "id": 106
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              12.8,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 107
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HYDROMAG",
+            "prix": 97,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 108
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              0,
+              0,
+              0,
+              12,
+              0
+            ],
+            "id": 109
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITACROP MARINA",
+            "prix": 127.59,
+            "qte": [
+              0,
+              0,
+              20,
+              0,
+              0
+            ],
+            "id": 110
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT BIOMIX",
+            "prix": 102,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 111
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT FOLIPLUS",
+            "prix": 180,
+            "qte": [
+              17.5,
+              12.8,
+              0,
+              0,
+              0
+            ],
+            "id": 112
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLIASTIM",
+            "prix": 135,
+            "qte": [
+              0,
+              42,
+              44,
+              44,
+              0
+            ],
+            "id": 155
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLIASTIM CA",
+            "prix": 92.5,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 156
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOFORGE",
+            "prix": 600,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 159
+          }
+        ],
+        "Engrais Poudre Hydroponic": [
+          {
+            "nature": "AUTRES",
+            "nom": "NOVATEC 21",
+            "prix": 7,
+            "qte": [
+              400,
+              555,
+              630,
+              420,
+              0
+            ],
+            "id": 142
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MAP",
+            "prix": 11.5,
+            "qte": [
+              240,
+              385,
+              450,
+              400,
+              0
+            ],
+            "id": 143
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE MAGNESUIM",
+            "prix": 4.8,
+            "qte": [
+              160,
+              300,
+              360,
+              300,
+              0
+            ],
+            "id": 144
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE POTASSE",
+            "prix": 9.5,
+            "qte": [
+              48,
+              77,
+              90,
+              240,
+              0
+            ],
+            "id": 145
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NUTREL C",
+            "prix": 148,
+            "qte": [
+              0,
+              0,
+              15,
+              60,
+              0
+            ],
+            "id": 146
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MICRO MIX",
+            "prix": 75,
+            "qte": [
+              0,
+              0,
+              50,
+              0,
+              0
+            ],
+            "id": 147
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT BIOMIX",
+            "prix": 102,
+            "qte": [
+              48,
+              77,
+              25,
+              0,
+              0
+            ],
+            "id": 148
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PERFECTOSE",
+            "prix": 63.34,
+            "qte": [
+              12,
+              45,
+              0,
+              73,
+              0
+            ],
+            "id": 149
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BORTRAC",
+            "prix": 109,
+            "qte": [
+              1.6,
+              0,
+              1.8,
+              1.2,
+              0
+            ],
+            "id": 150
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SODIBOR",
+            "prix": 39.1,
+            "qte": [
+              0,
+              1.7,
+              0,
+              0,
+              0
+            ],
+            "id": 151
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACIDE PHOSPHORIQUE",
+            "prix": 10.8,
+            "qte": [
+              108,
+              137,
+              234,
+              108,
+              0
+            ],
+            "id": 152
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              2.4,
+              5.4,
+              10.8,
+              5.4,
+              0
+            ],
+            "id": 153
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BLAKJAK",
+            "prix": 108.34,
+            "qte": [
+              0,
+              0,
+              18,
+              0,
+              0
+            ],
+            "id": 154
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NOVA",
+            "prix": 82.5,
+            "qte": [
+              8,
+              0,
+              0,
+              18,
+              0
+            ],
+            "id": 157
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              16,
+              0,
+              0,
+              27,
+              0
+            ],
+            "id": 158
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "UREE",
+            "prix": 6.5,
+            "qte": [
+              240,
+              190,
+              180,
+              180,
+              0
+            ],
+            "id": 161
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FERRILENE",
+            "prix": 102,
+            "qte": [
+              0,
+              0,
+              0,
+              60,
+              0
+            ],
+            "id": 162
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FEROXIM",
+            "prix": 101,
+            "qte": [
+              48,
+              71,
+              90,
+              19,
+              0
+            ],
+            "id": 163
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              18,
+              18,
+              0,
+              0
+            ],
+            "id": 164
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE ZINC",
+            "prix": 14.5,
+            "qte": [
+              8,
+              8.5,
+              9,
+              6,
+              0
+            ],
+            "id": 165
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TOP RACINE",
+            "prix": 133.34,
+            "qte": [
+              0,
+              0,
+              60,
+              18,
+              0
+            ],
+            "id": 166
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITAL CU",
+            "prix": 141.67,
+            "qte": [
+              0.8,
+              1.1,
+              1.8,
+              2.8,
+              0
+            ],
+            "id": 167
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NITRATE DE CALCIUM",
+            "prix": 6.8,
+            "qte": [
+              32,
+              134,
+              180,
+              180,
+              0
+            ],
+            "id": 168
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HUWA-SAN TR50",
+            "prix": 68,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 169
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ASEP 150",
+            "prix": 65,
+            "qte": [
+              12,
+              0,
+              0,
+              2,
+              0
+            ],
+            "id": 170
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SANYGENE FORTE",
+            "prix": 60,
+            "qte": [
+              0,
+              9,
+              2,
+              0,
+              0
+            ],
+            "id": 171
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VYTEGRIS MULTI",
+            "prix": 152.4,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 172
+          }
+        ],
+        "Engrais Poudre Sol": [
+          {
+            "nature": "AUTRES",
+            "nom": "NOVATEC 21",
+            "prix": 7,
+            "qte": [
+              840,
+              1280,
+              800,
+              725,
+              0
+            ],
+            "id": 236
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MAP",
+            "prix": 11.5,
+            "qte": [
+              840,
+              1040,
+              640,
+              780,
+              0
+            ],
+            "id": 237
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE MAGNESUIM",
+            "prix": 4.8,
+            "qte": [
+              630,
+              855,
+              640,
+              780,
+              0
+            ],
+            "id": 238
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE POTASSE",
+            "prix": 9.5,
+            "qte": [
+              157.5,
+              264,
+              200,
+              462.5,
+              0
+            ],
+            "id": 239
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NUTREL C",
+            "prix": 148,
+            "qte": [
+              0,
+              0,
+              10,
+              85,
+              0
+            ],
+            "id": 240
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MICRO MIX",
+            "prix": 75,
+            "qte": [
+              0,
+              0,
+              35,
+              0,
+              0
+            ],
+            "id": 241
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT BIOMIX",
+            "prix": 102,
+            "qte": [
+              52.5,
+              125,
+              35,
+              0,
+              0
+            ],
+            "id": 242
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PERFECTOSE",
+            "prix": 63.34,
+            "qte": [
+              35.94,
+              65,
+              0,
+              65,
+              0
+            ],
+            "id": 243
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BORTRAC",
+            "prix": 109,
+            "qte": [
+              1.05,
+              0,
+              0.8,
+              0.85,
+              0
+            ],
+            "id": 244
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SODIBOR",
+            "prix": 39.1,
+            "qte": [
+              0,
+              1.3,
+              0,
+              0,
+              0
+            ],
+            "id": 245
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACIDE PHOSPHORIQUE",
+            "prix": 10.8,
+            "qte": [
+              640,
+              464,
+              846,
+              706,
+              0
+            ],
+            "id": 246
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACIDE SULFIRIQUE",
+            "prix": 4,
+            "qte": [
+              238,
+              504,
+              719,
+              854,
+              0
+            ],
+            "id": 247
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              7.6,
+              7.8,
+              15.6,
+              7.8,
+              0
+            ],
+            "id": 248
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BLAKJAK",
+            "prix": 108.34,
+            "qte": [
+              0,
+              0,
+              26,
+              0,
+              0
+            ],
+            "id": 249
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NOVA",
+            "prix": 82.5,
+            "qte": [
+              23.5,
+              0,
+              0,
+              26,
+              0
+            ],
+            "id": 252
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              50,
+              0,
+              0,
+              39,
+              0
+            ],
+            "id": 253
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "UREE",
+            "prix": 6.5,
+            "qte": [
+              660,
+              270,
+              500,
+              437,
+              0
+            ],
+            "id": 256
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FERRILENE",
+            "prix": 102,
+            "qte": [
+              0,
+              0,
+              17,
+              68,
+              0
+            ],
+            "id": 257
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FEROXIM",
+            "prix": 101,
+            "qte": [
+              52.5,
+              101,
+              47,
+              0,
+              0
+            ],
+            "id": 258
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              26,
+              26,
+              0,
+              0
+            ],
+            "id": 259
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE ZINC",
+            "prix": 14.5,
+            "qte": [
+              10.5,
+              13,
+              8,
+              8.5,
+              0
+            ],
+            "id": 260
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TOP RACINE",
+            "prix": 133.34,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 261
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITAL CU",
+            "prix": 141.67,
+            "qte": [
+              21,
+              26,
+              16,
+              14.5,
+              0
+            ],
+            "id": 262
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VEROX",
+            "prix": 148.34,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 263
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "REXOLIN",
+            "prix": 145,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 264
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HUWA-SAN TR50",
+            "prix": 68,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 265
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ASEP 150",
+            "prix": 65,
+            "qte": [
+              0,
+              27,
+              0,
+              0,
+              0
+            ],
+            "id": 266
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SANYGENE FORTE",
+            "prix": 60,
+            "qte": [
+              0,
+              0,
+              0,
+              27,
+              0
+            ],
+            "id": 267
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VYTEGRIS MULTI",
+            "prix": 152.4,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 268
+          }
+        ],
+        "Bourdons": [
+          {
+            "nature": "BOURDONS",
+            "nom": "BEESURE",
+            "prix": 186,
+            "qte": [
+              0,
+              10,
+              60,
+              100,
+              0
+            ],
+            "id": 299
+          },
+          {
+            "nature": "LACHERS",
+            "nom": "CUCUMERIS",
+            "prix": 1.9,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 300
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "APHIDIUS COLEMANI",
+            "prix": 95,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 301
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ORIUS",
+            "prix": 0.22,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 302
+          }
+        ]
+      },
+      "Fraise": {
+        "Pesticides": [
+          {
+            "nature": "FONGICIDES",
+            "nom": "SWITCH 62,5 WG",
+            "prix": 1897.6,
+            "qte": [
+              0,
+              21,
+              18,
+              4.6,
+              0
+            ],
+            "id": 310
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SIGNUM WG",
+            "prix": 900,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 311
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "STROBY WG",
+            "prix": 950,
+            "qte": [
+              0,
+              6.3,
+              0,
+              0,
+              0
+            ],
+            "id": 312
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KAISER 10 SC",
+            "prix": 1100,
+            "qte": [
+              0,
+              0,
+              0,
+              1.6,
+              0
+            ],
+            "id": 313
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "CIDELY TOP",
+            "prix": 1050,
+            "qte": [
+              0,
+              0,
+              13.5,
+              0,
+              0
+            ],
+            "id": 314
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROBLAD",
+            "prix": 424,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 315
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PRIORI TOP",
+            "prix": 1080,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 316
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SAPHYR",
+            "prix": 420,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 317
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TELDOR",
+            "prix": 960,
+            "qte": [
+              0,
+              0,
+              27,
+              24,
+              0
+            ],
+            "id": 318
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ORTIVA",
+            "prix": 0,
+            "qte": [
+              0,
+              16,
+              0,
+              16,
+              0
+            ],
+            "id": 319
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "LUNA SENSATION",
+            "prix": 4448.5,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 320
+          },
+          {
+            "nature": "INSECTICIDES",
+            "nom": "SIVANTO PRIME",
+            "prix": 932,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 321
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MOVENTO 100 SC",
+            "prix": 1350,
+            "qte": [
+              0,
+              13.5,
+              0,
+              0,
+              0
+            ],
+            "id": 322
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACRAMITE",
+            "prix": 2000,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 323
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PIXEL 18 EC",
+            "prix": 190,
+            "qte": [
+              0,
+              18,
+              18,
+              15.1,
+              0
+            ],
+            "id": 324
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VERTIMEC",
+            "prix": 1333,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 325
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EXIREL TM",
+            "prix": 2000,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 326
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BENEVIA",
+            "prix": 2200,
+            "qte": [
+              0,
+              0,
+              13.5,
+              0,
+              0
+            ],
+            "id": 327
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "RADIANT 120 SC",
+            "prix": 3496,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 328
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SCELTA",
+            "prix": 1250,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 329
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KRISANT",
+            "prix": 800,
+            "qte": [
+              0,
+              0,
+              0,
+              11.45,
+              0
+            ],
+            "id": 330
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROCLAIM",
+            "prix": 377.72,
+            "qte": [
+              0,
+              6.3,
+              0,
+              0,
+              0
+            ],
+            "id": 331
+          }
+        ],
+        "Engrais Foliaire": [
+          {
+            "nature": "ENGRAIS FOLIAIRES",
+            "nom": "KELPAK",
+            "prix": 120,
+            "qte": [
+              0,
+              0,
+              0,
+              20.55,
+              0
+            ],
+            "id": 332
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KELP BIO",
+            "prix": 104.17,
+            "qte": [
+              0,
+              27,
+              27,
+              0,
+              0
+            ],
+            "id": 333
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EFFICIENT",
+            "prix": 66.67,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 334
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "CITOCALCUIM",
+            "prix": 291.67,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 335
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "GREEN STEM",
+            "prix": 270,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 336
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROSILICON",
+            "prix": 165,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 337
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOMEX",
+            "prix": 93.86,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 338
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 339
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 340
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HYDROMAG",
+            "prix": 97,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 341
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              0,
+              36,
+              0,
+              0,
+              0
+            ],
+            "id": 342
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITACROP MARINA",
+            "prix": 127.59,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 343
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOFORGE",
+            "prix": 600,
+            "qte": [
+              0,
+              38.5,
+              0,
+              0,
+              0
+            ],
+            "id": 344
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLIASTIM CA",
+            "prix": 129.6,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 345
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT FOLIPLUS",
+            "prix": 180,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 346
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PITCA CALCIUM",
+            "prix": 44,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 347
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HYDROSOL 12-05-40",
+            "prix": 19.8,
+            "qte": [
+              0,
+              0,
+              13.9,
+              0,
+              0
+            ],
+            "id": 348
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HYDROSOL 08-10-34",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              33.55,
+              0
+            ],
+            "id": 349
+          }
+        ],
+        "Engrais Poudre Sol": [
+          {
+            "nature": "ENGRAIS",
+            "nom": "AMMONITRATE",
+            "prix": 4.2,
+            "qte": [
+              0,
+              168,
+              111,
+              0,
+              0
+            ],
+            "id": 350
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NITRATE DE POTASSE",
+            "prix": 13,
+            "qte": [
+              0,
+              336,
+              352,
+              594,
+              0
+            ],
+            "id": 351
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NITRATE DE MAGNESIUM",
+            "prix": 7.15,
+            "qte": [
+              0,
+              144,
+              24,
+              0,
+              0
+            ],
+            "id": 352
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MAP",
+            "prix": 11.5,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 353
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NITRATE DE CALCIUM",
+            "prix": 6.5,
+            "qte": [
+              0,
+              64,
+              353,
+              288,
+              0
+            ],
+            "id": 354
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MICROMIX",
+            "prix": 75,
+            "qte": [
+              0,
+              48,
+              120,
+              88,
+              0
+            ],
+            "id": 355
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BASTION",
+            "prix": 100,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 356
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FERRELINE",
+            "prix": 0,
+            "qte": [
+              0,
+              8,
+              48,
+              36,
+              0
+            ],
+            "id": 357
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BASSO",
+            "prix": 20,
+            "qte": [
+              0,
+              128,
+              256,
+              170,
+              0
+            ],
+            "id": 358
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACIDE PHOSPHORIQUE",
+            "prix": 10.8,
+            "qte": [
+              0,
+              224,
+              264,
+              342,
+              0
+            ],
+            "id": 359
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACIDE NITRIQUE",
+            "prix": 7.5,
+            "qte": [
+              0,
+              0,
+              155,
+              79,
+              0
+            ],
+            "id": 360
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "RHYZO",
+            "prix": 350,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 361
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOENERGY",
+            "prix": 60,
+            "qte": [
+              0,
+              64,
+              160,
+              133,
+              0
+            ],
+            "id": 362
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ZM CORRECTOR",
+            "prix": 79.17,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 363
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KARST",
+            "prix": 25,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 364
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "QUEL B",
+            "prix": 50,
+            "qte": [
+              0,
+              0,
+              32,
+              16,
+              0
+            ],
+            "id": 365
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE POTASSE",
+            "prix": 9.5,
+            "qte": [
+              0,
+              0,
+              264,
+              513,
+              0
+            ],
+            "id": 366
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE MAGNESUIM",
+            "prix": 4.8,
+            "qte": [
+              0,
+              0,
+              528,
+              675,
+              0
+            ],
+            "id": 367
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ROMBI SAL",
+            "prix": 26.35,
+            "qte": [
+              0,
+              48,
+              160,
+              120,
+              0
+            ],
+            "id": 368
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SOUFRE",
+            "prix": 9,
+            "qte": [
+              0,
+              210,
+              720,
+              100,
+              0
+            ],
+            "id": 369
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MKP",
+            "prix": 19.25,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 370
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "XTRASOL",
+            "prix": 12,
+            "qte": [
+              0,
+              0,
+              8,
+              0,
+              0
+            ],
+            "id": 371
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TOP RACINE",
+            "prix": 133.34,
+            "qte": [
+              0,
+              61.5,
+              0,
+              0,
+              0
+            ],
+            "id": 372
+          }
+        ]
+      }
+    },
+    "Agro Berry 2": {
+      "Myrtille": {
+        "Pesticides": [
+          {
+            "nature": "ADJUVANT",
+            "nom": "CODACIDE OIL",
+            "prix": 82.6,
+            "qte": [
+              5.5,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 34
+          },
+          {
+            "nature": "FONGICIDES",
+            "nom": "SWITCH 62,5 WG",
+            "prix": 1897.6,
+            "qte": [
+              0,
+              0,
+              21.6,
+              23,
+              23.5
+            ],
+            "id": 35
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SIGNUM WG",
+            "prix": 900,
+            "qte": [
+              0,
+              40.5,
+              0.6,
+              36.9,
+              0
+            ],
+            "id": 36
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "STROBY WG",
+            "prix": 950,
+            "qte": [
+              0,
+              0,
+              3.7,
+              0,
+              0
+            ],
+            "id": 37
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KAISER 10 SC",
+            "prix": 1100,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 38
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TIMOREX GOLD",
+            "prix": 800,
+            "qte": [
+              0,
+              13.5,
+              0,
+              0,
+              0
+            ],
+            "id": 39
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PRIORI TOP",
+            "prix": 1080,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 40
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "LUNA SENSATION",
+            "prix": 4448.5,
+            "qte": [
+              0,
+              7.2,
+              3.2,
+              0,
+              0
+            ],
+            "id": 41
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TELDOR WG 50",
+            "prix": 960,
+            "qte": [
+              0,
+              0,
+              24.45,
+              0,
+              0
+            ],
+            "id": 42
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROBLAD",
+            "prix": 424,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 43
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SAPHYR",
+            "prix": 420,
+            "qte": [
+              1.45,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 44
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ZEBRA",
+            "prix": 375,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 45
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KALIGREEN",
+            "prix": 225,
+            "qte": [
+              45,
+              24,
+              0,
+              0,
+              0
+            ],
+            "id": 46
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TALENDO",
+            "prix": 1312,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 47
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALFABET",
+            "prix": 500,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 48
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "AFRAW",
+            "prix": 550,
+            "qte": [
+              23.3,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 49
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TIOSOL 800",
+            "prix": 60,
+            "qte": [
+              6.4,
+              0,
+              0,
+              1.6,
+              0
+            ],
+            "id": 50
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MERJANE 80 WG",
+            "prix": 120,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 51
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "INACOP",
+            "prix": 150,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 52
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "OXYLOUKOS",
+            "prix": 110,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 53
+          },
+          {
+            "nature": "INSECTICIDES",
+            "nom": "RADIANT 120 SC",
+            "prix": 3496,
+            "qte": [
+              5.5,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 54
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MOVENTO 100 SC",
+            "prix": 1350,
+            "qte": [
+              39.27,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 55
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KRISANT",
+            "prix": 800,
+            "qte": [
+              8,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 56
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PIXEL 18 EC",
+            "prix": 190,
+            "qte": [
+              46.45,
+              32.4,
+              20.4,
+              5.52,
+              0
+            ],
+            "id": 57
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EXIREL TM",
+            "prix": 2000,
+            "qte": [
+              0,
+              20.25,
+              3,
+              0,
+              0
+            ],
+            "id": 58
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BENEVIA",
+            "prix": 2200,
+            "qte": [
+              0,
+              0,
+              13.05,
+              0,
+              0
+            ],
+            "id": 59
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "OIKOS",
+            "prix": 2500,
+            "qte": [
+              0,
+              0,
+              24,
+              24,
+              24
+            ],
+            "id": 60
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "JOKER",
+            "prix": 850,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 61
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KOBUS",
+            "prix": 5800,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 62
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "DICARZOL",
+            "prix": 2000,
+            "qte": [
+              20,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 63
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EXTRA BT",
+            "prix": 336,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 64
+          },
+          {
+            "nature": "ENGRAIS",
+            "nom": "MOVENTO",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "id": 379
+          }
+        ],
+        "Engrais Foliaire": [
+          {
+            "nature": "ENGRAIS FOLIAIRES",
+            "nom": "KELPAK",
+            "prix": 120,
+            "qte": [
+              0,
+              12,
+              2.5,
+              0,
+              6
+            ],
+            "id": 113
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KELP BIO",
+            "prix": 104.17,
+            "qte": [
+              0,
+              0,
+              2.5,
+              0,
+              0
+            ],
+            "id": 114
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EFFICIENT",
+            "prix": 66.67,
+            "qte": [
+              0,
+              81,
+              0,
+              0,
+              0
+            ],
+            "id": 115
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "CITOCALCUIM",
+            "prix": 291.67,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 116
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "GREENSTIM",
+            "prix": 270,
+            "qte": [
+              73.5,
+              0,
+              3,
+              0,
+              6
+            ],
+            "id": 117
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROSILICON",
+            "prix": 165,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 118
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOMEX",
+            "prix": 93.86,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 119
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              0,
+              48.3,
+              0,
+              0
+            ],
+            "id": 120
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              13.26,
+              0,
+              0,
+              1.5,
+              0
+            ],
+            "id": 121
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HYDROMAG",
+            "prix": 97,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 122
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 123
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITACROP MARINA",
+            "prix": 127.59,
+            "qte": [
+              0,
+              20,
+              32,
+              0,
+              0
+            ],
+            "id": 124
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOFORGE",
+            "prix": 600,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 125
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT BIOMIX",
+            "prix": 102,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 126
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VYTEGRIS MULTI",
+            "prix": 152.4,
+            "qte": [
+              0,
+              0,
+              0,
+              5,
+              0
+            ],
+            "id": 127
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLIASTIM",
+            "prix": 135,
+            "qte": [
+              0,
+              44,
+              48,
+              48,
+              0
+            ],
+            "id": 186
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLIASTIM CA",
+            "prix": 92.5,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 187
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "RAIZANTE",
+            "prix": 81.6,
+            "qte": [
+              0,
+              0,
+              32,
+              2,
+              6
+            ],
+            "id": 204
+          }
+        ],
+        "Engrais Poudre Hydroponic": [
+          {
+            "nature": "AUTRES",
+            "nom": "NOVATEC 21",
+            "prix": 7,
+            "qte": [
+              900,
+              850,
+              640,
+              585,
+              510.5
+            ],
+            "id": 173
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MAP",
+            "prix": 11.5,
+            "qte": [
+              360,
+              370,
+              280,
+              307.5,
+              325
+            ],
+            "id": 174
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE MAGNESUIM",
+            "prix": 4.8,
+            "qte": [
+              270,
+              265,
+              200,
+              262.5,
+              325
+            ],
+            "id": 175
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE POTASSE",
+            "prix": 9.5,
+            "qte": [
+              180,
+              210,
+              160,
+              315,
+              472
+            ],
+            "id": 176
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NUTREL C",
+            "prix": 148,
+            "qte": [
+              0,
+              0,
+              8,
+              60,
+              52
+            ],
+            "id": 177
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MICRO MIX",
+            "prix": 75,
+            "qte": [
+              0,
+              72,
+              59,
+              0,
+              0
+            ],
+            "id": 178
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT BIOMIX",
+            "prix": 102,
+            "qte": [
+              90,
+              13,
+              0,
+              0,
+              0
+            ],
+            "id": 179
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PERFECTOSE",
+            "prix": 63.34,
+            "qte": [
+              34.5,
+              57.5,
+              0,
+              57.5,
+              0
+            ],
+            "id": 180
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BORTRAC",
+            "prix": 109,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 181
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SODIBOR",
+            "prix": 39.1,
+            "qte": [
+              3.6,
+              2.2,
+              1.6,
+              1.5,
+              0
+            ],
+            "id": 182
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACIDE PHOSPHORIQUE",
+            "prix": 10.8,
+            "qte": [
+              736,
+              448,
+              320,
+              352,
+              256
+            ],
+            "id": 183
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              6.9,
+              0,
+              14,
+              6.9,
+              6.9
+            ],
+            "id": 184
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BLAKJAK",
+            "prix": 108.34,
+            "qte": [
+              0,
+              0,
+              23,
+              0,
+              0
+            ],
+            "id": 185
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NOVA",
+            "prix": 82.5,
+            "qte": [
+              23,
+              0,
+              0,
+              23,
+              0
+            ],
+            "id": 188
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              46,
+              0,
+              0,
+              34.5,
+              23
+            ],
+            "id": 189
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "UREE",
+            "prix": 6.5,
+            "qte": [
+              396,
+              225,
+              160,
+              240,
+              270
+            ],
+            "id": 192
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FERRILENE",
+            "prix": 102,
+            "qte": [
+              108,
+              75,
+              56,
+              45,
+              0
+            ],
+            "id": 193
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FEROXIM",
+            "prix": 101,
+            "qte": [
+              0,
+              0,
+              0,
+              15,
+              52
+            ],
+            "id": 194
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              23,
+              23,
+              0,
+              23
+            ],
+            "id": 195
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE ZINC",
+            "prix": 14.5,
+            "qte": [
+              9,
+              5.5,
+              4,
+              3.75,
+              3.25
+            ],
+            "id": 196
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TOP RACINE",
+            "prix": 133.34,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              25
+            ],
+            "id": 197
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITAL CU",
+            "prix": 141.67,
+            "qte": [
+              3.6,
+              1.2,
+              0.8,
+              1.4,
+              1.95
+            ],
+            "id": 198
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NITRATE DE CALCIUM",
+            "prix": 6.8,
+            "qte": [
+              90,
+              205,
+              125,
+              195,
+              227.5
+            ],
+            "id": 199
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE CUIVRE",
+            "prix": 55,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 200
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HUWA-SAN TR50",
+            "prix": 68,
+            "qte": [
+              0,
+              13.6,
+              13.6,
+              13.6,
+              0
+            ],
+            "id": 201
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PITCA CALCIUM",
+            "prix": 44,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 202
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VYTEGRIS MULTI",
+            "prix": 152.4,
+            "qte": [
+              0,
+              0,
+              17.5,
+              0,
+              0
+            ],
+            "id": 203
+          },
+          {
+            "nature": "ENGRAIS",
+            "nom": "HUWA SAN",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              3.6
+            ],
+            "id": 382
+          },
+          {
+            "nature": "ENGRAIS",
+            "nom": "SOLUBOR",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              1.3
+            ],
+            "id": 383
+          }
+        ],
+        "Engrais Poudre Sol": [
+          {
+            "nature": "AUTRES",
+            "nom": "NOVATEC 21",
+            "prix": 7,
+            "qte": [
+              550,
+              775,
+              700,
+              750,
+              775
+            ],
+            "id": 269
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MAP",
+            "prix": 11.5,
+            "qte": [
+              330,
+              390,
+              350,
+              550,
+              750
+            ],
+            "id": 270
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE MAGNESUIM",
+            "prix": 4.8,
+            "qte": [
+              330,
+              540,
+              490,
+              630,
+              750
+            ],
+            "id": 271
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE POTASSE",
+            "prix": 9.5,
+            "qte": [
+              220,
+              310,
+              280,
+              725,
+              1050
+            ],
+            "id": 272
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NUTREL C",
+            "prix": 148,
+            "qte": [
+              0,
+              0,
+              8,
+              120,
+              120
+            ],
+            "id": 273
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MICRO MIX",
+            "prix": 75,
+            "qte": [
+              0,
+              104,
+              96,
+              0,
+              0
+            ],
+            "id": 274
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT BIOMIX",
+            "prix": 102,
+            "qte": [
+              66,
+              19,
+              0,
+              0,
+              0
+            ],
+            "id": 275
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PERFECTOSE",
+            "prix": 63.34,
+            "qte": [
+              31.5,
+              52.5,
+              0,
+              62.5,
+              0
+            ],
+            "id": 276
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BORTRAC",
+            "prix": 109,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 277
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SODIBOR",
+            "prix": 39.1,
+            "qte": [
+              2.2,
+              1.6,
+              1.4,
+              1.5,
+              0
+            ],
+            "id": 278
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACIDE PHOSPHORIQUE",
+            "prix": 10.8,
+            "qte": [
+              832,
+              864,
+              832,
+              672,
+              512
+            ],
+            "id": 279
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              6.3,
+              0,
+              15,
+              7.5,
+              7.5
+            ],
+            "id": 280
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BLAKJAK",
+            "prix": 108.34,
+            "qte": [
+              0,
+              0,
+              25,
+              0,
+              0
+            ],
+            "id": 281
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NOVA",
+            "prix": 82.5,
+            "qte": [
+              21,
+              0,
+              0,
+              25,
+              0
+            ],
+            "id": 284
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              42,
+              0,
+              0,
+              37.5,
+              25
+            ],
+            "id": 285
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "UREE",
+            "prix": 6.5,
+            "qte": [
+              330,
+              240,
+              210,
+              400,
+              600
+            ],
+            "id": 288
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FERRILENE",
+            "prix": 102,
+            "qte": [
+              44,
+              72,
+              70,
+              48,
+              0
+            ],
+            "id": 289
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FEROXIM",
+            "prix": 101,
+            "qte": [
+              0,
+              0,
+              0,
+              20,
+              75
+            ],
+            "id": 290
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              20,
+              25,
+              0,
+              25
+            ],
+            "id": 291
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE ZINC",
+            "prix": 14.5,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 292
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TOP RACINE",
+            "prix": 133.34,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              25
+            ],
+            "id": 293
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITAL CU",
+            "prix": 141.67,
+            "qte": [
+              11,
+              2,
+              1.4,
+              2.9,
+              4.5
+            ],
+            "id": 294
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PITCA CALCIUM",
+            "prix": 44,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 295
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HUWA-SAN TR50",
+            "prix": 68,
+            "qte": [
+              0,
+              13.6,
+              0,
+              0,
+              0
+            ],
+            "id": 296
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VYTEGRIS MULTI",
+            "prix": 152.4,
+            "qte": [
+              0,
+              0,
+              18.5,
+              0,
+              0
+            ],
+            "id": 297
+          },
+          {
+            "nature": "ENGRAIS",
+            "nom": "TIOSOL",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              1.6
+            ],
+            "id": 377
+          },
+          {
+            "nature": "ENGRAIS",
+            "nom": "SOLUBOR",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              1.5
+            ],
+            "id": 378
+          }
+        ],
+        "Bourdons": [
+          {
+            "nature": "BOURDONS",
+            "nom": "BEESURE",
+            "prix": 186,
+            "qte": [
+              0,
+              20,
+              60,
+              50,
+              0
+            ],
+            "id": 303
+          },
+          {
+            "nature": "LACHERS",
+            "nom": "CUCUMERIS",
+            "prix": 1.9,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 304
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "APHIDIUS COLEMANI",
+            "prix": 95,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 305
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ORIUS",
+            "prix": 0.22,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 306
+          }
+        ]
+      }
+    },
+    "Agro Berry 3": {
+      "Myrtille": {
+        "Pesticides": [
+          {
+            "nature": "ADJUVANT",
+            "nom": "CODACIDE OIL",
+            "prix": 82.6,
+            "qte": [
+              13,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 65
+          },
+          {
+            "nature": "FONGICIDES",
+            "nom": "SWITCH 62,5 WG",
+            "prix": 1897.6,
+            "qte": [
+              0,
+              0,
+              32.5,
+              33,
+              30
+            ],
+            "id": 66
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SIGNUM WG",
+            "prix": 900,
+            "qte": [
+              0,
+              42.75,
+              0,
+              49.8,
+              0
+            ],
+            "id": 67
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "STROBY WG",
+            "prix": 950,
+            "qte": [
+              0,
+              0.9,
+              9.3,
+              0,
+              0
+            ],
+            "id": 68
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KAISER 10 SC",
+            "prix": 1100,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 69
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TIMOREX GOLD",
+            "prix": 800,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 70
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PRIORI TOP",
+            "prix": 1080,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 71
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "LUNA SENSATION",
+            "prix": 4448.5,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 72
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TELDOR WG 50",
+            "prix": 960,
+            "qte": [
+              0,
+              0,
+              46.5,
+              0,
+              0
+            ],
+            "id": 73
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ZEBRA",
+            "prix": 375,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 74
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROBLAD",
+            "prix": 424,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 75
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SAPHYR",
+            "prix": 420,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 76
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KALIGREEN",
+            "prix": 225,
+            "qte": [
+              67.5,
+              25,
+              0,
+              0,
+              0
+            ],
+            "id": 77
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TALENDO",
+            "prix": 1312,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 78
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALFABET",
+            "prix": 500,
+            "qte": [
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 79
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "AFRAW",
+            "prix": 550,
+            "qte": [
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 80
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TIOSOL 800",
+            "prix": 60,
+            "qte": [
+              4.8,
+              0.32,
+              0.96,
+              7.04,
+              0
+            ],
+            "id": 81
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MERJANE 80 WG",
+            "prix": 120,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 82
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALIETTE FLASH",
+            "prix": 389,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 83
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROPLANT",
+            "prix": 271.6,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 84
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "INACOP",
+            "prix": 150,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 85
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "OXYLOUKOS 50 WP",
+            "prix": 110,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 86
+          },
+          {
+            "nature": "INSECTICIDES",
+            "nom": "RADIANT 120 SC",
+            "prix": 3496,
+            "qte": [
+              13,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 87
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MOVENTO 100 SC",
+            "prix": 1350,
+            "qte": [
+              2,
+              3,
+              0,
+              0,
+              0
+            ],
+            "id": 88
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KRISANT",
+            "prix": 800,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 89
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PIXEL 18 EC",
+            "prix": 190,
+            "qte": [
+              5.4,
+              34.5,
+              70.8,
+              5.4,
+              0
+            ],
+            "id": 90
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EXIREL TM",
+            "prix": 2000,
+            "qte": [
+              0,
+              36.55,
+              0,
+              0,
+              0
+            ],
+            "id": 91
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BENEVIA",
+            "prix": 2200,
+            "qte": [
+              0,
+              14.5,
+              24.37,
+              0,
+              0
+            ],
+            "id": 92
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACTARA 25 WG",
+            "prix": 657,
+            "qte": [
+              0.9,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 93
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "JOKER",
+            "prix": 850,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 94
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KOBUS",
+            "prix": 5800,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 95
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "DICARZOL",
+            "prix": 2000,
+            "qte": [
+              24,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 96
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "OIKOS",
+            "prix": 2500,
+            "qte": [
+              0,
+              32,
+              32,
+              32,
+              0
+            ],
+            "id": 97
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MAVRIK",
+            "prix": 788,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 98
+          }
+        ],
+        "Engrais Foliaire": [
+          {
+            "nature": "ENGRAIS FOLIAIRES",
+            "nom": "KELPAK",
+            "prix": 120,
+            "qte": [
+              0,
+              0,
+              0,
+              4.5,
+              0
+            ],
+            "id": 128
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "KELP BIO",
+            "prix": 104.17,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 129
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "EFFICIENT",
+            "prix": 66.67,
+            "qte": [
+              0,
+              86.25,
+              0,
+              0,
+              0
+            ],
+            "id": 130
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "CITOCALCUIM",
+            "prix": 291.67,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 131
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "GREEN STEM",
+            "prix": 270,
+            "qte": [
+              15,
+              75.9,
+              0,
+              0,
+              0
+            ],
+            "id": 132
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PROSILICON",
+            "prix": 165,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 133
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOMEX",
+            "prix": 93.86,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 134
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              0,
+              46.5,
+              0,
+              0
+            ],
+            "id": 135
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              20.22,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 136
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HYDROMAG",
+            "prix": 97,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 137
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 138
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITACROP MARINA",
+            "prix": 127.59,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 139
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BIOFORGE",
+            "prix": 600,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 140
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MANVERT BIOMIX",
+            "prix": 102,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 141
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLIASTIM",
+            "prix": 135,
+            "qte": [
+              0,
+              64,
+              64,
+              64,
+              0
+            ],
+            "id": 218
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLIASTIM CA",
+            "prix": 92.5,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 219
+          }
+        ],
+        "Engrais Poudre Hydroponic": [
+          {
+            "nature": "AUTRES",
+            "nom": "NOVATEC 21",
+            "prix": 7,
+            "qte": [
+              2000,
+              1100,
+              825,
+              900,
+              664
+            ],
+            "id": 205
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MAP",
+            "prix": 11.5,
+            "qte": [
+              1000,
+              1300,
+              1100,
+              1200,
+              800
+            ],
+            "id": 206
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE MAGNESUIM",
+            "prix": 4.8,
+            "qte": [
+              800,
+              1040,
+              880,
+              960,
+              640
+            ],
+            "id": 207
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE POTASSE",
+            "prix": 9.5,
+            "qte": [
+              200,
+              560,
+              330,
+              1200,
+              800
+            ],
+            "id": 208
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NUTREL C",
+            "prix": 148,
+            "qte": [
+              0,
+              0,
+              0,
+              180,
+              120
+            ],
+            "id": 209
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MICRO MIX",
+            "prix": 75,
+            "qte": [
+              0,
+              180,
+              165,
+              75,
+              0
+            ],
+            "id": 210
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "MASTER MIX",
+            "prix": 120,
+            "qte": [
+              120,
+              12,
+              0,
+              0,
+              0
+            ],
+            "id": 211
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PERFECTOSE",
+            "prix": 63.34,
+            "qte": [
+              96,
+              160,
+              0,
+              153,
+              0
+            ],
+            "id": 212
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BORTRAC",
+            "prix": 109,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 213
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SODIBOR",
+            "prix": 39.1,
+            "qte": [
+              2,
+              1.4,
+              1.1,
+              1.2,
+              0
+            ],
+            "id": 214
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ACIDE PHOSPHORIQUE",
+            "prix": 10.8,
+            "qte": [
+              1280,
+              768,
+              800,
+              416,
+              576
+            ],
+            "id": 215
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ALGOBAZ",
+            "prix": 208.34,
+            "qte": [
+              19.2,
+              19.2,
+              38.4,
+              19.2,
+              19.2
+            ],
+            "id": 216
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "BLAKJAK",
+            "prix": 108.34,
+            "qte": [
+              0,
+              0,
+              64,
+              0,
+              0
+            ],
+            "id": 217
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NOVA",
+            "prix": 82.5,
+            "qte": [
+              64,
+              0,
+              0,
+              64,
+              0
+            ],
+            "id": 220
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ISABION",
+            "prix": 125,
+            "qte": [
+              128,
+              0,
+              0,
+              64,
+              64
+            ],
+            "id": 221
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "UREE",
+            "prix": 6.5,
+            "qte": [
+              1000,
+              400,
+              275,
+              600,
+              400
+            ],
+            "id": 223
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FERRILENE",
+            "prix": 102,
+            "qte": [
+              0,
+              0,
+              0,
+              96,
+              12
+            ],
+            "id": 224
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FEROXIM",
+            "prix": 101,
+            "qte": [
+              300,
+              174,
+              0,
+              36,
+              84
+            ],
+            "id": 225
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "FOLICIST",
+            "prix": 255,
+            "qte": [
+              0,
+              64,
+              64,
+              0,
+              64
+            ],
+            "id": 226
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE ZINC",
+            "prix": 14.5,
+            "qte": [
+              10,
+              7,
+              5.5,
+              6,
+              4
+            ],
+            "id": 227
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "TOP RACINE",
+            "prix": 133.34,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 228
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VITAL CU",
+            "prix": 141.67,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 229
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "NITRATE DE CALCIUM",
+            "prix": 6.8,
+            "qte": [
+              500,
+              530,
+              440,
+              480,
+              320
+            ],
+            "id": 230
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "SULFATE DE CUIVRE",
+            "prix": 55,
+            "qte": [
+              10,
+              5.2,
+              3.3,
+              12,
+              8
+            ],
+            "id": 231
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "HUWA-SAN TR50",
+            "prix": 68,
+            "qte": [
+              1.5,
+              6,
+              6,
+              7.5,
+              0
+            ],
+            "id": 232
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "ASEP 150",
+            "prix": 65,
+            "qte": [
+              11.2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 233
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "PITCA CALCIUM",
+            "prix": 44,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 234
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "VYTEGRIS MULTI",
+            "prix": 152.4,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 235
+          },
+          {
+            "nature": "ENGRAIS",
+            "nom": "TIOSOL",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              10.72
+            ],
+            "id": 385
+          },
+          {
+            "nature": "ENGRAIS",
+            "nom": "HUWA SAN",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              4.5
+            ],
+            "id": 386
+          },
+          {
+            "nature": "ENGRAIS",
+            "nom": "SOLUBOR",
+            "prix": 0,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0.8
+            ],
+            "id": 387
+          }
+        ],
+        "Bourdons": [
+          {
+            "nature": "BOURDONS",
+            "nom": "BEESURE",
+            "prix": 180,
+            "qte": [
+              0,
+              20,
+              80,
+              100,
+              0
+            ],
+            "id": 307
+          },
+          {
+            "nature": "LACHERS",
+            "nom": "CUCUMERIS",
+            "prix": 1.9,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 308
+          },
+          {
+            "nature": "AUTRES",
+            "nom": "APHIDIUS COLEMANI",
+            "prix": 95,
+            "qte": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "id": 309
+          }
+        ]
+      }
+    }
+  }
+}

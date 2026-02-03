@@ -1,0 +1,4842 @@
+{
+  "SEPTEMBRE": {
+    "date": "2025-09-25",
+    "name": "Septembre 2025",
+    "AB1": [
+      {
+        "product": "MAP",
+        "quantity": 1810,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 2955,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 2848,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "ACIDE SULFURIQUE",
+        "quantity": 2555,
+        "unit": "KG",
+        "price": 5.5
+      },
+      {
+        "product": "ACIDE CHLORHYDRIQUE",
+        "quantity": 72,
+        "unit": "KG",
+        "price": 4.7
+      },
+      {
+        "product": "UREE",
+        "quantity": 880,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 3350,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 170,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 183,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 45,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 50,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "SULFATE DE MANGANAISE",
+        "quantity": 99.5,
+        "unit": "KG",
+        "price": 25
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 36.5,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 77.5,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 42,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "TIMOREX GOLD",
+        "quantity": 5.8,
+        "unit": "L",
+        "price": 815
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 21.3,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "TELDOR",
+        "quantity": 0.5,
+        "unit": "KG",
+        "price": 960
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 4.25,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 2.84,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 40,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 51.5,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 64.5,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 76,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "FEROXIM 6",
+        "quantity": 296,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 58.8,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "KELPAK",
+        "quantity": 39,
+        "unit": "L",
+        "price": 120
+      },
+      {
+        "product": "HYDROMAG",
+        "quantity": 1.8,
+        "unit": "L",
+        "price": 97
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 42.3,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 22.2,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "PIRIMOR",
+        "quantity": 2,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "FUNJISIE",
+        "quantity": 0.5,
+        "unit": "L",
+        "price": 315
+      },
+      {
+        "product": "KRISANT",
+        "quantity": 10.55,
+        "unit": "L",
+        "price": 800
+      },
+      {
+        "product": "KAISER",
+        "quantity": 1,
+        "unit": "L",
+        "price": 1150
+      },
+      {
+        "product": "LUNA SENSATION",
+        "quantity": 0.15,
+        "unit": "L",
+        "price": 4448.5
+      },
+      {
+        "product": "ISABION",
+        "quantity": 40,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "BIOBAC",
+        "quantity": 5,
+        "unit": "KG",
+        "price": 450
+      },
+      {
+        "product": "NOVA",
+        "quantity": 75,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "OXYLOUKKOS",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 110
+      },
+      {
+        "product": "INACOP",
+        "quantity": 15,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 1.5,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "ASEP",
+        "quantity": 14,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "JOKER",
+        "quantity": 97.5,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PROCLAIM",
+        "quantity": 2.75,
+        "unit": "KG",
+        "price": 377.72
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 13.1,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "ACRAMITE",
+        "quantity": 0.6,
+        "unit": "L",
+        "price": 2000
+      },
+      {
+        "product": "MOLATHION",
+        "quantity": 2,
+        "unit": "L",
+        "price": 150
+      },
+      {
+        "product": "BASSO",
+        "quantity": 272,
+        "unit": "L",
+        "price": 20
+      },
+      {
+        "product": "BIOENERGY",
+        "quantity": 160,
+        "unit": "L",
+        "price": 60
+      },
+      {
+        "product": "VITACROP MARINA",
+        "quantity": 20,
+        "unit": "L",
+        "price": 122.4
+      },
+      {
+        "product": "NITRATE DE POTASSE",
+        "quantity": 671.8,
+        "unit": "KG",
+        "price": 13
+      },
+      {
+        "product": "AMMONITRATE",
+        "quantity": 86.5,
+        "unit": "KG",
+        "price": 4.2
+      },
+      {
+        "product": "ACIDE NITRIQUE",
+        "quantity": 340,
+        "unit": "KG",
+        "price": 7.5
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 2.8,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 51,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 5,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "BASTION",
+        "quantity": 30,
+        "unit": "KG",
+        "price": 100
+      },
+      {
+        "product": "SOUFRE",
+        "quantity": 210,
+        "unit": "KG",
+        "price": 9
+      },
+      {
+        "product": "EXTRA BT",
+        "quantity": 20.75,
+        "unit": "KG",
+        "price": 336
+      },
+      {
+        "product": "QUEL B",
+        "quantity": 50,
+        "unit": "L",
+        "price": 50
+      },
+      {
+        "product": "PERMACLEAN",
+        "quantity": 354.5,
+        "unit": "L",
+        "price": 94.12
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 1908,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "MANVERT FOLIPLUS",
+        "quantity": 34.5,
+        "unit": "L",
+        "price": 180
+      },
+      {
+        "product": "MANGAZINC",
+        "quantity": 44,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "MKP",
+        "quantity": 675,
+        "unit": "KG",
+        "price": 19.25
+      },
+      {
+        "product": "ROMBI SAL",
+        "quantity": 201,
+        "unit": "L",
+        "price": 26.35
+      },
+      {
+        "product": "SIVANTO PRIME",
+        "quantity": 0.6,
+        "unit": "L",
+        "price": 932
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 341.5,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "SCELTA",
+        "quantity": 5,
+        "unit": "L",
+        "price": 1250
+      },
+      {
+        "product": "PROBLAD",
+        "quantity": 3,
+        "unit": "L",
+        "price": 424
+      },
+      {
+        "product": "VERIMARK",
+        "quantity": 2.78,
+        "unit": "L",
+        "price": 4133.333333333333
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 13.3,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 27,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "KOBUS",
+        "quantity": 2.05,
+        "unit": "L",
+        "price": 5800
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 3.65,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 45,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "HYDROSOL",
+        "quantity": 13.9,
+        "unit": "KG",
+        "price": 19.8
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 24,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "VYTEGRIS MULTI",
+        "quantity": 21.5,
+        "unit": "L",
+        "price": 152.4
+      },
+      {
+        "product": "BIOMIX MANVERT",
+        "quantity": 94,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "ALIETTE FLASH",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 389
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 46,
+        "unit": "KG",
+        "price": 788
+      }
+    ],
+    "AB2": [
+      {
+        "product": "MAP",
+        "quantity": 777.5,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 1113,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 1248,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "ACIDE CHLORHYDRIQUE",
+        "quantity": 1008,
+        "unit": "KG",
+        "price": 4.7
+      },
+      {
+        "product": "UREE",
+        "quantity": 715.35,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 850,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 825,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "SILICA",
+        "quantity": 400,
+        "unit": "kg",
+        "price": 14
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 109.5,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 26.86,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 75,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 40,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 3.4,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 59.23,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "TIMOREX GOLD",
+        "quantity": 31.5,
+        "unit": "L",
+        "price": 815
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 1.44,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "STROBY",
+        "quantity": 2.56,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 48,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 41.5,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 17.8,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 108.75,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 12.5,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "KELPAK",
+        "quantity": 8.5,
+        "unit": "L",
+        "price": 120
+      },
+      {
+        "product": "KELP BIO",
+        "quantity": 2.4,
+        "unit": "L",
+        "price": 104.17
+      },
+      {
+        "product": "SOLUBOR",
+        "quantity": 25.6,
+        "unit": "KG",
+        "price": 68.4
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 6,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "SAPHYR",
+        "quantity": 2.3,
+        "unit": "L",
+        "price": 420
+      },
+      {
+        "product": "KRISANT",
+        "quantity": 30.25,
+        "unit": "L",
+        "price": 800
+      },
+      {
+        "product": "ISABION",
+        "quantity": 28,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "NOVA",
+        "quantity": 104,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "INACOP",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 1.72,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "PROXY",
+        "quantity": 7.4,
+        "unit": "L",
+        "price": 300
+      },
+      {
+        "product": "JOKER",
+        "quantity": 55.8,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 6,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 100,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "VITACROP MARINA",
+        "quantity": 20,
+        "unit": "L",
+        "price": 122.4
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 15,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 1.5,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "HUWA SAN",
+        "quantity": 58.4,
+        "unit": "KG",
+        "price": 65.28
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 32.5,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "EXTRA BT",
+        "quantity": 10,
+        "unit": "KG",
+        "price": 336
+      },
+      {
+        "product": "PERMACLEAN",
+        "quantity": 75,
+        "unit": "L",
+        "price": 94.12
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 500,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "ROMBI SAL",
+        "quantity": 40,
+        "unit": "L",
+        "price": 26.35
+      },
+      {
+        "product": "BENEVIA",
+        "quantity": 5.5,
+        "unit": "L",
+        "price": 2200
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 122,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "PROBLAD",
+        "quantity": 1.9,
+        "unit": "L",
+        "price": 424
+      },
+      {
+        "product": "VERIMARK",
+        "quantity": 1.12,
+        "unit": "L",
+        "price": 4133.333333333333
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 12,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 56,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "DICARZOL",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 2000
+      },
+      {
+        "product": "KOBUS",
+        "quantity": 2.5,
+        "unit": "L",
+        "price": 5800
+      },
+      {
+        "product": "KALIGREEN",
+        "quantity": 79,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 20,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 61.5,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 0.6,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "AFRAW",
+        "quantity": 0.5,
+        "unit": "L",
+        "price": 550
+      },
+      {
+        "product": "VYTEGRIS MULTI",
+        "quantity": 15,
+        "unit": "L",
+        "price": 152.4
+      },
+      {
+        "product": "BIOMIX MANVERT",
+        "quantity": 38,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "ALIETTE FLASH",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 389
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 30,
+        "unit": "KG",
+        "price": 788
+      }
+    ],
+    "AB3": [
+      {
+        "product": "MAP",
+        "quantity": 2205,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 3436,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 2240,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "UREE",
+        "quantity": 1190,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 115,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 1117,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 673,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 9,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 101,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 10,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 1,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 55,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 14.7,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 7.5,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 0.2,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 56.73,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 43,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 31,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 100,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "FEROXIM 6",
+        "quantity": 190,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 101.6,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 6,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "KELPAK",
+        "quantity": 6,
+        "unit": "L",
+        "price": 120
+      },
+      {
+        "product": "KELP BIO",
+        "quantity": 45,
+        "unit": "L",
+        "price": 104.17
+      },
+      {
+        "product": "HYDROMAG",
+        "quantity": 3,
+        "unit": "L",
+        "price": 97
+      },
+      {
+        "product": "SOLUBOR",
+        "quantity": 55,
+        "unit": "KG",
+        "price": 68.4
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 1,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 2.65,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "SAPHYR",
+        "quantity": 3.8,
+        "unit": "L",
+        "price": 420
+      },
+      {
+        "product": "KAISER",
+        "quantity": 0.29,
+        "unit": "L",
+        "price": 1150
+      },
+      {
+        "product": "LUNA SENSATION",
+        "quantity": 10.95,
+        "unit": "L",
+        "price": 4448.5
+      },
+      {
+        "product": "ISABION",
+        "quantity": 109,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "NOVA",
+        "quantity": 68,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "INACOP",
+        "quantity": 2.7,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 4.95,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 8,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "JOKER",
+        "quantity": 49.6,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "SUPER SIDY",
+        "quantity": 19.15,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 10,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 237.5,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "VITACROP MARINA",
+        "quantity": 30,
+        "unit": "L",
+        "price": 122.4
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 1.4,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "HUWA SAN",
+        "quantity": 100,
+        "unit": "KG",
+        "price": 65.28
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 25,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 2,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "ADICLEAN",
+        "quantity": 155,
+        "unit": "L",
+        "price": 67
+      },
+      {
+        "product": "ANTISCALANT ADIC RO30",
+        "quantity": 275,
+        "unit": "L",
+        "price": 48
+      },
+      {
+        "product": "ROMBI SAL",
+        "quantity": 52.5,
+        "unit": "L",
+        "price": 26.35
+      },
+      {
+        "product": "BENEVIA",
+        "quantity": 9.1,
+        "unit": "L",
+        "price": 2200
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 225,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 14.4,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 63,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "KALIGREEN",
+        "quantity": 59.5,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 7.5,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 68,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 0.25,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "AFRAW",
+        "quantity": 1.2,
+        "unit": "L",
+        "price": 550
+      },
+      {
+        "product": "VYTEGRIS MULTI",
+        "quantity": 12.5,
+        "unit": "L",
+        "price": 152.4
+      },
+      {
+        "product": "BIOMIX MANVERT",
+        "quantity": 138,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 28,
+        "unit": "KG",
+        "price": 788
+      }
+    ]
+  },
+  "OCTOBRE": {
+    "date": "2025-10-25",
+    "name": "Octobre 2025",
+    "AB1": [
+      {
+        "product": "MAP",
+        "quantity": 1511,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 1616,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 2080,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "ACIDE SULFURIQUE",
+        "quantity": 1944,
+        "unit": "KG",
+        "price": 5.5
+      },
+      {
+        "product": "UREE",
+        "quantity": 1378.8,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 627.9,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 448.7,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 154.4,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 100,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 50,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "SULFATE DE MANGANAISE",
+        "quantity": 99.5,
+        "unit": "KG",
+        "price": 25
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 35,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 77.5,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 44.48,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "TIMOREX GOLD",
+        "quantity": 5.8,
+        "unit": "L",
+        "price": 815
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 23,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "TELDOR",
+        "quantity": 0.5,
+        "unit": "KG",
+        "price": 960
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 15.75,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 3.6,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 7.5,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 35,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 84.5,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 26.5,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "FEROXIM 6",
+        "quantity": 164,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 33,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 50,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "KELP BIO",
+        "quantity": 6,
+        "unit": "L",
+        "price": 104.17
+      },
+      {
+        "product": "HYDROMAG",
+        "quantity": 1.8,
+        "unit": "L",
+        "price": 97
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 42.3,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 16,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "PIRIMOR",
+        "quantity": 2,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "FUNJISIE",
+        "quantity": 0.5,
+        "unit": "L",
+        "price": 315
+      },
+      {
+        "product": "KRISANT",
+        "quantity": 10.55,
+        "unit": "L",
+        "price": 800
+      },
+      {
+        "product": "KAISER",
+        "quantity": 1,
+        "unit": "L",
+        "price": 1150
+      },
+      {
+        "product": "LUNA SENSATION",
+        "quantity": 2.1,
+        "unit": "L",
+        "price": 4448.5
+      },
+      {
+        "product": "ISABION",
+        "quantity": 35,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "BIOBAC",
+        "quantity": 5,
+        "unit": "KG",
+        "price": 450
+      },
+      {
+        "product": "NOVA",
+        "quantity": 60,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "OXYLOUKKOS",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 110
+      },
+      {
+        "product": "INACOP",
+        "quantity": 15,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 0.25,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 250,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "JOKER",
+        "quantity": 97.5,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PROCLAIM",
+        "quantity": 3.75,
+        "unit": "KG",
+        "price": 377.72
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 6.5,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "ACRAMITE",
+        "quantity": 0.6,
+        "unit": "L",
+        "price": 2000
+      },
+      {
+        "product": "MOLATHION",
+        "quantity": 2,
+        "unit": "L",
+        "price": 150
+      },
+      {
+        "product": "BASSO",
+        "quantity": 483,
+        "unit": "L",
+        "price": 20
+      },
+      {
+        "product": "BIOENERGY",
+        "quantity": 245,
+        "unit": "L",
+        "price": 60
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 335,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "VITACROP MARINA",
+        "quantity": 20,
+        "unit": "L",
+        "price": 122.4
+      },
+      {
+        "product": "NITRATE DE POTASSE",
+        "quantity": 1127.9,
+        "unit": "KG",
+        "price": 13
+      },
+      {
+        "product": "NITRATE DE MAGNESIUM",
+        "quantity": 268.5,
+        "unit": "KG",
+        "price": 7.15
+      },
+      {
+        "product": "AMMONITRATE",
+        "quantity": 261.9,
+        "unit": "KG",
+        "price": 4.2
+      },
+      {
+        "product": "ACIDE NITRIQUE",
+        "quantity": 340,
+        "unit": "KG",
+        "price": 7.5
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 40,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 20,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "SANYGENE FORTE",
+        "quantity": 25,
+        "unit": "L",
+        "price": 60
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 50,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 5,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "BASTION",
+        "quantity": 30,
+        "unit": "KG",
+        "price": 100
+      },
+      {
+        "product": "SOUFRE",
+        "quantity": 150,
+        "unit": "KG",
+        "price": 9
+      },
+      {
+        "product": "QUEL B",
+        "quantity": 50,
+        "unit": "L",
+        "price": 50
+      },
+      {
+        "product": "PERMACLEAN",
+        "quantity": 371,
+        "unit": "L",
+        "price": 94.12
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 1855,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "MANVERT FOLIPLUS",
+        "quantity": 5.5,
+        "unit": "L",
+        "price": 180
+      },
+      {
+        "product": "MANGAZINC",
+        "quantity": 44,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "MKP",
+        "quantity": 675,
+        "unit": "KG",
+        "price": 19.25
+      },
+      {
+        "product": "ROMBI SAL",
+        "quantity": 156,
+        "unit": "L",
+        "price": 26.35
+      },
+      {
+        "product": "SIVANTO PRIME",
+        "quantity": 0.6,
+        "unit": "L",
+        "price": 932
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 332,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "SCELTA",
+        "quantity": 5,
+        "unit": "L",
+        "price": 1250
+      },
+      {
+        "product": "PROBLAD",
+        "quantity": 3,
+        "unit": "L",
+        "price": 424
+      },
+      {
+        "product": "VERIMARK",
+        "quantity": 2.78,
+        "unit": "L",
+        "price": 4133.333333333333
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 13.3,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 24.5,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "KOBUS",
+        "quantity": 0.85,
+        "unit": "L",
+        "price": 5800
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 3.65,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 45,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "HYDROSOL",
+        "quantity": 13.9,
+        "unit": "KG",
+        "price": 19.8
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 9.5,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "VYTEGRIS MULTI",
+        "quantity": 21.5,
+        "unit": "L",
+        "price": 152.4
+      },
+      {
+        "product": "BIOMIX MANVERT",
+        "quantity": 100,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "ALIETTE FLASH",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 389
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 46,
+        "unit": "L",
+        "price": 788
+      },
+      {
+        "product": "RAIZANTE",
+        "quantity": 100,
+        "unit": "L",
+        "price": 81.6
+      }
+    ],
+    "AB2": [
+      {
+        "product": "MAP",
+        "quantity": 1064,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 1625,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 928,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "ACIDE CHLORHYDRIQUE",
+        "quantity": 936,
+        "unit": "KG",
+        "price": 4.7
+      },
+      {
+        "product": "UREE",
+        "quantity": 1240,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 1075,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 1050,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 35.46,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 19.49,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 75,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 45,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 3.4,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 41,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "TIMOREX GOLD",
+        "quantity": 23.62,
+        "unit": "L",
+        "price": 815
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 2.6,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 5.8,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 50,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 35,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 31,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 12.5,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 60,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "KELP BIO",
+        "quantity": 1,
+        "unit": "L",
+        "price": 104.17
+      },
+      {
+        "product": "SOLUBOR",
+        "quantity": 20,
+        "unit": "KG",
+        "price": 68.4
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 5.5,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 9.75,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "SAPHYR",
+        "quantity": 0.85,
+        "unit": "L",
+        "price": 420
+      },
+      {
+        "product": "KRISANT",
+        "quantity": 30.25,
+        "unit": "L",
+        "price": 800
+      },
+      {
+        "product": "ISABION",
+        "quantity": 28,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "NOVA",
+        "quantity": 80,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "INACOP",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 1.72,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "PROXY",
+        "quantity": 7.4,
+        "unit": "L",
+        "price": 300
+      },
+      {
+        "product": "JOKER",
+        "quantity": 55.8,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 6,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 99.3,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 4,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 1.5,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "HUWA SAN",
+        "quantity": 100,
+        "unit": "KG",
+        "price": 65.28
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 20,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 32.5,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "PERMACLEAN",
+        "quantity": 75,
+        "unit": "L",
+        "price": 94.12
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 350,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "ROMBI SAL",
+        "quantity": 40,
+        "unit": "L",
+        "price": 26.35
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 80,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "PROBLAD",
+        "quantity": 1.9,
+        "unit": "L",
+        "price": 424
+      },
+      {
+        "product": "VERIMARK",
+        "quantity": 1.12,
+        "unit": "L",
+        "price": 4133.333333333333
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 12,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 56,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "DICARZOL",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 2000
+      },
+      {
+        "product": "KOBUS",
+        "quantity": 2.5,
+        "unit": "L",
+        "price": 5800
+      },
+      {
+        "product": "KALIGREEN",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 20,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 61.5,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 0.6,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "VYTEGRIS MULTI",
+        "quantity": 20,
+        "unit": "L",
+        "price": 152.4
+      },
+      {
+        "product": "ALIETTE FLASH",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 389
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 30,
+        "unit": "L",
+        "price": 788
+      }
+    ],
+    "AB3": [
+      {
+        "product": "MAP",
+        "quantity": 1106,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 3084,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 1280,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "UREE",
+        "quantity": 840,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 710,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 813,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 363,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 25,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 19,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 10,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 1,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 50,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 21.5,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 7.5,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 1.9,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 13.3,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 15,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 31,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 15,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "FEROXIM 6",
+        "quantity": 10,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 1.4,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 76,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "KELP BIO",
+        "quantity": 45,
+        "unit": "L",
+        "price": 104.17
+      },
+      {
+        "product": "HYDROMAG",
+        "quantity": 3,
+        "unit": "L",
+        "price": 97
+      },
+      {
+        "product": "SOLUBOR",
+        "quantity": 53,
+        "unit": "KG",
+        "price": 68.4
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 1,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 11,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "SAPHYR",
+        "quantity": 3.8,
+        "unit": "L",
+        "price": 420
+      },
+      {
+        "product": "KAISER",
+        "quantity": 0.29,
+        "unit": "L",
+        "price": 1150
+      },
+      {
+        "product": "LUNA SENSATION",
+        "quantity": 9.95,
+        "unit": "L",
+        "price": 4448.5
+      },
+      {
+        "product": "ISABION",
+        "quantity": 45,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "NOVA",
+        "quantity": 68,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "INACOP",
+        "quantity": 2.7,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 4.95,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 8,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "JOKER",
+        "quantity": 49.6,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "SUPER SIDY",
+        "quantity": 19.15,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 5,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 235,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "VITACROP MARINA",
+        "quantity": 30,
+        "unit": "L",
+        "price": 122.4
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 5,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "HUWA SAN",
+        "quantity": 90,
+        "unit": "KG",
+        "price": 65.28
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 25,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 2,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "ADICLEAN",
+        "quantity": 155,
+        "unit": "L",
+        "price": 67
+      },
+      {
+        "product": "ANTISCALANT ADIC RO30",
+        "quantity": 125,
+        "unit": "L",
+        "price": 48
+      },
+      {
+        "product": "ROMBI SAL",
+        "quantity": 52.5,
+        "unit": "L",
+        "price": 26.35
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 125,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 14.4,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 63,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "KALIGREEN",
+        "quantity": 1.3,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 7.5,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 68,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 0.25,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "AFRAW",
+        "quantity": 1.2,
+        "unit": "L",
+        "price": 550
+      },
+      {
+        "product": "VYTEGRIS MULTI",
+        "quantity": 12.5,
+        "unit": "L",
+        "price": 152.4
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 28,
+        "unit": "L",
+        "price": 788
+      }
+    ]
+  },
+  "NOVEMBRE": {
+    "date": "2025-11-25",
+    "name": "Novembre 2025",
+    "AB1": [
+      {
+        "product": "MAP",
+        "quantity": 2484,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 4401.5,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 736,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "ACIDE SULFURIQUE",
+        "quantity": 1540,
+        "unit": "KG",
+        "price": 5.5
+      },
+      {
+        "product": "ACIDE CHLORHYDRIQUE",
+        "quantity": 96,
+        "unit": "KG",
+        "price": 4.7
+      },
+      {
+        "product": "UREE",
+        "quantity": 697,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 669.2,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 2212.8,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 125,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 35,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 50,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "SULFATE DE MANGANAISE",
+        "quantity": 99.5,
+        "unit": "KG",
+        "price": 25
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 27,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 27,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 44.48,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "TIMOREX GOLD",
+        "quantity": 5.8,
+        "unit": "L",
+        "price": 815
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 241.2,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "TELDOR",
+        "quantity": 50,
+        "unit": "KG",
+        "price": 960
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 22.75,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 13.5,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 157.5,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 85,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 76.6,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 30,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "FEROXIM 6",
+        "quantity": 25,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 21.5,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 5,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "KELP BIO",
+        "quantity": 26,
+        "unit": "L",
+        "price": 104.17
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 42.3,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 69,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "PIRIMOR",
+        "quantity": 2,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "FUNJISIE",
+        "quantity": 0.5,
+        "unit": "L",
+        "price": 315
+      },
+      {
+        "product": "KRISANT",
+        "quantity": 2.2,
+        "unit": "L",
+        "price": 800
+      },
+      {
+        "product": "KAISER",
+        "quantity": 1,
+        "unit": "L",
+        "price": 1150
+      },
+      {
+        "product": "LUNA SENSATION",
+        "quantity": 1.25,
+        "unit": "L",
+        "price": 4448.5
+      },
+      {
+        "product": "ISABION",
+        "quantity": 22,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "BIOBAC",
+        "quantity": 5,
+        "unit": "KG",
+        "price": 450
+      },
+      {
+        "product": "NOVA",
+        "quantity": 60,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "OXYLOUKKOS",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 110
+      },
+      {
+        "product": "INACOP",
+        "quantity": 15,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 0.25,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 191.5,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "ASEP",
+        "quantity": 5,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "JOKER",
+        "quantity": 97.5,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PROCLAIM",
+        "quantity": 11.3,
+        "unit": "KG",
+        "price": 377.72
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 6.5,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "ACRAMITE",
+        "quantity": 0.6,
+        "unit": "L",
+        "price": 2000
+      },
+      {
+        "product": "BASSO",
+        "quantity": 260,
+        "unit": "L",
+        "price": 20
+      },
+      {
+        "product": "BIOENERGY",
+        "quantity": 60,
+        "unit": "L",
+        "price": 60
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 106.3,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "NITRATE DE POTASSE",
+        "quantity": 744.2,
+        "unit": "KG",
+        "price": 13
+      },
+      {
+        "product": "NITRATE DE MAGNESIUM",
+        "quantity": 127.5,
+        "unit": "KG",
+        "price": 7.15
+      },
+      {
+        "product": "AMMONITRATE",
+        "quantity": 258.3,
+        "unit": "KG",
+        "price": 4.2
+      },
+      {
+        "product": "ACIDE NITRIQUE",
+        "quantity": 432,
+        "unit": "KG",
+        "price": 7.5
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 100,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 26,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "SANYGENE FORTE",
+        "quantity": 23.5,
+        "unit": "L",
+        "price": 60
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 46,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 5,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "BASTION",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 100
+      },
+      {
+        "product": "SOUFRE",
+        "quantity": 475,
+        "unit": "KG",
+        "price": 9
+      },
+      {
+        "product": "QUEL B",
+        "quantity": 26,
+        "unit": "L",
+        "price": 50
+      },
+      {
+        "product": "PERMACLEAN",
+        "quantity": 371,
+        "unit": "L",
+        "price": 94.12
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 1007,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "MANVERT FOLIPLUS",
+        "quantity": 5.5,
+        "unit": "L",
+        "price": 180
+      },
+      {
+        "product": "MANGAZINC",
+        "quantity": 44,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "MKP",
+        "quantity": 675,
+        "unit": "KG",
+        "price": 19.25
+      },
+      {
+        "product": "ROMBI SAL",
+        "quantity": 70,
+        "unit": "L",
+        "price": 26.35
+      },
+      {
+        "product": "SIVANTO PRIME",
+        "quantity": 0.6,
+        "unit": "L",
+        "price": 932
+      },
+      {
+        "product": "BENEVIA",
+        "quantity": 156,
+        "unit": "L",
+        "price": 2200
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 141.5,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "SCELTA",
+        "quantity": 25,
+        "unit": "L",
+        "price": 1250
+      },
+      {
+        "product": "PROBLAD",
+        "quantity": 3,
+        "unit": "L",
+        "price": 424
+      },
+      {
+        "product": "VERIMARK",
+        "quantity": 2.78,
+        "unit": "L",
+        "price": 4133.333333333333
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 13.3,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 24.5,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "KOBUS",
+        "quantity": 0.85,
+        "unit": "L",
+        "price": 5800
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 3.65,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 45,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 9.5,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "VYTEGRIS MULTI",
+        "quantity": 1,
+        "unit": "L",
+        "price": 152.4
+      },
+      {
+        "product": "BIOMIX MANVERT",
+        "quantity": 3.3,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "ALIETTE FLASH",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 389
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 46,
+        "unit": "L",
+        "price": 788
+      },
+      {
+        "product": "ZM CORRECTOR",
+        "quantity": 40,
+        "unit": "KG",
+        "price": 76
+      },
+      {
+        "product": "CIDELY TOP",
+        "quantity": 6.55,
+        "unit": "L",
+        "price": 1050
+      }
+    ],
+    "AB2": [
+      {
+        "product": "MAP",
+        "quantity": 1404.5,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 2300,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 800,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "ACIDE CHLORHYDRIQUE",
+        "quantity": 840,
+        "unit": "KG",
+        "price": 4.7
+      },
+      {
+        "product": "UREE",
+        "quantity": 865.5,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 1141,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 1400,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 541,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 12.4,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 75,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 45,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 25.4,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 41,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "TIMOREX GOLD",
+        "quantity": 19.12,
+        "unit": "L",
+        "price": 815
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 30.95,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "TELDOR",
+        "quantity": 11.5,
+        "unit": "KG",
+        "price": 960
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 25,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 15.31,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 5.26,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 58,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 67.8,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 31,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 9.58,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 10,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "KELPAK",
+        "quantity": 2.25,
+        "unit": "L",
+        "price": 120
+      },
+      {
+        "product": "KELP BIO",
+        "quantity": 2.5,
+        "unit": "L",
+        "price": 104.17
+      },
+      {
+        "product": "SOLUBOR",
+        "quantity": 18.9,
+        "unit": "KG",
+        "price": 68.4
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 5.5,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 33.33,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "SAPHYR",
+        "quantity": 0.85,
+        "unit": "L",
+        "price": 420
+      },
+      {
+        "product": "KRISANT",
+        "quantity": 30.25,
+        "unit": "L",
+        "price": 800
+      },
+      {
+        "product": "LUNA SENSATION",
+        "quantity": 0.3,
+        "unit": "L",
+        "price": 4448.5
+      },
+      {
+        "product": "ISABION",
+        "quantity": 32,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "NOVA",
+        "quantity": 80,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "INACOP",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 1.72,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "PROXY",
+        "quantity": 7.4,
+        "unit": "L",
+        "price": 300
+      },
+      {
+        "product": "JOKER",
+        "quantity": 55.8,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 6,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 9,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 60,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 10,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "HUWA SAN",
+        "quantity": 51.9,
+        "unit": "KG",
+        "price": 65.28
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 15,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 32.5,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "PERMACLEAN",
+        "quantity": 75,
+        "unit": "L",
+        "price": 94.12
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 250,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "BENEVIA",
+        "quantity": 52.6,
+        "unit": "L",
+        "price": 2200
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 32,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "PROBLAD",
+        "quantity": 1.9,
+        "unit": "L",
+        "price": 424
+      },
+      {
+        "product": "VERIMARK",
+        "quantity": 1.12,
+        "unit": "L",
+        "price": 4133.333333333333
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 12,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 56,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "DICARZOL",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 2000
+      },
+      {
+        "product": "KOBUS",
+        "quantity": 2.5,
+        "unit": "L",
+        "price": 5800
+      },
+      {
+        "product": "KALIGREEN",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 20,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 61.5,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 0.6,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "ALIETTE FLASH",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 389
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 30,
+        "unit": "L",
+        "price": 788
+      },
+      {
+        "product": "RAIZANTE",
+        "quantity": 8,
+        "unit": "L",
+        "price": 81.6
+      }
+    ],
+    "AB3": [
+      {
+        "product": "MAP",
+        "quantity": 2065,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 2260,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 1312,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "UREE",
+        "quantity": 1387,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 833,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 1933,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 861,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 21,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 90,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 10,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 32,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 50,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 7.5,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "TELDOR",
+        "quantity": 10.5,
+        "unit": "KG",
+        "price": 960
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 16.5,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 15.3,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 15,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 15,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 72.5,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 15,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 1.4,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 12,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "HYDROMAG",
+        "quantity": 3,
+        "unit": "L",
+        "price": 97
+      },
+      {
+        "product": "SOLUBOR",
+        "quantity": 51,
+        "unit": "KG",
+        "price": 68.4
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 1,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 41,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "SAPHYR",
+        "quantity": 3.8,
+        "unit": "L",
+        "price": 420
+      },
+      {
+        "product": "KAISER",
+        "quantity": 0.29,
+        "unit": "L",
+        "price": 1150
+      },
+      {
+        "product": "ISABION",
+        "quantity": 36,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "NOVA",
+        "quantity": 47,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "INACOP",
+        "quantity": 2.7,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 4.95,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 8,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "JOKER",
+        "quantity": 49.6,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "SUPER SIDY",
+        "quantity": 19.15,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 5,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 53,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 83,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 50,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "HUWA SAN",
+        "quantity": 85,
+        "unit": "KG",
+        "price": 65.28
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 25,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 2,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "ADICLEAN",
+        "quantity": 155,
+        "unit": "L",
+        "price": 67
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 742,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "BENEVIA",
+        "quantity": 13,
+        "unit": "L",
+        "price": 2200
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 90,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 14.4,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 63,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "KALIGREEN",
+        "quantity": 1.3,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 7.5,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 67.04,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 0.25,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "AFRAW",
+        "quantity": 1.2,
+        "unit": "L",
+        "price": 550
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 28,
+        "unit": "L",
+        "price": 788
+      }
+    ]
+  },
+  "DECEMBRE": {
+    "date": "2025-12-25",
+    "name": "Décembre 2025",
+    "AB1": [
+      {
+        "product": "MAP",
+        "quantity": 1998.7,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 3222.3,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 2944,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "ACIDE SULFURIQUE",
+        "quantity": 980,
+        "unit": "KG",
+        "price": 5.5
+      },
+      {
+        "product": "ACIDE CHLORHYDRIQUE",
+        "quantity": 72,
+        "unit": "KG",
+        "price": 4.7
+      },
+      {
+        "product": "UREE",
+        "quantity": 150,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "NUTREL C",
+        "quantity": 379,
+        "unit": "KG",
+        "price": 184
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 723.3,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 2742,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 197.2,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 21,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 50,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "SULFATE DE MANGANAISE",
+        "quantity": 99.5,
+        "unit": "KG",
+        "price": 25
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 23.76,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 5,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 42.879999999999995,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "TIMOREX GOLD",
+        "quantity": 5.8,
+        "unit": "L",
+        "price": 815
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 45.7,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "TELDOR",
+        "quantity": 29,
+        "unit": "KG",
+        "price": 960
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 39.25,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 13.5,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 22.5,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PERFECTOSE",
+        "quantity": 8.5,
+        "unit": "L",
+        "price": 76
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 63.2,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 27,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "FEROXIM 6",
+        "quantity": 185,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 21.5,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 5,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "KELPAK",
+        "quantity": 46.8,
+        "unit": "L",
+        "price": 120
+      },
+      {
+        "product": "KELP BIO",
+        "quantity": 9.6,
+        "unit": "L",
+        "price": 104.17
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 43.6,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 142,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "FUNJISIE",
+        "quantity": 1,
+        "unit": "L",
+        "price": 315
+      },
+      {
+        "product": "KRISANT",
+        "quantity": 19.86,
+        "unit": "L",
+        "price": 800
+      },
+      {
+        "product": "KAISER",
+        "quantity": 3.75,
+        "unit": "L",
+        "price": 1150
+      },
+      {
+        "product": "LUNA SENSATION",
+        "quantity": 1.25,
+        "unit": "L",
+        "price": 4448.5
+      },
+      {
+        "product": "NOVA",
+        "quantity": 60,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "OXYLOUKKOS",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 110
+      },
+      {
+        "product": "INACOP",
+        "quantity": 15,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 0.25,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 67,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "JOKER",
+        "quantity": 97.5,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "PROCLAIM",
+        "quantity": 11.75,
+        "unit": "KG",
+        "price": 377.72
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 7,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "ACRAMITE",
+        "quantity": 0.6,
+        "unit": "L",
+        "price": 2000
+      },
+      {
+        "product": "BASSO",
+        "quantity": 40,
+        "unit": "L",
+        "price": 20
+      },
+      {
+        "product": "BIOENERGY",
+        "quantity": 35,
+        "unit": "L",
+        "price": 60
+      },
+      {
+        "product": "NITRATE DE POTASSE",
+        "quantity": 145.7,
+        "unit": "KG",
+        "price": 13
+      },
+      {
+        "product": "NITRATE DE MAGNESIUM",
+        "quantity": 127.5,
+        "unit": "KG",
+        "price": 7.15
+      },
+      {
+        "product": "AMMONITRATE",
+        "quantity": 258.3,
+        "unit": "KG",
+        "price": 4.2
+      },
+      {
+        "product": "ACIDE NITRIQUE",
+        "quantity": 515,
+        "unit": "KG",
+        "price": 7.5
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 50,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 78.5,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 27,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 5,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "BASTION",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 100
+      },
+      {
+        "product": "SOUFRE",
+        "quantity": 111,
+        "unit": "KG",
+        "price": 9
+      },
+      {
+        "product": "QUEL B",
+        "quantity": 16,
+        "unit": "L",
+        "price": 50
+      },
+      {
+        "product": "PERMACLEAN",
+        "quantity": 371,
+        "unit": "L",
+        "price": 94.12
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 927.5,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "MANVERT FOLIPLUS",
+        "quantity": 5.5,
+        "unit": "L",
+        "price": 180
+      },
+      {
+        "product": "MANGAZINC",
+        "quantity": 44,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "MKP",
+        "quantity": 675,
+        "unit": "KG",
+        "price": 19.25
+      },
+      {
+        "product": "ROMBI SAL",
+        "quantity": 83,
+        "unit": "L",
+        "price": 26.35
+      },
+      {
+        "product": "SIVANTO PRIME",
+        "quantity": 0.6,
+        "unit": "L",
+        "price": 932
+      },
+      {
+        "product": "BENEVIA",
+        "quantity": 56,
+        "unit": "L",
+        "price": 2200
+      },
+      {
+        "product": "FERRILENE",
+        "quantity": 136.5,
+        "unit": "KG",
+        "price": 102
+      },
+      {
+        "product": "SCELTA",
+        "quantity": 25,
+        "unit": "L",
+        "price": 1250
+      },
+      {
+        "product": "PROBLAD",
+        "quantity": 3,
+        "unit": "L",
+        "price": 424
+      },
+      {
+        "product": "VERIMARK",
+        "quantity": 2.78,
+        "unit": "L",
+        "price": 4133.333333333333
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 13.35,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 24.5,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "KOBUS",
+        "quantity": 0.85,
+        "unit": "L",
+        "price": 5800
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 3.65,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 45,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "HYDROSOL ( NOVATEC 08-10-34)",
+        "quantity": 25,
+        "unit": "KG",
+        "price": 19.8
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 9.2,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "VYTEGRIS MULTI",
+        "quantity": 1,
+        "unit": "L",
+        "price": 152.4
+      },
+      {
+        "product": "ALIETTE FLASH",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 389
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 47,
+        "unit": "L",
+        "price": 788
+      },
+      {
+        "product": "ZM CORRECTOR",
+        "quantity": 60,
+        "unit": "KG",
+        "price": 76
+      },
+      {
+        "product": "CIDELY TOP",
+        "quantity": 6.55,
+        "unit": "L",
+        "price": 1050
+      }
+    ],
+    "AB2": [
+      {
+        "product": "MAP",
+        "quantity": 1025,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 2402,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 864,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "ACIDE CHLORHYDRIQUE",
+        "quantity": 768,
+        "unit": "KG",
+        "price": 4.7
+      },
+      {
+        "product": "UREE",
+        "quantity": 307.5,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "NUTREL C",
+        "quantity": 340,
+        "unit": "KG",
+        "price": 184
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 437.5,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 1050,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 336,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 7.3,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 75,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 45,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "OIKOS",
+        "quantity": 1.4,
+        "unit": "L",
+        "price": 2500
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 41,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "TIMOREX GOLD",
+        "quantity": 19.12,
+        "unit": "L",
+        "price": 815
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 86.25,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "TELDOR",
+        "quantity": 11.5,
+        "unit": "KG",
+        "price": 960
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 7.5,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 15.31,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 20.8,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 37.3,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 31,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "FEROXIM 6",
+        "quantity": 188,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 9.58,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 10,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "SOLUBOR",
+        "quantity": 13,
+        "unit": "KG",
+        "price": 68.4
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 5.5,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 53.33,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "SAPHYR",
+        "quantity": 0.85,
+        "unit": "L",
+        "price": 420
+      },
+      {
+        "product": "LUNA SENSATION",
+        "quantity": 0.3,
+        "unit": "L",
+        "price": 4448.5
+      },
+      {
+        "product": "ISABION",
+        "quantity": 10,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "NOVA",
+        "quantity": 60,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "INACOP",
+        "quantity": 22,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 1.72,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 50,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "PROXY",
+        "quantity": 7.4,
+        "unit": "L",
+        "price": 300
+      },
+      {
+        "product": "JOKER",
+        "quantity": 55.8,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 6,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 12,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 52,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "HUWA SAN",
+        "quantity": 40.5,
+        "unit": "KG",
+        "price": 65.28
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 13.8,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 32.5,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "PERMACLEAN",
+        "quantity": 75,
+        "unit": "L",
+        "price": 94.12
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 175,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "BENEVIA",
+        "quantity": 94.8,
+        "unit": "L",
+        "price": 2200
+      },
+      {
+        "product": "PROBLAD",
+        "quantity": 1.9,
+        "unit": "L",
+        "price": 424
+      },
+      {
+        "product": "VERIMARK",
+        "quantity": 1.12,
+        "unit": "L",
+        "price": 4133.333333333333
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 12,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 56,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "DICARZOL",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 2000
+      },
+      {
+        "product": "KOBUS",
+        "quantity": 2.5,
+        "unit": "L",
+        "price": 5800
+      },
+      {
+        "product": "KALIGREEN",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 20,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 60.7,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 0.6,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "ALIETTE FLASH",
+        "quantity": 1,
+        "unit": "KG",
+        "price": 389
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 30,
+        "unit": "L",
+        "price": 788
+      },
+      {
+        "product": "RAIZANTE",
+        "quantity": 6,
+        "unit": "L",
+        "price": 81.6
+      }
+    ],
+    "AB3": [
+      {
+        "product": "MAP",
+        "quantity": 1964,
+        "unit": "KG",
+        "price": 11.5
+      },
+      {
+        "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+        "quantity": 1435,
+        "unit": "KG",
+        "price": 7
+      },
+      {
+        "product": "ACIDE PHOSPHORIQUE",
+        "quantity": 768,
+        "unit": "KG",
+        "price": 14
+      },
+      {
+        "product": "UREE",
+        "quantity": 1024,
+        "unit": "KG",
+        "price": 6
+      },
+      {
+        "product": "NUTREL C",
+        "quantity": 377,
+        "unit": "KG",
+        "price": 184
+      },
+      {
+        "product": "SULFATE DE POTASSE",
+        "quantity": 477,
+        "unit": "KG",
+        "price": 17.4
+      },
+      {
+        "product": "SULFATE MAGNESUIM",
+        "quantity": 1530,
+        "unit": "KG",
+        "price": 6.3
+      },
+      {
+        "product": "NITRATE DE CALCUIM",
+        "quantity": 420,
+        "unit": "KG",
+        "price": 6.5
+      },
+      {
+        "product": "SULFATE DE ZINC",
+        "quantity": 14,
+        "unit": "KG",
+        "price": 14.5
+      },
+      {
+        "product": "SULFATE DE CUIVRE",
+        "quantity": 36,
+        "unit": "KG",
+        "price": 55
+      },
+      {
+        "product": "BORTRAC",
+        "quantity": 10,
+        "unit": "L",
+        "price": 68
+      },
+      {
+        "product": "MOVENTO",
+        "quantity": 50,
+        "unit": "L",
+        "price": 1000
+      },
+      {
+        "product": "PIXEL",
+        "quantity": 93,
+        "unit": "L",
+        "price": 190
+      },
+      {
+        "product": "TELDOR",
+        "quantity": 10.5,
+        "unit": "KG",
+        "price": 960
+      },
+      {
+        "product": "SWITCH",
+        "quantity": 7.5,
+        "unit": "KG",
+        "price": 1850
+      },
+      {
+        "product": "STROBY",
+        "quantity": 15.3,
+        "unit": "L",
+        "price": 950
+      },
+      {
+        "product": "SIGNUM",
+        "quantity": 23.1,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "ALGOBAZ",
+        "quantity": 34,
+        "unit": "KG",
+        "price": 250
+      },
+      {
+        "product": "EFFICIENT",
+        "quantity": 15,
+        "unit": "L",
+        "price": 80
+      },
+      {
+        "product": "FEROXIM 6",
+        "quantity": 186,
+        "unit": "L",
+        "price": 121.2
+      },
+      {
+        "product": "GREENSTIM",
+        "quantity": 1.4,
+        "unit": "KG",
+        "price": 324
+      },
+      {
+        "product": "BLACKJAK",
+        "quantity": 12,
+        "unit": "L",
+        "price": 130
+      },
+      {
+        "product": "HYDROMAG",
+        "quantity": 3,
+        "unit": "L",
+        "price": 97
+      },
+      {
+        "product": "SOLUBOR",
+        "quantity": 48,
+        "unit": "KG",
+        "price": 68.4
+      },
+      {
+        "product": "RADIANT",
+        "quantity": 1,
+        "unit": "L",
+        "price": 3496
+      },
+      {
+        "product": "EXIREL",
+        "quantity": 58,
+        "unit": "L",
+        "price": 1900
+      },
+      {
+        "product": "SAPHYR",
+        "quantity": 3.8,
+        "unit": "L",
+        "price": 420
+      },
+      {
+        "product": "KAISER",
+        "quantity": 0.29,
+        "unit": "L",
+        "price": 1150
+      },
+      {
+        "product": "ISABION",
+        "quantity": 46,
+        "unit": "L",
+        "price": 100
+      },
+      {
+        "product": "NOVA",
+        "quantity": 67,
+        "unit": "L",
+        "price": 79.2
+      },
+      {
+        "product": "INACOP",
+        "quantity": 2.7,
+        "unit": "KG",
+        "price": 150
+      },
+      {
+        "product": "ACTARA",
+        "quantity": 4.95,
+        "unit": "KG",
+        "price": 657
+      },
+      {
+        "product": "TOP RACINE",
+        "quantity": 75.5,
+        "unit": "L",
+        "price": 160
+      },
+      {
+        "product": "JOKER",
+        "quantity": 49.6,
+        "unit": "L",
+        "price": 850
+      },
+      {
+        "product": "SUPER SIDY",
+        "quantity": 19.15,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "BIOFORGE",
+        "quantity": 5,
+        "unit": "L",
+        "price": 600
+      },
+      {
+        "product": "MICROMIX",
+        "quantity": 20,
+        "unit": "L",
+        "price": 75
+      },
+      {
+        "product": "FOLIASTIM PURE",
+        "quantity": 18,
+        "unit": "L",
+        "price": 129.6
+      },
+      {
+        "product": "FOLICIST",
+        "quantity": 67,
+        "unit": "L",
+        "price": 235.6
+      },
+      {
+        "product": "HUWA SAN",
+        "quantity": 77,
+        "unit": "KG",
+        "price": 65.28
+      },
+      {
+        "product": "VITAL CU",
+        "quantity": 22,
+        "unit": "L",
+        "price": 170
+      },
+      {
+        "product": "PITCA CALCIUM",
+        "quantity": 2,
+        "unit": "L",
+        "price": 44
+      },
+      {
+        "product": "ADICLEAN",
+        "quantity": 155,
+        "unit": "L",
+        "price": 67
+      },
+      {
+        "product": "ANTISCALANT PERMATREAT",
+        "quantity": 583,
+        "unit": "L",
+        "price": 110
+      },
+      {
+        "product": "BENEVIA",
+        "quantity": 56,
+        "unit": "L",
+        "price": 2200
+      },
+      {
+        "product": "TALENDO",
+        "quantity": 14.4,
+        "unit": "L",
+        "price": 1312
+      },
+      {
+        "product": "CODACIDE",
+        "quantity": 63,
+        "unit": "L",
+        "price": 82.6
+      },
+      {
+        "product": "KALIGREEN",
+        "quantity": 1.3,
+        "unit": "KG",
+        "price": 225
+      },
+      {
+        "product": "MERJANE",
+        "quantity": 7.5,
+        "unit": "KG",
+        "price": 120
+      },
+      {
+        "product": "TIOSOL",
+        "quantity": 63.5,
+        "unit": "KG",
+        "price": 60
+      },
+      {
+        "product": "ALFABET",
+        "quantity": 0.25,
+        "unit": "KG",
+        "price": 500
+      },
+      {
+        "product": "AFRAW",
+        "quantity": 1.2,
+        "unit": "L",
+        "price": 550
+      },
+      {
+        "product": "MAVRIK",
+        "quantity": 28,
+        "unit": "L",
+        "price": 788
+      }
+    ]
+  }
+}
