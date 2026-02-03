@@ -80,17 +80,23 @@ const Costs = () => {
     return 'Engrais Poudre Sol'; // default
   };
 
-  // Liste des pesticides connus (override localStorage)
-  const KNOWN_PESTICIDES = ['OIKOS', 'SWITCH', 'TIOSOL', 'ACRAMITE', 'ACTARA', 'AFRAW', 'ALFABET', 
-    'ALIETTE FLASH', 'BENEVIA', 'CIDELY TOP', 'DICARZOL', 'EXIREL', 'JOKER', 'KAISER', 'KOBUS', 
-    'KRISANT', 'LIMOCIDE', 'LUNA SENSATION', 'MAVRIK', 'MILBEKNOCK', 'MOLATHION', 'MOVENTO', 
-    'ORTIVA', 'PIRIMOR', 'PIXEL', 'PROBLAD', 'PROCLAIM', 'RADIANT', 'SAPHYR', 'SCELTA', 
-    'SIGNUM', 'SIVANTO PRIME', 'STROBY', 'TALENDO', 'TELDOR', 'TIMOREX GOLD', 'VERIMARK'];
+  // Liste des pesticides connus par sous-catégorie (override localStorage)
+  const KNOWN_PESTICIDES = {
+    'FONGICIDES': ['AFRAW', 'ALFABET', 'ALIETTE FLASH', 'CIDELY TOP', 'KAISER', 'KALIGREEN', 
+      'LUNA SENSATION', 'ORTIVA', 'SAPHYR', 'SIGNUM', 'STROBY', 'SWITCH', 'TALENDO', 
+      'TELDOR', 'TIMOREX GOLD', 'TIOSOL'],
+    'INSECTICIDES': ['ACTARA', 'BENEVIA', 'DICARZOL', 'EXIREL', 'JOKER', 'KOBUS', 'KRISANT', 
+      'LIMOCIDE', 'MALATHION', 'MAVRIK', 'MILBEKNOCK', 'MOLATHION', 'MOVENTO', 'OIKOS', 
+      'PIRIMOR', 'PIXEL', 'PROBLAD', 'PROCLAIM', 'RADIANT', 'SCELTA', 'SIVANTO PRIME', 'VERIMARK'],
+    'ACARICIDES': ['ACRAMITE'],
+    'ADJUVANT': ['CODACIDE OIL']
+  };
+  const ALL_PESTICIDES = Object.values(KNOWN_PESTICIDES).flat();
 
   // Smart category: TOUJOURS vérifier la catégorie produit en priorité
   const getSmartCategory = (m) => {
     const productName = (m.product || '').toUpperCase();
-    if (KNOWN_PESTICIDES.some(p => productName.includes(p))) return 'Pesticides';
+    if (ALL_PESTICIDES.some(p => productName.includes(p))) return 'Pesticides';
     const product = products.find(p => p.name === m.product || p.name?.toUpperCase() === productName);
     const prodCat = product?.category || '';
     if (prodCat === 'PHYTOSANITAIRES') return 'Pesticides';
@@ -126,9 +132,16 @@ const Costs = () => {
       const pName = m.product;
       if (!productMap[pName]) {
         const product = products.find(p => p.name === pName);
+        // Déterminer la sous-catégorie pesticide
+        let subCat = '';
+        const upperName = (pName || '').toUpperCase();
+        for (const [cat, prods] of Object.entries(KNOWN_PESTICIDES)) {
+          if (prods.some(p => upperName.includes(p))) { subCat = cat; break; }
+        }
         productMap[pName] = {
           nom: pName,
           nature: product?.category || 'ENGRAIS',
+          subCategory: subCat,
           prix: m.price || product?.price || 0,
           qte: [0, 0, 0, 0, 0] // Sept, Oct, Nov, Déc, Jan
         };
@@ -388,24 +401,86 @@ const Costs = () => {
                 </tr>
               </thead>
               <tbody>
-                {productData.map((p, idx) => (
-                  <tr key={idx} className="border-b hover:bg-gray-50">
-                    <td className="p-3 font-medium text-gray-800">{p.nom}</td>
-                    <td className="p-2 text-center text-gray-600">{fmt(p.prix)}</td>
-                    {seasonMonths.map(m => (
-                      <React.Fragment key={m.idx}>
-                        <td className="p-2 text-center border-l">
-                          {p.qte[m.idx] > 0 ? fmt(p.qte[m.idx]) : <span className="text-gray-300">-</span>}
-                        </td>
-                        <td className="p-2 text-center text-orange-500">
-                          {p.qte[m.idx] > 0 ? fmtMoney(p.qte[m.idx] * p.prix) : <span className="text-gray-300">-</span>}
-                        </td>
-                      </React.Fragment>
-                    ))}
-                    <td className="p-2 text-center font-bold text-gray-700 border-l bg-orange-50">{fmt(p.totalQty)}</td>
-                    <td className="p-2 text-center font-bold text-orange-600 bg-orange-50">{fmtMoney(p.totalCost)}</td>
-                  </tr>
-                ))}
+                {selectedCategory === 'Pesticides' ? (
+                  // Grouper par sous-catégorie pour Pesticides
+                  (() => {
+                    const subCatIcons = { 'FONGICIDES': '🍄', 'INSECTICIDES': '🦟', 'ACARICIDES': '🕷️', 'ADJUVANT': '💧', '': '🧪' };
+                    const subCatNames = { 'FONGICIDES': 'FONGICIDES', 'INSECTICIDES': 'INSECTICIDES', 'ACARICIDES': 'ACARICIDES', 'ADJUVANT': 'ADJUVANT', '': 'AUTRES PESTICIDES' };
+                    const groups = {};
+                    productData.forEach(p => {
+                      const sc = p.subCategory || '';
+                      if (!groups[sc]) groups[sc] = [];
+                      groups[sc].push(p);
+                    });
+                    const order = ['FONGICIDES', 'INSECTICIDES', 'ACARICIDES', 'ADJUVANT', ''];
+                    return order.filter(sc => groups[sc]?.length > 0).map(sc => {
+                      const prods = groups[sc];
+                      const scQty = prods.reduce((s, p) => s + p.totalQty, 0);
+                      const scCost = prods.reduce((s, p) => s + p.totalCost, 0);
+                      return (
+                        <React.Fragment key={sc}>
+                          <tr className="bg-red-50 border-b-2 border-red-200">
+                            <td colSpan={2} className="p-3 font-bold text-red-700">
+                              <span className="text-lg mr-2">{subCatIcons[sc]}</span>
+                              {subCatNames[sc]}
+                              <span className="ml-2 text-xs font-normal text-red-400">({prods.length} produits)</span>
+                            </td>
+                            {seasonMonths.map(m => {
+                              const mQty = prods.reduce((s, p) => s + (p.qte[m.idx] || 0), 0);
+                              const mCost = prods.reduce((s, p) => s + (p.qte[m.idx] || 0) * p.prix, 0);
+                              return (
+                                <React.Fragment key={m.idx}>
+                                  <td className="p-2 text-center font-bold text-red-600 border-l">{mQty > 0 ? fmt(mQty) : '-'}</td>
+                                  <td className="p-2 text-center font-bold text-red-600">{mCost > 0 ? fmtMoney(mCost) : '-'}</td>
+                                </React.Fragment>
+                              );
+                            })}
+                            <td className="p-2 text-center font-bold text-red-700 border-l bg-red-50">{fmt(scQty)}</td>
+                            <td className="p-2 text-center font-bold text-red-700 bg-red-50">{fmtMoney(scCost)}</td>
+                          </tr>
+                          {prods.map((p, idx) => (
+                            <tr key={idx} className="border-b hover:bg-gray-50">
+                              <td className="p-3 font-medium text-gray-800 pl-6">{p.nom}</td>
+                              <td className="p-2 text-center text-gray-600">{fmt(p.prix)}</td>
+                              {seasonMonths.map(m => (
+                                <React.Fragment key={m.idx}>
+                                  <td className="p-2 text-center border-l">
+                                    {p.qte[m.idx] > 0 ? fmt(p.qte[m.idx]) : <span className="text-gray-300">-</span>}
+                                  </td>
+                                  <td className="p-2 text-center text-orange-500">
+                                    {p.qte[m.idx] > 0 ? fmtMoney(p.qte[m.idx] * p.prix) : <span className="text-gray-300">-</span>}
+                                  </td>
+                                </React.Fragment>
+                              ))}
+                              <td className="p-2 text-center font-bold text-gray-700 border-l bg-orange-50">{fmt(p.totalQty)}</td>
+                              <td className="p-2 text-center font-bold text-orange-600 bg-orange-50">{fmtMoney(p.totalCost)}</td>
+                            </tr>
+                          ))}
+                        </React.Fragment>
+                      );
+                    });
+                  })()
+                ) : (
+                  // Affichage normal pour les autres catégories
+                  productData.map((p, idx) => (
+                    <tr key={idx} className="border-b hover:bg-gray-50">
+                      <td className="p-3 font-medium text-gray-800">{p.nom}</td>
+                      <td className="p-2 text-center text-gray-600">{fmt(p.prix)}</td>
+                      {seasonMonths.map(m => (
+                        <React.Fragment key={m.idx}>
+                          <td className="p-2 text-center border-l">
+                            {p.qte[m.idx] > 0 ? fmt(p.qte[m.idx]) : <span className="text-gray-300">-</span>}
+                          </td>
+                          <td className="p-2 text-center text-orange-500">
+                            {p.qte[m.idx] > 0 ? fmtMoney(p.qte[m.idx] * p.prix) : <span className="text-gray-300">-</span>}
+                          </td>
+                        </React.Fragment>
+                      ))}
+                      <td className="p-2 text-center font-bold text-gray-700 border-l bg-orange-50">{fmt(p.totalQty)}</td>
+                      <td className="p-2 text-center font-bold text-orange-600 bg-orange-50">{fmtMoney(p.totalCost)}</td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>
