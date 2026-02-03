@@ -850,6 +850,10 @@ const Movements = () => {
                     if (!farmCultures.includes(form.culture)) {
                       newForm.culture = farmCultures[0];
                     }
+                    // AGB3 Myrtille: pas de Sol → basculer vers Hydro
+                    if (v === 'AGRO BERRY 3' && (newForm.culture === 'Myrtille') && newForm.destination === 'Sol') {
+                      newForm.destination = 'Hydro';
+                    }
                     setForm(newForm);
                   }}
                   options={FARMS.map(f => ({ value: f.id, label: f.name }))} />
@@ -912,15 +916,22 @@ const Movements = () => {
                 </div>
               )}
               
-              {modalType === 'consumption' && (
-                <Select label="Destination" value={form.destination} onChange={(v) => setForm({ ...form, destination: v })}
-                  options={[
-                    { value: 'Sol', label: '🌍 Sol' },
-                    ...(form.culture !== 'Fraise' ? [{ value: 'Hydro', label: '💧 Hydroponic' }] : []),
-                    { value: 'Foliaire', label: '🍃 Foliaire' },
-                    { value: 'Pesticide', label: '🧪 Pesticide' }
-                  ]} />
-              )}
+              {modalType === 'consumption' && (() => {
+                const destOptions = [
+                  { value: 'Sol', label: '🌍 Sol' },
+                  { value: 'Hydro', label: '💧 Hydroponic' },
+                  { value: 'Foliaire', label: '🍃 Foliaire' },
+                  { value: 'Pesticide', label: '🧪 Pesticide' }
+                ].filter(d => {
+                  if (d.value === 'Hydro' && form.culture === 'Fraise') return false;
+                  if (d.value === 'Sol' && form.farm === 'AGRO BERRY 3' && form.culture === 'Myrtille') return false;
+                  return true;
+                });
+                return (
+                  <Select label="Destination" value={form.destination} onChange={(v) => setForm({ ...form, destination: v })}
+                    options={destOptions} />
+                );
+              })()}
               
               <div className="flex gap-3 pt-2">
                 <Button variant="secondary" onClick={() => {
