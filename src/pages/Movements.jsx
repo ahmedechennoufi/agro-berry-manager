@@ -844,7 +844,14 @@ const Movements = () => {
               )}
               
               {modalType !== 'entry' && (
-                <Select label="Ferme destination" value={form.farm} onChange={(v) => setForm({ ...form, farm: v })}
+                <Select label="Ferme destination" value={form.farm} onChange={(v) => {
+                    const newForm = { ...form, farm: v };
+                    const farmCultures = FARM_CULTURES[v] || ['Myrtille'];
+                    if (!farmCultures.includes(form.culture)) {
+                      newForm.culture = farmCultures[0];
+                    }
+                    setForm(newForm);
+                  }}
                   options={FARMS.map(f => ({ value: f.id, label: f.name }))} />
               )}
               
@@ -878,7 +885,7 @@ const Movements = () => {
                     }
                     setForm(newForm);
                   }}
-                  options={CULTURES.map(c => ({ value: c.id, label: `${c.icon} ${c.name}` }))} />
+                  options={CULTURES.filter(c => (FARM_CULTURES[form.farm] || ['Myrtille']).includes(c.id)).map(c => ({ value: c.id, label: `${c.icon} ${c.name}` }))} />
               )}
               
               {/* Stock display for consumption */}
