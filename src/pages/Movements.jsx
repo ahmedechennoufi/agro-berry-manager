@@ -871,7 +871,13 @@ const Movements = () => {
               )}
               
               {modalType === 'consumption' && (
-                <Select label="Culture" value={form.culture} onChange={(v) => setForm({ ...form, culture: v })}
+                <Select label="Culture" value={form.culture} onChange={(v) => {
+                    const newForm = { ...form, culture: v };
+                    if (v === 'Fraise' && form.destination === 'Hydro') {
+                      newForm.destination = 'Sol';
+                    }
+                    setForm(newForm);
+                  }}
                   options={CULTURES.map(c => ({ value: c.id, label: `${c.icon} ${c.name}` }))} />
               )}
               
@@ -903,7 +909,7 @@ const Movements = () => {
                 <Select label="Destination" value={form.destination} onChange={(v) => setForm({ ...form, destination: v })}
                   options={[
                     { value: 'Sol', label: '🌍 Sol' },
-                    { value: 'Hydro', label: '💧 Hydroponic' },
+                    ...(form.culture !== 'Fraise' ? [{ value: 'Hydro', label: '💧 Hydroponic' }] : []),
                     { value: 'Foliaire', label: '🍃 Foliaire' },
                     { value: 'Pesticide', label: '🧪 Pesticide' }
                   ]} />
