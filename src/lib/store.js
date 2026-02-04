@@ -18,7 +18,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 53; // v5.3
+const CURRENT_DATA_VERSION = 54; // v5.3.1 - fix double AGB2
 
 // === INITIALISATION ===
 export const initializeData = () => {
@@ -44,13 +44,17 @@ export const initializeData = () => {
   if (savedVersion < CURRENT_DATA_VERSION) {
     console.log(`🔄 Mise à jour données v${savedVersion} → v${CURRENT_DATA_VERSION}...`);
     
+    // IDs that were in old versions but replaced in new version (must be removed)
+    const obsoleteIdRanges = [[9000, 9041]]; // Old AGB2 aggregated data
+    const isObsolete = (id) => obsoleteIdRanges.some(([min, max]) => id >= min && id <= max);
+    
     // Merge movements: keep user-added ones + replace initialData ones
     const existingMovements = JSON.parse(localStorage.getItem(STORAGE_KEYS.movements) || '[]');
     const newMovements = initialData.movements || [];
     const newIds = new Set(newMovements.map(m => m.id));
     
-    // Keep movements added manually by user (IDs not in initialData)
-    const userMovements = existingMovements.filter(m => !newIds.has(m.id));
+    // Keep movements added manually by user (IDs not in initialData AND not obsolete)
+    const userMovements = existingMovements.filter(m => !newIds.has(m.id) && !isObsolete(m.id));
     const mergedMovements = [...newMovements, ...userMovements];
     localStorage.setItem(STORAGE_KEYS.movements, JSON.stringify(mergedMovements));
     
