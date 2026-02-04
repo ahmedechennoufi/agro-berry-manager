@@ -10,12 +10,11 @@ const SEASON_MONTHS = [
   { id: 'SEPTEMBRE', name: 'Septembre 2025', date: '2025-09-25' },
   { id: 'OCTOBRE', name: 'Octobre 2025', date: '2025-10-25' },
   { id: 'NOVEMBRE', name: 'Novembre 2025', date: '2025-11-25' },
-  { id: 'DECEMBRE', name: 'Déc 2025 (25)', date: '2025-12-25' },
-  { id: 'DECEMBRE_2025', name: 'Déc 2025 (31)', date: '2025-12-31' },
-  { id: 'JANVIER', name: 'Janvier 2026 (31)', date: '2026-01-31' },
-  { id: 'FEVRIER', name: 'Février 2026', date: '2026-02-28' },
-  { id: 'MARS', name: 'Mars 2026', date: '2026-03-31' },
-  { id: 'AVRIL', name: 'Avril 2026', date: '2026-04-30' }
+  { id: 'DECEMBRE', name: 'Décembre 2025', date: '2025-12-25' },
+  { id: 'JANVIER', name: 'Janvier 2026', date: '2026-01-25' },
+  { id: 'FEVRIER', name: 'Février 2026', date: '2026-02-25' },
+  { id: 'MARS', name: 'Mars 2026', date: '2026-03-25' },
+  { id: 'AVRIL', name: 'Avril 2026', date: '2026-04-25' }
 ];
 
 const Inventory = () => {

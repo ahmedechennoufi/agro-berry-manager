@@ -11,13 +11,12 @@ const ConsoFermes = () => {
   const [search, setSearch] = useState('');
   const [filterCategory, setFilterCategory] = useState('ALL');
 
-  // Months for the dropdown (campagne + calendaire)
+  // Months for the dropdown
   const CONSO_MONTHS = [
     { id: 'SEPTEMBRE', name: 'Septembre 2025' },
     { id: 'OCTOBRE', name: 'Octobre 2025' },
     { id: 'NOVEMBRE', name: 'Novembre 2025' },
-    { id: 'DECEMBRE', name: 'Déc 2025 (campagne)' },
-    { id: 'DECEMBRE_2025', name: 'Déc 2025 (26→31)' },
+    { id: 'DECEMBRE', name: 'Décembre 2025' },
     { id: 'JANVIER', name: 'Janvier 2026' },
     { id: 'FEVRIER', name: 'Février 2026' },
     { id: 'MARS', name: 'Mars 2026' },
@@ -29,21 +28,22 @@ const ConsoFermes = () => {
   ];
 
   // Get period dates based on selected month
+  // Coût = 1er au dernier jour du mois
+  // Stock initial = inventaire du 25 du mois précédent
   const periodDates = useMemo(() => {
     const monthMap = {
-      'SEPTEMBRE': { start: '2025-08-26', end: '2025-09-25', prevInv: null },
-      'OCTOBRE': { start: '2025-09-26', end: '2025-10-25', prevInv: '2025-09-25' },
-      'NOVEMBRE': { start: '2025-10-26', end: '2025-11-25', prevInv: '2025-10-25' },
-      'DECEMBRE': { start: '2025-11-26', end: '2025-12-25', prevInv: '2025-11-25' },
-      'DECEMBRE_2025': { start: '2025-12-26', end: '2025-12-31', prevInv: '2025-12-25' },
-      'JANVIER': { start: '2026-01-01', end: '2026-01-31', prevInv: '2025-12-31' },
-      'FEVRIER': { start: '2026-02-01', end: '2026-02-28', prevInv: '2026-01-31' },
-      'MARS': { start: '2026-03-01', end: '2026-03-31', prevInv: '2026-02-28' },
-      'AVRIL': { start: '2026-04-01', end: '2026-04-30', prevInv: '2026-03-31' },
-      'MAI': { start: '2026-05-01', end: '2026-05-31', prevInv: '2026-04-30' },
-      'JUIN': { start: '2026-06-01', end: '2026-06-30', prevInv: '2026-05-31' },
-      'JUILLET': { start: '2026-07-01', end: '2026-07-31', prevInv: '2026-06-30' },
-      'AOUT': { start: '2026-08-01', end: '2026-08-31', prevInv: '2026-07-31' }
+      'SEPTEMBRE': { start: '2025-09-01', end: '2025-09-30', prevInv: '2025-08-25' },
+      'OCTOBRE': { start: '2025-10-01', end: '2025-10-31', prevInv: '2025-09-25' },
+      'NOVEMBRE': { start: '2025-11-01', end: '2025-11-30', prevInv: '2025-10-25' },
+      'DECEMBRE': { start: '2025-12-01', end: '2025-12-31', prevInv: '2025-11-25' },
+      'JANVIER': { start: '2026-01-01', end: '2026-01-31', prevInv: '2025-12-25' },
+      'FEVRIER': { start: '2026-02-01', end: '2026-02-28', prevInv: '2026-01-25' },
+      'MARS': { start: '2026-03-01', end: '2026-03-31', prevInv: '2026-02-25' },
+      'AVRIL': { start: '2026-04-01', end: '2026-04-30', prevInv: '2026-03-25' },
+      'MAI': { start: '2026-05-01', end: '2026-05-31', prevInv: '2026-04-25' },
+      'JUIN': { start: '2026-06-01', end: '2026-06-30', prevInv: '2026-05-25' },
+      'JUILLET': { start: '2026-07-01', end: '2026-07-31', prevInv: '2026-06-25' },
+      'AOUT': { start: '2026-08-01', end: '2026-08-31', prevInv: '2026-07-25' }
     };
     return monthMap[selectedMonth] || monthMap['JANVIER'];
   }, [selectedMonth]);
