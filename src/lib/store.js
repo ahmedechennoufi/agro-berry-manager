@@ -18,7 +18,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 57; // v5.3.4 - retrait 25/12 AGB3
+const CURRENT_DATA_VERSION = 58; // v5.3.5 - alertes stock fermes
 
 // === INITIALISATION ===
 export const initializeData = () => {
@@ -228,31 +228,35 @@ export const calculateFarmStock = (farmId) => {
   
   // Stock initial
   initialStock.forEach(s => {
-    stockMap[s.product] = { quantity: s.quantity || 0, price: s.price || 0 };
+    stockMap[s.product] = { quantity: s.quantity || 0, price: s.price || 0, hasMovements: true };
   });
   
   // Mouvements
   movements.forEach(m => {
     const product = m.product;
     if (!product) return;
-    if (!stockMap[product]) stockMap[product] = { quantity: 0, price: m.price || 0 };
+    if (!stockMap[product]) stockMap[product] = { quantity: 0, price: m.price || 0, hasMovements: false };
     
     // Entrées (sorties du magasin vers cette ferme)
     if (m.type === 'exit' && m.farm === farmId) {
       stockMap[product].quantity += m.quantity || 0;
+      stockMap[product].hasMovements = true;
       if (m.price) stockMap[product].price = m.price;
     }
     // Transferts entrants
     if (m.type === 'transfer-in' && m.farm === farmId) {
       stockMap[product].quantity += m.quantity || 0;
+      stockMap[product].hasMovements = true;
     }
     // Transferts sortants
     if (m.type === 'transfer-out' && m.farm === farmId) {
       stockMap[product].quantity -= m.quantity || 0;
+      stockMap[product].hasMovements = true;
     }
     // Consommations
     if (m.type === 'consumption' && m.farm === farmId) {
       stockMap[product].quantity -= m.quantity || 0;
+      stockMap[product].hasMovements = true;
     }
   });
   
@@ -881,39 +885,7 @@ export const getAlerts = () => {
   const globalStock = calculateGlobalStock();
   const defaultThreshold = getDefaultThreshold();
   
-  // 1. Alertes Stock Bas et Stock Épuisé (Magasin)
-  products.forEach(product => {
-    const stock = globalStock[product.name]?.quantity || 0;
-    const threshold = product.threshold ?? defaultThreshold;
-    
-    if (stock <= 0) {
-      alerts.push({
-        id: `empty-mag-${product.name}`,
-        type: 'empty',
-        severity: 'critical',
-        icon: '🔴',
-        title: 'Stock épuisé',
-        message: `${product.name} épuisé au Magasin`,
-        product: product.name,
-        location: 'Magasin'
-      });
-    } else if (stock <= threshold) {
-      alerts.push({
-        id: `low-mag-${product.name}`,
-        type: 'low',
-        severity: 'warning',
-        icon: '⚠️',
-        title: 'Stock bas',
-        message: `${product.name} < ${threshold} ${product.unit || 'unités'} au Magasin (reste: ${stock.toFixed(1)})`,
-        product: product.name,
-        location: 'Magasin',
-        current: stock,
-        threshold
-      });
-    }
-  });
-  
-  // 2. Alertes Stock par Ferme
+  // 1. Alertes Stock Bas et Stock Épuisé (par Ferme)
   ['AGRO BERRY 1', 'AGRO BERRY 2', 'AGRO BERRY 3'].forEach(farmId => {
     const farmStock = calculateFarmStock(farmId);
     const farmName = farmId.replace('AGRO BERRY ', 'AB');
@@ -934,17 +906,29 @@ export const getAlerts = () => {
           product: productName,
           location: farmName
         });
-      } else if (stock > 0 && stock <= threshold / 2) {
+      } else if (stock <= 0.01 && data.hasMovements) {
+        alerts.push({
+          id: `empty-${farmId}-${productName}`,
+          type: 'empty',
+          severity: 'critical',
+          icon: '🔴',
+          title: 'Stock épuisé',
+          message: `${productName} épuisé à ${farmName}`,
+          product: productName,
+          location: farmName
+        });
+      } else if (stock > 0 && stock <= threshold) {
         alerts.push({
           id: `low-${farmId}-${productName}`,
           type: 'low',
           severity: 'warning',
           icon: '⚠️',
-          title: 'Stock bas ferme',
-          message: `${productName} < ${(threshold/2).toFixed(0)} à ${farmName} (reste: ${stock.toFixed(1)})`,
+          title: 'Stock bas',
+          message: `${productName} < ${threshold} à ${farmName} (reste: ${stock.toFixed(1)})`,
           product: productName,
           location: farmName,
-          current: stock
+          current: stock,
+          threshold
         });
       }
     });
