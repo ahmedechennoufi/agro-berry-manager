@@ -18,7 +18,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 56; // v5.3.3 - AGB3 25/12
+const CURRENT_DATA_VERSION = 57; // v5.3.4 - retrait 25/12 AGB3
 
 // === INITIALISATION ===
 export const initializeData = () => {
@@ -45,7 +45,7 @@ export const initializeData = () => {
     console.log(`🔄 Mise à jour données v${savedVersion} → v${CURRENT_DATA_VERSION}...`);
     
     // IDs that were in old versions but replaced in new version (must be removed)
-    const obsoleteIdRanges = [[9000, 9041], [9042, 9061]]; // Old AGB2 + AGB3 aggregated data
+    const obsoleteIdRanges = [[9000, 9041], [9042, 9061], [25140, 25141]]; // Old AGB2 + AGB3 aggregated data + retrait 25/12
     const isObsolete = (id) => obsoleteIdRanges.some(([min, max]) => id >= min && id <= max);
     
     // Merge movements: keep user-added ones + replace initialData ones
