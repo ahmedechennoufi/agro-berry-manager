@@ -92,11 +92,17 @@ function App() {
   };
 
   const readOnly = isReadOnly();
+  const [initialFarm, setInitialFarm] = useState(null);
+
+  const navigateToFarm = (farmId) => {
+    setInitialFarm(farmId);
+    setCurrentPage('farms');
+  };
 
   const contextValue = {
     products, movements, loadData, showNotif, readOnly,
     addProduct, updateProduct, deleteProduct, addMovement, updateMovement, deleteMovement,
-    setPage: setCurrentPage
+    setPage: setCurrentPage, initialFarm, setInitialFarm, navigateToFarm
   };
 
   const renderPage = () => {

@@ -9,7 +9,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pi
 const COLORS = ['#34c759', '#007aff', '#af52de'];
 
 const Dashboard = () => {
-  const { products, movements, setPage } = useApp();
+  const { products, movements, setPage, navigateToFarm } = useApp();
   const consommations = getConsommations();
   const alerts = getAlerts();
 
@@ -106,12 +106,19 @@ const Dashboard = () => {
             };
             const c = farmColors[farm];
             
+            const farmIdMap = { AB1: 'AGRO BERRY 1', AB2: 'AGRO BERRY 2', AB3: 'AGRO BERRY 3' };
+            
             return (
-              <div key={farm} className={`p-4 rounded-2xl bg-gradient-to-r ${c.bg} border ${c.border}`}>
+              <div 
+                key={farm} 
+                className={`p-4 rounded-2xl bg-gradient-to-r ${c.bg} border ${c.border} cursor-pointer hover:shadow-lg hover:scale-[1.005] transition-all`}
+                onClick={() => navigateToFarm(farmIdMap[farm])}
+              >
                 <div className="flex items-center gap-2 mb-3">
                   <h3 className={`font-bold ${c.title}`}>{c.label}</h3>
                   {farmCritical.length > 0 && <Badge color="red">🔴 {farmCritical.length} épuisé</Badge>}
                   {farmWarning.length > 0 && <Badge color="orange">⚠️ {farmWarning.length} bas</Badge>}
+                  <span className="ml-auto text-sm text-gray-400">Voir stock →</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {farmCritical.slice(0, 4).map(a => (
