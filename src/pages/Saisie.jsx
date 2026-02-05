@@ -6,7 +6,7 @@ import { today, getMonthIdx } from '../lib/utils';
 import { getAveragePrice, addConsommation } from '../lib/store';
 
 const Saisie = () => {
-  const { products, addMovement, showNotif, loadData } = useApp();
+  const { products, addMovement, showNotif, loadData, triggerAutoBackup } = useApp();
   const [form, setForm] = useState({ 
     date: today(), 
     farm: 'AGRO BERRY 1', 
@@ -97,6 +97,7 @@ const Saisie = () => {
     
     showNotif(`✅ ${validLignes.length} consommation(s) enregistrée(s)`);
     loadData();
+    triggerAutoBackup();
     setForm({ 
       date: today(), 
       farm: form.farm, 

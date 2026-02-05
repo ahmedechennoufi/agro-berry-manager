@@ -6,7 +6,7 @@ import { today, fmt, fmtMoney } from '../lib/utils';
 import { getMelangesSauvegardes, saveMelangePersonnalise, deleteMelangePersonnalise, getAveragePrice, calculateFarmStock } from '../lib/store';
 
 const Melange = () => {
-  const { addMovement, showNotif, loadData } = useApp();
+  const { addMovement, showNotif, loadData, triggerAutoBackup } = useApp();
   
   // State
   const [selectedMelange, setSelectedMelange] = useState('Myrtille Sol');
@@ -153,13 +153,15 @@ const Melange = () => {
     setShowSaveModal(false); 
     setNewMelangeName(''); 
     loadData();
+    triggerAutoBackup();
   };
 
   const handleDeleteMelange = (id, nom) => { 
     if (confirm(`Supprimer "${nom}" ?`)) { 
       deleteMelangePersonnalise(id); 
       showNotif('Mélange supprimé'); 
-      loadData(); 
+      loadData();
+      triggerAutoBackup();
     } 
   };
 

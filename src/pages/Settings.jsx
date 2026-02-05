@@ -5,7 +5,8 @@ import { downloadJSON, readFile } from '../lib/utils';
 import { exportAllData, importAllData, clearAllData, getProducts, getMovements, getSuppliers, getConsommations, getStockAB1, getStockAB2, getStockAB3 } from '../lib/store';
 import { 
   getGitHubConfig, saveGitHubConfig, clearGitHubConfig, isGitHubConfigured,
-  backupToGitHub, restoreFromGitHub, testGitHubConnection, getLastBackupInfo
+  backupToGitHub, restoreFromGitHub, testGitHubConnection, getLastBackupInfo,
+  getAutoBackupStatus
 } from '../lib/githubBackup';
 
 const Settings = () => {
@@ -272,6 +273,12 @@ const Settings = () => {
                 <p className="text-xs text-ios-gray">Dernier backup : {formatDate(ghLastBackup.date)}</p>
               </div>
             )}
+
+            {/* Auto-backup status */}
+            <div className="bg-blue-50 p-3 rounded-xl flex items-center gap-2">
+              <span className="text-blue-500">🔄</span>
+              <p className="text-xs text-blue-700">Auto-backup activé — sauvegarde 2 min après chaque modification</p>
+            </div>
 
             <div className="flex gap-2">
               <button onClick={handleGitHubBackup} disabled={ghBacking}

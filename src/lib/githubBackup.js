@@ -150,6 +150,69 @@ export const testGitHubConnection = async (token, owner, repo) => {
   };
 };
 
+// === AUTO-BACKUP ===
+let autoBackupTimer = null;
+let autoBackupEnabled = true;
+const AUTO_BACKUP_DELAY = 2 * 60 * 1000; // 2 minutes après dernier changement
+const AUTO_BACKUP_STATUS_KEY = 'agro_auto_backup_status';
+
+export const getAutoBackupStatus = () => {
+  try {
+    return JSON.parse(localStorage.getItem(AUTO_BACKUP_STATUS_KEY) || '{}');
+  } catch { return {}; }
+};
+
+const setAutoBackupStatus = (status) => {
+  localStorage.setItem(AUTO_BACKUP_STATUS_KEY, JSON.stringify({
+    ...getAutoBackupStatus(),
+    ...status,
+    updatedAt: new Date().toISOString()
+  }));
+};
+
+/**
+ * Déclenche un auto-backup après un délai (debounce)
+ * Appelé à chaque modification de données
+ */
+export const scheduleAutoBackup = (exportAllDataFn, onSuccess, onError) => {
+  if (!isGitHubConfigured() || !autoBackupEnabled) return;
+
+  // Reset le timer à chaque changement
+  if (autoBackupTimer) clearTimeout(autoBackupTimer);
+
+  setAutoBackupStatus({ pending: true });
+
+  autoBackupTimer = setTimeout(async () => {
+    try {
+      setAutoBackupStatus({ pending: false, syncing: true });
+      const data = exportAllDataFn();
+      const result = await backupToGitHub(data);
+      setAutoBackupStatus({ 
+        pending: false, 
+        syncing: false, 
+        lastAutoBackup: result.date,
+        error: null 
+      });
+      if (onSuccess) onSuccess(result);
+    } catch (err) {
+      setAutoBackupStatus({ 
+        pending: false, 
+        syncing: false, 
+        error: err.message 
+      });
+      if (onError) onError(err);
+    }
+  }, AUTO_BACKUP_DELAY);
+};
+
+export const cancelAutoBackup = () => {
+  if (autoBackupTimer) {
+    clearTimeout(autoBackupTimer);
+    autoBackupTimer = null;
+  }
+  setAutoBackupStatus({ pending: false, syncing: false });
+};
+
 /**
  * Obtenir les infos du dernier backup
  */

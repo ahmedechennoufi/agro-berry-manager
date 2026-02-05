@@ -14,6 +14,7 @@ import Inventory from './pages/Inventory';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
 import * as store from './lib/store';
+import { isGitHubConfigured, scheduleAutoBackup } from './lib/githubBackup';
 
 const AppContext = createContext();
 export const useApp = () => useContext(AppContext);
@@ -46,6 +47,17 @@ function App() {
     setMovements(store.getMovements());
   };
 
+  // Auto-backup GitHub après chaque modification
+  const triggerAutoBackup = () => {
+    if (isGitHubConfigured()) {
+      scheduleAutoBackup(
+        store.exportAllData,
+        () => console.log('✅ Auto-backup GitHub réussi'),
+        (err) => console.warn('⚠️ Auto-backup échoué:', err.message)
+      );
+    }
+  };
+
   useEffect(() => { 
     store.initializeData();
     loadData();
@@ -58,6 +70,7 @@ function App() {
     const newProduct = store.addProduct(product);
     setProducts(prev => [...prev, newProduct]);
     showNotif('Produit ajouté');
+    triggerAutoBackup();
     return newProduct;
   };
 
@@ -65,17 +78,20 @@ function App() {
     store.updateProduct(id, updates);
     setProducts(store.getProducts());
     showNotif('Produit modifié');
+    triggerAutoBackup();
   };
 
   const deleteProduct = (id) => {
     store.deleteProduct(id);
     setProducts(store.getProducts());
     showNotif('Produit supprimé');
+    triggerAutoBackup();
   };
 
   const addMovement = (movement) => {
     const newMovement = store.addMovement(movement);
     setMovements(prev => [...prev, newMovement]);
+    triggerAutoBackup();
     return newMovement;
   };
 
@@ -83,18 +99,20 @@ function App() {
     store.updateMovement(id, updates);
     setMovements(store.getMovements());
     showNotif('Mouvement modifié');
+    triggerAutoBackup();
   };
 
   const deleteMovement = (id) => {
     store.deleteMovement(id);
     setMovements(store.getMovements());
     showNotif('Mouvement supprimé');
+    triggerAutoBackup();
   };
 
   const readOnly = isReadOnly();
 
   const contextValue = {
-    products, movements, loadData, showNotif, readOnly,
+    products, movements, loadData, showNotif, readOnly, triggerAutoBackup,
     addProduct, updateProduct, deleteProduct, addMovement, updateMovement, deleteMovement,
     setPage: setCurrentPage
   };
