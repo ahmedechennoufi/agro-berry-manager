@@ -18,7 +18,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 60; // v5.3.7 - alertes fermes only
+const CURRENT_DATA_VERSION = 61; // v5.3.8 - alertes groupées par ferme
 
 // === INITIALISATION ===
 export const initializeData = () => {

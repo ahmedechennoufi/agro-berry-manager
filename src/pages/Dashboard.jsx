@@ -91,56 +91,48 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Alerts Section - Clickable */}
+      {/* Alerts Section - Par Ferme */}
       {(criticalAlerts.length > 0 || warningAlerts.length > 0) && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {criticalAlerts.length > 0 && (
-            <div 
-              onClick={() => setPage('stock')}
-              className="p-4 rounded-2xl bg-gradient-to-r from-red-50 to-red-100 border border-red-200 cursor-pointer hover:shadow-lg hover:scale-[1.01] transition-all"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">🔴</span>
-                <h3 className="font-bold text-red-700">Stock épuisé ({criticalAlerts.length})</h3>
-                <span className="ml-auto text-red-500 text-sm">Voir tout →</span>
+        <div className="space-y-3">
+          {['AB1', 'AB2', 'AB3'].map(farm => {
+            const farmCritical = criticalAlerts.filter(a => a.location === farm);
+            const farmWarning = warningAlerts.filter(a => a.location === farm);
+            if (farmCritical.length === 0 && farmWarning.length === 0) return null;
+            
+            const farmColors = {
+              AB1: { bg: 'from-blue-50 to-blue-100', border: 'border-blue-200', title: 'text-blue-800', label: '🌿 Agro Berry 1' },
+              AB2: { bg: 'from-green-50 to-green-100', border: 'border-green-200', title: 'text-green-800', label: '🌱 Agro Berry 2' },
+              AB3: { bg: 'from-purple-50 to-purple-100', border: 'border-purple-200', title: 'text-purple-800', label: '🌳 Agro Berry 3' }
+            };
+            const c = farmColors[farm];
+            
+            return (
+              <div key={farm} className={`p-4 rounded-2xl bg-gradient-to-r ${c.bg} border ${c.border}`}>
+                <div className="flex items-center gap-2 mb-3">
+                  <h3 className={`font-bold ${c.title}`}>{c.label}</h3>
+                  {farmCritical.length > 0 && <Badge color="red">🔴 {farmCritical.length} épuisé</Badge>}
+                  {farmWarning.length > 0 && <Badge color="orange">⚠️ {farmWarning.length} bas</Badge>}
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {farmCritical.slice(0, 4).map(a => (
+                    <div key={a.id} className="flex justify-between items-center text-sm bg-white/70 p-2 rounded-lg">
+                      <span className="font-medium text-gray-800">{a.product}</span>
+                      <Badge color="red">Épuisé</Badge>
+                    </div>
+                  ))}
+                  {farmWarning.slice(0, 4).map(a => (
+                    <div key={a.id} className="flex justify-between items-center text-sm bg-white/70 p-2 rounded-lg">
+                      <span className="font-medium text-gray-800">{a.product}</span>
+                      <Badge color="orange">{a.current?.toFixed(1)}</Badge>
+                    </div>
+                  ))}
+                  {(farmCritical.length + farmWarning.length) > 8 && (
+                    <p className="text-xs text-gray-500 font-medium col-span-2">+{farmCritical.length + farmWarning.length - 8} autres produits</p>
+                  )}
+                </div>
               </div>
-              <div className="space-y-2">
-                {criticalAlerts.slice(0, 3).map(a => (
-                  <div key={a.id} className="flex justify-between items-center text-sm bg-white/60 p-2 rounded-lg">
-                    <span className="font-medium text-gray-800">{a.product}</span>
-                    <Badge color="red">{a.location}</Badge>
-                  </div>
-                ))}
-                {criticalAlerts.length > 3 && (
-                  <p className="text-xs text-red-600 font-medium">+{criticalAlerts.length - 3} autres produits</p>
-                )}
-              </div>
-            </div>
-          )}
-          
-          {warningAlerts.length > 0 && (
-            <div 
-              onClick={() => setPage('stock')}
-              className="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-yellow-100 border border-amber-200 cursor-pointer hover:shadow-lg hover:scale-[1.01] transition-all"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">⚠️</span>
-                <h3 className="font-bold text-amber-700">Stock bas ({warningAlerts.length})</h3>
-                <span className="ml-auto text-amber-600 text-sm">Voir tout →</span>
-              </div>
-              <div className="space-y-2">
-                {warningAlerts.slice(0, 3).map(a => (
-                  <div key={a.id} className="flex justify-between items-center text-sm bg-white/60 p-2 rounded-lg">
-                    <span className="font-medium text-gray-800">{a.product}</span>
-                    <Badge color="orange">{a.location}</Badge>
-                  </div>
-                ))}
-                {warningAlerts.length > 3 && (
-                  <p className="text-xs text-amber-600 font-medium">+{warningAlerts.length - 3} autres produits</p>
-                )}
-              </div>
-            </div>
-          )}
+            );
+          })}
         </div>
       )}
 
