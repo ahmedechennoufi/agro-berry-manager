@@ -13688,6 +13688,28 @@
       "farm": "AGRO BERRY 3",
       "culture": "Myrtille",
       "destination": "Hydro"
+    },
+    {
+      "id": 25140,
+      "date": "2025-12-25",
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 14,
+      "farm": "AGRO BERRY 3",
+      "culture": "Myrtille",
+      "destination": "Hydro"
+    },
+    {
+      "id": 25141,
+      "date": "2025-12-25",
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 64,
+      "price": 100,
+      "farm": "AGRO BERRY 3",
+      "culture": "Myrtille",
+      "destination": "Hydro"
     }
   ],
   "stockAB1": [

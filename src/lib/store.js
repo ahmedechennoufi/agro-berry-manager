@@ -18,7 +18,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 55; // v5.3.2 - AGB3 détaillé
+const CURRENT_DATA_VERSION = 56; // v5.3.3 - AGB3 25/12
 
 // === INITIALISATION ===
 export const initializeData = () => {
