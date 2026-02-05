@@ -18,7 +18,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 59; // v5.3.6 - alertes magasin + fermes
+const CURRENT_DATA_VERSION = 60; // v5.3.7 - alertes fermes only
 
 // === INITIALISATION ===
 export const initializeData = () => {
@@ -885,39 +885,7 @@ export const getAlerts = () => {
   const globalStock = calculateGlobalStock();
   const defaultThreshold = getDefaultThreshold();
   
-  // 1. Alertes Stock Bas et Stock Épuisé (Magasin)
-  products.forEach(product => {
-    const stock = globalStock[product.name]?.quantity || 0;
-    const threshold = product.threshold ?? defaultThreshold;
-    
-    if (stock <= 0) {
-      alerts.push({
-        id: `empty-mag-${product.name}`,
-        type: 'empty',
-        severity: 'critical',
-        icon: '🔴',
-        title: 'Stock épuisé',
-        message: `${product.name} épuisé au Magasin`,
-        product: product.name,
-        location: 'Magasin'
-      });
-    } else if (stock <= threshold) {
-      alerts.push({
-        id: `low-mag-${product.name}`,
-        type: 'low',
-        severity: 'warning',
-        icon: '⚠️',
-        title: 'Stock bas',
-        message: `${product.name} < ${threshold} au Magasin (reste: ${stock.toFixed(1)})`,
-        product: product.name,
-        location: 'Magasin',
-        current: stock,
-        threshold
-      });
-    }
-  });
-
-  // 2. Alertes Stock par Ferme
+  // 1. Alertes Stock par Ferme (AB1, AB2, AB3)
   ['AGRO BERRY 1', 'AGRO BERRY 2', 'AGRO BERRY 3'].forEach(farmId => {
     const farmStock = calculateFarmStock(farmId);
     const farmName = farmId.replace('AGRO BERRY ', 'AB');
