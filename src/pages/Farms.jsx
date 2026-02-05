@@ -1,28 +1,15 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { useApp } from '../App';
+import React, { useState, useMemo } from 'react';
 import { Card, Button, Input, Select, StatCard, EmptyState, Badge } from '../components/UI';
 import { FARMS, CATEGORIES } from '../lib/constants';
 import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
 import { calculateFarmStock, getAveragePrice } from '../lib/store';
 
 const Farms = () => {
-  const { initialFarm, setInitialFarm } = useApp();
   const [selectedFarm, setSelectedFarm] = useState(null);
   const [search, setSearch] = useState('');
   const [filterCategory, setFilterCategory] = useState('ALL');
   const [sortBy, setSortBy] = useState('quantity');
   const [sortOrder, setSortOrder] = useState('desc');
-
-  // Auto-select farm if navigated from Dashboard
-  useEffect(() => {
-    if (initialFarm) {
-      const farm = FARMS.find(f => f.id === initialFarm);
-      if (farm) {
-        setSelectedFarm(farm);
-      }
-      setInitialFarm(null);
-    }
-  }, [initialFarm]);
 
   const farmStockData = useMemo(() => {
     if (!selectedFarm) return [];
