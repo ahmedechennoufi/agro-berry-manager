@@ -899,6 +899,111 @@
       "name": "ZM CORRECTOR",
       "unit": "KG",
       "category": "ENGRAIS"
+    },
+    {
+      "name": "VESTE DE TRAITEMENT",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296491671
+    },
+    {
+      "name": "GANT",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296501754
+    },
+    {
+      "name": "MASQUE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296511754
+    },
+    {
+      "name": "LUNETTE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296526420
+    },
+    {
+      "name": "FILTRE DE MASQUE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296541804
+    },
+    {
+      "name": "RUBON",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296553454
+    },
+    {
+      "name": "ML TUYAU POLYETHYLENE 32",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297236862
+    },
+    {
+      "name": "JONCTION POLYETHYLENE D 32",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297277394
+    },
+    {
+      "name": "VANNE POLYETHYLENE 40",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297320228
+    },
+    {
+      "name": "COUDE POLYETHYLENE D 32",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297365195
+    },
+    {
+      "name": "CPEC 110 X 314",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297397444
+    },
+    {
+      "name": "CPEC 90 X 314",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297424443
+    },
+    {
+      "name": "CHALUMEAU A GAZ",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297454277
+    },
+    {
+      "name": "BIDON",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297470860
+    },
+    {
+      "name": "FLEXIBLE DE LAVABO",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297495494
     }
   ],
   "movements": [
@@ -13776,6 +13881,292 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770122104319
+    },
+    {
+      "type": "entry",
+      "product": "VESTE DE TRAITEMENT",
+      "quantity": 30,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296590788
+    },
+    {
+      "type": "entry",
+      "product": "GANT",
+      "quantity": 40,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296630492
+    },
+    {
+      "type": "entry",
+      "product": "MASQUE",
+      "quantity": 15,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296671994
+    },
+    {
+      "type": "entry",
+      "product": "LUNETTE",
+      "quantity": 30,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296702855
+    },
+    {
+      "type": "entry",
+      "product": "FILTRE DE MASQUE",
+      "quantity": 15,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296748640
+    },
+    {
+      "type": "entry",
+      "product": "RUBON",
+      "quantity": 3,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296788556
+    },
+    {
+      "type": "exit",
+      "product": "VESTE DE TRAITEMENT",
+      "quantity": 30,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296852609
+    },
+    {
+      "type": "exit",
+      "product": "GANT",
+      "quantity": 40,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296879008
+    },
+    {
+      "type": "exit",
+      "product": "MASQUE",
+      "quantity": 15,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297008224
+    },
+    {
+      "type": "exit",
+      "product": "RUBON",
+      "quantity": 3,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297035541
+    },
+    {
+      "type": "entry",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 186,
+      "supplier": "SAOAS",
+      "date": "2025-12-31",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297147679
+    },
+    {
+      "type": "entry",
+      "product": "ML TUYAU POLYETHYLENE 32",
+      "quantity": 800,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297567831
+    },
+    {
+      "type": "entry",
+      "product": "JONCTION POLYETHYLENE D 32",
+      "quantity": 11,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297598001
+    },
+    {
+      "type": "entry",
+      "product": "VANNE POLYETHYLENE 40",
+      "quantity": 4,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298312773
+    },
+    {
+      "type": "entry",
+      "product": "COUDE POLYETHYLENE D 32",
+      "quantity": 6,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298490805
+    },
+    {
+      "type": "exit",
+      "product": "COUDE POLYETHYLENE D 32",
+      "quantity": 6,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298511173
+    },
+    {
+      "type": "entry",
+      "product": "CPEC 110 X 314",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298539838
+    },
+    {
+      "type": "exit",
+      "product": "CPEC 110 X 314",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298557574
+    },
+    {
+      "type": "entry",
+      "product": "CPEC 90 X 314",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298573637
+    },
+    {
+      "type": "exit",
+      "product": "CPEC 90 X 314",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298592056
+    },
+    {
+      "type": "entry",
+      "product": "CHALUMEAU A GAZ",
+      "quantity": 1,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298636237
+    },
+    {
+      "type": "exit",
+      "product": "CHALUMEAU A GAZ",
+      "quantity": 1,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298654722
+    },
+    {
+      "type": "entry",
+      "product": "BIDON",
+      "quantity": 6,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298692353
+    },
+    {
+      "type": "exit",
+      "product": "BIDON",
+      "quantity": 6,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298710423
+    },
+    {
+      "type": "entry",
+      "product": "FLEXIBLE DE LAVABO",
+      "quantity": 6,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298732086
+    },
+    {
+      "type": "exit",
+      "product": "FLEXIBLE DE LAVABO",
+      "quantity": 6,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298747257
     }
   ],
   "stockAB1": [
@@ -15007,5 +15398,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-05T12:46:49.618Z"
+  "exportDate": "2026-02-05T13:39:17.620Z"
 }
