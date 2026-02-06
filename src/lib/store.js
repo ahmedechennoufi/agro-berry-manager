@@ -18,13 +18,17 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 63; // v5.4.5 - fix FEROXIM 6 → FEROXIM
+const CURRENT_DATA_VERSION = 64; // v5.4.6 - fix all duplicate product names
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
   const renames = {
     'ACIDE SULFIRIQUE': 'ACIDE SULFURIQUE',
-    'FEROXIM 6': 'FEROXIM'
+    'FEROXIM 6': 'FEROXIM',
+    'BLACKJAK': 'BLAKJAK',
+    'CODACIDE': 'CODACIDE OIL',
+    'FOLIASTIM PURE': 'FOLIASTIM',
+    'MICROMIX': 'MICRO MIX'
     // Add more renames here if needed
   };
   
