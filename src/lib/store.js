@@ -18,7 +18,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 64; // v5.4.6 - fix all duplicate product names
+const CURRENT_DATA_VERSION = 65; // v5.4.7 - fix all duplicate product names in all files
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
@@ -32,11 +32,13 @@ const migrateProductNames = () => {
     // Add more renames here if needed
   };
   
+  const renameProduct = (name) => renames[name] || name;
+  
   // Fix in products
   const products = JSON.parse(localStorage.getItem(STORAGE_KEYS.products) || '[]');
   let fixedProducts = products.map(p => ({
     ...p,
-    name: renames[p.name] || p.name
+    name: renameProduct(p.name)
   }));
   // Remove duplicates after rename
   const seenNames = new Set();
@@ -51,7 +53,7 @@ const migrateProductNames = () => {
   const movements = JSON.parse(localStorage.getItem(STORAGE_KEYS.movements) || '[]');
   const fixedMovements = movements.map(m => ({
     ...m,
-    product: renames[m.product] || m.product
+    product: renameProduct(m.product)
   }));
   localStorage.setItem(STORAGE_KEYS.movements, JSON.stringify(fixedMovements));
   
@@ -59,7 +61,7 @@ const migrateProductNames = () => {
   const consommations = JSON.parse(localStorage.getItem(STORAGE_KEYS.consommations) || '[]');
   const fixedConsommations = consommations.map(c => ({
     ...c,
-    product: renames[c.product] || c.product
+    product: renameProduct(c.product)
   }));
   localStorage.setItem(STORAGE_KEYS.consommations, JSON.stringify(fixedConsommations));
   
@@ -68,10 +70,43 @@ const migrateProductNames = () => {
     const stock = JSON.parse(localStorage.getItem(STORAGE_KEYS[key]) || '[]');
     const fixedStock = stock.map(s => ({
       ...s,
-      product: renames[s.product] || s.product
+      product: renameProduct(s.product)
     }));
     localStorage.setItem(STORAGE_KEYS[key], JSON.stringify(fixedStock));
   });
+  
+  // Fix in stockHistory
+  const stockHistory = JSON.parse(localStorage.getItem(STORAGE_KEYS.stockHistory) || '[]');
+  if (stockHistory.length > 0) {
+    const fixedHistory = stockHistory.map(h => ({
+      ...h,
+      items: (h.items || []).map(item => ({
+        ...item,
+        product: renameProduct(item.product)
+      }))
+    }));
+    localStorage.setItem(STORAGE_KEYS.stockHistory, JSON.stringify(fixedHistory));
+  }
+  
+  // Fix in coutData
+  const coutData = JSON.parse(localStorage.getItem(STORAGE_KEYS.coutData) || '{}');
+  if (Object.keys(coutData).length > 0) {
+    const fixedCoutData = {};
+    for (const [culture, data] of Object.entries(coutData)) {
+      fixedCoutData[culture] = {};
+      for (const [category, items] of Object.entries(data)) {
+        if (Array.isArray(items)) {
+          fixedCoutData[culture][category] = items.map(item => ({
+            ...item,
+            product: item.product ? renameProduct(item.product) : item.product
+          }));
+        } else {
+          fixedCoutData[culture][category] = items;
+        }
+      }
+    }
+    localStorage.setItem(STORAGE_KEYS.coutData, JSON.stringify(fixedCoutData));
+  }
   
   console.log('✅ Migration orthographe produits effectuée');
 };

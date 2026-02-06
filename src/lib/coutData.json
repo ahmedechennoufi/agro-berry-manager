@@ -1155,7 +1155,7 @@
           },
           {
             "nature": "AUTRES",
-            "nom": "ACIDE SULFIRIQUE",
+            "nom": "ACIDE SULFURIQUE",
             "prix": 4,
             "qte": [
               238,
@@ -2036,7 +2036,7 @@
           },
           {
             "nature": "AUTRES",
-            "nom": "MICROMIX",
+            "nom": "MICRO MIX",
             "prix": 75,
             "qte": [
               0,
