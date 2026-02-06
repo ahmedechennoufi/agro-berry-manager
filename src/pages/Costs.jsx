@@ -55,7 +55,12 @@ const Costs = () => {
     { idx: 1, name: 'Oct', month: 9 },
     { idx: 2, name: 'Nov', month: 10 },
     { idx: 3, name: 'Déc', month: 11 },
-    { idx: 4, name: 'Jan', month: 0 }
+    { idx: 4, name: 'Jan', month: 0 },
+    { idx: 5, name: 'Fév', month: 1 },
+    { idx: 6, name: 'Mars', month: 2 },
+    { idx: 7, name: 'Avr', month: 3 },
+    { idx: 8, name: 'Mai', month: 4 },
+    { idx: 9, name: 'Juin', month: 5 }
   ];
 
   // Determine cost category from product and movement
@@ -143,7 +148,7 @@ const Costs = () => {
           nature: product?.category || 'ENGRAIS',
           subCategory: subCat,
           prix: m.price || product?.price || 0,
-          qte: [0, 0, 0, 0, 0] // Sept, Oct, Nov, Déc, Jan
+          qte: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // Sept, Oct, Nov, Déc, Jan, Fév, Mars, Avr, Mai, Juin
         };
       }
       
