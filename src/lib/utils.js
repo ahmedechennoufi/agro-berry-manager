@@ -170,16 +170,21 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
   
   XLSX.utils.book_append_sheet(wb, ws1, 'Consommation');
   
-  // Sheet 2: Détails Entrées (par fournisseur)
+  // Sheet 2: Détails Entrées (par source)
   const data2 = [
-    ['Article', 'Catégorie', 'Ferme', 'Fournisseur', 'Quantité', 'Unité', 'Prix Unit.', 'Valeur (MAD)'],
+    ['Article', 'Catégorie', 'Ferme Dest.', 'Source', 'Type', 'Quantité', 'Unité', 'Prix Unit.', 'Valeur (MAD)'],
     ...entryDetails.map(e => {
       const farmShort = e.farm?.includes('1') ? 'AB1' : e.farm?.includes('2') ? 'AB2' : 'AB3';
+      const isTransfer = e.type === 'transfer-in';
+      const sourceName = isTransfer 
+        ? `Transfert de ${e.fromFarm?.includes('1') ? 'AB1' : e.fromFarm?.includes('2') ? 'AB2' : 'AB3'}`
+        : (e.supplier || 'Magasin');
       return [
         e.product, 
         e.category, 
         farmShort, 
-        e.supplier || '-', 
+        sourceName,
+        isTransfer ? 'Transfert' : 'Fournisseur',
         e.quantity, 
         e.unit, 
         e.price, 
@@ -190,12 +195,12 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
   const ws2 = XLSX.utils.aoa_to_sheet(data2);
   // Style header row
   if (data2.length > 0) {
-    for (let c = 0; c < 8; c++) {
+    for (let c = 0; c < 9; c++) {
       const cell = ws2[XLSX.utils.encode_cell({ r: 0, c })];
       if (cell) cell.s = { font: { bold: true, color: { rgb: "FFFFFF" } }, fill: { fgColor: { rgb: GREEN } }, alignment: { horizontal: "center" } };
     }
   }
-  ws2['!cols'] = [{ wch: 28 }, { wch: 18 }, { wch: 8 }, { wch: 24 }, { wch: 12 }, { wch: 8 }, { wch: 12 }, { wch: 14 }];
+  ws2['!cols'] = [{ wch: 28 }, { wch: 18 }, { wch: 10 }, { wch: 22 }, { wch: 12 }, { wch: 12 }, { wch: 8 }, { wch: 12 }, { wch: 14 }];
   XLSX.utils.book_append_sheet(wb, ws2, 'Détails Entrées');
   
   // Sheet 3: Détails Conso (par culture)
