@@ -125,6 +125,23 @@ const ConsoFermes = () => {
     const productMap = {};
     allProducts.forEach(p => { productMap[p.name] = p; });
     
+    // Build supplier map from entry movements (original purchases)
+    const supplierMap = {};
+    allMovements
+      .filter(m => m.type === 'entry' && m.supplier)
+      .forEach(m => {
+        if (!supplierMap[m.product]) supplierMap[m.product] = [];
+        supplierMap[m.product].push(m.supplier);
+      });
+    
+    // Get most frequent supplier for each product
+    const getProductSupplier = (product) => {
+      const suppliers = supplierMap[product];
+      if (!suppliers || suppliers.length === 0) return null;
+      // Return most recent supplier
+      return suppliers[suppliers.length - 1];
+    };
+    
     return allMovements
       .filter(m => (m.type === 'transfer-in' || m.type === 'exit') && m.date >= periodDates.start && m.date <= periodDates.end)
       .map(m => {
@@ -135,7 +152,7 @@ const ConsoFermes = () => {
           category: prod.category || 'AUTRES',
           farm: m.farm,
           fromFarm: m.fromFarm,
-          supplier: m.supplier,
+          supplier: m.supplier || getProductSupplier(m.product),
           unit: prod.unit || 'KG',
           price: getAveragePrice(m.product) || 0,
           quantity: m.quantity || 0
