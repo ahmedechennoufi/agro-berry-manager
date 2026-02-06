@@ -615,7 +615,10 @@ const Movements = () => {
                     const to = m.farm?.replace('AGRO BERRY ', 'AB') || '?';
                     detailText = <span><span className="text-orange-600 font-medium">De:</span> {from} <span className="text-green-600 font-medium">→ Vers:</span> {to}</span>;
                   } else if (m.farm) {
-                    detailText = `→ ${m.farm.replace('AGRO BERRY ', 'AB')}`;
+                    const farmShort = m.farm.replace('AGRO BERRY ', 'AB');
+                    detailText = m.culture 
+                      ? <span>→ {farmShort} <span className="text-purple-500">• {m.culture}</span></span>
+                      : `→ ${farmShort}`;
                   }
                   
                   return (
