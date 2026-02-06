@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Card, Button, Input, Select, StatCard, EmptyState, Badge } from '../components/UI';
 import { FARMS, CATEGORIES } from '../lib/constants';
 import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
@@ -10,6 +10,16 @@ const Farms = () => {
   const [filterCategory, setFilterCategory] = useState('ALL');
   const [sortBy, setSortBy] = useState('quantity');
   const [sortOrder, setSortOrder] = useState('desc');
+
+  // Check if a farm was preselected from Dashboard
+  useEffect(() => {
+    const preselectedFarmId = localStorage.getItem('selectedFarmId');
+    if (preselectedFarmId) {
+      const farm = FARMS.find(f => f.id === preselectedFarmId);
+      if (farm) setSelectedFarm(farm);
+      localStorage.removeItem('selectedFarmId'); // Clear after use
+    }
+  }, []);
 
   const farmStockData = useMemo(() => {
     if (!selectedFarm) return [];
