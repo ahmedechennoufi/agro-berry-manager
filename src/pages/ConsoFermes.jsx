@@ -144,8 +144,10 @@ const ConsoFermes = () => {
     // Check if a supplier is a real supplier (not a stock description)
     const isRealSupplier = (supplier) => {
       if (!supplier) return false;
-      const fakePatterns = ['STOCK', 'DÉCEMBRE', 'JANVIER', 'FÉVRIER', 'INVENTAIRE', 'INITIAL'];
-      return !fakePatterns.some(p => supplier.toUpperCase().includes(p));
+      const fakePatterns = ['STOCK', 'DÉCEMBRE', 'JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 
+        'INVENTAIRE', 'INITIAL', 'AUTRE', 'MAGASIN', '2025', '2026'];
+      const upperSupplier = supplier.toUpperCase();
+      return !fakePatterns.some(p => upperSupplier.includes(p)) && supplier !== '-';
     };
     
     return allMovements
