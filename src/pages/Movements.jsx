@@ -1263,11 +1263,11 @@ const Movements = () => {
               </p>
             </div>
 
-            <div className="space-y-2 max-h-[50vh] overflow-y-auto">
+            <div className="space-y-2 max-h-[40vh] overflow-y-auto">
               <p className="text-sm font-medium text-gray-600">Produits et quantités :</p>
               {editMelangeProducts.map((p, idx) => (
-                <div key={idx} className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg">
-                  <span className="flex-1 text-sm font-medium">{p.nom}</span>
+                <div key={idx} className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
+                  <span className="flex-1 text-sm font-medium truncate">{p.nom}</span>
                   <input
                     type="number"
                     step="0.01"
@@ -1278,14 +1278,64 @@ const Movements = () => {
                       newProducts[idx].qte = parseFloat(e.target.value) || 0;
                       setEditMelangeProducts(newProducts);
                     }}
-                    className="w-24 px-2 py-1 text-right border rounded-lg focus:ring-2 focus:ring-green-500"
+                    className="w-20 px-2 py-1 text-right border rounded-lg focus:ring-2 focus:ring-green-500"
                   />
-                  <span className="text-xs text-gray-500 w-20">{fmtMoney(p.price)}/u</span>
-                  <span className="text-xs text-green-600 font-medium w-24 text-right">
+                  <span className="text-xs text-gray-500 w-16">{fmtMoney(p.price)}/u</span>
+                  <span className="text-xs text-green-600 font-medium w-20 text-right">
                     {fmtMoney(p.qte * p.price)}
                   </span>
+                  <button
+                    onClick={() => {
+                      const newProducts = editMelangeProducts.filter((_, i) => i !== idx);
+                      setEditMelangeProducts(newProducts);
+                    }}
+                    className="p-1 text-red-500 hover:bg-red-50 rounded"
+                    title="Supprimer"
+                  >
+                    🗑️
+                  </button>
                 </div>
               ))}
+            </div>
+
+            {/* Add product section */}
+            <div className="p-3 bg-blue-50 rounded-xl">
+              <p className="text-sm font-medium text-gray-600 mb-2">➕ Ajouter un produit :</p>
+              <div className="flex gap-2">
+                <select
+                  id="addProductSelect"
+                  className="flex-1 px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  defaultValue=""
+                >
+                  <option value="" disabled>Sélectionner un produit...</option>
+                  {products
+                    .filter(p => !editMelangeProducts.some(ep => ep.nom === p.name))
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map(p => (
+                      <option key={p.id} value={p.name}>{p.name}</option>
+                    ))
+                  }
+                </select>
+                <button
+                  onClick={() => {
+                    const select = document.getElementById('addProductSelect');
+                    const productName = select.value;
+                    if (!productName) return;
+                    
+                    const product = products.find(p => p.name === productName);
+                    if (product && !editMelangeProducts.some(p => p.nom === productName)) {
+                      setEditMelangeProducts([
+                        ...editMelangeProducts,
+                        { nom: productName, qte: 0, price: product.price || 0 }
+                      ]);
+                      select.value = '';
+                    }
+                  }}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-sm font-medium"
+                >
+                  Ajouter
+                </button>
+              </div>
             </div>
 
             <div className="p-3 bg-green-50 rounded-xl">
