@@ -18,7 +18,58 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 61; // v5.3.8 - alertes groupées par ferme
+const CURRENT_DATA_VERSION = 62; // v5.4.4 - fix ACIDE SULFIRIQUE → SULFURIQUE
+
+// Migration: fix product name spelling
+const migrateProductNames = () => {
+  const renames = {
+    'ACIDE SULFIRIQUE': 'ACIDE SULFURIQUE'
+    // Add more renames here if needed
+  };
+  
+  // Fix in products
+  const products = JSON.parse(localStorage.getItem(STORAGE_KEYS.products) || '[]');
+  let fixedProducts = products.map(p => ({
+    ...p,
+    name: renames[p.name] || p.name
+  }));
+  // Remove duplicates after rename
+  const seenNames = new Set();
+  fixedProducts = fixedProducts.filter(p => {
+    if (seenNames.has(p.name)) return false;
+    seenNames.add(p.name);
+    return true;
+  });
+  localStorage.setItem(STORAGE_KEYS.products, JSON.stringify(fixedProducts));
+  
+  // Fix in movements
+  const movements = JSON.parse(localStorage.getItem(STORAGE_KEYS.movements) || '[]');
+  const fixedMovements = movements.map(m => ({
+    ...m,
+    product: renames[m.product] || m.product
+  }));
+  localStorage.setItem(STORAGE_KEYS.movements, JSON.stringify(fixedMovements));
+  
+  // Fix in consommations
+  const consommations = JSON.parse(localStorage.getItem(STORAGE_KEYS.consommations) || '[]');
+  const fixedConsommations = consommations.map(c => ({
+    ...c,
+    product: renames[c.product] || c.product
+  }));
+  localStorage.setItem(STORAGE_KEYS.consommations, JSON.stringify(fixedConsommations));
+  
+  // Fix in stock initial (stockAB1, stockAB2, stockAB3)
+  ['stockAB1', 'stockAB2', 'stockAB3'].forEach(key => {
+    const stock = JSON.parse(localStorage.getItem(STORAGE_KEYS[key]) || '[]');
+    const fixedStock = stock.map(s => ({
+      ...s,
+      product: renames[s.product] || s.product
+    }));
+    localStorage.setItem(STORAGE_KEYS[key], JSON.stringify(fixedStock));
+  });
+  
+  console.log('✅ Migration orthographe produits effectuée');
+};
 
 // === INITIALISATION ===
 export const initializeData = () => {
@@ -69,6 +120,9 @@ export const initializeData = () => {
     
     localStorage.setItem(STORAGE_KEYS.dataVersion, String(CURRENT_DATA_VERSION));
     console.log(`✅ Mise à jour terminée: ${mergedMovements.length} mouvements (${userMovements.length} manuels conservés)`);
+    
+    // Run migrations
+    migrateProductNames();
   }
   
   // Check if coutData exists, if not initialize it
