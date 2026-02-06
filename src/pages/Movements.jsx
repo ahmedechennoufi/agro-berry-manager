@@ -42,6 +42,7 @@ const Movements = () => {
   const [selectedMelange, setSelectedMelange] = useState('Myrtille Sol');
   const [editableProduits, setEditableProduits] = useState([]);
   const [showHistoryModal, setShowHistoryModal] = useState(false);
+  const [expandedMelangeId, setExpandedMelangeId] = useState(null);
   const [melangeHistory, setMelangeHistory] = useState([]);
   const [newProductName, setNewProductName] = useState('');
   const [newProductQty, setNewProductQty] = useState('');
@@ -1092,7 +1093,7 @@ const Movements = () => {
       </Modal>
 
       {/* History Modal */}
-      <Modal isOpen={showHistoryModal} onClose={() => setShowHistoryModal(false)} title="🧪 Historique des Mélanges" size="lg">
+      <Modal isOpen={showHistoryModal} onClose={() => { setShowHistoryModal(false); setExpandedMelangeId(null); }} title="🧪 Historique des Mélanges" size="lg">
         <div className="space-y-4">
           {melangeHistory.length === 0 ? (
             <EmptyState icon="🧪" message="Aucun mélange appliqué" />
@@ -1133,13 +1134,18 @@ const Movements = () => {
                   {m.produits && m.produits.length > 0 && (
                     <div className="mt-3 pt-3 border-t">
                       <div className="flex flex-wrap gap-2">
-                        {m.produits.slice(0, 5).map((p, i) => (
+                        {(expandedMelangeId === m.id ? m.produits : m.produits.slice(0, 5)).map((p, i) => (
                           <span key={i} className="text-xs bg-gray-100 px-2 py-1 rounded">
                             {p.nom}: {fmt(p.qte)}
                           </span>
                         ))}
                         {m.produits.length > 5 && (
-                          <span className="text-xs text-gray-500">+{m.produits.length - 5} autres</span>
+                          <button 
+                            onClick={() => setExpandedMelangeId(expandedMelangeId === m.id ? null : m.id)}
+                            className="text-xs text-blue-500 hover:text-blue-700 font-medium cursor-pointer"
+                          >
+                            {expandedMelangeId === m.id ? '↑ Réduire' : `+${m.produits.length - 5} autres →`}
+                          </button>
                         )}
                       </div>
                     </div>
@@ -1150,7 +1156,7 @@ const Movements = () => {
           )}
           
           <div className="flex justify-end pt-2">
-            <Button variant="secondary" onClick={() => setShowHistoryModal(false)}>Fermer</Button>
+            <Button variant="secondary" onClick={() => { setShowHistoryModal(false); setExpandedMelangeId(null); }}>Fermer</Button>
           </div>
         </div>
       </Modal>
