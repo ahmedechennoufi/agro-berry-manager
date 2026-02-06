@@ -14906,6 +14906,28 @@
       "notes": "Mélange: Myrtille Sol",
       "melangeId": 1770376395823,
       "id": 1770376395862
+    },
+    {
+      "type": "consumption",
+      "product": "TELDOR",
+      "quantity": 10.5,
+      "price": 960,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770378406259
+    },
+    {
+      "type": "consumption",
+      "product": "MILBEKNOCK",
+      "quantity": 8.1,
+      "price": 624,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770378462992
     }
   ],
   "stockAB1": [
@@ -16138,5 +16160,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-06T11:15:16.112Z"
+  "exportDate": "2026-02-06T11:49:43.012Z"
 }
