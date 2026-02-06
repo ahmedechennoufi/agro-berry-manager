@@ -18,12 +18,13 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 62; // v5.4.4 - fix ACIDE SULFIRIQUE → SULFURIQUE
+const CURRENT_DATA_VERSION = 63; // v5.4.5 - fix FEROXIM 6 → FEROXIM
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
   const renames = {
-    'ACIDE SULFIRIQUE': 'ACIDE SULFURIQUE'
+    'ACIDE SULFIRIQUE': 'ACIDE SULFURIQUE',
+    'FEROXIM 6': 'FEROXIM'
     // Add more renames here if needed
   };
   
