@@ -128,31 +128,40 @@ const ConsoFermes = () => {
     // Build supplier map from entry movements (original purchases)
     const supplierMap = {};
     allMovements
-      .filter(m => m.type === 'entry' && m.supplier)
+      .filter(m => m.type === 'entry' && m.supplier && !m.supplier.includes('STOCK'))
       .forEach(m => {
         if (!supplierMap[m.product]) supplierMap[m.product] = [];
         supplierMap[m.product].push(m.supplier);
       });
     
-    // Get most frequent supplier for each product
+    // Get most recent real supplier for each product
     const getProductSupplier = (product) => {
       const suppliers = supplierMap[product];
       if (!suppliers || suppliers.length === 0) return null;
-      // Return most recent supplier
       return suppliers[suppliers.length - 1];
+    };
+    
+    // Check if a supplier is a real supplier (not a stock description)
+    const isRealSupplier = (supplier) => {
+      if (!supplier) return false;
+      const fakePatterns = ['STOCK', 'DÉCEMBRE', 'JANVIER', 'FÉVRIER', 'INVENTAIRE', 'INITIAL'];
+      return !fakePatterns.some(p => supplier.toUpperCase().includes(p));
     };
     
     return allMovements
       .filter(m => (m.type === 'transfer-in' || m.type === 'exit') && m.date >= periodDates.start && m.date <= periodDates.end)
       .map(m => {
         const prod = productMap[m.product] || {};
+        // Get real supplier: from movement if valid, otherwise lookup from entries
+        let supplier = isRealSupplier(m.supplier) ? m.supplier : getProductSupplier(m.product);
+        
         return {
           product: m.product,
           type: m.type,
           category: prod.category || 'AUTRES',
           farm: m.farm,
           fromFarm: m.fromFarm,
-          supplier: m.supplier || getProductSupplier(m.product),
+          supplier: supplier,
           unit: prod.unit || 'KG',
           price: getAveragePrice(m.product) || 0,
           quantity: m.quantity || 0
@@ -209,7 +218,12 @@ const ConsoFermes = () => {
   }, [movements, periodDates]);
 
   const handleExport = async () => {
-    await exportConsoFermes(tableData, selectedMonth, entryDetails, consoDetails);
+    try {
+      await exportConsoFermes(tableData, selectedMonth, entryDetails, consoDetails);
+    } catch (error) {
+      console.error('Export error:', error);
+      alert('Erreur export: ' + error.message);
+    }
   };
 
   // Format period display
