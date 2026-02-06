@@ -588,6 +588,16 @@ export const cancelMelange = (melangeId) => {
   return removed;
 };
 
+export const updateMelangeInHistory = (melangeId, updates) => {
+  const history = getMelangeHistory();
+  const idx = history.findIndex(h => h.id === melangeId);
+  if (idx >= 0) {
+    history[idx] = { ...history[idx], ...updates, updatedAt: new Date().toISOString() };
+    localStorage.setItem('agro_melange_history_v3', JSON.stringify(history));
+  }
+  return history[idx];
+};
+
 export const deleteMelangeFromHistory = (melangeId) => {
   const history = getMelangeHistory();
   const filtered = history.filter(h => h.id !== melangeId);

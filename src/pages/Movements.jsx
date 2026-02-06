@@ -3,7 +3,7 @@ import { useApp } from '../App';
 import { Card, Button, Input, Select, Modal, Badge, StatCard, EmptyState } from '../components/UI';
 import { FARMS, CATEGORIES, CULTURES, MELANGES_PREDEFINIS, FARM_CULTURES } from '../lib/constants';
 import { fmt, fmtMoney, downloadExcel, today } from '../lib/utils';
-import { getSuppliers, addSupplier, getAveragePrice, calculateFarmStock, calculateWarehouseStock, getMelangeHistory, addMelangeToHistory, cancelMelange } from '../lib/store';
+import { getSuppliers, addSupplier, getAveragePrice, calculateFarmStock, calculateWarehouseStock, getMelangeHistory, addMelangeToHistory, cancelMelange, updateMelangeInHistory } from '../lib/store';
 
 const Movements = () => {
   const { products, movements, addMovement, updateMovement, deleteMovement, showNotif, loadData, readOnly } = useApp();
@@ -43,6 +43,8 @@ const Movements = () => {
   const [editableProduits, setEditableProduits] = useState([]);
   const [showHistoryModal, setShowHistoryModal] = useState(false);
   const [expandedMelangeId, setExpandedMelangeId] = useState(null);
+  const [editingMelange, setEditingMelange] = useState(null);
+  const [editMelangeProducts, setEditMelangeProducts] = useState([]);
   const [melangeHistory, setMelangeHistory] = useState([]);
   const [newProductName, setNewProductName] = useState('');
   const [newProductQty, setNewProductQty] = useState('');
@@ -413,6 +415,75 @@ const Movements = () => {
     setMelangeHistory(getMelangeHistory());
     loadData();
     showNotif(`✅ Mélange annulé (${removed} mouvements supprimés)`);
+  };
+
+  const handleEditMelange = (melange) => {
+    // Load the melange for editing
+    setEditingMelange(melange);
+    // Initialize products with their current quantities
+    const productsWithStock = (melange.produits || []).map(p => {
+      const product = products.find(pr => pr.name === p.nom);
+      return {
+        nom: p.nom,
+        qte: p.qte,
+        price: p.price || product?.price || 0
+      };
+    });
+    setEditMelangeProducts(productsWithStock);
+    setShowHistoryModal(false);
+  };
+
+  const handleSaveEditMelange = () => {
+    if (!editingMelange) return;
+    
+    // Validate quantities
+    const validProducts = editMelangeProducts.filter(p => p.qte > 0);
+    if (validProducts.length === 0) {
+      showNotif('⚠️ Ajoutez au moins un produit avec une quantité > 0', 'warning');
+      return;
+    }
+
+    // Delete old movements for this melange
+    cancelMelange(editingMelange.id);
+
+    // Create new movements with updated quantities
+    const melangeId = editingMelange.id;
+    validProducts.forEach(p => {
+      addMovement({
+        type: 'consumption',
+        product: p.nom,
+        quantity: parseFloat(p.qte),
+        price: p.price || 0,
+        farm: editingMelange.farm,
+        date: editingMelange.date,
+        culture: editingMelange.culture,
+        destination: editingMelange.type || 'Sol',
+        notes: `Mélange: ${editingMelange.name}`,
+        melangeId: melangeId
+      });
+    });
+
+    // Update melange history
+    const totalCost = validProducts.reduce((sum, p) => sum + (p.qte * p.price), 0);
+    const totalQty = validProducts.reduce((sum, p) => sum + parseFloat(p.qte), 0);
+    
+    updateMelangeInHistory(melangeId, {
+      produits: validProducts,
+      totalCost,
+      totalQty,
+      cancelled: false
+    });
+
+    setMelangeHistory(getMelangeHistory());
+    loadData();
+    setEditingMelange(null);
+    setEditMelangeProducts([]);
+    showNotif(`✅ Mélange "${editingMelange.name}" modifié`);
+  };
+
+  const handleCancelEditMelange = () => {
+    setEditingMelange(null);
+    setEditMelangeProducts([]);
   };
 
   const handleDelete = (id) => {
@@ -1130,12 +1201,20 @@ const Movements = () => {
                     <div className="text-right">
                       <p className="font-bold text-green-600">{fmtMoney(m.totalCost)}</p>
                       {!m.cancelled && (
-                        <button 
-                          onClick={() => handleCancelMelange(m.id)}
-                          className="text-xs text-red-500 hover:text-red-700 mt-2"
-                        >
-                          ❌ Annuler
-                        </button>
+                        <div className="flex gap-2 mt-2 justify-end">
+                          <button 
+                            onClick={() => handleEditMelange(m)}
+                            className="text-xs text-blue-500 hover:text-blue-700"
+                          >
+                            ✏️ Modifier
+                          </button>
+                          <button 
+                            onClick={() => handleCancelMelange(m.id)}
+                            className="text-xs text-red-500 hover:text-red-700"
+                          >
+                            ❌ Annuler
+                          </button>
+                        </div>
                       )}
                     </div>
                   </div>
@@ -1168,6 +1247,65 @@ const Movements = () => {
             <Button variant="secondary" onClick={() => { setShowHistoryModal(false); setExpandedMelangeId(null); }}>Fermer</Button>
           </div>
         </div>
+      </Modal>
+
+      {/* Edit Melange Modal */}
+      <Modal isOpen={!!editingMelange} onClose={handleCancelEditMelange} title="✏️ Modifier le Mélange" size="lg">
+        {editingMelange && (
+          <div className="space-y-4">
+            <div className="p-3 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{editingMelange.type === 'Hydro' ? '💧' : '🌍'}</span>
+                <span className="font-bold text-gray-800">{editingMelange.name}</span>
+              </div>
+              <p className="text-sm text-gray-500 mt-1">
+                {FARMS.find(f => f.id === editingMelange.farm)?.name} • {editingMelange.culture} • {editingMelange.date}
+              </p>
+            </div>
+
+            <div className="space-y-2 max-h-[50vh] overflow-y-auto">
+              <p className="text-sm font-medium text-gray-600">Produits et quantités :</p>
+              {editMelangeProducts.map((p, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg">
+                  <span className="flex-1 text-sm font-medium">{p.nom}</span>
+                  <input
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={p.qte}
+                    onChange={(e) => {
+                      const newProducts = [...editMelangeProducts];
+                      newProducts[idx].qte = parseFloat(e.target.value) || 0;
+                      setEditMelangeProducts(newProducts);
+                    }}
+                    className="w-24 px-2 py-1 text-right border rounded-lg focus:ring-2 focus:ring-green-500"
+                  />
+                  <span className="text-xs text-gray-500 w-20">{fmtMoney(p.price)}/u</span>
+                  <span className="text-xs text-green-600 font-medium w-24 text-right">
+                    {fmtMoney(p.qte * p.price)}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="p-3 bg-green-50 rounded-xl">
+              <div className="flex justify-between items-center">
+                <span className="font-medium text-gray-700">Total :</span>
+                <span className="font-bold text-green-600 text-lg">
+                  {fmtMoney(editMelangeProducts.reduce((sum, p) => sum + (p.qte * p.price), 0))}
+                </span>
+              </div>
+              <p className="text-xs text-gray-500 mt-1">
+                {editMelangeProducts.filter(p => p.qte > 0).length} produits • {fmt(editMelangeProducts.reduce((sum, p) => sum + (parseFloat(p.qte) || 0), 0))} unités
+              </p>
+            </div>
+
+            <div className="flex justify-end gap-3 pt-2">
+              <Button variant="secondary" onClick={handleCancelEditMelange}>Annuler</Button>
+              <Button variant="primary" onClick={handleSaveEditMelange}>💾 Enregistrer</Button>
+            </div>
+          </div>
+        )}
       </Modal>
 
       {/* Edit Modal */}
