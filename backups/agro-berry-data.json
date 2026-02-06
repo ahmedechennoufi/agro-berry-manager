@@ -14928,6 +14928,110 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1770378462992
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 11.499999999999998,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "notes": "Mélange: Myrtille Hydro",
+      "melangeId": 1770383620480,
+      "id": 1770383620482
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 35,
+      "price": 4.138162438072362,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "notes": "Mélange: Myrtille Hydro",
+      "melangeId": 1770383620480,
+      "id": 1770383620491
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 35,
+      "price": 7.000000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "notes": "Mélange: Myrtille Hydro",
+      "melangeId": 1770383620480,
+      "id": 1770383620495
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 50,
+      "price": 8.760547608366977,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "notes": "Mélange: Myrtille Hydro",
+      "melangeId": 1770383620480,
+      "id": 1770383620498
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.774304104321659,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "notes": "Mélange: Myrtille Hydro",
+      "melangeId": 1770383620480,
+      "id": 1770383620501
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.5,
+      "price": 152.5982800982801,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "notes": "Mélange: Myrtille Hydro",
+      "melangeId": 1770383620480,
+      "id": 1770383620505
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 13.145720476706392,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "notes": "Mélange: Myrtille Hydro",
+      "melangeId": 1770383620480,
+      "id": 1770383620507
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "notes": "Mélange: Myrtille Hydro",
+      "melangeId": 1770383620480,
+      "id": 1770383620510
     }
   ],
   "stockAB1": [
@@ -16160,5 +16264,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-06T12:02:03.416Z"
+  "exportDate": "2026-02-06T13:15:40.517Z"
 }
