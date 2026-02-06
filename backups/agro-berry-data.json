@@ -20,7 +20,7 @@
     },
     {
       "id": 4,
-      "name": "ACIDE SULFIRIQUE",
+      "name": "ACIDE SULFURIQUE",
       "unit": "KG",
       "category": "ACIDES"
     },
@@ -1110,6 +1110,12 @@
       "category": "AUTRES",
       "threshold": null,
       "id": 1770301739153
+    },
+    {
+      "id": 1769174109017,
+      "name": "CASQUE ANTI BRUIT SNR 35",
+      "unit": "UNITÉ",
+      "category": "AUTRES"
     }
   ],
   "movements": [
@@ -1579,7 +1585,7 @@
     },
     {
       "id": 1767873118721,
-      "date": "2026-01-07",
+      "date": "2026-01-08",
       "type": "entry",
       "product": "SULFATE DE POTASSE",
       "quantity": 10400,
@@ -1611,7 +1617,7 @@
     },
     {
       "id": 1767873165971,
-      "date": "2026-01-07",
+      "date": "2026-01-08",
       "type": "entry",
       "product": "NITRATE DE CALCIUM",
       "quantity": 2500,
@@ -1643,9 +1649,9 @@
     },
     {
       "id": 1767873194221,
-      "date": "2026-01-07",
+      "date": "2026-01-08",
       "type": "entry",
-      "product": "ACIDE SULFIRIQUE",
+      "product": "ACIDE SULFURIQUE",
       "quantity": 525,
       "price": 3.35,
       "supplier": "PHYTOLOUKKOS",
@@ -1691,7 +1697,7 @@
     },
     {
       "id": 1767873351589,
-      "date": "2026-01-07",
+      "date": "2026-01-08",
       "type": "entry",
       "product": "MICROQUEL",
       "quantity": 30,
@@ -1707,7 +1713,7 @@
     },
     {
       "id": 1767873380089,
-      "date": "2026-01-07",
+      "date": "2026-01-08",
       "type": "entry",
       "product": "BIOENERGY",
       "quantity": 160,
@@ -1723,7 +1729,7 @@
     },
     {
       "id": 1767873400139,
-      "date": "2026-01-07",
+      "date": "2026-01-08",
       "type": "entry",
       "product": "BASSO",
       "quantity": 200,
@@ -2076,12 +2082,12 @@
     },
     {
       "id": 1768214894801,
-      "date": "2026-01-07",
+      "date": "2026-01-06",
       "type": "entry",
       "product": "BEESURE",
       "quantity": 20,
       "price": 186,
-      "supplier": "SAOAS",
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "farm": null,
       "toFarm": null,
       "fromFarm": null,
@@ -4224,7 +4230,7 @@
       "id": 2012,
       "date": "2025-12-25",
       "type": "entry",
-      "product": "ACIDE SULFIRIQUE",
+      "product": "ACIDE SULFURIQUE",
       "quantity": 980,
       "price": 5.5,
       "supplier": "STOCK DÉCEMBRE 2025",
@@ -4240,7 +4246,7 @@
       "id": 2013,
       "date": "2025-12-25",
       "type": "exit",
-      "product": "ACIDE SULFIRIQUE",
+      "product": "ACIDE SULFURIQUE",
       "quantity": 980,
       "price": 5.5,
       "supplier": null,
@@ -7423,7 +7429,7 @@
     },
     {
       "id": 1768476555213,
-      "date": "2026-01-13",
+      "date": "2026-01-15",
       "type": "entry",
       "product": "SWITCH",
       "quantity": 60,
@@ -7631,7 +7637,7 @@
       "id": 1768661933172,
       "date": "2026-01-08",
       "type": "exit",
-      "product": "ACIDE SULFIRIQUE",
+      "product": "ACIDE SULFURIQUE",
       "quantity": 525,
       "price": 4.75,
       "farm": "AGRO BERRY 1"
@@ -7832,11 +7838,29 @@
       "farm": "AGRO BERRY 1"
     },
     {
+      "id": 1769240335718,
+      "date": "2026-01-21",
+      "type": "entry",
+      "product": "CASQUE ANTI BRUIT SNR 26",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "ALTA PRO"
+    },
+    {
       "id": 1769240368391,
       "date": "2026-01-21",
       "type": "entry",
       "product": "GILET JAUNE",
       "quantity": 10,
+      "price": 0,
+      "supplier": "ALTA PRO"
+    },
+    {
+      "id": 1769240408511,
+      "date": "2026-01-21",
+      "type": "entry",
+      "product": "CASQUE ANTI BRUIT SNR 35",
+      "quantity": 1,
       "price": 0,
       "supplier": "ALTA PRO"
     },
@@ -7898,7 +7922,7 @@
       "product": "BEESURE",
       "quantity": 20,
       "price": 186,
-      "supplier": "SAOAS"
+      "supplier": "PHYTOLOUKKOS"
     },
     {
       "id": 1769586482328,
@@ -14717,6 +14741,28 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770301797645
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 7.5,
+      "price": 250,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770374874562
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 5.7,
+      "price": 250,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770374950746
     }
   ],
   "stockAB1": [
@@ -14851,7 +14897,7 @@
       "price": 324
     },
     {
-      "product": "BLACKJAK",
+      "product": "BLAKJAK",
       "quantity": 5,
       "price": 130
     },
@@ -14971,7 +15017,7 @@
       "price": 7.5
     },
     {
-      "product": "FOLIASTIM PURE",
+      "product": "FOLIASTIM",
       "quantity": 50,
       "price": 129.6
     },
@@ -15071,7 +15117,7 @@
       "price": 1312
     },
     {
-      "product": "CODACIDE",
+      "product": "CODACIDE OIL",
       "quantity": 24.5,
       "price": 82.6
     },
@@ -15248,7 +15294,7 @@
       "price": 324
     },
     {
-      "product": "BLACKJAK",
+      "product": "BLAKJAK",
       "quantity": 10,
       "price": 130
     },
@@ -15318,7 +15364,7 @@
       "price": 600
     },
     {
-      "product": "FOLIASTIM PURE",
+      "product": "FOLIASTIM",
       "quantity": 12,
       "price": 129.6
     },
@@ -15373,7 +15419,7 @@
       "price": 1312
     },
     {
-      "product": "CODACIDE",
+      "product": "CODACIDE OIL",
       "quantity": 56,
       "price": 82.6
     },
@@ -15530,7 +15576,7 @@
       "price": 324
     },
     {
-      "product": "BLACKJAK",
+      "product": "BLAKJAK",
       "quantity": 12,
       "price": 130
     },
@@ -15605,12 +15651,12 @@
       "price": 600
     },
     {
-      "product": "MICROMIX",
+      "product": "MICRO MIX",
       "quantity": 20,
       "price": 75
     },
     {
-      "product": "FOLIASTIM PURE",
+      "product": "FOLIASTIM",
       "quantity": 18,
       "price": 129.6
     },
@@ -15650,7 +15696,7 @@
       "price": 1312
     },
     {
-      "product": "CODACIDE",
+      "product": "CODACIDE OIL",
       "quantity": 63,
       "price": 82.6
     },
@@ -15949,5 +15995,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-05T14:30:15.590Z"
+  "exportDate": "2026-02-06T10:51:10.753Z"
 }
