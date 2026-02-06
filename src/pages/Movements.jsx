@@ -616,8 +616,14 @@ const Movements = () => {
                     detailText = <span><span className="text-orange-600 font-medium">De:</span> {from} <span className="text-green-600 font-medium">→ Vers:</span> {to}</span>;
                   } else if (m.farm) {
                     const farmShort = m.farm.replace('AGRO BERRY ', 'AB');
-                    detailText = m.culture 
-                      ? <span>→ {farmShort} <span className="text-purple-500">• {m.culture}</span></span>
+                    // Show culture with destination type for Myrtille
+                    let cultureText = m.culture || '';
+                    if (m.culture === 'Myrtille' && m.destination) {
+                      const destShort = m.destination === 'Hydroponic' || m.destination === 'Hydro' ? 'Hydro' : m.destination;
+                      cultureText = `${m.culture} ${destShort}`;
+                    }
+                    detailText = cultureText 
+                      ? <span>→ {farmShort} <span className="text-purple-500">• {cultureText}</span></span>
                       : `→ ${farmShort}`;
                   }
                   
