@@ -163,12 +163,6 @@
       "category": "AUTRES"
     },
     {
-      "id": 1769174109017,
-      "name": "CASQUE ANTI BRUIT SNR 35",
-      "unit": "UNITÉ",
-      "category": "AUTRES"
-    },
-    {
       "id": 1766938646403,
       "name": "CHAUX",
       "unit": "UNITÉ",
@@ -899,6 +893,223 @@
       "name": "ZM CORRECTOR",
       "unit": "KG",
       "category": "ENGRAIS"
+    },
+    {
+      "name": "VESTE DE TRAITEMENT",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296491671
+    },
+    {
+      "name": "GANT",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296501754
+    },
+    {
+      "name": "MASQUE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296511754
+    },
+    {
+      "name": "LUNETTE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296526420
+    },
+    {
+      "name": "FILTRE DE MASQUE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296541804
+    },
+    {
+      "name": "RUBON",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770296553454
+    },
+    {
+      "name": "ML TUYAU POLYETHYLENE 32",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297236862
+    },
+    {
+      "name": "JONCTION POLYETHYLENE D 32",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297277394
+    },
+    {
+      "name": "VANNE POLYETHYLENE 40",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297320228
+    },
+    {
+      "name": "COUDE POLYETHYLENE D 32",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297365195
+    },
+    {
+      "name": "CPEC 110 X 314",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297397444
+    },
+    {
+      "name": "CPEC 90 X 314",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297424443
+    },
+    {
+      "name": "CHALUMEAU A GAZ",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297454277
+    },
+    {
+      "name": "BIDON",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297470860
+    },
+    {
+      "name": "FLEXIBLE DE LAVABO",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770297495494
+    },
+    {
+      "name": "CITERNE ",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770299102118
+    },
+    {
+      "name": "PROJECTEUR",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770299553003
+    },
+    {
+      "name": "FICHE MALE 380",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770299576403
+    },
+    {
+      "name": "PRISE FEMELLE 220V",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770299625786
+    },
+    {
+      "name": "FICHE DE MALE 220",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770299663620
+    },
+    {
+      "name": "SCOTCH ",
+      "unit": "KG",
+      "category": "ENGRAIS",
+      "threshold": null,
+      "id": 1770299683353
+    },
+    {
+      "name": "LAMPE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770299699204
+    },
+    {
+      "name": "SCOTCH BLANC ",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770300195618
+    },
+    {
+      "name": "SILICONE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770300211717
+    },
+    {
+      "name": "CASQUE ANTI BRUIT SNR 36",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770300255167
+    },
+    {
+      "name": "CAISSE DE PLASTIQUE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770300781415
+    },
+    {
+      "name": "CEINTURE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770300792700
+    },
+    {
+      "name": "PANIER GRAND ",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770300839882
+    },
+    {
+      "name": "PANIER PETITE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770300857598
+    },
+    {
+      "name": "BLOC SECOURS LED",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770301328053
+    },
+    {
+      "name": "PRISE FEMELLE 380 ",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1770301739153
     }
   ],
   "movements": [
@@ -1368,7 +1579,7 @@
     },
     {
       "id": 1767873118721,
-      "date": "2026-01-08",
+      "date": "2026-01-07",
       "type": "entry",
       "product": "SULFATE DE POTASSE",
       "quantity": 10400,
@@ -1400,7 +1611,7 @@
     },
     {
       "id": 1767873165971,
-      "date": "2026-01-08",
+      "date": "2026-01-07",
       "type": "entry",
       "product": "NITRATE DE CALCIUM",
       "quantity": 2500,
@@ -1432,7 +1643,7 @@
     },
     {
       "id": 1767873194221,
-      "date": "2026-01-08",
+      "date": "2026-01-07",
       "type": "entry",
       "product": "ACIDE SULFIRIQUE",
       "quantity": 525,
@@ -1480,7 +1691,7 @@
     },
     {
       "id": 1767873351589,
-      "date": "2026-01-08",
+      "date": "2026-01-07",
       "type": "entry",
       "product": "MICROQUEL",
       "quantity": 30,
@@ -1496,7 +1707,7 @@
     },
     {
       "id": 1767873380089,
-      "date": "2026-01-08",
+      "date": "2026-01-07",
       "type": "entry",
       "product": "BIOENERGY",
       "quantity": 160,
@@ -1512,7 +1723,7 @@
     },
     {
       "id": 1767873400139,
-      "date": "2026-01-08",
+      "date": "2026-01-07",
       "type": "entry",
       "product": "BASSO",
       "quantity": 200,
@@ -1865,12 +2076,12 @@
     },
     {
       "id": 1768214894801,
-      "date": "2026-01-06",
+      "date": "2026-01-07",
       "type": "entry",
       "product": "BEESURE",
       "quantity": 20,
       "price": 186,
-      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "supplier": "SAOAS",
       "farm": null,
       "toFarm": null,
       "fromFarm": null,
@@ -7212,7 +7423,7 @@
     },
     {
       "id": 1768476555213,
-      "date": "2026-01-15",
+      "date": "2026-01-13",
       "type": "entry",
       "product": "SWITCH",
       "quantity": 60,
@@ -7621,29 +7832,11 @@
       "farm": "AGRO BERRY 1"
     },
     {
-      "id": 1769240335718,
-      "date": "2026-01-21",
-      "type": "entry",
-      "product": "CASQUE ANTI BRUIT SNR 26",
-      "quantity": 2,
-      "price": 0,
-      "supplier": "ALTA PRO"
-    },
-    {
       "id": 1769240368391,
       "date": "2026-01-21",
       "type": "entry",
       "product": "GILET JAUNE",
       "quantity": 10,
-      "price": 0,
-      "supplier": "ALTA PRO"
-    },
-    {
-      "id": 1769240408511,
-      "date": "2026-01-21",
-      "type": "entry",
-      "product": "CASQUE ANTI BRUIT SNR 35",
-      "quantity": 1,
       "price": 0,
       "supplier": "ALTA PRO"
     },
@@ -7705,7 +7898,7 @@
       "product": "BEESURE",
       "quantity": 20,
       "price": 186,
-      "supplier": "PHYTOLOUKKOS"
+      "supplier": "SAOAS"
     },
     {
       "id": 1769586482328,
@@ -13776,6 +13969,754 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770122104319
+    },
+    {
+      "type": "entry",
+      "product": "VESTE DE TRAITEMENT",
+      "quantity": 30,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296590788
+    },
+    {
+      "type": "entry",
+      "product": "GANT",
+      "quantity": 40,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296630492
+    },
+    {
+      "type": "entry",
+      "product": "MASQUE",
+      "quantity": 15,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296671994
+    },
+    {
+      "type": "entry",
+      "product": "LUNETTE",
+      "quantity": 30,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296702855
+    },
+    {
+      "type": "entry",
+      "product": "FILTRE DE MASQUE",
+      "quantity": 15,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296748640
+    },
+    {
+      "type": "entry",
+      "product": "RUBON",
+      "quantity": 3,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296788556
+    },
+    {
+      "type": "exit",
+      "product": "VESTE DE TRAITEMENT",
+      "quantity": 30,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296852609
+    },
+    {
+      "type": "exit",
+      "product": "GANT",
+      "quantity": 40,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770296879008
+    },
+    {
+      "type": "exit",
+      "product": "MASQUE",
+      "quantity": 15,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297008224
+    },
+    {
+      "type": "exit",
+      "product": "RUBON",
+      "quantity": 3,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2025-12-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297035541
+    },
+    {
+      "type": "entry",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 186,
+      "supplier": "SAOAS",
+      "date": "2025-12-31",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297147679
+    },
+    {
+      "type": "entry",
+      "product": "ML TUYAU POLYETHYLENE 32",
+      "quantity": 800,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297567831
+    },
+    {
+      "type": "entry",
+      "product": "JONCTION POLYETHYLENE D 32",
+      "quantity": 11,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770297598001
+    },
+    {
+      "type": "entry",
+      "product": "VANNE POLYETHYLENE 40",
+      "quantity": 4,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298312773
+    },
+    {
+      "type": "entry",
+      "product": "COUDE POLYETHYLENE D 32",
+      "quantity": 6,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298490805
+    },
+    {
+      "type": "exit",
+      "product": "COUDE POLYETHYLENE D 32",
+      "quantity": 6,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298511173
+    },
+    {
+      "type": "entry",
+      "product": "CPEC 110 X 314",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298539838
+    },
+    {
+      "type": "exit",
+      "product": "CPEC 110 X 314",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298557574
+    },
+    {
+      "type": "entry",
+      "product": "CPEC 90 X 314",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298573637
+    },
+    {
+      "type": "exit",
+      "product": "CPEC 90 X 314",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298592056
+    },
+    {
+      "type": "entry",
+      "product": "CHALUMEAU A GAZ",
+      "quantity": 1,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298636237
+    },
+    {
+      "type": "exit",
+      "product": "CHALUMEAU A GAZ",
+      "quantity": 1,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298654722
+    },
+    {
+      "type": "entry",
+      "product": "BIDON",
+      "quantity": 6,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298692353
+    },
+    {
+      "type": "exit",
+      "product": "BIDON",
+      "quantity": 6,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298710423
+    },
+    {
+      "type": "entry",
+      "product": "FLEXIBLE DE LAVABO",
+      "quantity": 6,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298732086
+    },
+    {
+      "type": "exit",
+      "product": "FLEXIBLE DE LAVABO",
+      "quantity": 6,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770298747257
+    },
+    {
+      "type": "entry",
+      "product": "CITERNE ",
+      "quantity": 3,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-01-08",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299138224
+    },
+    {
+      "type": "exit",
+      "product": "CITERNE ",
+      "quantity": 3,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-08",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299165174
+    },
+    {
+      "type": "entry",
+      "product": "PROJECTEUR",
+      "quantity": 5,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299741590
+    },
+    {
+      "type": "entry",
+      "product": "FICHE MALE 380",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299776325
+    },
+    {
+      "type": "entry",
+      "product": "PRISE FEMELLE 220V",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299839725
+    },
+    {
+      "type": "entry",
+      "product": "FICHE DE MALE 220",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299885875
+    },
+    {
+      "type": "entry",
+      "product": "SCOTCH ",
+      "quantity": 10,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299919145
+    },
+    {
+      "type": "entry",
+      "product": "LAMPE",
+      "quantity": 10,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299949141
+    },
+    {
+      "type": "exit",
+      "product": "PROJECTEUR",
+      "quantity": 5,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299969628
+    },
+    {
+      "type": "exit",
+      "product": "FICHE MALE 380",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770299994073
+    },
+    {
+      "type": "exit",
+      "product": "PRISE FEMELLE 220V",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300023294
+    },
+    {
+      "type": "exit",
+      "product": "FICHE DE MALE 220",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300045441
+    },
+    {
+      "type": "exit",
+      "product": "SCOTCH ",
+      "quantity": 10,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300093626
+    },
+    {
+      "type": "exit",
+      "product": "LAMPE",
+      "quantity": 10,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300112539
+    },
+    {
+      "type": "entry",
+      "product": "SCOTCH BLANC ",
+      "quantity": 4,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300335540
+    },
+    {
+      "type": "entry",
+      "product": "SILICONE",
+      "quantity": 10,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300371605
+    },
+    {
+      "type": "entry",
+      "product": "CASQUE ANTI BRUIT SNR 36",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300445987
+    },
+    {
+      "type": "entry",
+      "product": "GILET JAUNE",
+      "quantity": 10,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300472573
+    },
+    {
+      "type": "entry",
+      "product": "CASQUE ANTI BRUIT SNR 26",
+      "quantity": 1,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300498721
+    },
+    {
+      "type": "exit",
+      "product": "SCOTCH BLANC ",
+      "quantity": 4,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300530538
+    },
+    {
+      "type": "exit",
+      "product": "SILICONE",
+      "quantity": 10,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300573989
+    },
+    {
+      "type": "exit",
+      "product": "CASQUE ANTI BRUIT SNR 36",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300625407
+    },
+    {
+      "type": "exit",
+      "product": "GILET JAUNE",
+      "quantity": 10,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300645705
+    },
+    {
+      "type": "exit",
+      "product": "CASQUE ANTI BRUIT SNR 26",
+      "quantity": 1,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300677089
+    },
+    {
+      "type": "entry",
+      "product": "CAISSE DE PLASTIQUE",
+      "quantity": 980,
+      "price": 0,
+      "supplier": "AGROGAILES",
+      "date": "2026-01-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300917284
+    },
+    {
+      "type": "entry",
+      "product": "CEINTURE",
+      "quantity": 150,
+      "price": 0,
+      "supplier": "AGROGAILES",
+      "date": "2026-01-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300950028
+    },
+    {
+      "type": "entry",
+      "product": "PANIER GRAND ",
+      "quantity": 450,
+      "price": 0,
+      "supplier": "AGROGAILES",
+      "date": "2026-01-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770300989256
+    },
+    {
+      "type": "entry",
+      "product": "PANIER PETITE",
+      "quantity": 300,
+      "price": 0,
+      "supplier": "AGROGAILES",
+      "date": "2026-01-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301091425
+    },
+    {
+      "type": "exit",
+      "product": "CAISSE DE PLASTIQUE",
+      "quantity": 980,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301181843
+    },
+    {
+      "type": "exit",
+      "product": "CEINTURE",
+      "quantity": 150,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301210069
+    },
+    {
+      "type": "exit",
+      "product": "PANIER GRAND ",
+      "quantity": 450,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301253590
+    },
+    {
+      "type": "exit",
+      "product": "PANIER PETITE",
+      "quantity": 300,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301277576
+    },
+    {
+      "type": "entry",
+      "product": "BLOC SECOURS LED",
+      "quantity": 20,
+      "price": 0,
+      "supplier": "ALTA PRO",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301381805
+    },
+    {
+      "type": "exit",
+      "product": "BLOC SECOURS LED",
+      "quantity": 20,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301403328
+    },
+    {
+      "type": "entry",
+      "product": "ISABION",
+      "quantity": 40,
+      "price": 118.51851851851852,
+      "supplier": "CASEM",
+      "date": "2026-01-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301480522
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 40,
+      "price": 118.51851851851852,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301498919
+    },
+    {
+      "type": "entry",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 186,
+      "supplier": "SAOAS",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301547275
+    },
+    {
+      "type": "exit",
+      "product": "BEESURE",
+      "quantity": 80,
+      "price": 186,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301578077
+    },
+    {
+      "type": "transfer-out",
+      "product": "TELDOR",
+      "quantity": 11.5,
+      "price": 960,
+      "farm": "AGRO BERRY 2",
+      "toFarm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "transferId": 1770301694722,
+      "id": 1770301694723
+    },
+    {
+      "type": "transfer-in",
+      "product": "TELDOR",
+      "quantity": 11.5,
+      "price": 960,
+      "farm": "AGRO BERRY 1",
+      "fromFarm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "transferId": 1770301694722,
+      "id": 1770301694726
+    },
+    {
+      "type": "entry",
+      "product": "PRISE FEMELLE 380 ",
+      "quantity": 2,
+      "price": 0,
+      "supplier": "LARACLEF",
+      "date": "2026-01-31",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301770991
+    },
+    {
+      "type": "exit",
+      "product": "PRISE FEMELLE 380 ",
+      "quantity": 2,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-31",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770301797645
     }
   ],
   "stockAB1": [
@@ -14833,7 +15774,8 @@
     "TRANS BROKERS",
     "YOUNESS HARARA TRANS",
     "YOUNESS HARARA TRANS",
-    "MANVERT"
+    "MANVERT",
+    "AGROGAILES"
   ],
   "consommations": [
     {
@@ -15007,5 +15949,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-05T12:35:48.293Z"
+  "exportDate": "2026-02-05T14:30:15.590Z"
 }
