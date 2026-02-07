@@ -15175,6 +15175,116 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1770450119707
+    },
+    {
+      "type": "consumption",
+      "product": "ROMBI SAL",
+      "quantity": 120,
+      "price": 26.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770450315526
+    },
+    {
+      "type": "consumption",
+      "product": "SOUFRE",
+      "quantity": 236,
+      "price": 9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770450414591
+    },
+    {
+      "type": "consumption",
+      "product": "KELPAK",
+      "quantity": 15.45,
+      "price": 120,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Foliaire",
+      "id": 1770450457704
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 32,
+      "price": 125,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Foliaire",
+      "id": 1770450490571
+    },
+    {
+      "type": "consumption",
+      "product": "NOVATEC RED 8-10-34",
+      "quantity": 15.45,
+      "price": 21.933333333333334,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Foliaire",
+      "id": 1770450534760
+    },
+    {
+      "type": "consumption",
+      "product": "SWITCH",
+      "quantity": 10.3,
+      "price": 1897.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Pesticide",
+      "id": 1770450605303
+    },
+    {
+      "type": "consumption",
+      "product": "TELDOR",
+      "quantity": 18,
+      "price": 960,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Pesticide",
+      "id": 1770450721091
+    },
+    {
+      "type": "consumption",
+      "product": "SCELTA",
+      "quantity": 16,
+      "price": 1250,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Pesticide",
+      "id": 1770450755786
+    },
+    {
+      "type": "consumption",
+      "product": "ALFABET",
+      "quantity": 16,
+      "price": 500.00000000000006,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Pesticide",
+      "id": 1770450811820
+    },
+    {
+      "type": "consumption",
+      "product": "MILBEKNOCK",
+      "quantity": 29.9,
+      "price": 624,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Pesticide",
+      "id": 1770450892786
     }
   ],
   "stockAB1": [
@@ -16407,5 +16517,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T07:43:59.718Z"
+  "exportDate": "2026-02-07T07:56:52.790Z"
 }
