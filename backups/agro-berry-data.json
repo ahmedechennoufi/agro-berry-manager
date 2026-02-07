@@ -1181,9 +1181,7 @@
       "price": 186,
       "farm": "AGRO BERRY 1",
       "date": "2026-02-07",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1770464169283
+      "id": 1770464471184
     }
   ],
   "stockAB1": [
@@ -2445,5 +2443,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T11:38:09.313Z"
+  "exportDate": "2026-02-07T11:43:11.182Z"
 }
