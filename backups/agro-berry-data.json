@@ -1116,6 +1116,20 @@
       "name": "CASQUE ANTI BRUIT SNR 35",
       "unit": "UNITÉ",
       "category": "AUTRES"
+    },
+    {
+      "name": "PEINTURE NOIR",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": 1,
+      "id": 1770465136593
+    },
+    {
+      "name": "WHITE SPIRITE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": 1,
+      "id": 1770465203673
     }
   ],
   "movements": [
@@ -1182,6 +1196,42 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-07",
       "id": 1770464471184
+    },
+    {
+      "type": "entry",
+      "product": "PEINTURE NOIR",
+      "quantity": 20,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-02-06",
+      "id": 1770465288990
+    },
+    {
+      "type": "entry",
+      "product": "WHITE SPIRITE",
+      "quantity": 25,
+      "price": 0,
+      "supplier": "AGRI HIVER",
+      "date": "2026-02-06",
+      "id": 1770465345357
+    },
+    {
+      "type": "exit",
+      "product": "PEINTURE NOIR",
+      "quantity": 20,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-06",
+      "id": 1770465390437
+    },
+    {
+      "type": "exit",
+      "product": "WHITE SPIRITE",
+      "quantity": 25,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-06",
+      "id": 1770465420621
     }
   ],
   "stockAB1": [
@@ -2443,5 +2493,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T11:43:11.182Z"
+  "exportDate": "2026-02-07T11:57:32.087Z"
 }
