@@ -15384,6 +15384,94 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770451969442
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 7.5,
+      "price": 208.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770452146262
+    },
+    {
+      "type": "consumption",
+      "product": "FOLIASTIM",
+      "quantity": 25,
+      "price": 135,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770452183597
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 25,
+      "price": 82.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770452267214
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 25,
+      "price": 125,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770452299398
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 630,
+      "price": 6.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770452334479
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 60,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770452368878
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 7.5,
+      "price": 14.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770452408264
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 11.25,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770452471216
     }
   ],
   "stockAB1": [
@@ -16616,5 +16704,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T08:14:49.489Z"
+  "exportDate": "2026-02-07T08:23:11.223Z"
 }
