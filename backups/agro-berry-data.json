@@ -15285,6 +15285,61 @@
       "culture": "Fraise",
       "destination": "Pesticide",
       "id": 1770450892786
+    },
+    {
+      "type": "consumption",
+      "product": "BEESURE",
+      "quantity": 80,
+      "price": 186,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451509616
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 562.5,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451570375
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 750,
+      "price": 11.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451606777
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 750,
+      "price": 4.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451664476
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 525,
+      "price": 9.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451712060
     }
   ],
   "stockAB1": [
@@ -16517,5 +16572,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T07:56:52.790Z"
+  "exportDate": "2026-02-07T08:08:36.108Z"
 }
