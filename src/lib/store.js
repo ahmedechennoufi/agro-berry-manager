@@ -18,7 +18,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 65; // v5.4.7 - fix all duplicate product names in all files
+const CURRENT_DATA_VERSION = 66; // v5.6.1 - Reset: stock 25/01/2026, clear movements
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
@@ -135,31 +135,53 @@ export const initializeData = () => {
   if (savedVersion < CURRENT_DATA_VERSION) {
     console.log(`🔄 Mise à jour données v${savedVersion} → v${CURRENT_DATA_VERSION}...`);
     
-    // IDs that were in old versions but replaced in new version (must be removed)
-    const obsoleteIdRanges = [[9000, 9041], [9042, 9061], [25140, 25141]]; // Old AGB2 + AGB3 aggregated data + retrait 25/12
-    const isObsolete = (id) => obsoleteIdRanges.some(([min, max]) => id >= min && id <= max);
-    
-    // Merge movements: keep user-added ones + replace initialData ones
-    const existingMovements = JSON.parse(localStorage.getItem(STORAGE_KEYS.movements) || '[]');
-    const newMovements = initialData.movements || [];
-    const newIds = new Set(newMovements.map(m => m.id));
-    
-    // Keep movements added manually by user (IDs not in initialData AND not obsolete)
-    const userMovements = existingMovements.filter(m => !newIds.has(m.id) && !isObsolete(m.id));
-    const mergedMovements = [...newMovements, ...userMovements];
-    localStorage.setItem(STORAGE_KEYS.movements, JSON.stringify(mergedMovements));
-    
-    // Merge products: add new ones, keep existing
-    const existingProducts = JSON.parse(localStorage.getItem(STORAGE_KEYS.products) || '[]');
-    const newProducts = initialData.products || [];
-    const existingNames = new Set(existingProducts.map(p => p.name));
-    const addedProducts = newProducts.filter(p => !existingNames.has(p.name));
-    if (addedProducts.length > 0) {
-      localStorage.setItem(STORAGE_KEYS.products, JSON.stringify([...existingProducts, ...addedProducts]));
+    // v66: Full reset - stock 25/01/2026, clear all movements
+    if (savedVersion < 66) {
+      console.log('🔄 Reset complet: Stock 25/01/2026, suppression mouvements...');
+      
+      // Clear movements
+      localStorage.setItem(STORAGE_KEYS.movements, JSON.stringify([]));
+      
+      // Clear consommations
+      localStorage.setItem(STORAGE_KEYS.consommations, JSON.stringify([]));
+      
+      // Reset stock with January inventory
+      localStorage.setItem(STORAGE_KEYS.stockAB1, JSON.stringify(initialData.stockAB1 || []));
+      localStorage.setItem(STORAGE_KEYS.stockAB2, JSON.stringify(initialData.stockAB2 || []));
+      localStorage.setItem(STORAGE_KEYS.stockAB3, JSON.stringify(initialData.stockAB3 || []));
+      
+      // Clear melange history
+      localStorage.setItem('agro_melange_history_v3', JSON.stringify([]));
+      
+      console.log('✅ Reset complet effectué!');
+    } else {
+      // IDs that were in old versions but replaced in new version (must be removed)
+      const obsoleteIdRanges = [[9000, 9041], [9042, 9061], [25140, 25141]]; // Old AGB2 + AGB3 aggregated data + retrait 25/12
+      const isObsolete = (id) => obsoleteIdRanges.some(([min, max]) => id >= min && id <= max);
+      
+      // Merge movements: keep user-added ones + replace initialData ones
+      const existingMovements = JSON.parse(localStorage.getItem(STORAGE_KEYS.movements) || '[]');
+      const newMovements = initialData.movements || [];
+      const newIds = new Set(newMovements.map(m => m.id));
+      
+      // Keep movements added manually by user (IDs not in initialData AND not obsolete)
+      const userMovements = existingMovements.filter(m => !newIds.has(m.id) && !isObsolete(m.id));
+      const mergedMovements = [...newMovements, ...userMovements];
+      localStorage.setItem(STORAGE_KEYS.movements, JSON.stringify(mergedMovements));
+      
+      // Merge products: add new ones, keep existing
+      const existingProducts = JSON.parse(localStorage.getItem(STORAGE_KEYS.products) || '[]');
+      const newProducts = initialData.products || [];
+      const existingNames = new Set(existingProducts.map(p => p.name));
+      const addedProducts = newProducts.filter(p => !existingNames.has(p.name));
+      if (addedProducts.length > 0) {
+        localStorage.setItem(STORAGE_KEYS.products, JSON.stringify([...existingProducts, ...addedProducts]));
+      }
+      
+      console.log(`✅ Mise à jour terminée`);
     }
     
     localStorage.setItem(STORAGE_KEYS.dataVersion, String(CURRENT_DATA_VERSION));
-    console.log(`✅ Mise à jour terminée: ${mergedMovements.length} mouvements (${userMovements.length} manuels conservés)`);
     
     // Run migrations
     migrateProductNames();
