@@ -15472,6 +15472,39 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770452471216
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 350,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770452614090
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 500,
+      "price": 11.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770452722594
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 350,
+      "price": 4.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770452774531
     }
   ],
   "stockAB1": [
@@ -16704,5 +16737,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T08:23:11.223Z"
+  "exportDate": "2026-02-07T08:26:41.526Z"
 }
