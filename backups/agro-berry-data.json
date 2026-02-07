@@ -1122,7 +1122,7 @@
     {
       "type": "transfer-out",
       "product": "TELDOR",
-      "quantity": 10.5,
+      "quantity": 11.5,
       "price": 908,
       "farm": "AGRO BERRY 2",
       "toFarm": "AGRO BERRY 1",
@@ -2401,5 +2401,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T11:05:09.667Z"
+  "exportDate": "2026-02-07T11:11:18.391Z"
 }
