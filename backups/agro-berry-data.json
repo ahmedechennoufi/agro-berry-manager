@@ -1120,6 +1120,28 @@
   ],
   "movements": [
     {
+      "type": "entry",
+      "product": "PERFECTOSE",
+      "quantity": 105,
+      "price": 63.34,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770463126359
+    },
+    {
+      "type": "entry",
+      "product": "OIKOS",
+      "quantity": 80,
+      "price": 2500,
+      "supplier": "ALFACHIMIE",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770463221490
+    },
+    {
       "type": "transfer-out",
       "product": "TELDOR",
       "quantity": 11.5,
@@ -1127,8 +1149,8 @@
       "farm": "AGRO BERRY 2",
       "toFarm": "AGRO BERRY 1",
       "date": "2026-01-30",
-      "transferId": 1770462994996,
-      "id": 1770462994996
+      "transferId": 1770463292580,
+      "id": 1770463292580
     },
     {
       "type": "transfer-in",
@@ -1138,8 +1160,30 @@
       "farm": "AGRO BERRY 1",
       "fromFarm": "AGRO BERRY 2",
       "date": "2026-01-30",
-      "transferId": 1770462994996,
-      "id": 1770462994996
+      "transferId": 1770463292580,
+      "id": 1770463292581
+    },
+    {
+      "type": "entry",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 186,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770463490791
+    },
+    {
+      "type": "exit",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 186,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770463545822
     }
   ],
   "stockAB1": [
@@ -2401,5 +2445,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T11:18:34.996Z"
+  "exportDate": "2026-02-07T11:27:46.339Z"
 }
