@@ -1183,7 +1183,7 @@
       "date": "2026-02-07",
       "culture": "Myrtille",
       "destination": "Sol",
-      "id": 1770463545822
+      "id": 1770464169283
     }
   ],
   "stockAB1": [
@@ -2445,5 +2445,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T11:27:46.339Z"
+  "exportDate": "2026-02-07T11:38:09.313Z"
 }
