@@ -3,7 +3,7 @@ import { useApp } from '../App';
 import { Card, Button, Input, Select, Modal, Badge, StatCard, EmptyState } from '../components/UI';
 import { FARMS, CATEGORIES, CULTURES, MELANGES_PREDEFINIS, FARM_CULTURES } from '../lib/constants';
 import { fmt, fmtMoney, downloadExcel, today } from '../lib/utils';
-import { getSuppliers, addSupplier, getAveragePrice, calculateFarmStock, calculateWarehouseStock, getMelangeHistory, addMelangeToHistory, cancelMelange, updateMelangeInHistory } from '../lib/store';
+import { getSuppliers, addSupplier, getAveragePrice, calculateFarmStock, calculateWarehouseStock, getMelangeHistory, addMelangeToHistory, cancelMelange, updateMelangeInHistory, getMovements } from '../lib/store';
 
 const Movements = () => {
   const { products, movements, addMovement, updateMovement, deleteMovement, showNotif, loadData, readOnly } = useApp();
@@ -261,8 +261,8 @@ const Movements = () => {
       supplier: modalType === 'entry' ? supplierName : undefined,
       farm: modalType !== 'entry' ? form.farm : undefined,
       date: form.date,
-      culture: form.culture,
-      destination: form.destination
+      culture: modalType === 'consumption' ? form.culture : undefined,
+      destination: modalType === 'consumption' ? form.destination : undefined
     });
     
     showNotif(`${modalType === 'entry' ? 'Entrée' : modalType === 'exit' ? 'Sortie' : 'Consommation'} enregistrée`);
@@ -529,17 +529,72 @@ const Movements = () => {
   const handleEditSubmit = () => {
     if (!editingMovement) return;
     
+    const newQty = parseFloat(editingMovement.quantity) || 0;
+    const newPrice = parseFloat(editingMovement.price) || 0;
+    const newDate = editingMovement.date;
+    
+    // Update main movement
     updateMovement(editingMovement.id, {
-      date: editingMovement.date,
-      quantity: parseFloat(editingMovement.quantity) || 0,
-      price: parseFloat(editingMovement.price) || 0,
+      date: newDate,
+      quantity: newQty,
+      price: newPrice,
       supplier: editingMovement.supplier,
       farm: editingMovement.farm,
       culture: editingMovement.culture
     });
     
+    // If it's a transfer, also update the paired movement
+    if (editingMovement.type === 'transfer-in' || editingMovement.type === 'transfer-out') {
+      // Find paired movement by transferId or by matching criteria
+      const allMovements = getMovements();
+      let pairedMovement = null;
+      
+      if (editingMovement.transferId) {
+        pairedMovement = allMovements.find(m => 
+          m.transferId === editingMovement.transferId && m.id !== editingMovement.id
+        );
+      }
+      
+      // Fallback: find by source/destination farms and product
+      if (!pairedMovement) {
+        const oppositeType = editingMovement.type === 'transfer-in' ? 'transfer-out' : 'transfer-in';
+        pairedMovement = allMovements.find(m =>
+          m.id !== editingMovement.id &&
+          m.type === oppositeType &&
+          m.product === editingMovement.product &&
+          m.fromFarm === editingMovement.fromFarm &&
+          m.toFarm === editingMovement.toFarm
+        );
+      }
+      
+      // Second fallback: find by product and opposite type created around same time
+      if (!pairedMovement) {
+        const oppositeType = editingMovement.type === 'transfer-in' ? 'transfer-out' : 'transfer-in';
+        // Look for movements with IDs close to each other (created together)
+        pairedMovement = allMovements.find(m =>
+          m.id !== editingMovement.id &&
+          m.type === oppositeType &&
+          m.product === editingMovement.product &&
+          Math.abs(m.id - editingMovement.id) < 1000 // Created within ~1 second
+        );
+      }
+      
+      if (pairedMovement) {
+        updateMovement(pairedMovement.id, {
+          date: newDate,
+          quantity: newQty,
+          price: newPrice
+        });
+        console.log('✅ Mouvement lié mis à jour:', pairedMovement.id);
+      } else {
+        console.warn('⚠️ Mouvement lié non trouvé pour le transfert');
+      }
+    }
+    
+    loadData();
     setShowEditModal(false);
     setEditingMovement(null);
+    showNotif('✅ Mouvement modifié');
   };
 
   const handleExport = async () => {
@@ -886,10 +941,14 @@ const Movements = () => {
               <Select label="Produit *" value={form.product} onChange={(v) => setForm({ ...form, product: v })}
                 options={[{ value: '', label: 'Sélectionner...' }, ...products.map(p => ({ value: p.name, label: p.name }))]} />
               
-              <div className="grid grid-cols-2 gap-4">
+              {modalType === 'entry' ? (
+                <div className="grid grid-cols-2 gap-4">
+                  <Input label="Quantité *" type="number" value={form.quantity} onChange={(v) => setForm({ ...form, quantity: v })} placeholder="0" />
+                  <Input label="Prix unitaire" type="number" value={form.price} onChange={(v) => setForm({ ...form, price: v })} placeholder="Auto" />
+                </div>
+              ) : (
                 <Input label="Quantité *" type="number" value={form.quantity} onChange={(v) => setForm({ ...form, quantity: v })} placeholder="0" />
-                <Input label="Prix unitaire" type="number" value={form.price} onChange={(v) => setForm({ ...form, price: v })} placeholder="Auto" />
-              </div>
+              )}
               
               <Input label="Date" type="date" value={form.date} onChange={(v) => setForm({ ...form, date: v })} />
               
