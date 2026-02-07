@@ -15505,6 +15505,182 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770452774531
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 450,
+      "price": 9.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770455864316
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 50,
+      "price": 148,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770455894404
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 1,
+      "price": 109,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770455958350
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 130,
+      "price": 10.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770455985717
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 5.7,
+      "price": 208.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456030469
+    },
+    {
+      "type": "consumption",
+      "product": "FOLIASTIM",
+      "quantity": 19,
+      "price": 135,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456105249
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 19,
+      "price": 82.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456156753
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 19,
+      "price": 125,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456196585
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 250,
+      "price": 6.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456230520
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 40,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456261887
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 10,
+      "price": 101,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456283268
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 5,
+      "price": 14.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456317968
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 5,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456346802
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 250,
+      "price": 6.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456381902
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 10,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770456411386
+    },
+    {
+      "type": "consumption",
+      "product": "MOVENTO",
+      "quantity": 3.6,
+      "price": 1350,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "id": 1770456504071
     }
   ],
   "stockAB1": [
@@ -16737,5 +16913,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T08:28:14.539Z"
+  "exportDate": "2026-02-07T09:28:34.005Z"
 }
