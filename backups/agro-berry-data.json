@@ -15340,6 +15340,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770451712060
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 75,
+      "price": 148,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451787690
     }
   ],
   "stockAB1": [
@@ -16572,5 +16583,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T08:08:36.108Z"
+  "exportDate": "2026-02-07T08:11:47.701Z"
 }
