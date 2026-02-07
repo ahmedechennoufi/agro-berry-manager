@@ -15351,6 +15351,39 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770451787690
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.75,
+      "price": 109,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451912672
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 802,
+      "price": 10.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451946658
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 560,
+      "price": 4,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770451969442
     }
   ],
   "stockAB1": [
@@ -16583,5 +16616,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T08:11:47.701Z"
+  "exportDate": "2026-02-07T08:14:49.489Z"
 }
