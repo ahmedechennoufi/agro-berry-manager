@@ -15032,6 +15032,149 @@
       "notes": "Mélange: Myrtille Hydro",
       "melangeId": 1770383620480,
       "id": 1770383620510
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 607.5,
+      "price": 13,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449430403
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 292,
+      "price": 6.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449478975
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 24,
+      "price": 65,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449535254
+    },
+    {
+      "type": "consumption",
+      "product": "MICROQUEL",
+      "quantity": 30,
+      "price": 75,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449605068
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 36,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449648517
+    },
+    {
+      "type": "consumption",
+      "product": "BASSO",
+      "quantity": 144,
+      "price": 20,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449697915
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 508,
+      "price": 10.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449756650
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 805,
+      "price": 4.75,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449836270
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE NITRIQUE",
+      "quantity": 99,
+      "price": 7.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449886769
+    },
+    {
+      "type": "consumption",
+      "product": "BIOENERGY",
+      "quantity": 96,
+      "price": 60,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449920615
+    },
+    {
+      "type": "consumption",
+      "product": "QUEL B",
+      "quantity": 16,
+      "price": 50,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770449951669
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 571,
+      "price": 9.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770450014499
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 825,
+      "price": 4.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770450119707
     }
   ],
   "stockAB1": [
@@ -16264,5 +16407,5 @@
   ],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-07T07:12:46.273Z"
+  "exportDate": "2026-02-07T07:43:59.718Z"
 }
