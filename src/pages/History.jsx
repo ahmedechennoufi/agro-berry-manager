@@ -193,7 +193,9 @@ const History = () => {
           <p className="text-gray-500 mt-1">Stock des mois précédents - Campagne 2025-2026</p>
         </div>
         <div className="flex gap-2">
-          <Button variant="secondary" onClick={handleExport}>📥 Export</Button>
+          <Button variant="primary" onClick={handleExport} className="bg-blue-500 hover:bg-blue-600">
+            📥 Export Excel
+          </Button>
           {selectedData?.isCalculated && (
             <Button onClick={saveJanuarySnapshot} className="bg-amber-500 hover:bg-amber-600">
               💾 Sauvegarder Janvier
