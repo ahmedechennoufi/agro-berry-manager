@@ -20,9 +20,31 @@ const History = () => {
     const saved = localStorage.getItem(STORAGE_KEY);
     let savedHistory = saved ? JSON.parse(saved) : [];
     
+    // Month name to date mapping
+    const monthDates = {
+      'SEPTEMBRE': { date: '2025-09-25', month: 'Septembre 2025' },
+      'OCTOBRE': { date: '2025-10-25', month: 'Octobre 2025' },
+      'NOVEMBRE': { date: '2025-11-25', month: 'Novembre 2025' },
+      'DECEMBRE': { date: '2025-12-25', month: 'Décembre 2025' },
+      'DECEMBRE_2025': { date: '2025-12-25', month: 'Décembre 2025' },
+      'JANVIER': { date: '2026-01-25', month: 'Janvier 2026' },
+      'FEVRIER': { date: '2026-02-25', month: 'Février 2026' },
+      'MARS': { date: '2026-03-25', month: 'Mars 2026' },
+      'AVRIL': { date: '2026-04-25', month: 'Avril 2026' }
+    };
+    
+    // Convert stockHistoryData object to array
+    const stockHistoryArray = Object.entries(stockHistoryData)
+      .filter(([key]) => key !== 'DECEMBRE_2025') // Skip duplicate
+      .map(([key, value]) => ({
+        ...value,
+        month: value.name || monthDates[key]?.month || key,
+        date: value.date || monthDates[key]?.date || '2025-01-25'
+      }));
+    
     // Merge with initial data (don't duplicate)
     const existingDates = savedHistory.map(h => h.date);
-    stockHistoryData.forEach(h => {
+    stockHistoryArray.forEach(h => {
       if (!existingDates.includes(h.date)) {
         savedHistory.push(h);
       }
