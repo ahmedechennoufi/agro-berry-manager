@@ -280,3 +280,117 @@ export const debounce = (fn, delay) => {
     timer = setTimeout(() => fn(...args), delay);
   };
 };
+
+// Export inventaire stylé
+export const downloadStyledInventoryExcel = async (data, monthName, totals) => {
+  const XLSX = await import('xlsx-js-style');
+  const wb = XLSX.utils.book_new();
+  const ws = {};
+  
+  // Styles
+  const titleStyle = {
+    font: { bold: true, sz: 16, color: { rgb: "FFFFFF" } },
+    fill: { fgColor: { rgb: "22C55E" } },
+    alignment: { horizontal: "center", vertical: "center" }
+  };
+  
+  const headerStyle = {
+    font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill: { fgColor: { rgb: "3B82F6" } },
+    alignment: { horizontal: "center", vertical: "center" },
+    border: { top: {style:"thin"}, bottom: {style:"thin"}, left: {style:"thin"}, right: {style:"thin"} }
+  };
+  
+  const subHeaderStyle = (color) => ({
+    font: { bold: true, sz: 10, color: { rgb: "374151" } },
+    fill: { fgColor: { rgb: color } },
+    alignment: { horizontal: "center", vertical: "center" },
+    border: { top: {style:"thin"}, bottom: {style:"thin"}, left: {style:"thin"}, right: {style:"thin"} }
+  });
+  
+  const cellStyle = {
+    font: { sz: 10 },
+    alignment: { horizontal: "right" },
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+  
+  const cellStyleName = {
+    font: { sz: 10, bold: true },
+    alignment: { horizontal: "left" },
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+  
+  const totalRowStyle = {
+    font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill: { fgColor: { rgb: "22C55E" } },
+    alignment: { horizontal: "right" },
+    border: { top: {style:"medium"}, bottom: {style:"medium"}, left: {style:"thin"}, right: {style:"thin"} }
+  };
+  
+  const moneyStyle = {
+    font: { sz: 10, color: { rgb: "059669" } },
+    alignment: { horizontal: "right" },
+    numFmt: "#,##0",
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+  
+  // Row 0: Title
+  ws['A1'] = { v: `📋 INVENTAIRE - ${monthName}`, s: titleStyle };
+  ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 7 } }];
+  
+  // Row 1: Date
+  const dateStr = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
+  ws['A2'] = { v: `Exporté le ${dateStr}`, s: { font: { sz: 9, italic: true, color: { rgb: "6B7280" } }, alignment: { horizontal: "left" } } };
+  
+  // Row 3: Headers
+  const headers = ['PRODUIT', 'UNITÉ', 'AGB 1', 'AGB 2', 'AGB 3', 'TOTAL', 'PRIX UNIT.', 'VALEUR (MAD)'];
+  const headerColors = ['E5E7EB', 'E5E7EB', 'DBEAFE', 'D1FAE5', 'F3E8FF', 'FEF3C7', 'E5E7EB', 'D1FAE5'];
+  headers.forEach((h, i) => {
+    ws[XLSX.utils.encode_cell({ r: 3, c: i })] = { v: h, s: subHeaderStyle(headerColors[i]) };
+  });
+  
+  // Data rows
+  data.forEach((p, idx) => {
+    const r = idx + 4;
+    ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: p.Produit || p.name, s: cellStyleName };
+    ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: p.Unité || p.unit, s: { ...cellStyle, alignment: { horizontal: "center" } } };
+    ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: p['AGB 1'] || p.AB1 || 0, t: 'n', s: cellStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: p['AGB 2'] || p.AB2 || 0, t: 'n', s: cellStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: p['AGB 3'] || p.AB3 || 0, t: 'n', s: cellStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: p.Total || p.total || 0, t: 'n', s: { ...cellStyle, font: { sz: 10, bold: true } } };
+    ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: p['Prix Unit.'] || p.price || 0, t: 'n', s: cellStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 7 })] = { v: p.Valeur || p.value || 0, t: 'n', s: moneyStyle };
+  });
+  
+  // Total row
+  const totalRow = data.length + 4;
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 0 })] = { v: `TOTAL (${data.length} produits)`, s: { ...totalRowStyle, alignment: { horizontal: "left" } } };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 1 })] = { v: '', s: totalRowStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 2 })] = { v: data.reduce((s, p) => s + (p['AGB 1'] || p.AB1 || 0), 0), t: 'n', s: totalRowStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 3 })] = { v: data.reduce((s, p) => s + (p['AGB 2'] || p.AB2 || 0), 0), t: 'n', s: totalRowStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 4 })] = { v: data.reduce((s, p) => s + (p['AGB 3'] || p.AB3 || 0), 0), t: 'n', s: totalRowStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 5 })] = { v: totals?.totalQty || data.reduce((s, p) => s + (p.Total || p.total || 0), 0), t: 'n', s: totalRowStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 6 })] = { v: '', s: totalRowStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 7 })] = { v: totals?.totalValue || data.reduce((s, p) => s + (p.Valeur || p.value || 0), 0), t: 'n', s: { ...totalRowStyle, numFmt: "#,##0" } };
+  
+  // Set range
+  ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: totalRow, c: 7 } });
+  
+  // Column widths
+  ws['!cols'] = [
+    { wch: 30 },  // Produit
+    { wch: 8 },   // Unité
+    { wch: 12 },  // AGB 1
+    { wch: 12 },  // AGB 2
+    { wch: 12 },  // AGB 3
+    { wch: 12 },  // Total
+    { wch: 12 },  // Prix Unit
+    { wch: 15 }   // Valeur
+  ];
+  
+  // Row heights
+  ws['!rows'] = [{ hpt: 30 }, { hpt: 18 }, { hpt: 10 }, { hpt: 22 }];
+  
+  XLSX.utils.book_append_sheet(wb, ws, 'Inventaire');
+  XLSX.writeFile(wb, `inventaire-${monthName.replace(/\s+/g, '-')}.xlsx`);
+};

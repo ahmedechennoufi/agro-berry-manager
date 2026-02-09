@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../App';
 import { Card, Select, Input, EmptyState } from '../components/UI';
-import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
+import { fmt, fmtMoney, downloadStyledInventoryExcel } from '../lib/utils';
 import { getMovements, getProducts, getAveragePrice } from '../lib/store';
 import stockHistoryData from '../lib/stockHistory.json';
 
@@ -199,7 +199,7 @@ const Inventory = () => {
       'Prix Unit.': p.price,
       'Valeur': p.value
     }));
-    await downloadExcel(data, `stock-${monthName || monthId}.xlsx`);
+    await downloadStyledInventoryExcel(data, monthName || monthId, totals);
   };
 
   // Confirm export and select month
