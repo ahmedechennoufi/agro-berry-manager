@@ -297,6 +297,16 @@ const History = () => {
 
       {/* Table */}
       <Card className="overflow-hidden p-0">
+        {/* Table Header with Export Button */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
+          <span className="text-gray-700 font-medium">{displayProducts.length} produits</span>
+          <button 
+            onClick={handleExport} 
+            className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow flex items-center gap-2"
+          >
+            📥 Exporter Excel
+          </button>
+        </div>
         {!selectedData ? (
           <div className="p-6">
             <EmptyState icon="📅" message="Sélectionnez un mois" />
