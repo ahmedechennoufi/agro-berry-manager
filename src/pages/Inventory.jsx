@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../App';
 import { Card, Select, Input, EmptyState } from '../components/UI';
-import { fmt, fmtMoney } from '../lib/utils';
+import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
 import { getMovements, getProducts, getAveragePrice } from '../lib/store';
 import stockHistoryData from '../lib/stockHistory.json';
 
@@ -22,6 +22,8 @@ const Inventory = () => {
   const [selectedMonth, setSelectedMonth] = useState('DECEMBRE');
   const [selectedFarm, setSelectedFarm] = useState('ALL');
   const [search, setSearch] = useState('');
+  const [showExportModal, setShowExportModal] = useState(false);
+  const [pendingMonth, setPendingMonth] = useState(null);
 
   // Get selected month info
   const selectedMonthInfo = SEASON_MONTHS.find(m => m.id === selectedMonth);
@@ -179,6 +181,49 @@ const Inventory = () => {
   // Check data source
   const hasImportedData = stockHistoryData[selectedMonth] !== undefined;
 
+  // Handle month click - show export modal
+  const handleMonthClick = (monthInfo) => {
+    setPendingMonth(monthInfo);
+    setShowExportModal(true);
+  };
+
+  // Export current month data to Excel
+  const exportMonthData = async (monthId, monthName) => {
+    const data = stockData.map(p => ({
+      Produit: p.name,
+      Unité: p.unit,
+      'AGB 1': p.AB1,
+      'AGB 2': p.AB2,
+      'AGB 3': p.AB3,
+      'Total': p.total,
+      'Prix Unit.': p.price,
+      'Valeur': p.value
+    }));
+    await downloadExcel(data, `stock-${monthName || monthId}.xlsx`);
+  };
+
+  // Confirm export and select month
+  const handleExportConfirm = async () => {
+    if (pendingMonth) {
+      setSelectedMonth(pendingMonth.id);
+      // Wait for state update then export
+      setTimeout(async () => {
+        await exportMonthData(pendingMonth.id, pendingMonth.name);
+      }, 100);
+    }
+    setShowExportModal(false);
+    setPendingMonth(null);
+  };
+
+  // Just select month without export
+  const handleSelectOnly = () => {
+    if (pendingMonth) {
+      setSelectedMonth(pendingMonth.id);
+    }
+    setShowExportModal(false);
+    setPendingMonth(null);
+  };
+
   return (
     <div className="space-y-5">
       {/* Header */}
@@ -200,7 +245,7 @@ const Inventory = () => {
           return (
             <button
               key={m.id}
-              onClick={() => setSelectedMonth(m.id)}
+              onClick={() => handleMonthClick(m)}
               className={`px-4 py-3 rounded-xl font-medium transition-all ${
                 selectedMonth === m.id
                   ? 'bg-green-500 text-white shadow-lg'
@@ -304,6 +349,34 @@ const Inventory = () => {
           </div>
         )}
       </Card>
+
+      {/* Export Confirmation Modal */}
+      {showExportModal && pendingMonth && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl p-6 max-w-md mx-4 shadow-2xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              📥 {pendingMonth.name}
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Voulez-vous exporter l'inventaire de ce mois en Excel ?
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={handleSelectOnly}
+                className="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-colors"
+              >
+                Non, juste voir
+              </button>
+              <button
+                onClick={handleExportConfirm}
+                className="flex-1 px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors"
+              >
+                ✅ Oui, exporter
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
