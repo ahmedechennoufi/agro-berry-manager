@@ -1232,6 +1232,78 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-06",
       "id": 1770465420621
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 3300,
+      "price": 7.11,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-07",
+      "id": 1770622995257
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 3008,
+      "price": 8.6,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-07",
+      "id": 1770623035248
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 2030,
+      "price": 3.35,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-07",
+      "id": 1770623064299
+    },
+    {
+      "type": "entry",
+      "product": "BASSO",
+      "quantity": 200,
+      "price": 15,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-07",
+      "id": 1770623098600
+    },
+    {
+      "type": "entry",
+      "product": "BIOENERGY",
+      "quantity": 100,
+      "price": 45,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-07",
+      "id": 1770623145766
+    },
+    {
+      "type": "entry",
+      "product": "VITAMINA MIX",
+      "quantity": 345,
+      "price": 54.17,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-07",
+      "id": 1770623210466
+    },
+    {
+      "type": "entry",
+      "product": "QUEL B",
+      "quantity": 32,
+      "price": 50,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-07",
+      "id": 1770623270066
+    },
+    {
+      "type": "entry",
+      "product": "MAP",
+      "quantity": 750,
+      "price": 10,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-07",
+      "id": 1770623294333
     }
   ],
   "stockAB1": [
@@ -2493,5 +2565,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-08T10:55:12.124Z"
+  "exportDate": "2026-02-09T07:51:15.466Z"
 }
