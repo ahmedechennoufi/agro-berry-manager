@@ -1322,6 +1322,15 @@
       "supplier": "CASEM",
       "date": "2026-02-09",
       "id": 1770634874024
+    },
+    {
+      "type": "entry",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 3000,
+      "price": 7,
+      "supplier": "PROMAGRI",
+      "date": "2026-02-09",
+      "id": 1770646744500
     }
   ],
   "stockAB1": [
@@ -2583,5 +2592,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-09T11:03:14.024Z"
+  "exportDate": "2026-02-09T14:19:18.400Z"
 }
