@@ -1304,6 +1304,24 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-02-07",
       "id": 1770623294333
+    },
+    {
+      "type": "entry",
+      "product": "ISABION",
+      "quantity": 160,
+      "price": 128,
+      "supplier": "CASEM",
+      "date": "2026-02-09",
+      "id": 1770634846325
+    },
+    {
+      "type": "entry",
+      "product": "NOVA",
+      "quantity": 160,
+      "price": 85,
+      "supplier": "CASEM",
+      "date": "2026-02-09",
+      "id": 1770634874024
     }
   ],
   "stockAB1": [
@@ -2565,5 +2583,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-09T07:51:15.466Z"
+  "exportDate": "2026-02-09T11:03:14.024Z"
 }
