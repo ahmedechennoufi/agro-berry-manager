@@ -14,6 +14,8 @@ const History = () => {
   const [selectedFarm, setSelectedFarm] = useState('ALL');
   const [search, setSearch] = useState('');
   const [history, setHistory] = useState([]);
+  const [showExportModal, setShowExportModal] = useState(false);
+  const [pendingMonth, setPendingMonth] = useState(null);
 
   // Load history from localStorage + initial data
   useEffect(() => {
@@ -184,6 +186,65 @@ const History = () => {
     setSelectedMonth('2026-01-25');
   };
 
+  // Handle month click - show export option
+  const handleMonthClick = (monthData) => {
+    setPendingMonth(monthData);
+    setShowExportModal(true);
+  };
+
+  // Export specific month data
+  const exportMonthData = async (monthData) => {
+    if (!monthData) return;
+    
+    const productMap = {};
+    ['AB1', 'AB2', 'AB3'].forEach(farm => {
+      (monthData[farm] || []).forEach(item => {
+        const key = item.product?.toUpperCase();
+        if (!productMap[key]) {
+          productMap[key] = { product: item.product, AB1: 0, AB2: 0, AB3: 0, price: item.price || 0 };
+        }
+        productMap[key][farm] = item.quantity || 0;
+        if (item.price) productMap[key].price = item.price;
+      });
+    });
+    
+    const data = Object.values(productMap).map(p => {
+      const total = (p.AB1 || 0) + (p.AB2 || 0) + (p.AB3 || 0);
+      const unit = products.find(pr => pr.name?.toUpperCase() === p.product?.toUpperCase())?.unit || 'KG';
+      return {
+        Produit: p.product,
+        Unité: unit,
+        'AGB 1': p.AB1,
+        'AGB 2': p.AB2,
+        'AGB 3': p.AB3,
+        'Total': total,
+        'Prix Unit.': p.price,
+        'Valeur': total * p.price
+      };
+    });
+    
+    await downloadExcel(data, `stock-${monthData.month || 'inventaire'}.xlsx`);
+  };
+
+  // Confirm export and select month
+  const handleExportConfirm = async () => {
+    if (pendingMonth) {
+      await exportMonthData(pendingMonth);
+      setSelectedMonth(pendingMonth.date);
+    }
+    setShowExportModal(false);
+    setPendingMonth(null);
+  };
+
+  // Just select month without export
+  const handleSelectOnly = () => {
+    if (pendingMonth) {
+      setSelectedMonth(pendingMonth.date);
+    }
+    setShowExportModal(false);
+    setPendingMonth(null);
+  };
+
   const handleExport = async () => {
     const data = displayProducts.map(p => ({
       Produit: p.product,
@@ -237,7 +298,7 @@ const History = () => {
         {allMonths.map(m => (
           <button
             key={m.date}
-            onClick={() => setSelectedMonth(m.date)}
+            onClick={() => handleMonthClick(m)}
             className={`p-4 rounded-xl font-medium transition-all text-center ${
               selectedMonth === m.date
                 ? 'bg-green-500 text-white shadow-lg'
@@ -386,6 +447,34 @@ const History = () => {
           </div>
         )}
       </Card>
+
+      {/* Export Confirmation Modal */}
+      {showExportModal && pendingMonth && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl p-6 max-w-md mx-4 shadow-2xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              📥 {pendingMonth.month}
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Voulez-vous exporter l'inventaire de ce mois en Excel ?
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={handleSelectOnly}
+                className="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-colors"
+              >
+                Non, juste voir
+              </button>
+              <button
+                onClick={handleExportConfirm}
+                className="flex-1 px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors"
+              >
+                ✅ Oui, exporter
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
