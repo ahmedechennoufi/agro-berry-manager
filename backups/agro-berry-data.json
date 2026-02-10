@@ -2050,6 +2050,127 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770728783131
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770728918298
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 5,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770728947279
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 50,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770728975547
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 8,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770729004712
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 40,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770729027329
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 2.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770729054338
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770729115846
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770729161645
+    },
+    {
+      "type": "consumption",
+      "product": "SWITCH",
+      "quantity": 3.5,
+      "price": 1800,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770729190194
+    },
+    {
+      "type": "consumption",
+      "product": "MOVENTO",
+      "quantity": 1,
+      "price": 1228,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770729258778
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 6.9,
+      "price": 208.34,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-01",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770729317949
     }
   ],
   "stockAB1": [
@@ -3311,5 +3432,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-10T13:08:23.133Z"
+  "exportDate": "2026-02-10T13:15:31.196Z"
 }
