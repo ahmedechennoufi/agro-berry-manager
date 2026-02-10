@@ -1412,6 +1412,39 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-09",
       "id": 1770708729915
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770714979105
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770715037658
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 17.5,
+      "price": 4.5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770715141475
     }
   ],
   "stockAB1": [
@@ -2673,5 +2706,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-10T07:39:12.856Z"
+  "exportDate": "2026-02-10T09:21:01.479Z"
 }
