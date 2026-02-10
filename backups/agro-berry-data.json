@@ -1650,10 +1650,87 @@
       "quantity": 75,
       "price": 7.11,
       "farm": "AGRO BERRY 2",
-      "date": "2026-01-26",
+      "date": "2026-01-28",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770725050336
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770725233285
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770725258904
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 5,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770725316671
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770725367087
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 8,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770725441338
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 40,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770725490488
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 2.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770725545003
     }
   ],
   "stockAB1": [
@@ -2915,5 +2992,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-10T12:06:10.338Z"
+  "exportDate": "2026-02-10T12:14:25.434Z"
 }
