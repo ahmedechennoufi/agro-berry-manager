@@ -1731,6 +1731,72 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770725545003
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770727180461
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770727211043
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770727280175
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770727309807
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 17.5,
+      "price": 4.5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770727354990
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 4,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770727431838
     }
   ],
   "stockAB1": [
@@ -2992,5 +3058,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-10T12:14:25.434Z"
+  "exportDate": "2026-02-10T12:45:51.837Z"
 }
