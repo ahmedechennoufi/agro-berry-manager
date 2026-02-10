@@ -1445,6 +1445,83 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770715141475
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 4,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770723215933
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 25,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770723330380
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 4,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770723411198
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 20,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770723467298
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 25,
+      "price": 2.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770723509098
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770723608698
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.25,
+      "price": 11.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770723686614
     }
   ],
   "stockAB1": [
@@ -2706,5 +2783,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-10T10:51:31.396Z"
+  "exportDate": "2026-02-10T11:43:26.632Z"
 }
