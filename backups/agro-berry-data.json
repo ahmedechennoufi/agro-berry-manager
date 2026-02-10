@@ -1385,6 +1385,24 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-09",
       "id": 1770708225833
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 40,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "id": 1770708396411
+    },
+    {
+      "type": "exit",
+      "product": "PERFECTOSE",
+      "quantity": 70,
+      "price": 63.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "id": 1770708430994
     }
   ],
   "stockAB1": [
@@ -2646,5 +2664,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-10T07:25:45.831Z"
+  "exportDate": "2026-02-10T07:29:10.990Z"
 }
