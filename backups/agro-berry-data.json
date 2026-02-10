@@ -1349,6 +1349,42 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-09",
       "id": 1770707888644
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 992,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "id": 1770708102687
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 1995,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "id": 1770708153069
+    },
+    {
+      "type": "exit",
+      "product": "BASSO",
+      "quantity": 200,
+      "price": 15,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "id": 1770708201351
+    },
+    {
+      "type": "exit",
+      "product": "BIOENERGY",
+      "quantity": 100,
+      "price": 45,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "id": 1770708225833
     }
   ],
   "stockAB1": [
@@ -2610,5 +2646,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-10T07:20:08.650Z"
+  "exportDate": "2026-02-10T07:25:45.831Z"
 }
