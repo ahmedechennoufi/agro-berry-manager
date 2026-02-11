@@ -3463,6 +3463,83 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770804999070
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805215801
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805315718
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 2.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805354913
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805407662
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805427773
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805445628
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805469427
     }
   ],
   "stockAB1": [
@@ -4724,5 +4801,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T10:18:39.076Z"
+  "exportDate": "2026-02-11T10:26:29.426Z"
 }
