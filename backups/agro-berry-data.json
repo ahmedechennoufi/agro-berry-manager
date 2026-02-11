@@ -3540,6 +3540,39 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770805469427
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 4,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805610150
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 5,
+      "price": 148,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805647309
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.05,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805670176
     }
   ],
   "stockAB1": [
@@ -4801,5 +4834,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T10:26:29.426Z"
+  "exportDate": "2026-02-11T10:29:50.190Z"
 }
