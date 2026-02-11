@@ -3573,6 +3573,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770805670176
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 46,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770805849738
     }
   ],
   "stockAB1": [
@@ -4834,5 +4845,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T10:29:50.190Z"
+  "exportDate": "2026-02-11T10:32:49.813Z"
 }
