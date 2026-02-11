@@ -2809,6 +2809,28 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770796360053
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-08",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770797233967
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-08",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770797293530
     }
   ],
   "stockAB1": [
@@ -4070,5 +4092,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T07:54:40.056Z"
+  "exportDate": "2026-02-11T08:10:13.531Z"
 }
