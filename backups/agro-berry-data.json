@@ -2886,6 +2886,28 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770797951054
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-08",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770798098488
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-08",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770798116257
     }
   ],
   "stockAB1": [
@@ -4147,5 +4169,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T08:21:11.053Z"
+  "exportDate": "2026-02-11T08:23:56.272Z"
 }
