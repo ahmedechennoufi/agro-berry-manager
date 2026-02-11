@@ -3584,6 +3584,94 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770805849738
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770817456516
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770817480132
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 2.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770817507315
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770817580398
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 70,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770817596813
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770817618013
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770817640813
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 4,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770817655695
     }
   ],
   "stockAB1": [
@@ -4845,5 +4933,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T10:32:49.813Z"
+  "exportDate": "2026-02-11T13:48:43.180Z"
 }
