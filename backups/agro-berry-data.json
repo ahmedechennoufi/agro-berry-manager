@@ -3166,6 +3166,72 @@
       "supplier": "ALFACHIMIE",
       "date": "2026-02-11",
       "id": 1770803109457
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770803966070
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770803987936
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 2.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770804013852
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770804114801
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770804148251
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770804191465
     }
   ],
   "stockAB1": [
@@ -4427,5 +4493,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T09:47:09.457Z"
+  "exportDate": "2026-02-11T10:05:11.476Z"
 }
