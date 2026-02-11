@@ -3815,6 +3815,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770819038210
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 7.5,
+      "price": 208.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770819805416
     }
   ],
   "stockAB1": [
@@ -5076,5 +5087,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T14:12:38.219Z"
+  "exportDate": "2026-02-11T14:25:25.423Z"
 }
