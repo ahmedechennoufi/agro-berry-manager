@@ -3139,6 +3139,33 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770802971315
+    },
+    {
+      "type": "entry",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 180,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-02-11",
+      "id": 1770803059209
+    },
+    {
+      "type": "exit",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 183,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "id": 1770803071341
+    },
+    {
+      "type": "entry",
+      "product": "KRISANT",
+      "quantity": 10,
+      "price": 850,
+      "supplier": "ALFACHIMIE",
+      "date": "2026-02-11",
+      "id": 1770803109457
     }
   ],
   "stockAB1": [
@@ -4400,5 +4427,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-11T09:43:23.482Z"
+  "exportDate": "2026-02-11T09:47:09.457Z"
 }
