@@ -4938,6 +4938,46 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1770889586602
+    },
+    {
+      "type": "exit",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 1000,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770894134815
+    },
+    {
+      "type": "exit",
+      "product": "MAP",
+      "quantity": 750,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770894188716
+    },
+    {
+      "type": "transfer-out",
+      "product": "MAP",
+      "quantity": 250,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "transferId": 1770894222532,
+      "id": 1770894222532
+    },
+    {
+      "type": "transfer-in",
+      "product": "MAP",
+      "quantity": 250,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "transferId": 1770894222532,
+      "id": 1770894222533
     }
   ],
   "stockAB1": [
@@ -6199,5 +6239,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T09:48:26.616Z"
+  "exportDate": "2026-02-12T11:05:42.535Z"
 }
