@@ -5256,6 +5256,28 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770898110955
+    },
+    {
+      "type": "transfer-out",
+      "product": "ALGOBAZ",
+      "quantity": 5,
+      "price": 208.34,
+      "farm": "AGRO BERRY 2",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-01-31",
+      "transferId": 1770899472557,
+      "id": 1770899472557
+    },
+    {
+      "type": "transfer-in",
+      "product": "ALGOBAZ",
+      "quantity": 5,
+      "price": 208.34,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 2",
+      "date": "2026-01-31",
+      "transferId": 1770899472557,
+      "id": 1770899472560
     }
   ],
   "stockAB1": [
@@ -6517,5 +6539,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T12:10:30.956Z"
+  "exportDate": "2026-02-12T12:33:12.585Z"
 }
