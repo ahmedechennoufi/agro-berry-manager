@@ -5287,6 +5287,17 @@
       "supplier": "CAS",
       "date": "2026-02-12",
       "id": 1770900635414
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 19,
+      "price": 208.34,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-01-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770901579331
     }
   ],
   "stockAB1": [
@@ -6548,5 +6559,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T12:52:35.418Z"
+  "exportDate": "2026-02-12T13:08:19.343Z"
 }
