@@ -5008,15 +5008,6 @@
     },
     {
       "type": "entry",
-      "product": "SULFATE DE POTASSE",
-      "quantity": 3000,
-      "price": 7.11,
-      "supplier": "CAS",
-      "date": "2026-02-11",
-      "id": 1770895877743
-    },
-    {
-      "type": "entry",
       "product": "NITRATE DE CALCIUM",
       "quantity": 1500,
       "price": 4.5,
@@ -6302,5 +6293,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T11:34:34.993Z"
+  "exportDate": "2026-02-12T11:38:54.016Z"
 }
