@@ -1130,6 +1130,13 @@
       "category": "AUTRES",
       "threshold": 1,
       "id": 1770465203673
+    },
+    {
+      "name": "BOITE BOTREFIN 600G",
+      "unit": "UNITÉ",
+      "category": "PHYTOSANITAIRES",
+      "threshold": null,
+      "id": 1770887064603
     }
   ],
   "movements": [
@@ -4352,6 +4359,24 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770881462962
+    },
+    {
+      "type": "entry",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 167,
+      "price": 800,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-11",
+      "id": 1770887136531
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE CHLORHYDRIQUE",
+      "quantity": 120,
+      "price": 4.7,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-02-11",
+      "id": 1770887164266
     }
   ],
   "stockAB1": [
@@ -5613,5 +5638,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T07:33:02.966Z"
+  "exportDate": "2026-02-12T09:08:04.271Z"
 }
