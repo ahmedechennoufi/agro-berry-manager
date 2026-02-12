@@ -5032,6 +5032,42 @@
       "supplier": "CAS",
       "date": "2026-02-11",
       "id": 1770895954992
+    },
+    {
+      "type": "exit",
+      "product": "ROMBI SAL",
+      "quantity": 40,
+      "price": 26.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "id": 1770896665164
+    },
+    {
+      "type": "exit",
+      "product": "QUEL B",
+      "quantity": 20,
+      "price": 50,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "id": 1770896722834
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 40,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "id": 1770896745469
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 40,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "id": 1770896770601
     }
   ],
   "stockAB1": [
@@ -6293,5 +6329,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T11:38:54.016Z"
+  "exportDate": "2026-02-12T11:48:10.603Z"
 }
