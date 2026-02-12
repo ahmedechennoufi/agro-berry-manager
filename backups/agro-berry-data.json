@@ -5278,6 +5278,15 @@
       "date": "2026-01-31",
       "transferId": 1770899472557,
       "id": 1770899472560
+    },
+    {
+      "type": "entry",
+      "product": "LUNA SENSATION",
+      "quantity": 90,
+      "price": 4568,
+      "supplier": "CAS",
+      "date": "2026-02-12",
+      "id": 1770900635414
     }
   ],
   "stockAB1": [
@@ -6539,5 +6548,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T12:33:12.585Z"
+  "exportDate": "2026-02-12T12:52:35.418Z"
 }
