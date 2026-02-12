@@ -5053,21 +5053,66 @@
     },
     {
       "type": "exit",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 1000,
+      "price": 5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770896891935
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 1000,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770896934435
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 992,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770896968368
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 1000,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770897018268
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 200,
+      "price": 4.5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770897034818
+    },
+    {
+      "type": "exit",
       "product": "ISABION",
       "quantity": 40,
       "price": 128,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-02-11",
-      "id": 1770896745469
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770897094335
     },
     {
       "type": "exit",
       "product": "NOVA",
       "quantity": 40,
       "price": 85,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-02-11",
-      "id": 1770896770601
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "id": 1770897123819
     }
   ],
   "stockAB1": [
@@ -6329,5 +6374,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T11:48:10.603Z"
+  "exportDate": "2026-02-12T11:53:00.302Z"
 }
