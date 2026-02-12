@@ -4872,6 +4872,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1770889111841
+    },
+    {
+      "type": "consumption",
+      "product": "ALFABET",
+      "quantity": 16,
+      "price": 500,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770889277326
     }
   ],
   "stockAB1": [
@@ -6133,5 +6144,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T09:40:31.842Z"
+  "exportDate": "2026-02-12T09:43:17.329Z"
 }
