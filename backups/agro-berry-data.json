@@ -4057,6 +4057,26 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770880597321
+    },
+    {
+      "type": "exit",
+      "product": "VITAMINA MIX",
+      "quantity": 300,
+      "price": 54.17,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-05",
+      "id": 1770880718650
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-05",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770880750385
     }
   ],
   "stockAB1": [
@@ -5318,5 +5338,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T07:18:37.322Z"
+  "exportDate": "2026-02-12T07:19:30.916Z"
 }
