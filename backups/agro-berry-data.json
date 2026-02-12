@@ -5298,6 +5298,24 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770901579331
+    },
+    {
+      "type": "entry",
+      "product": "SUCRE",
+      "quantity": 1750,
+      "price": 0,
+      "supplier": "AUTRE",
+      "date": "2026-02-11",
+      "id": 1770916350765
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 1300,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "id": 1770916384930
     }
   ],
   "stockAB1": [
@@ -6559,5 +6577,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T13:08:19.343Z"
+  "exportDate": "2026-02-12T17:13:09.780Z"
 }
