@@ -4883,6 +4883,61 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1770889277326
+    },
+    {
+      "type": "consumption",
+      "product": "MILBEKNOCK",
+      "quantity": 10.8,
+      "price": 1248,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770889426141
+    },
+    {
+      "type": "consumption",
+      "product": "MILBEKNOCK",
+      "quantity": 8.09,
+      "price": 1248,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770889512917
+    },
+    {
+      "type": "consumption",
+      "product": "TELDOR",
+      "quantity": 10.5,
+      "price": 908,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-01",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770889535351
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770889569617
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1770889586602
     }
   ],
   "stockAB1": [
@@ -6144,5 +6199,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T09:43:17.329Z"
+  "exportDate": "2026-02-12T09:48:26.616Z"
 }
