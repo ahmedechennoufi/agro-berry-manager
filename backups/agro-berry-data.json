@@ -5316,6 +5316,28 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-12",
       "id": 1770916384930
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 3.75,
+      "price": 1920,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "id": 1770968340660
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 3.75,
+      "price": 1920,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "id": 1770968450808
     }
   ],
   "stockAB1": [
@@ -6577,5 +6599,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-12T17:15:04.939Z"
+  "exportDate": "2026-02-13T07:40:53.592Z"
 }
