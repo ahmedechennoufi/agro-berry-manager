@@ -5322,7 +5322,7 @@
       "product": "BENEVIA",
       "quantity": 3.75,
       "price": 1920,
-      "farm": "AGRO BERRY 3",
+      "farm": "AGRO BERRY 2",
       "date": "2026-02-10",
       "culture": "Myrtille",
       "destination": "Pesticide",
@@ -5333,11 +5333,77 @@
       "product": "BENEVIA",
       "quantity": 3.75,
       "price": 1920,
-      "farm": "AGRO BERRY 3",
+      "farm": "AGRO BERRY 2",
       "date": "2026-02-11",
       "culture": "Myrtille",
       "destination": "Pesticide",
       "id": 1770968450808
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1770969950074
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770969971859
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770970033474
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770970080139
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 17.5,
+      "price": 4.5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770970108583
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 4,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770970126384
     }
   ],
   "stockAB1": [
@@ -6599,5 +6665,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-13T07:42:50.811Z"
+  "exportDate": "2026-02-13T08:10:46.388Z"
 }
