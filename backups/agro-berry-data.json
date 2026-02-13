@@ -5580,6 +5580,292 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770976294397
+    },
+    {
+      "type": "consumption",
+      "product": "OIKOS",
+      "quantity": 31,
+      "price": 2500,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977350626
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 100,
+      "price": 7.11,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977388861
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 130,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977406573
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 75,
+      "price": 7,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977447792
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 40,
+      "price": 4.5,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977464292
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 12,
+      "price": 101,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977482859
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 100,
+      "price": 10,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977501525
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 50,
+      "price": 5.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977518639
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 80,
+      "price": 5,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977561506
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 1,
+      "price": 40,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977623092
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977643590
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977665774
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 15,
+      "price": 148,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977684889
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 1.5,
+      "price": 65.28,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977703038
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 100,
+      "price": 7.11,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977728673
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977743723
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 75,
+      "price": 7,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977761707
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 40,
+      "price": 4.5,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977785020
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 12,
+      "price": 101,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977802623
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 100,
+      "price": 10,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977827789
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 50,
+      "price": 5.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977920171
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 80,
+      "price": 5,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977949669
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 1,
+      "price": 40,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977972354
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770977998368
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770978027834
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 15,
+      "price": 148,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770978044652
     }
   ],
   "stockAB1": [
@@ -6841,5 +7127,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-13T09:53:34.410Z"
+  "exportDate": "2026-02-13T10:20:51.136Z"
 }
