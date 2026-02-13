@@ -5998,6 +5998,28 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770978412748
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 1.5,
+      "price": 65.28,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1770981393313
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 2.4,
+      "price": 60,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "id": 1770981436814
     }
   ],
   "stockAB1": [
@@ -7259,5 +7281,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-13T10:28:52.754Z"
+  "exportDate": "2026-02-13T11:19:16.822Z"
 }
