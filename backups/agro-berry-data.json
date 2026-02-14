@@ -6174,6 +6174,131 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1770982696257
+    },
+    {
+      "type": "exit",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 1000,
+      "price": 7,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074029451
+    },
+    {
+      "type": "transfer-out",
+      "product": "MAP",
+      "quantity": 1000,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "transferId": 1771074079485,
+      "id": 1771074079485
+    },
+    {
+      "type": "transfer-in",
+      "product": "MAP",
+      "quantity": 1000,
+      "price": 10,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "transferId": 1771074079485,
+      "id": 1771074079489
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 500,
+      "price": 5,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074103832
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 300,
+      "price": 7.11,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074190916
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 992,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074209633
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 1000,
+      "price": 5.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074233383
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 300,
+      "price": 4.5,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074265499
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 60,
+      "price": 128,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074293849
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 60,
+      "price": 85,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074304283
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 450,
+      "price": 0,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "id": 1771074380582
+    },
+    {
+      "type": "transfer-out",
+      "product": "SUCRE",
+      "quantity": 200,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-02-14",
+      "transferId": 1771074419997,
+      "id": 1771074419998
+    },
+    {
+      "type": "transfer-in",
+      "product": "SUCRE",
+      "quantity": 200,
+      "price": 0,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "transferId": 1771074419997,
+      "id": 1771074419999
     }
   ],
   "stockAB1": [
@@ -7435,5 +7560,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-14T07:24:39.133Z"
+  "exportDate": "2026-02-14T13:09:00.004Z"
 }
