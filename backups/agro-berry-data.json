@@ -7102,6 +7102,15 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1771245400385
+    },
+    {
+      "type": "entry",
+      "product": "VITAMINA MIX",
+      "quantity": 70,
+      "price": 54.17,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-01-27",
+      "id": 1771247559165
     }
   ],
   "stockAB1": [
@@ -8363,5 +8372,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T12:38:52.820Z"
+  "exportDate": "2026-02-16T13:14:39.171Z"
 }
