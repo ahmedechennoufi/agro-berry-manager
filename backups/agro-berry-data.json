@@ -6684,6 +6684,160 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771242657881
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242730831
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 11,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242780298
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242799930
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242817081
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 43,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242837199
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242871848
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242885904
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242919966
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242939731
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-09",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771243071598
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771243096485
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771243114582
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771243194799
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE CHLORHYDRIQUE",
+      "quantity": 24,
+      "price": 4.7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771243288964
     }
   ],
   "stockAB1": [
@@ -7945,5 +8099,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T11:51:01.268Z"
+  "exportDate": "2026-02-16T12:03:28.978Z"
 }
