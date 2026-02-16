@@ -6299,6 +6299,50 @@
       "date": "2026-02-14",
       "transferId": 1771074419997,
       "id": 1771074419999
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 25,
+      "price": 4.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771239508056
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 25,
+      "price": 4.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771239538124
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 25,
+      "price": 4.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771239564740
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 25,
+      "price": 4.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771239580910
     }
   ],
   "stockAB1": [
@@ -7560,5 +7604,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-14T13:59:52.038Z"
+  "exportDate": "2026-02-16T11:01:40.919Z"
 }
