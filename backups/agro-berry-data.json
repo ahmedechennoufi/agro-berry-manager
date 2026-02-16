@@ -3466,7 +3466,7 @@
       "quantity": 12.5,
       "price": 2500,
       "farm": "AGRO BERRY 1",
-      "date": "2026-01-27",
+      "date": "2026-01-28",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1770804999070
@@ -6838,6 +6838,28 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771243288964
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 13.5,
+      "price": 65.28,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771243481844
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 24.75,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-15",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771243507794
     }
   ],
   "stockAB1": [
@@ -8099,5 +8121,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T12:03:28.978Z"
+  "exportDate": "2026-02-16T12:07:07.804Z"
 }
