@@ -7109,8 +7109,17 @@
       "quantity": 70,
       "price": 54.17,
       "supplier": "PHYTOLOUKKOS",
-      "date": "2026-01-27",
+      "date": "2026-01-26",
       "id": 1771247559165
+    },
+    {
+      "type": "entry",
+      "product": "ISABION",
+      "quantity": 40,
+      "price": 128,
+      "supplier": "CASEM",
+      "date": "2026-01-27",
+      "id": 1771247707751
     }
   ],
   "stockAB1": [
@@ -8372,5 +8381,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T13:14:39.171Z"
+  "exportDate": "2026-02-16T13:15:14.371Z"
 }
