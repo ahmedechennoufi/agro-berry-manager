@@ -6453,6 +6453,72 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771241233539
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241372297
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241433878
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241457910
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241541346
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241572063
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241600848
     }
   ],
   "stockAB1": [
@@ -7714,5 +7780,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T11:29:13.565Z"
+  "exportDate": "2026-02-16T11:35:20.858Z"
 }
