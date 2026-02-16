@@ -6519,6 +6519,105 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771241600848
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241783130
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241799595
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241837195
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241917878
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241941961
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771241950428
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242029577
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242074661
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242131143
     }
   ],
   "stockAB1": [
@@ -7780,5 +7879,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T11:35:20.858Z"
+  "exportDate": "2026-02-16T11:44:11.157Z"
 }
