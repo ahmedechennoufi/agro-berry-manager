@@ -4788,7 +4788,7 @@
     {
       "type": "consumption",
       "product": "NITRATE DE POTASSE",
-      "quantity": 57,
+      "quantity": 66,
       "price": 10.85,
       "farm": "AGRO BERRY 1",
       "date": "2026-01-26",
@@ -6343,6 +6343,50 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1771239580910
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 50,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771239738073
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 50,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771239772936
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 66,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771239925989
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 66,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771239948636
     }
   ],
   "stockAB1": [
@@ -7604,5 +7648,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T11:01:40.919Z"
+  "exportDate": "2026-02-16T11:07:48.645Z"
 }
