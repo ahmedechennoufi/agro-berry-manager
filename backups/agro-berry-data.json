@@ -6640,6 +6640,50 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771242331160
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 4,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242550266
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.05,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242614732
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.05,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242639814
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.05,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771242657881
     }
   ],
   "stockAB1": [
@@ -7901,5 +7945,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T11:47:31.164Z"
+  "exportDate": "2026-02-16T11:51:01.268Z"
 }
