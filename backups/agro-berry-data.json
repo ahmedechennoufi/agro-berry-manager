@@ -6860,6 +6860,94 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771243507794
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 35,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771243912829
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 35,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771243941794
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771244051424
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771244102356
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 35,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771244169199
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 35,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771244226298
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771244337233
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771244360965
     }
   ],
   "stockAB1": [
@@ -8121,5 +8209,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T12:07:07.804Z"
+  "exportDate": "2026-02-16T12:21:20.968Z"
 }
