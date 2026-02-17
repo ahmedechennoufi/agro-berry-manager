@@ -1185,17 +1185,6 @@
       "id": 1770463292581
     },
     {
-      "type": "entry",
-      "product": "BEESURE",
-      "quantity": 20,
-      "price": 186,
-      "supplier": "OMNIUM AGRICOLE DU SOUSS",
-      "date": "2026-02-07",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1770463490791
-    },
-    {
       "type": "exit",
       "product": "BEESURE",
       "quantity": 20,
@@ -7138,6 +7127,15 @@
       "supplier": "SAOAS",
       "date": "2026-02-07",
       "id": 1771317987092
+    },
+    {
+      "type": "exit",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 182,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-28",
+      "id": 1771318487704
     }
   ],
   "stockAB1": [
@@ -8399,5 +8397,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-17T08:48:27.098Z"
+  "exportDate": "2026-02-17T08:56:47.709Z"
 }
