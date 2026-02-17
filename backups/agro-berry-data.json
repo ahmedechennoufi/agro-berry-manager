@@ -7709,6 +7709,28 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771323881417
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 5,
+      "price": 65.28,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-17",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771324056986
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-17",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771324083935
     }
   ],
   "stockAB1": [
@@ -8970,5 +8992,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-17T10:26:41.422Z"
+  "exportDate": "2026-02-17T10:30:03.938Z"
 }
