@@ -7136,6 +7136,51 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-01-28",
       "id": 1771318487704
+    },
+    {
+      "type": "exit",
+      "product": "LUNA SENSATION",
+      "quantity": 25,
+      "price": 4568,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-16",
+      "id": 1771319759364
+    },
+    {
+      "type": "exit",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 30,
+      "price": 800,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-16",
+      "id": 1771319791180
+    },
+    {
+      "type": "exit",
+      "product": "LUNA SENSATION",
+      "quantity": 30,
+      "price": 4568,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-16",
+      "id": 1771319826266
+    },
+    {
+      "type": "exit",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 35.4,
+      "price": 800,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-16",
+      "id": 1771319892415
+    },
+    {
+      "type": "exit",
+      "product": "LUNA SENSATION",
+      "quantity": 35,
+      "price": 4568,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-17",
+      "id": 1771319922663
     }
   ],
   "stockAB1": [
@@ -8397,5 +8442,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-17T09:02:11.348Z"
+  "exportDate": "2026-02-17T09:20:42.665Z"
 }
