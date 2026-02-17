@@ -7120,6 +7120,15 @@
       "supplier": "CASEM",
       "date": "2026-01-27",
       "id": 1771247707751
+    },
+    {
+      "type": "entry",
+      "product": "BEESURE",
+      "quantity": 20,
+      "price": 183,
+      "supplier": "SAOAS",
+      "date": "2026-01-28",
+      "id": 1771317793656
     }
   ],
   "stockAB1": [
@@ -8381,5 +8390,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-16T13:17:07.753Z"
+  "exportDate": "2026-02-17T08:45:13.665Z"
 }
