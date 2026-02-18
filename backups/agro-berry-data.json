@@ -4887,7 +4887,7 @@
     {
       "type": "consumption",
       "product": "MILBEKNOCK",
-      "quantity": 8.09,
+      "quantity": 8.1,
       "price": 1248,
       "farm": "AGRO BERRY 1",
       "date": "2026-02-01",
@@ -7819,6 +7819,160 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1771403401403
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407400713
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407432855
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407466489
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-13",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407499588
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 70,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407529238
+    },
+    {
+      "type": "consumption",
+      "product": "BASSO",
+      "quantity": 48,
+      "price": 15,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-15",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407568087
+    },
+    {
+      "type": "consumption",
+      "product": "BIOENERGY",
+      "quantity": 32,
+      "price": 45,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-15",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407623319
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 24,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-15",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407661369
+    },
+    {
+      "type": "consumption",
+      "product": "ROMBI SAL",
+      "quantity": 40,
+      "price": 26.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407762285
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 12,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407812516
+    },
+    {
+      "type": "consumption",
+      "product": "SWITCH",
+      "quantity": 6,
+      "price": 1800,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771407928209
+    },
+    {
+      "type": "consumption",
+      "product": "PIXEL",
+      "quantity": 7.2,
+      "price": 190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771408034343
+    },
+    {
+      "type": "consumption",
+      "product": "NOVATEC RED 8-10-34",
+      "quantity": 9,
+      "price": 19.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771408085510
+    },
+    {
+      "type": "consumption",
+      "product": "MANVERT FOLIPLUS",
+      "quantity": 9,
+      "price": 180,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771408117809
     }
   ],
   "stockAB1": [
@@ -9080,5 +9234,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-18T08:32:01.403Z"
+  "exportDate": "2026-02-18T09:48:55.440Z"
 }
