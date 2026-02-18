@@ -7775,6 +7775,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1771402487933
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 96,
+      "price": 4.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771402675067
     }
   ],
   "stockAB1": [
@@ -9036,5 +9047,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-18T08:16:47.934Z"
+  "exportDate": "2026-02-18T08:18:23.296Z"
 }
