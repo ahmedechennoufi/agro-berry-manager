@@ -7797,6 +7797,28 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1771403043579
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-12",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771403371603
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-14",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771403401403
     }
   ],
   "stockAB1": [
@@ -9058,5 +9080,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-18T08:26:03.543Z"
+  "exportDate": "2026-02-18T08:30:18.382Z"
 }
