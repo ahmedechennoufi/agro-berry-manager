@@ -7786,6 +7786,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1771402675067
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 12,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-11",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1771403043579
     }
   ],
   "stockAB1": [
@@ -9047,5 +9058,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-18T08:19:55.068Z"
+  "exportDate": "2026-02-18T08:26:03.543Z"
 }
