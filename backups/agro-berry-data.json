@@ -7984,6 +7984,61 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771488553338
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771488687429
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771488785113
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 5,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771488818080
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771488921879
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 8,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771488958497
     }
   ],
   "stockAB1": [
@@ -9245,5 +9300,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-19T08:11:13.349Z"
+  "exportDate": "2026-02-19T08:17:58.500Z"
 }
