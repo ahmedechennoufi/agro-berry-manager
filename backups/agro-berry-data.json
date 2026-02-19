@@ -8204,6 +8204,15 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1771489640378
+    },
+    {
+      "type": "entry",
+      "product": "MILBEKNOCK",
+      "quantity": 48,
+      "price": 624,
+      "supplier": "AGRIMATCO",
+      "date": "2026-02-19",
+      "id": 1771508825329
     }
   ],
   "stockAB1": [
@@ -9465,5 +9474,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-19T08:29:20.557Z"
+  "exportDate": "2026-02-19T13:49:05.330Z"
 }
