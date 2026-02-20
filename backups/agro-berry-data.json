@@ -1137,6 +1137,13 @@
       "category": "PHYTOSANITAIRES",
       "threshold": null,
       "id": 1770887064603
+    },
+    {
+      "name": "CLEAN K",
+      "unit": "L",
+      "category": "PHYTOSANITAIRES",
+      "threshold": 1,
+      "id": 1771580416279
     }
   ],
   "movements": [
@@ -9546,5 +9553,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-20T08:55:02.401Z"
+  "exportDate": "2026-02-20T09:42:16.680Z"
 }
