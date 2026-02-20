@@ -8222,6 +8222,51 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-19",
       "id": 1771571117978
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 1500,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "id": 1771571309210
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE ZINC",
+      "quantity": 25,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "id": 1771571415013
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 1000,
+      "price": 4.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "id": 1771571458046
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 600,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "id": 1771571490364
+    },
+    {
+      "type": "exit",
+      "product": "QUEL B",
+      "quantity": 12,
+      "price": 50,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "id": 1771571526631
     }
   ],
   "stockAB1": [
@@ -9483,5 +9528,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-20T07:07:17.980Z"
+  "exportDate": "2026-02-20T07:14:06.633Z"
 }
