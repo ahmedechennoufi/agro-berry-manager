@@ -8213,6 +8213,15 @@
       "supplier": "AGRIMATCO",
       "date": "2026-02-19",
       "id": 1771508825329
+    },
+    {
+      "type": "exit",
+      "product": "ROMBI SAL",
+      "quantity": 120,
+      "price": 26.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "id": 1771571117978
     }
   ],
   "stockAB1": [
@@ -9474,5 +9483,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-19T13:49:05.330Z"
+  "exportDate": "2026-02-20T07:07:17.980Z"
 }
