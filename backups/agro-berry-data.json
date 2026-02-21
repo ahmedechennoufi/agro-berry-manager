@@ -2074,17 +2074,6 @@
       "date": "2026-01-30",
       "culture": "Myrtille",
       "destination": "Sol",
-      "id": 1770728947279
-    },
-    {
-      "type": "consumption",
-      "product": "FEROXIM",
-      "quantity": 5,
-      "price": 101,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-01-30",
-      "culture": "Myrtille",
-      "destination": "Sol",
       "id": 1770728975547
     },
     {
@@ -9868,5 +9857,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-21T12:09:33.839Z"
+  "exportDate": "2026-02-21T12:30:54.348Z"
 }
