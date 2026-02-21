@@ -535,6 +535,7 @@ const Movements = () => {
     
     // Update main movement
     updateMovement(editingMovement.id, {
+      product: editingMovement.product,
       date: newDate,
       quantity: newQty,
       price: newPrice,
@@ -1421,10 +1422,15 @@ const Movements = () => {
       <Modal isOpen={showEditModal} onClose={() => { setShowEditModal(false); setEditingMovement(null); }} title="✏️ Modifier le mouvement">
         {editingMovement && (
           <div className="space-y-4">
-            <div className="p-3 bg-gray-50 rounded-xl">
-              <p className="text-sm text-gray-600">Produit</p>
-              <p className="font-bold text-gray-800">{editingMovement.product}</p>
-            </div>
+            <Select 
+              label="Produit" 
+              value={editingMovement.product || ''} 
+              onChange={(v) => setEditingMovement({...editingMovement, product: v})}
+              options={[
+                { value: '', label: 'Sélectionner un produit...' },
+                ...products.map(p => ({ value: p.name, label: p.name })).sort((a, b) => a.label.localeCompare(b.label))
+              ]} 
+            />
             
             <div className="p-3 bg-gray-50 rounded-xl">
               <p className="text-sm text-gray-600">Type</p>
