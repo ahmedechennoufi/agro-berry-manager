@@ -2079,7 +2079,7 @@
     {
       "type": "consumption",
       "product": "FEROXIM",
-      "quantity": 50,
+      "quantity": 5,
       "price": 101,
       "farm": "AGRO BERRY 2",
       "date": "2026-01-30",
@@ -9868,5 +9868,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-21T11:32:37.843Z"
+  "exportDate": "2026-02-21T12:09:33.839Z"
 }
