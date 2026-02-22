@@ -1506,7 +1506,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -1627,7 +1627,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -1737,7 +1737,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -1847,7 +1847,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -2001,7 +2001,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -2074,17 +2074,6 @@
       "date": "2026-01-30",
       "culture": "Myrtille",
       "destination": "Sol",
-      "id": 1770728947279
-    },
-    {
-      "type": "consumption",
-      "product": "FEROXIM",
-      "quantity": 50,
-      "price": 101,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-01-30",
-      "culture": "Myrtille",
-      "destination": "Sol",
       "id": 1770728975547
     },
     {
@@ -2122,7 +2111,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -2287,7 +2276,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -2408,7 +2397,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -2540,7 +2529,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -2650,7 +2639,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -2771,7 +2760,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -2892,7 +2881,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -3002,7 +2991,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -3112,7 +3101,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -5447,7 +5436,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -5557,7 +5546,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -7290,7 +7279,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -7400,7 +7389,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -7576,7 +7565,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -7697,7 +7686,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -8071,7 +8060,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -8181,7 +8170,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -8434,7 +8423,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -8566,7 +8555,7 @@
     },
     {
       "type": "consumption",
-      "product": "BORTRAC",
+      "product": "SOLUBOR",
       "quantity": 0.1,
       "price": 68,
       "farm": "AGRO BERRY 2",
@@ -8607,6 +8596,17 @@
       "culture": "Myrtille",
       "destination": "Pesticide",
       "id": 1771595508640
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-01-30",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771680492223
     }
   ],
   "stockAB1": [
@@ -9868,5 +9868,5 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-20T13:57:24.587Z"
+  "exportDate": "2026-02-21T18:19:55.842Z"
 }
