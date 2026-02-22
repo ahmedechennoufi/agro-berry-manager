@@ -79,17 +79,17 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
   // Sheet 1: Consommation
   const ws1 = {};
   
-  // Row 1: Main headers (now with 23 columns)
+  // Row 1: Main headers (now with 25 columns)
   const mainHeaders = [
     { v: 'Article', s: headerStyle1("6B7280") },
     { v: 'Cat.', s: headerStyle1("6B7280") },
     { v: 'Unité', s: headerStyle1("6B7280") },
     { v: 'Prix', s: headerStyle1("6B7280") },
     { v: 'STOCK INITIAL', s: headerStyle1(BLUE) }, { v: '', s: headerStyle1(BLUE) }, { v: '', s: headerStyle1(BLUE) }, { v: '', s: headerStyle1(BLUE) },
-    { v: 'ENTRÉES', s: headerStyle1(GREEN) }, { v: '', s: headerStyle1(GREEN) }, { v: '', s: headerStyle1(GREEN) }, { v: '', s: headerStyle1(GREEN) },
+    { v: 'ENTRÉES', s: headerStyle1(GREEN) }, { v: '', s: headerStyle1(GREEN) }, { v: '', s: headerStyle1(GREEN) }, { v: '', s: headerStyle1(GREEN) }, { v: '', s: headerStyle1(GREEN) },
     { v: 'SORTIES', s: headerStyle1(PURPLE) }, { v: '', s: headerStyle1(PURPLE) }, { v: '', s: headerStyle1(PURPLE) }, { v: '', s: headerStyle1(PURPLE) },
     { v: 'CONSOMMATION', s: headerStyle1(ORANGE) }, { v: '', s: headerStyle1(ORANGE) }, { v: '', s: headerStyle1(ORANGE) }, { v: '', s: headerStyle1(ORANGE) },
-    { v: 'STOCK FINAL', s: headerStyle1(INDIGO) }, { v: '', s: headerStyle1(INDIGO) }, { v: '', s: headerStyle1(INDIGO) }
+    { v: 'STOCK FINAL', s: headerStyle1(INDIGO) }, { v: '', s: headerStyle1(INDIGO) }, { v: '', s: headerStyle1(INDIGO) }, { v: '', s: headerStyle1(INDIGO) }
   ];
   mainHeaders.forEach((h, i) => { ws1[XLSX.utils.encode_cell({ r: 0, c: i })] = h; });
   
@@ -97,10 +97,10 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
   const subHeaders = [
     { v: '', s: headerStyle2("F3F4F6") }, { v: '', s: headerStyle2("F3F4F6") }, { v: '', s: headerStyle2("F3F4F6") }, { v: '', s: headerStyle2("F3F4F6") },
     { v: 'AB1', s: headerStyle2(BLUE_LIGHT) }, { v: 'AB2', s: headerStyle2(BLUE_LIGHT) }, { v: 'AB3', s: headerStyle2(BLUE_LIGHT) }, { v: 'TOTAL', s: headerStyle2(BLUE_TOT) },
-    { v: 'AB1', s: headerStyle2(GREEN_LIGHT) }, { v: 'AB2', s: headerStyle2(GREEN_LIGHT) }, { v: 'AB3', s: headerStyle2(GREEN_LIGHT) }, { v: 'TOTAL', s: headerStyle2(GREEN_TOT) },
+    { v: 'MAG', s: headerStyle2(GREEN_LIGHT) }, { v: 'AB1', s: headerStyle2(GREEN_LIGHT) }, { v: 'AB2', s: headerStyle2(GREEN_LIGHT) }, { v: 'AB3', s: headerStyle2(GREEN_LIGHT) }, { v: 'TOTAL', s: headerStyle2(GREEN_TOT) },
     { v: 'AB1', s: headerStyle2(PURPLE_LIGHT) }, { v: 'AB2', s: headerStyle2(PURPLE_LIGHT) }, { v: 'AB3', s: headerStyle2(PURPLE_LIGHT) }, { v: 'TOTAL', s: headerStyle2(PURPLE_TOT) },
     { v: 'AB1', s: headerStyle2(ORANGE_LIGHT) }, { v: 'AB2', s: headerStyle2(ORANGE_LIGHT) }, { v: 'AB3', s: headerStyle2(ORANGE_LIGHT) }, { v: 'TOTAL', s: headerStyle2(ORANGE_TOT) },
-    { v: 'AB1', s: headerStyle2(INDIGO_LIGHT) }, { v: 'AB2', s: headerStyle2(INDIGO_LIGHT) }, { v: 'AB3', s: headerStyle2(INDIGO_LIGHT) }
+    { v: 'MAG', s: headerStyle2(INDIGO_LIGHT) }, { v: 'AB1', s: headerStyle2(INDIGO_LIGHT) }, { v: 'AB2', s: headerStyle2(INDIGO_LIGHT) }, { v: 'AB3', s: headerStyle2(INDIGO_LIGHT) }
   ];
   subHeaders.forEach((h, i) => { ws1[XLSX.utils.encode_cell({ r: 1, c: i })] = h; });
   
@@ -123,6 +123,7 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
       { v: d.initAB3 || '', t: 'n', s: cellStyle(BLUE_LIGHT) },
       { v: initTot || '', t: 'n', s: totStyle(BLUE_TOT) },
       // Entrées
+      { v: d.entMAG || '', t: 'n', s: cellStyle(GREEN_LIGHT) },
       { v: d.entAB1 || '', t: 'n', s: cellStyle(GREEN_LIGHT) },
       { v: d.entAB2 || '', t: 'n', s: cellStyle(GREEN_LIGHT) },
       { v: d.entAB3 || '', t: 'n', s: cellStyle(GREEN_LIGHT) },
@@ -138,6 +139,7 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
       { v: d.consAB3 || '', t: 'n', s: cellStyle(ORANGE_LIGHT) },
       { v: consTot || '', t: 'n', s: totStyle(ORANGE_TOT) },
       // Stock Final
+      { v: d.stockMAG || '', t: 'n', s: cellStyle(INDIGO_LIGHT) },
       { v: d.finAB1 || '', t: 'n', s: cellStyle(INDIGO_LIGHT) },
       { v: d.finAB2 || '', t: 'n', s: cellStyle(INDIGO_LIGHT) },
       { v: d.finAB3 || '', t: 'n', s: cellStyle(INDIGO_LIGHT) }
@@ -145,7 +147,7 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
     row.forEach((cell, i) => { ws1[XLSX.utils.encode_cell({ r, c: i })] = cell; });
   });
   
-  ws1['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: tableData.length + 1, c: 22 } });
+  ws1['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: tableData.length + 1, c: 24 } });
   
   ws1['!merges'] = [
     { s: { r: 0, c: 0 }, e: { r: 1, c: 0 } },
@@ -153,19 +155,19 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
     { s: { r: 0, c: 2 }, e: { r: 1, c: 2 } },
     { s: { r: 0, c: 3 }, e: { r: 1, c: 3 } },
     { s: { r: 0, c: 4 }, e: { r: 0, c: 7 } },
-    { s: { r: 0, c: 8 }, e: { r: 0, c: 11 } },
-    { s: { r: 0, c: 12 }, e: { r: 0, c: 15 } },
-    { s: { r: 0, c: 16 }, e: { r: 0, c: 19 } },
-    { s: { r: 0, c: 20 }, e: { r: 0, c: 22 } }
+    { s: { r: 0, c: 8 }, e: { r: 0, c: 12 } },
+    { s: { r: 0, c: 13 }, e: { r: 0, c: 16 } },
+    { s: { r: 0, c: 17 }, e: { r: 0, c: 20 } },
+    { s: { r: 0, c: 21 }, e: { r: 0, c: 24 } }
   ];
   
   ws1['!cols'] = [
     { wch: 28 }, { wch: 16 }, { wch: 8 }, { wch: 10 },
     { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 12 },
+    { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 12 },
     { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 12 },
     { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 12 },
-    { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 12 },
-    { wch: 10 }, { wch: 10 }, { wch: 10 }
+    { wch: 10 }, { wch: 10 }, { wch: 10 }, { wch: 10 }
   ];
   
   XLSX.utils.book_append_sheet(wb, ws1, 'Consommation');
