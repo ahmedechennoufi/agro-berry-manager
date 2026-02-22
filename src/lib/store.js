@@ -847,11 +847,13 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
       unit: p.unit || 'KG',
       price: getAveragePrice(p.name) || 0,
       initAB1: 0, initAB2: 0, initAB3: 0,
+      entMAG: 0,
       entAB1: 0, entAB2: 0, entAB3: 0,
       transInAB1: 0, transInAB2: 0, transInAB3: 0,
       sortAB1: 0, sortAB2: 0, sortAB3: 0,
       consAB1: 0, consAB2: 0, consAB3: 0,
-      finAB1: 0, finAB2: 0, finAB3: 0
+      finAB1: 0, finAB2: 0, finAB3: 0,
+      stockMAG: 0
     };
   });
 
@@ -899,7 +901,11 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     const qty = m.quantity || 0;
     const farm = m.farm || '';
 
-    // ENTRÉES = transferts entrants + sorties magasin (livraisons fournisseurs)
+    // ENTRÉES MAGASIN = achats fournisseurs (type 'entry')
+    if (m.type === 'entry') {
+      data.entMAG += qty;
+    }
+    // ENTRÉES FERMES = transferts entrants + sorties magasin (livraisons fournisseurs)
     if (m.type === 'transfer-in' || m.type === 'exit') {
       if (farm.includes('1')) data.entAB1 += qty;
       else if (farm.includes('2')) data.entAB2 += qty;
@@ -910,6 +916,10 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
         if (farm.includes('1')) data.transInAB1 += qty;
         else if (farm.includes('2')) data.transInAB2 += qty;
         else if (farm.includes('3')) data.transInAB3 += qty;
+      }
+      // Track exits from magasin (type 'exit' only)
+      if (m.type === 'exit') {
+        data.exitMAG = (data.exitMAG || 0) + qty;
       }
     }
     // SORTIES = Transferts sortants vers autres fermes
@@ -931,6 +941,8 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     data.finAB1 = data.initAB1 + data.entAB1 - data.sortAB1 - data.consAB1;
     data.finAB2 = data.initAB2 + data.entAB2 - data.sortAB2 - data.consAB2;
     data.finAB3 = data.initAB3 + data.entAB3 - data.sortAB3 - data.consAB3;
+    // Stock magasin = Entrées fournisseurs - Sorties vers fermes
+    data.stockMAG = data.entMAG - (data.exitMAG || 0);
   });
 
   return dataMap;
@@ -940,7 +952,9 @@ function createEmptyRow(name, price = 0) {
   return {
     name, category: 'AUTRES', unit: 'KG', price,
     initAB1: 0, initAB2: 0, initAB3: 0,
+    entMAG: 0, exitMAG: 0, stockMAG: 0,
     entAB1: 0, entAB2: 0, entAB3: 0,
+    transInAB1: 0, transInAB2: 0, transInAB3: 0,
     sortAB1: 0, sortAB2: 0, sortAB3: 0,
     consAB1: 0, consAB2: 0, consAB3: 0,
     finAB1: 0, finAB2: 0, finAB3: 0

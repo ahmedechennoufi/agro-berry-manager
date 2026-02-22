@@ -54,10 +54,12 @@ const ConsoFermes = () => {
     return Object.values(dataMap)
       .filter(d => {
         const hasData = d.initAB1 > 0 || d.initAB2 > 0 || d.initAB3 > 0 || 
+                       d.entMAG > 0 ||
                        d.entAB1 > 0 || d.entAB2 > 0 || d.entAB3 > 0 ||
                        d.sortAB1 > 0 || d.sortAB2 > 0 || d.sortAB3 > 0 ||
                        d.consAB1 > 0 || d.consAB2 > 0 || d.consAB3 > 0 ||
-                       Math.abs(d.finAB1) > 0.01 || Math.abs(d.finAB2) > 0.01 || Math.abs(d.finAB3) > 0.01;
+                       Math.abs(d.finAB1) > 0.01 || Math.abs(d.finAB2) > 0.01 || Math.abs(d.finAB3) > 0.01 ||
+                       Math.abs(d.stockMAG) > 0.01;
         const matchSearch = !search || d.name.toLowerCase().includes(search.toLowerCase());
         const matchCategory = filterCategory === 'ALL' || d.category === filterCategory;
         return hasData && matchSearch && matchCategory;
@@ -69,6 +71,7 @@ const ConsoFermes = () => {
     const t = { 
       initVal: 0, entVal: 0, sortVal: 0, consVal: 0, finVal: 0, 
       initQty: 0, entQty: 0, sortQty: 0, consQty: 0, finQty: 0,
+      entMAGQty: 0, stockMAGQty: 0,
       // Per farm quantities
       initAB1: 0, initAB2: 0, initAB3: 0,
       entAB1: 0, entAB2: 0, entAB3: 0,
@@ -88,6 +91,7 @@ const ConsoFermes = () => {
       // Quantities
       t.initAB1 += d.initAB1; t.initAB2 += d.initAB2; t.initAB3 += d.initAB3;
       t.entAB1 += d.entAB1; t.entAB2 += d.entAB2; t.entAB3 += d.entAB3;
+      t.entMAGQty += d.entMAG || 0; t.stockMAGQty += d.stockMAG || 0;
       t.transInAB1 += d.transInAB1 || 0; t.transInAB2 += d.transInAB2 || 0; t.transInAB3 += d.transInAB3 || 0;
       t.sortAB1 += d.sortAB1 || 0; t.sortAB2 += d.sortAB2 || 0; t.sortAB3 += d.sortAB3 || 0;
       t.consAB1 += d.consAB1; t.consAB2 += d.consAB2; t.consAB3 += d.consAB3;
@@ -278,7 +282,7 @@ const ConsoFermes = () => {
         </div>
         {tableData.length === 0 ? <div className="p-8"><EmptyState icon="📭" message="Aucune donnée pour cette période" /></div> : (
           <div className="overflow-x-auto">
-            <table className="w-full text-sm min-w-[1400px]">
+            <table className="w-full text-sm min-w-[1600px]">
               <thead>
                 <tr className="bg-gray-50 border-b">
                   <th className="text-left p-3 font-semibold text-gray-700" rowSpan={2}>ARTICLE</th>
@@ -287,7 +291,7 @@ const ConsoFermes = () => {
                   <th colSpan={4} className="text-center p-2 font-bold text-blue-700 bg-blue-100 border-l-4 border-blue-300">
                     📦 STOCK INITIAL
                   </th>
-                  <th colSpan={4} className="text-center p-2 font-bold text-green-700 bg-green-100 border-l-4 border-green-300">
+                  <th colSpan={5} className="text-center p-2 font-bold text-green-700 bg-green-100 border-l-4 border-green-300">
                     📥 ENTRÉES
                   </th>
                   <th colSpan={4} className="text-center p-2 font-bold text-purple-700 bg-purple-100 border-l-4 border-purple-300">
@@ -296,7 +300,7 @@ const ConsoFermes = () => {
                   <th colSpan={4} className="text-center p-2 font-bold text-orange-600 bg-orange-100 border-l-4 border-orange-300">
                     🔥 CONSOMMATION
                   </th>
-                  <th colSpan={3} className="text-center p-2 font-bold text-indigo-700 bg-indigo-100 border-l-4 border-indigo-300">
+                  <th colSpan={4} className="text-center p-2 font-bold text-indigo-700 bg-indigo-100 border-l-4 border-indigo-300">
                     📊 STOCK FINAL
                   </th>
                 </tr>
@@ -305,7 +309,8 @@ const ConsoFermes = () => {
                   <th className="p-2 text-center text-blue-600 bg-blue-50 font-semibold">AB2</th>
                   <th className="p-2 text-center text-blue-600 bg-blue-50 font-semibold">AB3</th>
                   <th className="p-2 text-center text-blue-800 bg-blue-200 font-bold">TOT</th>
-                  <th className="p-2 text-center text-green-600 bg-green-50 border-l-4 border-green-300 font-semibold">AB1</th>
+                  <th className="p-2 text-center text-green-600 bg-green-50 border-l-4 border-green-300 font-semibold">MAG</th>
+                  <th className="p-2 text-center text-green-600 bg-green-50 font-semibold">AB1</th>
                   <th className="p-2 text-center text-green-600 bg-green-50 font-semibold">AB2</th>
                   <th className="p-2 text-center text-green-600 bg-green-50 font-semibold">AB3</th>
                   <th className="p-2 text-center text-green-800 bg-green-200 font-bold">TOT</th>
@@ -317,7 +322,8 @@ const ConsoFermes = () => {
                   <th className="p-2 text-center text-orange-600 bg-orange-50 font-semibold">AB2</th>
                   <th className="p-2 text-center text-orange-600 bg-orange-50 font-semibold">AB3</th>
                   <th className="p-2 text-center text-orange-800 bg-orange-200 font-bold">TOT</th>
-                  <th className="p-2 text-center text-indigo-600 bg-indigo-50 border-l-4 border-indigo-300 font-semibold">AB1</th>
+                  <th className="p-2 text-center text-indigo-600 bg-indigo-50 border-l-4 border-indigo-300 font-semibold">MAG</th>
+                  <th className="p-2 text-center text-indigo-600 bg-indigo-50 font-semibold">AB1</th>
                   <th className="p-2 text-center text-indigo-600 bg-indigo-50 font-semibold">AB2</th>
                   <th className="p-2 text-center text-indigo-600 bg-indigo-50 font-semibold">AB3</th>
                 </tr>
@@ -357,7 +363,8 @@ const ConsoFermes = () => {
                       <td className="p-2 text-center bg-blue-50/40">{V(d.initAB2, 'text-blue-600')}</td>
                       <td className="p-2 text-center bg-blue-50/40">{V(d.initAB3, 'text-blue-600')}</td>
                       <td className="p-2 text-center bg-blue-100/60 font-bold text-blue-800">{initTot > 0 ? fmt(initTot) : '-'}</td>
-                      <td className="p-2 text-center bg-green-50/40 border-l-4 border-green-100">{VE(d.entAB1, d.transInAB1 || 0, 'text-green-600')}</td>
+                      <td className="p-2 text-center bg-green-50/40 border-l-4 border-green-100">{V(d.entMAG, 'text-green-600')}</td>
+                      <td className="p-2 text-center bg-green-50/40">{VE(d.entAB1, d.transInAB1 || 0, 'text-green-600')}</td>
                       <td className="p-2 text-center bg-green-50/40">{VE(d.entAB2, d.transInAB2 || 0, 'text-green-600')}</td>
                       <td className="p-2 text-center bg-green-50/40">{VE(d.entAB3, d.transInAB3 || 0, 'text-green-600')}</td>
                       <td className="p-2 text-center bg-green-100/60 font-bold text-green-800">{entTot > 0 ? fmt(entTot) : '-'}</td>
@@ -369,7 +376,10 @@ const ConsoFermes = () => {
                       <td className="p-2 text-center bg-orange-50/40">{V(d.consAB2, 'text-orange-600')}</td>
                       <td className="p-2 text-center bg-orange-50/40">{V(d.consAB3, 'text-orange-600')}</td>
                       <td className="p-2 text-center bg-orange-100/60 font-bold text-orange-700">{consTot > 0 ? fmt(consTot) : '-'}</td>
-                      <td className={`p-2 text-center bg-indigo-50/40 border-l-4 border-indigo-100 ${d.finAB1 < 0 ? 'text-red-500 font-bold' : 'text-indigo-600'}`}>
+                      <td className={`p-2 text-center bg-indigo-50/40 border-l-4 border-indigo-100 ${d.stockMAG < 0 ? 'text-red-500 font-bold' : 'text-indigo-600'}`}>
+                        {Math.abs(d.stockMAG) > 0.01 ? fmt(d.stockMAG) : '-'}
+                      </td>
+                      <td className={`p-2 text-center bg-indigo-50/40 ${d.finAB1 < 0 ? 'text-red-500 font-bold' : 'text-indigo-600'}`}>
                         {Math.abs(d.finAB1) > 0.01 ? fmt(d.finAB1) : '-'}
                       </td>
                       <td className={`p-2 text-center bg-indigo-50/40 ${d.finAB2 < 0 ? 'text-red-500 font-bold' : 'text-indigo-600'}`}>
@@ -390,7 +400,7 @@ const ConsoFermes = () => {
                     <div>{fmt(totals.initQty)}</div>
                   </td>
                   {/* Entrées */}
-                  <td colSpan={3} className="p-2 text-center bg-green-50"></td>
+                  <td colSpan={4} className="p-2 text-center bg-green-50"></td>
                   <td className="p-2 text-center bg-green-200 text-green-800">
                     <div>+{fmt(totals.entQty)}</div>
                   </td>
@@ -405,7 +415,7 @@ const ConsoFermes = () => {
                     <div>-{fmt(totals.consQty)}</div>
                   </td>
                   {/* Stock Final */}
-                  <td colSpan={3} className="p-2 text-center bg-indigo-100 text-indigo-700 font-bold">
+                  <td colSpan={4} className="p-2 text-center bg-indigo-100 text-indigo-700 font-bold">
                     <div>{fmt(totals.finQty)}</div>
                   </td>
                 </tr>
@@ -418,7 +428,7 @@ const ConsoFermes = () => {
                     <div>{fmtMoney(totals.initVal)}</div>
                   </td>
                   {/* Entrées */}
-                  <td colSpan={3} className="p-2 text-center bg-green-50"></td>
+                  <td colSpan={4} className="p-2 text-center bg-green-50"></td>
                   <td className="p-2 text-center bg-green-100 text-green-700 text-sm">
                     <div>+{fmtMoney(totals.entVal)}</div>
                   </td>
@@ -433,7 +443,7 @@ const ConsoFermes = () => {
                     <div>-{fmtMoney(totals.consVal)}</div>
                   </td>
                   {/* Stock Final */}
-                  <td colSpan={3} className="p-2 text-center bg-indigo-100 text-indigo-700 font-bold text-sm">
+                  <td colSpan={4} className="p-2 text-center bg-indigo-100 text-indigo-700 font-bold text-sm">
                     <div>{fmtMoney(totals.finVal)}</div>
                   </td>
                 </tr>
