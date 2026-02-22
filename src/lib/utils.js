@@ -108,7 +108,7 @@ export const exportConsoFermes = async (tableData, month, entryDetails = [], con
   tableData.forEach((d, idx) => {
     const r = idx + 2;
     const initTot = d.initAB1 + d.initAB2 + d.initAB3;
-    const entTot = d.entAB1 + d.entAB2 + d.entAB3;
+    const entTot = d.entMAG || 0;
     const sortTot = (d.sortAB1||0) + (d.sortAB2||0) + (d.sortAB3||0);
     const consTot = d.consAB1 + d.consAB2 + d.consAB3;
     

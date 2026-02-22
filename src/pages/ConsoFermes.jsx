@@ -104,7 +104,7 @@ const ConsoFermes = () => {
       t.finValAB1 += d.finAB1 * price; t.finValAB2 += d.finAB2 * price; t.finValAB3 += d.finAB3 * price;
       // Totals
       const initTot = d.initAB1 + d.initAB2 + d.initAB3;
-      const entTot = d.entAB1 + d.entAB2 + d.entAB3;
+      const entTot = d.entMAG || 0;
       const sortTot = (d.sortAB1 || 0) + (d.sortAB2 || 0) + (d.sortAB3 || 0);
       const consTot = d.consAB1 + d.consAB2 + d.consAB3;
       const finTot = d.finAB1 + d.finAB2 + d.finAB3;
@@ -331,7 +331,7 @@ const ConsoFermes = () => {
               <tbody>
                 {tableData.map((d, idx) => {
                   const initTot = d.initAB1 + d.initAB2 + d.initAB3;
-                  const entTot = d.entAB1 + d.entAB2 + d.entAB3;
+                  const entTot = d.entMAG || 0;
                   const sortTot = (d.sortAB1 || 0) + (d.sortAB2 || 0) + (d.sortAB3 || 0);
                   const consTot = d.consAB1 + d.consAB2 + d.consAB3;
                   const V = (val, color) => val > 0.01 ? <span className={color}>{fmt(val)}</span> : <span className="text-gray-300">-</span>;
