@@ -9065,6 +9065,138 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771850002016
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850229079
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850269845
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 4,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850295810
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.05,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850359431
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850373834
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850390370
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 4.5,
+      "price": 1920,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850415904
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850443086
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850461269
+    },
+    {
+      "type": "consumption",
+      "product": "ANTISCALANT PERMATREAT",
+      "quantity": 26.5,
+      "price": 110,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850491003
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 24.75,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850514837
+    },
+    {
+      "type": "consumption",
+      "product": "LUNA SENSATION",
+      "quantity": 3,
+      "price": 4568,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850567688
     }
   ],
   "stockAB1": [
@@ -10974,5 +11106,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T12:35:22.018Z"
+  "exportDate": "2026-02-23T12:44:47.692Z"
 }
