@@ -8724,6 +8724,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771847355452
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-16",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771847601465
     }
   ],
   "stockAB1": [
@@ -10633,5 +10644,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T11:51:15.477Z"
+  "exportDate": "2026-02-23T11:55:21.470Z"
 }
