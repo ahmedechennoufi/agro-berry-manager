@@ -9879,5 +9879,6 @@
   "consommations": [],
   "melanges": [],
   "inventory": {},
-  "exportDate": "2026-02-23T08:30:12.092Z"
+  "physicalInventories": [],
+  "exportDate": "2026-02-23T10:28:12.223Z"
 }
