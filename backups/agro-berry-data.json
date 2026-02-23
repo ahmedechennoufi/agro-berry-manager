@@ -9054,6 +9054,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771849618010
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771850002016
     }
   ],
   "stockAB1": [
@@ -10963,5 +10974,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T12:28:58.015Z"
+  "exportDate": "2026-02-23T12:35:22.018Z"
 }
