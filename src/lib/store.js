@@ -13,6 +13,7 @@ const STORAGE_KEYS = {
   inventory: 'agro_inventory_v3',
   coutData: 'agro_cout_data_v3',
   stockHistory: 'agro_stock_history_v3',
+  physicalInventories: 'agro_physical_inventories_v3',
   initialized: 'agro_initialized_v3',
   dataVersion: 'agro_data_version'
 };
@@ -961,6 +962,36 @@ function createEmptyRow(name, price = 0) {
   };
 }
 
+// === INVENTAIRES PHYSIQUES ===
+export const getPhysicalInventories = () => {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEYS.physicalInventories) || '[]');
+  } catch { return []; }
+};
+
+export const savePhysicalInventory = (inventory) => {
+  const inventories = getPhysicalInventories();
+  const newInventory = {
+    id: Date.now().toString(),
+    farm: inventory.farm,
+    farmName: inventory.farmName,
+    date: inventory.date,
+    data: inventory.data,
+    comparison: inventory.comparison,
+    stats: inventory.stats,
+    createdAt: new Date().toISOString()
+  };
+  inventories.push(newInventory);
+  localStorage.setItem(STORAGE_KEYS.physicalInventories, JSON.stringify(inventories));
+  return newInventory;
+};
+
+export const deletePhysicalInventory = (id) => {
+  const inventories = getPhysicalInventories().filter(inv => inv.id !== id);
+  localStorage.setItem(STORAGE_KEYS.physicalInventories, JSON.stringify(inventories));
+  return inventories;
+};
+
 // === EXPORT / IMPORT ===
 export const exportAllData = () => ({
   products: getProducts(),
@@ -972,6 +1003,7 @@ export const exportAllData = () => ({
   consommations: getConsommations(),
   melanges: getMelangesSauvegardes(),
   inventory: getInventory(),
+  physicalInventories: getPhysicalInventories(),
   exportDate: new Date().toISOString()
 });
 
@@ -986,6 +1018,7 @@ export const importAllData = (data) => {
     if (data.consommations) setItem(STORAGE_KEYS.consommations, data.consommations);
     if (data.melanges) setItem(STORAGE_KEYS.melanges, data.melanges);
     if (data.inventory) localStorage.setItem(STORAGE_KEYS.inventory, JSON.stringify(data.inventory));
+    if (data.physicalInventories) localStorage.setItem(STORAGE_KEYS.physicalInventories, JSON.stringify(data.physicalInventories));
     return true;
   } catch (e) {
     console.error('Import error:', e);
