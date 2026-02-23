@@ -11,6 +11,7 @@ import Saisie from './pages/Saisie';
 import Melange from './pages/Melange';
 import Costs from './pages/Costs';
 import Inventory from './pages/Inventory';
+import PhysicalInventory from './pages/PhysicalInventory';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
 import * as store from './lib/store';
@@ -129,6 +130,7 @@ function App() {
       case 'melange': return <Melange />;
       case 'costs': return <Costs />;
       case 'inventory': return <Inventory />;
+      case 'physical-inventory': return <PhysicalInventory />;
       case 'products': return <Products />;
       case 'settings': return <Settings />;
       default: return <Dashboard />;
