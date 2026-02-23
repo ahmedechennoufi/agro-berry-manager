@@ -396,3 +396,201 @@ export const downloadStyledInventoryExcel = async (data, monthName, totals) => {
   XLSX.utils.book_append_sheet(wb, ws, 'Inventaire');
   XLSX.writeFile(wb, `inventaire-${monthName.replace(/\s+/g, '-')}.xlsx`);
 };
+
+// === EXPORT INVENTAIRE PHYSIQUE (Comparaison) ===
+export const downloadPhysicalInventoryExcel = async (comparisonData, farmName, inventoryDate, stats) => {
+  const XLSX = await import('xlsx-js-style');
+  const wb = XLSX.utils.book_new();
+  const ws = {};
+
+  // === STYLES ===
+  const titleStyle = {
+    font: { bold: true, sz: 16, color: { rgb: "FFFFFF" } },
+    fill: { fgColor: { rgb: "22C55E" } },
+    alignment: { horizontal: "center", vertical: "center" }
+  };
+
+  const subtitleStyle = {
+    font: { sz: 10, italic: true, color: { rgb: "6B7280" } },
+    alignment: { horizontal: "left" }
+  };
+
+  const statLabelStyle = {
+    font: { bold: true, sz: 10, color: { rgb: "374151" } },
+    fill: { fgColor: { rgb: "F3F4F6" } },
+    alignment: { horizontal: "left" },
+    border: { top: {style:"thin"}, bottom: {style:"thin"}, left: {style:"thin"}, right: {style:"thin"} }
+  };
+
+  const statValueStyle = (color) => ({
+    font: { bold: true, sz: 11, color: { rgb: color } },
+    fill: { fgColor: { rgb: "F3F4F6" } },
+    alignment: { horizontal: "center" },
+    border: { top: {style:"thin"}, bottom: {style:"thin"}, left: {style:"thin"}, right: {style:"thin"} }
+  });
+
+  const headerStyle = (color) => ({
+    font: { bold: true, sz: 10, color: { rgb: "FFFFFF" } },
+    fill: { fgColor: { rgb: color } },
+    alignment: { horizontal: "center", vertical: "center" },
+    border: { top: {style:"thin"}, bottom: {style:"thin"}, left: {style:"thin"}, right: {style:"thin"} }
+  });
+
+  const cellStyle = {
+    font: { sz: 10 },
+    alignment: { horizontal: "right" },
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+
+  const cellStyleName = {
+    font: { sz: 10, bold: true },
+    alignment: { horizontal: "left" },
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+
+  const cellCenter = {
+    font: { sz: 10 },
+    alignment: { horizontal: "center" },
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+
+  const diffStyleNeg = {
+    font: { sz: 10, bold: true, color: { rgb: "DC2626" } },
+    alignment: { horizontal: "right" },
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+
+  const diffStylePos = {
+    font: { sz: 10, bold: true, color: { rgb: "2563EB" } },
+    alignment: { horizontal: "right" },
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+
+  const diffStyleOk = {
+    font: { sz: 10, bold: true, color: { rgb: "059669" } },
+    alignment: { horizontal: "right" },
+    border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+  };
+
+  const statusStyle = (status) => {
+    const colors = {
+      ok: { bg: "D1FAE5", fg: "059669" },
+      manquant: { bg: "FEE2E2", fg: "DC2626" },
+      excedent: { bg: "DBEAFE", fg: "2563EB" },
+      pending: { bg: "F3F4F6", fg: "9CA3AF" }
+    };
+    const c = colors[status] || colors.pending;
+    return {
+      font: { bold: true, sz: 9, color: { rgb: c.fg } },
+      fill: { fgColor: { rgb: c.bg } },
+      alignment: { horizontal: "center" },
+      border: { top: {style:"thin", color:{rgb:"E5E7EB"}}, bottom: {style:"thin", color:{rgb:"E5E7EB"}}, left: {style:"thin", color:{rgb:"E5E7EB"}}, right: {style:"thin", color:{rgb:"E5E7EB"}} }
+    };
+  };
+
+  const totalRowStyle = {
+    font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill: { fgColor: { rgb: "22C55E" } },
+    alignment: { horizontal: "right" },
+    border: { top: {style:"medium"}, bottom: {style:"medium"}, left: {style:"thin"}, right: {style:"thin"} }
+  };
+
+  const totalRowStyleNeg = {
+    font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill: { fgColor: { rgb: "DC2626" } },
+    alignment: { horizontal: "right" },
+    border: { top: {style:"medium"}, bottom: {style:"medium"}, left: {style:"thin"}, right: {style:"thin"} }
+  };
+
+  // === ROW 0: Title ===
+  ws['A1'] = { v: `🔍 INVENTAIRE PHYSIQUE - ${farmName}`, s: titleStyle };
+  ws['!merges'] = [
+    { s: { r: 0, c: 0 }, e: { r: 0, c: 7 } },
+    { s: { r: 1, c: 0 }, e: { r: 1, c: 7 } }
+  ];
+
+  // === ROW 1: Date ===
+  const dateStr = inventoryDate.split('-').reverse().join('/');
+  const exportDate = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
+  ws['A2'] = { v: `Date inventaire: ${dateStr} — Exporté le ${exportDate}`, s: subtitleStyle };
+
+  // === ROW 3-4: Stats ===
+  ws['A4'] = { v: 'Produits', s: statLabelStyle };
+  ws['B4'] = { v: stats.total, t: 'n', s: statValueStyle("3B82F6") };
+  ws['C4'] = { v: 'Saisis', s: statLabelStyle };
+  ws['D4'] = { v: stats.entered, t: 'n', s: statValueStyle("7C3AED") };
+  ws['E4'] = { v: 'Conformes', s: statLabelStyle };
+  ws['F4'] = { v: stats.ok, t: 'n', s: statValueStyle("059669") };
+  ws['G4'] = { v: 'Avec écart', s: statLabelStyle };
+  ws['H4'] = { v: stats.withDiff, t: 'n', s: statValueStyle("DC2626") };
+
+  // === ROW 6: Headers ===
+  const headers = ['PRODUIT', 'UNITÉ', 'THÉORIQUE', 'PHYSIQUE', 'ÉCART', 'ÉCART %', 'VALEUR ÉCART', 'STATUT'];
+  const headerColors = ['374151', '6B7280', '3B82F6', '059669', 'F59E0B', 'F59E0B', 'EF4444', '6B7280'];
+  headers.forEach((h, i) => {
+    ws[XLSX.utils.encode_cell({ r: 6, c: i })] = { v: h, s: headerStyle(headerColors[i]) };
+  });
+
+  // === DATA ROWS ===
+  const entered = comparisonData.filter(i => i.hasPhysical);
+  entered.forEach((item, idx) => {
+    const r = idx + 7;
+    const getDiffStyle = () => {
+      if (!item.hasPhysical || item.diff === null) return cellStyle;
+      if (Math.abs(item.diff) < 0.01) return diffStyleOk;
+      return item.diff < 0 ? diffStyleNeg : diffStylePos;
+    };
+
+    ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.name, s: cellStyleName };
+    ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: item.unit, s: cellCenter };
+    ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: item.theoretical, t: 'n', s: cellStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: item.physical ?? 0, t: 'n', s: cellStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: item.diff ?? 0, t: 'n', s: getDiffStyle() };
+    ws[XLSX.utils.encode_cell({ r, c: 5 })] = { 
+      v: item.diffPercent !== null ? `${item.diffPercent >= 0 ? '+' : ''}${Math.round(item.diffPercent * 10) / 10}%` : '—', 
+      s: getDiffStyle() 
+    };
+    ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: item.diffValue ?? 0, t: 'n', s: getDiffStyle() };
+
+    const statusLabels = { ok: '✅ OK', manquant: '🔻 MANQUANT', excedent: '🔺 EXCÉDENT', pending: '⏳' };
+    ws[XLSX.utils.encode_cell({ r, c: 7 })] = { v: statusLabels[item.status] || '—', s: statusStyle(item.status) };
+  });
+
+  // === TOTAL ROW ===
+  const totalRow = entered.length + 7;
+  const totalDiff = entered.reduce((s, i) => s + (i.diff || 0), 0);
+  const totalDiffValue = entered.reduce((s, i) => s + (i.diffValue || 0), 0);
+  const isNeg = totalDiffValue < 0;
+  const tStyle = isNeg ? totalRowStyleNeg : totalRowStyle;
+
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 0 })] = { v: `TOTAL (${entered.length} produits)`, s: { ...tStyle, alignment: { horizontal: "left" } } };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 1 })] = { v: '', s: tStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 2 })] = { v: entered.reduce((s, i) => s + i.theoretical, 0), t: 'n', s: tStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 3 })] = { v: entered.reduce((s, i) => s + (i.physical || 0), 0), t: 'n', s: tStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 4 })] = { v: totalDiff, t: 'n', s: tStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 5 })] = { v: '', s: tStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 6 })] = { v: totalDiffValue, t: 'n', s: tStyle };
+  ws[XLSX.utils.encode_cell({ r: totalRow, c: 7 })] = { v: `${stats.withDiff} écarts`, s: tStyle };
+
+  // === SET RANGE ===
+  ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: totalRow, c: 7 } });
+
+  // === COLUMN WIDTHS ===
+  ws['!cols'] = [
+    { wch: 30 },  // Produit
+    { wch: 8 },   // Unité
+    { wch: 14 },  // Théorique
+    { wch: 14 },  // Physique
+    { wch: 12 },  // Écart
+    { wch: 10 },  // Écart %
+    { wch: 15 },  // Valeur Écart
+    { wch: 16 }   // Statut
+  ];
+
+  // === ROW HEIGHTS ===
+  ws['!rows'] = [{ hpt: 30 }, { hpt: 18 }, { hpt: 10 }, { hpt: 22 }];
+
+  XLSX.utils.book_append_sheet(wb, ws, 'Inventaire Physique');
+  const safeFarmName = farmName.replace(/\s+/g, '-');
+  XLSX.writeFile(wb, `inventaire-physique-${safeFarmName}-${inventoryDate}.xlsx`);
+};

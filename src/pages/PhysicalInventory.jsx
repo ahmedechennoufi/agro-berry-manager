@@ -3,7 +3,7 @@ import { useApp } from '../App';
 import { Card, Select, Input, EmptyState, Button } from '../components/UI';
 import { FARMS } from '../lib/constants';
 import { calculateFarmStock, getAveragePrice, getProducts } from '../lib/store';
-import { fmt, fmtMoney } from '../lib/utils';
+import { fmt, fmtMoney, downloadPhysicalInventoryExcel } from '../lib/utils';
 
 const PhysicalInventory = () => {
   const { products } = useApp();
@@ -127,6 +127,12 @@ const PhysicalInventory = () => {
     }
   };
 
+  // Export comparison to Excel
+  const handleExportExcel = async () => {
+    const farmName = FARMS.find(f => f.id === selectedFarm)?.name || selectedFarm;
+    await downloadPhysicalInventoryExcel(comparisonData, farmName, inventoryDate, stats);
+  };
+
   // Export comparison to clipboard
   const handleExport = () => {
     const farmName = FARMS.find(f => f.id === selectedFarm)?.name || selectedFarm;
@@ -176,10 +182,16 @@ const PhysicalInventory = () => {
         {selectedFarm && stats.entered > 0 && (
           <div className="flex gap-2">
             <button
-              onClick={handleExport}
+              onClick={handleExportExcel}
               className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-xl font-medium transition-colors text-sm"
             >
-              📋 Copier résultat
+              📥 Exporter Excel
+            </button>
+            <button
+              onClick={handleExport}
+              className="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-xl font-medium transition-colors text-sm"
+            >
+              📋 Copier
             </button>
             <button
               onClick={handleReset}
