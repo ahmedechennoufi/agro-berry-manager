@@ -424,7 +424,8 @@
       "id": 1767873252538,
       "name": "MICROQUEL",
       "unit": "KG",
-      "category": "AUTRES"
+      "category": "ENGRAIS",
+      "threshold": null
     },
     {
       "id": 1767706190916,
@@ -478,7 +479,8 @@
       "id": 1767019682173,
       "name": "NOVATEC RED 8-10-34",
       "unit": "KG",
-      "category": "AUTRES"
+      "category": "ENGRAIS",
+      "threshold": null
     },
     {
       "id": 7,
@@ -781,24 +783,6 @@
       "category": "PHYTOSANITAIRES"
     },
     {
-      "id": 1766754724535,
-      "name": "TES2",
-      "unit": "KG",
-      "category": "AUTRES"
-    },
-    {
-      "id": 1767880095109,
-      "name": "TEST",
-      "unit": "KG",
-      "category": "AUTRES"
-    },
-    {
-      "id": 1767972866483,
-      "name": "TEST3",
-      "unit": "KG",
-      "category": "AUTRES"
-    },
-    {
       "id": 17,
       "name": "TIMOREX GOLD",
       "unit": "L",
@@ -874,7 +858,8 @@
       "id": 1769588410552,
       "name": "VITAMINA MIX",
       "unit": "KG",
-      "category": "AUTRES"
+      "category": "ENGRAIS",
+      "threshold": null
     },
     {
       "id": 98,
@@ -10527,5 +10512,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T10:42:57.915Z"
+  "exportDate": "2026-02-23T10:51:42.497Z"
 }
