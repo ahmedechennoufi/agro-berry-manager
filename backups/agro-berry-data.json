@@ -8658,6 +8658,28 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771846568320
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-16",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771846694936
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-16",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771846714986
     }
   ],
   "stockAB1": [
@@ -10567,5 +10589,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T11:38:08.322Z"
+  "exportDate": "2026-02-23T11:40:34.988Z"
 }
