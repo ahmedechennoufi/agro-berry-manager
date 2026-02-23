@@ -8933,6 +8933,61 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771848806224
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.75,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849133372
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849164489
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 4,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849179555
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.05,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849197956
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849226738
     }
   ],
   "stockAB1": [
@@ -10842,5 +10897,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T12:15:26.226Z"
+  "exportDate": "2026-02-23T12:22:26.739Z"
 }
