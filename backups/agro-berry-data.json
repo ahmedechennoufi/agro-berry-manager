@@ -8988,6 +8988,72 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771849226738
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849387175
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849404494
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849446595
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849464162
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849511079
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-20",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771849618010
     }
   ],
   "stockAB1": [
@@ -10897,5 +10963,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T12:22:26.739Z"
+  "exportDate": "2026-02-23T12:28:58.015Z"
 }
