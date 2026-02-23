@@ -8603,6 +8603,39 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771834250427
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 3.75,
+      "price": 1920,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-15",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771845705616
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-16",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771845813396
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-16",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1771845890513
     }
   ],
   "stockAB1": [
@@ -10512,5 +10545,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T10:51:42.497Z"
+  "exportDate": "2026-02-23T11:26:50.515Z"
 }
