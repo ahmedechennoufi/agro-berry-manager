@@ -9197,6 +9197,59 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1771850567688
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 40,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-01-27",
+      "id": 1771928620576
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 19.25,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-15",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771928660259
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 9.2,
+      "price": 65.28,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-16",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771928752110
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-17",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771928793007
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 35,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1771928834039
     }
   ],
   "stockAB1": [
@@ -11106,5 +11159,5 @@
       "createdAt": "2026-02-23T10:40:57.915Z"
     }
   ],
-  "exportDate": "2026-02-23T14:08:41.590Z"
+  "exportDate": "2026-02-24T10:29:14.043Z"
 }
