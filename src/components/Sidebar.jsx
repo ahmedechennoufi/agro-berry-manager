@@ -1,99 +1,96 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { getAlerts } from '../lib/store';
+import React, { useState } from 'react';
 
 const menuItems = [
-  { id: 'dashboard', icon: '📊', label: 'Dashboard' },
-  { id: 'movements', icon: '🔄', label: 'Mouvements' },
-  { id: 'consofermes', icon: '🔥', label: 'Consommation' },
+  { id: 'dashboard', icon: '📊', label: 'Tableau de Bord' },
+  { id: 'consofermes', icon: '🔥', label: 'Consommation Fermes' },
   { id: 'stock', icon: '📦', label: 'Stock Global' },
+  { id: 'movements', icon: '🚚', label: 'Mouvements' },
   { id: 'farms', icon: '🌱', label: 'Stock Fermes' },
-  { id: 'costs', icon: '💰', label: 'Coût Production' },
-  { id: 'inventory', icon: '📅', label: 'Historique Stock' },
-  { id: 'physical-inventory', icon: '🔍', label: 'Inventaire Physique' },
+  { id: 'transfers', icon: '🔄', label: 'Transferts' },
+  { id: 'history', icon: '📈', label: 'Historique' },
   { id: 'products', icon: '📋', label: 'Produits' },
   { id: 'settings', icon: '⚙️', label: 'Paramètres' }
 ];
 
-const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, isCollapsed, setIsCollapsed }) => {
-  const alertsCount = useMemo(() => {
-    const alerts = getAlerts();
-    return alerts.filter(a => a.severity === 'critical' || a.severity === 'warning').length;
-  }, []);
+const coutSubMenu = [
+  { id: 'saisie', icon: '✏️', label: 'Saisie Consommation' },
+  { id: 'melange', icon: '🧪', label: 'Mélanges' },
+  { id: 'costs', icon: '📊', label: 'Coûts Production' }
+];
+
+const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
+  const [coutOpen, setCoutOpen] = useState(false);
+  const isCoutPage = ['saisie', 'melange', 'costs'].includes(currentPage);
 
   return (
     <>
-      {/* Mobile overlay */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 lg:hidden" 
-          onClick={() => setIsOpen(false)} 
-        />
-      )}
-      
-      <aside className={`
-        fixed lg:static inset-y-0 left-0 z-50 sidebar
-        transform transition-all duration-300 ease-out
-        ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-        ${isCollapsed ? 'w-20' : 'w-64'}
-        flex flex-col
-      `}>
-        {/* Logo & Toggle */}
-        <div className="p-4">
-          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3'}`}>
-            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shadow-lg flex-shrink-0">
+      {isOpen && <div className="fixed inset-0 bg-black/30 z-40 md:hidden" onClick={() => setIsOpen(false)} />}
+      <aside className={`fixed md:static inset-y-0 left-0 z-50 w-72 ios-sidebar transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} flex flex-col`}>
+        
+        {/* Logo */}
+        <div className="p-5 border-b border-gray-200/50">
+          <div className="flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-sm">
               <span className="text-xl">🫐</span>
             </div>
-            {!isCollapsed && (
-              <div className="flex-1">
-                <h1 className="font-bold text-white text-lg">Agro Berry</h1>
-                <p className="text-xs text-white/60">Manager Pro</p>
-              </div>
-            )}
-            {/* Toggle Button */}
-            <button
-              onClick={() => setIsCollapsed(!isCollapsed)}
-              className="hidden lg:flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-all duration-200"
-              title={isCollapsed ? 'Afficher le menu' : 'Masquer le menu'}
-            >
-              {isCollapsed ? (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              ) : (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              )}
-            </button>
+            <div>
+              <h1 className="font-semibold text-lg text-ios-dark">Agro Berry</h1>
+              <p className="text-xs text-ios-gray">Manager v2.0</p>
+            </div>
           </div>
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 py-2 overflow-y-auto">
+        <nav className="flex-1 py-3 overflow-y-auto">
           {menuItems.map(item => (
             <button 
               key={item.id} 
-              onClick={() => { setCurrentPage(item.id); setIsOpen(false); }}
-              className={`
-                sidebar-item w-full 
-                ${currentPage === item.id ? 'active' : ''}
-                ${isCollapsed ? 'justify-center px-2' : ''}
-              `}
-              title={isCollapsed ? item.label : ''}
+              onClick={() => { setCurrentPage(item.id); setIsOpen(false); setCoutOpen(false); }}
+              className={`ios-sidebar-item w-full flex items-center gap-3 ${currentPage === item.id ? 'active' : ''}`}
             >
-              <span className={`text-lg ${isCollapsed ? 'w-auto' : 'w-6'} text-center`}>{item.icon}</span>
-              {!isCollapsed && <span className="flex-1 text-left">{item.label}</span>}
-              {item.showBadge && alertsCount > 0 && !isCollapsed && (
-                <span className="notification-badge">
-                  {alertsCount > 99 ? '99+' : alertsCount}
-                </span>
-              )}
-              {item.showBadge && alertsCount > 0 && isCollapsed && (
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              )}
+              <span className="text-lg">{item.icon}</span>
+              <span className="font-medium text-[15px]">{item.label}</span>
             </button>
           ))}
+          
+          {/* Coût Production */}
+          <div className="mt-4 pt-4 mx-4 border-t border-gray-200/50">
+            <button 
+              onClick={() => setCoutOpen(!coutOpen)}
+              className={`w-full flex items-center justify-between px-3 py-3 rounded-xl transition-all
+                ${isCoutPage || coutOpen ? 'bg-orange-500 text-white' : 'text-ios-dark hover:bg-gray-100'}`}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-lg">💰</span>
+                <span className="font-medium text-[15px]">Coût Production</span>
+              </div>
+              <svg className={`w-4 h-4 transition-transform ${coutOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {coutOpen && (
+              <div className="mt-2 space-y-1 animate-slideUp">
+                {coutSubMenu.map(item => (
+                  <button 
+                    key={item.id} 
+                    onClick={() => { setCurrentPage(item.id); setIsOpen(false); }}
+                    className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all text-sm
+                      ${currentPage === item.id ? 'bg-orange-100 text-orange-600' : 'text-ios-gray hover:bg-gray-100'}`}
+                  >
+                    <span>{item.icon}</span>
+                    <span className="font-medium">{item.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
+
+        {/* Footer */}
+        <div className="p-4 border-t border-gray-200/50 text-center">
+          <p className="text-xs text-ios-gray">© 2025 Agro Berry</p>
+        </div>
       </aside>
     </>
   );

@@ -1,194 +1,187 @@
-// === FERMES ===
+// FERMES
 export const FARMS = [
-  { id: 'AGRO BERRY 1', name: 'Agro Berry 1', short: 'AGB1', hectares: 24 },
-  { id: 'AGRO BERRY 2', name: 'Agro Berry 2', short: 'AGB2', hectares: 24 },
-  { id: 'AGRO BERRY 3', name: 'Agro Berry 3', short: 'AGB3', hectares: 29.7 }
+  { id: 'AGRO BERRY 1', name: 'Agro Berry 1', short: 'AGB1', color: 'blue', hectares: 24 },
+  { id: 'AGRO BERRY 2', name: 'Agro Berry 2', short: 'AGB2', color: 'orange', hectares: 24 },
+  { id: 'AGRO BERRY 3', name: 'Agro Berry 3', short: 'AGB3', color: 'green', hectares: 32 }
 ];
 
-// === CULTURES ===
+// SUPERFICIES
+export const SUPERFICIES = {
+  'Agro Berry 1': {
+    'Pesticides': { sept: 15.96, reste: 21.15 },
+    'Engrais Foliaire': { sept: 15.96, reste: 21.15 },
+    'Engrais Poudre Hydroponic': { sept: 3.94, reste: 9.13 },
+    'Engrais Poudre Sol': { sept: 12.02, reste: 12.02 },
+    'Bourdons': { sept: 21.15, reste: 21.15 }
+  },
+  'Agro Berry 2': {
+    'Pesticides': { sept: 21, reste: 24 },
+    'Engrais Foliaire': { sept: 21, reste: 24 },
+    'Engrais Poudre Hydroponic': { sept: 11.78, reste: 11.78 },
+    'Engrais Poudre Sol': { sept: 9.22, reste: 12.22 },
+    'Bourdons': { sept: 24, reste: 24 }
+  },
+  'Agro Berry 3': {
+    'Pesticides': { sept: 29.7, reste: 29.7 },
+    'Engrais Foliaire': { sept: 29.7, reste: 29.7 },
+    'Engrais Poudre Hydroponic': { sept: 29.7, reste: 29.7 },
+    'Bourdons': { sept: 29.7, reste: 29.7 }
+  }
+};
+
+// CATEGORIES STOCK
+export const CATEGORIES = [
+  { id: 'ENGRAIS', name: 'Engrais', icon: '🌱' },
+  { id: 'PHYTOSANITAIRES', name: 'Phytosanitaires', icon: '🧪' },
+  { id: 'ACIDES', name: 'Acides', icon: '⚗️' },
+  { id: 'AUTRES', name: 'Autres', icon: '📁' }
+];
+
+// CATEGORIES COUT
+export const COST_CATEGORIES = [
+  { id: 'Bourdons', name: 'Bourdons', icon: '🐝' },
+  { id: 'Engrais Poudre Sol', name: 'Engrais Sol', icon: '🌍' },
+  { id: 'Engrais Poudre Hydroponic', name: 'Engrais Hydro', icon: '💧' },
+  { id: 'Engrais Foliaire', name: 'Engrais Foliaire', icon: '🌿' },
+  { id: 'Pesticides', name: 'Pesticides', icon: '🧪' }
+];
+
+// CULTURES
 export const CULTURES = [
   { id: 'Myrtille', name: 'Myrtille', icon: '🫐' },
   { id: 'Fraise', name: 'Fraise', icon: '🍓' }
 ];
 
-// === CULTURES PAR FERME ===
-export const FARM_CULTURES = {
-  'AGRO BERRY 1': ['Myrtille', 'Fraise'],
-  'AGRO BERRY 2': ['Myrtille'],
-  'AGRO BERRY 3': ['Myrtille']
+export const CULTURES_PER_FARM = {
+  'Agro Berry 1': ['Myrtille', 'Fraise'],
+  'Agro Berry 2': ['Myrtille'],
+  'Agro Berry 3': ['Myrtille']
 };
 
-// === SUPERFICIES DETAILLEES PAR FERME/CULTURE/TYPE ===
-export const SUPERFICIES_DETAIL = {
-  'AGRO BERRY 1': {
-    'Myrtille': {
-      'Sol': 12.02,
-      'Hydro': 9.13,
-      'Foliaire': 21.15,
-      'Pesticides': 21.15,
-      'Bourdons': 21.15
-    },
-    'Fraise': {
-      'Sol': 15.5,
-      'Foliaire': 15.5,
-      'Pesticides': 15.5,
-      'Bourdons': 15.5
-    }
-  },
-  'AGRO BERRY 2': {
-    'Myrtille': {
-      'Sol': 12.22,
-      'Hydro': 11.78,
-      'Foliaire': 24,
-      'Pesticides': 24,
-      'Bourdons': 24
-    }
-  },
-  'AGRO BERRY 3': {
-    'Myrtille': {
-      'Hydro': 29.7,
-      'Foliaire': 29.7,
-      'Pesticides': 29.7,
-      'Bourdons': 29.7
-    }
-  }
-};
-
-// === CATEGORIES ===
-export const CATEGORIES = [
-  { id: 'ENGRAIS', name: 'Engrais', icon: '🌱' },
-  { id: 'PHYTOSANITAIRES', name: 'Phytosanitaires', icon: '💊' },
-  { id: 'ACIDES', name: 'Acides', icon: '🧪' },
-  { id: 'AUTRES', name: 'Autres', icon: '📦' },
-  { id: 'INVESTISSEMENT', name: 'Investissement', icon: '🏗️' }
+// DESTINATIONS
+export const DESTINATIONS = [
+  { id: 'Sol', name: 'Sol', icon: '🌍' },
+  { id: 'Hydro', name: 'Hydroponic', icon: '💧' },
+  { id: 'Foliaire', name: 'Foliaire', icon: '🌿' }
 ];
 
-// === UNITES ===
-export const UNITS = [
-  { id: 'KG', name: 'Kilogramme (KG)' },
-  { id: 'L', name: 'Litre (L)' },
-  { id: 'UNITÉ', name: 'Unité' },
-  { id: 'BOITE', name: 'Boîte' },
-  { id: 'SAC', name: 'Sac' }
-];
-
-// === CATEGORIES COUT DE PRODUCTION ===
-export const COST_CATEGORIES = [
-  { id: 'Bourdons', name: 'Bourdons', icon: '🐝' },
-  { id: 'Engrais Poudre Sol', name: 'Engrais Poudre Sol', icon: '🌍' },
-  { id: 'Engrais Poudre Hydroponic', name: 'Engrais Poudre Hydroponic', icon: '💧' },
-  { id: 'Engrais Foliaire', name: 'Engrais Foliaire', icon: '🍃' },
-  { id: 'Pesticides', name: 'Pesticides', icon: '🧴' }
-];
-
-// === MOIS ===
+// MOIS
 export const MONTHS = [
-  { id: 1, name: 'Janvier', short: 'Jan' },
-  { id: 2, name: 'Février', short: 'Fév' },
-  { id: 3, name: 'Mars', short: 'Mar' },
-  { id: 4, name: 'Avril', short: 'Avr' },
-  { id: 5, name: 'Mai', short: 'Mai' },
-  { id: 6, name: 'Juin', short: 'Juin' },
-  { id: 7, name: 'Juillet', short: 'Juil' },
-  { id: 8, name: 'Août', short: 'Août' },
-  { id: 9, name: 'Septembre', short: 'Sept' },
-  { id: 10, name: 'Octobre', short: 'Oct' },
-  { id: 11, name: 'Novembre', short: 'Nov' },
-  { id: 12, name: 'Décembre', short: 'Déc' }
+  { id: 'SEPTEMBRE', name: 'Septembre', short: 'Sept', num: 9, idx: 0 },
+  { id: 'OCTOBRE', name: 'Octobre', short: 'Oct', num: 10, idx: 1 },
+  { id: 'NOVEMBRE', name: 'Novembre', short: 'Nov', num: 11, idx: 2 },
+  { id: 'DECEMBRE', name: 'Décembre', short: 'Déc', num: 12, idx: 3 },
+  { id: 'JANVIER', name: 'Janvier', short: 'Jan', num: 1, idx: 4 },
+  { id: 'FEVRIER', name: 'Février', short: 'Fév', num: 2, idx: 5 },
+  { id: 'MARS', name: 'Mars', short: 'Mars', num: 3, idx: 6 },
+  { id: 'AVRIL', name: 'Avril', short: 'Avr', num: 4, idx: 7 },
+  { id: 'MAI', name: 'Mai', short: 'Mai', num: 5, idx: 8 },
+  { id: 'JUIN', name: 'Juin', short: 'Juin', num: 6, idx: 9 },
+  { id: 'JUILLET', name: 'Juillet', short: 'Juil', num: 7, idx: 10 },
+  { id: 'AOUT', name: 'Août', short: 'Août', num: 8, idx: 11 }
 ];
 
-// === SUPERFICIES PAR FERME ET CATEGORIE (legacy) ===
-export const SUPERFICIES = {
-  'Agro Berry 1': {
-    'Pesticides': { total: 24, reste: 24 },
-    'Engrais Foliaire': { total: 24, reste: 24 },
-    'Engrais Poudre Sol': { total: 12.02, reste: 12.02 },
-    'Engrais Poudre Hydroponic': { total: 9.13, reste: 9.13 },
-    'Bourdons': { total: 24, reste: 24 }
-  },
-  'Agro Berry 2': {
-    'Pesticides': { total: 24, reste: 24 },
-    'Engrais Foliaire': { total: 24, reste: 24 },
-    'Engrais Poudre Sol': { total: 12.22, reste: 12.22 },
-    'Engrais Poudre Hydroponic': { total: 11.78, reste: 11.78 },
-    'Bourdons': { total: 24, reste: 24 }
-  },
-  'Agro Berry 3': {
-    'Pesticides': { total: 29.7, reste: 29.7 },
-    'Engrais Foliaire': { total: 29.7, reste: 29.7 },
-    'Engrais Poudre Hydroponic': { total: 29.7, reste: 29.7 },
-    'Bourdons': { total: 29.7, reste: 29.7 }
-  }
-};
+// TYPES MOUVEMENTS
+export const MOVEMENT_TYPES = [
+  { id: 'entry', name: 'Entrée', icon: '📥', color: 'green' },
+  { id: 'exit', name: 'Sortie', icon: '📤', color: 'blue' },
+  { id: 'consumption', name: 'Consommation', icon: '🔥', color: 'red' },
+  { id: 'transfer-in', name: 'Transfert entrant', icon: '↩️', color: 'purple' },
+  { id: 'transfer-out', name: 'Transfert sortant', icon: '↪️', color: 'orange' }
+];
 
-// === MELANGES PREDEFINIS ===
+// UNITES
+export const UNITS = [
+  { id: 'KG', name: 'Kilogramme' },
+  { id: 'L', name: 'Litre' },
+  { id: 'UNITÉ', name: 'Unité' }
+];
+
+// MELANGES PREDEFINIS
 export const MELANGES_PREDEFINIS = {
   'Myrtille Sol': {
     nom: 'Myrtille Sol',
     culture: 'Myrtille',
     type: 'Sol',
+    icon: '🫐🌍',
     produits: [
       { nom: 'ACIDE PHOSPHORIQUE', qte: 35, unite: 'L' },
-      { nom: 'ACIDE SULFIRIQUE', qte: 35, unite: 'L' },
-      { nom: 'ENTEC 21% (NOVATEC SOLUB 21%)', qte: 40, unite: 'kg' },
-      { nom: 'MAP', qte: 40, unite: 'kg' },
-      { nom: 'SULFATE MAGNESUIM', qte: 30, unite: 'kg' },
-      { nom: 'SULFATE DE POTASSE', qte: 15, unite: 'kg' },
-      { nom: 'FEROXIM', qte: 5, unite: 'kg' },
-      { nom: 'MANVERT BIOMIX', qte: 2.5, unite: 'kg' },
-      { nom: 'PERFECTOSE', qte: 3, unite: 'L' },
-      { nom: 'ALGOBAZ', qte: 0.4, unite: 'kg' },
-      { nom: 'SULFATE DE ZINC', qte: 0.5, unite: 'kg' },
-      { nom: 'VITAL CU', qte: 1, unite: 'L' },
-      { nom: 'BORTRAC', qte: 0.05, unite: 'L' }
+      { nom: 'ENTEC 21% (NOVATEC SOLUB 21%)', qte: 75, unite: 'kg' },
+      { nom: 'MAP', qte: 100, unite: 'kg' },
+      { nom: 'SULFATE DE POTASSE', qte: 75, unite: 'kg' },
+      { nom: 'SULFATE MAGNESUIM', qte: 100, unite: 'kg' },
+      { nom: 'VITAL CU', qte: 1.5, unite: 'L' },
+      { nom: 'SULFATE DE ZINC', qte: 1, unite: 'kg' },
+      { nom: 'NUTREL C', qte: 10, unite: 'kg' },
+      { nom: 'BORTRAC', qte: 0.1, unite: 'L' },
+      { nom: 'FEROXIM', qte: 8, unite: 'L' },
+      { nom: 'UREE', qte: 35, unite: 'kg' }
     ]
   },
-  'Myrtille Hydro': {
-    nom: 'Myrtille Hydro',
+  'Myrtille Hydroponic': {
+    nom: 'Myrtille Hydroponic',
     culture: 'Myrtille',
     type: 'Hydro',
+    icon: '🫐💧',
     produits: [
       { nom: 'ACIDE PHOSPHORIQUE', qte: 25, unite: 'L' },
-      { nom: 'ACIDE NITRIQUE', qte: 20, unite: 'L' },
-      { nom: 'MAP', qte: 30, unite: 'kg' },
-      { nom: 'NITRATE DE POTASSE', qte: 30, unite: 'kg' },
-      { nom: 'SULFATE MAGNESUIM', qte: 25, unite: 'kg' },
-      { nom: 'NITRATE DE CALCIUM', qte: 20, unite: 'kg' },
-      { nom: 'FEROXIM', qte: 3, unite: 'kg' },
-      { nom: 'MANVERT BIOMIX', qte: 2, unite: 'kg' }
+      { nom: 'FEROXIM', qte: 5, unite: 'L' },
+      { nom: 'NITRATE DE CALCIUM', qte: 25, unite: 'kg' },
+      { nom: 'ENTEC 21% (NOVATEC SOLUB 21%)', qte: 35, unite: 'kg' },
+      { nom: 'MAP', qte: 50, unite: 'kg' },
+      { nom: 'SULFATE MAGNESUIM', qte: 35, unite: 'kg' },
+      { nom: 'SULFATE DE POTASSE', qte: 50, unite: 'kg' },
+      { nom: 'UREE', qte: 25, unite: 'kg' },
+      { nom: 'VITAL CU', qte: 0.5, unite: 'L' },
+      { nom: 'SULFATE DE ZINC', qte: 0.5, unite: 'kg' },
+      { nom: 'NUTREL C', qte: 5, unite: 'kg' },
+      { nom: 'BORTRAC', qte: 0.1, unite: 'L' }
     ]
   },
-  'Fraise Sol': {
-    nom: 'Fraise Sol',
+  'Fraise': {
+    nom: 'Fraise',
     culture: 'Fraise',
     type: 'Sol',
+    icon: '🍓',
     produits: [
-      { nom: 'AMMONITRATE', qte: 30, unite: 'kg' },
-      { nom: 'NITRATE DE POTASSE', qte: 50, unite: 'kg' },
-      { nom: 'NITRATE DE MAGNESIUM', qte: 20, unite: 'kg' },
-      { nom: 'NITRATE DE CALCIUM', qte: 40, unite: 'kg' },
-      { nom: 'MAP', qte: 25, unite: 'kg' },
-      { nom: 'SULFATE DE POTASSE', qte: 15, unite: 'kg' },
-      { nom: 'FEROXIM', qte: 3, unite: 'kg' },
-      { nom: 'MICROMIX', qte: 5, unite: 'kg' },
-      { nom: 'ACIDE PHOSPHORIQUE', qte: 20, unite: 'L' }
+      { nom: 'NITRATE DE POTASSE', qte: 66, unite: 'kg' },
+      { nom: 'ACIDE PHOSPHORIQUE', qte: 38, unite: 'L' },
+      { nom: 'SULFATE MAGNESUIM', qte: 75, unite: 'kg' },
+      { nom: 'SULFATE DE POTASSE', qte: 57, unite: 'kg' },
+      { nom: 'ACIDE NITRIQUE', qte: 4, unite: 'L' }
     ]
   }
 };
 
-// === ALERT SETTINGS ===
-export const ALERT_SETTINGS = {
-  defaultThreshold: 10,
-  highConsumptionMultiplier: 2
-};
-
-// === DESTINATIONS ===
-export const DESTINATIONS = [
-  { id: 'Sol', name: 'Sol', icon: '🌍' },
-  { id: 'Hydro', name: 'Hydroponic', icon: '💧' },
-  { id: 'Foliaire', name: 'Foliaire', icon: '🍃' },
-  { id: 'Pesticide', name: 'Pesticide', icon: '🧪' }
+// PRODUITS CONNUS
+export const PRODUITS_CONNUS = [
+  { nom: 'SULFATE DE POTASSE', unite: 'kg', prix: 9.5 },
+  { nom: 'ACIDE PHOSPHORIQUE', unite: 'L', prix: 10.8 },
+  { nom: 'MAP', unite: 'kg', prix: 11.5 },
+  { nom: 'NUTREL C', unite: 'kg', prix: 148 },
+  { nom: 'UREE', unite: 'kg', prix: 6.5 },
+  { nom: 'SULFATE MAGNESUIM', unite: 'kg', prix: 4.8 },
+  { nom: 'NITRATE DE CALCIUM', unite: 'kg', prix: 6.8 },
+  { nom: 'SULFATE DE ZINC', unite: 'kg', prix: 14.5 },
+  { nom: 'FEROXIM', unite: 'L', prix: 101 },
+  { nom: 'VITAL CU', unite: 'L', prix: 141.67 },
+  { nom: 'BORTRAC', unite: 'L', prix: 109 },
+  { nom: 'ENTEC 21% (NOVATEC SOLUB 21%)', unite: 'kg', prix: 7 },
+  { nom: 'NITRATE DE POTASSE', unite: 'kg', prix: 13 },
+  { nom: 'ACIDE NITRIQUE', unite: 'L', prix: 7.5 },
+  { nom: 'FERRILENE', unite: 'kg', prix: 102 }
 ];
 
-// === PRODUITS CONNUS ===
-export const PRODUITS_CONNUS = [];
+// GET SUPERFICIE
+export const getSuperficie = (ferme, cat, moisIdx = 4) => {
+  const fermeName = ferme.includes('1') ? 'Agro Berry 1' : ferme.includes('2') ? 'Agro Berry 2' : 'Agro Berry 3';
+  const catSup = SUPERFICIES[fermeName]?.[cat];
+  if (!catSup) return 24;
+  return moisIdx === 0 ? catSup.sept : catSup.reste;
+};
+
+// GET PRODUCT PRICE
+export const getProductPrice = (name) => {
+  const found = PRODUITS_CONNUS.find(p => p.nom.toUpperCase() === name?.toUpperCase());
+  return found?.prix || 0;
+};
