@@ -25,6 +25,19 @@ const PhysicalInventory = () => {
   const [savedInventories, setSavedInventories] = useState(getPhysicalInventories());
   const [viewingInventory, setViewingInventory] = useState(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(null);
+  const [showAddProduct, setShowAddProduct] = useState(false);
+  const [addProductSearch, setAddProductSearch] = useState('');
+  const [extraProducts, setExtraProducts] = useState(() => {
+    try {
+      const saved = localStorage.getItem('physical_inventory_extra_products');
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+
+  // Save extra products to localStorage
+  useEffect(() => {
+    localStorage.setItem('physical_inventory_extra_products', JSON.stringify(extraProducts));
+  }, [extraProducts]);
 
   // Save draft to localStorage
   useEffect(() => {
@@ -45,7 +58,7 @@ const PhysicalInventory = () => {
     const stockMap = calculateFarmStock(selectedFarm);
     const allProducts = getProducts();
     
-    return Object.entries(stockMap)
+    const result = Object.entries(stockMap)
       .map(([product, data]) => {
         const price = data.price || getAveragePrice(product) || 0;
         const quantity = data.quantity || 0;
@@ -55,12 +68,31 @@ const PhysicalInventory = () => {
           theoretical: Math.max(0, quantity),
           unit: productInfo?.unit || 'KG',
           price,
-          category: productInfo?.category || 'AUTRES'
+          category: productInfo?.category || 'AUTRES',
+          isExtra: false
         };
       })
-      .filter(item => item.theoretical > 0.01)
-      .sort((a, b) => a.name.localeCompare(b.name));
-  }, [selectedFarm]);
+      .filter(item => item.theoretical > 0.01);
+    
+    // Add extra products (not in theoretical stock)
+    const existingNames = new Set(result.map(r => r.name));
+    extraProducts.forEach(extraName => {
+      if (!existingNames.has(extraName)) {
+        const productInfo = allProducts.find(p => p.name === extraName);
+        const price = getAveragePrice(extraName) || 0;
+        result.push({
+          name: extraName,
+          theoretical: 0,
+          unit: productInfo?.unit || 'KG',
+          price,
+          category: productInfo?.category || 'AUTRES',
+          isExtra: true
+        });
+      }
+    });
+    
+    return result.sort((a, b) => a.name.localeCompare(b.name));
+  }, [selectedFarm, extraProducts]);
 
   // Comparison data
   const comparisonData = useMemo(() => {
@@ -130,6 +162,32 @@ const PhysicalInventory = () => {
     setPhysicalStock(prev => ({ ...prev, [productName]: value }));
   }, []);
 
+  // Available products to add (not already in theoretical stock)
+  const availableProductsToAdd = useMemo(() => {
+    if (!selectedFarm) return [];
+    const allProducts = getProducts();
+    const existingNames = new Set(theoreticalStock.map(t => t.name));
+    return allProducts
+      .filter(p => !existingNames.has(p.name))
+      .filter(p => !addProductSearch || p.name.toLowerCase().includes(addProductSearch.toLowerCase()))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [selectedFarm, theoreticalStock, addProductSearch]);
+
+  const handleAddExtraProduct = (productName) => {
+    setExtraProducts(prev => [...prev, productName]);
+    setAddProductSearch('');
+    setShowAddProduct(false);
+  };
+
+  const handleRemoveExtraProduct = (productName) => {
+    setExtraProducts(prev => prev.filter(n => n !== productName));
+    setPhysicalStock(prev => {
+      const next = { ...prev };
+      delete next[productName];
+      return next;
+    });
+  };
+
   // Save inventory to store + trigger GitHub backup
   const handleSaveInventory = () => {
     if (stats.entered === 0) {
@@ -152,14 +210,18 @@ const PhysicalInventory = () => {
     triggerAutoBackup();
     
     setPhysicalStock({});
+    setExtraProducts([]);
     localStorage.removeItem('physical_inventory_data');
+    localStorage.removeItem('physical_inventory_extra_products');
     alert(`✅ Inventaire sauvegardé pour ${farmName} (${inventoryDate}) et synchronisé avec GitHub !`);
   };
 
   const handleReset = () => {
     if (window.confirm('Effacer toutes les saisies en cours ?')) {
       setPhysicalStock({});
+      setExtraProducts([]);
       localStorage.removeItem('physical_inventory_data');
+      localStorage.removeItem('physical_inventory_extra_products');
     }
   };
 
@@ -341,7 +403,7 @@ const PhysicalInventory = () => {
             <Card className="p-4">
               <label className="block text-sm font-medium text-gray-600 mb-2">🏭 Ferme</label>
               <select value={selectedFarm}
-                onChange={(e) => { setSelectedFarm(e.target.value); setPhysicalStock({}); localStorage.removeItem('physical_inventory_data'); }}
+                onChange={(e) => { setSelectedFarm(e.target.value); setPhysicalStock({}); setExtraProducts([]); localStorage.removeItem('physical_inventory_data'); localStorage.removeItem('physical_inventory_extra_products'); }}
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-800 font-medium focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
                 <option value="">-- Choisir une ferme --</option>
                 {FARMS.map(f => <option key={f.id} value={f.id}>🌿 {f.name}</option>)}
@@ -430,6 +492,10 @@ const PhysicalInventory = () => {
                   <option value="ok">✅ Conformes</option>
                   <option value="pending">⏳ Non saisis</option>
                 </select>
+                <button onClick={() => setShowAddProduct(true)}
+                  className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-medium transition-colors text-sm shadow-lg whitespace-nowrap">
+                  ➕ Ajouter un produit
+                </button>
               </div>
 
               {/* Comparison Table */}
@@ -459,11 +525,23 @@ const PhysicalInventory = () => {
                       <tbody>
                         {comparisonData.map((item) => (
                           <tr key={item.name} className={`border-b transition-colors ${
+                            item.isExtra ? 'bg-orange-50/50 hover:bg-orange-50' :
                             item.status === 'manquant' ? 'bg-red-50/50 hover:bg-red-50' :
                             item.status === 'excedent' ? 'bg-blue-50/50 hover:bg-blue-50' :
                             item.status === 'ok' ? 'bg-green-50/50 hover:bg-green-50' : 'hover:bg-gray-50'
                           }`}>
-                            <td className="p-4 font-medium text-gray-800">{item.name}</td>
+                            <td className="p-4 font-medium text-gray-800">
+                              <div className="flex items-center gap-2">
+                                {item.name}
+                                {item.isExtra && (
+                                  <span className="px-1.5 py-0.5 rounded-md bg-orange-100 text-orange-600 text-[10px] font-bold">AJOUTÉ</span>
+                                )}
+                                {item.isExtra && (
+                                  <button onClick={() => handleRemoveExtraProduct(item.name)}
+                                    className="ml-1 text-red-400 hover:text-red-600 text-xs" title="Retirer ce produit">✕</button>
+                                )}
+                              </div>
+                            </td>
                             <td className="p-4 text-center text-gray-500">{item.unit}</td>
                             <td className="p-4 text-right text-blue-600 font-semibold">{fmt(item.theoretical)}</td>
                             <td className="p-3 text-center">
@@ -514,6 +592,48 @@ const PhysicalInventory = () => {
             </>
           )}
         </>
+      )}
+
+      {/* Add Product Modal */}
+      {showAddProduct && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl max-h-[80vh] flex flex-col">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">➕ Ajouter un produit</h3>
+            <p className="text-gray-500 text-sm mb-4">Sélectionnez un produit qui n'est pas dans le stock théorique</p>
+            <input
+              type="text"
+              placeholder="🔍 Rechercher un produit..."
+              value={addProductSearch}
+              onChange={(e) => setAddProductSearch(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-800 font-medium focus:ring-2 focus:ring-orange-400 focus:border-transparent mb-3"
+              autoFocus
+            />
+            <div className="flex-1 overflow-y-auto min-h-0 border rounded-xl">
+              {availableProductsToAdd.length === 0 ? (
+                <div className="p-6 text-center text-gray-400">
+                  <p className="text-2xl mb-2">📭</p>
+                  <p className="text-sm">{addProductSearch ? 'Aucun produit trouvé' : 'Tous les produits sont déjà dans la liste'}</p>
+                </div>
+              ) : (
+                availableProductsToAdd.map(p => (
+                  <button key={p.name} onClick={() => handleAddExtraProduct(p.name)}
+                    className="w-full text-left px-4 py-3 hover:bg-orange-50 border-b last:border-b-0 transition-colors flex items-center justify-between group">
+                    <div>
+                      <span className="font-medium text-gray-800">{p.name}</span>
+                      <span className="text-xs text-gray-400 ml-2">{p.unit || 'KG'}</span>
+                      {p.category && <span className="text-xs text-gray-400 ml-2">• {p.category}</span>}
+                    </div>
+                    <span className="text-orange-500 opacity-0 group-hover:opacity-100 transition-opacity font-bold">+</span>
+                  </button>
+                ))
+              )}
+            </div>
+            <button onClick={() => { setShowAddProduct(false); setAddProductSearch(''); }}
+              className="mt-4 w-full px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-colors">
+              Fermer
+            </button>
+          </div>
+        </div>
       )}
 
       {/* Delete Modal */}
