@@ -1129,6 +1129,13 @@
       "category": "PHYTOSANITAIRES",
       "threshold": 1,
       "id": 1771580416279
+    },
+    {
+      "name": "MONOPOTASSUIM",
+      "unit": "KG",
+      "category": "ENGRAIS",
+      "threshold": null,
+      "id": 1772178705916
     }
   ],
   "movements": [
@@ -13202,5 +13209,5 @@
       "createdAt": "2026-02-26T07:35:00.227Z"
     }
   ],
-  "exportDate": "2026-02-26T08:31:51.626Z"
+  "exportDate": "2026-02-27T07:53:45.918Z"
 }
