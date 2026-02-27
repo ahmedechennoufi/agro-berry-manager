@@ -1136,6 +1136,13 @@
       "category": "ENGRAIS",
       "threshold": null,
       "id": 1772178705916
+    },
+    {
+      "name": "NITROMAG",
+      "unit": "KG",
+      "category": "ENGRAIS",
+      "threshold": null,
+      "id": 1772185814293
     }
   ],
   "movements": [
@@ -13209,5 +13216,5 @@
       "createdAt": "2026-02-26T07:35:00.227Z"
     }
   ],
-  "exportDate": "2026-02-27T07:54:59.519Z"
+  "exportDate": "2026-02-27T09:52:15.037Z"
 }
