@@ -10,6 +10,7 @@ const menuItems = [
   { id: 'costs', icon: '💰', label: 'Coût Production' },
   { id: 'inventory', icon: '📅', label: 'Historique Stock' },
   { id: 'physical-inventory', icon: '🔍', label: 'Inventaire Physique' },
+  { id: 'commandes', icon: '📦', label: 'Commandes' },
   { id: 'products', icon: '📋', label: 'Produits' },
   { id: 'settings', icon: '⚙️', label: 'Paramètres' }
 ];

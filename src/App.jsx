@@ -12,6 +12,7 @@ import Melange from './pages/Melange';
 import Costs from './pages/Costs';
 import Inventory from './pages/Inventory';
 import PhysicalInventory from './pages/PhysicalInventory';
+import Commandes from './pages/Commandes';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
 import * as store from './lib/store';
@@ -131,6 +132,7 @@ function App() {
       case 'costs': return <Costs />;
       case 'inventory': return <Inventory />;
       case 'physical-inventory': return <PhysicalInventory />;
+      case 'commandes': return <Commandes />;
       case 'products': return <Products />;
       case 'settings': return <Settings />;
       default: return <Dashboard />;

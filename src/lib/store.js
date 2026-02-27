@@ -14,6 +14,7 @@ const STORAGE_KEYS = {
   coutData: 'agro_cout_data_v3',
   stockHistory: 'agro_stock_history_v3',
   physicalInventories: 'agro_physical_inventories_v3',
+  commandes: 'agro_commandes_v3',
   initialized: 'agro_initialized_v3',
   dataVersion: 'agro_data_version'
 };
@@ -992,6 +993,54 @@ export const deletePhysicalInventory = (id) => {
   return inventories;
 };
 
+// === COMMANDES MENSUELLES ===
+export const getCommandes = () => {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEYS.commandes) || '[]');
+  } catch { return []; }
+};
+
+export const getCommandeByMonth = (month) => {
+  // month format: "YYYY-MM"
+  const commandes = getCommandes();
+  return commandes.find(c => c.month === month) || null;
+};
+
+export const saveCommande = (commande) => {
+  const commandes = getCommandes();
+  const existingIdx = commandes.findIndex(c => c.id === commande.id);
+  if (existingIdx >= 0) {
+    commandes[existingIdx] = { ...commande, updatedAt: new Date().toISOString() };
+  } else {
+    commandes.push({ 
+      ...commande, 
+      id: commande.id || Date.now(), 
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    });
+  }
+  localStorage.setItem(STORAGE_KEYS.commandes, JSON.stringify(commandes));
+  return commande;
+};
+
+export const deleteCommande = (id) => {
+  const commandes = getCommandes().filter(c => c.id !== id);
+  localStorage.setItem(STORAGE_KEYS.commandes, JSON.stringify(commandes));
+};
+
+export const updateCommandeItem = (commandeId, productName, receivedQty) => {
+  const commandes = getCommandes();
+  const idx = commandes.findIndex(c => c.id === commandeId);
+  if (idx === -1) return;
+  
+  const itemIdx = commandes[idx].items.findIndex(i => i.product === productName);
+  if (itemIdx === -1) return;
+  
+  commandes[idx].items[itemIdx].received = receivedQty;
+  commandes[idx].updatedAt = new Date().toISOString();
+  localStorage.setItem(STORAGE_KEYS.commandes, JSON.stringify(commandes));
+};
+
 // === EXPORT / IMPORT ===
 export const exportAllData = () => ({
   products: getProducts(),
@@ -1004,6 +1053,7 @@ export const exportAllData = () => ({
   melanges: getMelangesSauvegardes(),
   inventory: getInventory(),
   physicalInventories: getPhysicalInventories(),
+  commandes: getCommandes(),
   exportDate: new Date().toISOString()
 });
 
@@ -1019,6 +1069,7 @@ export const importAllData = (data) => {
     if (data.melanges) setItem(STORAGE_KEYS.melanges, data.melanges);
     if (data.inventory) localStorage.setItem(STORAGE_KEYS.inventory, JSON.stringify(data.inventory));
     if (data.physicalInventories) localStorage.setItem(STORAGE_KEYS.physicalInventories, JSON.stringify(data.physicalInventories));
+    if (data.commandes) localStorage.setItem(STORAGE_KEYS.commandes, JSON.stringify(data.commandes));
     return true;
   } catch (e) {
     console.error('Import error:', e);
