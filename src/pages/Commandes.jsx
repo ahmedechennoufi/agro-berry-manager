@@ -221,43 +221,39 @@ const Commandes = () => {
     let r = 0;
 
     // Row 0: Title
-    for (let c = 0; c < 7; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? `📦 Commande — ${monthLabel}` : '', s: titleStyle };
-    ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 6 } }];
+    for (let c = 0; c < 6; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? 'Commande - ' + monthLabel : '', s: titleStyle };
+    ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 5 } }];
     r++;
 
     // Row 1: Empty spacer
     r++;
 
     // Row 2: Headers
-    const headers = ['Produit', 'Qté Commandée', 'Qté Reçue', 'Qté Restante', 'Statut', 'Réception %', 'Progression'];
+    const headers = ['Produit', 'Qte Commandee', 'Qte Recue', 'Qte Restante', 'Statut', 'Reception %'];
     headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
     r++;
 
     // Data rows
     items.forEach((item, idx) => {
       const status = getStatusInfo(item);
-      const ordered = Number(item.ordered || 0);
-      const received = Number(item.received || 0);
+      const ordered = Number(item.ordered) || 0;
+      const received = Number(item.received) || 0;
       const remaining = Math.max(0, ordered - received);
       const pct = ordered > 0 ? Math.round((received / ordered) * 100) : 0;
       const bg = idx % 2 === 0 ? "FFFFFF" : "F9FAFB";
 
-      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.product, s: { ...cellLeft(bg), font: { bold: true, sz: 10 } } };
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.product || '', s: { ...cellLeft(bg), font: { bold: true, sz: 10 } } };
       ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: ordered, t: 'n', s: cellRight(bg) };
       ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: received, t: 'n', s: cellRight(bg) };
       ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: remaining, t: 'n', s: { ...cellRight(bg), font: { sz: 10, color: { rgb: remaining > 0 ? "DC2626" : "16A34A" } } } };
-      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: `${status.icon} ${status.label}`, s: statusStyle(status.color) };
-      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: `${pct}%`, s: pctStyle(pct) };
-      // Progress bar text
-      const barFilled = Math.min(10, Math.max(0, Math.round(pct / 10)));
-      const bar = '█'.repeat(barFilled) + '░'.repeat(10 - barFilled);
-      ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: bar, s: { ...cellLeft(bg), font: { sz: 9, color: { rgb: pct >= 100 ? "16A34A" : pct > 0 ? "F59E0B" : "D1D5DB" } } } };
+      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: status.label, s: statusStyle(status.color) };
+      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: pct + '%', s: pctStyle(pct) };
       r++;
     });
 
     // Total row
-    const totalOrdered = items.reduce((s, i) => s + Number(i.ordered || 0), 0);
-    const totalReceived = items.reduce((s, i) => s + Number(i.received || 0), 0);
+    const totalOrdered = items.reduce((s, i) => s + (Number(i.ordered) || 0), 0);
+    const totalReceived = items.reduce((s, i) => s + (Number(i.received) || 0), 0);
     const totalRemaining = Math.max(0, totalOrdered - totalReceived);
     const totalPct = totalOrdered > 0 ? Math.round((totalReceived / totalOrdered) * 100) : 0;
 
@@ -266,11 +262,10 @@ const Commandes = () => {
     ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: totalReceived, t: 'n', s: totalRowStyle };
     ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: totalRemaining, t: 'n', s: totalRowStyle };
     ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: '', s: totalRowStyle };
-    ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: `${totalPct}%`, s: { ...totalRowStyle, alignment: { horizontal: "center" } } };
-    ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: '', s: totalRowStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: totalPct + '%', s: { ...totalRowStyle, alignment: { horizontal: "center" } } };
 
-    ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r, c: 6 } });
-    ws['!cols'] = [{ wch: 30 }, { wch: 16 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 14 }];
+    ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r, c: 5 } });
+    ws['!cols'] = [{ wch: 30 }, { wch: 16 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 14 }];
     ws['!rows'] = [{ hpt: 30 }, { hpt: 10 }, { hpt: 22 }];
 
     XLSX.utils.book_append_sheet(wb, ws, monthLabel.substring(0, 31));
@@ -328,12 +323,12 @@ const Commandes = () => {
     let r = 0;
 
     // Title
-    for (let c = 0; c < 7; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? '📊 Récapitulatif des Commandes' : '', s: titleStyle };
+    for (let c = 0; c < 7; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? 'Recapitulatif des Commandes' : '', s: titleStyle };
     ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 6 } }];
     r += 2;
 
     // Headers
-    const headers = ['Mois', 'Nb Produits', 'Complets', 'En cours', 'Qté Commandée', 'Qté Reçue', 'Réception'];
+    const headers = ['Mois', 'Nb Produits', 'Complets', 'En cours', 'Qte Commandee', 'Qte Recue', 'Reception'];
     headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
     r++;
 
@@ -359,7 +354,7 @@ const Commandes = () => {
     ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r - 1, c: 6 } });
     ws['!cols'] = [{ wch: 20 }, { wch: 14 }, { wch: 12 }, { wch: 12 }, { wch: 16 }, { wch: 14 }, { wch: 14 }];
     ws['!rows'] = [{ hpt: 30 }];
-    XLSX.utils.book_append_sheet(wb, ws, 'Récapitulatif');
+    XLSX.utils.book_append_sheet(wb, ws, 'Recapitulatif');
 
     // === SHEETS per commande ===
     for (const cmd of sortedCommandes) {
@@ -369,12 +364,12 @@ const Commandes = () => {
       let r2 = 0;
 
       // Title
-      for (let c = 0; c < 6; c++) ws2[XLSX.utils.encode_cell({ r: r2, c })] = { v: c === 0 ? `📦 ${sheetLabel}` : '', s: titleStyle };
+      for (let c = 0; c < 6; c++) ws2[XLSX.utils.encode_cell({ r: r2, c })] = { v: c === 0 ? sheetLabel : '', s: titleStyle };
       ws2['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 5 } }];
       r2 += 2;
 
       // Headers
-      ['Produit', 'Commandé', 'Reçu', 'Restant', 'Statut', 'Réception %'].forEach((h, c) => {
+      ['Produit', 'Commande', 'Recu', 'Restant', 'Statut', 'Reception %'].forEach((h, c) => {
         ws2[XLSX.utils.encode_cell({ r: r2, c })] = { v: h, s: headerStyle };
       });
       r2++;
@@ -391,7 +386,7 @@ const Commandes = () => {
         ws2[XLSX.utils.encode_cell({ r: r2, c: 1 })] = { v: ordered, t: 'n', s: cellRight(bg) };
         ws2[XLSX.utils.encode_cell({ r: r2, c: 2 })] = { v: received, t: 'n', s: cellRight(bg) };
         ws2[XLSX.utils.encode_cell({ r: r2, c: 3 })] = { v: remaining, t: 'n', s: { ...cellRight(bg), font: { sz: 10, color: { rgb: remaining > 0 ? "DC2626" : "16A34A" } } } };
-        ws2[XLSX.utils.encode_cell({ r: r2, c: 4 })] = { v: `${status.icon} ${status.label}`, s: statusBadge(pct) };
+        ws2[XLSX.utils.encode_cell({ r: r2, c: 4 })] = { v: status.label, s: statusBadge(pct) };
         ws2[XLSX.utils.encode_cell({ r: r2, c: 5 })] = { v: `${pct}%`, s: statusBadge(pct) };
         r2++;
       });
@@ -402,7 +397,7 @@ const Commandes = () => {
       XLSX.utils.book_append_sheet(wb, ws2, sheetLabel.substring(0, 31));
     }
 
-    XLSX.writeFile(wb, `Commandes_Récapitulatif.xlsx`);
+    XLSX.writeFile(wb, 'Commandes_Recapitulatif.xlsx');
     showNotif('Récapitulatif exporté');
     } catch (err) {
       console.error('Export error:', err);
