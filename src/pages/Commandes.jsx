@@ -2,7 +2,6 @@ import React, { useState, useMemo } from 'react';
 import { useApp } from '../App';
 import { Card, Button, Modal, EmptyState, Badge, Input, Select, StatCard, ProgressBar } from '../components/UI';
 import { getCommandes, getCommandeByMonth, saveCommande, deleteCommande } from '../lib/store';
-import * as XLSX from 'xlsx';
 
 const MONTHS_FR = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
@@ -163,101 +162,240 @@ const Commandes = () => {
     setShowReceiveModal(true);
   };
 
-  // === EXPORT EXCEL ===
+  // === EXPORT EXCEL (styled) ===
 
-  const exportCommandeExcel = (commande) => {
+  const exportCommandeExcel = async (commande) => {
+    const XLSX = await import('xlsx-js-style');
     const wb = XLSX.utils.book_new();
-    
     const items = commande.items || [];
-    const data = items.map(item => {
+    const monthLabel = getMonthLabel(commande.month);
+
+    // Styles
+    const titleStyle = {
+      font: { bold: true, sz: 14, color: { rgb: "FFFFFF" } },
+      fill: { fgColor: { rgb: "1E40AF" } },
+      alignment: { horizontal: "center", vertical: "center" },
+      border: { bottom: { style: "medium", color: { rgb: "1E3A8A" } } }
+    };
+    const headerStyle = {
+      font: { bold: true, sz: 10, color: { rgb: "FFFFFF" } },
+      fill: { fgColor: { rgb: "3B82F6" } },
+      alignment: { horizontal: "center", vertical: "center" },
+      border: { top: { style: "thin" }, bottom: { style: "thin" }, left: { style: "thin" }, right: { style: "thin" } }
+    };
+    const cellLeft = (bg = "FFFFFF") => ({
+      font: { sz: 10 },
+      fill: { fgColor: { rgb: bg } },
+      alignment: { horizontal: "left", vertical: "center" },
+      border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+    });
+    const cellRight = (bg = "FFFFFF") => ({
+      font: { sz: 10 },
+      fill: { fgColor: { rgb: bg } },
+      alignment: { horizontal: "right", vertical: "center" },
+      numFmt: "0.0",
+      border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+    });
+    const statusStyle = (color) => ({
+      font: { bold: true, sz: 10, color: { rgb: color === 'green' ? "166534" : color === 'orange' ? "9A3412" : "991B1B" } },
+      fill: { fgColor: { rgb: color === 'green' ? "DCFCE7" : color === 'orange' ? "FEF3C7" : "FEE2E2" } },
+      alignment: { horizontal: "center", vertical: "center" },
+      border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+    });
+    const totalRowStyle = {
+      font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+      fill: { fgColor: { rgb: "1E40AF" } },
+      alignment: { horizontal: "right", vertical: "center" },
+      numFmt: "0.0",
+      border: { top: { style: "medium" }, bottom: { style: "medium" }, left: { style: "thin" }, right: { style: "thin" } }
+    };
+    const pctStyle = (pct) => ({
+      font: { bold: true, sz: 10, color: { rgb: pct >= 100 ? "166534" : pct > 0 ? "9A3412" : "991B1B" } },
+      fill: { fgColor: { rgb: pct >= 100 ? "DCFCE7" : pct > 0 ? "FEF3C7" : "FEE2E2" } },
+      alignment: { horizontal: "center", vertical: "center" },
+      border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+    });
+
+    const ws = {};
+    let r = 0;
+
+    // Row 0: Title
+    for (let c = 0; c < 7; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? `📦 Commande — ${monthLabel}` : '', s: titleStyle };
+    ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 6 } }];
+    r++;
+
+    // Row 1: Empty spacer
+    r++;
+
+    // Row 2: Headers
+    const headers = ['Produit', 'Qté Commandée', 'Qté Reçue', 'Qté Restante', 'Statut', 'Réception %', 'Progression'];
+    headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
+    r++;
+
+    // Data rows
+    items.forEach((item, idx) => {
       const status = getStatusInfo(item);
-      return {
-        'Produit': item.product,
-        'Qté Commandée': item.ordered || 0,
-        'Qté Reçue': item.received || 0,
-        'Qté Restante': Math.max(0, (item.ordered || 0) - (item.received || 0)),
-        'Statut': status.label
-      };
+      const ordered = Number(item.ordered || 0);
+      const received = Number(item.received || 0);
+      const remaining = Math.max(0, ordered - received);
+      const pct = ordered > 0 ? Math.round((received / ordered) * 100) : 0;
+      const bg = idx % 2 === 0 ? "FFFFFF" : "F9FAFB";
+
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.product, s: { ...cellLeft(bg), font: { bold: true, sz: 10 } } };
+      ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: ordered, t: 'n', s: cellRight(bg) };
+      ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: received, t: 'n', s: cellRight(bg) };
+      ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: remaining, t: 'n', s: { ...cellRight(bg), font: { sz: 10, color: { rgb: remaining > 0 ? "DC2626" : "16A34A" } } } };
+      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: `${status.icon} ${status.label}`, s: statusStyle(status.color) };
+      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: `${pct}%`, s: pctStyle(pct) };
+      // Progress bar text
+      const bar = '█'.repeat(Math.round(pct / 10)) + '░'.repeat(10 - Math.round(pct / 10));
+      ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: bar, s: { ...cellLeft(bg), font: { sz: 9, color: { rgb: pct >= 100 ? "16A34A" : pct > 0 ? "F59E0B" : "D1D5DB" } } } };
+      r++;
     });
-    
-    // Add totals row
-    const totalOrdered = items.reduce((s, i) => s + (i.ordered || 0), 0);
-    const totalReceived = items.reduce((s, i) => s + (i.received || 0), 0);
-    data.push({
-      'Produit': 'TOTAL',
-      'Qté Commandée': totalOrdered,
-      'Qté Reçue': totalReceived,
-      'Qté Restante': Math.max(0, totalOrdered - totalReceived),
-      'Statut': `${totalOrdered > 0 ? Math.round((totalReceived / totalOrdered) * 100) : 0}%`
-    });
-    
-    const ws = XLSX.utils.json_to_sheet(data);
-    
-    // Column widths
-    ws['!cols'] = [
-      { wch: 30 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 12 }
-    ];
-    
-    XLSX.utils.book_append_sheet(wb, ws, getMonthLabel(commande.month));
-    XLSX.writeFile(wb, `Commande_${getMonthLabel(commande.month).replace(' ', '_')}.xlsx`);
+
+    // Total row
+    const totalOrdered = items.reduce((s, i) => s + Number(i.ordered || 0), 0);
+    const totalReceived = items.reduce((s, i) => s + Number(i.received || 0), 0);
+    const totalRemaining = Math.max(0, totalOrdered - totalReceived);
+    const totalPct = totalOrdered > 0 ? Math.round((totalReceived / totalOrdered) * 100) : 0;
+
+    ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: 'TOTAL', s: { ...totalRowStyle, alignment: { horizontal: "left" } } };
+    ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: totalOrdered, t: 'n', s: totalRowStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: totalReceived, t: 'n', s: totalRowStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: totalRemaining, t: 'n', s: totalRowStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: '', s: totalRowStyle };
+    ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: `${totalPct}%`, s: { ...totalRowStyle, alignment: { horizontal: "center" } } };
+    ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: '', s: totalRowStyle };
+
+    ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r, c: 6 } });
+    ws['!cols'] = [{ wch: 30 }, { wch: 16 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 14 }];
+    ws['!rows'] = [{ hpt: 30 }, { hpt: 10 }, { hpt: 22 }];
+
+    XLSX.utils.book_append_sheet(wb, ws, monthLabel.substring(0, 31));
+    XLSX.writeFile(wb, `Commande_${monthLabel.replace(' ', '_')}.xlsx`);
     showNotif('Excel exporté');
   };
 
-  const exportAllCommandesExcel = () => {
+  const exportAllCommandesExcel = async () => {
     if (commandes.length === 0) {
       showNotif('Aucune commande à exporter', 'warning');
       return;
     }
-    
+
+    const XLSX = await import('xlsx-js-style');
     const wb = XLSX.utils.book_new();
-    
-    // Summary sheet
-    const summaryData = sortedCommandes.map(c => {
+
+    // Styles
+    const titleStyle = {
+      font: { bold: true, sz: 14, color: { rgb: "FFFFFF" } },
+      fill: { fgColor: { rgb: "1E40AF" } },
+      alignment: { horizontal: "center", vertical: "center" }
+    };
+    const headerStyle = {
+      font: { bold: true, sz: 10, color: { rgb: "FFFFFF" } },
+      fill: { fgColor: { rgb: "3B82F6" } },
+      alignment: { horizontal: "center", vertical: "center" },
+      border: { top: { style: "thin" }, bottom: { style: "thin" }, left: { style: "thin" }, right: { style: "thin" } }
+    };
+    const cellCenter = (bg = "FFFFFF") => ({
+      font: { sz: 10 },
+      fill: { fgColor: { rgb: bg } },
+      alignment: { horizontal: "center", vertical: "center" },
+      border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+    });
+    const cellRight = (bg = "FFFFFF") => ({
+      font: { sz: 10 },
+      fill: { fgColor: { rgb: bg } },
+      alignment: { horizontal: "right", vertical: "center" },
+      numFmt: "0.0",
+      border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+    });
+    const statusBadge = (pct) => ({
+      font: { bold: true, sz: 10, color: { rgb: pct >= 100 ? "166534" : pct > 0 ? "9A3412" : "991B1B" } },
+      fill: { fgColor: { rgb: pct >= 100 ? "DCFCE7" : pct > 0 ? "FEF3C7" : "FEE2E2" } },
+      alignment: { horizontal: "center", vertical: "center" },
+      border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+    });
+
+    // === SHEET 1: Récapitulatif ===
+    const ws = {};
+    let r = 0;
+
+    // Title
+    for (let c = 0; c < 7; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? '📊 Récapitulatif des Commandes' : '', s: titleStyle };
+    ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 6 } }];
+    r += 2;
+
+    // Headers
+    const headers = ['Mois', 'Nb Produits', 'Complets', 'En cours', 'Qté Commandée', 'Qté Reçue', 'Réception'];
+    headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
+    r++;
+
+    // Data
+    sortedCommandes.forEach((c, idx) => {
       const items = c.items || [];
-      const totalOrdered = items.reduce((s, i) => s + (i.ordered || 0), 0);
-      const totalReceived = items.reduce((s, i) => s + (i.received || 0), 0);
-      const complete = items.filter(i => (i.received || 0) >= (i.ordered || 0)).length;
+      const totalOrdered = items.reduce((s, i) => s + Number(i.ordered || 0), 0);
+      const totalReceived = items.reduce((s, i) => s + Number(i.received || 0), 0);
+      const complete = items.filter(i => Number(i.received || 0) >= Number(i.ordered || 0)).length;
       const pct = totalOrdered > 0 ? Math.round((totalReceived / totalOrdered) * 100) : 0;
-      return {
-        'Mois': getMonthLabel(c.month),
-        'Nb Produits': items.length,
-        'Complets': complete,
-        'En cours': items.length - complete,
-        'Qté Commandée': totalOrdered,
-        'Qté Reçue': totalReceived,
-        'Réception (%)': `${pct}%`
-      };
+      const bg = idx % 2 === 0 ? "FFFFFF" : "F9FAFB";
+
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: getMonthLabel(c.month), s: { ...cellCenter(bg), font: { bold: true, sz: 10 } } };
+      ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: items.length, t: 'n', s: cellCenter(bg) };
+      ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: complete, t: 'n', s: cellCenter(bg) };
+      ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: items.length - complete, t: 'n', s: cellCenter(bg) };
+      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: totalOrdered, t: 'n', s: cellRight(bg) };
+      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: totalReceived, t: 'n', s: cellRight(bg) };
+      ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: `${pct}%`, s: statusBadge(pct) };
+      r++;
     });
-    
-    const summaryWs = XLSX.utils.json_to_sheet(summaryData);
-    summaryWs['!cols'] = [
-      { wch: 18 }, { wch: 12 }, { wch: 10 }, { wch: 10 }, { wch: 15 }, { wch: 15 }, { wch: 14 }
-    ];
-    XLSX.utils.book_append_sheet(wb, summaryWs, 'Récapitulatif');
-    
-    // Individual sheets per commande
-    sortedCommandes.forEach(c => {
-      const items = c.items || [];
-      const data = items.map(item => {
-        const status = getStatusInfo(item);
-        return {
-          'Produit': item.product,
-          'Qté Commandée': item.ordered || 0,
-          'Qté Reçue': item.received || 0,
-          'Qté Restante': Math.max(0, (item.ordered || 0) - (item.received || 0)),
-          'Statut': status.label
-        };
+
+    ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r - 1, c: 6 } });
+    ws['!cols'] = [{ wch: 20 }, { wch: 14 }, { wch: 12 }, { wch: 12 }, { wch: 16 }, { wch: 14 }, { wch: 14 }];
+    ws['!rows'] = [{ hpt: 30 }];
+    XLSX.utils.book_append_sheet(wb, ws, 'Récapitulatif');
+
+    // === SHEETS per commande ===
+    for (const cmd of sortedCommandes) {
+      const items = cmd.items || [];
+      const sheetLabel = getMonthLabel(cmd.month);
+      const ws2 = {};
+      let r2 = 0;
+
+      // Title
+      for (let c = 0; c < 6; c++) ws2[XLSX.utils.encode_cell({ r: r2, c })] = { v: c === 0 ? `📦 ${sheetLabel}` : '', s: titleStyle };
+      ws2['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 5 } }];
+      r2 += 2;
+
+      // Headers
+      ['Produit', 'Commandé', 'Reçu', 'Restant', 'Statut', 'Réception %'].forEach((h, c) => {
+        ws2[XLSX.utils.encode_cell({ r: r2, c })] = { v: h, s: headerStyle };
       });
-      
-      const ws = XLSX.utils.json_to_sheet(data);
-      ws['!cols'] = [
-        { wch: 30 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 12 }
-      ];
-      
-      const sheetName = getMonthLabel(c.month).substring(0, 31); // Excel max 31 chars
-      XLSX.utils.book_append_sheet(wb, ws, sheetName);
-    });
-    
+      r2++;
+
+      items.forEach((item, idx) => {
+        const status = getStatusInfo(item);
+        const ordered = Number(item.ordered || 0);
+        const received = Number(item.received || 0);
+        const remaining = Math.max(0, ordered - received);
+        const pct = ordered > 0 ? Math.round((received / ordered) * 100) : 0;
+        const bg = idx % 2 === 0 ? "FFFFFF" : "F9FAFB";
+
+        ws2[XLSX.utils.encode_cell({ r: r2, c: 0 })] = { v: item.product, s: { ...cellCenter(bg), font: { bold: true, sz: 10 }, alignment: { horizontal: "left" } } };
+        ws2[XLSX.utils.encode_cell({ r: r2, c: 1 })] = { v: ordered, t: 'n', s: cellRight(bg) };
+        ws2[XLSX.utils.encode_cell({ r: r2, c: 2 })] = { v: received, t: 'n', s: cellRight(bg) };
+        ws2[XLSX.utils.encode_cell({ r: r2, c: 3 })] = { v: remaining, t: 'n', s: { ...cellRight(bg), font: { sz: 10, color: { rgb: remaining > 0 ? "DC2626" : "16A34A" } } } };
+        ws2[XLSX.utils.encode_cell({ r: r2, c: 4 })] = { v: `${status.icon} ${status.label}`, s: statusBadge(pct) };
+        ws2[XLSX.utils.encode_cell({ r: r2, c: 5 })] = { v: `${pct}%`, s: statusBadge(pct) };
+        r2++;
+      });
+
+      ws2['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r2 - 1, c: 5 } });
+      ws2['!cols'] = [{ wch: 30 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 14 }];
+      ws2['!rows'] = [{ hpt: 30 }];
+      XLSX.utils.book_append_sheet(wb, ws2, sheetLabel.substring(0, 31));
+    }
+
     XLSX.writeFile(wb, `Commandes_Récapitulatif.xlsx`);
     showNotif('Récapitulatif exporté');
   };
