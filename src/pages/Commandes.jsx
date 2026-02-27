@@ -165,7 +165,8 @@ const Commandes = () => {
   // === EXPORT EXCEL (styled) ===
 
   const exportCommandeExcel = async (commande) => {
-    const XLSX = await import('xlsx-js-style');
+    try {
+    const XLSX = (await import('xlsx-js-style')).default || await import('xlsx-js-style');
     const wb = XLSX.utils.book_new();
     const items = commande.items || [];
     const monthLabel = getMonthLabel(commande.month);
@@ -274,6 +275,10 @@ const Commandes = () => {
     XLSX.utils.book_append_sheet(wb, ws, monthLabel.substring(0, 31));
     XLSX.writeFile(wb, `Commande_${monthLabel.replace(' ', '_')}.xlsx`);
     showNotif('Excel exporté');
+    } catch (err) {
+      console.error('Export error:', err);
+      showNotif('Erreur export: ' + err.message, 'error');
+    }
   };
 
   const exportAllCommandesExcel = async () => {
@@ -281,8 +286,8 @@ const Commandes = () => {
       showNotif('Aucune commande à exporter', 'warning');
       return;
     }
-
-    const XLSX = await import('xlsx-js-style');
+    try {
+    const XLSX = (await import('xlsx-js-style')).default || await import('xlsx-js-style');
     const wb = XLSX.utils.book_new();
 
     // Styles
@@ -398,6 +403,10 @@ const Commandes = () => {
 
     XLSX.writeFile(wb, `Commandes_Récapitulatif.xlsx`);
     showNotif('Récapitulatif exporté');
+    } catch (err) {
+      console.error('Export error:', err);
+      showNotif('Erreur export: ' + err.message, 'error');
+    }
   };
 
   // === RENDER ===
