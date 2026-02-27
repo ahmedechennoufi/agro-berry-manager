@@ -3,165 +3,122 @@ import { useApp } from '../App';
 import { Card, Select, Button, EmptyState, StatCard, Badge } from '../components/UI';
 import { CATEGORIES } from '../lib/constants';
 import { fmt, fmtMoney } from '../lib/utils';
-import { getConsoFermesDataByPeriod, getProducts, getAveragePrice } from '../lib/store';
-
-const CONSO_MONTHS = [
-  { id: 'SEPTEMBRE', name: 'Septembre 2025' },
-  { id: 'OCTOBRE', name: 'Octobre 2025' },
-  { id: 'NOVEMBRE', name: 'Novembre 2025' },
-  { id: 'DECEMBRE', name: 'Décembre 2025' },
-  { id: 'JANVIER', name: 'Janvier 2026' },
-  { id: 'FEVRIER', name: 'Février 2026' },
-  { id: 'MARS', name: 'Mars 2026' },
-  { id: 'AVRIL', name: 'Avril 2026' },
-  { id: 'MAI', name: 'Mai 2026' },
-  { id: 'JUIN', name: 'Juin 2026' },
-  { id: 'JUILLET', name: 'Juillet 2026' },
-  { id: 'AOUT', name: 'Août 2026' }
-];
-
-const MONTH_DATES = {
-  'SEPTEMBRE': { start: '2025-09-01', end: '2025-09-30', prevInv: '2025-08-25' },
-  'OCTOBRE': { start: '2025-10-01', end: '2025-10-31', prevInv: '2025-09-25' },
-  'NOVEMBRE': { start: '2025-11-01', end: '2025-11-30', prevInv: '2025-10-25' },
-  'DECEMBRE': { start: '2025-12-01', end: '2025-12-31', prevInv: '2025-11-25' },
-  'JANVIER': { start: '2026-01-01', end: '2026-01-31', prevInv: '2025-12-25' },
-  'FEVRIER': { start: '2026-02-01', end: '2026-02-28', prevInv: '2026-01-25' },
-  'MARS': { start: '2026-03-01', end: '2026-03-31', prevInv: '2026-02-25' },
-  'AVRIL': { start: '2026-04-01', end: '2026-04-30', prevInv: '2026-03-25' },
-  'MAI': { start: '2026-05-01', end: '2026-05-31', prevInv: '2026-04-25' },
-  'JUIN': { start: '2026-06-01', end: '2026-06-30', prevInv: '2026-05-25' },
-  'JUILLET': { start: '2026-07-01', end: '2026-07-31', prevInv: '2026-06-25' },
-  'AOUT': { start: '2026-08-01', end: '2026-08-31', prevInv: '2026-07-25' }
-};
-
-const FARMS = ['AB1', 'AB2', 'AB3'];
+import { getPhysicalInventories, getMovements, getConsommations } from '../lib/store';
 
 const Ecarts = () => {
   const { products, movements, showNotif } = useApp();
-  const [selectedMonth, setSelectedMonth] = useState('JANVIER');
-  const [selectedFarm, setSelectedFarm] = useState('ALL');
-  const [filterType, setFilterType] = useState('ALL'); // ALL, no-conso, decreased, increased
+  const [selectedInventoryId, setSelectedInventoryId] = useState('');
+  const [filterType, setFilterType] = useState('ALL');
   const [search, setSearch] = useState('');
   const [filterCategory, setFilterCategory] = useState('ALL');
 
-  const periodDates = useMemo(() => {
-    return MONTH_DATES[selectedMonth] || MONTH_DATES['JANVIER'];
-  }, [selectedMonth]);
+  // Load all saved physical inventories
+  const inventories = useMemo(() => {
+    return getPhysicalInventories().sort((a, b) => b.date.localeCompare(a.date));
+  }, []);
 
-  // Get data from the same function used by ConsoFermes
-  const rawData = useMemo(() => {
-    return getConsoFermesDataByPeriod(periodDates.start, periodDates.end, periodDates.prevInv);
-  }, [products, movements, periodDates]);
+  // Selected inventory
+  const selectedInventory = useMemo(() => {
+    if (!selectedInventoryId) return null;
+    return inventories.find(inv => inv.id === selectedInventoryId) || null;
+  }, [selectedInventoryId, inventories]);
 
-  // Build ecarts data per farm
+  // Get products that had consumption in the period
+  const consoProducts = useMemo(() => {
+    if (!selectedInventory) return new Set();
+    const allMovements = getMovements();
+    const allConso = getConsommations();
+    const farmId = selectedInventory.farm;
+    const invDate = selectedInventory.date;
+
+    const invDateObj = new Date(invDate);
+    const monthStart = new Date(invDateObj.getFullYear(), invDateObj.getMonth(), 1).toISOString().split('T')[0];
+
+    const consumedProducts = new Set();
+
+    allMovements
+      .filter(m => m.type === 'consumption' && m.farm === farmId && m.date >= monthStart && m.date <= invDate)
+      .forEach(m => consumedProducts.add(m.product));
+
+    allConso
+      .filter(c => c.farm === farmId && c.date >= monthStart && c.date <= invDate)
+      .forEach(c => consumedProducts.add(c.product));
+
+    return consumedProducts;
+  }, [selectedInventory]);
+
+  // Build comparison data
   const ecartsData = useMemo(() => {
-    const results = [];
+    if (!selectedInventory || !selectedInventory.comparison) return [];
 
-    Object.values(rawData).forEach(d => {
-      FARMS.forEach(farm => {
-        const init = d[`init${farm}`] || 0;
-        const ent = d[`ent${farm}`] || 0;
-        const sort = d[`sort${farm}`] || 0;
-        const conso = d[`cons${farm}`] || 0;
-        const fin = d[`fin${farm}`] || 0;
-        const transIn = d[`transIn${farm}`] || 0;
+    return selectedInventory.comparison.map(item => {
+      const hasConso = consoProducts.has(item.name);
+      const productInfo = products.find(p => p.name === item.name);
+      const category = productInfo?.category || 'AUTRES';
 
-        // Only products that had stock at start
-        if (init <= 0) return;
-
-        // Change = difference between final and initial
-        const change = fin - init;
-        // Expected final = init + entries - exits - conso
-        // If conso = 0, then ecart = fin - (init + ent - sort)
-        // The "unexplained" part is the change not explained by movements
-
-        const hasConso = conso > 0;
-        const hasChanged = Math.abs(change) > 0.01;
-
-        results.push({
-          product: d.name,
-          category: d.category,
-          unit: d.unit,
-          price: d.price,
-          farm,
-          init,
-          ent,
-          sort,
-          transIn,
-          conso,
-          fin,
-          change,
-          hasConso,
-          hasChanged
-        });
-      });
+      return {
+        ...item,
+        category,
+        hasConso,
+        ecart: item.diff || 0,
+        ecartValue: item.diffValue || 0
+      };
     });
-
-    return results;
-  }, [rawData]);
+  }, [selectedInventory, consoProducts, products]);
 
   // Filtered data
   const filteredData = useMemo(() => {
     let data = ecartsData;
 
-    // Filter by farm
-    if (selectedFarm !== 'ALL') {
-      data = data.filter(d => d.farm === selectedFarm);
-    }
-
-    // Filter by type
-    if (filterType === 'no-conso') {
+    if (filterType === 'ecart') {
+      data = data.filter(d => Math.abs(d.ecart) > 0.01);
+    } else if (filterType === 'manquant') {
+      data = data.filter(d => d.ecart < -0.01);
+    } else if (filterType === 'excedent') {
+      data = data.filter(d => d.ecart > 0.01);
+    } else if (filterType === 'no-conso') {
       data = data.filter(d => !d.hasConso);
-    } else if (filterType === 'decreased') {
-      data = data.filter(d => d.change < -0.01 && !d.hasConso);
-    } else if (filterType === 'increased') {
-      data = data.filter(d => d.change > 0.01 && !d.hasConso);
-    } else if (filterType === 'anomaly') {
-      // Products with stock decrease but no consumption
-      data = data.filter(d => d.change < -0.01 && !d.hasConso);
+    } else if (filterType === 'manquant-no-conso') {
+      data = data.filter(d => d.ecart < -0.01 && !d.hasConso);
     }
 
-    // Search
     if (search) {
-      data = data.filter(d => d.product.toLowerCase().includes(search.toLowerCase()));
+      data = data.filter(d => d.name.toLowerCase().includes(search.toLowerCase()));
     }
 
-    // Category
     if (filterCategory !== 'ALL') {
       data = data.filter(d => d.category === filterCategory);
     }
 
-    return data.sort((a, b) => {
-      // Sort by anomaly severity first (biggest unexplained decrease first)
-      if (!a.hasConso && !b.hasConso) return a.change - b.change;
-      if (!a.hasConso) return -1;
-      if (!b.hasConso) return 1;
-      return a.product.localeCompare(b.product);
-    });
-  }, [ecartsData, selectedFarm, filterType, search, filterCategory]);
+    return data.sort((a, b) => a.ecart - b.ecart);
+  }, [ecartsData, filterType, search, filterCategory]);
 
   // Stats
   const stats = useMemo(() => {
-    const farmData = selectedFarm === 'ALL' ? ecartsData : ecartsData.filter(d => d.farm === selectedFarm);
-    const totalProducts = farmData.length;
-    const noConso = farmData.filter(d => !d.hasConso).length;
-    const decreased = farmData.filter(d => d.change < -0.01 && !d.hasConso).length;
-    const increased = farmData.filter(d => d.change > 0.01 && !d.hasConso).length;
-    const stable = farmData.filter(d => Math.abs(d.change) <= 0.01 && !d.hasConso).length;
-    const totalEcartValue = farmData
-      .filter(d => !d.hasConso && Math.abs(d.change) > 0.01)
-      .reduce((s, d) => s + (d.change * d.price), 0);
+    if (!ecartsData.length) return null;
+    const total = ecartsData.length;
+    const withEcart = ecartsData.filter(d => Math.abs(d.ecart) > 0.01).length;
+    const manquant = ecartsData.filter(d => d.ecart < -0.01).length;
+    const excedent = ecartsData.filter(d => d.ecart > 0.01).length;
+    const ok = ecartsData.filter(d => Math.abs(d.ecart) <= 0.01).length;
+    const noConso = ecartsData.filter(d => !d.hasConso).length;
+    const manquantNoConso = ecartsData.filter(d => d.ecart < -0.01 && !d.hasConso).length;
+    const totalManquantValue = ecartsData.filter(d => d.ecart < -0.01).reduce((s, d) => s + (d.ecartValue || 0), 0);
 
-    return { totalProducts, noConso, decreased, increased, stable, totalEcartValue };
-  }, [ecartsData, selectedFarm]);
+    return { total, withEcart, manquant, excedent, ok, noConso, manquantNoConso, totalManquantValue };
+  }, [ecartsData]);
 
   // Export Excel
   const exportExcel = async () => {
+    if (!selectedInventory || !filteredData.length) {
+      showNotif('Aucune donnee a exporter', 'warning');
+      return;
+    }
     try {
       const XLSX = (await import('xlsx-js-style')).default || await import('xlsx-js-style');
       const wb = XLSX.utils.book_new();
-      const monthName = CONSO_MONTHS.find(m => m.id === selectedMonth)?.name || selectedMonth;
+      const farmName = selectedInventory.farmName || selectedInventory.farm;
+      const invDate = selectedInventory.date;
 
       const titleStyle = {
         font: { bold: true, sz: 14, color: { rgb: "FFFFFF" } },
@@ -175,84 +132,84 @@ const Ecarts = () => {
         border: { top: { style: "thin" }, bottom: { style: "thin" }, left: { style: "thin" }, right: { style: "thin" } }
       };
       const cellLeft = (bg) => ({
-        font: { sz: 10 },
-        fill: { fgColor: { rgb: bg } },
+        font: { sz: 10 }, fill: { fgColor: { rgb: bg } },
         alignment: { horizontal: "left", vertical: "center" },
         border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
       });
       const cellRight = (bg) => ({
-        font: { sz: 10 },
-        fill: { fgColor: { rgb: bg } },
-        alignment: { horizontal: "right", vertical: "center" },
-        numFmt: "0.0",
+        font: { sz: 10 }, fill: { fgColor: { rgb: bg } },
+        alignment: { horizontal: "right", vertical: "center" }, numFmt: "0.0",
         border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
       });
-      const alertStyle = (type) => ({
-        font: { bold: true, sz: 10, color: { rgb: type === 'danger' ? "991B1B" : type === 'warning' ? "9A3412" : type === 'ok' ? "166534" : "374151" } },
-        fill: { fgColor: { rgb: type === 'danger' ? "FEE2E2" : type === 'warning' ? "FEF3C7" : type === 'ok' ? "DCFCE7" : "F3F4F6" } },
+      const alertCell = (type) => ({
+        font: { bold: true, sz: 10, color: { rgb: type === 'danger' ? "991B1B" : type === 'warning' ? "9A3412" : "166534" } },
+        fill: { fgColor: { rgb: type === 'danger' ? "FEE2E2" : type === 'warning' ? "FEF3C7" : "DCFCE7" } },
         alignment: { horizontal: "center", vertical: "center" },
         border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
       });
+      const totalStyle = {
+        font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+        fill: { fgColor: { rgb: "581C87" } },
+        alignment: { horizontal: "right", vertical: "center" }, numFmt: "0.0",
+        border: { top: { style: "medium" }, bottom: { style: "medium" }, left: { style: "thin" }, right: { style: "thin" } }
+      };
 
-      // Build sheet for each farm (or selected farm)
-      const farmsToExport = selectedFarm === 'ALL' ? FARMS : [selectedFarm];
+      const ws = {};
+      let r = 0;
+      const cols = 9;
 
-      farmsToExport.forEach(farm => {
-        const farmItems = filteredData.filter(d => d.farm === farm);
-        if (farmItems.length === 0) return;
+      for (let c = 0; c < cols; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? 'Controle Ecarts - ' + farmName + ' - ' + invDate : '', s: titleStyle };
+      ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: cols - 1 } }];
+      r += 2;
 
-        const ws = {};
-        let r = 0;
-        const cols = 9;
+      const headers = ['Produit', 'Categorie', 'Stock Theorique', 'Inventaire Physique', 'Ecart', 'Ecart %', 'Valeur Ecart', 'Consommation', 'Statut'];
+      headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
+      r++;
 
-        // Title
-        for (let c = 0; c < cols; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? 'Controle Ecarts - ' + farm + ' - ' + monthName : '', s: titleStyle };
-        ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: cols - 1 } }];
-        r += 2;
+      filteredData.forEach((item, idx) => {
+        const bg = idx % 2 === 0 ? "FFFFFF" : "F9FAFB";
+        const ecart = Number(item.ecart) || 0;
+        const ecartPct = item.diffPercent != null ? Number(item.diffPercent) : 0;
+        const ecartVal = Number(item.ecartValue) || 0;
 
-        // Headers
-        const headers = ['Produit', 'Categorie', 'Stock Initial', 'Entrees', 'Sorties', 'Consommation', 'Stock Final', 'Ecart', 'Statut'];
-        headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
+        let statusText = 'OK', statusType = 'ok';
+        if (ecart < -0.01 && !item.hasConso) { statusText = 'Manquant sans conso'; statusType = 'danger'; }
+        else if (ecart < -0.01) { statusText = 'Manquant'; statusType = 'warning'; }
+        else if (ecart > 0.01) { statusText = 'Excedent'; statusType = 'warning'; }
+
+        ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.name, s: { ...cellLeft(bg), font: { bold: true, sz: 10 } } };
+        ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: item.category || '', s: cellLeft(bg) };
+        ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: Number(item.theoretical) || 0, t: 'n', s: cellRight(bg) };
+        ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: Number(item.physical) || 0, t: 'n', s: cellRight(bg) };
+        ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: ecart, t: 'n', s: { ...cellRight(bg), font: { bold: true, sz: 10, color: { rgb: ecart < -0.01 ? "DC2626" : ecart > 0.01 ? "16A34A" : "374151" } } } };
+        ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: ecartPct !== 0 ? Math.round(ecartPct) + '%' : '-', s: cellRight(bg) };
+        ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: ecartVal, t: 'n', s: { ...cellRight(bg), numFmt: '#,##0', font: { sz: 10, color: { rgb: ecartVal < 0 ? "DC2626" : "374151" } } } };
+        ws[XLSX.utils.encode_cell({ r, c: 7 })] = { v: item.hasConso ? 'Oui' : 'Non', s: alertCell(item.hasConso ? 'ok' : 'danger') };
+        ws[XLSX.utils.encode_cell({ r, c: 8 })] = { v: statusText, s: alertCell(statusType) };
         r++;
-
-        farmItems.forEach((item, idx) => {
-          const bg = idx % 2 === 0 ? "FFFFFF" : "F9FAFB";
-          const changeVal = Number(item.change) || 0;
-          let statusText = '';
-          let statusType = 'ok';
-          if (!item.hasConso && changeVal < -0.01) {
-            statusText = 'Baisse sans conso';
-            statusType = 'danger';
-          } else if (!item.hasConso && changeVal > 0.01) {
-            statusText = 'Hausse sans conso';
-            statusType = 'warning';
-          } else if (!item.hasConso && Math.abs(changeVal) <= 0.01) {
-            statusText = 'Stable, non consomme';
-            statusType = 'ok';
-          } else {
-            statusText = 'OK';
-            statusType = 'ok';
-          }
-
-          ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.product, s: { ...cellLeft(bg), font: { bold: true, sz: 10 } } };
-          ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: item.category, s: cellLeft(bg) };
-          ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: Number(item.init) || 0, t: 'n', s: cellRight(bg) };
-          ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: Number(item.ent) || 0, t: 'n', s: cellRight(bg) };
-          ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: Number(item.sort) || 0, t: 'n', s: cellRight(bg) };
-          ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: Number(item.conso) || 0, t: 'n', s: item.hasConso ? cellRight(bg) : alertStyle('danger') };
-          ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: Number(item.fin) || 0, t: 'n', s: cellRight(bg) };
-          ws[XLSX.utils.encode_cell({ r, c: 7 })] = { v: changeVal, t: 'n', s: { ...cellRight(bg), font: { bold: true, sz: 10, color: { rgb: changeVal < -0.01 ? "DC2626" : changeVal > 0.01 ? "16A34A" : "374151" } } } };
-          ws[XLSX.utils.encode_cell({ r, c: 8 })] = { v: statusText, s: alertStyle(statusType) };
-          r++;
-        });
-
-        ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r - 1, c: cols - 1 } });
-        ws['!cols'] = [{ wch: 28 }, { wch: 16 }, { wch: 14 }, { wch: 12 }, { wch: 12 }, { wch: 14 }, { wch: 14 }, { wch: 12 }, { wch: 20 }];
-        ws['!rows'] = [{ hpt: 30 }];
-        XLSX.utils.book_append_sheet(wb, ws, farm);
       });
 
-      XLSX.writeFile(wb, 'Controle_Ecarts_' + monthName.replace(' ', '_') + '.xlsx');
+      const totTheo = filteredData.reduce((s, d) => s + (Number(d.theoretical) || 0), 0);
+      const totPhys = filteredData.reduce((s, d) => s + (Number(d.physical) || 0), 0);
+      const totEcart = totPhys - totTheo;
+      const totVal = filteredData.reduce((s, d) => s + (Number(d.ecartValue) || 0), 0);
+
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: 'TOTAL', s: { ...totalStyle, alignment: { horizontal: "left" } } };
+      ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: '', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: totTheo, t: 'n', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: totPhys, t: 'n', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: totEcart, t: 'n', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: '', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: totVal, t: 'n', s: { ...totalStyle, numFmt: '#,##0' } };
+      ws[XLSX.utils.encode_cell({ r, c: 7 })] = { v: '', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 8 })] = { v: '', s: totalStyle };
+
+      ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r, c: cols - 1 } });
+      ws['!cols'] = [{ wch: 28 }, { wch: 16 }, { wch: 16 }, { wch: 18 }, { wch: 12 }, { wch: 10 }, { wch: 14 }, { wch: 14 }, { wch: 20 }];
+      ws['!rows'] = [{ hpt: 30 }];
+      XLSX.utils.book_append_sheet(wb, ws, (farmName + ' ' + invDate).substring(0, 31));
+
+      XLSX.writeFile(wb, 'Controle_Ecarts_' + farmName.replace(/\s+/g, '_') + '_' + invDate + '.xlsx');
       showNotif('Excel exporte');
     } catch (err) {
       console.error('Export error:', err);
@@ -260,210 +217,214 @@ const Ecarts = () => {
     }
   };
 
-  const monthLabel = CONSO_MONTHS.find(m => m.id === selectedMonth)?.name || selectedMonth;
-
   return (
     <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">🔎 Contrôle d'Écarts</h1>
-          <p className="text-gray-500 text-sm mt-1">Produits sans consommation avec variation de stock</p>
+          <p className="text-gray-500 text-sm mt-1">Stock théorique vs Inventaire physique + suivi consommation</p>
         </div>
-        <Button variant="secondary" onClick={exportExcel}>
-          📥 Export Excel
-        </Button>
+        {selectedInventory && filteredData.length > 0 && (
+          <Button variant="secondary" onClick={exportExcel}>
+            📥 Export Excel
+          </Button>
+        )}
       </div>
 
-      {/* Filters */}
+      {/* Select Inventory */}
       <Card>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          <Select
-            label="Mois"
-            value={selectedMonth}
-            onChange={setSelectedMonth}
-            options={CONSO_MONTHS.map(m => ({ value: m.id, label: m.name }))}
-          />
-          <Select
-            label="Ferme"
-            value={selectedFarm}
-            onChange={setSelectedFarm}
-            options={[
-              { value: 'ALL', label: 'Toutes les fermes' },
-              { value: 'AB1', label: 'Agro Berry 1' },
-              { value: 'AB2', label: 'Agro Berry 2' },
-              { value: 'AB3', label: 'Agro Berry 3' }
-            ]}
-          />
-          <Select
-            label="Filtre"
-            value={filterType}
-            onChange={setFilterType}
-            options={[
-              { value: 'ALL', label: 'Tous les produits' },
-              { value: 'no-conso', label: 'Sans consommation' },
-              { value: 'decreased', label: '📉 Baisse sans conso' },
-              { value: 'increased', label: '📈 Hausse sans conso' }
-            ]}
-          />
-          <Select
-            label="Catégorie"
-            value={filterCategory}
-            onChange={setFilterCategory}
-            options={[
-              { value: 'ALL', label: 'Toutes' },
-              ...CATEGORIES.map(c => ({ value: c.id, label: c.name }))
-            ]}
-          />
-        </div>
-        <div className="mt-4">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value.toUpperCase())}
-            placeholder="🔍 Rechercher un produit..."
-            className="input-field uppercase"
-          />
-        </div>
-      </Card>
-
-      {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <StatCard icon="📋" label="Produits en stock" value={stats.totalProducts} color="blue" />
-        <StatCard icon="⚠️" label="Sans consommation" value={stats.noConso} color="orange" />
-        <StatCard icon="📉" label="Baisse sans conso" value={stats.decreased} color="red" />
-        <StatCard icon="📈" label="Hausse sans conso" value={stats.increased} color="green" />
-        <StatCard
-          icon="💰"
-          label="Valeur écarts"
-          value={fmtMoney(Math.abs(stats.totalEcartValue))}
-          color={stats.totalEcartValue < 0 ? 'red' : 'purple'}
+        <Select
+          label="Sélectionner un inventaire physique"
+          value={selectedInventoryId}
+          onChange={setSelectedInventoryId}
+          options={[
+            { value: '', label: '-- Choisir un inventaire --' },
+            ...inventories.map(inv => ({
+              value: inv.id,
+              label: `${inv.farmName || inv.farm} — ${inv.date} (${inv.stats?.entered || 0} produits)`
+            }))
+          ]}
         />
-      </div>
-
-      {/* Table */}
-      <Card>
-        {filteredData.length === 0 ? (
-          <EmptyState
-            icon="✅"
-            message={filterType !== 'ALL' ? 'Aucun écart trouvé avec ce filtre' : 'Aucun produit en stock pour cette période'}
-          />
-        ) : (
-          <div className="overflow-x-auto">
-            <table className="data-table">
-              <thead>
-                <tr>
-                  <th>Produit</th>
-                  {selectedFarm === 'ALL' && <th className="text-center">Ferme</th>}
-                  <th className="text-right">Stock Initial</th>
-                  <th className="text-right">Entrées</th>
-                  <th className="text-right">Sorties</th>
-                  <th className="text-right">Conso</th>
-                  <th className="text-right">Stock Final</th>
-                  <th className="text-right">Écart</th>
-                  <th className="text-center">Statut</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredData.map((item, idx) => {
-                  const changeVal = Number(item.change) || 0;
-                  let statusLabel = '';
-                  let statusColor = '';
-                  let statusIcon = '';
-
-                  if (!item.hasConso && changeVal < -0.01) {
-                    statusLabel = 'Baisse sans conso';
-                    statusColor = 'bg-red-50 text-red-700';
-                    statusIcon = '🔴';
-                  } else if (!item.hasConso && changeVal > 0.01) {
-                    statusLabel = 'Hausse sans conso';
-                    statusColor = 'bg-orange-50 text-orange-700';
-                    statusIcon = '🟡';
-                  } else if (!item.hasConso && Math.abs(changeVal) <= 0.01) {
-                    statusLabel = 'Stable, non consommé';
-                    statusColor = 'bg-blue-50 text-blue-600';
-                    statusIcon = '🔵';
-                  } else {
-                    statusLabel = 'OK';
-                    statusColor = 'bg-green-50 text-green-700';
-                    statusIcon = '✅';
-                  }
-
-                  return (
-                    <tr key={idx}>
-                      <td>
-                        <div>
-                          <span className="font-medium text-gray-900">{item.product}</span>
-                          <span className="text-xs text-gray-400 ml-2">{item.category}</span>
-                        </div>
-                      </td>
-                      {selectedFarm === 'ALL' && (
-                        <td className="text-center">
-                          <Badge color={item.farm === 'AB1' ? 'blue' : item.farm === 'AB2' ? 'green' : 'purple'}>
-                            {item.farm}
-                          </Badge>
-                        </td>
-                      )}
-                      <td className="text-right">{fmt(item.init)}</td>
-                      <td className="text-right">
-                        {item.ent > 0 ? <span className="text-green-600">+{fmt(item.ent)}</span> : <span className="text-gray-300">-</span>}
-                      </td>
-                      <td className="text-right">
-                        {item.sort > 0 ? <span className="text-purple-600">-{fmt(item.sort)}</span> : <span className="text-gray-300">-</span>}
-                      </td>
-                      <td className="text-right">
-                        {item.hasConso ? (
-                          <span className="text-orange-600 font-medium">{fmt(item.conso)}</span>
-                        ) : (
-                          <span className="px-2 py-0.5 rounded-full bg-red-50 text-red-500 text-xs font-bold">0</span>
-                        )}
-                      </td>
-                      <td className="text-right font-medium">{fmt(item.fin)}</td>
-                      <td className="text-right">
-                        {Math.abs(changeVal) > 0.01 ? (
-                          <span className={`font-bold ${changeVal < 0 ? 'text-red-600' : 'text-green-600'}`}>
-                            {changeVal > 0 ? '+' : ''}{fmt(changeVal)}
-                          </span>
-                        ) : (
-                          <span className="text-gray-300">-</span>
-                        )}
-                      </td>
-                      <td className="text-center">
-                        <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${statusColor}`}>
-                          {statusIcon} {statusLabel}
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+        {inventories.length === 0 && (
+          <div className="mt-4 p-4 bg-yellow-50 rounded-xl text-sm text-yellow-700">
+            ⚠️ Aucun inventaire physique sauvegardé. Allez dans <strong>Inventaire Physique</strong> pour en créer un d'abord.
           </div>
         )}
       </Card>
 
-      {/* Legend */}
-      <Card>
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">Légende</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center px-2 py-1 rounded-full bg-red-50 text-red-700 font-medium">🔴 Baisse sans conso</span>
-            <span className="text-gray-500">Stock diminué, aucune conso saisie</span>
+      {selectedInventory && (
+        <>
+          {/* Info */}
+          <div className="p-4 bg-purple-50 rounded-xl border border-purple-200">
+            <div className="flex flex-wrap gap-4 text-sm">
+              <span className="font-medium text-purple-800">🏠 {selectedInventory.farmName}</span>
+              <span className="text-purple-600">📅 {selectedInventory.date}</span>
+              <span className="text-purple-600">📋 {selectedInventory.stats?.entered || 0} produits comptés</span>
+              <span className="text-purple-600">⚠️ {selectedInventory.stats?.withDiff || 0} écarts</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center px-2 py-1 rounded-full bg-orange-50 text-orange-700 font-medium">🟡 Hausse sans conso</span>
-            <span className="text-gray-500">Stock augmenté via entrées</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center px-2 py-1 rounded-full bg-blue-50 text-blue-600 font-medium">🔵 Stable, non consommé</span>
-            <span className="text-gray-500">Stock inchangé, pas de conso</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center px-2 py-1 rounded-full bg-green-50 text-green-700 font-medium">✅ OK</span>
-            <span className="text-gray-500">Consommation saisie</span>
-          </div>
-        </div>
-      </Card>
+
+          {/* Filters */}
+          <Card>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Select
+                label="Filtre"
+                value={filterType}
+                onChange={setFilterType}
+                options={[
+                  { value: 'ALL', label: 'Tous les produits' },
+                  { value: 'ecart', label: '⚠️ Avec écart' },
+                  { value: 'manquant', label: '🔻 Manquant (physique < théorique)' },
+                  { value: 'excedent', label: '🔺 Excédent (physique > théorique)' },
+                  { value: 'no-conso', label: '🚫 Sans consommation' },
+                  { value: 'manquant-no-conso', label: '🔴 Manquant + sans conso' }
+                ]}
+              />
+              <Select
+                label="Catégorie"
+                value={filterCategory}
+                onChange={setFilterCategory}
+                options={[
+                  { value: 'ALL', label: 'Toutes' },
+                  ...CATEGORIES.map(c => ({ value: c.id, label: c.name }))
+                ]}
+              />
+              <div>
+                <label className="block text-sm font-medium text-gray-600 mb-2">Recherche</label>
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value.toUpperCase())}
+                  placeholder="🔍 Rechercher..."
+                  className="input-field uppercase"
+                />
+              </div>
+            </div>
+          </Card>
+
+          {/* Stats */}
+          {stats && (
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              <StatCard icon="📋" label="Total produits" value={stats.total} color="blue" />
+              <StatCard icon="✅" label="OK" value={stats.ok} color="green" />
+              <StatCard icon="🔻" label="Manquants" value={stats.manquant} color="red" />
+              <StatCard icon="🔺" label="Excédents" value={stats.excedent} color="orange" />
+              <StatCard icon="🚫" label="Sans conso" value={stats.noConso} color="purple" />
+              <StatCard icon="🔴" label="Manquant+sans conso" value={stats.manquantNoConso} color="red" />
+            </div>
+          )}
+
+          {/* Table */}
+          <Card>
+            {filteredData.length === 0 ? (
+              <EmptyState icon="✅" message="Aucun produit trouvé avec ce filtre" />
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th>Produit</th>
+                      <th className="text-right">Stock Théorique</th>
+                      <th className="text-right">Inventaire Physique</th>
+                      <th className="text-right">Écart</th>
+                      <th className="text-right">Écart %</th>
+                      <th className="text-right">Valeur Écart</th>
+                      <th className="text-center">Consommation</th>
+                      <th className="text-center">Statut</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredData.map((item, idx) => {
+                      const ecart = Number(item.ecart) || 0;
+                      const ecartPct = item.diffPercent != null ? Number(item.diffPercent) : null;
+                      const ecartVal = Number(item.ecartValue) || 0;
+
+                      let statusLabel, statusColor, statusIcon;
+                      if (ecart < -0.01 && !item.hasConso) {
+                        statusLabel = 'Manquant sans conso'; statusColor = 'bg-red-100 text-red-800'; statusIcon = '🔴';
+                      } else if (ecart < -0.01) {
+                        statusLabel = 'Manquant'; statusColor = 'bg-orange-100 text-orange-800'; statusIcon = '🔻';
+                      } else if (ecart > 0.01) {
+                        statusLabel = 'Excédent'; statusColor = 'bg-blue-100 text-blue-800'; statusIcon = '🔺';
+                      } else {
+                        statusLabel = 'OK'; statusColor = 'bg-green-100 text-green-800'; statusIcon = '✅';
+                      }
+
+                      return (
+                        <tr key={idx}>
+                          <td>
+                            <span className="font-medium text-gray-900">{item.name}</span>
+                            <span className="text-xs text-gray-400 ml-2">{item.category}</span>
+                          </td>
+                          <td className="text-right">{fmt(item.theoretical)}</td>
+                          <td className="text-right font-medium">{fmt(item.physical)}</td>
+                          <td className="text-right">
+                            {Math.abs(ecart) > 0.01 ? (
+                              <span className={`font-bold ${ecart < 0 ? 'text-red-600' : 'text-green-600'}`}>
+                                {ecart > 0 ? '+' : ''}{fmt(ecart)}
+                              </span>
+                            ) : <span className="text-gray-300">-</span>}
+                          </td>
+                          <td className="text-right">
+                            {ecartPct != null && Math.abs(ecartPct) > 0.1 ? (
+                              <span className={`text-sm ${ecartPct < 0 ? 'text-red-500' : 'text-green-500'}`}>
+                                {ecartPct > 0 ? '+' : ''}{Math.round(ecartPct)}%
+                              </span>
+                            ) : <span className="text-gray-300">-</span>}
+                          </td>
+                          <td className="text-right">
+                            {Math.abs(ecartVal) > 0.5 ? (
+                              <span className={`text-sm font-medium ${ecartVal < 0 ? 'text-red-600' : 'text-green-600'}`}>
+                                {fmtMoney(ecartVal)}
+                              </span>
+                            ) : <span className="text-gray-300">-</span>}
+                          </td>
+                          <td className="text-center">
+                            {item.hasConso ? (
+                              <span className="px-2 py-1 rounded-full bg-green-50 text-green-700 text-xs font-bold">✅ Oui</span>
+                            ) : (
+                              <span className="px-2 py-1 rounded-full bg-red-50 text-red-600 text-xs font-bold">🚫 Non</span>
+                            )}
+                          </td>
+                          <td className="text-center">
+                            <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${statusColor}`}>
+                              {statusIcon} {statusLabel}
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </Card>
+
+          {/* Legend */}
+          <Card>
+            <h3 className="text-sm font-semibold text-gray-700 mb-3">Légende</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+              <div className="flex items-center gap-2">
+                <span className="inline-flex items-center px-2 py-1 rounded-full bg-red-100 text-red-800 font-medium">🔴 Manquant sans conso</span>
+                <span className="text-gray-500">Physique &lt; Théorique, aucune conso</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-flex items-center px-2 py-1 rounded-full bg-orange-100 text-orange-800 font-medium">🔻 Manquant</span>
+                <span className="text-gray-500">Physique &lt; Théorique (conso saisie)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-flex items-center px-2 py-1 rounded-full bg-blue-100 text-blue-800 font-medium">🔺 Excédent</span>
+                <span className="text-gray-500">Physique &gt; Théorique</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-flex items-center px-2 py-1 rounded-full bg-green-100 text-green-800 font-medium">✅ OK</span>
+                <span className="text-gray-500">Pas d'écart significatif</span>
+              </div>
+            </div>
+          </Card>
+        </>
+      )}
     </div>
   );
 };
