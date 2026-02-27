@@ -1144,6 +1144,13 @@
       "category": "ENGRAIS",
       "threshold": null,
       "id": 1772185814293
+    },
+    {
+      "name": "PEROXYDE D'HYDROGENE",
+      "unit": "KG",
+      "category": "PHYTOSANITAIRES",
+      "threshold": null,
+      "id": 1772194526849
     }
   ],
   "movements": [
@@ -13228,5 +13235,119 @@
       "createdAt": "2026-02-26T07:35:00.227Z"
     }
   ],
-  "exportDate": "2026-02-27T10:37:25.937Z"
+  "commandes": [
+    {
+      "id": 1772192524159,
+      "month": "2026-02",
+      "items": [
+        {
+          "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "ordered": 3000,
+          "received": 0
+        },
+        {
+          "product": "MAP",
+          "ordered": 4000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE MAGNESUIM",
+          "ordered": 3000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE POTASSE",
+          "ordered": 3300,
+          "received": 0
+        },
+        {
+          "product": "VITAMINA MIX",
+          "ordered": 1100,
+          "received": 0
+        },
+        {
+          "product": "ACIDE PHOSPHORIQUE",
+          "ordered": 3000,
+          "received": 0
+        },
+        {
+          "product": "ACIDE SULFURIQUE",
+          "ordered": 2000,
+          "received": 0
+        },
+        {
+          "product": "UREE",
+          "ordered": 3000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE ZINC",
+          "ordered": 25,
+          "received": 0
+        },
+        {
+          "product": "FEROXIM",
+          "ordered": 1000,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE CALCIUM",
+          "ordered": 1500,
+          "received": 0
+        },
+        {
+          "product": "PEROXYDE D'HYDROGENE",
+          "ordered": 50,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE POTASSE",
+          "ordered": 1000,
+          "received": 0
+        },
+        {
+          "product": "BASSO",
+          "ordered": 200,
+          "received": 0
+        },
+        {
+          "product": "BIOENERGY",
+          "ordered": 100,
+          "received": 0
+        },
+        {
+          "product": "ROMBI SAL",
+          "ordered": 150,
+          "received": 0
+        },
+        {
+          "product": "QUEL B",
+          "ordered": 32,
+          "received": 0
+        },
+        {
+          "product": "ISABION",
+          "ordered": 160,
+          "received": 0
+        },
+        {
+          "product": "PERFECTOSE",
+          "ordered": 250,
+          "received": 0
+        },
+        {
+          "product": "NOVA",
+          "ordered": 160,
+          "received": 0
+        },
+        {
+          "product": "KELPAK",
+          "ordered": 100,
+          "received": 0
+        }
+      ],
+      "updatedAt": "2026-02-27T12:17:25.578Z"
+    }
+  ],
+  "exportDate": "2026-02-27T12:17:26.828Z"
 }
