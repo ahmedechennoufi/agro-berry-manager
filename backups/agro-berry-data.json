@@ -88,7 +88,8 @@
       "id": 49,
       "name": "ASEP",
       "unit": "L",
-      "category": "ENGRAIS"
+      "category": "AUTRES",
+      "threshold": null
     },
     {
       "id": 57,
@@ -13216,5 +13217,5 @@
       "createdAt": "2026-02-26T07:35:00.227Z"
     }
   ],
-  "exportDate": "2026-02-27T09:52:15.037Z"
+  "exportDate": "2026-02-27T09:55:11.395Z"
 }
