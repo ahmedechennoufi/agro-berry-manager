@@ -249,7 +249,8 @@ const Commandes = () => {
       ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: `${status.icon} ${status.label}`, s: statusStyle(status.color) };
       ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: `${pct}%`, s: pctStyle(pct) };
       // Progress bar text
-      const bar = '█'.repeat(Math.round(pct / 10)) + '░'.repeat(10 - Math.round(pct / 10));
+      const barFilled = Math.min(10, Math.max(0, Math.round(pct / 10)));
+      const bar = '█'.repeat(barFilled) + '░'.repeat(10 - barFilled);
       ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: bar, s: { ...cellLeft(bg), font: { sz: 9, color: { rgb: pct >= 100 ? "16A34A" : pct > 0 ? "F59E0B" : "D1D5DB" } } } };
       r++;
     });
