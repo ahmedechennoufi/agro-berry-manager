@@ -13,6 +13,7 @@ import Costs from './pages/Costs';
 import Inventory from './pages/Inventory';
 import PhysicalInventory from './pages/PhysicalInventory';
 import Commandes from './pages/Commandes';
+import Ecarts from './pages/Ecarts';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
 import * as store from './lib/store';
@@ -133,6 +134,7 @@ function App() {
       case 'inventory': return <Inventory />;
       case 'physical-inventory': return <PhysicalInventory />;
       case 'commandes': return <Commandes />;
+      case 'ecarts': return <Ecarts />;
       case 'products': return <Products />;
       case 'settings': return <Settings />;
       default: return <Dashboard />;
