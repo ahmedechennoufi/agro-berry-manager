@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useApp } from '../App';
 import { Card, Button, Modal, EmptyState, Badge, Input, Select, StatCard, ProgressBar } from '../components/UI';
 import { getCommandes, getCommandeByMonth, saveCommande, deleteCommande } from '../lib/store';
@@ -37,15 +37,6 @@ const Commandes = () => {
 
   // Form for adding item
   const [itemForm, setItemForm] = useState({ product: '', ordered: '' });
-
-  // Reload commandes from storage
-  const reload = useCallback(() => {
-    setCommandes(getCommandes());
-    if (selectedCommande) {
-      const updated = getCommandes().find(c => c.id === selectedCommande.id);
-      setSelectedCommande(updated || null);
-    }
-  }, [selectedCommande]);
 
   // Stats for selected commande
   const stats = useMemo(() => {
@@ -103,7 +94,7 @@ const Commandes = () => {
     };
     saveCommande(commande);
     setShowNewModal(false);
-    reload();
+    setCommandes(getCommandes());
     setSelectedCommande(commande);
     showNotif('Commande créée');
   };
@@ -112,53 +103,58 @@ const Commandes = () => {
     if (!confirm('Supprimer cette commande ?')) return;
     deleteCommande(id);
     if (selectedCommande?.id === id) setSelectedCommande(null);
-    reload();
+    setCommandes(getCommandes());
     showNotif('Commande supprimée');
   };
 
   const handleAddItem = () => {
     if (!itemForm.product || !itemForm.ordered) return;
-    const commande = { ...selectedCommande };
-    const existingIdx = commande.items.findIndex(i => i.product === itemForm.product);
+    const items = [...(selectedCommande.items || [])];
+    const existingIdx = items.findIndex(i => i.product === itemForm.product);
     
     if (existingIdx >= 0) {
       showNotif('Ce produit est déjà dans la commande', 'warning');
       return;
     }
     
-    commande.items.push({
+    items.push({
       product: itemForm.product,
       ordered: parseFloat(itemForm.ordered),
       received: 0
     });
     
-    saveCommande(commande);
+    const updated = { ...selectedCommande, items };
+    saveCommande(updated);
     setItemForm({ product: '', ordered: '' });
     setShowAddItemModal(false);
-    reload();
+    setCommandes(getCommandes());
+    setSelectedCommande(updated);
     showNotif('Produit ajouté à la commande');
   };
 
   const handleRemoveItem = (productName) => {
     if (!confirm(`Retirer ${productName} de la commande ?`)) return;
-    const commande = { ...selectedCommande };
-    commande.items = commande.items.filter(i => i.product !== productName);
-    saveCommande(commande);
-    reload();
+    const items = (selectedCommande.items || []).filter(i => i.product !== productName);
+    const updated = { ...selectedCommande, items };
+    saveCommande(updated);
+    setCommandes(getCommandes());
+    setSelectedCommande(updated);
     showNotif('Produit retiré');
   };
 
   const handleReceive = () => {
     if (!receivingItem) return;
-    const commande = { ...selectedCommande };
-    const idx = commande.items.findIndex(i => i.product === receivingItem.product);
-    if (idx === -1) return;
-    
-    commande.items[idx].received = parseFloat(receivingItem.received) || 0;
-    saveCommande(commande);
+    const items = (selectedCommande.items || []).map(i => 
+      i.product === receivingItem.product 
+        ? { ...i, received: parseFloat(receivingItem.received) || 0 }
+        : { ...i }
+    );
+    const updated = { ...selectedCommande, items };
+    saveCommande(updated);
     setShowReceiveModal(false);
     setReceivingItem(null);
-    reload();
+    setCommandes(getCommandes());
+    setSelectedCommande(updated);
     showNotif('Réception mise à jour');
   };
 
@@ -482,9 +478,9 @@ const Commandes = () => {
             />
           </div>
           <div className="flex justify-between mt-2 text-xs text-gray-500">
-            <span>Commandé: {stats.totalOrdered.toFixed(1)} KG</span>
-            <span>Reçu: {stats.totalReceived.toFixed(1)} KG</span>
-            <span>Restant: {Math.max(0, stats.totalOrdered - stats.totalReceived).toFixed(1)} KG</span>
+            <span>Commandé: {Number(stats.totalOrdered).toFixed(1)} KG</span>
+            <span>Reçu: {Number(stats.totalReceived).toFixed(1)} KG</span>
+            <span>Restant: {Math.max(0, Number(stats.totalOrdered) - Number(stats.totalReceived)).toFixed(1)} KG</span>
           </div>
         </Card>
       )}
@@ -555,15 +551,15 @@ const Commandes = () => {
                   return (
                     <tr key={idx}>
                       <td className="font-medium text-gray-900">{item.product}</td>
-                      <td className="text-right">{(item.ordered || 0).toFixed(1)}</td>
+                      <td className="text-right">{Number(item.ordered || 0).toFixed(1)}</td>
                       <td className="text-right font-semibold">
                         <span className={status.color === 'green' ? 'text-green-600' : status.color === 'orange' ? 'text-orange-600' : 'text-gray-400'}>
-                          {(item.received || 0).toFixed(1)}
+                          {Number(item.received || 0).toFixed(1)}
                         </span>
                       </td>
                       <td className="text-right">
                         {remaining > 0 ? (
-                          <span className="text-red-500 font-medium">{remaining.toFixed(1)}</span>
+                          <span className="text-red-500 font-medium">{Number(remaining).toFixed(1)}</span>
                         ) : (
                           <span className="text-green-500">—</span>
                         )}
@@ -664,8 +660,8 @@ const Commandes = () => {
             <div className="p-4 bg-gray-50 rounded-xl">
               <p className="font-bold text-gray-900">{receivingItem.product}</p>
               <div className="flex gap-4 mt-2 text-sm text-gray-600">
-                <span>Commandé: <strong>{(receivingItem.ordered || 0).toFixed(1)}</strong> KG</span>
-                <span>Reçu actuel: <strong>{(receivingItem.received || 0).toFixed(1)}</strong> KG</span>
+                <span>Commandé: <strong>{Number(receivingItem.ordered || 0).toFixed(1)}</strong> KG</span>
+                <span>Reçu actuel: <strong>{Number(receivingItem.received || 0).toFixed(1)}</strong> KG</span>
               </div>
             </div>
             <Input 
