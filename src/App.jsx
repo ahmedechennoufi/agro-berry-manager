@@ -78,8 +78,14 @@ function App() {
   };
 
   const updateProduct = (id, updates) => {
+    const oldProduct = products.find(p => p.id === id);
     store.updateProduct(id, updates);
     setProducts(store.getProducts());
+    // If name changed, reload all data since rename propagates everywhere
+    if (oldProduct && updates.name && oldProduct.name !== updates.name) {
+      setMovements(store.getMovements());
+      loadData();
+    }
     showNotif('Produit modifié');
     triggerAutoBackup();
   };
