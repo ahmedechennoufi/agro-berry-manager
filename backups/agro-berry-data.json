@@ -8332,17 +8332,6 @@
     },
     {
       "type": "consumption",
-      "product": "SULFATE DE POTASSE",
-      "quantity": 37.5,
-      "price": 7.11,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-02-24",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1771582516119
-    },
-    {
-      "type": "consumption",
       "product": "ACIDE PHOSPHORIQUE",
       "quantity": 32,
       "price": 8.6,
@@ -14587,5 +14576,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-02-28T11:42:13.002Z"
+  "exportDate": "2026-02-28T12:27:37.465Z"
 }
