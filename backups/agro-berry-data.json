@@ -8336,7 +8336,7 @@
       "quantity": 37.5,
       "price": 7.11,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-20",
+      "date": "2026-02-24",
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1771582516119
@@ -10938,7 +10938,7 @@
       "quantity": 75,
       "price": 7.11,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772275998033
@@ -10949,7 +10949,7 @@
       "quantity": 32,
       "price": 8.6,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276023481
@@ -10960,7 +10960,7 @@
       "quantity": 50,
       "price": 7,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276038955
@@ -10971,7 +10971,7 @@
       "quantity": 5,
       "price": 101,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276054472
@@ -10982,7 +10982,7 @@
       "quantity": 50,
       "price": 10,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276086882
@@ -10993,7 +10993,7 @@
       "quantity": 8,
       "price": 148,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276103253
@@ -11004,7 +11004,7 @@
       "quantity": 40,
       "price": 5.8,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276116422
@@ -11015,7 +11015,7 @@
       "quantity": 50,
       "price": 5,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276135251
@@ -11026,7 +11026,7 @@
       "quantity": 0.1,
       "price": 68.4,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276168269
@@ -11037,7 +11037,7 @@
       "quantity": 0.3,
       "price": 141.67,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276184002
@@ -11059,7 +11059,7 @@
       "quantity": 37.5,
       "price": 7.11,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-24",
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1772276264086
@@ -14587,5 +14587,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-02-28T10:59:44.610Z"
+  "exportDate": "2026-02-28T11:42:13.002Z"
 }
