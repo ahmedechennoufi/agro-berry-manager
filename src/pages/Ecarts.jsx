@@ -164,7 +164,7 @@ const Ecarts = () => {
       });
       const cr_ = (bg) => ({
         font: { sz: 10 }, fill: { fgColor: { rgb: bg } },
-        alignment: { horizontal: "right", vertical: "center" }, numFmt: "0.0",
+        alignment: { horizontal: "right", vertical: "center" }, numFmt: "0.00",
         border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
       });
       const ac = (type) => ({
@@ -176,7 +176,7 @@ const Ecarts = () => {
       const ts = {
         font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
         fill: { fgColor: { rgb: "581C87" } },
-        alignment: { horizontal: "right", vertical: "center" }, numFmt: "0.0",
+        alignment: { horizontal: "right", vertical: "center" }, numFmt: "0.00",
         border: { top: { style: "medium" }, bottom: { style: "medium" }, left: { style: "thin" }, right: { style: "thin" } }
       };
 

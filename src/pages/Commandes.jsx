@@ -194,7 +194,7 @@ const Commandes = () => {
       font: { sz: 10 },
       fill: { fgColor: { rgb: bg } },
       alignment: { horizontal: "right", vertical: "center" },
-      numFmt: "0.0",
+      numFmt: "0.00",
       border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
     });
     const statusStyle = (color) => ({
@@ -207,7 +207,7 @@ const Commandes = () => {
       font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
       fill: { fgColor: { rgb: "1E40AF" } },
       alignment: { horizontal: "right", vertical: "center" },
-      numFmt: "0.0",
+      numFmt: "0.00",
       border: { top: { style: "medium" }, bottom: { style: "medium" }, left: { style: "thin" }, right: { style: "thin" } }
     };
     const pctStyle = (pct) => ({
@@ -308,7 +308,7 @@ const Commandes = () => {
       font: { sz: 10 },
       fill: { fgColor: { rgb: bg } },
       alignment: { horizontal: "right", vertical: "center" },
-      numFmt: "0.0",
+      numFmt: "0.00",
       border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
     });
     const statusBadge = (pct) => ({
