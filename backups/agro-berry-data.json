@@ -10857,6 +10857,24 @@
       "supplier": "AUTRE",
       "date": "2026-02-09",
       "id": 1772270000508
+    },
+    {
+      "type": "entry",
+      "product": "PEROXYDE D'HYDROGENE",
+      "quantity": 50,
+      "price": 0,
+      "supplier": "FRABAGRI",
+      "date": "2026-02-16",
+      "id": 1772271031006
+    },
+    {
+      "type": "entry",
+      "product": "FEROXIM",
+      "quantity": 1000,
+      "price": 101,
+      "supplier": "AGRI HIVER",
+      "date": "2026-02-16",
+      "id": 1772271125766
     }
   ],
   "stockAB1": [
@@ -14320,7 +14338,7 @@
         {
           "product": "FEROXIM",
           "ordered": 1000,
-          "received": 0
+          "received": 1000
         },
         {
           "product": "NITRATE DE CALCIUM",
@@ -14330,7 +14348,7 @@
         {
           "product": "PEROXYDE D'HYDROGENE",
           "ordered": 50,
-          "received": 0
+          "received": 50
         },
         {
           "product": "NITRATE DE POTASSE",
@@ -14378,8 +14396,8 @@
           "received": 100
         }
       ],
-      "updatedAt": "2026-02-27T12:33:15.811Z"
+      "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-02-28T09:17:30.476Z"
+  "exportDate": "2026-02-28T09:34:05.768Z"
 }
