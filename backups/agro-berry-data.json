@@ -5274,7 +5274,7 @@
     },
     {
       "type": "entry",
-      "product": "LUNA FUSION",
+      "product": "LUNA FUSIONE",
       "quantity": 90,
       "price": 4568,
       "supplier": "CAS",
@@ -7143,7 +7143,7 @@
     },
     {
       "type": "exit",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 25,
       "price": 4568,
       "farm": "AGRO BERRY 2",
@@ -7161,7 +7161,7 @@
     },
     {
       "type": "exit",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 30,
       "price": 4568,
       "farm": "AGRO BERRY 3",
@@ -7179,7 +7179,7 @@
     },
     {
       "type": "exit",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 35,
       "price": 4568,
       "farm": "AGRO BERRY 1",
@@ -8596,7 +8596,7 @@
     },
     {
       "type": "consumption",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 2.4,
       "price": 4568,
       "farm": "AGRO BERRY 2",
@@ -8882,7 +8882,7 @@
     },
     {
       "type": "consumption",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 3.2,
       "price": 4568,
       "farm": "AGRO BERRY 1",
@@ -8893,7 +8893,7 @@
     },
     {
       "type": "consumption",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 1.6,
       "price": 4568,
       "farm": "AGRO BERRY 1",
@@ -9212,7 +9212,7 @@
     },
     {
       "type": "consumption",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 3,
       "price": 4568,
       "farm": "AGRO BERRY 1",
@@ -10211,7 +10211,7 @@
     },
     {
       "type": "consumption",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 6,
       "price": 4568,
       "farm": "AGRO BERRY 3",
@@ -10222,7 +10222,7 @@
     },
     {
       "type": "consumption",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 6,
       "price": 4568,
       "farm": "AGRO BERRY 3",
@@ -10233,7 +10233,7 @@
     },
     {
       "type": "consumption",
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 6,
       "price": 4568,
       "farm": "AGRO BERRY 3",
@@ -10876,6 +10876,193 @@
       "supplier": "AGRI HIVER",
       "date": "2026-02-16",
       "id": 1772271125766
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.15,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772275867052
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 23,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772275905916
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772275923649
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 25,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772275955402
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772275970655
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 75,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772275998033
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276023481
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276038955
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 5,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276054472
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276086882
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 8,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276103253
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 40,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276116422
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276135251
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276168269
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276184002
+    },
+    {
+      "type": "consumption",
+      "product": "LUNA FUSION",
+      "quantity": 3,
+      "price": 4420,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772276202619
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-22",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772276264086
     }
   ],
   "stockAB1": [
@@ -11078,7 +11265,7 @@
       "price": 4400
     },
     {
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 1.25,
       "unit": "L",
       "price": 4420
@@ -11548,7 +11735,7 @@
       "price": 420
     },
     {
-      "product": "LUNA SENSATION",
+      "product": "LUNA FUSION",
       "quantity": 0.3,
       "unit": "L",
       "price": 4420
@@ -12186,7 +12373,6 @@
         "SOLUBOR": "9.6",
         "NUTREL C": "150.87",
         "NITRATE DE CALCIUM": "925",
-        "LUNA SENSATION": "20.32",
         "STROBY": "15.31",
         "TIMOREX GOLD": "19.2",
         "SWITCH": "24",
@@ -12200,7 +12386,8 @@
         "SULFATE MAGNESUIM": "2125",
         "SULFATE DE POTASSE": "2957",
         "ALGOBAZ": "4",
-        "SULFATE DE ZINC": "25"
+        "SULFATE DE ZINC": "25",
+        "LUNA FUSION": "20.32"
       },
       "comparison": [
         {
@@ -12494,7 +12681,7 @@
           "status": "ok"
         },
         {
-          "name": "LUNA SENSATION",
+          "name": "LUNA FUSION",
           "unit": "L",
           "theoretical": 22.900000000000002,
           "physical": 20.32,
@@ -12821,7 +13008,6 @@
         "RADIANT": "1",
         "TALENDO": "14.4",
         "MOVENTO": "50",
-        "LUNA SENSATION": "10",
         "MAVRIK": "27.8",
         "INACOP": "9.1",
         "BORTRAC": "10",
@@ -12845,7 +13031,8 @@
         "KALIGREEN": "1.5",
         "MERJANE": "13",
         "EFFICIENT": "15.5",
-        "SULFATE DE ZINC": "0"
+        "SULFATE DE ZINC": "0",
+        "LUNA FUSION": "10"
       },
       "comparison": [
         {
@@ -13139,7 +13326,7 @@
           "status": "excedent"
         },
         {
-          "name": "LUNA SENSATION",
+          "name": "LUNA FUSION",
           "unit": "L",
           "theoretical": 12,
           "physical": 10,
@@ -13457,7 +13644,6 @@
         "EXIREL": "142",
         "OIKOS": "9",
         "STROBY": "13.5",
-        "LUNA SENSATION": "24",
         "SWITCH": "12.75",
         "SIGNUM": "22",
         "TELDOR": "4",
@@ -13501,7 +13687,8 @@
         "OXYLOUKKOS": "22",
         "SCELTA": "5",
         "MERJANE": "3.7",
-        "MKP": "675"
+        "MKP": "675",
+        "LUNA FUSION": "24"
       },
       "comparison": [
         {
@@ -13835,7 +14022,7 @@
           "status": "excedent"
         },
         {
-          "name": "LUNA SENSATION",
+          "name": "LUNA FUSION",
           "unit": "L",
           "theoretical": 28.449999999999996,
           "physical": 24,
@@ -14400,5 +14587,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-02-28T10:28:36.419Z"
+  "exportDate": "2026-02-28T10:59:44.610Z"
 }
