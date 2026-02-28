@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useApp } from '../App';
 import { Card, Button, Input, Select, StatCard, EmptyState, Badge } from '../components/UI';
 import { CATEGORIES } from '../lib/constants';
-import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
+import { fmt, fmtMoney } from '../lib/utils';
 import { calculateGlobalStock, getAveragePrice, getDefaultThreshold } from '../lib/store';
 
 const Stock = () => {
@@ -96,16 +96,99 @@ const Stock = () => {
   };
 
   const handleExport = async () => {
-    const data = filteredStock.map(item => ({
-      Produit: item.name,
-      Catégorie: item.category,
-      Quantité: item.quantity,
-      Unité: item.unit,
-      'Prix Moyen': item.price,
-      Valeur: item.value,
-      Statut: item.status === 'epuise' ? 'Épuisé' : item.status === 'bas' ? 'Stock bas' : 'Normal'
-    }));
-    await downloadExcel(data, 'stock-global.xlsx');
+    try {
+      const XLSX = (await import('xlsx-js-style')).default || await import('xlsx-js-style');
+      const wb = XLSX.utils.book_new();
+
+      const titleStyle = {
+        font: { bold: true, sz: 14, color: { rgb: "FFFFFF" } },
+        fill: { fgColor: { rgb: "1E40AF" } },
+        alignment: { horizontal: "center", vertical: "center" }
+      };
+      const headerStyle = {
+        font: { bold: true, sz: 10, color: { rgb: "FFFFFF" } },
+        fill: { fgColor: { rgb: "3B82F6" } },
+        alignment: { horizontal: "center", vertical: "center" },
+        border: { top: { style: "thin" }, bottom: { style: "thin" }, left: { style: "thin" }, right: { style: "thin" } }
+      };
+      const cl = (bg) => ({
+        font: { sz: 10 }, fill: { fgColor: { rgb: bg } },
+        alignment: { horizontal: "left", vertical: "center" },
+        border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+      });
+      const cr = (bg) => ({
+        font: { sz: 10 }, fill: { fgColor: { rgb: bg } },
+        alignment: { horizontal: "right", vertical: "center" }, numFmt: "0.00",
+        border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+      });
+      const cc = (bg) => ({
+        font: { sz: 10 }, fill: { fgColor: { rgb: bg } },
+        alignment: { horizontal: "center", vertical: "center" },
+        border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+      });
+      const statusCell = (status) => ({
+        font: { bold: true, sz: 10, color: { rgb: status === 'epuise' ? "991B1B" : status === 'bas' ? "9A3412" : "166534" } },
+        fill: { fgColor: { rgb: status === 'epuise' ? "FEE2E2" : status === 'bas' ? "FEF3C7" : "DCFCE7" } },
+        alignment: { horizontal: "center", vertical: "center" },
+        border: { top: { style: "thin", color: { rgb: "D1D5DB" } }, bottom: { style: "thin", color: { rgb: "D1D5DB" } }, left: { style: "thin", color: { rgb: "D1D5DB" } }, right: { style: "thin", color: { rgb: "D1D5DB" } } }
+      });
+      const totalStyle = {
+        font: { bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+        fill: { fgColor: { rgb: "1E40AF" } },
+        alignment: { horizontal: "right", vertical: "center" }, numFmt: "0.00",
+        border: { top: { style: "medium" }, bottom: { style: "medium" }, left: { style: "thin" }, right: { style: "thin" } }
+      };
+
+      const ws = {};
+      let r = 0;
+      const cols = 7;
+
+      // Title
+      for (let c = 0; c < cols; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? 'Stock Global Magasin' : '', s: titleStyle };
+      ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: cols - 1 } }];
+      r += 2;
+
+      // Headers
+      const headers = ['Produit', 'Categorie', 'Quantite', 'Unite', 'Prix Moyen', 'Valeur (MAD)', 'Statut'];
+      headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
+      r++;
+
+      // Data
+      filteredStock.forEach((item, idx) => {
+        const bg = idx % 2 === 0 ? "FFFFFF" : "F9FAFB";
+        const statusText = item.status === 'epuise' ? 'Epuise' : item.status === 'bas' ? 'Stock bas' : 'Normal';
+
+        ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.name, s: { ...cl(bg), font: { bold: true, sz: 10 } } };
+        ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: item.category, s: cc(bg) };
+        ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: Number(item.quantity) || 0, t: 'n', s: cr(bg) };
+        ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: item.unit, s: cc(bg) };
+        ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: Number(item.price) || 0, t: 'n', s: { ...cr(bg), numFmt: '#,##0.00' } };
+        ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: Number(item.value) || 0, t: 'n', s: { ...cr(bg), numFmt: '#,##0' } };
+        ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: statusText, s: statusCell(item.status) };
+        r++;
+      });
+
+      // Total row
+      const totQty = filteredStock.reduce((s, i) => s + (Number(i.quantity) || 0), 0);
+      const totVal = filteredStock.reduce((s, i) => s + (Number(i.value) || 0), 0);
+
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: 'TOTAL', s: { ...totalStyle, alignment: { horizontal: "left" } } };
+      ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: filteredStock.length + ' produits', s: { ...totalStyle, alignment: { horizontal: "center" } } };
+      ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: totQty, t: 'n', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: '', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: '', s: totalStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: totVal, t: 'n', s: { ...totalStyle, numFmt: '#,##0' } };
+      ws[XLSX.utils.encode_cell({ r, c: 6 })] = { v: '', s: totalStyle };
+
+      ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r, c: cols - 1 } });
+      ws['!cols'] = [{ wch: 30 }, { wch: 16 }, { wch: 14 }, { wch: 10 }, { wch: 14 }, { wch: 16 }, { wch: 14 }];
+      ws['!rows'] = [{ hpt: 30 }, { hpt: 10 }, { hpt: 22 }];
+      XLSX.utils.book_append_sheet(wb, ws, 'Stock Global');
+
+      XLSX.writeFile(wb, 'Stock_Global.xlsx');
+    } catch (err) {
+      console.error('Export error:', err);
+    }
   };
 
   const resetFilters = () => {
