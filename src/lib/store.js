@@ -227,7 +227,11 @@ export const updateProduct = (id, updates) => {
 
   // Rename product everywhere if name changed
   if (oldName && newName && oldName !== newName) {
-    renameProductEverywhere(oldName, newName);
+    try {
+      renameProductEverywhere(oldName, newName);
+    } catch (err) {
+      console.error('Erreur renommage:', err);
+    }
   }
 
   const updated = products.map(p => p.id === id ? { ...p, ...updates } : p);
@@ -261,13 +265,19 @@ const renameProductEverywhere = (oldName, newName) => {
     if (changed) setItem(STORAGE_KEYS[key], stock);
   });
 
-  // 4. Inventory
-  const inventory = getInventory();
-  changed = false;
-  inventory.forEach(i => {
-    if (i.product === oldName) { i.product = newName; changed = true; }
-  });
-  if (changed) setItem(STORAGE_KEYS.inventory, inventory);
+  // 4. Inventory (object keyed by month, each value is an array)
+  try {
+    const inventory = getInventory();
+    changed = false;
+    Object.keys(inventory).forEach(month => {
+      if (Array.isArray(inventory[month])) {
+        inventory[month].forEach(i => {
+          if (i.product === oldName) { i.product = newName; changed = true; }
+        });
+      }
+    });
+    if (changed) localStorage.setItem(STORAGE_KEYS.inventory, JSON.stringify(inventory));
+  } catch {}
 
   // 5. Melanges
   const melanges = getMelangesSauvegardes();
