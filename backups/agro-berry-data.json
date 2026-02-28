@@ -13677,7 +13677,12 @@
         "SCELTA": "5",
         "MERJANE": "3.7",
         "MKP": "675",
-        "LUNA FUSION": "24"
+        "LUNA FUSION": "24",
+        "VITAMINA MIX": "159.75",
+        "ALIETTE FLASH": "1.02",
+        "CIDELY TOP": "6.55",
+        "KOBUS": "0.85",
+        "PROBLAD": "3"
       },
       "comparison": [
         {
@@ -13739,6 +13744,16 @@
           "diffPercent": 0,
           "diffValue": 0,
           "status": "ok"
+        },
+        {
+          "name": "ALIETTE FLASH",
+          "unit": "KG",
+          "theoretical": 1,
+          "physical": 1.02,
+          "diff": 0.020000000000000018,
+          "diffPercent": 2.0000000000000018,
+          "diffValue": 7.7800000000000065,
+          "status": "excedent"
         },
         {
           "name": "AMMONITRATE",
@@ -13833,12 +13848,12 @@
         {
           "name": "BOITE BOTREFIN 600G",
           "unit": "UNITÉ",
-          "theoretical": 0,
+          "theoretical": 101.6,
           "physical": 34.8,
-          "diff": 34.8,
-          "diffPercent": null,
-          "diffValue": 27839.999999999996,
-          "status": "excedent"
+          "diff": -66.8,
+          "diffPercent": -65.74803149606299,
+          "diffValue": -53440,
+          "status": "manquant"
         },
         {
           "name": "BORTRAC",
@@ -13849,6 +13864,16 @@
           "diffPercent": -0.5820105820104856,
           "diffValue": -7.479999999998753,
           "status": "manquant"
+        },
+        {
+          "name": "CIDELY TOP",
+          "unit": "L",
+          "theoretical": 6.55,
+          "physical": 6.55,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
         },
         {
           "name": "CODACIDE OIL",
@@ -14001,6 +14026,16 @@
           "status": "manquant"
         },
         {
+          "name": "KOBUS",
+          "unit": "L",
+          "theoretical": 0.85,
+          "physical": 0.85,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
           "name": "KRISANT",
           "unit": "L",
           "theoretical": 20.8,
@@ -14073,12 +14108,12 @@
         {
           "name": "MILBEKNOCK",
           "unit": "L",
-          "theoretical": 0,
+          "theoretical": 48,
           "physical": 19.225,
-          "diff": 19.225,
-          "diffPercent": null,
-          "diffValue": 11996.400000000001,
-          "status": "excedent"
+          "diff": -28.775,
+          "diffPercent": -59.947916666666664,
+          "diffValue": -17955.6,
+          "status": "manquant"
         },
         {
           "name": "MKP",
@@ -14113,12 +14148,12 @@
         {
           "name": "NITRATE DE POTASSE",
           "unit": "KG",
-          "theoretical": 142.60000000000002,
+          "theoretical": 1142.6,
           "physical": 1137.2,
-          "diff": 994.6,
-          "diffPercent": 697.4754558204768,
-          "diffValue": 10791.41,
-          "status": "excedent"
+          "diff": -5.399999999999864,
+          "diffPercent": -0.4726063364256839,
+          "diffValue": -58.58999999999852,
+          "status": "manquant"
         },
         {
           "name": "NITROMAG",
@@ -14219,6 +14254,16 @@
           "diffPercent": -90.64227988090174,
           "diffValue": -40489.00000000001,
           "status": "manquant"
+        },
+        {
+          "name": "PROBLAD",
+          "unit": "L",
+          "theoretical": 3,
+          "physical": 3,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
         },
         {
           "name": "PROCLAIM",
@@ -14441,6 +14486,16 @@
           "status": "excedent"
         },
         {
+          "name": "VITAMINA MIX",
+          "unit": "KG",
+          "theoretical": 242,
+          "physical": 159.75,
+          "diff": -82.25,
+          "diffPercent": -33.98760330578512,
+          "diffValue": -4455.482500000001,
+          "status": "manquant"
+        },
+        {
           "name": "ZM CORRECTOR",
           "unit": "KG",
           "theoretical": 48,
@@ -14453,13 +14508,14 @@
       ],
       "stats": {
         "total": 91,
-        "entered": 77,
-        "withDiff": 61,
-        "ok": 16,
-        "totalDiffValue": -107758.74466666667,
-        "progress": 84.61538461538461
+        "entered": 82,
+        "withDiff": 63,
+        "ok": 19,
+        "totalDiffValue": -234288.44716666665,
+        "progress": 90.10989010989012
       },
-      "createdAt": "2026-02-28T08:16:32.487Z"
+      "createdAt": "2026-02-28T08:16:32.487Z",
+      "updatedAt": "2026-02-28T13:20:20.735Z"
     }
   ],
   "commandes": [
@@ -14576,5 +14632,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-02-28T12:27:37.465Z"
+  "exportDate": "2026-02-28T13:22:22.038Z"
 }
