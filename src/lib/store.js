@@ -220,8 +220,133 @@ export const addProduct = (product) => {
 };
 
 export const updateProduct = (id, updates) => {
-  const products = getProducts().map(p => p.id === id ? { ...p, ...updates } : p);
-  setItem(STORAGE_KEYS.products, products);
+  const products = getProducts();
+  const oldProduct = products.find(p => p.id === id);
+  const oldName = oldProduct?.name;
+  const newName = updates.name;
+
+  // Rename product everywhere if name changed
+  if (oldName && newName && oldName !== newName) {
+    renameProductEverywhere(oldName, newName);
+  }
+
+  const updated = products.map(p => p.id === id ? { ...p, ...updates } : p);
+  setItem(STORAGE_KEYS.products, updated);
+};
+
+const renameProductEverywhere = (oldName, newName) => {
+  // 1. Movements
+  const movements = getMovements();
+  let changed = false;
+  movements.forEach(m => {
+    if (m.product === oldName) { m.product = newName; changed = true; }
+  });
+  if (changed) setItem(STORAGE_KEYS.movements, movements);
+
+  // 2. Consommations
+  const consos = getConsommations();
+  changed = false;
+  consos.forEach(c => {
+    if (c.product === oldName) { c.product = newName; changed = true; }
+  });
+  if (changed) setItem(STORAGE_KEYS.consommations, consos);
+
+  // 3. Stock farms (AB1, AB2, AB3)
+  ['stockAB1', 'stockAB2', 'stockAB3'].forEach(key => {
+    const stock = getItem(STORAGE_KEYS[key]);
+    changed = false;
+    stock.forEach(s => {
+      if (s.product === oldName) { s.product = newName; changed = true; }
+    });
+    if (changed) setItem(STORAGE_KEYS[key], stock);
+  });
+
+  // 4. Inventory
+  const inventory = getInventory();
+  changed = false;
+  inventory.forEach(i => {
+    if (i.product === oldName) { i.product = newName; changed = true; }
+  });
+  if (changed) setItem(STORAGE_KEYS.inventory, inventory);
+
+  // 5. Melanges
+  const melanges = getMelangesSauvegardes();
+  changed = false;
+  melanges.forEach(m => {
+    if (m.products) {
+      m.products.forEach(p => {
+        if (p.product === oldName || p.name === oldName) {
+          if (p.product === oldName) p.product = newName;
+          if (p.name === oldName) p.name = newName;
+          changed = true;
+        }
+      });
+    }
+  });
+  if (changed) setItem(STORAGE_KEYS.melanges, melanges);
+
+  // 6. Physical Inventories
+  const physInvs = getPhysicalInventories();
+  changed = false;
+  physInvs.forEach(inv => {
+    if (inv.data && inv.data[oldName] !== undefined) {
+      inv.data[newName] = inv.data[oldName];
+      delete inv.data[oldName];
+      changed = true;
+    }
+    if (inv.comparison) {
+      inv.comparison.forEach(c => {
+        if (c.name === oldName) { c.name = newName; changed = true; }
+      });
+    }
+  });
+  if (changed) setItem(STORAGE_KEYS.physicalInventories, physInvs);
+
+  // 7. Commandes
+  const commandes = getCommandes();
+  changed = false;
+  commandes.forEach(cmd => {
+    if (cmd.items) {
+      cmd.items.forEach(item => {
+        if (item.product === oldName) { item.product = newName; changed = true; }
+      });
+    }
+  });
+  if (changed) setItem(STORAGE_KEYS.commandes, commandes);
+
+  // 8. Stock History
+  try {
+    const history = JSON.parse(localStorage.getItem(STORAGE_KEYS.stockHistory) || '[]');
+    changed = false;
+    history.forEach(h => {
+      if (h.product === oldName) { h.product = newName; changed = true; }
+      if (h.stocks) {
+        Object.keys(h.stocks).forEach(k => {
+          if (h.stocks[k]?.product === oldName) { h.stocks[k].product = newName; changed = true; }
+        });
+      }
+    });
+    if (changed) localStorage.setItem(STORAGE_KEYS.stockHistory, JSON.stringify(history));
+  } catch {}
+
+  // 9. Cout Data
+  try {
+    const coutData = JSON.parse(localStorage.getItem(STORAGE_KEYS.coutData) || '{}');
+    changed = false;
+    Object.keys(coutData).forEach(farm => {
+      Object.keys(coutData[farm] || {}).forEach(culture => {
+        Object.keys(coutData[farm][culture] || {}).forEach(category => {
+          const products = coutData[farm][culture][category];
+          if (products && products[oldName] !== undefined) {
+            products[newName] = products[oldName];
+            delete products[oldName];
+            changed = true;
+          }
+        });
+      });
+    });
+    if (changed) localStorage.setItem(STORAGE_KEYS.coutData, JSON.stringify(coutData));
+  } catch {}
 };
 
 export const deleteProduct = (id) => {
