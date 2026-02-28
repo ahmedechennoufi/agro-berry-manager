@@ -993,6 +993,17 @@ export const deletePhysicalInventory = (id) => {
   return inventories;
 };
 
+export const updatePhysicalInventory = (id, updatedData) => {
+  const inventories = getPhysicalInventories();
+  const idx = inventories.findIndex(inv => inv.id === id);
+  if (idx >= 0) {
+    inventories[idx] = { ...inventories[idx], ...updatedData, updatedAt: new Date().toISOString() };
+    localStorage.setItem(STORAGE_KEYS.physicalInventories, JSON.stringify(inventories));
+    return inventories[idx];
+  }
+  return null;
+};
+
 // === COMMANDES MENSUELLES ===
 export const getCommandes = () => {
   try {

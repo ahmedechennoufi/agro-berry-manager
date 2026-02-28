@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { useApp } from '../App';
 import { Card, Select, Input, EmptyState, Button } from '../components/UI';
 import { FARMS } from '../lib/constants';
-import { calculateFarmStock, getAveragePrice, getProducts, getPhysicalInventories, savePhysicalInventory, deletePhysicalInventory } from '../lib/store';
+import { calculateFarmStock, getAveragePrice, getProducts, getPhysicalInventories, savePhysicalInventory, updatePhysicalInventory, deletePhysicalInventory } from '../lib/store';
 import { fmt, fmtMoney, downloadPhysicalInventoryExcel } from '../lib/utils';
 
 const PhysicalInventory = () => {
@@ -26,6 +26,7 @@ const PhysicalInventory = () => {
   const [viewingInventory, setViewingInventory] = useState(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(null);
   const [showAddProduct, setShowAddProduct] = useState(false);
+  const [editingInventoryId, setEditingInventoryId] = useState(null);
   const [addProductSearch, setAddProductSearch] = useState('');
   const [extraProducts, setExtraProducts] = useState(() => {
     try {
@@ -188,6 +189,27 @@ const PhysicalInventory = () => {
     });
   };
 
+  // Load a saved inventory for editing
+  const handleEditInventory = (inv) => {
+    setSelectedFarm(inv.farm);
+    setInventoryDate(inv.date);
+    setPhysicalStock(inv.data || {});
+    setEditingInventoryId(inv.id);
+    setViewingInventory(null);
+    setMode('new');
+
+    // Restore extra products (products in data but not in theoretical)
+    const theoreticalNames = new Set();
+    const stockMap = calculateFarmStock(inv.farm);
+    Object.entries(stockMap).forEach(([name, data]) => {
+      if ((data.quantity || 0) > 0.01) theoreticalNames.add(name);
+    });
+    const extras = Object.keys(inv.data || {}).filter(name => !theoreticalNames.has(name));
+    setExtraProducts(extras);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Save inventory to store + trigger GitHub backup
   const handleSaveInventory = () => {
     if (stats.entered === 0) {
@@ -201,10 +223,22 @@ const PhysicalInventory = () => {
       diff: i.diff, diffPercent: i.diffPercent, diffValue: i.diffValue, status: i.status
     }));
 
-    savePhysicalInventory({
-      farm: selectedFarm, farmName, date: inventoryDate,
-      data: physicalStock, comparison: comparisonResults, stats: { ...stats }
-    });
+    if (editingInventoryId) {
+      // Update existing
+      updatePhysicalInventory(editingInventoryId, {
+        farm: selectedFarm, farmName, date: inventoryDate,
+        data: physicalStock, comparison: comparisonResults, stats: { ...stats }
+      });
+      setEditingInventoryId(null);
+      alert(`✅ Inventaire mis à jour pour ${farmName} (${inventoryDate}) !`);
+    } else {
+      // Create new
+      savePhysicalInventory({
+        farm: selectedFarm, farmName, date: inventoryDate,
+        data: physicalStock, comparison: comparisonResults, stats: { ...stats }
+      });
+      alert(`✅ Inventaire sauvegardé pour ${farmName} (${inventoryDate}) et synchronisé avec GitHub !`);
+    }
 
     setSavedInventories(getPhysicalInventories());
     triggerAutoBackup();
@@ -213,13 +247,13 @@ const PhysicalInventory = () => {
     setExtraProducts([]);
     localStorage.removeItem('physical_inventory_data');
     localStorage.removeItem('physical_inventory_extra_products');
-    alert(`✅ Inventaire sauvegardé pour ${farmName} (${inventoryDate}) et synchronisé avec GitHub !`);
   };
 
   const handleReset = () => {
     if (window.confirm('Effacer toutes les saisies en cours ?')) {
       setPhysicalStock({});
       setExtraProducts([]);
+      setEditingInventoryId(null);
       localStorage.removeItem('physical_inventory_data');
       localStorage.removeItem('physical_inventory_extra_products');
     }
@@ -290,6 +324,10 @@ const PhysicalInventory = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
+                <button onClick={() => handleEditInventory(inv)}
+                  className="px-3 py-2 bg-yellow-50 hover:bg-yellow-100 text-yellow-700 rounded-lg text-xs font-medium transition-colors">
+                  ✏️ Modifier
+                </button>
                 <button onClick={() => setViewingInventory(viewingInventory?.id === inv.id ? null : inv)}
                   className="px-3 py-2 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg text-xs font-medium transition-colors">
                   {viewingInventory?.id === inv.id ? '🔼 Masquer' : '🔽 Détails'}
@@ -458,12 +496,23 @@ const PhysicalInventory = () => {
                 </Card>
               </div>
 
+              {/* Editing Banner */}
+              {editingInventoryId && (
+                <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-xl flex items-center justify-between">
+                  <span className="text-sm font-medium text-yellow-800">✏️ Mode modification — vous éditez un inventaire existant</span>
+                  <button onClick={() => { setEditingInventoryId(null); setPhysicalStock({}); setExtraProducts([]); }}
+                    className="px-3 py-1 bg-yellow-200 hover:bg-yellow-300 text-yellow-800 rounded-lg text-xs font-medium">
+                    ✖ Annuler
+                  </button>
+                </div>
+              )}
+
               {/* Action Buttons */}
               {stats.entered > 0 && (
                 <div className="flex flex-wrap gap-2">
                   <button onClick={handleSaveInventory}
-                    className="px-5 py-2.5 bg-green-500 hover:bg-green-600 text-white rounded-xl font-medium transition-colors text-sm shadow-lg">
-                    💾 Sauvegarder
+                    className={`px-5 py-2.5 ${editingInventoryId ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-green-500 hover:bg-green-600'} text-white rounded-xl font-medium transition-colors text-sm shadow-lg`}>
+                    {editingInventoryId ? '✏️ Mettre à jour' : '💾 Sauvegarder'}
                   </button>
                   <button onClick={handleExportExcel}
                     className="px-4 py-2.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-xl font-medium transition-colors text-sm">
