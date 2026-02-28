@@ -37,10 +37,11 @@ const Ecarts = () => {
     const entryQty = {};
     const consoQty = {};
 
-    // Helper to match farm
+    // Helper to match farm - same logic as ConsoFermes
+    const farmNum = farmId.includes('1') ? '1' : farmId.includes('2') ? '2' : '3';
     const matchFarm = (movFarm) => {
-      if (!movFarm || !farmId) return false;
-      return movFarm === farmId || movFarm.includes(farmId) || farmId.includes(movFarm);
+      if (!movFarm) return false;
+      return movFarm === farmId || movFarm.includes(farmNum);
     };
 
     allMovements.forEach(m => {
