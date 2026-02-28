@@ -10812,6 +10812,15 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1772267907806
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 1000,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-18",
+      "id": 1772268767577
     }
   ],
   "stockAB1": [
@@ -14336,5 +14345,5 @@
       "updatedAt": "2026-02-27T12:33:15.811Z"
     }
   ],
-  "exportDate": "2026-02-28T08:40:27.817Z"
+  "exportDate": "2026-02-28T08:54:49.727Z"
 }
