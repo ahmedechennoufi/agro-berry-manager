@@ -10839,6 +10839,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-16",
       "id": 1772269488062
+    },
+    {
+      "type": "exit",
+      "product": "VITAMINA MIX",
+      "quantity": 70,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-10",
+      "id": 1772269661529
     }
   ],
   "stockAB1": [
@@ -14363,5 +14372,5 @@
       "updatedAt": "2026-02-27T12:33:15.811Z"
     }
   ],
-  "exportDate": "2026-02-28T09:06:48.072Z"
+  "exportDate": "2026-02-28T09:09:41.545Z"
 }
