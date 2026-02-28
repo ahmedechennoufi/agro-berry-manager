@@ -10821,6 +10821,24 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-02-18",
       "id": 1772268767577
+    },
+    {
+      "type": "exit",
+      "product": "MILBEKNOCK",
+      "quantity": 48,
+      "price": 624,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-16",
+      "id": 1772269385849
+    },
+    {
+      "type": "exit",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 101.6,
+      "price": 800,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-16",
+      "id": 1772269488062
     }
   ],
   "stockAB1": [
@@ -14345,5 +14363,5 @@
       "updatedAt": "2026-02-27T12:33:15.811Z"
     }
   ],
-  "exportDate": "2026-02-28T08:54:49.727Z"
+  "exportDate": "2026-02-28T09:06:48.072Z"
 }
