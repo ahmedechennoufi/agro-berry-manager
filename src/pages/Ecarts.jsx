@@ -37,15 +37,27 @@ const Ecarts = () => {
     const entryQty = {};
     const consoQty = {};
 
+    // Helper to match farm
+    const matchFarm = (movFarm) => {
+      if (!movFarm || !farmId) return false;
+      return movFarm === farmId || movFarm.includes(farmId) || farmId.includes(movFarm);
+    };
+
     allMovements.forEach(m => {
       if (!m.date || m.date < monthStart || m.date > invDate) return;
+
+      // Purchases to magasin (type 'entry') = product was bought
+      if (m.type === 'entry') {
+        entries.add(m.product);
+        entryQty[m.product] = (entryQty[m.product] || 0) + (m.quantity || 0);
+      }
       // Entries to this farm = exit from magasin + transfer-in
-      if ((m.type === 'exit' || m.type === 'transfer-in') && m.farm === farmId) {
+      if ((m.type === 'exit' || m.type === 'transfer-in') && matchFarm(m.farm)) {
         entries.add(m.product);
         entryQty[m.product] = (entryQty[m.product] || 0) + (m.quantity || 0);
       }
       // Consumption
-      if (m.type === 'consumption' && m.farm === farmId) {
+      if (m.type === 'consumption' && matchFarm(m.farm)) {
         consos.add(m.product);
         consoQty[m.product] = (consoQty[m.product] || 0) + (m.quantity || 0);
       }
@@ -53,7 +65,7 @@ const Ecarts = () => {
 
     allConso.forEach(c => {
       if (!c.date || c.date < monthStart || c.date > invDate) return;
-      if (c.farm === farmId) {
+      if (matchFarm(c.farm)) {
         consos.add(c.product);
         consoQty[c.product] = (consoQty[c.product] || 0) + (c.quantity || 0);
       }
