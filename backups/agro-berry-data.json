@@ -1152,6 +1152,13 @@
       "category": "PHYTOSANITAIRES",
       "threshold": null,
       "id": 1772194526849
+    },
+    {
+      "name": "ANTISCALANT ZENTREAT",
+      "unit": "L",
+      "category": "ACIDES",
+      "threshold": 1,
+      "id": 1772376132110
     }
   ],
   "movements": [
@@ -11415,6 +11422,90 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1772375985665
+    },
+    {
+      "type": "entry",
+      "product": "ANTISCALANT ZENTREAT",
+      "quantity": 900,
+      "price": 0,
+      "supplier": "AUTRE",
+      "date": "2026-02-09",
+      "id": 1772376181614
+    },
+    {
+      "type": "exit",
+      "product": "ANTISCALANT ZENTREAT",
+      "quantity": 900,
+      "price": 0,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-09",
+      "id": 1772376215982
+    },
+    {
+      "type": "consumption",
+      "product": "ANTISCALANT ZENTREAT",
+      "quantity": 30,
+      "price": 0,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-26",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "id": 1772376305920
+    },
+    {
+      "type": "consumption",
+      "product": "OIKOS",
+      "quantity": 11.5,
+      "price": 2500,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772376422201
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772376448897
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772376496198
+    },
+    {
+      "type": "consumption",
+      "product": "LUNA FUSION",
+      "quantity": 0.96,
+      "price": 4420,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772376535812
+    },
+    {
+      "type": "consumption",
+      "product": "SWITCH",
+      "quantity": 4,
+      "price": 1800,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-26",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772376586481
     }
   ],
   "stockAB1": [
@@ -14995,5 +15086,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-01T14:41:45.676Z"
+  "exportDate": "2026-03-01T14:51:46.541Z"
 }
