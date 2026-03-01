@@ -11037,7 +11037,7 @@
       "quantity": 3,
       "price": 4420,
       "farm": "AGRO BERRY 2",
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772276202619
@@ -14632,5 +14632,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-02-28T13:22:22.038Z"
+  "exportDate": "2026-03-01T14:19:10.742Z"
 }
