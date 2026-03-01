@@ -11726,6 +11726,50 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772377944504
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772378066242
+    },
+    {
+      "type": "consumption",
+      "product": "SWITCH",
+      "quantity": 3.5,
+      "price": 1800,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772378130341
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 0.8,
+      "price": 60,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772378155193
+    },
+    {
+      "type": "consumption",
+      "product": "OIKOS",
+      "quantity": 12.5,
+      "price": 2500,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1772378220341
     }
   ],
   "stockAB1": [
@@ -15306,5 +15350,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-01T15:14:24.509Z"
+  "exportDate": "2026-03-01T15:19:00.354Z"
 }
