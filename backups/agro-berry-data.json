@@ -11787,15 +11787,6 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772378220341
-    },
-    {
-      "type": "entry",
-      "product": "TEST",
-      "quantity": 1,
-      "price": 0,
-      "supplier": "AUTRE",
-      "date": "2026-03-02",
-      "id": 1772438371370
     }
   ],
   "stockAB1": [
@@ -15376,5 +15367,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-02T08:01:31.643Z"
+  "exportDate": "2026-03-02T08:07:24.993Z"
 }
