@@ -20,7 +20,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 66; // v5.6.1 - Reset: stock 25/01/2026, clear movements
+const CURRENT_DATA_VERSION = 67; // v5.6.2 - Fix LUNA FUSIONE → LUNA FUSION
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
@@ -30,7 +30,8 @@ const migrateProductNames = () => {
     'BLACKJAK': 'BLAKJAK',
     'CODACIDE': 'CODACIDE OIL',
     'FOLIASTIM PURE': 'FOLIASTIM',
-    'MICROMIX': 'MICRO MIX'
+    'MICROMIX': 'MICRO MIX',
+    'LUNA FUSIONE': 'LUNA FUSION'
     // Add more renames here if needed
   };
   
