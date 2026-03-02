@@ -110,12 +110,12 @@ function App() {
 
   const updateMovement = (id, updates) => {
     const oldMovement = movements.find(m => m.id === id);
-    if (oldMovement && oldMovement.type === 'entry') {
+    if (oldMovement && oldMovement.type === 'entry' && store.syncEntryWithCommande) {
       store.syncEntryWithCommande(oldMovement.product, -(oldMovement.quantity || 0), oldMovement.date);
     }
     store.updateMovement(id, updates);
     const updatedMovement = store.getMovements().find(m => m.id === id);
-    if (updatedMovement && updatedMovement.type === 'entry') {
+    if (updatedMovement && updatedMovement.type === 'entry' && store.syncEntryWithCommande) {
       store.syncEntryWithCommande(updatedMovement.product, updatedMovement.quantity || 0, updatedMovement.date);
     }
     setMovements(store.getMovements());
