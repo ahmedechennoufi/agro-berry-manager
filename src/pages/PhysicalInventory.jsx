@@ -189,6 +189,17 @@ const PhysicalInventory = () => {
     });
   };
 
+  // Remove a product from physical stock (clear its physical value)
+  const handleRemoveProduct = (productName) => {
+    setPhysicalStock(prev => {
+      const next = { ...prev };
+      delete next[productName];
+      return next;
+    });
+    // Also remove from extra products if it was added
+    setExtraProducts(prev => prev.filter(n => n !== productName));
+  };
+
   // Load a saved inventory for editing
   const handleEditInventory = (inv) => {
     setSelectedFarm(inv.farm);
@@ -531,12 +542,6 @@ const PhysicalInventory = () => {
                     className="px-4 py-2.5 bg-red-100 hover:bg-red-200 text-red-600 rounded-xl font-medium transition-colors text-sm">
                     🗑️ Réinitialiser
                   </button>
-                  {editingInventoryId && (
-                    <button onClick={() => setShowDeleteConfirm(editingInventoryId)}
-                      className="px-4 py-2.5 bg-red-500 hover:bg-red-600 text-white rounded-xl font-medium transition-colors text-sm shadow-lg">
-                      🗑️ Supprimer cet inventaire
-                    </button>
-                  )}
                 </div>
               )}
 
@@ -580,6 +585,7 @@ const PhysicalInventory = () => {
                           <th className="text-center p-4 font-semibold text-gray-700">ÉCART</th>
                           <th className="text-right p-4 font-semibold text-gray-500">VALEUR ÉCART</th>
                           <th className="text-center p-4 font-semibold text-gray-500">STATUT</th>
+                          <th className="text-center p-4 font-semibold text-gray-400 w-12"></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -621,6 +627,15 @@ const PhysicalInventory = () => {
                               item.diffValue === null ? 'text-gray-400' : item.diffValue < 0 ? 'text-red-600' : item.diffValue > 0 ? 'text-blue-600' : 'text-green-600'
                             }`}>{item.diffValue === null ? '—' : fmtMoney(item.diffValue)}</td>
                             <td className="p-4 text-center">{getStatusBadge(item.status, item.diff, item.diffPercent)}</td>
+                            <td className="p-2 text-center">
+                              {item.hasPhysical && (
+                                <button onClick={() => handleRemoveProduct(item.name)}
+                                  className="w-8 h-8 rounded-lg bg-red-50 hover:bg-red-100 text-red-400 hover:text-red-600 transition-colors flex items-center justify-center mx-auto"
+                                  title="Supprimer ce produit">
+                                  ✕
+                                </button>
+                              )}
+                            </td>
                           </tr>
                         ))}
                       </tbody>
