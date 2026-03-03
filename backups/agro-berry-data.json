@@ -13268,6 +13268,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1772534970580
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-25",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772542410743
     }
   ],
   "stockAB1": [
@@ -16894,5 +16905,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-03T10:51:30.585Z"
+  "exportDate": "2026-03-03T12:55:30.751Z"
 }
