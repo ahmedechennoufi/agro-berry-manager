@@ -1133,13 +1133,6 @@
       "id": 1772178705916
     },
     {
-      "name": "NITROMAG",
-      "unit": "KG",
-      "category": "ENGRAIS",
-      "threshold": null,
-      "id": 1772185814293
-    },
-    {
       "name": "PEROXYDE D'HYDROGENE",
       "unit": "KG",
       "category": "PHYTOSANITAIRES",
@@ -15247,5 +15240,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-03T07:33:11.060Z"
+  "exportDate": "2026-03-03T07:35:08.759Z"
 }
