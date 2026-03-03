@@ -13235,6 +13235,39 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1772534366996
+    },
+    {
+      "type": "consumption",
+      "product": "KELPAK",
+      "quantity": 7.5,
+      "price": 115,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534906784
+    },
+    {
+      "type": "consumption",
+      "product": "CODACIDE OIL",
+      "quantity": 5,
+      "price": 82.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534948264
+    },
+    {
+      "type": "consumption",
+      "product": "SCELTA",
+      "quantity": 5,
+      "price": 1190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534970580
     }
   ],
   "stockAB1": [
@@ -16861,5 +16894,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-03T10:41:27.000Z"
+  "exportDate": "2026-03-03T10:51:30.585Z"
 }
