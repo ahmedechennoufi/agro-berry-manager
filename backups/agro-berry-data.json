@@ -13400,6 +13400,42 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1772546242002
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE MAGNESIUM",
+      "quantity": 300,
+      "price": 6.9,
+      "supplier": "CAS",
+      "date": "2026-03-03",
+      "id": 1772546579186
+    },
+    {
+      "type": "entry",
+      "product": "AMMONITRATE",
+      "quantity": 300,
+      "price": 4.9,
+      "supplier": "CAS",
+      "date": "2026-03-03",
+      "id": 1772546614769
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE MAGNESIUM",
+      "quantity": 300,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-03",
+      "id": 1772546625905
+    },
+    {
+      "type": "exit",
+      "product": "AMMONITRATE",
+      "quantity": 300,
+      "price": 4.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-03",
+      "id": 1772546636370
     }
   ],
   "stockAB1": [
@@ -17026,5 +17062,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-03T13:59:22.007Z"
+  "exportDate": "2026-03-03T14:05:56.374Z"
 }
