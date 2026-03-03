@@ -12847,6 +12847,383 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1772532390261
+    },
+    {
+      "type": "entry",
+      "product": "ISABION",
+      "quantity": 20,
+      "price": 128,
+      "supplier": "CASEM",
+      "date": "2026-03-02",
+      "id": 1772532555768
+    },
+    {
+      "type": "entry",
+      "product": "SCELTA",
+      "quantity": 15,
+      "price": 1190,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-02",
+      "id": 1772532613901
+    },
+    {
+      "type": "exit",
+      "product": "SCELTA",
+      "quantity": 15,
+      "price": 1190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-02",
+      "id": 1772532628953
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 20,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-02",
+      "id": 1772532659586
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-25",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772532774721
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772532826532
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 35,
+      "price": 7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772532944154
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533019151
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 35,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533077348
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 50,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533185748
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533202381
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.5,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533292241
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533314481
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533361348
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 5.7,
+      "price": 208.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533390265
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 5,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772533407565
+    },
+    {
+      "type": "consumption",
+      "product": "MILBEKNOCK",
+      "quantity": 4.8,
+      "price": 624,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533460799
+    },
+    {
+      "type": "consumption",
+      "product": "NOVATEC RED 8-10-34",
+      "quantity": 6,
+      "price": 19.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533541450
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 8,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533580683
+    },
+    {
+      "type": "consumption",
+      "product": "KELPAK",
+      "quantity": 6,
+      "price": 115,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533616261
+    },
+    {
+      "type": "consumption",
+      "product": "CODACIDE OIL",
+      "quantity": 4,
+      "price": 82.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533647859
+    },
+    {
+      "type": "consumption",
+      "product": "SCELTA",
+      "quantity": 4,
+      "price": 1190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533665763
+    },
+    {
+      "type": "consumption",
+      "product": "QUEL B",
+      "quantity": 16,
+      "price": 50,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-26",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533721640
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 96,
+      "price": 4.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-27",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533821364
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-27",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533845293
+    },
+    {
+      "type": "consumption",
+      "product": "ROMBI SAL",
+      "quantity": 40,
+      "price": 26.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-27",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533882579
+    },
+    {
+      "type": "consumption",
+      "product": "BASTION",
+      "quantity": 12,
+      "price": 100,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-27",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533945798
+    },
+    {
+      "type": "consumption",
+      "product": "ZM CORRECTOR",
+      "quantity": 12,
+      "price": 76,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-27",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772533984775
+    },
+    {
+      "type": "consumption",
+      "product": "SOUFRE",
+      "quantity": 50,
+      "price": 9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-27",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534021497
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 152,
+      "price": 5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534057347
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534077664
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534129028
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE NITRIQUE",
+      "quantity": 33,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534146014
+    },
+    {
+      "type": "consumption",
+      "product": "MILBEKNOCK",
+      "quantity": 6,
+      "price": 624,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534170614
+    },
+    {
+      "type": "consumption",
+      "product": "NOVATEC RED 8-10-34",
+      "quantity": 7.5,
+      "price": 19.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534201413
     }
   ],
   "stockAB1": [
@@ -16473,5 +16850,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-03T10:08:30.264Z"
+  "exportDate": "2026-03-03T10:38:41.418Z"
 }
