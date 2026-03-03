@@ -273,6 +273,11 @@ const PhysicalInventory = () => {
     triggerAutoBackup();
     setShowDeleteConfirm(null);
     if (viewingInventory?.id === id) setViewingInventory(null);
+    if (editingInventoryId === id) {
+      setEditingInventoryId(null);
+      setPhysicalStock({});
+      setExtraProducts([]);
+    }
   };
 
   const handleExportExcel = async () => {
@@ -526,6 +531,12 @@ const PhysicalInventory = () => {
                     className="px-4 py-2.5 bg-red-100 hover:bg-red-200 text-red-600 rounded-xl font-medium transition-colors text-sm">
                     🗑️ Réinitialiser
                   </button>
+                  {editingInventoryId && (
+                    <button onClick={() => setShowDeleteConfirm(editingInventoryId)}
+                      className="px-4 py-2.5 bg-red-500 hover:bg-red-600 text-white rounded-xl font-medium transition-colors text-sm shadow-lg">
+                      🗑️ Supprimer cet inventaire
+                    </button>
+                  )}
                 </div>
               )}
 
