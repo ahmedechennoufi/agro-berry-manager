@@ -479,92 +479,38 @@ export const calculateFarmStock = (farmId) => {
   const movements = getMovements();
   const stockMap = {};
   
-  // Chercher le dernier inventaire physique pour cette ferme
-  const physicalInventories = getPhysicalInventories();
-  const farmInventories = physicalInventories
-    .filter(inv => inv.farm === farmId && inv.data)
-    .sort((a, b) => b.date.localeCompare(a.date)); // Plus récent en premier
+  // === MODE CLASSIQUE — tous les mouvements ===
+  const initialStock = getInitialStock(farmId);
   
-  const latestInventory = farmInventories[0] || null;
+  // Stock initial
+  initialStock.forEach(s => {
+    stockMap[s.product] = { quantity: s.quantity || 0, price: s.price || 0, hasMovements: true };
+  });
   
-  if (latestInventory) {
-    // === MODE INVENTAIRE PHYSIQUE ===
-    // Utiliser le stock physique comme base de départ
-    Object.entries(latestInventory.data).forEach(([product, qty]) => {
-      const quantity = parseFloat(qty) || 0;
-      if (quantity > 0 || qty !== '') {
-        const price = getAveragePrice(product) || 0;
-        stockMap[product] = { quantity, price, hasMovements: true };
-      }
-    });
+  // Tous les mouvements
+  movements.forEach(m => {
+    const product = m.product;
+    if (!product) return;
+    if (!stockMap[product]) stockMap[product] = { quantity: 0, price: m.price || 0, hasMovements: false };
     
-    // Ajouter seulement les mouvements APRÈS la date de l'inventaire
-    const inventoryDate = latestInventory.date; // format YYYY-MM-DD
-    
-    movements.forEach(m => {
-      const product = m.product;
-      if (!product) return;
-      // Ne prendre que les mouvements après la date de l'inventaire physique
-      if (!m.date || m.date <= inventoryDate) return;
-      
-      if (!stockMap[product]) stockMap[product] = { quantity: 0, price: m.price || 0, hasMovements: false };
-      
-      // Entrées (sorties du magasin vers cette ferme)
-      if (m.type === 'exit' && m.farm === farmId) {
-        stockMap[product].quantity += m.quantity || 0;
-        stockMap[product].hasMovements = true;
-        if (m.price) stockMap[product].price = m.price;
-      }
-      // Transferts entrants
-      if (m.type === 'transfer-in' && m.farm === farmId) {
-        stockMap[product].quantity += m.quantity || 0;
-        stockMap[product].hasMovements = true;
-      }
-      // Transferts sortants
-      if (m.type === 'transfer-out' && m.farm === farmId) {
-        stockMap[product].quantity -= m.quantity || 0;
-        stockMap[product].hasMovements = true;
-      }
-      // Consommations
-      if (m.type === 'consumption' && m.farm === farmId) {
-        stockMap[product].quantity -= m.quantity || 0;
-        stockMap[product].hasMovements = true;
-      }
-    });
-  } else {
-    // === MODE CLASSIQUE (pas d'inventaire physique) ===
-    const initialStock = getInitialStock(farmId);
-    
-    // Stock initial
-    initialStock.forEach(s => {
-      stockMap[s.product] = { quantity: s.quantity || 0, price: s.price || 0, hasMovements: true };
-    });
-    
-    // Tous les mouvements
-    movements.forEach(m => {
-      const product = m.product;
-      if (!product) return;
-      if (!stockMap[product]) stockMap[product] = { quantity: 0, price: m.price || 0, hasMovements: false };
-      
-      if (m.type === 'exit' && m.farm === farmId) {
-        stockMap[product].quantity += m.quantity || 0;
-        stockMap[product].hasMovements = true;
-        if (m.price) stockMap[product].price = m.price;
-      }
-      if (m.type === 'transfer-in' && m.farm === farmId) {
-        stockMap[product].quantity += m.quantity || 0;
-        stockMap[product].hasMovements = true;
-      }
-      if (m.type === 'transfer-out' && m.farm === farmId) {
-        stockMap[product].quantity -= m.quantity || 0;
-        stockMap[product].hasMovements = true;
-      }
-      if (m.type === 'consumption' && m.farm === farmId) {
-        stockMap[product].quantity -= m.quantity || 0;
-        stockMap[product].hasMovements = true;
-      }
-    });
-  }
+    if (m.type === 'exit' && m.farm === farmId) {
+      stockMap[product].quantity += m.quantity || 0;
+      stockMap[product].hasMovements = true;
+      if (m.price) stockMap[product].price = m.price;
+    }
+    if (m.type === 'transfer-in' && m.farm === farmId) {
+      stockMap[product].quantity += m.quantity || 0;
+      stockMap[product].hasMovements = true;
+    }
+    if (m.type === 'transfer-out' && m.farm === farmId) {
+      stockMap[product].quantity -= m.quantity || 0;
+      stockMap[product].hasMovements = true;
+    }
+    if (m.type === 'consumption' && m.farm === farmId) {
+      stockMap[product].quantity -= m.quantity || 0;
+      stockMap[product].hasMovements = true;
+    }
+  });
   
   return stockMap;
 };
