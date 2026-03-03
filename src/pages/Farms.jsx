@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Card, Button, Input, Select, StatCard, EmptyState, Badge } from '../components/UI';
 import { FARMS, CATEGORIES } from '../lib/constants';
 import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
-import { calculateFarmStock, getAveragePrice, getDefaultThreshold, getProducts, getLatestPhysicalInventoryForFarm } from '../lib/store';
+import { calculateFarmStock, getAveragePrice, getDefaultThreshold, getProducts } from '../lib/store';
 
 const Farms = () => {
   const [selectedFarm, setSelectedFarm] = useState(null);
@@ -236,24 +236,15 @@ const Farms = () => {
         </div>
       </div>
 
-      {/* Référence inventaire physique */}
-      {(() => {
-        const refInventory = getLatestPhysicalInventoryForFarm(selectedFarm.id);
-        if (refInventory) {
-          return (
-            <Card className="p-3 border-l-4 border-green-500 bg-green-50/50">
-              <div className="flex items-center gap-2 text-sm">
-                <span className="text-lg">📋</span>
-                <span className="text-green-800 font-medium">
-                  Stock basé sur l'inventaire physique du {refInventory.date.split('-').reverse().join('/')}
-                </span>
-                <span className="text-green-600">+ mouvements depuis cette date</span>
-              </div>
-            </Card>
-          );
-        }
-        return null;
-      })()}
+      {/* Info stock */}
+      <Card className="p-3 border-l-4 border-blue-500 bg-blue-50/50">
+        <div className="flex items-center gap-2 text-sm">
+          <span className="text-lg">📊</span>
+          <span className="text-blue-800 font-medium">
+            Stock théorique calculé depuis tous les mouvements (entrées, sorties, consommations, transferts)
+          </span>
+        </div>
+      </Card>
 
       {/* Filter Tabs */}
       <div className="flex flex-wrap gap-2">
