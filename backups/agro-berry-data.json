@@ -13279,6 +13279,61 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1772542410743
+    },
+    {
+      "type": "consumption",
+      "product": "ALGOBAZ",
+      "quantity": 20,
+      "price": 208.34,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-25",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772544214309
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 100,
+      "price": 7.11,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772544320874
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772544335391
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 75,
+      "price": 7,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772544358907
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 40,
+      "price": 4.5,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772544378458
     }
   ],
   "stockAB1": [
@@ -16905,5 +16960,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-03T12:55:30.751Z"
+  "exportDate": "2026-03-03T13:28:18.462Z"
 }
