@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useApp } from '../App';
 import { Card, Select, Input, EmptyState } from '../components/UI';
 import { fmt, fmtMoney, downloadStyledInventoryExcel } from '../lib/utils';
-import { getMovements, getProducts, getAveragePrice } from '../lib/store';
+import { getMovements, getProducts, getAveragePrice, getPhysicalInventories } from '../lib/store';
 import stockHistoryData from '../lib/stockHistory.json';
 
 // Months for the season (Sept 2025 - Aug 2026)
@@ -29,7 +29,7 @@ const Inventory = () => {
   const selectedMonthInfo = SEASON_MONTHS.find(m => m.id === selectedMonth);
   const inventoryDate = selectedMonthInfo?.date || '2025-12-25';
 
-  // Get stock data - from imported history OR calculated
+  // Get stock data - from physical inventory OR imported history OR calculated
   const stockData = useMemo(() => {
     // Filter function
     const filterProduct = (p) => {
@@ -42,6 +42,92 @@ const Inventory = () => {
       return hasStock && matchSearch && matchFarm;
     };
     
+    // Check for physical inventories for this month
+    const physInvs = getPhysicalInventories();
+    const monthYM = inventoryDate.substring(0, 7); // YYYY-MM
+    const farmMapping = {
+      'AGRO BERRY 1': 'AB1',
+      'AGRO BERRY 2': 'AB2', 
+      'AGRO BERRY 3': 'AB3'
+    };
+    
+    // Group physical inventories by farm for this month (keep latest per farm)
+    const physByFarm = {};
+    physInvs.forEach(inv => {
+      if (!inv.date || !inv.data || !inv.farm) return;
+      const invYM = inv.date.substring(0, 7);
+      if (invYM !== monthYM) return;
+      const farmKey = farmMapping[inv.farm];
+      if (!farmKey) return;
+      if (!physByFarm[farmKey] || inv.date >= (physByFarm[farmKey].date || '')) {
+        physByFarm[farmKey] = inv;
+      }
+    });
+    
+    const physFarms = Object.keys(physByFarm); // e.g. ['AB1', 'AB2', 'AB3']
+    const hasPhysical = physFarms.length > 0;
+    
+    if (hasPhysical) {
+      // === USE PHYSICAL INVENTORY DATA ===
+      const productMap = {};
+      const allProducts = getProducts();
+      
+      // For farms WITH physical inventory, use that data
+      physFarms.forEach(farmKey => {
+        const inv = physByFarm[farmKey];
+        if (!inv.data) return;
+        Object.entries(inv.data).forEach(([product, qty]) => {
+          const quantity = parseFloat(qty) || 0;
+          if (quantity > 0) {
+            if (!productMap[product]) {
+              const pInfo = allProducts.find(p => p.name === product);
+              productMap[product] = {
+                name: product,
+                unit: pInfo?.unit || 'KG',
+                price: getAveragePrice(product) || 0,
+                AB1: 0, AB2: 0, AB3: 0
+              };
+            }
+            productMap[product][farmKey] = quantity;
+          }
+        });
+      });
+      
+      // For farms WITHOUT physical inventory, use calculated data (from history or movements)
+      const farmsWithoutPhys = ['AB1', 'AB2', 'AB3'].filter(f => !physFarms.includes(f));
+      if (farmsWithoutPhys.length > 0) {
+        const hasImported = stockHistoryData[selectedMonth] !== undefined;
+        if (hasImported) {
+          const monthData = stockHistoryData[selectedMonth];
+          farmsWithoutPhys.forEach(farm => {
+            (monthData[farm] || []).forEach(item => {
+              if (!productMap[item.product]) {
+                productMap[item.product] = {
+                  name: item.product,
+                  unit: item.unit || 'KG',
+                  price: item.price || getAveragePrice(item.product) || 0,
+                  AB1: 0, AB2: 0, AB3: 0
+                };
+              }
+              productMap[item.product][farm] = item.quantity || 0;
+            });
+          });
+        }
+        // Could also calculate from movements for missing farms, but physical inventory
+        // should be done per farm, so this is a fallback
+      }
+      
+      return Object.values(productMap)
+        .map(p => ({
+          ...p,
+          total: p.AB1 + p.AB2 + p.AB3,
+          value: (p.AB1 + p.AB2 + p.AB3) * p.price
+        }))
+        .filter(p => filterProduct(p))
+        .sort((a, b) => b.value - a.value);
+    }
+    
+    // === FALLBACK: imported data or calculated ===
     const hasImportedData = stockHistoryData[selectedMonth] !== undefined;
     
     if (hasImportedData) {
@@ -180,6 +266,29 @@ const Inventory = () => {
 
   // Check data source
   const hasImportedData = stockHistoryData[selectedMonth] !== undefined;
+  
+  // Check if physical inventory exists for this month
+  const physicalInfo = useMemo(() => {
+    const physInvs = getPhysicalInventories();
+    const monthYM = inventoryDate.substring(0, 7);
+    const farmMapping = {
+      'AGRO BERRY 1': 'AB1',
+      'AGRO BERRY 2': 'AB2',
+      'AGRO BERRY 3': 'AB3'
+    };
+    const farms = [];
+    const dates = [];
+    physInvs.forEach(inv => {
+      if (!inv.date || !inv.data || !inv.farm) return;
+      if (inv.date.substring(0, 7) !== monthYM) return;
+      const fk = farmMapping[inv.farm];
+      if (fk && !farms.includes(fk)) {
+        farms.push(fk);
+        dates.push(inv.date);
+      }
+    });
+    return { hasPhysical: farms.length > 0, farms, latestDate: dates.sort().pop() || inventoryDate };
+  }, [inventoryDate, movements]);
 
   // Handle month click - show export modal
   const handleMonthClick = (monthInfo) => {
@@ -242,6 +351,12 @@ const Inventory = () => {
           const canCalculate = monthIdx > 0;
           const isAvailable = hasData || canCalculate;
           
+          // Check if this month has physical inventory
+          const mYM = m.date.substring(0, 7);
+          const hasPhysForMonth = getPhysicalInventories().some(inv => 
+            inv.date && inv.date.substring(0, 7) === mYM && inv.data
+          );
+          
           return (
             <button
               key={m.id}
@@ -256,6 +371,9 @@ const Inventory = () => {
             >
               <div className="text-sm font-bold">{m.name.toUpperCase()}</div>
               <div className="text-xs opacity-75">{m.date.split('-').reverse().join('/')}</div>
+              {hasPhysForMonth && (
+                <div className={`text-xs mt-1 ${selectedMonth === m.id ? 'text-green-100' : 'text-green-600'}`}>📋 Physique</div>
+              )}
             </button>
           );
         })}
@@ -277,8 +395,14 @@ const Inventory = () => {
         </Card>
         <Card className="p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200">
           <p className="text-yellow-600 text-sm font-medium flex items-center gap-2">📅 Date Inventaire</p>
-          <p className="text-2xl font-bold text-yellow-700">{inventoryDate.split('-').reverse().join('/')}</p>
-          {!hasImportedData && <p className="text-xs text-yellow-600 mt-1">Calculé</p>}
+          <p className="text-2xl font-bold text-yellow-700">
+            {physicalInfo.hasPhysical ? physicalInfo.latestDate.split('-').reverse().join('/') : inventoryDate.split('-').reverse().join('/')}
+          </p>
+          {physicalInfo.hasPhysical ? (
+            <p className="text-xs text-green-600 font-semibold mt-1">📋 Inventaire Physique</p>
+          ) : !hasImportedData ? (
+            <p className="text-xs text-yellow-600 mt-1">Calculé</p>
+          ) : null}
         </Card>
       </div>
 
@@ -306,12 +430,20 @@ const Inventory = () => {
       {/* Stock Table */}
       <Card className="overflow-hidden p-0">
         <div className="p-4 border-b bg-gray-50 flex items-center justify-between">
-          <span className="text-gray-700 font-medium">{stockData.length} produits</span>
-          {!hasImportedData && (
-            <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">
-              📊 Calculé depuis Décembre + mouvements
-            </span>
-          )}
+          <div className="flex items-center gap-3">
+            <span className="text-gray-700 font-medium">{stockData.length} produits</span>
+            {physicalInfo.hasPhysical && (
+              <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">
+                📋 Inventaire Physique
+                {physicalInfo.farms.length < 3 && ` (${physicalInfo.farms.join(', ')})`}
+              </span>
+            )}
+            {!physicalInfo.hasPhysical && !hasImportedData && (
+              <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">
+                📊 Calculé depuis mouvements
+              </span>
+            )}
+          </div>
         </div>
         
         {stockData.length === 0 ? (

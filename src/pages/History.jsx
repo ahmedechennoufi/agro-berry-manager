@@ -3,7 +3,7 @@ import { useApp } from '../App';
 import { Card, Button, Select, Input, Badge, EmptyState } from '../components/UI';
 import { FARMS } from '../lib/constants';
 import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
-import { calculateFarmStock } from '../lib/store';
+import { calculateFarmStock, getPhysicalInventories, getAveragePrice } from '../lib/store';
 import stockHistoryData from '../lib/stockHistory.json';
 
 const STORAGE_KEY = 'agro_stock_history_v1';
@@ -65,7 +65,56 @@ const History = () => {
     }
   }, []);
 
-  // Calculate current stock (January)
+  // Build month data from physical inventories
+  const physicalInventoryMonths = useMemo(() => {
+    const physInvs = getPhysicalInventories();
+    if (!physInvs.length) return {};
+    
+    // Group physical inventories by month (YYYY-MM)
+    const byMonth = {};
+    physInvs.forEach(inv => {
+      if (!inv.date || !inv.data || !inv.farm) return;
+      const ym = inv.date.substring(0, 7); // YYYY-MM
+      if (!byMonth[ym]) byMonth[ym] = {};
+      
+      // Map farm to AB key
+      const farmKey = inv.farm === 'AGRO BERRY 1' ? 'AB1' 
+        : inv.farm === 'AGRO BERRY 2' ? 'AB2' 
+        : inv.farm === 'AGRO BERRY 3' ? 'AB3' : null;
+      if (!farmKey) return;
+      
+      // Keep the latest inventory per farm per month
+      if (!byMonth[ym][farmKey] || inv.date >= (byMonth[ym][farmKey].date || '')) {
+        byMonth[ym][farmKey] = inv;
+      }
+    });
+    
+    // Build month data for months that have at least one farm inventory
+    const result = {};
+    Object.entries(byMonth).forEach(([ym, farms]) => {
+      const monthData = { AB1: [], AB2: [], AB3: [], isPhysical: true, physicalFarms: [] };
+      
+      ['AB1', 'AB2', 'AB3'].forEach(farmKey => {
+        const inv = farms[farmKey];
+        if (inv && inv.data) {
+          monthData.physicalFarms.push(farmKey);
+          Object.entries(inv.data).forEach(([product, qty]) => {
+            const quantity = parseFloat(qty) || 0;
+            if (quantity > 0) {
+              const price = getAveragePrice(product) || 0;
+              monthData[farmKey].push({ product, quantity, price });
+            }
+          });
+        }
+      });
+      
+      result[ym] = monthData;
+    });
+    
+    return result;
+  }, [movements]); // recalc when movements change (which triggers re-render)
+
+  // Calculate current stock (using calculateFarmStock which already uses physical inventory as base)
   const currentStock = useMemo(() => {
     const ab1 = calculateFarmStock('AGRO BERRY 1');
     const ab2 = calculateFarmStock('AGRO BERRY 2');
@@ -91,7 +140,7 @@ const History = () => {
     };
   }, [movements]);
 
-  // All months including calculated January
+  // All months including calculated January, with physical inventory overlay
   const allMonths = useMemo(() => {
     const months = [...history];
     
@@ -100,8 +149,24 @@ const History = () => {
       months.push(currentStock);
     }
     
+    // Overlay physical inventory data on matching months
+    months.forEach((m, idx) => {
+      if (!m.date) return;
+      const ym = m.date.substring(0, 7); // YYYY-MM
+      const physData = physicalInventoryMonths[ym];
+      if (physData && physData.physicalFarms.length > 0) {
+        // Replace farm data with physical inventory where available
+        const updated = { ...m, isPhysical: true, physicalFarms: [...physData.physicalFarms] };
+        physData.physicalFarms.forEach(farmKey => {
+          updated[farmKey] = physData[farmKey];
+        });
+        // For farms without physical inventory, keep the original data
+        months[idx] = updated;
+      }
+    });
+    
     return months.sort((a, b) => a.date.localeCompare(b.date));
-  }, [history, currentStock]);
+  }, [history, currentStock, physicalInventoryMonths]);
 
   // Get selected month data
   const selectedData = useMemo(() => {
@@ -307,7 +372,8 @@ const History = () => {
           >
             <div className="text-lg font-bold uppercase">{m.month}</div>
             <div className="text-sm opacity-70">{formatDate(m.date)}</div>
-            {m.isCalculated && <span className="text-xs">⚡ Calculé</span>}
+            {m.isPhysical && <span className="text-xs">📋 Physique</span>}
+            {m.isCalculated && !m.isPhysical && <span className="text-xs">⚡ Calculé</span>}
           </button>
         ))}
       </div>
@@ -330,6 +396,12 @@ const History = () => {
           <Card className="bg-gradient-to-br from-amber-50 to-amber-100">
             <p className="text-xs text-amber-600 font-medium mb-1">📅 Date Inventaire</p>
             <p className="text-2xl font-bold text-amber-700">{formatDate(stats.date)}</p>
+            {selectedData?.isPhysical && (
+              <p className="text-xs text-green-600 font-semibold mt-1">📋 Physique</p>
+            )}
+            {selectedData?.isCalculated && !selectedData?.isPhysical && (
+              <p className="text-xs text-amber-600 mt-1">Calculé</p>
+            )}
           </Card>
         </div>
       )}
@@ -360,7 +432,22 @@ const History = () => {
       <Card className="overflow-hidden p-0">
         {/* Table Header with Export Button */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
-          <span className="text-gray-700 font-medium">{displayProducts.length} produits</span>
+          <div className="flex items-center gap-3">
+            <span className="text-gray-700 font-medium">{displayProducts.length} produits</span>
+            {selectedData?.isPhysical && (
+              <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                📋 Inventaire Physique
+                {selectedData.physicalFarms && selectedData.physicalFarms.length < 3 && (
+                  <> ({selectedData.physicalFarms.join(', ')})</>
+                )}
+              </span>
+            )}
+            {selectedData?.isCalculated && !selectedData?.isPhysical && (
+              <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold">
+                📊 Calculé depuis mouvements
+              </span>
+            )}
+          </div>
           <button 
             onClick={handleExport} 
             className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow flex items-center gap-2"
