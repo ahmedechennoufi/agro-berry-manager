@@ -13224,6 +13224,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1772534201413
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 10,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-02-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772534366996
     }
   ],
   "stockAB1": [
@@ -16850,5 +16861,5 @@
       "updatedAt": "2026-02-28T09:28:59.114Z"
     }
   ],
-  "exportDate": "2026-03-03T10:38:41.418Z"
+  "exportDate": "2026-03-03T10:41:27.000Z"
 }
