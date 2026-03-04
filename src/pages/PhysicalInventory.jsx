@@ -19,7 +19,13 @@ const PhysicalInventory = () => {
     } catch { return {}; }
   });
   const [inventoryDate, setInventoryDate] = useState(() => {
-    return localStorage.getItem('physical_inventory_date') || new Date().toISOString().split('T')[0];
+    const saved = localStorage.getItem('physical_inventory_date');
+    if (saved) return saved;
+    // Default to the 25th of current month
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    return `${y}-${m}-25`;
   });
   const [filterDiff, setFilterDiff] = useState('ALL');
   const [savedInventories, setSavedInventories] = useState(getPhysicalInventories());
@@ -52,6 +58,22 @@ const PhysicalInventory = () => {
   useEffect(() => {
     localStorage.setItem('physical_inventory_date', inventoryDate);
   }, [inventoryDate]);
+
+  // Check if date is the 25th (monthly reference day)
+  const is25th = inventoryDate && inventoryDate.endsWith('-25');
+
+  // Get which inventory is the active reference for each farm
+  const activeReferences = useMemo(() => {
+    const refs = {};
+    const allInvs = getPhysicalInventories();
+    FARMS.forEach(farm => {
+      const farmInvs = allInvs
+        .filter(inv => inv.farm === farm.id && inv.data)
+        .sort((a, b) => b.date.localeCompare(a.date));
+      if (farmInvs[0]) refs[farm.id] = farmInvs[0].id;
+    });
+    return refs;
+  }, [savedInventories]);
 
   // Calculate theoretical stock for selected farm
   const theoreticalStock = useMemo(() => {
@@ -248,7 +270,10 @@ const PhysicalInventory = () => {
         farm: selectedFarm, farmName, date: inventoryDate,
         data: physicalStock, comparison: comparisonResults, stats: { ...stats }
       });
-      alert(`✅ Inventaire sauvegardé pour ${farmName} (${inventoryDate}) et synchronisé avec GitHub !`);
+      const msg25 = inventoryDate.endsWith('-25')
+        ? `\n\n📌 Ce stock physique est maintenant le stock de référence pour ${farmName} — il sera utilisé comme base du mois prochain.`
+        : '';
+      alert(`✅ Inventaire sauvegardé pour ${farmName} (${inventoryDate}) !${msg25}`);
     }
 
     setSavedInventories(getPhysicalInventories());
@@ -338,6 +363,16 @@ const PhysicalInventory = () => {
                   <h3 className="font-bold text-gray-800">{inv.farmName}</h3>
                   <p className="text-sm text-gray-500">📅 {inv.date.split('-').reverse().join('/')} — {inv.stats?.entered || 0} produits</p>
                 </div>
+                {activeReferences[inv.farm] === inv.id && (
+                  <span className="px-2 py-1 rounded-lg bg-purple-100 text-purple-700 text-xs font-bold flex items-center gap-1">
+                    📌 Référence active
+                  </span>
+                )}
+                {inv.date && inv.date.endsWith('-25') && (
+                  <span className="px-2 py-1 rounded-lg bg-indigo-100 text-indigo-700 text-xs font-bold">
+                    🗓️ Clôture 25
+                  </span>
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <button onClick={() => handleEditInventory(inv)}
@@ -483,6 +518,26 @@ const PhysicalInventory = () => {
             <Card className="p-12"><EmptyState icon="🏭" message="Sélectionnez une ferme pour commencer l'inventaire" /></Card>
           ) : (
             <>
+              {/* Monthly Reference Banner */}
+              {is25th ? (
+                <div className="p-4 bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl flex items-start gap-3">
+                  <span className="text-2xl">📌</span>
+                  <div>
+                    <h3 className="font-bold text-purple-800">Inventaire de clôture mensuelle — 25 du mois</h3>
+                    <p className="text-purple-600 text-sm mt-0.5">
+                      Le <strong>stock physique sauvegardé aujourd'hui</strong> deviendra le <strong>stock de départ du mois prochain</strong>. 
+                      Tous les calculs futurs partiront de ces quantités réelles.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl flex items-center gap-3">
+                  <span className="text-lg">💡</span>
+                  <p className="text-amber-700 text-sm">
+                    Pour un <strong>inventaire de clôture mensuelle</strong>, choisissez le <strong>25 du mois</strong> — il deviendra le stock de référence du mois suivant.
+                  </p>
+                </div>
+              )}
               {/* Stats */}
               <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
                 <Card className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
