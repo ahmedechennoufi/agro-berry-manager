@@ -1204,6 +1204,13 @@
       "category": "AUTRES",
       "threshold": null,
       "id": 1772712157250
+    },
+    {
+      "name": "CRYPTSURE",
+      "unit": "UNITÉ",
+      "category": "AUTRES",
+      "threshold": null,
+      "id": 1772712658049
     }
   ],
   "movements": [
@@ -13666,6 +13673,24 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-03-04",
       "id": 1772712385972
+    },
+    {
+      "type": "entry",
+      "product": "CRYPTSURE",
+      "quantity": 1,
+      "price": 0,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-03-04",
+      "id": 1772712698919
+    },
+    {
+      "type": "exit",
+      "product": "CRYPTSURE",
+      "quantity": 1,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-04",
+      "id": 1772712716303
     }
   ],
   "stockAB1": [
@@ -16019,5 +16044,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-05T12:08:25.982Z"
+  "exportDate": "2026-03-05T12:13:56.311Z"
 }
