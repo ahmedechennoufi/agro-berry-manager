@@ -14758,6 +14758,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1772796003389
+    },
+    {
+      "type": "consumption",
+      "product": "NOVATEC RED 8-10-34",
+      "quantity": 11.5,
+      "price": 19.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-03",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772801569150
     }
   ],
   "stockAB1": [
@@ -17111,5 +17122,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-06T12:31:12.291Z"
+  "exportDate": "2026-03-06T12:54:49.157Z"
 }
