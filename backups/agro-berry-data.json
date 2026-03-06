@@ -14604,6 +14604,50 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1772794892954
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 66,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772795061406
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772795144057
+    },
+    {
+      "type": "consumption",
+      "product": "AMMONITRATE",
+      "quantity": 35,
+      "price": 4.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772795186239
+    },
+    {
+      "type": "consumption",
+      "product": "BASSO",
+      "quantity": 48,
+      "price": 15,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772795251108
     }
   ],
   "stockAB1": [
@@ -16957,5 +17001,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-06T11:03:32.961Z"
+  "exportDate": "2026-03-06T11:09:31.112Z"
 }
