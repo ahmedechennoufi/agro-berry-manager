@@ -122,17 +122,23 @@ const History = () => {
     
     const formatStock = (stock) => {
       return Object.entries(stock)
-        .filter(([_, data]) => data.quantity > 0)
         .map(([product, data]) => ({
           product,
           quantity: data.quantity,
           price: data.price || 0
         }));
     };
+
+    // Use the 25th of the CURRENT month dynamically (not hardcoded January)
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const currentDate = `${y}-${m}-25`;
+    const currentMonthName = now.toLocaleString('fr-FR', { month: 'long', year: 'numeric' });
     
     return {
-      date: '2026-01-25',
-      month: 'Janvier',
+      date: currentDate,
+      month: currentMonthName,
       AB1: formatStock(ab1),
       AB2: formatStock(ab2),
       AB3: formatStock(ab3),
@@ -140,18 +146,20 @@ const History = () => {
     };
   }, [movements]);
 
-  // All months including calculated January, with physical inventory overlay
+  // All months including current live stock, with physical inventory overlay for past months
   const allMonths = useMemo(() => {
-    const months = [...history];
+    const now = new Date();
+    const currentMonthDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-25`;
+
+    // Exclude any saved snapshot for the current month — always use live calculated
+    const months = history.filter(m => m.date !== currentMonthDate);
+
+    // Always add the current month as live calculated data
+    months.push(currentStock);
     
-    // Add January if not exists
-    if (!months.find(m => m.date === '2026-01-25')) {
-      months.push(currentStock);
-    }
-    
-    // Overlay physical inventory data on matching months
+    // Overlay physical inventory data on PAST months only (not the current live month)
     months.forEach((m, idx) => {
-      if (!m.date) return;
+      if (!m.date || m.date === currentMonthDate) return; // Skip current month
       const ym = m.date.substring(0, 7); // YYYY-MM
       const physData = physicalInventoryMonths[ym];
       if (physData && physData.physicalFarms.length > 0) {
@@ -240,15 +248,15 @@ const History = () => {
     };
   }, [displayProducts, selectedData]);
 
-  // Save January snapshot
+  // Save current month snapshot
   const saveJanuarySnapshot = () => {
-    const newHistory = history.filter(h => h.date !== '2026-01-25');
+    const newHistory = history.filter(h => h.date !== currentStock.date);
     newHistory.push({ ...currentStock, isCalculated: false });
     newHistory.sort((a, b) => a.date.localeCompare(b.date));
     
     setHistory(newHistory);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newHistory));
-    setSelectedMonth('2026-01-25');
+    setSelectedMonth(currentStock.date);
   };
 
   // Handle month click - show export option
@@ -489,16 +497,16 @@ const History = () => {
                   <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                     <td className="p-4 font-medium text-gray-900">{p.product}</td>
                     <td className="p-4 text-center text-gray-500">{p.unit}</td>
-                    <td className="p-4 text-right text-gray-700">
-                      {p.AB1 > 0 ? fmt(p.AB1) : <span className="text-gray-300">-</span>}
+                    <td className={`p-4 text-right ${p.AB1 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
+                      {p.AB1 !== 0 ? fmt(p.AB1) : <span className="text-gray-300">-</span>}
                     </td>
-                    <td className="p-4 text-right text-gray-700">
-                      {p.AB2 > 0 ? fmt(p.AB2) : <span className="text-gray-300">-</span>}
+                    <td className={`p-4 text-right ${p.AB2 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
+                      {p.AB2 !== 0 ? fmt(p.AB2) : <span className="text-gray-300">-</span>}
                     </td>
-                    <td className="p-4 text-right text-gray-700">
-                      {p.AB3 > 0 ? fmt(p.AB3) : <span className="text-gray-300">-</span>}
+                    <td className={`p-4 text-right ${p.AB3 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
+                      {p.AB3 !== 0 ? fmt(p.AB3) : <span className="text-gray-300">-</span>}
                     </td>
-                    <td className="p-4 text-right font-bold text-gray-900 bg-gray-50">
+                    <td className={`p-4 text-right font-bold bg-gray-50 ${p.total < 0 ? 'text-red-600' : 'text-gray-900'}`}>
                       {fmt(p.total)}
                     </td>
                     <td className="p-4 text-right text-gray-600">{fmt(p.price)}</td>
