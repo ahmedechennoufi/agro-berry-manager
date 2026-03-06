@@ -14879,6 +14879,59 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1772802503460
+    },
+    {
+      "type": "consumption",
+      "product": "BASTION",
+      "quantity": 10,
+      "price": 100,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-05",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772803833271
+    },
+    {
+      "type": "consumption",
+      "product": "ZM CORRECTOR",
+      "quantity": 12,
+      "price": 76,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-05",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1772803895179
+    },
+    {
+      "type": "exit",
+      "product": "FEROXIM",
+      "quantity": 100,
+      "price": 101,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-06",
+      "id": 1772803932939
+    },
+    {
+      "type": "transfer-out",
+      "product": "SULFATE DE ZINC",
+      "quantity": 6.25,
+      "price": 11.8,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-03-06",
+      "transferId": 1772803958458,
+      "id": 1772803958459
+    },
+    {
+      "type": "transfer-in",
+      "product": "SULFATE DE ZINC",
+      "quantity": 6.25,
+      "price": 11.8,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-03-06",
+      "transferId": 1772803958458,
+      "id": 1772803958461
     }
   ],
   "stockAB1": [
@@ -17232,5 +17285,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-06T13:10:23.469Z"
+  "exportDate": "2026-03-06T13:34:24.022Z"
 }
