@@ -3,10 +3,10 @@ import { useApp } from '../App';
 import { Card, Button, Input, Select, Modal, StatCard, EmptyState } from '../components/UI';
 import { FARMS, CULTURES, DESTINATIONS } from '../lib/constants';
 import { fmt, today } from '../lib/utils';
-import { getAveragePrice } from '../lib/store';
+import { getAveragePrice, calculateFarmStock } from '../lib/store';
 
 const Consumption = () => {
-  const { products, movements, addMovement } = useApp();
+  const { products, movements, addMovement, showNotif } = useApp();
   const [showModal, setShowModal] = useState(false);
   const [selectedFarm, setSelectedFarm] = useState('ALL');
   const [form, setForm] = useState({
@@ -17,6 +17,24 @@ const Consumption = () => {
     culture: 'Myrtille',
     destination: 'Sol'
   });
+
+  // Calculate farm stock live
+  const farmStock = useMemo(() => {
+    if (!form.farm) return {};
+    return calculateFarmStock(form.farm);
+  }, [form.farm, movements]);
+
+  // Available stock for selected product
+  const availableStock = useMemo(() => {
+    if (!form.product || !form.farm) return null;
+    const stock = farmStock[form.product];
+    return stock !== undefined ? stock.quantity : 0;
+  }, [form.product, form.farm, farmStock]);
+
+  const getProductUnit = (productName) => {
+    const product = products.find(p => p.name === productName);
+    return product?.unit || 'KG';
+  };
 
   const consumptions = useMemo(() => {
     return movements.filter(m => m.type === 'consumption');
@@ -41,9 +59,21 @@ const Consumption = () => {
 
   const handleSubmit = () => {
     if (!form.product || !form.quantity) return;
+
+    // Validate stock - cannot consume more than available
+    if (form.farm && form.product) {
+      const currentStock = availableStock ?? 0;
+      const qty = parseFloat(form.quantity);
+      if (qty > currentStock) {
+        showNotif(
+          `Stock insuffisant : ${fmt(currentStock)} ${getProductUnit(form.product)} disponible`,
+          'error'
+        );
+        return;
+      }
+    }
     
     const price = getAveragePrice(form.product);
-    
     addMovement({
       date: form.date,
       type: 'consumption',
@@ -61,16 +91,14 @@ const Consumption = () => {
 
   return (
     <div className="fade-in space-y-6">
-      {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Consommation</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800">🔥 Consommation</h1>
           <p className="text-gray-500">{consumptions.length} consommations enregistrées</p>
         </div>
         <Button onClick={() => setShowModal(true)}>🔥 Saisir Consommation</Button>
       </div>
 
-      {/* Stats per farm */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {FARMS.map(farm => {
           const farmConso = consumptions.filter(c => c.farm === farm.id);
@@ -88,7 +116,6 @@ const Consumption = () => {
         })}
       </div>
 
-      {/* Filter */}
       <Card>
         <Select
           label="Filtrer par ferme"
@@ -102,7 +129,6 @@ const Consumption = () => {
         />
       </Card>
 
-      {/* Table */}
       <Card>
         <h3 className="font-bold text-gray-800 mb-4">Consommation par produit</h3>
         {consoByProduct.length === 0 ? (
@@ -135,39 +161,47 @@ const Consumption = () => {
         )}
       </Card>
 
-      {/* Modal */}
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} title="Saisir Consommation">
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} title="🔥 Saisir Consommation">
         <div className="space-y-4">
-          <Input
-            label="Date"
-            type="date"
-            value={form.date}
-            onChange={(v) => setForm({ ...form, date: v })}
-            required
-          />
+          <Input label="Date" type="date" value={form.date} onChange={(v) => setForm({ ...form, date: v })} required />
           <Select
             label="Ferme"
             value={form.farm}
-            onChange={(v) => setForm({ ...form, farm: v })}
+            onChange={(v) => setForm({ ...form, farm: v, product: '', quantity: '' })}
             options={FARMS.map(f => ({ value: f.id, label: f.name }))}
           />
           <Select
             label="Produit"
             value={form.product}
-            onChange={(v) => setForm({ ...form, product: v })}
+            onChange={(v) => setForm({ ...form, product: v, quantity: '' })}
             options={[
               { value: '', label: 'Sélectionner...' },
               ...products.map(p => ({ value: p.name, label: p.name }))
             ]}
             required
           />
-          <Input
-            label="Quantité"
-            type="number"
-            value={form.quantity}
-            onChange={(v) => setForm({ ...form, quantity: v })}
-            required
-          />
+
+          {/* Stock disponible */}
+          {form.product && form.farm && availableStock !== null && (
+            <div className={`p-3 rounded-xl border flex items-center gap-2 ${
+              availableStock > 0 ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
+            }`}>
+              <span className="text-xl">📦</span>
+              <div>
+                <span className="text-sm font-medium text-gray-600">
+                  Stock {form.farm.replace('AGRO BERRY ', 'AGB')} :
+                </span>
+                <span className={`ml-2 text-lg font-bold ${availableStock > 0 ? 'text-green-700' : 'text-red-600'}`}>
+                  {fmt(availableStock)} {getProductUnit(form.product)}
+                </span>
+                {availableStock <= 0 && (
+                  <span className="ml-2 text-xs text-red-500 font-semibold">⚠️ Stock épuisé</span>
+                )}
+              </div>
+            </div>
+          )}
+
+          <Input label="Quantité" type="number" value={form.quantity} onChange={(v) => setForm({ ...form, quantity: v })} required />
           <Select
             label="Culture"
             value={form.culture}
@@ -181,12 +215,8 @@ const Consumption = () => {
             options={DESTINATIONS.map(d => ({ value: d.id, label: `${d.icon} ${d.name}` }))}
           />
           <div className="flex gap-3 pt-4">
-            <Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">
-              Annuler
-            </Button>
-            <Button onClick={handleSubmit} className="flex-1">
-              Enregistrer
-            </Button>
+            <Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">Annuler</Button>
+            <Button onClick={handleSubmit} className="flex-1">Enregistrer</Button>
           </div>
         </div>
       </Modal>
