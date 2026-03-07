@@ -14965,6 +14965,105 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1772868789027
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 17.5,
+      "price": 4.5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772868915696
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 4,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772868973711
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 25,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772868997809
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 4,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772869029572
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772869062994
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 25,
+      "price": 5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772869138659
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772869155558
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.25,
+      "price": 11.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772869187893
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.15,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1772869205876
     }
   ],
   "stockAB1": [
@@ -17318,5 +17417,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-07T07:35:09.408Z"
+  "exportDate": "2026-03-07T07:41:05.733Z"
 }
