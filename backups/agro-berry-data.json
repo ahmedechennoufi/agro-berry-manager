@@ -15053,6 +15053,37 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1772869205876
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 20,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-07",
+      "id": 1772892306427
+    },
+    {
+      "type": "transfer-out",
+      "product": "ISABION",
+      "quantity": 34.25,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "transferId": 1772892334791,
+      "id": 1772892334792
+    },
+    {
+      "type": "transfer-in",
+      "product": "ISABION",
+      "quantity": 34.25,
+      "price": 128,
+      "farm": "AGRO BERRY 2",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-03-07",
+      "transferId": 1772892334791,
+      "id": 1772892334794
     }
   ],
   "stockAB1": [
@@ -17406,5 +17437,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-07T13:03:35.620Z"
+  "exportDate": "2026-03-07T14:05:51.692Z"
 }
