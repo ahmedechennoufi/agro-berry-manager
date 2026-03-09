@@ -16294,6 +16294,15 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1773060205892
+    },
+    {
+      "type": "exit",
+      "product": "PERFECTOSE",
+      "quantity": 35,
+      "price": 63.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-07",
+      "id": 1773060735019
     }
   ],
   "stockAB1": [
@@ -18647,5 +18656,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-09T12:45:25.896Z"
+  "exportDate": "2026-03-09T12:54:15.025Z"
 }
