@@ -15986,6 +15986,39 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1773055968175
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773056131074
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773056151208
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773056201075
     }
   ],
   "stockAB1": [
@@ -18339,5 +18372,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-09T11:34:48.179Z"
+  "exportDate": "2026-03-09T11:37:48.326Z"
 }
