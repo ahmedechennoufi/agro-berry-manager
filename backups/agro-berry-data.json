@@ -15150,6 +15150,50 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1773043402902
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 50,
+      "price": 5.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-08",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773043751958
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 80,
+      "price": 5,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-08",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773043782226
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 1,
+      "price": 40,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-08",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773043815719
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-08",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773043842972
     }
   ],
   "stockAB1": [
@@ -17503,5 +17547,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-09T08:05:22.906Z"
+  "exportDate": "2026-03-09T08:12:43.446Z"
 }
