@@ -15326,6 +15326,248 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1773052154350
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 75,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773052859260
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773052908800
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 5,
+      "price": 102,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773053000208
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773053017956
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 8,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773053033454
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 40,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773053046806
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773053067607
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773053130777
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773053147839
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053184989
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053204189
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 17.5,
+      "price": 4.5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053229675
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 1,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053255355
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 3,
+      "price": 102,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053276910
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 25,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053301602
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 4,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053321698
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053344172
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 25,
+      "price": 5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053375541
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053394323
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.25,
+      "price": 11.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053420642
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.15,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053445805
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-08",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773053557042
     }
   ],
   "stockAB1": [
@@ -17679,5 +17921,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-09T10:31:15.217Z"
+  "exportDate": "2026-03-09T10:54:37.047Z"
 }
