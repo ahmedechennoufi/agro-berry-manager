@@ -16303,6 +16303,50 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-03-07",
       "id": 1773060735019
+    },
+    {
+      "type": "consumption",
+      "product": "PERFECTOSE",
+      "quantity": 24.75,
+      "price": 63.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773065501026
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 24.75,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-09",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773065537655
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-09",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773065555443
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-09",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773065570159
     }
   ],
   "stockAB1": [
@@ -18656,5 +18700,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-09T12:54:15.025Z"
+  "exportDate": "2026-03-09T14:14:50.160Z"
 }
