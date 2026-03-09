@@ -15942,6 +15942,39 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1773055451893
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 5,
+      "price": 102,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773055619289
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 10,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773055727240
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 8,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-01",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773055812490
     }
   ],
   "stockAB1": [
@@ -18295,5 +18328,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-09T11:26:11.903Z"
+  "exportDate": "2026-03-09T11:32:12.495Z"
 }
