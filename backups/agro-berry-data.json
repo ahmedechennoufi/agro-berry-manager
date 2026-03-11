@@ -16765,6 +16765,86 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1773132326131
+    },
+    {
+      "type": "transfer-out",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 96,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 2",
+      "date": "2026-03-10",
+      "transferId": 1773221787885,
+      "id": 1773221787886
+    },
+    {
+      "type": "transfer-in",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 96,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-03-10",
+      "transferId": 1773221787885,
+      "id": 1773221787887
+    },
+    {
+      "type": "exit",
+      "product": "PEROXYDE D'HYDROGENE",
+      "quantity": 30,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-10",
+      "id": 1773221824311
+    },
+    {
+      "type": "consumption",
+      "product": "PEROXYDE D'HYDROGENE",
+      "quantity": 16.4,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773221844831
+    },
+    {
+      "type": "consumption",
+      "product": "PEROXYDE D'HYDROGENE",
+      "quantity": 3.5,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-11",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773221860375
+    },
+    {
+      "type": "entry",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 3000,
+      "price": 7.5,
+      "supplier": "PROMAGRI",
+      "date": "2026-03-10",
+      "id": 1773221886540
+    },
+    {
+      "type": "entry",
+      "product": "MICROS",
+      "quantity": 250,
+      "price": 141.67,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-03-10",
+      "id": 1773221977856
+    },
+    {
+      "type": "entry",
+      "product": "FEROXIM",
+      "quantity": 500,
+      "price": 101,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-03-10",
+      "id": 1773222028456
     }
   ],
   "stockAB1": [
@@ -19118,5 +19198,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-10T08:47:26.142Z"
+  "exportDate": "2026-03-11T09:42:28.466Z"
 }
