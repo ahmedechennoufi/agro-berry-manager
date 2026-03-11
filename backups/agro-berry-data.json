@@ -16845,6 +16845,51 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-03-10",
       "id": 1773222028456
+    },
+    {
+      "type": "entry",
+      "product": "MAP",
+      "quantity": 3000,
+      "price": 13.5,
+      "supplier": "CASEM",
+      "date": "2026-03-11",
+      "id": 1773234739178
+    },
+    {
+      "type": "entry",
+      "product": "BIOENERGY",
+      "quantity": 100,
+      "price": 50,
+      "supplier": "CASEM",
+      "date": "2026-03-11",
+      "id": 1773234813527
+    },
+    {
+      "type": "entry",
+      "product": "ISABION",
+      "quantity": 340,
+      "price": 128,
+      "supplier": "CASEM",
+      "date": "2026-03-11",
+      "id": 1773234848160
+    },
+    {
+      "type": "entry",
+      "product": "NOVA",
+      "quantity": 160,
+      "price": 85,
+      "supplier": "CASEM",
+      "date": "2026-03-11",
+      "id": 1773234934759
+    },
+    {
+      "type": "entry",
+      "product": "HUWA SAN",
+      "quantity": 100,
+      "price": 68,
+      "supplier": "CASEM",
+      "date": "2026-03-11",
+      "id": 1773234963559
     }
   ],
   "stockAB1": [
@@ -19198,5 +19243,5 @@
       "updatedAt": "2026-03-04T11:59:32.054Z"
     }
   ],
-  "exportDate": "2026-03-11T09:42:28.466Z"
+  "exportDate": "2026-03-11T13:18:03.564Z"
 }
