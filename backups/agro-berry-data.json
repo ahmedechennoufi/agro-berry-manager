@@ -16890,6 +16890,42 @@
       "supplier": "CASEM",
       "date": "2026-03-11",
       "id": 1773234963559
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 1000,
+      "price": 3.9,
+      "supplier": "CAS",
+      "date": "2026-03-12",
+      "id": 1773318527862
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE ZINC",
+      "quantity": 25,
+      "price": 12,
+      "supplier": "CAS",
+      "date": "2026-03-12",
+      "id": 1773318550611
+    },
+    {
+      "type": "entry",
+      "product": "ROMBI SAL",
+      "quantity": 160,
+      "price": 28.35,
+      "supplier": "CAS",
+      "date": "2026-03-12",
+      "id": 1773318579311
+    },
+    {
+      "type": "entry",
+      "product": "AMMONITRATE",
+      "quantity": 700,
+      "price": 4.9,
+      "supplier": "CAS",
+      "date": "2026-03-12",
+      "id": 1773318628094
     }
   ],
   "stockAB1": [
@@ -19122,12 +19158,12 @@
         {
           "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
           "ordered": 3000,
-          "received": 0
+          "received": 3000
         },
         {
           "product": "MAP",
           "ordered": 6000,
-          "received": 0
+          "received": 3000
         },
         {
           "product": "SULFATE MAGNESUIM",
@@ -19162,22 +19198,22 @@
         {
           "product": "SULFATE DE ZINC",
           "ordered": 25,
-          "received": 0
+          "received": 25
         },
         {
           "product": "FEROXIM",
           "ordered": 500,
-          "received": 0
+          "received": 500
         },
         {
           "product": "NITRATE DE CALCIUM",
           "ordered": 1000,
-          "received": 0
+          "received": 1000
         },
         {
           "product": "HUWA SAN",
           "ordered": 100,
-          "received": 0
+          "received": 100
         },
         {
           "product": "NITRATE DE POTASSE",
@@ -19192,17 +19228,17 @@
         {
           "product": "BIOENERGY",
           "ordered": 100,
-          "received": 0
+          "received": 100
         },
         {
           "product": "ROMBI SAL",
           "ordered": 150,
-          "received": 0
+          "received": 160
         },
         {
           "product": "AMMONITRATE",
           "ordered": 700,
-          "received": 0
+          "received": 700
         },
         {
           "product": "ACIDE NITRIQUE",
@@ -19227,21 +19263,21 @@
         {
           "product": "ISABION",
           "ordered": 350,
-          "received": 0
+          "received": 340
         },
         {
           "product": "MICROS",
           "ordered": 250,
-          "received": 0
+          "received": 250
         },
         {
           "product": "NOVA",
           "ordered": 160,
-          "received": 0
+          "received": 160
         }
       ],
-      "updatedAt": "2026-03-04T11:59:32.054Z"
+      "updatedAt": "2026-03-12T12:31:40.040Z"
     }
   ],
-  "exportDate": "2026-03-11T13:18:03.564Z"
+  "exportDate": "2026-03-12T12:32:28.100Z"
 }
