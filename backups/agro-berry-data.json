@@ -16926,6 +16926,35 @@
       "supplier": "CAS",
       "date": "2026-03-12",
       "id": 1773318628094
+    },
+    {
+      "type": "entry",
+      "product": "SUCRE",
+      "quantity": 3000,
+      "price": 0,
+      "supplier": "AUTRE",
+      "date": "2026-03-12",
+      "id": 1773385966967
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 50,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-13",
+      "id": 1773385991034
+    },
+    {
+      "type": "consumption",
+      "product": "SUCRE",
+      "quantity": 50,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773386003427
     }
   ],
   "stockAB1": [
@@ -19279,5 +19308,5 @@
       "updatedAt": "2026-03-12T12:31:40.040Z"
     }
   ],
-  "exportDate": "2026-03-12T12:32:28.100Z"
+  "exportDate": "2026-03-13T07:15:23.449Z"
 }
