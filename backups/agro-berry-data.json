@@ -17427,6 +17427,171 @@
       "date": "2026-03-11",
       "transferId": 1773390038325,
       "id": 1773390038326
+    },
+    {
+      "type": "consumption",
+      "product": "MOVENTO",
+      "quantity": 1,
+      "price": 1228,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390322306
+    },
+    {
+      "type": "consumption",
+      "product": "INACOP",
+      "quantity": 2.4,
+      "price": 150,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390339264
+    },
+    {
+      "type": "consumption",
+      "product": "CLEAN K",
+      "quantity": 3,
+      "price": 71.4,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390370789
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 7.125,
+      "price": 1920,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-12",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390406805
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 37.5,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390483781
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "price": 7.25,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390521727
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 17.5,
+      "price": 4.26,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390567314
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 4,
+      "price": 102,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390583421
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 25,
+      "price": 12.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390610211
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 4,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390627844
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390666946
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 25,
+      "price": 5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390722864
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390738304
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.25,
+      "price": 11.9,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390812122
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.15,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773390829845
     }
   ],
   "stockAB1": [
@@ -19780,5 +19945,5 @@
       "updatedAt": "2026-03-12T12:31:40.040Z"
     }
   ],
-  "exportDate": "2026-03-13T08:22:39.305Z"
+  "exportDate": "2026-03-13T08:35:50.283Z"
 }
