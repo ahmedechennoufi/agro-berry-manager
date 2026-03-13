@@ -17273,6 +17273,160 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1773388873463
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 15,
+      "price": 148,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-08",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389712389
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 100,
+      "price": 7.11,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389736057
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389795606
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 75,
+      "price": 7.25,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389816174
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 40,
+      "price": 4.26,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389836671
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 12,
+      "price": 102,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389862633
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 100,
+      "price": 12.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389877552
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 50,
+      "price": 5.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389891354
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 80,
+      "price": 5,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1773389908329
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 1,
+      "price": 40,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389929754
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389949544
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 15,
+      "price": 148,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1773389975609
+    },
+    {
+      "type": "transfer-out",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 128,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-03-11",
+      "transferId": 1773390038325,
+      "id": 1773390038325
+    },
+    {
+      "type": "transfer-in",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 128,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-03-11",
+      "transferId": 1773390038325,
+      "id": 1773390038326
     }
   ],
   "stockAB1": [
@@ -19626,5 +19780,5 @@
       "updatedAt": "2026-03-12T12:31:40.040Z"
     }
   ],
-  "exportDate": "2026-03-13T08:03:13.479Z"
+  "exportDate": "2026-03-13T08:22:39.305Z"
 }
