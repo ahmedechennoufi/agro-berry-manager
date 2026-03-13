@@ -17944,6 +17944,82 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1773394757652
+    },
+    {
+      "type": "transfer-out",
+      "product": "KELPAK",
+      "quantity": 5,
+      "price": 115,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-03-13",
+      "transferId": 1773403566345,
+      "id": 1773403566345
+    },
+    {
+      "type": "transfer-in",
+      "product": "KELPAK",
+      "quantity": 5,
+      "price": 115,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-03-13",
+      "transferId": 1773403566345,
+      "id": 1773403566348
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 2976,
+      "price": 8.6,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-13",
+      "id": 1773403681692
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 980,
+      "price": 3.35,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-13",
+      "id": 1773403734525
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 1000,
+      "price": 10.85,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-13",
+      "id": 1773403801692
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 5000,
+      "price": 7.11,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-13",
+      "id": 1773403863142
+    },
+    {
+      "type": "entry",
+      "product": "BASSO",
+      "quantity": 100,
+      "price": 15,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-13",
+      "id": 1773403918341
+    },
+    {
+      "type": "entry",
+      "product": "QUEL B",
+      "quantity": 32,
+      "price": 50,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-13",
+      "id": 1773404007526
     }
   ],
   "stockAB1": [
@@ -20297,5 +20373,5 @@
       "updatedAt": "2026-03-12T12:31:40.040Z"
     }
   ],
-  "exportDate": "2026-03-13T09:41:17.656Z"
+  "exportDate": "2026-03-13T12:15:27.531Z"
 }
