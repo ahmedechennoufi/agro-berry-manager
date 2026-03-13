@@ -16955,6 +16955,60 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1773386003427
+    },
+    {
+      "type": "exit",
+      "product": "OIKOS",
+      "quantity": 22,
+      "price": 2500,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-12",
+      "id": 1773386376050
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 250,
+      "price": 5.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-12",
+      "id": 1773386401453
+    },
+    {
+      "type": "exit",
+      "product": "BIOENERGY",
+      "quantity": 100,
+      "price": 47.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-12",
+      "id": 1773386424503
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE CHLORHYDRIQUE",
+      "quantity": 120,
+      "price": 4.7,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-12",
+      "id": 1773386456220
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-12",
+      "id": 1773386469803
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-12",
+      "id": 1773386479736
     }
   ],
   "stockAB1": [
@@ -19308,5 +19362,5 @@
       "updatedAt": "2026-03-12T12:31:40.040Z"
     }
   ],
-  "exportDate": "2026-03-13T07:15:23.449Z"
+  "exportDate": "2026-03-13T07:23:19.742Z"
 }
