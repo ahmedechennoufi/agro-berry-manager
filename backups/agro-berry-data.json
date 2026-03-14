@@ -18074,6 +18074,24 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-03-14",
       "id": 1773480029878
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 2000,
+      "price": 3.1,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-14",
+      "id": 1773491002973
+    },
+    {
+      "type": "entry",
+      "product": "UREE",
+      "quantity": 2000,
+      "price": 6,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-03-14",
+      "id": 1773491040354
     }
   ],
   "stockAB1": [
@@ -20427,5 +20445,5 @@
       "updatedAt": "2026-03-14T08:20:35.536Z"
     }
   ],
-  "exportDate": "2026-03-14T09:22:30.496Z"
+  "exportDate": "2026-03-14T12:26:00.358Z"
 }
