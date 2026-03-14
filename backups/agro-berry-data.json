@@ -18020,6 +18020,60 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-03-13",
       "id": 1773404007526
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 140,
+      "price": 3.35,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-13",
+      "id": 1773479899082
+    },
+    {
+      "type": "exit",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 1000,
+      "price": 7.25,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-14",
+      "id": 1773479923583
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 1000,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-14",
+      "id": 1773479939263
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 1000,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-14",
+      "id": 1773479954379
+    },
+    {
+      "type": "exit",
+      "product": "ROMBI SAL",
+      "quantity": 160,
+      "price": 27.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-14",
+      "id": 1773480021011
+    },
+    {
+      "type": "exit",
+      "product": "QUEL B",
+      "quantity": 32,
+      "price": 50,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-14",
+      "id": 1773480029878
     }
   ],
   "stockAB1": [
@@ -20267,7 +20321,7 @@
         {
           "product": "SULFATE DE POTASSE",
           "ordered": 5000,
-          "received": 0
+          "received": 5000
         },
         {
           "product": "KSC MIX",
@@ -20277,12 +20331,12 @@
         {
           "product": "ACIDE PHOSPHORIQUE",
           "ordered": 3000,
-          "received": 0
+          "received": 2976
         },
         {
           "product": "ACIDE SULFURIQUE",
           "ordered": 1000,
-          "received": 0
+          "received": 980
         },
         {
           "product": "UREE",
@@ -20312,12 +20366,12 @@
         {
           "product": "NITRATE DE POTASSE",
           "ordered": 1000,
-          "received": 0
+          "received": 1000
         },
         {
           "product": "BASSO",
           "ordered": 100,
-          "received": 0
+          "received": 100
         },
         {
           "product": "BIOENERGY",
@@ -20342,7 +20396,7 @@
         {
           "product": "QUEL B",
           "ordered": 32,
-          "received": 0
+          "received": 32
         },
         {
           "product": "NITRATE DE MAGNESIUM",
@@ -20370,8 +20424,8 @@
           "received": 160
         }
       ],
-      "updatedAt": "2026-03-12T12:31:40.040Z"
+      "updatedAt": "2026-03-14T08:20:35.536Z"
     }
   ],
-  "exportDate": "2026-03-13T12:15:27.531Z"
+  "exportDate": "2026-03-14T09:22:30.496Z"
 }
