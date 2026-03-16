@@ -18293,15 +18293,6 @@
     },
     {
       "type": "exit",
-      "product": "NOVA",
-      "quantity": 50,
-      "price": 85,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-14",
-      "id": 1773657832583
-    },
-    {
-      "type": "exit",
       "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
       "quantity": 800,
       "price": 7.25,
@@ -20742,5 +20733,5 @@
       "updatedAt": "2026-03-14T08:20:35.536Z"
     }
   ],
-  "exportDate": "2026-03-16T10:55:04.573Z"
+  "exportDate": "2026-03-16T11:09:48.678Z"
 }
