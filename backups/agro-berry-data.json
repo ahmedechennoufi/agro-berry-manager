@@ -18155,6 +18155,150 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-03-16",
       "id": 1773657156414
+    },
+    {
+      "type": "exit",
+      "product": "BASSO",
+      "quantity": 100,
+      "price": 15,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773657307932
+    },
+    {
+      "type": "exit",
+      "product": "AMMONITRATE",
+      "quantity": 700,
+      "price": 4.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773657380414
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 80,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773657418948
+    },
+    {
+      "type": "exit",
+      "product": "MICROS",
+      "quantity": 70,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773657442847
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 60,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773657519283
+    },
+    {
+      "type": "exit",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 1200,
+      "price": 7.25,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657543232
+    },
+    {
+      "type": "exit",
+      "product": "MAP",
+      "quantity": 1000,
+      "price": 12.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657586500
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 1500,
+      "price": 7.11,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657614215
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 992,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657631048
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 600,
+      "price": 5.882474226804124,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657649242
+    },
+    {
+      "type": "exit",
+      "product": "FEROXIM",
+      "quantity": 500,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657663012
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 200,
+      "price": 4.26,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657687646
+    },
+    {
+      "type": "exit",
+      "product": "HUWA SAN",
+      "quantity": 50,
+      "price": 68,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657699228
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 100,
+      "price": 128,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657719582
+    },
+    {
+      "type": "exit",
+      "product": "MICROS",
+      "quantity": 80,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657797701
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 50,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1773657832583
     }
   ],
   "stockAB1": [
@@ -20508,5 +20652,5 @@
       "updatedAt": "2026-03-14T08:20:35.536Z"
     }
   ],
-  "exportDate": "2026-03-16T10:34:36.422Z"
+  "exportDate": "2026-03-16T10:45:52.589Z"
 }
