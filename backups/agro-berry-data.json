@@ -18380,6 +18380,33 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-03-14",
       "id": 1773658384564
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE MAGNESIUM",
+      "quantity": 800,
+      "price": 6.9,
+      "supplier": "CAS",
+      "date": "2026-03-16",
+      "id": 1773665812853
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 1500,
+      "price": 2.8,
+      "supplier": "CAS",
+      "date": "2026-03-16",
+      "id": 1773665848521
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE NITRIQUE",
+      "quantity": 300,
+      "price": 6.9,
+      "supplier": "CAS",
+      "date": "2026-03-16",
+      "id": 1773665880837
     }
   ],
   "stockAB1": [
@@ -20733,5 +20760,5 @@
       "updatedAt": "2026-03-14T08:20:35.536Z"
     }
   ],
-  "exportDate": "2026-03-16T11:09:48.678Z"
+  "exportDate": "2026-03-16T13:00:00.852Z"
 }
