@@ -18299,6 +18299,33 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-03-14",
       "id": 1773657832583
+    },
+    {
+      "type": "exit",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 800,
+      "price": 7.25,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773657973334
+    },
+    {
+      "type": "exit",
+      "product": "MAP",
+      "quantity": 100,
+      "price": 12.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658001931
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 2000,
+      "price": 7.11,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658057265
     }
   ],
   "stockAB1": [
@@ -20652,5 +20679,5 @@
       "updatedAt": "2026-03-14T08:20:35.536Z"
     }
   ],
-  "exportDate": "2026-03-16T10:45:52.589Z"
+  "exportDate": "2026-03-16T10:49:37.272Z"
 }
