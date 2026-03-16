@@ -18326,6 +18326,69 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-03-14",
       "id": 1773658057265
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 992,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658226946
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 400,
+      "price": 5.882474226804124,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658258948
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE ZINC",
+      "quantity": 25,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658282782
+    },
+    {
+      "type": "exit",
+      "product": "FEROXIM",
+      "quantity": 400,
+      "price": 101,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658296700
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 500,
+      "price": 4.26,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658311146
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 160,
+      "price": 128,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658332915
+    },
+    {
+      "type": "exit",
+      "product": "MICROS",
+      "quantity": 100,
+      "price": 141.67,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1773658384564
     }
   ],
   "stockAB1": [
@@ -20679,5 +20742,5 @@
       "updatedAt": "2026-03-14T08:20:35.536Z"
     }
   ],
-  "exportDate": "2026-03-16T10:49:37.272Z"
+  "exportDate": "2026-03-16T10:55:04.573Z"
 }
