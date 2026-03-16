@@ -17407,28 +17407,6 @@
       "id": 1773389975609
     },
     {
-      "type": "transfer-out",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 128,
-      "price": 8.6,
-      "farm": "AGRO BERRY 1",
-      "toFarm": "AGRO BERRY 3",
-      "date": "2026-03-11",
-      "transferId": 1773390038325,
-      "id": 1773390038325
-    },
-    {
-      "type": "transfer-in",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 128,
-      "price": 8.6,
-      "farm": "AGRO BERRY 3",
-      "fromFarm": "AGRO BERRY 1",
-      "date": "2026-03-11",
-      "transferId": 1773390038325,
-      "id": 1773390038326
-    },
-    {
       "type": "consumption",
       "product": "MOVENTO",
       "quantity": 1,
@@ -18023,15 +18001,6 @@
     },
     {
       "type": "exit",
-      "product": "ACIDE SULFURIQUE",
-      "quantity": 140,
-      "price": 3.35,
-      "farm": "AGRO BERRY 3",
-      "date": "2026-03-13",
-      "id": 1773479899082
-    },
-    {
-      "type": "exit",
       "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
       "quantity": 1000,
       "price": 7.25,
@@ -18092,6 +18061,100 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-03-14",
       "id": 1773491040354
+    },
+    {
+      "type": "exit",
+      "product": "MAP",
+      "quantity": 1700,
+      "price": 12.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773656673276
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 500,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773656705214
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 992,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773656753195
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 840,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773656842615
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 140,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773656921432
+    },
+    {
+      "type": "transfer-out",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 128,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-03-11",
+      "transferId": 1773657024822,
+      "id": 1773657024823
+    },
+    {
+      "type": "transfer-in",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 128,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-03-11",
+      "transferId": 1773657024822,
+      "id": 1773657024825
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 1000,
+      "price": 5.882474226804124,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773657134416
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 300,
+      "price": 4.26,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773657145097
+    },
+    {
+      "type": "exit",
+      "product": "HUWA SAN",
+      "quantity": 50,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-16",
+      "id": 1773657156414
     }
   ],
   "stockAB1": [
@@ -20445,5 +20508,5 @@
       "updatedAt": "2026-03-14T08:20:35.536Z"
     }
   ],
-  "exportDate": "2026-03-14T12:26:00.358Z"
+  "exportDate": "2026-03-16T10:34:36.422Z"
 }
