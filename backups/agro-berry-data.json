@@ -1211,6 +1211,13 @@
       "category": "AUTRES",
       "threshold": null,
       "id": 1772712658049
+    },
+    {
+      "name": "CHLORO MIX ",
+      "unit": "KG",
+      "category": "ENGRAIS",
+      "threshold": null,
+      "id": 1773741164038
     }
   ],
   "movements": [
@@ -18407,6 +18414,15 @@
       "supplier": "CAS",
       "date": "2026-03-16",
       "id": 1773665880837
+    },
+    {
+      "type": "entry",
+      "product": "CHLORO MIX ",
+      "quantity": 1000,
+      "price": 85,
+      "supplier": "BEST BIO Z",
+      "date": "2026-03-16",
+      "id": 1773741200107
     }
   ],
   "stockAB1": [
@@ -20649,7 +20665,7 @@
         {
           "product": "SULFATE MAGNESUIM",
           "ordered": 2000,
-          "received": 0
+          "received": 2000
         },
         {
           "product": "SULFATE DE POTASSE",
@@ -20659,7 +20675,7 @@
         {
           "product": "KSC MIX",
           "ordered": 1000,
-          "received": 0
+          "received": 1000
         },
         {
           "product": "ACIDE PHOSPHORIQUE",
@@ -20674,7 +20690,7 @@
         {
           "product": "UREE",
           "ordered": 2000,
-          "received": 0
+          "received": 2000
         },
         {
           "product": "SULFATE DE ZINC",
@@ -20724,7 +20740,7 @@
         {
           "product": "ACIDE NITRIQUE",
           "ordered": 300,
-          "received": 0
+          "received": 300
         },
         {
           "product": "QUEL B",
@@ -20734,7 +20750,7 @@
         {
           "product": "NITRATE DE MAGNESIUM",
           "ordered": 800,
-          "received": 0
+          "received": 800
         },
         {
           "product": "ALGOBAZ",
@@ -20757,8 +20773,8 @@
           "received": 160
         }
       ],
-      "updatedAt": "2026-03-14T08:20:35.536Z"
+      "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-16T13:00:00.852Z"
+  "exportDate": "2026-03-17T09:55:20.115Z"
 }
