@@ -18423,6 +18423,33 @@
       "supplier": "BEST BIO Z",
       "date": "2026-03-16",
       "id": 1773741200107
+    },
+    {
+      "type": "exit",
+      "product": "CHLORO MIX ",
+      "quantity": 500,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-17",
+      "id": 1773747795210
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE MAGNESIUM",
+      "quantity": 800,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-17",
+      "id": 1773747811877
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE NITRIQUE",
+      "quantity": 300,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-17",
+      "id": 1773747838672
     }
   ],
   "stockAB1": [
@@ -20776,5 +20803,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-17T09:55:20.115Z"
+  "exportDate": "2026-03-17T11:46:00.206Z"
 }
