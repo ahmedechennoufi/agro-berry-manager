@@ -18723,6 +18723,15 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1773822889415
+    },
+    {
+      "type": "exit",
+      "product": "SANYGENE FORTE",
+      "quantity": 30,
+      "price": 60,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-10",
+      "id": 1773823077935
     }
   ],
   "stockAB1": [
@@ -21076,5 +21085,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-18T08:36:49.426Z"
+  "exportDate": "2026-03-18T08:39:57.968Z"
 }
