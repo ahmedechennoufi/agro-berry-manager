@@ -18253,15 +18253,6 @@
     },
     {
       "type": "exit",
-      "product": "UREE",
-      "quantity": 600,
-      "price": 5.882474226804124,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-14",
-      "id": 1773657649242
-    },
-    {
-      "type": "exit",
       "product": "FEROXIM",
       "quantity": 500,
       "price": 101,
@@ -18340,15 +18331,6 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-03-14",
       "id": 1773658226946
-    },
-    {
-      "type": "exit",
-      "product": "UREE",
-      "quantity": 400,
-      "price": 5.882474226804124,
-      "farm": "AGRO BERRY 3",
-      "date": "2026-03-14",
-      "id": 1773658258948
     },
     {
       "type": "exit",
@@ -19160,6 +19142,64 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-03-19",
       "id": 1773908042660
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 100,
+      "price": 5.882474226804124,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "id": 1773908222279
+    },
+    {
+      "type": "exit",
+      "product": "CHLORO MIX ",
+      "quantity": 195,
+      "price": 85,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "id": 1773908308497
+    },
+    {
+      "type": "transfer-out",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 25,
+      "price": 40,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "transferId": 1773908387509,
+      "id": 1773908387509
+    },
+    {
+      "type": "transfer-in",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 25,
+      "price": 40,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-03-19",
+      "transferId": 1773908387509,
+      "id": 1773908387511
+    },
+    {
+      "type": "exit",
+      "product": "CHLORO MIX ",
+      "quantity": 195,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-19",
+      "id": 1773908427079
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 60,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-19",
+      "id": 1773908448213
     }
   ],
   "stockAB1": [
@@ -21513,5 +21553,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-19T08:16:02.668Z"
+  "exportDate": "2026-03-19T08:22:49.164Z"
 }
