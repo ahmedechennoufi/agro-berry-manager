@@ -19209,6 +19209,17 @@
       "supplier": "CAS",
       "date": "2026-03-19",
       "id": 1773917851074
+    },
+    {
+      "type": "consumption",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 5,
+      "price": 800,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774088081972
     }
   ],
   "stockAB1": [
@@ -21562,5 +21573,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-19T10:59:31.093Z"
+  "exportDate": "2026-03-21T10:16:41.983Z"
 }
