@@ -19935,6 +19935,28 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774094482566
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 25,
+      "price": 12.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-18",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774094637522
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-18",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774094699039
     }
   ],
   "stockAB1": [
@@ -22288,5 +22310,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-21T12:03:22.573Z"
+  "exportDate": "2026-03-21T12:07:00.015Z"
 }
