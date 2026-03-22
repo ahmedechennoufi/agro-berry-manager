@@ -20452,6 +20452,123 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774185303567
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 40,
+      "price": 4.26,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774185913550
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 12,
+      "price": 101,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774185936392
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 100,
+      "price": 12.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774185951778
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 50,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774185966601
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 80,
+      "price": 3.9076923076923076,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774185992440
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 1,
+      "price": 40,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774186013281
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774186029707
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774186057026
+    },
+    {
+      "type": "exit",
+      "product": "OIKOS",
+      "quantity": 32,
+      "price": 2500,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "id": 1774186160437
+    },
+    {
+      "type": "exit",
+      "product": "OIKOS",
+      "quantity": 22,
+      "price": 2500,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-14",
+      "id": 1774186175137
+    },
+    {
+      "type": "consumption",
+      "product": "OIKOS",
+      "quantity": 32,
+      "price": 2500,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774186196667
     }
   ],
   "stockAB1": [
@@ -22805,5 +22922,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-22T13:17:03.582Z"
+  "exportDate": "2026-03-22T13:31:56.678Z"
 }
