@@ -20569,6 +20569,94 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774186196667
+    },
+    {
+      "type": "consumption",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 5.1,
+      "price": 800,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-18",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774187118092
+    },
+    {
+      "type": "consumption",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 8.7,
+      "price": 800,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-17",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774187168976
+    },
+    {
+      "type": "consumption",
+      "product": "INACOP",
+      "quantity": 2.1,
+      "price": 150,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-16",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774187189552
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 2.56,
+      "price": 60,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-16",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774187240022
+    },
+    {
+      "type": "consumption",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 7.2,
+      "price": 800,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-16",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774187272379
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 3.975,
+      "price": 1920,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-15",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774187366985
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 6.15,
+      "price": 1920,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774187386596
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 7.5,
+      "price": 1920,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774187425775
     }
   ],
   "stockAB1": [
@@ -22922,5 +23010,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-22T13:31:56.678Z"
+  "exportDate": "2026-03-22T13:52:26.679Z"
 }
