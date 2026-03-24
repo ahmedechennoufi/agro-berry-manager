@@ -19553,17 +19553,6 @@
     },
     {
       "type": "consumption",
-      "product": "NUTREL C",
-      "quantity": 4,
-      "price": 148,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-16",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1774089310909
-    },
-    {
-      "type": "consumption",
       "product": "UREE",
       "quantity": 25,
       "price": 5.841785714285714,
@@ -19686,7 +19675,7 @@
     {
       "type": "consumption",
       "product": "NUTREL C",
-      "quantity": 4,
+      "quantity": 8,
       "price": 148,
       "farm": "AGRO BERRY 2",
       "date": "2026-03-17",
@@ -23791,5 +23780,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-24T09:57:00.341Z"
+  "exportDate": "2026-03-24T10:11:33.179Z"
 }
