@@ -20888,6 +20888,28 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1774343233758
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 25,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-22",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344179031
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 23,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-22",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774344205748
     }
   ],
   "stockAB1": [
@@ -23241,5 +23263,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-24T09:09:14.296Z"
+  "exportDate": "2026-03-24T09:25:25.757Z"
 }
