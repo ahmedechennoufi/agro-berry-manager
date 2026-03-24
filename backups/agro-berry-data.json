@@ -15860,17 +15860,6 @@
     },
     {
       "type": "consumption",
-      "product": "NUTREL C",
-      "quantity": 4,
-      "price": 148,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-01",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1773055165291
-    },
-    {
-      "type": "consumption",
       "product": "UREE",
       "quantity": 25,
       "price": 5.8,
@@ -15978,17 +15967,6 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1773055727240
-    },
-    {
-      "type": "consumption",
-      "product": "NUTREL C",
-      "quantity": 8,
-      "price": 148,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-01",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1773055812490
     },
     {
       "type": "consumption",
@@ -17525,7 +17503,7 @@
       "quantity": 4,
       "price": 148,
       "farm": "AGRO BERRY 2",
-      "date": "2026-03-13",
+      "date": "2026-03-14",
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1773390627844
@@ -19282,7 +19260,7 @@
       "quantity": 4,
       "price": 148,
       "farm": "AGRO BERRY 2",
-      "date": "2026-03-14",
+      "date": "2026-03-16",
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774088391110
@@ -19671,17 +19649,6 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774090456332
-    },
-    {
-      "type": "consumption",
-      "product": "NUTREL C",
-      "quantity": 8,
-      "price": 148,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-17",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1774090477207
     },
     {
       "type": "consumption",
@@ -21427,6 +21394,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774346100339
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 8,
+      "price": 148,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-17",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774347234280
     }
   ],
   "stockAB1": [
@@ -23780,5 +23758,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-24T10:11:33.179Z"
+  "exportDate": "2026-03-24T10:20:00.576Z"
 }
