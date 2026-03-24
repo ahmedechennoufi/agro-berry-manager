@@ -20921,6 +20921,94 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1774344366109
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344506849
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7.25,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344532114
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 5,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344546547
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 12.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344569428
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 8,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344627931
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 40,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344666213
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 3.9076923076923076,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344687898
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774344802180
     }
   ],
   "stockAB1": [
@@ -23274,5 +23362,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-24T09:28:06.117Z"
+  "exportDate": "2026-03-24T09:35:22.184Z"
 }
