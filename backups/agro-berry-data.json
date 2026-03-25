@@ -21610,6 +21610,139 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1774439774374
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7.25,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774440042258
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 5,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774440062903
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 12.8,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774440076652
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 8,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774440109770
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 40,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774440148254
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "price": 3.9076923076923076,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774440185830
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774440202531
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "price": 141.67,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774440217130
+    },
+    {
+      "type": "exit",
+      "product": "CHLORO MIX ",
+      "quantity": 110,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "id": 1774440256635
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 200,
+      "price": 0,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "id": 1774440295601
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 600,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "id": 1774440331603
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 1000,
+      "price": 3.9076923076923076,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-25",
+      "id": 1774440362866
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 1000,
+      "price": 3.9076923076923076,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-25",
+      "id": 1774440387465
     }
   ],
   "stockAB1": [
@@ -23963,5 +24096,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-25T11:58:15.266Z"
+  "exportDate": "2026-03-25T12:08:27.470Z"
 }
