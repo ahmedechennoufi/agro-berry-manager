@@ -21449,6 +21449,35 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1774349760782
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 50,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "id": 1774420562691
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 750,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "id": 1774420591222
+    },
+    {
+      "type": "consumption",
+      "product": "SUCRE",
+      "quantity": 800,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774420610935
     }
   ],
   "stockAB1": [
@@ -23802,5 +23831,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-24T10:58:00.788Z"
+  "exportDate": "2026-03-25T06:38:50.939Z"
 }
