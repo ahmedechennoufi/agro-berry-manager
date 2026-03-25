@@ -21743,6 +21743,24 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-03-25",
       "id": 1774440387465
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 300,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-25",
+      "id": 1774440517817
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 60,
+      "price": 85,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-25",
+      "id": 1774440530836
     }
   ],
   "stockAB1": [
@@ -24096,5 +24114,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-25T12:08:27.470Z"
+  "exportDate": "2026-03-25T12:10:50.843Z"
 }
