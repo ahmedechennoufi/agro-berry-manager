@@ -1038,12 +1038,12 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     };
   });
 
-  // Stock initial: depuis stockHistory.json
+  // Stock initial: 1) stockHistory.json, 2) inventaire physique localStorage, 3) stock début saison
   const prevMonthId = dateToMonthId[prevInventoryDate];
   const prevMonthData = prevMonthId ? stockHistoryData[prevMonthId] : null;
-  
+
   if (prevMonthData) {
-    // Utiliser les données historiques importées
+    // Utiliser les données historiques importées (stockHistory.json)
     ['AB1', 'AB2', 'AB3'].forEach(farm => {
       (prevMonthData[farm] || []).forEach(item => {
         if (!dataMap[item.product]) dataMap[item.product] = createEmptyRow(item.product, item.price);
@@ -1052,20 +1052,49 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
       });
     });
   } else {
-    // Utiliser stock initial de début de saison (stockAB1/2/3)
-    getStockAB1().forEach(s => {
-      if (!dataMap[s.product]) dataMap[s.product] = createEmptyRow(s.product, s.price);
-      dataMap[s.product].initAB1 = s.quantity || 0;
-      dataMap[s.product].price = s.price || dataMap[s.product].price;
+    // Essayer l'inventaire physique du localStorage pour la date prevInventoryDate
+    const physInvs = getPhysicalInventories();
+    const farmKeyMap = { 'AGRO BERRY 1': 'AB1', 'AGRO BERRY 2': 'AB2', 'AGRO BERRY 3': 'AB3' };
+
+    // Chercher inventaires physiques dont la date est <= prevInventoryDate (le plus récent par ferme)
+    const latestPerFarm = {};
+    physInvs.forEach(inv => {
+      if (!inv.date || !inv.farm || !inv.data) return;
+      if (inv.date > prevInventoryDate) return; // Ignorer les inventaires futurs
+      const farmKey = farmKeyMap[inv.farm];
+      if (!farmKey) return;
+      if (!latestPerFarm[farmKey] || inv.date > latestPerFarm[farmKey].date) {
+        latestPerFarm[farmKey] = inv;
+      }
     });
-    getStockAB2().forEach(s => {
-      if (!dataMap[s.product]) dataMap[s.product] = createEmptyRow(s.product, s.price);
-      dataMap[s.product].initAB2 = s.quantity || 0;
-    });
-    getStockAB3().forEach(s => {
-      if (!dataMap[s.product]) dataMap[s.product] = createEmptyRow(s.product, s.price);
-      dataMap[s.product].initAB3 = s.quantity || 0;
-    });
+
+    const hasPhysicalInv = Object.keys(latestPerFarm).length > 0;
+
+    if (hasPhysicalInv) {
+      // Utiliser l'inventaire physique du localStorage
+      Object.entries(latestPerFarm).forEach(([farmKey, inv]) => {
+        Object.entries(inv.data).forEach(([product, qty]) => {
+          const quantity = parseFloat(qty) || 0;
+          if (!dataMap[product]) dataMap[product] = createEmptyRow(product, getAveragePrice(product) || 0);
+          dataMap[product][`init${farmKey}`] = quantity;
+        });
+      });
+    } else {
+      // Fallback: stock initial de début de saison (stockAB1/2/3)
+      getStockAB1().forEach(s => {
+        if (!dataMap[s.product]) dataMap[s.product] = createEmptyRow(s.product, s.price);
+        dataMap[s.product].initAB1 = s.quantity || 0;
+        dataMap[s.product].price = s.price || dataMap[s.product].price;
+      });
+      getStockAB2().forEach(s => {
+        if (!dataMap[s.product]) dataMap[s.product] = createEmptyRow(s.product, s.price);
+        dataMap[s.product].initAB2 = s.quantity || 0;
+      });
+      getStockAB3().forEach(s => {
+        if (!dataMap[s.product]) dataMap[s.product] = createEmptyRow(s.product, s.price);
+        dataMap[s.product].initAB3 = s.quantity || 0;
+      });
+    }
   }
 
   // Filtrer mouvements par période
