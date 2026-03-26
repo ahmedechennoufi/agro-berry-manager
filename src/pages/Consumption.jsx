@@ -2,13 +2,33 @@ import React, { useState, useMemo } from 'react';
 import { useApp } from '../App';
 import { Card, Button, Input, Select, Modal, StatCard, EmptyState } from '../components/UI';
 import { FARMS, CULTURES, DESTINATIONS } from '../lib/constants';
-import { fmt, today } from '../lib/utils';
+import { fmt, today, downloadExcel } from '../lib/utils';
 import { getAveragePrice, calculateFarmStock } from '../lib/store';
+
+const MONTHS = [
+  { value: 'ALL', label: 'Tous les mois' },
+  { value: '2025-09', label: 'Septembre 2025' },
+  { value: '2025-10', label: 'Octobre 2025' },
+  { value: '2025-11', label: 'Novembre 2025' },
+  { value: '2025-12', label: 'Décembre 2025' },
+  { value: '2026-01', label: 'Janvier 2026' },
+  { value: '2026-02', label: 'Février 2026' },
+  { value: '2026-03', label: 'Mars 2026' },
+  { value: '2026-04', label: 'Avril 2026' },
+  { value: '2026-05', label: 'Mai 2026' },
+  { value: '2026-06', label: 'Juin 2026' },
+  { value: '2026-07', label: 'Juillet 2026' },
+  { value: '2026-08', label: 'Août 2026' },
+];
 
 const Consumption = () => {
   const { products, movements, addMovement, showNotif } = useApp();
   const [showModal, setShowModal] = useState(false);
   const [selectedFarm, setSelectedFarm] = useState('ALL');
+  const [selectedMonth, setSelectedMonth] = useState(() => {
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+  });
   const [form, setForm] = useState({
     date: today(),
     product: '',
@@ -18,13 +38,11 @@ const Consumption = () => {
     destination: 'Sol'
   });
 
-  // Calculate farm stock live
   const farmStock = useMemo(() => {
     if (!form.farm) return {};
     return calculateFarmStock(form.farm);
   }, [form.farm, movements]);
 
-  // Available stock for selected product
   const availableStock = useMemo(() => {
     if (!form.product || !form.farm) return null;
     const stock = farmStock[form.product];
@@ -36,10 +54,19 @@ const Consumption = () => {
     return product?.unit || 'KG';
   };
 
-  const consumptions = useMemo(() => {
+  const allConsumptions = useMemo(() => {
     return movements.filter(m => m.type === 'consumption');
   }, [movements]);
 
+  // Filtered by month
+  const consumptions = useMemo(() => {
+    return allConsumptions.filter(m => {
+      if (selectedMonth === 'ALL') return true;
+      return (m.date || '').startsWith(selectedMonth);
+    });
+  }, [allConsumptions, selectedMonth]);
+
+  // Filtered by month + farm
   const filteredConsumptions = useMemo(() => {
     return consumptions.filter(m => selectedFarm === 'ALL' || m.farm === selectedFarm);
   }, [consumptions, selectedFarm]);
@@ -57,22 +84,42 @@ const Consumption = () => {
     return Object.values(map).sort((a, b) => b.total - a.total);
   }, [filteredConsumptions]);
 
+  const handleExport = async () => {
+    if (filteredConsumptions.length === 0) {
+      showNotif('Aucune donnée à exporter', 'error');
+      return;
+    }
+    const label = MONTHS.find(m => m.value === selectedMonth)?.label || selectedMonth;
+    const farmLabel = selectedFarm === 'ALL' ? 'Toutes fermes' : selectedFarm;
+
+    // Export détail ligne par ligne
+    const rows = filteredConsumptions.map(m => ({
+      Date: m.date || '',
+      Produit: m.product || '',
+      Quantité: m.quantity || 0,
+      Unité: getProductUnit(m.product),
+      Prix: m.price || 0,
+      Valeur: ((m.quantity || 0) * (m.price || 0)).toFixed(2),
+      Ferme: m.farm || '',
+      Culture: m.culture || '',
+      Destination: m.destination || '',
+    }));
+
+    const filename = `consommation-${label.replace(/\s+/g, '-')}-${farmLabel.replace(/\s+/g, '-')}.xlsx`;
+    await downloadExcel(rows, filename);
+    showNotif(`Export Excel : ${label} — ${farmLabel}`);
+  };
+
   const handleSubmit = () => {
     if (!form.product || !form.quantity) return;
-
-    // Validate stock - cannot consume more than available
     if (form.farm && form.product) {
       const currentStock = availableStock ?? 0;
       const qty = parseFloat(form.quantity);
       if (qty > currentStock) {
-        showNotif(
-          `Stock insuffisant : ${fmt(currentStock)} ${getProductUnit(form.product)} disponible`,
-          'error'
-        );
+        showNotif(`Stock insuffisant : ${fmt(currentStock)} ${getProductUnit(form.product)} disponible`, 'error');
         return;
       }
     }
-    
     const price = getAveragePrice(form.product);
     addMovement({
       date: form.date,
@@ -84,21 +131,53 @@ const Consumption = () => {
       culture: form.culture,
       destination: form.destination
     });
-    
     setShowModal(false);
     setForm({ date: today(), product: '', quantity: '', farm: 'AGRO BERRY 1', culture: 'Myrtille', destination: 'Sol' });
   };
+
+  const selectedMonthLabel = MONTHS.find(m => m.value === selectedMonth)?.label || selectedMonth;
 
   return (
     <div className="fade-in space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">🔥 Consommation</h1>
-          <p className="text-gray-500">{consumptions.length} consommations enregistrées</p>
+          <p className="text-gray-500">{allConsumptions.length} consommations enregistrées au total</p>
         </div>
         <Button onClick={() => setShowModal(true)}>🔥 Saisir Consommation</Button>
       </div>
 
+      {/* Filtres + Export */}
+      <Card>
+        <div className="flex flex-col md:flex-row gap-4 items-end">
+          <Select
+            label="Mois"
+            value={selectedMonth}
+            onChange={setSelectedMonth}
+            options={MONTHS}
+            className="md:w-56"
+          />
+          <Select
+            label="Ferme"
+            value={selectedFarm}
+            onChange={setSelectedFarm}
+            options={[
+              { value: 'ALL', label: 'Toutes les fermes' },
+              ...FARMS.map(f => ({ value: f.id, label: f.name }))
+            ]}
+            className="md:w-56"
+          />
+          <Button
+            variant="secondary"
+            onClick={handleExport}
+            className="flex items-center gap-2 whitespace-nowrap"
+          >
+            📥 Exporter Excel
+          </Button>
+        </div>
+      </Card>
+
+      {/* Stats par ferme */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {FARMS.map(farm => {
           const farmConso = consumptions.filter(c => c.farm === farm.id);
@@ -109,7 +188,7 @@ const Consumption = () => {
               icon="🔥"
               label={farm.name}
               value={fmt(total)}
-              subValue={`${farmConso.length} mouvements`}
+              subValue={`${farmConso.length} mouvements · ${selectedMonthLabel}`}
               color={farm.color}
             />
           );
@@ -117,22 +196,14 @@ const Consumption = () => {
       </div>
 
       <Card>
-        <Select
-          label="Filtrer par ferme"
-          value={selectedFarm}
-          onChange={setSelectedFarm}
-          options={[
-            { value: 'ALL', label: 'Toutes les fermes' },
-            ...FARMS.map(f => ({ value: f.id, label: f.name }))
-          ]}
-          className="md:w-64"
-        />
-      </Card>
-
-      <Card>
-        <h3 className="font-bold text-gray-800 mb-4">Consommation par produit</h3>
+        <h3 className="font-bold text-gray-800 mb-4">
+          Consommation par produit
+          {selectedMonth !== 'ALL' && (
+            <span className="ml-2 text-sm font-normal text-gray-500">— {selectedMonthLabel}</span>
+          )}
+        </h3>
         {consoByProduct.length === 0 ? (
-          <EmptyState icon="🔥" message="Aucune consommation enregistrée" />
+          <EmptyState icon="🔥" message={`Aucune consommation pour ${selectedMonthLabel}`} />
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -180,8 +251,6 @@ const Consumption = () => {
             ]}
             required
           />
-
-          {/* Stock disponible */}
           {form.product && form.farm && availableStock !== null && (
             <div className={`p-3 rounded-xl border flex items-center gap-2 ${
               availableStock > 0 ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
@@ -200,7 +269,6 @@ const Consumption = () => {
               </div>
             </div>
           )}
-
           <Input label="Quantité" type="number" value={form.quantity} onChange={(v) => setForm({ ...form, quantity: v })} required />
           <Select
             label="Culture"
