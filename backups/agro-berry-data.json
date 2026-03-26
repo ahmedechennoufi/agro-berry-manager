@@ -23213,6 +23213,257 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1774507238189
+    },
+    {
+      "type": "exit",
+      "product": "VITAMINA MIX",
+      "quantity": 25,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "id": 1774507372766
+    },
+    {
+      "type": "consumption",
+      "product": "VITAMINA MIX",
+      "quantity": 24,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507399200
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 38,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507510327
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 96,
+      "price": 4.26,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507526067
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 66,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507546778
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 12,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507561709
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507574277
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507589408
+    },
+    {
+      "type": "consumption",
+      "product": "AMMONITRATE",
+      "quantity": 35,
+      "price": 4.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507609168
+    },
+    {
+      "type": "consumption",
+      "product": "ROMBI SAL",
+      "quantity": 40,
+      "price": 27.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507636782
+    },
+    {
+      "type": "consumption",
+      "product": "ZM CORRECTOR",
+      "quantity": 12,
+      "price": 76,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507652917
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 76,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-19",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507679595
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 132,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-19",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507698949
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE MAGNESIUM",
+      "quantity": 152,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-19",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507723082
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 96,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-19",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507737562
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 70,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-19",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507752949
+    },
+    {
+      "type": "consumption",
+      "product": "AMMONITRATE",
+      "quantity": 70,
+      "price": 4.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-19",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507771639
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE NITRIQUE",
+      "quantity": 33,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-19",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507789654
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 38,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-23",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507824884
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 66,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-23",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507839659
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-23",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507853913
+    },
+    {
+      "type": "consumption",
+      "product": "BASSO",
+      "quantity": 48,
+      "price": 15,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-23",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507882449
+    },
+    {
+      "type": "consumption",
+      "product": "BIOENERGY",
+      "quantity": 32,
+      "price": 47.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-23",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774507906648
     }
   ],
   "stockAB1": [
@@ -25566,5 +25817,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-26T06:42:38.193Z"
+  "exportDate": "2026-03-26T06:53:46.653Z"
 }
