@@ -15486,17 +15486,6 @@
     },
     {
       "type": "consumption",
-      "product": "FERRILENE",
-      "quantity": 3,
-      "price": 102,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-07",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1773053276910
-    },
-    {
-      "type": "consumption",
       "product": "MAP",
       "quantity": 25,
       "price": 10,
@@ -26092,5 +26081,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-26T10:55:32.480Z"
+  "exportDate": "2026-03-26T11:38:09.611Z"
 }
