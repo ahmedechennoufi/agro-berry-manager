@@ -7,7 +7,11 @@ import { getConsoFermesDataByPeriod, getInventaires, getMovements, getProducts, 
 
 const ConsoFermes = () => {
   const { products, movements } = useApp();
-  const [selectedMonth, setSelectedMonth] = useState('JANVIER');
+  const [selectedMonth, setSelectedMonth] = useState(() => {
+    const now = new Date();
+    const monthNames = ['JANVIER','FEVRIER','MARS','AVRIL','MAI','JUIN','JUILLET','AOUT','SEPTEMBRE','OCTOBRE','NOVEMBRE','DECEMBRE'];
+    return monthNames[now.getMonth()];
+  });
   const [search, setSearch] = useState('');
   const [filterCategory, setFilterCategory] = useState('ALL');
 
