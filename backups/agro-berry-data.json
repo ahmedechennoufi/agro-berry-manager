@@ -23552,6 +23552,28 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1774508344552
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 4,
+      "price": 60,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774508983712
+    },
+    {
+      "type": "consumption",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 9,
+      "price": 800,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774509094299
     }
   ],
   "stockAB1": [
@@ -25905,5 +25927,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-26T07:01:04.553Z"
+  "exportDate": "2026-03-26T07:13:34.305Z"
 }
