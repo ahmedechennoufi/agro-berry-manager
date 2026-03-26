@@ -15948,7 +15948,7 @@
     },
     {
       "type": "consumption",
-      "product": "FERRILENE",
+      "product": "FEROXIM",
       "quantity": 5,
       "price": 102,
       "farm": "AGRO BERRY 2",
@@ -26092,5 +26092,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-26T10:49:52.465Z"
+  "exportDate": "2026-03-26T10:55:32.480Z"
 }
