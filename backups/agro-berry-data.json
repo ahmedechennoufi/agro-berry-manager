@@ -17345,17 +17345,6 @@
     },
     {
       "type": "consumption",
-      "product": "SULFATE MAGNESUIM",
-      "quantity": 80,
-      "price": 5,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-10",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1773389908329
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE DE CUIVRE",
       "quantity": 1,
       "price": 40,
@@ -23750,6 +23739,28 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1774526443732
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 50,
+      "price": 40,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-11",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774527029394
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 0.8,
+      "price": 60,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-11",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774528560991
     }
   ],
   "stockAB1": [
@@ -25860,6 +25871,730 @@
       },
       "createdAt": "2026-02-28T08:16:32.487Z",
       "updatedAt": "2026-03-04T10:24:03.116Z"
+    },
+    {
+      "id": "1774529611315",
+      "farm": "AGRO BERRY 2",
+      "farmName": "Agro Berry 2",
+      "date": "2026-03-25",
+      "data": {
+        "UREE": "1635",
+        "SULFATE MAGNESUIM": "1775",
+        "ENTEC 21% (NOVATEC SOLUB 21%)": "2287.5",
+        "SULFATE DE POTASSE": "2432",
+        "ALGOBAZ": "4",
+        "SULFATE DE ZINC": "20",
+        "MAP": "1775",
+        "NITRATE DE CALCIUM": "741.5",
+        "SOLUBOR": "6.7",
+        "CHLORO MIX ": "260",
+        "ACIDE PHOSPHORIQUE": "576",
+        "FEROXIM": "477",
+        "NOVA": "24",
+        "FOLICIST": "4",
+        "OIKOS": "23.33",
+        "MICROS": "8",
+        "PITCA CALCIUM": "40",
+        "ISABION": "100.25",
+        "HUWA SAN": "50",
+        "BORTRAC": "44.9",
+        "FOLIASTIM": "10.7",
+        "VITAL CU": "19.55",
+        "VERIMARK": "1.12",
+        "TIOSOL": "55.6",
+        "MOVENTO": "39",
+        "LUNA FUSION": "13.84",
+        "SWITCH": "16.5",
+        "BOITE BOTREFIN 600G": "3",
+        "RADIANT": "5",
+        "FERRILENE": "120",
+        "SULFATE DE CUIVRE": "50",
+        "ACIDE CHLORHYDRIQUE": "696",
+        "ANTISCALANT ZENTREAT": "810",
+        "ACTARA": "1.73",
+        "ALFABET": "0.6",
+        "ALIETTE FLASH": "1",
+        "ANTISCALANT PERMATREAT": "100",
+        "BENEVIA": "76.11",
+        "BIOFORGE": "6.5",
+        "BLAKJAK": "12",
+        "CODACIDE OIL": "31",
+        "DICARZOL": "1",
+        "EFFICIENT": "25",
+        "EXIREL": "54",
+        "GREENSTIM": "3.5",
+        "INACOP": "16.5",
+        "JOKER": "56",
+        "KALIGREEN": "1",
+        "KELPAK": "4",
+        "KOBUS": "2.5",
+        "LUNA SENSATION": "0.3",
+        "MAVRIK": "30",
+        "MERJANE": "20",
+        "PERMACLEAN": "75",
+        "PIXEL": "86",
+        "PROBLAD": "2",
+        "PROXY": "7.5",
+        "SAPHYR": "0.85",
+        "SIGNUM": "20.8",
+        "STROBY": "15.31",
+        "SUCRE": "300",
+        "TALENDO": "12",
+        "TELDOR": "11.5",
+        "TIMOREX GOLD": "19.2"
+      },
+      "comparison": [
+        {
+          "name": "ACIDE CHLORHYDRIQUE",
+          "unit": "KG",
+          "theoretical": 696,
+          "physical": 696,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ACIDE PHOSPHORIQUE",
+          "unit": "KG",
+          "theoretical": 576,
+          "physical": 576,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ACTARA",
+          "unit": "KG",
+          "theoretical": 1.73,
+          "physical": 1.73,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ALFABET",
+          "unit": "KG",
+          "theoretical": 0.6,
+          "physical": 0.6,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ALGOBAZ",
+          "unit": "KG",
+          "theoretical": 4,
+          "physical": 4,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ALIETTE FLASH",
+          "unit": "KG",
+          "theoretical": 1,
+          "physical": 1,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ANTISCALANT PERMATREAT",
+          "unit": "L",
+          "theoretical": 100,
+          "physical": 100,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ANTISCALANT ZENTREAT",
+          "unit": "L",
+          "theoretical": 810,
+          "physical": 810,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "BENEVIA",
+          "unit": "L",
+          "theoretical": 76.11,
+          "physical": 76.11,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "BIOFORGE",
+          "unit": "L",
+          "theoretical": 6.5,
+          "physical": 6.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "BLAKJAK",
+          "unit": "L",
+          "theoretical": 12,
+          "physical": 12,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "BOITE BOTREFIN 600G",
+          "unit": "UNITÉ",
+          "theoretical": 3,
+          "physical": 3,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "BORTRAC",
+          "unit": "L",
+          "theoretical": 44.9,
+          "physical": 44.9,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "CHLORO MIX ",
+          "unit": "KG",
+          "theoretical": 260,
+          "physical": 260,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "CODACIDE OIL",
+          "unit": "L",
+          "theoretical": 31,
+          "physical": 31,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "DICARZOL",
+          "unit": "KG",
+          "theoretical": 1,
+          "physical": 1,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "EFFICIENT",
+          "unit": "L",
+          "theoretical": 25,
+          "physical": 25,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "unit": "KG",
+          "theoretical": 2287.5,
+          "physical": 2287.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "EXIREL",
+          "unit": "L",
+          "theoretical": 54,
+          "physical": 54,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "FEROXIM",
+          "unit": "L",
+          "theoretical": 477,
+          "physical": 477,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "FERRILENE",
+          "unit": "KG",
+          "theoretical": 120,
+          "physical": 120,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "FOLIASTIM",
+          "unit": "L",
+          "theoretical": 10.7,
+          "physical": 10.7,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "FOLICIST",
+          "unit": "L",
+          "theoretical": 4,
+          "physical": 4,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "GREENSTIM",
+          "unit": "KG",
+          "theoretical": 3.5,
+          "physical": 3.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "HUWA SAN",
+          "unit": "KG",
+          "theoretical": 50,
+          "physical": 50,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "INACOP",
+          "unit": "KG",
+          "theoretical": 16.5,
+          "physical": 16.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "ISABION",
+          "unit": "L",
+          "theoretical": 100.25,
+          "physical": 100.25,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "JOKER",
+          "unit": "L",
+          "theoretical": 56,
+          "physical": 56,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "KALIGREEN",
+          "unit": "KG",
+          "theoretical": 1,
+          "physical": 1,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "KELPAK",
+          "unit": "L",
+          "theoretical": 4,
+          "physical": 4,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "KOBUS",
+          "unit": "L",
+          "theoretical": 2.5,
+          "physical": 2.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "LUNA FUSION",
+          "unit": "L",
+          "theoretical": 13.84,
+          "physical": 13.84,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "LUNA SENSATION",
+          "unit": "L",
+          "theoretical": 0.3,
+          "physical": 0.3,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "MAP",
+          "unit": "KG",
+          "theoretical": 1775,
+          "physical": 1775,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "MAVRIK",
+          "unit": "L",
+          "theoretical": 30,
+          "physical": 30,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "MERJANE",
+          "unit": "KG",
+          "theoretical": 20,
+          "physical": 20,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "MICROS",
+          "unit": "KG",
+          "theoretical": 8,
+          "physical": 8,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "MOVENTO",
+          "unit": "L",
+          "theoretical": 39,
+          "physical": 39,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "NITRATE DE CALCIUM",
+          "unit": "KG",
+          "theoretical": 741.5,
+          "physical": 741.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "NOVA",
+          "unit": "L",
+          "theoretical": 24,
+          "physical": 24,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "OIKOS",
+          "unit": "L",
+          "theoretical": 23.33,
+          "physical": 23.33,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "PERMACLEAN",
+          "unit": "L",
+          "theoretical": 75,
+          "physical": 75,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "PITCA CALCIUM",
+          "unit": "L",
+          "theoretical": 40,
+          "physical": 40,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "PIXEL",
+          "unit": "L",
+          "theoretical": 86,
+          "physical": 86,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "PROBLAD",
+          "unit": "L",
+          "theoretical": 2,
+          "physical": 2,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "PROXY",
+          "unit": "L",
+          "theoretical": 7.5,
+          "physical": 7.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "RADIANT",
+          "unit": "L",
+          "theoretical": 5,
+          "physical": 5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SAPHYR",
+          "unit": "L",
+          "theoretical": 0.85,
+          "physical": 0.85,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SIGNUM",
+          "unit": "L",
+          "theoretical": 20.8,
+          "physical": 20.8,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SOLUBOR",
+          "unit": "KG",
+          "theoretical": 6.7,
+          "physical": 6.7,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "STROBY",
+          "unit": "L",
+          "theoretical": 15.31,
+          "physical": 15.31,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SUCRE",
+          "unit": "KG",
+          "theoretical": 300,
+          "physical": 300,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SULFATE DE CUIVRE",
+          "unit": "KG",
+          "theoretical": 50,
+          "physical": 50,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SULFATE DE POTASSE",
+          "unit": "KG",
+          "theoretical": 2432,
+          "physical": 2432,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SULFATE DE ZINC",
+          "unit": "KG",
+          "theoretical": 20,
+          "physical": 20,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SULFATE MAGNESUIM",
+          "unit": "KG",
+          "theoretical": 1775,
+          "physical": 1775,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "SWITCH",
+          "unit": "KG",
+          "theoretical": 16.5,
+          "physical": 16.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "TALENDO",
+          "unit": "L",
+          "theoretical": 12,
+          "physical": 12,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "TELDOR",
+          "unit": "KG",
+          "theoretical": 11.5,
+          "physical": 11.5,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "TIMOREX GOLD",
+          "unit": "L",
+          "theoretical": 19.2,
+          "physical": 19.2,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "TIOSOL",
+          "unit": "KG",
+          "theoretical": 55.6,
+          "physical": 55.6,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "UREE",
+          "unit": "KG",
+          "theoretical": 1635,
+          "physical": 1635,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "VERIMARK",
+          "unit": "L",
+          "theoretical": 1.12,
+          "physical": 1.12,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        },
+        {
+          "name": "VITAL CU",
+          "unit": "L",
+          "theoretical": 19.55,
+          "physical": 19.55,
+          "diff": 0,
+          "diffPercent": 0,
+          "diffValue": 0,
+          "status": "ok"
+        }
+      ],
+      "stats": {
+        "total": 64,
+        "entered": 64,
+        "withDiff": 0,
+        "ok": 64,
+        "totalDiffValue": 0,
+        "progress": 100
+      },
+      "createdAt": "2026-03-26T12:53:31.315Z",
+      "updatedAt": "2026-03-26T12:54:18.816Z"
     }
   ],
   "commandes": [
@@ -26103,5 +26838,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-26T12:02:33.069Z"
+  "exportDate": "2026-03-26T12:56:23.491Z"
 }
