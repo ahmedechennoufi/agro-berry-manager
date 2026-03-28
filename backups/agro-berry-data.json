@@ -23847,6 +23847,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774701338150
+    },
+    {
+      "type": "consumption",
+      "product": "NUTREL C",
+      "quantity": 4.5,
+      "price": 148,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-19",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774702821596
     }
   ],
   "stockAB1": [
@@ -26924,5 +26935,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-28T12:51:48.842Z"
+  "exportDate": "2026-03-28T13:00:27.708Z"
 }
