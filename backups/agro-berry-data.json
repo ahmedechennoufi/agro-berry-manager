@@ -23739,6 +23739,26 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1774528560991
+    },
+    {
+      "type": "exit",
+      "product": "NUTRIVANT FRUIT 0-20-40",
+      "quantity": 50,
+      "price": 59.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-28",
+      "id": 1774682902177
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 128,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774698937704
     }
   ],
   "stockAB1": [
@@ -26816,5 +26836,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-28T06:40:20.778Z"
+  "exportDate": "2026-03-28T11:57:37.710Z"
 }
