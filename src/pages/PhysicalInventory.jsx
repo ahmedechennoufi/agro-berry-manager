@@ -78,7 +78,7 @@ const PhysicalInventory = () => {
   // Calculate theoretical stock for selected farm
   const theoreticalStock = useMemo(() => {
     if (!selectedFarm) return [];
-    const stockMap = calculateFarmStock(selectedFarm);
+    const stockMap = calculateFarmStock(selectedFarm, inventoryDate);
     const allProducts = getProducts();
     
     const result = Object.entries(stockMap)

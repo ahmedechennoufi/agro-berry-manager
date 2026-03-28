@@ -475,14 +475,18 @@ export const calculateGlobalStock = () => {
 };
 
 // Stock par ferme
-export const calculateFarmStock = (farmId) => {
+export const calculateFarmStock = (farmId, beforeDate = null) => {
   const movements = getMovements();
   const stockMap = {};
   
   // Chercher le dernier inventaire physique pour cette ferme
   const physicalInventories = getPhysicalInventories();
   const farmInventories = physicalInventories
-    .filter(inv => inv.farm === farmId && inv.data)
+    .filter(inv => {
+      if (inv.farm !== farmId || !inv.data) return false;
+      if (beforeDate && inv.date >= beforeDate) return false;
+      return true;
+    })
     .sort((a, b) => b.date.localeCompare(a.date)); // Plus récent en premier
   
   const latestInventory = farmInventories[0] || null;
