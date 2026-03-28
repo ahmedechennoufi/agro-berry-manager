@@ -14225,17 +14225,6 @@
     },
     {
       "type": "consumption",
-      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
-      "quantity": 37.5,
-      "price": 7,
-      "farm": "AGRO BERRY 3",
-      "date": "2026-03-03",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1772791449703
-    },
-    {
-      "type": "consumption",
       "product": "MAP",
       "quantity": 50,
       "price": 10,
@@ -21742,17 +21731,6 @@
     },
     {
       "type": "consumption",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 64,
-      "price": 8.6,
-      "farm": "AGRO BERRY 3",
-      "date": "2026-03-25",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1774440697083
-    },
-    {
-      "type": "consumption",
       "product": "HUWA SAN",
       "quantity": 1.5,
       "price": 68,
@@ -26838,5 +26816,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-26T13:00:29.068Z"
+  "exportDate": "2026-03-28T06:40:20.778Z"
 }
