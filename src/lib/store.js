@@ -1106,7 +1106,8 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
   // Mouvements de la période
   periodMovements.forEach(m => {
     const product = m.product;
-    if (!product || !dataMap[product]) return;
+    if (!product) return;
+    if (!dataMap[product]) dataMap[product] = createEmptyRow(product, m.price || getAveragePrice(product) || 0);
     const data = dataMap[product];
     const qty = m.quantity || 0;
     const farm = m.farm || '';

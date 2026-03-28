@@ -243,38 +243,8 @@ const ConsoFermes = () => {
     return `${start.getDate()} ${start.toLocaleDateString('fr-FR', { month: 'short' })} → ${end.getDate()} ${end.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' })}`;
   };
 
-  // DEBUG ACIDE PHOSPHORIQUE
-  const debugAcide = useMemo(() => {
-    const allMovements = getMovements();
-    const filtered = allMovements.filter(m => 
-      m.product === 'ACIDE PHOSPHORIQUE' && 
-      m.farm === 'AGRO BERRY 3' &&
-      m.date >= periodDates.start && 
-      m.date <= periodDates.end
-    );
-    const conso = filtered.filter(m => m.type === 'consumption').reduce((s, m) => s + (m.quantity||0), 0);
-    const ent = filtered.filter(m => m.type === 'exit' || m.type === 'transfer-in').reduce((s, m) => s + (m.quantity||0), 0);
-    const tableRow = tableData.find(d => d.name === 'ACIDE PHOSPHORIQUE');
-    return { conso, ent, filtered: filtered.length, tableRow, start: periodDates.start, end: periodDates.end };
-  }, [tableData, periodDates]);
-
   return (
     <div className="space-y-5">
-      {/* DEBUG PANEL - temporaire */}
-      <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 text-xs font-mono">
-        <div className="font-bold text-yellow-800 mb-2">🔍 DEBUG - ACIDE PHOSPHORIQUE AGB3</div>
-        <div>Période: {debugAcide.start} → {debugAcide.end}</div>
-        <div>Mouvements trouvés dans période: {debugAcide.filtered}</div>
-        <div>Consommation calculée: {debugAcide.conso}</div>
-        <div>Entrées calculées: {debugAcide.ent}</div>
-        {debugAcide.tableRow && <>
-          <div>initAB3: {debugAcide.tableRow.initAB3}</div>
-          <div>entAB3: {debugAcide.tableRow.entAB3}</div>
-          <div>consAB3: {debugAcide.tableRow.consAB3}</div>
-          <div>finAB3: {debugAcide.tableRow.finAB3}</div>
-        </>}
-      </div>
-
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
