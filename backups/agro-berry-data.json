@@ -23759,6 +23759,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774698937704
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 80,
+      "price": 3.9076923076923076,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774700174419
     }
   ],
   "stockAB1": [
@@ -26836,5 +26847,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-28T11:57:37.710Z"
+  "exportDate": "2026-03-28T12:18:14.427Z"
 }
