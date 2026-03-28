@@ -23770,6 +23770,83 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774700174419
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-27",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774701129366
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-02-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774701202602
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-02",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774701230300
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-04",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774701253748
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-06",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774701298584
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-08",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774701321919
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-10",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774701338150
     }
   ],
   "stockAB1": [
@@ -26847,5 +26924,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-28T12:18:14.427Z"
+  "exportDate": "2026-03-28T12:37:38.154Z"
 }
