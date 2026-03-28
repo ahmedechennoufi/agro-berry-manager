@@ -115,7 +115,7 @@ const PhysicalInventory = () => {
     });
     
     return result.sort((a, b) => a.name.localeCompare(b.name));
-  }, [selectedFarm, extraProducts]);
+  }, [selectedFarm, extraProducts, inventoryDate]);
 
   // Comparison data
   const comparisonData = useMemo(() => {
