@@ -14225,17 +14225,6 @@
     },
     {
       "type": "consumption",
-      "product": "MAP",
-      "quantity": 50,
-      "price": 10,
-      "farm": "AGRO BERRY 3",
-      "date": "2026-03-03",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1772791494954
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE MAGNESUIM",
       "quantity": 50,
       "price": 5,
@@ -26946,5 +26935,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-29T11:08:01.794Z"
+  "exportDate": "2026-03-29T11:13:17.328Z"
 }
