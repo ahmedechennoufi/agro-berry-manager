@@ -22721,17 +22721,6 @@
     },
     {
       "type": "consumption",
-      "product": "NOVA",
-      "quantity": 19.75,
-      "price": 85,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-26",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1774506315259
-    },
-    {
-      "type": "consumption",
       "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
       "quantity": 35,
       "price": 7.25,
@@ -22762,17 +22751,6 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774506385592
-    },
-    {
-      "type": "consumption",
-      "product": "SULFATE DE POTASSE",
-      "quantity": 50,
-      "price": 7.11,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-26",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1774506402341
     },
     {
       "type": "consumption",
@@ -27593,5 +27571,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-29T11:25:07.487Z"
+  "exportDate": "2026-03-29T11:27:39.762Z"
 }
