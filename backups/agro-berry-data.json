@@ -1225,6 +1225,13 @@
       "category": "ENGRAIS",
       "threshold": null,
       "id": 1773832265380
+    },
+    {
+      "name": "CLOSER",
+      "unit": "KG",
+      "category": "PHYTOSANITAIRES",
+      "threshold": null,
+      "id": 1774787068689
     }
   ],
   "movements": [
@@ -23847,6 +23854,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1774783771657
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 19.75,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774786235600
     }
   ],
   "stockAB1": [
@@ -27582,5 +27600,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-29T11:31:31.662Z"
+  "exportDate": "2026-03-29T12:26:28.696Z"
 }
