@@ -23865,6 +23865,83 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774786235600
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774851768259
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774851782351
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 96,
+      "price": 4.26,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774851828016
+    },
+    {
+      "type": "consumption",
+      "product": "ROMBI SAL",
+      "quantity": 40,
+      "price": 27.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774851849435
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 12,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774851882667
+    },
+    {
+      "type": "consumption",
+      "product": "ZM CORRECTOR",
+      "quantity": 12,
+      "price": 76,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774851904149
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774851936327
     }
   ],
   "stockAB1": [
@@ -27600,5 +27677,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-29T12:26:28.696Z"
+  "exportDate": "2026-03-30T06:27:36.332Z"
 }
