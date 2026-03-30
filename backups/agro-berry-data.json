@@ -23912,17 +23912,6 @@
     },
     {
       "type": "consumption",
-      "product": "FERRILENE",
-      "quantity": 12,
-      "price": 102,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Fraise",
-      "destination": "Sol",
-      "id": 1774851882667
-    },
-    {
-      "type": "consumption",
       "product": "ZM CORRECTOR",
       "quantity": 12,
       "price": 76,
@@ -27710,5 +27699,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-30T08:17:26.954Z"
+  "exportDate": "2026-03-30T08:26:12.960Z"
 }
