@@ -23964,6 +23964,24 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1774858526307
+    },
+    {
+      "type": "entry",
+      "product": "MAP",
+      "quantity": 3000,
+      "price": 12.8,
+      "supplier": "CASEM",
+      "date": "2026-03-26",
+      "id": 1774859354330
+    },
+    {
+      "type": "exit",
+      "product": "MAP",
+      "quantity": 3000,
+      "price": 12.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-26",
+      "id": 1774859365467
     }
   ],
   "stockAB1": [
@@ -27699,5 +27717,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-30T08:26:12.960Z"
+  "exportDate": "2026-03-30T08:31:25.474Z"
 }
