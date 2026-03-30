@@ -23942,6 +23942,39 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1774851936327
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 10,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-24",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774858438535
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 3,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1774858489743
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 10,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774858526307
     }
   ],
   "stockAB1": [
@@ -27677,5 +27710,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-30T06:27:36.332Z"
+  "exportDate": "2026-03-30T08:17:26.954Z"
 }
