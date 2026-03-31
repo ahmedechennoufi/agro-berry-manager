@@ -22971,7 +22971,7 @@
     {
       "type": "consumption",
       "product": "VITAMINA MIX",
-      "quantity": 1.94,
+      "quantity": 2,
       "price": 54.17000000000001,
       "farm": "AGRO BERRY 1",
       "date": "2026-03-23",
@@ -23465,17 +23465,6 @@
     },
     {
       "type": "consumption",
-      "product": "PIXEL",
-      "quantity": 6,
-      "price": 190,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Fraise",
-      "destination": "Sol",
-      "id": 1774508344552
-    },
-    {
-      "type": "consumption",
       "product": "TIOSOL",
       "quantity": 4,
       "price": 60,
@@ -23837,17 +23826,6 @@
     },
     {
       "type": "consumption",
-      "product": "UREE",
-      "quantity": 35,
-      "price": 5.841785714285714,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1774783771657
-    },
-    {
-      "type": "consumption",
       "product": "NOVA",
       "quantity": 19.75,
       "price": 85,
@@ -23856,72 +23834,6 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1774786235600
-    },
-    {
-      "type": "consumption",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 32,
-      "price": 8.6,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1774851768259
-    },
-    {
-      "type": "consumption",
-      "product": "ACIDE SULFURIQUE",
-      "quantity": 35,
-      "price": 3.35,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1774851782351
-    },
-    {
-      "type": "consumption",
-      "product": "NITRATE DE CALCIUM",
-      "quantity": 96,
-      "price": 4.26,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Fraise",
-      "destination": "Sol",
-      "id": 1774851828016
-    },
-    {
-      "type": "consumption",
-      "product": "ROMBI SAL",
-      "quantity": 40,
-      "price": 27.35,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Fraise",
-      "destination": "Sol",
-      "id": 1774851849435
-    },
-    {
-      "type": "consumption",
-      "product": "ZM CORRECTOR",
-      "quantity": 12,
-      "price": 76,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Fraise",
-      "destination": "Sol",
-      "id": 1774851904149
-    },
-    {
-      "type": "consumption",
-      "product": "ACIDE SULFURIQUE",
-      "quantity": 35,
-      "price": 3.35,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-25",
-      "culture": "Fraise",
-      "destination": "Sol",
-      "id": 1774851936327
     },
     {
       "type": "consumption",
@@ -24013,6 +23925,83 @@
       "supplier": "AUTRE",
       "date": "2026-03-31",
       "id": 1774951607008
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 8.6,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1774954802072
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 96,
+      "price": 4.26,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774954882454
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 12,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774954970102
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774954985316
+    },
+    {
+      "type": "consumption",
+      "product": "ROMBI SAL",
+      "quantity": 40,
+      "price": 27.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774955002163
+    },
+    {
+      "type": "consumption",
+      "product": "PIXEL",
+      "quantity": 6,
+      "price": 190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774955021540
+    },
+    {
+      "type": "consumption",
+      "product": "ZM CORRECTOR",
+      "quantity": 12,
+      "price": 76,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1774955038438
     }
   ],
   "stockAB1": [
@@ -27748,5 +27737,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-31T10:08:47.022Z"
+  "exportDate": "2026-03-31T11:05:58.446Z"
 }
