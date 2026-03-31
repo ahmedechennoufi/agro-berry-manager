@@ -23995,6 +23995,24 @@
       "date": "2026-03-30",
       "transferId": 1774865272329,
       "id": 1774865272332
+    },
+    {
+      "type": "entry",
+      "product": "CORDE",
+      "quantity": 16413,
+      "price": 0,
+      "supplier": "AUTRE",
+      "date": "2026-03-31",
+      "id": 1774951547644
+    },
+    {
+      "type": "entry",
+      "product": "CORDE",
+      "quantity": 6856,
+      "price": 0,
+      "supplier": "AUTRE",
+      "date": "2026-03-31",
+      "id": 1774951607008
     }
   ],
   "stockAB1": [
@@ -27730,5 +27748,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-03-31T09:45:53.353Z"
+  "exportDate": "2026-03-31T10:08:47.022Z"
 }
