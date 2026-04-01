@@ -24020,6 +24020,17 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-03-26",
       "id": 1775029269344
+    },
+    {
+      "type": "consumption",
+      "product": "CRYPTSURE",
+      "quantity": 1,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1775029430531
     }
   ],
   "stockAB1": [
@@ -27755,5 +27766,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-04-01T07:43:09.972Z"
+  "exportDate": "2026-04-01T07:45:50.535Z"
 }
