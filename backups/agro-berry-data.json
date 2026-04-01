@@ -23377,7 +23377,7 @@
     },
     {
       "type": "consumption",
-      "product": "CHLORO MIX ",
+      "product": "VITAMINA MIX",
       "quantity": 24,
       "price": 85,
       "farm": "AGRO BERRY 1",
@@ -27759,5 +27759,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-04-01T06:47:14.741Z"
+  "exportDate": "2026-04-01T07:03:52.155Z"
 }
