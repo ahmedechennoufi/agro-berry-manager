@@ -24020,6 +24020,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1775029430531
+    },
+    {
+      "type": "consumption",
+      "product": "ORISURE ",
+      "quantity": 3,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-24",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1775031517030
     }
   ],
   "stockAB1": [
@@ -27755,5 +27766,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-04-01T07:49:20.298Z"
+  "exportDate": "2026-04-01T08:20:37.035Z"
 }
