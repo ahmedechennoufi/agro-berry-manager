@@ -14683,17 +14683,6 @@
     },
     {
       "type": "consumption",
-      "product": "CODACIDE OIL",
-      "quantity": 4,
-      "price": 82.6,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-02",
-      "culture": "Fraise",
-      "destination": "Sol",
-      "id": 1772795901030
-    },
-    {
-      "type": "consumption",
       "product": "SCELTA",
       "quantity": 4,
       "price": 1190,
@@ -27766,5 +27755,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-04-01T07:45:50.535Z"
+  "exportDate": "2026-04-01T07:49:20.298Z"
 }
