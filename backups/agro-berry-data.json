@@ -14221,17 +14221,6 @@
     },
     {
       "type": "consumption",
-      "product": "ACIDE SULFURIQUE",
-      "quantity": 35,
-      "price": 3.35,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-02",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1772791363672
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE MAGNESUIM",
       "quantity": 50,
       "price": 5,
@@ -24024,6 +24013,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1775023877680
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1775025914735
     }
   ],
   "stockAB1": [
@@ -27759,5 +27759,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-04-01T06:13:17.688Z"
+  "exportDate": "2026-04-01T06:47:14.741Z"
 }
