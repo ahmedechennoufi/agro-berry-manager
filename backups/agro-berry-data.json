@@ -13016,7 +13016,7 @@
     {
       "type": "consumption",
       "product": "UREE",
-      "quantity": 25,
+      "quantity": 35,
       "price": 5.8,
       "farm": "AGRO BERRY 1",
       "date": "2026-02-28",
@@ -16251,7 +16251,7 @@
     {
       "type": "consumption",
       "product": "UREE",
-      "quantity": 24.75,
+      "quantity": 25,
       "price": 5.8,
       "farm": "AGRO BERRY 1",
       "date": "2026-03-09",
@@ -27777,5 +27777,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-04-01T09:44:37.199Z"
+  "exportDate": "2026-04-01T10:04:27.134Z"
 }
