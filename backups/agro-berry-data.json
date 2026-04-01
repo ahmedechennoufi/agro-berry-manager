@@ -23836,17 +23836,6 @@
       "id": 1774858489743
     },
     {
-      "type": "consumption",
-      "product": "CHLORO MIX ",
-      "quantity": 10,
-      "price": 85,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-03-23",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "id": 1774858526307
-    },
-    {
       "type": "entry",
       "product": "MAP",
       "quantity": 3000,
@@ -24013,6 +24002,24 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1775025914735
+    },
+    {
+      "type": "entry",
+      "product": "CLOSER",
+      "quantity": 3,
+      "price": 0,
+      "supplier": "CASEM",
+      "date": "2026-03-18",
+      "id": 1775029244793
+    },
+    {
+      "type": "exit",
+      "product": "CLOSER",
+      "quantity": 3,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-26",
+      "id": 1775029269344
     }
   ],
   "stockAB1": [
@@ -27748,5 +27755,5 @@
       "updatedAt": "2026-03-17T09:49:25.939Z"
     }
   ],
-  "exportDate": "2026-04-01T07:15:39.356Z"
+  "exportDate": "2026-04-01T07:43:09.972Z"
 }
