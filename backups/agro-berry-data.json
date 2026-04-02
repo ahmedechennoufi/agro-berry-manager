@@ -24071,6 +24071,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-03-24",
       "id": 1775113522459
+    },
+    {
+      "type": "exit",
+      "product": "PEROXYDE D'HYDROGENE",
+      "quantity": 20,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-18",
+      "id": 1775114296290
     }
   ],
   "stockAB1": [
@@ -28889,5 +28898,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T07:07:22.464Z"
+  "exportDate": "2026-04-02T07:20:16.298Z"
 }
