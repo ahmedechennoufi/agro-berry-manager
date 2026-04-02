@@ -24652,6 +24652,15 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1775126297937
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 1300,
+      "price": 8.6,
+      "supplier": "WE GREENS",
+      "date": "2026-04-02",
+      "id": 1775136398649
     }
   ],
   "stockAB1": [
@@ -25908,7 +25917,8 @@
     "YOUNESS HARARA TRANS",
     "YOUNESS HARARA TRANS",
     "MANVERT",
-    "AGROGAILES"
+    "AGROGAILES",
+    "WE GREENS"
   ],
   "consommations": [],
   "melanges": [],
@@ -29470,5 +29480,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T11:52:45.832Z"
+  "exportDate": "2026-04-02T13:28:38.660Z"
 }
