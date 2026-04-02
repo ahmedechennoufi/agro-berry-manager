@@ -23845,7 +23845,7 @@
     {
       "type": "consumption",
       "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 64,
+      "quantity": 32,
       "price": 8.6,
       "farm": "AGRO BERRY 1",
       "date": "2026-03-25",
@@ -31354,5 +31354,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T18:26:39.736Z"
+  "exportDate": "2026-04-02T18:37:29.114Z"
 }
