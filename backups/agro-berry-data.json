@@ -24597,6 +24597,61 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1775125977584
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 1,
+      "price": 40,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775126179065
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775126233582
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775126256581
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 15,
+      "price": 85,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775126279696
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 1.5,
+      "price": 68,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775126297937
     }
   ],
   "stockAB1": [
@@ -29415,5 +29470,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T10:34:57.590Z"
+  "exportDate": "2026-04-02T10:40:17.945Z"
 }
