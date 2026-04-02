@@ -106,7 +106,7 @@
     {
       "id": 1766484423653,
       "name": "BEESURE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -118,7 +118,7 @@
     {
       "id": 1766938903995,
       "name": "BIDON D'EAU",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -154,19 +154,19 @@
     {
       "id": 1766490321668,
       "name": "BRIQUE ROUGE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1769174052158,
       "name": "CASQUE ANTI BRUIT SNR 26",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766938646403,
       "name": "CHAUX",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -190,31 +190,31 @@
     {
       "id": 1766938517871,
       "name": "COLLE SILICONE BLANC",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766938703726,
       "name": "COMPTEUR D'EAU D110 COMPLET",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766396295064,
       "name": "CORDE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766485230522,
-      "name": "CORNIÃRE",
-      "unit": "UNITÃ",
+      "name": "CORNIÈRE",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766395979763,
       "name": "COUVRE SOL",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
@@ -256,7 +256,7 @@
     {
       "id": 1766485606669,
       "name": "FICELLE NOIR 1000",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
@@ -280,7 +280,7 @@
     {
       "id": 1769174019899,
       "name": "GILET JAUNE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -383,7 +383,7 @@
     {
       "id": 1766938605573,
       "name": "MANOMETRE 6 BAR AVEC MANCHON",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -511,31 +511,31 @@
     {
       "id": 1766396382102,
       "name": "PAILLAGE NOIR",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766938934662,
       "name": "PEINTURE ANTI ROUILLE ROUGE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766939064564,
       "name": "PEINTURE BLANC MATE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766938978796,
       "name": "PEINTURE BLEU",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766939117532,
       "name": "PEINTURE ROUGE IMPERMEABLE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -553,7 +553,7 @@
     {
       "id": 1766939006316,
       "name": "PINCEAU DE PEINTURE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -577,19 +577,19 @@
     {
       "id": 1766396355915,
       "name": "PLASTIQUE BLANC",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766396444251,
       "name": "POTS 10 L",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766396460047,
       "name": "POTS 40 L",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
@@ -631,7 +631,7 @@
     {
       "id": 1766938960613,
       "name": "ROBINET",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -643,19 +643,19 @@
     {
       "id": 1766486640679,
       "name": "RONDELLE PLAT",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766486573960,
       "name": "ROUE 200 SIPLEME",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "id": 1766939029564,
       "name": "ROULEAU DE PEINTURE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -679,7 +679,7 @@
     {
       "id": 1766487580209,
       "name": "SEAU DE 3L",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -697,13 +697,13 @@
     {
       "id": 1766396259532,
       "name": "SOLARIG",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766938632902,
       "name": "SOLENOIDE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -799,7 +799,7 @@
     {
       "id": 1766489774153,
       "name": "TOLE NOIR (2000/1000/20)",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -811,13 +811,13 @@
     {
       "id": 1766396330784,
       "name": "TOURBE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766396414133,
       "name": "TUYAUX D'IRRIGATION",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "INVESTISSEMENT"
     },
     {
@@ -829,7 +829,7 @@
     {
       "id": 1766938885712,
       "name": "VANNE D63 AUTOMATIQUE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -841,7 +841,7 @@
     {
       "id": 1766486744188,
       "name": "VIS POELIER",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -872,7 +872,7 @@
     {
       "id": 1766939046631,
       "name": "WHITE SPIRITE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
@@ -883,140 +883,140 @@
     },
     {
       "name": "VESTE DE TRAITEMENT",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770296491671
     },
     {
       "name": "GANT",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770296501754
     },
     {
       "name": "MASQUE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770296511754
     },
     {
       "name": "LUNETTE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770296526420
     },
     {
       "name": "FILTRE DE MASQUE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770296541804
     },
     {
       "name": "RUBON",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770296553454
     },
     {
       "name": "ML TUYAU POLYETHYLENE 32",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297236862
     },
     {
       "name": "JONCTION POLYETHYLENE D 32",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297277394
     },
     {
       "name": "VANNE POLYETHYLENE 40",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297320228
     },
     {
       "name": "COUDE POLYETHYLENE D 32",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297365195
     },
     {
       "name": "CPEC 110 X 314",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297397444
     },
     {
       "name": "CPEC 90 X 314",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297424443
     },
     {
       "name": "CHALUMEAU A GAZ",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297454277
     },
     {
       "name": "BIDON",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297470860
     },
     {
       "name": "FLEXIBLE DE LAVABO",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770297495494
     },
     {
       "name": "CITERNE ",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770299102118
     },
     {
       "name": "PROJECTEUR",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770299553003
     },
     {
       "name": "FICHE MALE 380",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770299576403
     },
     {
       "name": "PRISE FEMELLE 220V",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770299625786
     },
     {
       "name": "FICHE DE MALE 220",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770299663620
@@ -1030,70 +1030,70 @@
     },
     {
       "name": "LAMPE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770299699204
     },
     {
       "name": "SCOTCH BLANC ",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770300195618
     },
     {
       "name": "SILICONE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770300211717
     },
     {
       "name": "CASQUE ANTI BRUIT SNR 36",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770300255167
     },
     {
       "name": "CAISSE DE PLASTIQUE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770300781415
     },
     {
       "name": "CEINTURE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770300792700
     },
     {
       "name": "PANIER GRAND ",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770300839882
     },
     {
       "name": "PANIER PETITE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770300857598
     },
     {
       "name": "BLOC SECOURS LED",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770301328053
     },
     {
       "name": "PRISE FEMELLE 380 ",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1770301739153
@@ -1101,19 +1101,19 @@
     {
       "id": 1769174109017,
       "name": "CASQUE ANTI BRUIT SNR 35",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES"
     },
     {
       "name": "PEINTURE NOIR",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": 1,
       "id": 1770465136593
     },
     {
       "name": "BOITE BOTREFIN 600G",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "PHYTOSANITAIRES",
       "threshold": null,
       "id": 1770887064603
@@ -1186,28 +1186,28 @@
     },
     {
       "name": "AMBSURE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1772711967150
     },
     {
       "name": "ORISURE ",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1772712015699
     },
     {
       "name": "ANAGYRUS",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1772712157250
     },
     {
       "name": "CRYPTSURE",
-      "unit": "UNITÃ",
+      "unit": "UNITÉ",
       "category": "AUTRES",
       "threshold": null,
       "id": 1772712658049
@@ -24044,17 +24044,33 @@
       "id": 1775036557195
     },
     {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 600,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-01",
+      "id": 1775113467078
+    },
+    {
       "type": "consumption",
-      "product": "test6",
-      "quantity": 1,
-      "unit": "",
-      "farm": "AGRO BERRY 3",
+      "product": "SUCRE",
+      "quantity": 600,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
       "date": "2026-04-01",
       "culture": "Myrtille",
       "destination": "Sol",
-      "notes": "test",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1775048608198
+      "id": 1775113486323
+    },
+    {
+      "type": "exit",
+      "product": "CHLORO MIX ",
+      "quantity": 5,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-24",
+      "id": 1775113522459
     }
   ],
   "stockAB1": [
@@ -25575,7 +25591,7 @@
         },
         {
           "name": "BOITE BOTREFIN 600G",
-          "unit": "UNITÃ",
+          "unit": "UNITÉ",
           "theoretical": 35.4,
           "physical": 35.4,
           "diff": 0,
@@ -26350,7 +26366,7 @@
         },
         {
           "name": "BOITE BOTREFIN 600G",
-          "unit": "UNITÃ",
+          "unit": "UNITÉ",
           "theoretical": 3,
           "physical": 3,
           "diff": 0,
@@ -27049,7 +27065,7 @@
         },
         {
           "name": "BOITE BOTREFIN 600G",
-          "unit": "UNITÃ",
+          "unit": "UNITÉ",
           "theoretical": 5.399999999999999,
           "physical": 5.4,
           "diff": 1.7763568394002505e-15,
@@ -27825,7 +27841,7 @@
         },
         {
           "name": "BOITE BOTREFIN 600G",
-          "unit": "UNITÃ",
+          "unit": "UNITÉ",
           "theoretical": 12.799999999999997,
           "physical": 14.4,
           "diff": 1.6000000000000032,
@@ -28764,7 +28780,114 @@
         }
       ],
       "updatedAt": "2026-03-17T09:49:25.939Z"
+    },
+    {
+      "id": 1775039701070,
+      "month": "2026-04",
+      "items": [
+        {
+          "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "ordered": 6000,
+          "received": 0
+        },
+        {
+          "product": "MAP",
+          "ordered": 10000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE MAGNESUIM",
+          "ordered": 10000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE POTASSE",
+          "ordered": 9000,
+          "received": 0
+        },
+        {
+          "product": "NUTREL C",
+          "ordered": 1000,
+          "received": 0
+        },
+        {
+          "product": "ACIDE PHOSPHORIQUE",
+          "ordered": 6500,
+          "received": 0
+        },
+        {
+          "product": "ACIDE SULFURIQUE",
+          "ordered": 1000,
+          "received": 0
+        },
+        {
+          "product": "UREE",
+          "ordered": 5000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE ZINC",
+          "ordered": 40,
+          "received": 0
+        },
+        {
+          "product": "FEROXIM",
+          "ordered": 1500,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE CALCIUM",
+          "ordered": 2500,
+          "received": 0
+        },
+        {
+          "product": "VITAL CU",
+          "ordered": 150,
+          "received": 0
+        },
+        {
+          "product": "HUWA SAN",
+          "ordered": 100,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE POTASSE",
+          "ordered": 500,
+          "received": 0
+        },
+        {
+          "product": "ALFABET",
+          "ordered": 7,
+          "received": 0
+        },
+        {
+          "product": "SOUFRE",
+          "ordered": 100,
+          "received": 0
+        },
+        {
+          "product": "MICROS",
+          "ordered": 160,
+          "received": 0
+        },
+        {
+          "product": "ISABION",
+          "ordered": 160,
+          "received": 0
+        },
+        {
+          "product": "PERFECTOSE",
+          "ordered": 250,
+          "received": 0
+        },
+        {
+          "product": "NOVA",
+          "ordered": 320,
+          "received": 0
+        }
+      ],
+      "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-01T10:09:42.708Z"
+  "exportDate": "2026-04-02T07:07:22.464Z"
 }
