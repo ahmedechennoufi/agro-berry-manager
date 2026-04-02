@@ -24201,6 +24201,39 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1775118658433
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 1,
+      "price": 40,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775118792606
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "price": 68.4,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775118813305
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-26",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775118882736
     }
   ],
   "stockAB1": [
@@ -29019,5 +29052,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T08:32:58.438Z"
+  "exportDate": "2026-04-02T08:36:42.742Z"
 }
