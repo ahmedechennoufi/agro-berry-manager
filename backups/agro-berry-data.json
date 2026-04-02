@@ -24661,6 +24661,15 @@
       "supplier": "WE GREENS",
       "date": "2026-04-02",
       "id": 1775136398649
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 512,
+      "price": 8.6,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-02",
+      "id": 1775136968288
     }
   ],
   "stockAB1": [
@@ -29480,5 +29489,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T13:28:38.660Z"
+  "exportDate": "2026-04-02T13:36:35.286Z"
 }
