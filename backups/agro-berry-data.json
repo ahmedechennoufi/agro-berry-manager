@@ -24080,6 +24080,17 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-03-18",
       "id": 1775114296290
+    },
+    {
+      "type": "consumption",
+      "product": "AMMONITRATE",
+      "quantity": 35,
+      "price": 4.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-23",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1775114420703
     }
   ],
   "stockAB1": [
@@ -28898,5 +28909,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T07:20:16.298Z"
+  "exportDate": "2026-04-02T07:22:21.322Z"
 }
