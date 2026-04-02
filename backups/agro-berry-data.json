@@ -24377,6 +24377,94 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1775119875402
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 60,
+      "price": 85,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-27",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775120539351
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 100,
+      "price": 7.11,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-30",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775120600969
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 96,
+      "price": 8.6,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-30",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775120614901
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 75,
+      "price": 7.25,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-30",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775120638302
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 40,
+      "price": 4.26,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-30",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775120655398
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 12,
+      "price": 101,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-30",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775120676500
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 100,
+      "price": 12.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-30",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775120690630
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 50,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-30",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775120705752
     }
   ],
   "stockAB1": [
@@ -29195,5 +29283,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T08:53:15.410Z"
+  "exportDate": "2026-04-02T09:07:05.758Z"
 }
