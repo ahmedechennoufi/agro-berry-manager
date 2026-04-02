@@ -24542,6 +24542,50 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1775125587376
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 40,
+      "price": 4.26,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775125779783
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 12,
+      "price": 101,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775125808228
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 100,
+      "price": 12.8,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775125830207
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 50,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775125848148
     }
   ],
   "stockAB1": [
@@ -29360,5 +29404,5 @@
       "updatedAt": "2026-04-01T10:39:23.266Z"
     }
   ],
-  "exportDate": "2026-04-02T10:28:27.382Z"
+  "exportDate": "2026-04-02T10:32:48.154Z"
 }
