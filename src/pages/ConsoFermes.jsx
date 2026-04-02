@@ -32,38 +32,37 @@ const ConsoFermes = () => {
   ];
 
   // Get period dates based on selected month
-  // Coût = 1er au dernier jour du mois
-  // Stock initial = inventaire du 25 du mois précédent
+  // Période : du 26 du mois précédent au 25 du mois sélectionné
+  // Stock initial = inventaire du 25 du mois précédent (= veille du début de période)
   const periodDates = useMemo(() => {
     const monthMap = {
-      'SEPTEMBRE': { start: '2025-09-01', end: '2025-09-30', prevInv: '2025-08-25' },
-      'OCTOBRE': { start: '2025-10-01', end: '2025-10-31', prevInv: '2025-09-25' },
-      'NOVEMBRE': { start: '2025-11-01', end: '2025-11-30', prevInv: '2025-10-25' },
-      'DECEMBRE': { start: '2025-12-01', end: '2025-12-31', prevInv: '2025-11-25' },
-      'JANVIER': { start: '2026-01-01', end: '2026-01-31', prevInv: '2025-12-25' },
-      'FEVRIER': { start: '2026-02-01', end: '2026-02-28', prevInv: '2026-01-25' },
-      'MARS': { start: '2026-03-01', end: '2026-03-31', prevInv: '2026-02-25' },
-      'AVRIL': { start: '2026-04-01', end: '2026-04-30', prevInv: '2026-03-25' },
-      'MAI': { start: '2026-05-01', end: '2026-05-31', prevInv: '2026-04-25' },
-      'JUIN': { start: '2026-06-01', end: '2026-06-30', prevInv: '2026-05-25' },
-      'JUILLET': { start: '2026-07-01', end: '2026-07-31', prevInv: '2026-06-25' },
-      'AOUT': { start: '2026-08-01', end: '2026-08-31', prevInv: '2026-07-25' }
+      'SEPTEMBRE': { start: '2025-08-26', end: '2025-09-25', prevInv: '2025-08-25' },
+      'OCTOBRE':   { start: '2025-09-26', end: '2025-10-25', prevInv: '2025-09-25' },
+      'NOVEMBRE':  { start: '2025-10-26', end: '2025-11-25', prevInv: '2025-10-25' },
+      'DECEMBRE':  { start: '2025-11-26', end: '2025-12-25', prevInv: '2025-11-25' },
+      'JANVIER':   { start: '2025-12-26', end: '2026-01-25', prevInv: '2025-12-25' },
+      'FEVRIER':   { start: '2026-01-26', end: '2026-02-25', prevInv: '2026-01-25' },
+      'MARS':      { start: '2026-02-26', end: '2026-03-25', prevInv: '2026-02-25' },
+      'AVRIL':     { start: '2026-03-26', end: '2026-04-25', prevInv: '2026-03-25' },
+      'MAI':       { start: '2026-04-26', end: '2026-05-25', prevInv: '2026-04-25' },
+      'JUIN':      { start: '2026-05-26', end: '2026-06-25', prevInv: '2026-05-25' },
+      'JUILLET':   { start: '2026-06-26', end: '2026-07-25', prevInv: '2026-06-25' },
+      'AOUT':      { start: '2026-07-26', end: '2026-08-25', prevInv: '2026-07-25' }
     };
     return monthMap[selectedMonth] || monthMap['JANVIER'];
   }, [selectedMonth]);
 
   const tableData = useMemo(() => {
     const dataMap = getConsoFermesDataByPeriod(periodDates.start, periodDates.end, periodDates.prevInv);
-    
     return Object.values(dataMap)
       .filter(d => {
-        const hasData = d.initAB1 > 0 || d.initAB2 > 0 || d.initAB3 > 0 || 
-                       d.entMAG > 0 ||
-                       d.entAB1 > 0 || d.entAB2 > 0 || d.entAB3 > 0 ||
-                       d.sortAB1 > 0 || d.sortAB2 > 0 || d.sortAB3 > 0 ||
-                       d.consAB1 > 0 || d.consAB2 > 0 || d.consAB3 > 0 ||
-                       Math.abs(d.finAB1) > 0.01 || Math.abs(d.finAB2) > 0.01 || Math.abs(d.finAB3) > 0.01 ||
-                       Math.abs(d.stockMAG) > 0.01;
+        const hasData = d.initAB1 > 0 || d.initAB2 > 0 || d.initAB3 > 0 ||
+          d.entMAG > 0 ||
+          d.entAB1 > 0 || d.entAB2 > 0 || d.entAB3 > 0 ||
+          d.sortAB1 > 0 || d.sortAB2 > 0 || d.sortAB3 > 0 ||
+          d.consAB1 > 0 || d.consAB2 > 0 || d.consAB3 > 0 ||
+          Math.abs(d.finAB1) > 0.01 || Math.abs(d.finAB2) > 0.01 || Math.abs(d.finAB3) > 0.01 ||
+          Math.abs(d.stockMAG) > 0.01;
         const matchSearch = !search || d.name.toLowerCase().includes(search.toLowerCase());
         const matchCategory = filterCategory === 'ALL' || d.category === filterCategory;
         return hasData && matchSearch && matchCategory;
@@ -72,18 +71,16 @@ const ConsoFermes = () => {
   }, [products, movements, periodDates, search, filterCategory]);
 
   const totals = useMemo(() => {
-    const t = { 
-      initVal: 0, entVal: 0, sortVal: 0, consVal: 0, finVal: 0, 
+    const t = {
+      initVal: 0, entVal: 0, sortVal: 0, consVal: 0, finVal: 0,
       initQty: 0, entQty: 0, sortQty: 0, consQty: 0, finQty: 0,
       entMAGQty: 0, stockMAGQty: 0,
-      // Per farm quantities
       initAB1: 0, initAB2: 0, initAB3: 0,
       entAB1: 0, entAB2: 0, entAB3: 0,
       transInAB1: 0, transInAB2: 0, transInAB3: 0,
       sortAB1: 0, sortAB2: 0, sortAB3: 0,
       consAB1: 0, consAB2: 0, consAB3: 0,
       finAB1: 0, finAB2: 0, finAB3: 0,
-      // Per farm values
       initValAB1: 0, initValAB2: 0, initValAB3: 0,
       entValAB1: 0, entValAB2: 0, entValAB3: 0,
       sortValAB1: 0, sortValAB2: 0, sortValAB3: 0,
@@ -92,7 +89,6 @@ const ConsoFermes = () => {
     };
     tableData.forEach(d => {
       const price = d.price || 0;
-      // Quantities
       t.initAB1 += d.initAB1; t.initAB2 += d.initAB2; t.initAB3 += d.initAB3;
       t.entAB1 += d.entAB1; t.entAB2 += d.entAB2; t.entAB3 += d.entAB3;
       t.entMAGQty += d.entMAG || 0; t.stockMAGQty += d.stockMAG || 0;
@@ -100,13 +96,11 @@ const ConsoFermes = () => {
       t.sortAB1 += d.sortAB1 || 0; t.sortAB2 += d.sortAB2 || 0; t.sortAB3 += d.sortAB3 || 0;
       t.consAB1 += d.consAB1; t.consAB2 += d.consAB2; t.consAB3 += d.consAB3;
       t.finAB1 += d.finAB1; t.finAB2 += d.finAB2; t.finAB3 += d.finAB3;
-      // Values
       t.initValAB1 += d.initAB1 * price; t.initValAB2 += d.initAB2 * price; t.initValAB3 += d.initAB3 * price;
       t.entValAB1 += d.entAB1 * price; t.entValAB2 += d.entAB2 * price; t.entValAB3 += d.entAB3 * price;
       t.sortValAB1 += (d.sortAB1||0) * price; t.sortValAB2 += (d.sortAB2||0) * price; t.sortValAB3 += (d.sortAB3||0) * price;
       t.consValAB1 += d.consAB1 * price; t.consValAB2 += d.consAB2 * price; t.consValAB3 += d.consAB3 * price;
       t.finValAB1 += d.finAB1 * price; t.finValAB2 += d.finAB2 * price; t.finValAB3 += d.finAB3 * price;
-      // Totals
       const initTot = d.initAB1 + d.initAB2 + d.initAB3;
       const entTot = d.entMAG || 0;
       const sortTot = (d.sortAB1 || 0) + (d.sortAB2 || 0) + (d.sortAB3 || 0);
@@ -126,14 +120,11 @@ const ConsoFermes = () => {
     return t;
   }, [tableData]);
 
-  // Entry details (transfer-in + exit movements)
   const entryDetails = useMemo(() => {
     const allMovements = getMovements();
     const allProducts = getProducts();
     const productMap = {};
     allProducts.forEach(p => { productMap[p.name] = p; });
-    
-    // Build supplier map from entry movements (original purchases)
     const supplierMap = {};
     allMovements
       .filter(m => m.type === 'entry' && m.supplier && !m.supplier.includes('STOCK'))
@@ -141,30 +132,23 @@ const ConsoFermes = () => {
         if (!supplierMap[m.product]) supplierMap[m.product] = [];
         supplierMap[m.product].push(m.supplier);
       });
-    
-    // Get most recent real supplier for each product
     const getProductSupplier = (product) => {
       const suppliers = supplierMap[product];
       if (!suppliers || suppliers.length === 0) return null;
       return suppliers[suppliers.length - 1];
     };
-    
-    // Check if a supplier is a real supplier (not a stock description)
     const isRealSupplier = (supplier) => {
       if (!supplier) return false;
-      const fakePatterns = ['STOCK', 'DÉCEMBRE', 'JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 
+      const fakePatterns = ['STOCK', 'DÉCEMBRE', 'JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN',
         'INVENTAIRE', 'INITIAL', 'AUTRE', 'MAGASIN', '2025', '2026'];
       const upperSupplier = supplier.toUpperCase();
       return !fakePatterns.some(p => upperSupplier.includes(p)) && supplier !== '-';
     };
-    
     return allMovements
       .filter(m => (m.type === 'transfer-in' || m.type === 'exit') && m.date >= periodDates.start && m.date <= periodDates.end)
       .map(m => {
         const prod = productMap[m.product] || {};
-        // Get real supplier: from movement if valid, otherwise lookup from entries
         let supplier = isRealSupplier(m.supplier) ? m.supplier : getProductSupplier(m.product);
-        
         return {
           product: m.product,
           type: m.type,
@@ -180,13 +164,11 @@ const ConsoFermes = () => {
       .sort((a, b) => a.product.localeCompare(b.product));
   }, [movements, periodDates]);
 
-  // Sortie details (transfer-out movements = transferts vers autres fermes)
   const sortieDetails = useMemo(() => {
     const allMovements = getMovements();
     const allProducts = getProducts();
     const productMap = {};
     allProducts.forEach(p => { productMap[p.name] = p; });
-    
     return allMovements
       .filter(m => m.type === 'transfer-out' && m.date >= periodDates.start && m.date <= periodDates.end)
       .map(m => {
@@ -203,13 +185,11 @@ const ConsoFermes = () => {
       .sort((a, b) => a.product.localeCompare(b.product));
   }, [movements, periodDates]);
 
-  // Consumption details
   const consoDetails = useMemo(() => {
     const allMovements = getMovements();
     const allProducts = getProducts();
     const productMap = {};
     allProducts.forEach(p => { productMap[p.name] = p; });
-    
     return allMovements
       .filter(m => m.type === 'consumption' && m.date >= periodDates.start && m.date <= periodDates.end)
       .map(m => {
@@ -236,11 +216,11 @@ const ConsoFermes = () => {
     }
   };
 
-  // Format period display
+  // Format period display : 26 mois précédent → 25 mois sélectionné
   const formatPeriod = () => {
     const start = new Date(periodDates.start);
     const end = new Date(periodDates.end);
-    return `${start.getDate()} ${start.toLocaleDateString('fr-FR', { month: 'short' })} → ${end.getDate()} ${end.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' })}`;
+    return `${start.getDate()} ${start.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' })} → ${end.getDate()} ${end.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' })}`;
   };
 
   return (
@@ -292,21 +272,11 @@ const ConsoFermes = () => {
                   <th className="text-left p-3 font-semibold text-gray-700" rowSpan={2}>ARTICLE</th>
                   <th className="text-center p-2 font-medium text-gray-500 text-xs" rowSpan={2}>Unité</th>
                   <th className="text-center p-2 font-medium text-gray-500 text-xs" rowSpan={2}>Prix</th>
-                  <th colSpan={4} className="text-center p-2 font-bold text-blue-700 bg-blue-100 border-l-4 border-blue-300">
-                    📦 STOCK INITIAL
-                  </th>
-                  <th colSpan={5} className="text-center p-2 font-bold text-green-700 bg-green-100 border-l-4 border-green-300">
-                    📥 ENTRÉES
-                  </th>
-                  <th colSpan={4} className="text-center p-2 font-bold text-purple-700 bg-purple-100 border-l-4 border-purple-300">
-                    📤 SORTIES
-                  </th>
-                  <th colSpan={4} className="text-center p-2 font-bold text-orange-600 bg-orange-100 border-l-4 border-orange-300">
-                    🔥 CONSOMMATION
-                  </th>
-                  <th colSpan={4} className="text-center p-2 font-bold text-indigo-700 bg-indigo-100 border-l-4 border-indigo-300">
-                    📊 STOCK FINAL
-                  </th>
+                  <th colSpan={4} className="text-center p-2 font-bold text-blue-700 bg-blue-100 border-l-4 border-blue-300">📦 STOCK INITIAL</th>
+                  <th colSpan={5} className="text-center p-2 font-bold text-green-700 bg-green-100 border-l-4 border-green-300">📥 ENTRÉES</th>
+                  <th colSpan={4} className="text-center p-2 font-bold text-purple-700 bg-purple-100 border-l-4 border-purple-300">📤 SORTIES</th>
+                  <th colSpan={4} className="text-center p-2 font-bold text-orange-600 bg-orange-100 border-l-4 border-orange-300">🔥 CONSOMMATION</th>
+                  <th colSpan={4} className="text-center p-2 font-bold text-indigo-700 bg-indigo-100 border-l-4 border-indigo-300">📊 STOCK FINAL</th>
                 </tr>
                 <tr className="bg-gray-50 border-b text-xs">
                   <th className="p-2 text-center text-blue-600 bg-blue-50 border-l-4 border-blue-300 font-semibold">AB1</th>
@@ -339,11 +309,9 @@ const ConsoFermes = () => {
                   const sortTot = (d.sortAB1 || 0) + (d.sortAB2 || 0) + (d.sortAB3 || 0);
                   const consTot = d.consAB1 + d.consAB2 + d.consAB3;
                   const V = (val, color) => val > 0.01 ? <span className={color}>{fmt(val)}</span> : <span className="text-gray-300">-</span>;
-                  
-                  // Helper for entry with transfer info - same color
                   const VE = (entVal, transVal, color) => {
                     if (entVal <= 0.01) return <span className="text-gray-300">-</span>;
-                    const fournVal = entVal - (transVal || 0); // Entrée fournisseur = total - transfert
+                    const fournVal = entVal - (transVal || 0);
                     if (transVal > 0) {
                       return (
                         <div className="flex flex-col items-center">
@@ -354,7 +322,6 @@ const ConsoFermes = () => {
                     }
                     return <span className={color}>{fmt(entVal)}</span>;
                   };
-                  
                   return (
                     <tr key={idx} className="border-b hover:bg-gray-50">
                       <td className="p-3">
@@ -395,61 +362,31 @@ const ConsoFermes = () => {
                     </tr>
                   );
                 })}
-                {/* TOTAUX Row - Only TOT columns */}
+                {/* TOTAUX Row */}
                 <tr className="border-t-2 border-gray-300 bg-gray-100 font-bold">
                   <td className="p-3 text-right" colSpan={3}>TOTAUX</td>
-                  {/* Stock Initial */}
                   <td colSpan={3} className="p-2 text-center bg-blue-50"></td>
-                  <td className="p-2 text-center bg-blue-200 text-blue-800">
-                    <div>{fmt(totals.initQty)}</div>
-                  </td>
-                  {/* Entrées */}
+                  <td className="p-2 text-center bg-blue-200 text-blue-800"><div>{fmt(totals.initQty)}</div></td>
                   <td colSpan={4} className="p-2 text-center bg-green-50"></td>
-                  <td className="p-2 text-center bg-green-200 text-green-800">
-                    <div>+{fmt(totals.entQty)}</div>
-                  </td>
-                  {/* Sorties */}
+                  <td className="p-2 text-center bg-green-200 text-green-800"><div>+{fmt(totals.entQty)}</div></td>
                   <td colSpan={3} className="p-2 text-center bg-purple-50"></td>
-                  <td className="p-2 text-center bg-purple-200 text-purple-800">
-                    <div>-{fmt(totals.sortQty)}</div>
-                  </td>
-                  {/* Consommation */}
+                  <td className="p-2 text-center bg-purple-200 text-purple-800"><div>-{fmt(totals.sortQty)}</div></td>
                   <td colSpan={3} className="p-2 text-center bg-orange-50"></td>
-                  <td className="p-2 text-center bg-orange-200 text-orange-800">
-                    <div>-{fmt(totals.consQty)}</div>
-                  </td>
-                  {/* Stock Final */}
-                  <td colSpan={4} className="p-2 text-center bg-indigo-100 text-indigo-700 font-bold">
-                    <div>{fmt(totals.finQty)}</div>
-                  </td>
+                  <td className="p-2 text-center bg-orange-200 text-orange-800"><div>-{fmt(totals.consQty)}</div></td>
+                  <td colSpan={4} className="p-2 text-center bg-indigo-100 text-indigo-700 font-bold"><div>{fmt(totals.finQty)}</div></td>
                 </tr>
-                {/* VALEUR (MAD) Row */}
+                {/* VALEUR Row */}
                 <tr className="bg-gray-50 font-bold">
                   <td className="p-3 text-right" colSpan={3}>VALEUR (MAD)</td>
-                  {/* Stock Initial */}
                   <td colSpan={3} className="p-2 text-center bg-blue-50"></td>
-                  <td className="p-2 text-center bg-blue-100 text-blue-700 text-sm">
-                    <div>{fmtMoney(totals.initVal)}</div>
-                  </td>
-                  {/* Entrées */}
+                  <td className="p-2 text-center bg-blue-100 text-blue-700 text-sm"><div>{fmtMoney(totals.initVal)}</div></td>
                   <td colSpan={4} className="p-2 text-center bg-green-50"></td>
-                  <td className="p-2 text-center bg-green-100 text-green-700 text-sm">
-                    <div>+{fmtMoney(totals.entVal)}</div>
-                  </td>
-                  {/* Sorties */}
+                  <td className="p-2 text-center bg-green-100 text-green-700 text-sm"><div>+{fmtMoney(totals.entVal)}</div></td>
                   <td colSpan={3} className="p-2 text-center bg-purple-50"></td>
-                  <td className="p-2 text-center bg-purple-100 text-purple-700 text-sm">
-                    <div>-{fmtMoney(totals.sortVal)}</div>
-                  </td>
-                  {/* Consommation */}
+                  <td className="p-2 text-center bg-purple-100 text-purple-700 text-sm"><div>-{fmtMoney(totals.sortVal)}</div></td>
                   <td colSpan={3} className="p-2 text-center bg-orange-50"></td>
-                  <td className="p-2 text-center bg-orange-100 text-orange-700 text-sm">
-                    <div>-{fmtMoney(totals.consVal)}</div>
-                  </td>
-                  {/* Stock Final */}
-                  <td colSpan={4} className="p-2 text-center bg-indigo-100 text-indigo-700 font-bold text-sm">
-                    <div>{fmtMoney(totals.finVal)}</div>
-                  </td>
+                  <td className="p-2 text-center bg-orange-100 text-orange-700 text-sm"><div>-{fmtMoney(totals.consVal)}</div></td>
+                  <td colSpan={4} className="p-2 text-center bg-indigo-100 text-indigo-700 font-bold text-sm"><div>{fmtMoney(totals.finVal)}</div></td>
                 </tr>
               </tbody>
             </table>
@@ -457,12 +394,10 @@ const ConsoFermes = () => {
         )}
       </Card>
 
-      {/* Détails des Entrées par Fournisseur */}
+      {/* Détails des Entrées */}
       <Card className="overflow-hidden p-0">
         <div className="p-4 border-b bg-green-50">
-          <h3 className="font-semibold text-green-700 flex items-center gap-2">
-            📥 Détails des Entrées par Source
-          </h3>
+          <h3 className="font-semibold text-green-700 flex items-center gap-2">📥 Détails des Entrées par Source</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -481,7 +416,7 @@ const ConsoFermes = () => {
             <tbody>
               {entryDetails.map((e, idx) => {
                 const isTransfer = e.type === 'transfer-in';
-                const sourceName = isTransfer 
+                const sourceName = isTransfer
                   ? (e.fromFarm?.includes('1') ? 'AB1' : e.fromFarm?.includes('2') ? 'AB2' : 'AB3')
                   : (e.supplier || 'Magasin');
                 return (
@@ -491,8 +426,7 @@ const ConsoFermes = () => {
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         e.farm?.includes('1') ? 'bg-blue-100 text-blue-700' :
                         e.farm?.includes('2') ? 'bg-green-100 text-green-700' :
-                        'bg-purple-100 text-purple-700'
-                      }`}>
+                        'bg-purple-100 text-purple-700'}`}>
                         {e.farm?.includes('1') ? 'AB1' : e.farm?.includes('2') ? 'AB2' : 'AB3'}
                       </span>
                     </td>
@@ -501,18 +435,13 @@ const ConsoFermes = () => {
                         <span className={`px-2 py-1 rounded text-xs font-medium ${
                           e.fromFarm?.includes('1') ? 'bg-blue-100 text-blue-700' :
                           e.fromFarm?.includes('2') ? 'bg-green-100 text-green-700' :
-                          'bg-purple-100 text-purple-700'
-                        }`}>
-                          {sourceName}
-                        </span>
+                          'bg-purple-100 text-purple-700'}`}>{sourceName}</span>
                       ) : (
                         <span className="text-gray-700">{sourceName}</span>
                       )}
                     </td>
                     <td className="p-3 text-center">
-                      <span className={`px-2 py-1 rounded text-xs ${
-                        isTransfer ? 'bg-orange-100 text-orange-700' : 'bg-blue-100 text-blue-700'
-                      }`}>
+                      <span className={`px-2 py-1 rounded text-xs ${isTransfer ? 'bg-orange-100 text-orange-700' : 'bg-blue-100 text-blue-700'}`}>
                         {isTransfer ? '↔️ Transfert' : '🏭 Fournisseur'}
                       </span>
                     </td>
@@ -531,12 +460,10 @@ const ConsoFermes = () => {
         </div>
       </Card>
 
-      {/* Détails des Sorties (Transferts entre fermes) */}
+      {/* Détails des Sorties */}
       <Card className="overflow-hidden p-0">
         <div className="p-4 border-b bg-purple-50">
-          <h3 className="font-semibold text-purple-700 flex items-center gap-2">
-            ↔️ Détails des Transferts entre Fermes (Sorties)
-          </h3>
+          <h3 className="font-semibold text-purple-700 flex items-center gap-2">↔️ Détails des Transferts entre Fermes (Sorties)</h3>
           <p className="text-xs text-purple-600 mt-1">Produits transférés d'une ferme vers une autre</p>
         </div>
         <div className="overflow-x-auto">
@@ -555,46 +482,42 @@ const ConsoFermes = () => {
             </thead>
             <tbody>
               {sortieDetails.length > 0 ? sortieDetails.map((s, idx) => (
-                  <tr key={idx} className="border-b hover:bg-gray-50">
-                    <td className="p-3 font-medium">{s.product}</td>
-                    <td className="p-3 text-center">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${
-                        s.fromFarm?.includes('1') ? 'bg-blue-100 text-blue-700' :
-                        s.fromFarm?.includes('2') ? 'bg-green-100 text-green-700' :
-                        'bg-purple-100 text-purple-700'
-                      }`}>
-                        {s.fromFarm?.includes('1') ? 'AB1' : s.fromFarm?.includes('2') ? 'AB2' : 'AB3'}
-                      </span>
-                    </td>
-                    <td className="p-3 text-center text-gray-400">→</td>
-                    <td className="p-3 text-center">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${
-                        s.toFarm?.includes('1') ? 'bg-blue-100 text-blue-700' :
-                        s.toFarm?.includes('2') ? 'bg-green-100 text-green-700' :
-                        'bg-purple-100 text-purple-700'
-                      }`}>
-                        {s.toFarm?.includes('1') ? 'AB1' : s.toFarm?.includes('2') ? 'AB2' : 'AB3'}
-                      </span>
-                    </td>
-                    <td className="p-3 text-center text-gray-500">{s.unit}</td>
-                    <td className="p-3 text-right">{fmt(s.price)}</td>
-                    <td className="p-3 text-right text-purple-600 font-medium">-{fmt(s.quantity)}</td>
-                    <td className="p-3 text-right text-purple-600">{fmtMoney(s.quantity * s.price)}</td>
-                  </tr>
-                )) : (
-                  <tr><td colSpan={8} className="p-4 text-center text-gray-400">Aucun transfert sortant pour cette période</td></tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        </Card>
+                <tr key={idx} className="border-b hover:bg-gray-50">
+                  <td className="p-3 font-medium">{s.product}</td>
+                  <td className="p-3 text-center">
+                    <span className={`px-2 py-1 rounded text-xs font-medium ${
+                      s.fromFarm?.includes('1') ? 'bg-blue-100 text-blue-700' :
+                      s.fromFarm?.includes('2') ? 'bg-green-100 text-green-700' :
+                      'bg-purple-100 text-purple-700'}`}>
+                      {s.fromFarm?.includes('1') ? 'AB1' : s.fromFarm?.includes('2') ? 'AB2' : 'AB3'}
+                    </span>
+                  </td>
+                  <td className="p-3 text-center text-gray-400">→</td>
+                  <td className="p-3 text-center">
+                    <span className={`px-2 py-1 rounded text-xs font-medium ${
+                      s.toFarm?.includes('1') ? 'bg-blue-100 text-blue-700' :
+                      s.toFarm?.includes('2') ? 'bg-green-100 text-green-700' :
+                      'bg-purple-100 text-purple-700'}`}>
+                      {s.toFarm?.includes('1') ? 'AB1' : s.toFarm?.includes('2') ? 'AB2' : 'AB3'}
+                    </span>
+                  </td>
+                  <td className="p-3 text-center text-gray-500">{s.unit}</td>
+                  <td className="p-3 text-right">{fmt(s.price)}</td>
+                  <td className="p-3 text-right text-purple-600 font-medium">-{fmt(s.quantity)}</td>
+                  <td className="p-3 text-right text-purple-600">{fmtMoney(s.quantity * s.price)}</td>
+                </tr>
+              )) : (
+                <tr><td colSpan={8} className="p-4 text-center text-gray-400">Aucun transfert sortant pour cette période</td></tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </Card>
 
-      {/* Détails des Consommations par Culture */}
+      {/* Détails des Consommations */}
       <Card className="overflow-hidden p-0">
         <div className="p-4 border-b bg-orange-50">
-          <h3 className="font-semibold text-orange-700 flex items-center gap-2">
-            🔥 Détails des Consommations par Culture
-          </h3>
+          <h3 className="font-semibold text-orange-700 flex items-center gap-2">🔥 Détails des Consommations par Culture</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -619,8 +542,7 @@ const ConsoFermes = () => {
                     <span className={`px-2 py-1 rounded text-xs font-medium ${
                       c.farm?.includes('1') ? 'bg-blue-100 text-blue-700' :
                       c.farm?.includes('2') ? 'bg-green-100 text-green-700' :
-                      'bg-purple-100 text-purple-700'
-                    }`}>
+                      'bg-purple-100 text-purple-700'}`}>
                       {c.farm?.includes('1') ? 'AB1' : c.farm?.includes('2') ? 'AB2' : 'AB3'}
                     </span>
                   </td>
