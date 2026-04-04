@@ -1,83 +1,60 @@
 /**
- * GitHub Backup Module
- * Sauvegarde et restauration des données via l'API GitHub (100% gratuit)
- * Utilise un Personal Access Token pour écrire dans le repo
+ * GitHub Backup Module - GitHub comme source de vérité
  */
 
 const GITHUB_CONFIG_KEY = 'agro_github_config';
 const BACKUP_PATH = 'backups/agro-berry-data.json';
 
 // === CONFIG ===
-
 export const getGitHubConfig = () => {
-  try {
-    return JSON.parse(localStorage.getItem(GITHUB_CONFIG_KEY) || '{}');
-  } catch { return {}; }
+  try { return JSON.parse(localStorage.getItem(GITHUB_CONFIG_KEY) || '{}'); }
+  catch { return {}; }
 };
-
-export const saveGitHubConfig = (config) => {
-  localStorage.setItem(GITHUB_CONFIG_KEY, JSON.stringify(config));
-};
-
-export const clearGitHubConfig = () => {
-  localStorage.removeItem(GITHUB_CONFIG_KEY);
-};
-
+export const saveGitHubConfig = (config) => localStorage.setItem(GITHUB_CONFIG_KEY, JSON.stringify(config));
+export const clearGitHubConfig = () => localStorage.removeItem(GITHUB_CONFIG_KEY);
 export const isGitHubConfigured = () => {
-  const config = getGitHubConfig();
-  return !!(config.token && config.owner && config.repo);
+  const c = getGitHubConfig();
+  return !!(c.token && c.owner && c.repo);
 };
 
-// === API CALLS ===
+// === FETCH RAW (sans auth pour lecture publique) ===
+const getFileInfo = async (config) => {
+  const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${BACKUP_PATH}`;
+  const res = await fetch(url, {
+    headers: { 'Authorization': `token ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
+  });
+  if (!res.ok) throw new Error(`GitHub erreur ${res.status}`);
+  const file = await res.json();
+  const data = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
+  return { data, sha: file.sha };
+};
 
-/**
- * Sauvegarder les données sur GitHub (MERGE avec mouvements magasiniers)
- */
+// === SAUVEGARDE IMMÉDIATE ===
 export const backupToGitHub = async (data) => {
   const config = getGitHubConfig();
-  if (!config.token || !config.owner || !config.repo) {
-    throw new Error('GitHub non configuré');
-  }
+  if (!config.token || !config.owner || !config.repo) throw new Error('GitHub non configuré');
 
   const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${BACKUP_PATH}`;
 
-  // Récupérer le fichier existant (SHA + contenu)
+  // Récupérer SHA + mouvements existants des magasiniers
   let sha = null;
-  let existingMovements = [];
+  let magasinierMovements = [];
   try {
-    const getRes = await fetch(url, {
-      headers: {
-        'Authorization': `token ${config.token}`,
-        'Accept': 'application/vnd.github.v3+json'
-      }
-    });
-    if (getRes.ok) {
-      const existing = await getRes.json();
-      sha = existing.sha;
-      // Décoder le contenu existant pour récupérer les mouvements magasiniers
-      try {
-        const existingData = JSON.parse(decodeURIComponent(escape(atob(existing.content.replace(/\n/g, '')))));
-        existingMovements = existingData.movements || [];
-      } catch (e) {
-        existingMovements = [];
-      }
-    }
-  } catch (e) {
-    // Fichier n'existe pas encore
-  }
+    const { data: existing, sha: existingSha } = await getFileInfo(config);
+    sha = existingSha;
+    const adminIds = new Set((data.movements || []).map(m => m.id));
+    magasinierMovements = (existing.movements || []).filter(m => m.id && !adminIds.has(m.id));
+  } catch (e) { /* fichier n'existe pas encore */ }
 
-  // MERGE : garder les mouvements du backup (magasiniers) + ceux de l'admin
-  const adminMovementIds = new Set((data.movements || []).map(m => m.id));
-  const magasinierMovements = existingMovements.filter(m => !adminMovementIds.has(m.id));
+  // Merger mouvements admin + magasiniers
   const mergedData = {
     ...data,
     movements: [...(data.movements || []), ...magasinierMovements]
   };
 
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(mergedData, null, 2))));
-
   const body = {
-    message: `📦 Backup ${new Date().toLocaleDateString('fr-FR')} ${new Date().toLocaleTimeString('fr-FR')}`,
+    message: `💾 Sauvegarde ${new Date().toLocaleString('fr-FR')}`,
     content,
     branch: 'main'
   };
@@ -95,217 +72,88 @@ export const backupToGitHub = async (data) => {
 
   if (!putRes.ok) {
     const err = await putRes.json().catch(() => ({}));
-    if (putRes.status === 401) throw new Error('Token invalide ou expiré');
-    if (putRes.status === 404) throw new Error('Repository non trouvé');
-    if (putRes.status === 409) throw new Error('Conflit - réessayez');
+    if (putRes.status === 409) throw new Error('Conflit GitHub - réessayez');
     throw new Error(err.message || `Erreur GitHub (${putRes.status})`);
   }
 
-  const result = await putRes.json();
-  return {
-    success: true,
-    url: result.content?.html_url,
-    date: new Date().toISOString()
-  };
+  return { success: true, date: new Date().toISOString() };
 };
 
-/**
- * Restaurer les données depuis GitHub
- */
+// === RESTAURER DEPUIS GITHUB ===
 export const restoreFromGitHub = async () => {
   const config = getGitHubConfig();
-  if (!config.token || !config.owner || !config.repo) {
-    throw new Error('GitHub non configuré');
-  }
-
-  const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${BACKUP_PATH}`;
-
-  const res = await fetch(url, {
-    headers: {
-      'Authorization': `token ${config.token}`,
-      'Accept': 'application/vnd.github.v3+json'
-    }
-  });
-
-  if (!res.ok) {
-    if (res.status === 404) throw new Error('Aucun backup trouvé sur GitHub');
-    if (res.status === 401) throw new Error('Token invalide ou expiré');
-    throw new Error(`Erreur GitHub (${res.status})`);
-  }
-
-  const file = await res.json();
-  const content = decodeURIComponent(escape(atob(file.content)));
-  const data = JSON.parse(content);
+  if (!config.token || !config.owner || !config.repo) throw new Error('GitHub non configuré');
+  const { data } = await getFileInfo(config);
   return data;
 };
 
-/**
- * NOUVELLE FONCTION : Synchroniser les mouvements des magasiniers depuis GitHub
- * Importe uniquement les mouvements qui n'existent pas encore dans localStorage
- * Retourne le nombre de nouveaux mouvements importés
- */
+// === SYNC MOUVEMENTS MAGASINIERS ===
 export const syncMovementsFromGitHub = async (getCurrentMovementsFn, addMovementFn) => {
   const config = getGitHubConfig();
   if (!config.token || !config.owner || !config.repo) return 0;
-
   try {
-    const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${BACKUP_PATH}`;
-    const res = await fetch(url, {
-      headers: {
-        'Authorization': `token ${config.token}`,
-        'Accept': 'application/vnd.github.v3+json'
-      }
-    });
-
-    if (!res.ok) return 0;
-
-    const file = await res.json();
-    const backupData = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
-    const backupMovements = backupData.movements || [];
-
-    // IDs des mouvements déjà dans localStorage
-    const localMovements = getCurrentMovementsFn();
-    const localIds = new Set(localMovements.map(m => m.id));
-
-    // Trouver les nouveaux mouvements (ajoutés par magasiniers)
+    const { data } = await getFileInfo(config);
+    const backupMovements = data.movements || [];
+    const localIds = new Set(getCurrentMovementsFn().map(m => m.id));
     const newMovements = backupMovements.filter(m => m.id && !localIds.has(m.id));
-
-    // Importer chaque nouveau mouvement
-    let count = 0;
     for (const mv of newMovements) {
-      try {
-        addMovementFn(mv);
-        count++;
-      } catch (e) {
-        console.warn('Erreur import mouvement:', e);
-      }
+      try { addMovementFn(mv); } catch (e) { console.warn('Erreur import:', e); }
     }
-
-    if (count > 0) {
-      console.log(`✅ ${count} nouveau(x) mouvement(s) importé(s) depuis magasiniers`);
-    }
-
-    return count;
+    if (newMovements.length > 0) console.log(`✅ ${newMovements.length} mouvement(s) importé(s)`);
+    return newMovements.length;
   } catch (e) {
-    console.warn('Sync GitHub échouée:', e.message);
+    console.warn('Sync échouée:', e.message);
     return 0;
   }
 };
 
-/**
- * Vérifier la connexion GitHub
- */
+// === TEST CONNEXION ===
 export const testGitHubConnection = async (token, owner, repo) => {
-  const url = `https://api.github.com/repos/${owner}/${repo}`;
-  const res = await fetch(url, {
-    headers: {
-      'Authorization': `token ${token}`,
-      'Accept': 'application/vnd.github.v3+json'
-    }
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+    headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
   });
-
   if (!res.ok) {
     if (res.status === 401) throw new Error('Token invalide');
     if (res.status === 404) throw new Error('Repository non trouvé');
     throw new Error(`Erreur (${res.status})`);
   }
-
-  const repoData = await res.json();
-  return {
-    success: true,
-    repoName: repoData.full_name,
-    private: repoData.private
-  };
+  const d = await res.json();
+  return { success: true, repoName: d.full_name, private: d.private };
 };
 
-// === AUTO-BACKUP ===
-
-let autoBackupTimer = null;
-let autoBackupEnabled = true;
-
-const AUTO_BACKUP_DELAY = 2 * 60 * 1000; // 2 minutes après dernier changement
-const AUTO_BACKUP_STATUS_KEY = 'agro_auto_backup_status';
-
-export const getAutoBackupStatus = () => {
-  try {
-    return JSON.parse(localStorage.getItem(AUTO_BACKUP_STATUS_KEY) || '{}');
-  } catch { return {}; }
-};
-
-const setAutoBackupStatus = (status) => {
-  localStorage.setItem(AUTO_BACKUP_STATUS_KEY, JSON.stringify({
-    ...getAutoBackupStatus(),
-    ...status,
-    updatedAt: new Date().toISOString()
-  }));
-};
-
-/**
- * Déclenche un auto-backup après un délai (debounce)
- */
+// === AUTO-BACKUP (gardé pour compatibilité mais délai = 0) ===
 export const scheduleAutoBackup = (exportAllDataFn, onSuccess, onError) => {
-  if (!isGitHubConfigured() || !autoBackupEnabled) return;
-
-  if (autoBackupTimer) clearTimeout(autoBackupTimer);
-  setAutoBackupStatus({ pending: true });
-
-  autoBackupTimer = setTimeout(async () => {
+  if (!isGitHubConfigured()) return;
+  // Immédiat
+  (async () => {
     try {
-      setAutoBackupStatus({ pending: false, syncing: true });
       const data = exportAllDataFn();
       const result = await backupToGitHub(data);
-      setAutoBackupStatus({
-        pending: false,
-        syncing: false,
-        lastAutoBackup: result.date,
-        error: null
-      });
       if (onSuccess) onSuccess(result);
     } catch (err) {
-      setAutoBackupStatus({
-        pending: false,
-        syncing: false,
-        error: err.message
-      });
       if (onError) onError(err);
     }
-  }, AUTO_BACKUP_DELAY);
+  })();
 };
 
-export const cancelAutoBackup = () => {
-  if (autoBackupTimer) {
-    clearTimeout(autoBackupTimer);
-    autoBackupTimer = null;
-  }
-  setAutoBackupStatus({ pending: false, syncing: false });
+export const cancelAutoBackup = () => {};
+
+export const getAutoBackupStatus = () => {
+  try { return JSON.parse(localStorage.getItem('agro_auto_backup_status') || '{}'); }
+  catch { return {}; }
 };
 
-/**
- * Obtenir les infos du dernier backup
- */
 export const getLastBackupInfo = async () => {
   const config = getGitHubConfig();
   if (!config.token || !config.owner || !config.repo) return null;
-
   try {
     const url = `https://api.github.com/repos/${config.owner}/${config.repo}/commits?path=${BACKUP_PATH}&per_page=1`;
     const res = await fetch(url, {
-      headers: {
-        'Authorization': `token ${config.token}`,
-        'Accept': 'application/vnd.github.v3+json'
-      }
+      headers: { 'Authorization': `token ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
     });
-
     if (!res.ok) return null;
     const commits = await res.json();
-    if (commits.length === 0) return null;
-
-    return {
-      date: commits[0].commit.committer.date,
-      message: commits[0].commit.message,
-      url: commits[0].html_url
-    };
-  } catch {
-    return null;
-  }
+    if (!commits.length) return null;
+    return { date: commits[0].commit.committer.date, message: commits[0].commit.message };
+  } catch { return null; }
 };

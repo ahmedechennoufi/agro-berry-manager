@@ -17,106 +17,112 @@ import Ecarts from './pages/Ecarts';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
 import * as store from './lib/store';
-import { isGitHubConfigured, scheduleAutoBackup, syncMovementsFromGitHub } from './lib/githubBackup';
+import { isGitHubConfigured, backupToGitHub, restoreFromGitHub, syncMovementsFromGitHub } from './lib/githubBackup';
 
 const AppContext = createContext();
 export const useApp = () => useContext(AppContext);
 
-const isReadOnly = () => {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('view') === '1';
-};
+const isReadOnly = () => new URLSearchParams(window.location.search).get('view') === '1';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
-    const saved = localStorage.getItem('sidebar_collapsed');
-    return saved === 'true';
-  });
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => localStorage.getItem('sidebar_collapsed') === 'true');
   const [notification, setNotification] = useState(null);
   const [products, setProducts] = useState([]);
   const [movements, setMovements] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [syncStatus, setSyncStatus] = useState(null); // null | 'syncing' | 'done' | 'error'
+  const [saving, setSaving] = useState(false);
   const [newMovementsCount, setNewMovementsCount] = useState(0);
 
-  useEffect(() => {
-    localStorage.setItem('sidebar_collapsed', sidebarCollapsed);
-  }, [sidebarCollapsed]);
+  useEffect(() => { localStorage.setItem('sidebar_collapsed', sidebarCollapsed); }, [sidebarCollapsed]);
 
   const loadData = () => {
     setProducts(store.getProducts());
     setMovements(store.getMovements());
   };
 
-  const triggerAutoBackup = () => {
-    if (isGitHubConfigured()) {
-      scheduleAutoBackup(
-        store.exportAllData,
-        () => console.log('✅ Auto-backup GitHub réussi'),
-        (err) => console.warn('⚠️ Auto-backup échoué:', err.message)
-      );
+  // Sauvegarde IMMÉDIATE sur GitHub + mise à jour state
+  const saveToGitHub = async () => {
+    if (!isGitHubConfigured()) return;
+    setSaving(true);
+    try {
+      await backupToGitHub(store.exportAllData());
+    } catch (err) {
+      console.warn('Sauvegarde GitHub échouée:', err.message);
+      showNotif('⚠️ Sauvegarde GitHub échouée: ' + err.message, 'error');
+    } finally {
+      setSaving(false);
     }
   };
 
   // Sync depuis GitHub (mouvements magasiniers)
   const syncFromGitHub = async (silent = false) => {
-    if (!isGitHubConfigured()) return;
-    if (!silent) setSyncStatus('syncing');
+    if (!isGitHubConfigured()) return 0;
     try {
-      const count = await syncMovementsFromGitHub(
-        store.getMovements,
-        (mv) => store.addMovement(mv)
-      );
+      const count = await syncMovementsFromGitHub(store.getMovements, (mv) => store.addMovement(mv));
       if (count > 0) {
         loadData();
         setNewMovementsCount(count);
-        if (!silent) showNotif(`✅ ${count} nouveau(x) mouvement(s) importé(s) depuis les fermes`, 'success');
+        if (!silent) showNotif(`✅ ${count} nouveau(x) mouvement(s) importé(s)`, 'success');
         setTimeout(() => setNewMovementsCount(0), 5000);
       }
-      if (!silent) setSyncStatus('done');
-      setTimeout(() => setSyncStatus(null), 3000);
-    } catch (e) {
-      if (!silent) setSyncStatus('error');
-      setTimeout(() => setSyncStatus(null), 3000);
-    }
+      return count;
+    } catch (e) { return 0; }
   };
 
+  // Au démarrage : charger depuis GitHub si configuré, sinon localStorage
   useEffect(() => {
-    store.initializeData();
-    loadData();
-    setLoading(false);
+    const init = async () => {
+      store.initializeData();
 
-    // Sync au démarrage (silencieux)
-    setTimeout(() => syncFromGitHub(true), 2000);
+      if (isGitHubConfigured()) {
+        try {
+          const data = await restoreFromGitHub();
+          // Importer les données GitHub dans le localStorage
+          if (data.products?.length) localStorage.setItem('agro_products_v3', JSON.stringify(data.products));
+          if (data.movements?.length) localStorage.setItem('agro_movements_v3', JSON.stringify(data.movements));
+          if (data.stockAB1) localStorage.setItem('agro_stock_ab1_v3', JSON.stringify(data.stockAB1));
+          if (data.stockAB2) localStorage.setItem('agro_stock_ab2_v3', JSON.stringify(data.stockAB2));
+          if (data.stockAB3) localStorage.setItem('agro_stock_ab3_v3', JSON.stringify(data.stockAB3));
+          console.log('✅ Données chargées depuis GitHub');
+        } catch (e) {
+          console.warn('⚠️ Chargement GitHub échoué, utilisation localStorage:', e.message);
+        }
+      }
 
-    // Sync automatique toutes les 5 minutes
-    const syncInterval = setInterval(() => syncFromGitHub(true), 5 * 60 * 1000);
+      loadData();
+      setLoading(false);
 
-    // Sync quand l'onglet redevient actif
-    const handleVisibility = () => {
-      if (document.visibilityState === 'visible') syncFromGitHub(true);
+      // Sync magasiniers au démarrage (2s)
+      setTimeout(() => syncFromGitHub(true), 2000);
+
+      // Sync toutes les 30 secondes
+      const syncInterval = setInterval(() => syncFromGitHub(true), 30 * 1000);
+
+      // Sync quand l'onglet redevient actif
+      const handleVisibility = () => { if (document.visibilityState === 'visible') syncFromGitHub(true); };
+      document.addEventListener('visibilitychange', handleVisibility);
+
+      return () => {
+        clearInterval(syncInterval);
+        document.removeEventListener('visibilitychange', handleVisibility);
+      };
     };
-    document.addEventListener('visibilitychange', handleVisibility);
-
-    return () => {
-      clearInterval(syncInterval);
-      document.removeEventListener('visibilitychange', handleVisibility);
-    };
+    init();
   }, []);
 
   const showNotif = (msg, type = 'success') => setNotification({ msg, type });
 
-  const addProduct = (product) => {
+  const addProduct = async (product) => {
     const newProduct = store.addProduct(product);
-    setProducts(prev => [...prev, newProduct]);
+    setProducts(store.getProducts());
     showNotif('Produit ajouté');
-    triggerAutoBackup();
+    await saveToGitHub();
     return newProduct;
   };
 
-  const updateProduct = (id, updates) => {
+  const updateProduct = async (id, updates) => {
     try {
       const oldProduct = products.find(p => p.id === id);
       store.updateProduct(id, updates);
@@ -126,56 +132,57 @@ function App() {
         loadData();
       }
       showNotif('Produit modifié');
-      triggerAutoBackup();
+      await saveToGitHub();
     } catch (err) {
-      console.error('Erreur modification produit:', err);
       showNotif('Erreur: ' + err.message, 'error');
     }
   };
 
-  const deleteProduct = (id) => {
+  const deleteProduct = async (id) => {
     store.deleteProduct(id);
     setProducts(store.getProducts());
     showNotif('Produit supprimé');
-    triggerAutoBackup();
+    await saveToGitHub();
   };
 
-  const addMovement = (movement) => {
+  const addMovement = async (movement) => {
     const newMovement = store.addMovement(movement);
     setMovements(prev => [...prev, newMovement]);
-    triggerAutoBackup();
+    await saveToGitHub();
     return newMovement;
   };
 
-  const updateMovement = (id, updates) => {
+  const updateMovement = async (id, updates) => {
     const oldMovement = movements.find(m => m.id === id);
-    if (oldMovement && oldMovement.type === 'entry' && store.syncEntryWithCommande) {
+    if (oldMovement?.type === 'entry' && store.syncEntryWithCommande) {
       store.syncEntryWithCommande(oldMovement.product, -(oldMovement.quantity || 0), oldMovement.date);
     }
     store.updateMovement(id, updates);
     const updatedMovement = store.getMovements().find(m => m.id === id);
-    if (updatedMovement && updatedMovement.type === 'entry' && store.syncEntryWithCommande) {
+    if (updatedMovement?.type === 'entry' && store.syncEntryWithCommande) {
       store.syncEntryWithCommande(updatedMovement.product, updatedMovement.quantity || 0, updatedMovement.date);
     }
     setMovements(store.getMovements());
     showNotif('Mouvement modifié');
-    triggerAutoBackup();
+    await saveToGitHub();
   };
 
-  const deleteMovement = (id) => {
+  const deleteMovement = async (id) => {
     store.deleteMovement(id);
     setMovements(store.getMovements());
     showNotif('Mouvement supprimé');
-    triggerAutoBackup();
+    await saveToGitHub();
   };
 
   const readOnly = isReadOnly();
 
   const contextValue = {
-    products, movements, loadData, showNotif, readOnly, triggerAutoBackup,
-    addProduct, updateProduct, deleteProduct, addMovement, updateMovement, deleteMovement,
+    products, movements, loadData, showNotif, readOnly,
+    triggerAutoBackup: saveToGitHub,
+    addProduct, updateProduct, deleteProduct,
+    addMovement, updateMovement, deleteMovement,
     setPage: setCurrentPage,
-    syncFromGitHub, syncStatus, newMovementsCount
+    syncFromGitHub, saving, newMovementsCount
   };
 
   const renderPage = () => {
@@ -203,10 +210,8 @@ function App() {
     return (
       <div className="flex h-screen items-center justify-center bg-[#f5f5f7]">
         <div className="text-center">
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-3xl mb-4 animate-pulse shadow-lg">
-            🫐
-          </div>
-          <p className="text-gray-500">Chargement...</p>
+          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-3xl mb-4 animate-pulse shadow-lg">🫐</div>
+          <p className="text-gray-500">{isGitHubConfigured() ? 'Chargement depuis GitHub...' : 'Chargement...'}</p>
         </div>
       </div>
     );
@@ -215,17 +220,20 @@ function App() {
   return (
     <AppContext.Provider value={contextValue}>
       <div className="flex h-screen overflow-hidden bg-[#f5f5f7]">
-        {/* Sync indicator */}
-        {syncStatus === 'syncing' && (
-          <div style={{ position:'fixed', top:16, right:16, zIndex:9999, background:'#1d9e75', color:'white', padding:'8px 16px', borderRadius:20, fontSize:13, fontWeight:500, boxShadow:'0 4px 12px rgba(0,0,0,0.15)' }}>
-            🔄 Synchronisation en cours...
+
+        {/* Indicateur sauvegarde */}
+        {saving && (
+          <div style={{ position:'fixed', top:16, right:16, zIndex:9999, background:'#1d9e75', color:'white', padding:'8px 16px', borderRadius:20, fontSize:13, fontWeight:500, boxShadow:'0 4px 12px rgba(0,0,0,0.15)', display:'flex', alignItems:'center', gap:8 }}>
+            <span style={{ animation:'spin 1s linear infinite', display:'inline-block' }}>⟳</span> Sauvegarde GitHub...
           </div>
         )}
         {newMovementsCount > 0 && (
           <div style={{ position:'fixed', top:16, right:16, zIndex:9999, background:'#1d9e75', color:'white', padding:'8px 16px', borderRadius:20, fontSize:13, fontWeight:500, boxShadow:'0 4px 12px rgba(0,0,0,0.15)' }}>
-            ✅ {newMovementsCount} nouveau(x) mouvement(s) importé(s)
+            ✅ {newMovementsCount} nouveau(x) mouvement(s) des fermes
           </div>
         )}
+
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
 
         <Sidebar
           currentPage={currentPage}
@@ -234,18 +242,12 @@ function App() {
           setSidebarOpen={setSidebarOpen}
           sidebarCollapsed={sidebarCollapsed}
           setSidebarCollapsed={setSidebarCollapsed}
-          onSync={() => syncFromGitHub(false)}
-          syncStatus={syncStatus}
         />
         <main className="flex-1 overflow-auto">
           {renderPage()}
         </main>
         {notification && (
-          <Toast
-            message={notification.msg}
-            type={notification.type}
-            onClose={() => setNotification(null)}
-          />
+          <Toast message={notification.msg} type={notification.type} onClose={() => setNotification(null)} />
         )}
       </div>
     </AppContext.Provider>
