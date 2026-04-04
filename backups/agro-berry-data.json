@@ -25605,12 +25605,30 @@
     },
     {
       "type": "entry",
+      "product": "VITAL CU",
+      "quantity": 150,
+      "price": 141.67,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-04-04",
+      "id": 1775304115329
+    },
+    {
+      "type": "entry",
       "product": "PERFECTOSE",
-      "quantity": 250,
+      "quantity": 375,
       "price": 63.34,
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-04-04",
-      "id": 1775298536489
+      "id": 1775304167097
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 40,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-04",
+      "id": 1775304233835
     }
   ],
   "stockAB1": [
@@ -31408,5 +31426,5 @@
       "updatedAt": "2026-04-03T12:49:33.024Z"
     }
   ],
-  "exportDate": "2026-04-04T10:40:38.775Z"
+  "exportDate": "2026-04-04T12:05:53.850Z"
 }
