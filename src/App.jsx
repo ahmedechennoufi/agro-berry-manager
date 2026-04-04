@@ -17,12 +17,11 @@ import Ecarts from './pages/Ecarts';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
 import * as store from './lib/store';
-import { isGitHubConfigured, scheduleAutoBackup } from './lib/githubBackup';
+import { isGitHubConfigured, scheduleAutoBackup, syncMovementsFromGitHub } from './lib/githubBackup';
 
 const AppContext = createContext();
 export const useApp = () => useContext(AppContext);
 
-// Mode lecture seule si ?view=1 dans l'URL
 const isReadOnly = () => {
   const params = new URLSearchParams(window.location.search);
   return params.get('view') === '1';
@@ -39,8 +38,9 @@ function App() {
   const [products, setProducts] = useState([]);
   const [movements, setMovements] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [syncStatus, setSyncStatus] = useState(null); // null | 'syncing' | 'done' | 'error'
+  const [newMovementsCount, setNewMovementsCount] = useState(0);
 
-  // Save collapsed state
   useEffect(() => {
     localStorage.setItem('sidebar_collapsed', sidebarCollapsed);
   }, [sidebarCollapsed]);
@@ -50,7 +50,6 @@ function App() {
     setMovements(store.getMovements());
   };
 
-  // Auto-backup GitHub après chaque modification
   const triggerAutoBackup = () => {
     if (isGitHubConfigured()) {
       scheduleAutoBackup(
@@ -61,10 +60,50 @@ function App() {
     }
   };
 
-  useEffect(() => { 
+  // Sync depuis GitHub (mouvements magasiniers)
+  const syncFromGitHub = async (silent = false) => {
+    if (!isGitHubConfigured()) return;
+    if (!silent) setSyncStatus('syncing');
+    try {
+      const count = await syncMovementsFromGitHub(
+        store.getMovements,
+        (mv) => store.addMovement(mv)
+      );
+      if (count > 0) {
+        loadData();
+        setNewMovementsCount(count);
+        if (!silent) showNotif(`✅ ${count} nouveau(x) mouvement(s) importé(s) depuis les fermes`, 'success');
+        setTimeout(() => setNewMovementsCount(0), 5000);
+      }
+      if (!silent) setSyncStatus('done');
+      setTimeout(() => setSyncStatus(null), 3000);
+    } catch (e) {
+      if (!silent) setSyncStatus('error');
+      setTimeout(() => setSyncStatus(null), 3000);
+    }
+  };
+
+  useEffect(() => {
     store.initializeData();
     loadData();
     setLoading(false);
+
+    // Sync au démarrage (silencieux)
+    setTimeout(() => syncFromGitHub(true), 2000);
+
+    // Sync automatique toutes les 5 minutes
+    const syncInterval = setInterval(() => syncFromGitHub(true), 5 * 60 * 1000);
+
+    // Sync quand l'onglet redevient actif
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') syncFromGitHub(true);
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    return () => {
+      clearInterval(syncInterval);
+      document.removeEventListener('visibilitychange', handleVisibility);
+    };
   }, []);
 
   const showNotif = (msg, type = 'success') => setNotification({ msg, type });
@@ -135,7 +174,8 @@ function App() {
   const contextValue = {
     products, movements, loadData, showNotif, readOnly, triggerAutoBackup,
     addProduct, updateProduct, deleteProduct, addMovement, updateMovement, deleteMovement,
-    setPage: setCurrentPage
+    setPage: setCurrentPage,
+    syncFromGitHub, syncStatus, newMovementsCount
   };
 
   const renderPage = () => {
@@ -174,47 +214,37 @@ function App() {
 
   return (
     <AppContext.Provider value={contextValue}>
-      <div className="flex h-screen bg-[#f5f5f7] overflow-hidden">
-        <Sidebar 
-          currentPage={currentPage} 
-          setCurrentPage={setCurrentPage}
-          isOpen={sidebarOpen}
-          setIsOpen={setSidebarOpen}
-          isCollapsed={sidebarCollapsed}
-          setIsCollapsed={setSidebarCollapsed}
-        />
-        
-        <main className="flex-1 overflow-auto">
-          {/* Mobile header */}
-          <div className="lg:hidden sticky top-0 z-30 bg-white/90 backdrop-blur-lg p-4 flex items-center gap-4 border-b border-gray-200/50 shadow-sm">
-            <button 
-              onClick={() => setSidebarOpen(true)} 
-              className="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center text-white hover:bg-green-600 transition-colors"
-            >
-              ☰
-            </button>
-            <div className="flex items-center gap-2">
-              <span className="text-lg">🫐</span>
-              <h1 className="font-semibold text-gray-900">Agro Berry</h1>
-            </div>
+      <div className="flex h-screen overflow-hidden bg-[#f5f5f7]">
+        {/* Sync indicator */}
+        {syncStatus === 'syncing' && (
+          <div style={{ position:'fixed', top:16, right:16, zIndex:9999, background:'#1d9e75', color:'white', padding:'8px 16px', borderRadius:20, fontSize:13, fontWeight:500, boxShadow:'0 4px 12px rgba(0,0,0,0.15)' }}>
+            🔄 Synchronisation en cours...
           </div>
-          
-          <div className="p-4 md:p-6 lg:p-8 max-w-7xl mx-auto">
-            {readOnly && (
-              <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center gap-2">
-                <span className="text-lg">🔒</span>
-                <span className="text-blue-700 text-sm font-medium">Mode consultation — Lecture seule</span>
-              </div>
-            )}
-            {renderPage()}
+        )}
+        {newMovementsCount > 0 && (
+          <div style={{ position:'fixed', top:16, right:16, zIndex:9999, background:'#1d9e75', color:'white', padding:'8px 16px', borderRadius:20, fontSize:13, fontWeight:500, boxShadow:'0 4px 12px rgba(0,0,0,0.15)' }}>
+            ✅ {newMovementsCount} nouveau(x) mouvement(s) importé(s)
           </div>
-        </main>
+        )}
 
+        <Sidebar
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+          sidebarCollapsed={sidebarCollapsed}
+          setSidebarCollapsed={setSidebarCollapsed}
+          onSync={() => syncFromGitHub(false)}
+          syncStatus={syncStatus}
+        />
+        <main className="flex-1 overflow-auto">
+          {renderPage()}
+        </main>
         {notification && (
-          <Toast 
-            message={notification.msg} 
-            type={notification.type} 
-            onClose={() => setNotification(null)} 
+          <Toast
+            message={notification.msg}
+            type={notification.type}
+            onClose={() => setNotification(null)}
           />
         )}
       </div>

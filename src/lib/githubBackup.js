@@ -8,6 +8,7 @@ const GITHUB_CONFIG_KEY = 'agro_github_config';
 const BACKUP_PATH = 'backups/agro-berry-data.json';
 
 // === CONFIG ===
+
 export const getGitHubConfig = () => {
   try {
     return JSON.parse(localStorage.getItem(GITHUB_CONFIG_KEY) || '{}');
@@ -30,7 +31,7 @@ export const isGitHubConfigured = () => {
 // === API CALLS ===
 
 /**
- * Sauvegarder les données sur GitHub
+ * Sauvegarder les données sur GitHub (MERGE avec mouvements magasiniers)
  */
 export const backupToGitHub = async (data) => {
   const config = getGitHubConfig();
@@ -38,11 +39,11 @@ export const backupToGitHub = async (data) => {
     throw new Error('GitHub non configuré');
   }
 
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
   const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${BACKUP_PATH}`;
 
-  // Vérifier si le fichier existe déjà (pour avoir le SHA)
+  // Récupérer le fichier existant (SHA + contenu)
   let sha = null;
+  let existingMovements = [];
   try {
     const getRes = await fetch(url, {
       headers: {
@@ -53,12 +54,28 @@ export const backupToGitHub = async (data) => {
     if (getRes.ok) {
       const existing = await getRes.json();
       sha = existing.sha;
+      // Décoder le contenu existant pour récupérer les mouvements magasiniers
+      try {
+        const existingData = JSON.parse(decodeURIComponent(escape(atob(existing.content.replace(/\n/g, '')))));
+        existingMovements = existingData.movements || [];
+      } catch (e) {
+        existingMovements = [];
+      }
     }
   } catch (e) {
-    // Fichier n'existe pas encore, c'est OK
+    // Fichier n'existe pas encore
   }
 
-  // Créer ou mettre à jour le fichier
+  // MERGE : garder les mouvements du backup (magasiniers) + ceux de l'admin
+  const adminMovementIds = new Set((data.movements || []).map(m => m.id));
+  const magasinierMovements = existingMovements.filter(m => !adminMovementIds.has(m.id));
+  const mergedData = {
+    ...data,
+    movements: [...(data.movements || []), ...magasinierMovements]
+  };
+
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(mergedData, null, 2))));
+
   const body = {
     message: `📦 Backup ${new Date().toLocaleDateString('fr-FR')} ${new Date().toLocaleTimeString('fr-FR')}`,
     content,
@@ -102,7 +119,7 @@ export const restoreFromGitHub = async () => {
   }
 
   const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${BACKUP_PATH}`;
-  
+
   const res = await fetch(url, {
     headers: {
       'Authorization': `token ${config.token}`,
@@ -119,8 +136,60 @@ export const restoreFromGitHub = async () => {
   const file = await res.json();
   const content = decodeURIComponent(escape(atob(file.content)));
   const data = JSON.parse(content);
-  
   return data;
+};
+
+/**
+ * NOUVELLE FONCTION : Synchroniser les mouvements des magasiniers depuis GitHub
+ * Importe uniquement les mouvements qui n'existent pas encore dans localStorage
+ * Retourne le nombre de nouveaux mouvements importés
+ */
+export const syncMovementsFromGitHub = async (getCurrentMovementsFn, addMovementFn) => {
+  const config = getGitHubConfig();
+  if (!config.token || !config.owner || !config.repo) return 0;
+
+  try {
+    const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${BACKUP_PATH}`;
+    const res = await fetch(url, {
+      headers: {
+        'Authorization': `token ${config.token}`,
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+
+    if (!res.ok) return 0;
+
+    const file = await res.json();
+    const backupData = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
+    const backupMovements = backupData.movements || [];
+
+    // IDs des mouvements déjà dans localStorage
+    const localMovements = getCurrentMovementsFn();
+    const localIds = new Set(localMovements.map(m => m.id));
+
+    // Trouver les nouveaux mouvements (ajoutés par magasiniers)
+    const newMovements = backupMovements.filter(m => m.id && !localIds.has(m.id));
+
+    // Importer chaque nouveau mouvement
+    let count = 0;
+    for (const mv of newMovements) {
+      try {
+        addMovementFn(mv);
+        count++;
+      } catch (e) {
+        console.warn('Erreur import mouvement:', e);
+      }
+    }
+
+    if (count > 0) {
+      console.log(`✅ ${count} nouveau(x) mouvement(s) importé(s) depuis magasiniers`);
+    }
+
+    return count;
+  } catch (e) {
+    console.warn('Sync GitHub échouée:', e.message);
+    return 0;
+  }
 };
 
 /**
@@ -128,7 +197,6 @@ export const restoreFromGitHub = async () => {
  */
 export const testGitHubConnection = async (token, owner, repo) => {
   const url = `https://api.github.com/repos/${owner}/${repo}`;
-  
   const res = await fetch(url, {
     headers: {
       'Authorization': `token ${token}`,
@@ -151,8 +219,10 @@ export const testGitHubConnection = async (token, owner, repo) => {
 };
 
 // === AUTO-BACKUP ===
+
 let autoBackupTimer = null;
 let autoBackupEnabled = true;
+
 const AUTO_BACKUP_DELAY = 2 * 60 * 1000; // 2 minutes après dernier changement
 const AUTO_BACKUP_STATUS_KEY = 'agro_auto_backup_status';
 
@@ -172,14 +242,11 @@ const setAutoBackupStatus = (status) => {
 
 /**
  * Déclenche un auto-backup après un délai (debounce)
- * Appelé à chaque modification de données
  */
 export const scheduleAutoBackup = (exportAllDataFn, onSuccess, onError) => {
   if (!isGitHubConfigured() || !autoBackupEnabled) return;
 
-  // Reset le timer à chaque changement
   if (autoBackupTimer) clearTimeout(autoBackupTimer);
-
   setAutoBackupStatus({ pending: true });
 
   autoBackupTimer = setTimeout(async () => {
@@ -187,18 +254,18 @@ export const scheduleAutoBackup = (exportAllDataFn, onSuccess, onError) => {
       setAutoBackupStatus({ pending: false, syncing: true });
       const data = exportAllDataFn();
       const result = await backupToGitHub(data);
-      setAutoBackupStatus({ 
-        pending: false, 
-        syncing: false, 
+      setAutoBackupStatus({
+        pending: false,
+        syncing: false,
         lastAutoBackup: result.date,
-        error: null 
+        error: null
       });
       if (onSuccess) onSuccess(result);
     } catch (err) {
-      setAutoBackupStatus({ 
-        pending: false, 
-        syncing: false, 
-        error: err.message 
+      setAutoBackupStatus({
+        pending: false,
+        syncing: false,
+        error: err.message
       });
       if (onError) onError(err);
     }
@@ -230,7 +297,6 @@ export const getLastBackupInfo = async () => {
     });
 
     if (!res.ok) return null;
-    
     const commits = await res.json();
     if (commits.length === 0) return null;
 
