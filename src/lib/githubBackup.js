@@ -43,7 +43,11 @@ export const backupToGitHub = async (data) => {
     const { data: existing, sha: existingSha } = await getFileInfo(config);
     sha = existingSha;
     const adminIds = new Set((data.movements || []).map(m => m.id));
-    magasinierMovements = (existing.movements || []).filter(m => m.id && !adminIds.has(m.id));
+    const deletedIds = new Set((data.deletedMovementIds || []));
+    // Garder les mouvements magasiniers sauf ceux supprimés par l'admin
+    magasinierMovements = (existing.movements || []).filter(m =>
+      m.id && !adminIds.has(m.id) && !deletedIds.has(m.id)
+    );
   } catch (e) { /* fichier n'existe pas encore */ }
 
   // Merger mouvements admin + magasiniers

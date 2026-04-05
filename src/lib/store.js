@@ -16,7 +16,8 @@ const STORAGE_KEYS = {
   physicalInventories: 'agro_physical_inventories_v3',
   commandes: 'agro_commandes_v3',
   initialized: 'agro_initialized_v3',
-  dataVersion: 'agro_data_version'
+  dataVersion: 'agro_data_version',
+  deletedMovementIds: 'agro_deleted_movement_ids_v3'
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
@@ -379,7 +380,17 @@ export const addMovement = (movement) => {
 export const deleteMovement = (id) => {
   const movements = getMovements().filter(m => m.id !== id);
   setItem(STORAGE_KEYS.movements, movements);
+  // Tracker l'ID supprimé pour synchronisation GitHub
+  const deleted = JSON.parse(localStorage.getItem(STORAGE_KEYS.deletedMovementIds) || '[]');
+  if (!deleted.includes(id)) deleted.push(id);
+  localStorage.setItem(STORAGE_KEYS.deletedMovementIds, JSON.stringify(deleted));
 };
+
+export const getDeletedMovementIds = () =>
+  JSON.parse(localStorage.getItem(STORAGE_KEYS.deletedMovementIds) || '[]');
+
+export const clearDeletedMovementIds = () =>
+  localStorage.setItem(STORAGE_KEYS.deletedMovementIds, JSON.stringify([]));
 
 export const updateMovement = (id, updates) => {
   const movements = getMovements();
@@ -1287,6 +1298,7 @@ export const exportAllData = () => ({
   inventory: getInventory(),
   physicalInventories: getPhysicalInventories(),
   commandes: getCommandes(),
+  deletedMovementIds: getDeletedMovementIds(),
   exportDate: new Date().toISOString()
 });
 

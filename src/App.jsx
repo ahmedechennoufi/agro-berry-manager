@@ -48,6 +48,7 @@ function App() {
     setSaving(true);
     try {
       await backupToGitHub(store.exportAllData());
+      store.clearDeletedMovementIds(); // Vider après backup réussi
     } catch (err) {
       console.warn('Sauvegarde GitHub échouée:', err.message);
       showNotif('⚠️ Sauvegarde GitHub échouée: ' + err.message, 'error');
