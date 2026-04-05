@@ -25629,6 +25629,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-04-04",
       "id": 1775304233835
+    },
+    {
+      "type": "exit",
+      "product": "SANYGENE FORTE",
+      "quantity": 20,
+      "price": 60,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-05",
+      "id": 1775388055461
     }
   ],
   "stockAB1": [
@@ -31426,5 +31435,5 @@
       "updatedAt": "2026-04-03T12:49:33.024Z"
     }
   ],
-  "exportDate": "2026-04-04T12:05:53.850Z"
+  "exportDate": "2026-04-05T11:22:55.498Z"
 }
