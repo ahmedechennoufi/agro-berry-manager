@@ -25667,6 +25667,17 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-04-06",
       "id": 1775458800882
+    },
+    {
+      "type": "consumption",
+      "product": "SUCRE",
+      "quantity": 1,
+      "price": 0,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-06",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1775458872162
     }
   ],
   "stockAB1": [
@@ -31464,5 +31475,5 @@
       "updatedAt": "2026-04-03T12:49:33.024Z"
     }
   ],
-  "exportDate": "2026-04-06T07:00:21.733Z"
+  "exportDate": "2026-04-06T07:01:15.030Z"
 }
