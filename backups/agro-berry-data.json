@@ -25704,6 +25704,100 @@
       "toFarm": "AGRO BERRY 3",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775462612683
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 1008,
+      "price": 9.77648370019504,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-07",
+      "id": 1775560715227
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 100,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-07",
+      "id": 1775560729029
+    },
+    {
+      "type": "exit",
+      "product": "PERFECTOSE",
+      "quantity": 75,
+      "price": 63.34,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-07",
+      "id": 1775560748649
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 300,
+      "price": 0,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-07",
+      "id": 1775560835231
+    },
+    {
+      "type": "exit",
+      "product": "PERFECTOSE",
+      "quantity": 100,
+      "price": 63.34,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-07",
+      "id": 1775560856899
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 120,
+      "price": 85,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-07",
+      "id": 1775560871531
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 300,
+      "price": 0,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-07",
+      "id": 1775560906231
+    },
+    {
+      "type": "transfer-out",
+      "product": "MAP",
+      "quantity": 1000,
+      "price": 12.8,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-04-07",
+      "transferId": 1775560938856,
+      "id": 1775560938857
+    },
+    {
+      "type": "transfer-in",
+      "product": "MAP",
+      "quantity": 1000,
+      "price": 12.8,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-04-07",
+      "transferId": 1775560938856,
+      "id": 1775560938859
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 1008,
+      "price": 9.77648370019504,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-07",
+      "id": 1775560986460
     }
   ],
   "stockAB1": [
@@ -31410,12 +31504,12 @@
         {
           "product": "SULFATE MAGNESUIM",
           "ordered": 10000,
-          "received": 0
+          "received": 7000
         },
         {
           "product": "SULFATE DE POTASSE",
           "ordered": 9000,
-          "received": 0
+          "received": 5450
         },
         {
           "product": "NUTREL C",
@@ -31425,12 +31519,12 @@
         {
           "product": "ACIDE PHOSPHORIQUE",
           "ordered": 6500,
-          "received": 0
+          "received": 6496
         },
         {
           "product": "ACIDE SULFURIQUE",
           "ordered": 1000,
-          "received": 0
+          "received": 1008
         },
         {
           "product": "UREE",
@@ -31445,7 +31539,7 @@
         {
           "product": "FEROXIM",
           "ordered": 1500,
-          "received": 0
+          "received": 1235
         },
         {
           "product": "NITRATE DE CALCIUM",
@@ -31455,7 +31549,7 @@
         {
           "product": "VITAL CU",
           "ordered": 150,
-          "received": 0
+          "received": 150
         },
         {
           "product": "HUWA SAN",
@@ -31490,7 +31584,7 @@
         {
           "product": "PERFECTOSE",
           "ordered": 250,
-          "received": 0
+          "received": 375
         },
         {
           "product": "NOVA",
@@ -31498,8 +31592,8 @@
           "received": 320
         }
       ],
-      "updatedAt": "2026-04-03T12:49:33.024Z"
+      "updatedAt": "2026-04-06T09:22:24.036Z"
     }
   ],
-  "exportDate": "2026-04-06T07:04:43.602Z"
+  "exportDate": "2026-04-07T11:25:06.464Z"
 }
