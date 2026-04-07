@@ -289,7 +289,7 @@ const History = () => {
       const unit = products.find(pr => pr.name?.toUpperCase() === p.product?.toUpperCase())?.unit || 'KG';
       return {
         Produit: p.product,
-        Unité: unit,
+        Unite: unit,
         'AGB 1': p.AB1,
         'AGB 2': p.AB2,
         'AGB 3': p.AB3,
@@ -324,7 +324,7 @@ const History = () => {
   const handleExport = async () => {
     const data = displayProducts.map(p => ({
       Produit: p.product,
-      Unité: p.unit,
+      Unite: p.unit,
       'AGB 1': p.AB1,
       'AGB 2': p.AB2,
       'AGB 3': p.AB3,
@@ -480,7 +480,7 @@ const History = () => {
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200">
                   <th className="text-left p-4 font-semibold text-gray-700">PRODUIT</th>
-                  <th className="text-center p-4 font-semibold text-gray-700 w-20">UNITÉ</th>
+                  <th className="text-center p-4 font-semibold text-gray-700 w-20">UNITE</th>
                   <th className="text-right p-4 font-semibold text-gray-700 w-28">
                     <span className="text-green-600">🌿</span> AGB 1
                   </th>

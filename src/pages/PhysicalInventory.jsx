@@ -296,7 +296,7 @@ const PhysicalInventory = () => {
   };
 
   const handlePrefill = () => {
-    if (window.confirm('Pré-remplir avec le stock théorique ? Vous pourrez modifier les valeurs ensuite.')) {
+    if (window.confirm('Pré-remplir avec le stock theorique ? Vous pourrez modifier les valeurs ensuite.')) {
       const prefilled = {};
       theoreticalStock.forEach(item => { prefilled[item.name] = item.theoretical.toString(); });
       setPhysicalStock(prefilled);
@@ -329,11 +329,11 @@ const PhysicalInventory = () => {
     const farmName = FARMS.find(f => f.id === selectedFarm)?.name || selectedFarm;
     const lines = [
       `INVENTAIRE PHYSIQUE - ${farmName}`, `Date: ${inventoryDate}`, '',
-      'Produit\tUnité\tThéorique\tPhysique\tÉcart\tÉcart %\tValeur Écart',
+      'Produit\tUnite\tTheorique\tPhysique\tEcart\tEcart %\tValeur Ecart',
       ...comparisonData.filter(i => i.hasPhysical).map(i => 
         `${i.name}\t${i.unit}\t${fmt(i.theoretical)}\t${fmt(i.physical)}\t${fmt(i.diff)}\t${i.diffPercent !== null ? fmt(i.diffPercent) + '%' : '-'}\t${fmtMoney(i.diffValue)}`
       ), '',
-      `Total produits: ${stats.total}`, `Avec écart: ${stats.withDiff}`, `Valeur écart total: ${fmtMoney(stats.totalDiffValue)}`
+      `Total produits: ${stats.total}`, `Avec ecart: ${stats.withDiff}`, `Valeur ecart total: ${fmtMoney(stats.totalDiffValue)}`
     ];
     navigator.clipboard.writeText(lines.join('\n')).then(() => alert('✅ Copié !'));
   };
@@ -404,11 +404,11 @@ const PhysicalInventory = () => {
                 <p className="font-bold text-green-600">{inv.stats?.ok || 0}</p>
               </div>
               <div className="p-3 text-center border-r">
-                <p className="text-xs text-gray-500">Écarts</p>
+                <p className="text-xs text-gray-500">Ecarts</p>
                 <p className="font-bold text-red-600">{inv.stats?.withDiff || 0}</p>
               </div>
               <div className="p-3 text-center">
-                <p className="text-xs text-gray-500">Valeur écart</p>
+                <p className="text-xs text-gray-500">Valeur ecart</p>
                 <p className={`font-bold ${(inv.stats?.totalDiffValue || 0) < 0 ? 'text-red-600' : 'text-green-600'}`}>
                   {fmtMoney(inv.stats?.totalDiffValue || 0)}
                 </p>
@@ -421,10 +421,10 @@ const PhysicalInventory = () => {
                   <thead>
                     <tr className="bg-gray-100 border-b">
                       <th className="text-left p-3 font-semibold text-gray-700">PRODUIT</th>
-                      <th className="text-center p-3 font-semibold text-gray-500">UNITÉ</th>
-                      <th className="text-right p-3 font-semibold text-blue-600">THÉORIQUE</th>
+                      <th className="text-center p-3 font-semibold text-gray-500">UNITE</th>
+                      <th className="text-right p-3 font-semibold text-blue-600">THEORIQUE</th>
                       <th className="text-right p-3 font-semibold text-green-600">PHYSIQUE</th>
-                      <th className="text-right p-3 font-semibold text-gray-700">ÉCART</th>
+                      <th className="text-right p-3 font-semibold text-gray-700">ECART</th>
                       <th className="text-center p-3 font-semibold text-gray-500">STATUT</th>
                     </tr>
                   </thead>
@@ -461,7 +461,7 @@ const PhysicalInventory = () => {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">🔍 Inventaire Physique</h1>
-          <p className="text-gray-500 text-sm mt-1">Comparer le stock théorique avec le comptage réel</p>
+          <p className="text-gray-500 text-sm mt-1">Comparer le stock theorique avec le comptage réel</p>
         </div>
       </div>
 
@@ -508,7 +508,7 @@ const PhysicalInventory = () => {
                 <label className="block text-sm font-medium text-gray-600 mb-2">⚡ Actions rapides</label>
                 <button onClick={handlePrefill}
                   className="w-full px-4 py-3 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-xl font-medium transition-colors text-sm border border-blue-200">
-                  📝 Pré-remplir avec stock théorique
+                  📝 Pré-remplir avec stock theorique
                 </button>
               </Card>
             )}
@@ -556,11 +556,11 @@ const PhysicalInventory = () => {
                   <p className="text-2xl font-bold text-green-700">{stats.ok}</p>
                 </Card>
                 <Card className="p-4 bg-gradient-to-br from-red-50 to-red-100 border-red-200">
-                  <p className="text-red-600 text-xs font-medium">⚠️ Avec écart</p>
+                  <p className="text-red-600 text-xs font-medium">⚠️ Avec ecart</p>
                   <p className="text-2xl font-bold text-red-700">{stats.withDiff}</p>
                 </Card>
                 <Card className={`p-4 bg-gradient-to-br ${stats.totalDiffValue < 0 ? 'from-red-50 to-red-100 border-red-200' : 'from-green-50 to-green-100 border-green-200'}`}>
-                  <p className={`${stats.totalDiffValue < 0 ? 'text-red-600' : 'text-green-600'} text-xs font-medium`}>💰 Valeur écart</p>
+                  <p className={`${stats.totalDiffValue < 0 ? 'text-red-600' : 'text-green-600'} text-xs font-medium`}>💰 Valeur ecart</p>
                   <p className={`text-xl font-bold ${stats.totalDiffValue < 0 ? 'text-red-700' : 'text-green-700'}`}>
                     {stats.totalDiffValue >= 0 ? '+' : ''}{fmtMoney(stats.totalDiffValue)}
                   </p>
@@ -606,7 +606,7 @@ const PhysicalInventory = () => {
                 <select value={filterDiff} onChange={(e) => setFilterDiff(e.target.value)}
                   className="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-700 font-medium text-sm sm:w-52">
                   <option value="ALL">📊 Tous les produits</option>
-                  <option value="ecart">⚠️ Avec écart</option>
+                  <option value="ecart">⚠️ Avec ecart</option>
                   <option value="manquant">🔻 Manquants</option>
                   <option value="excedent">🔺 Excédents</option>
                   <option value="ok">✅ Conformes</option>
@@ -634,11 +634,11 @@ const PhysicalInventory = () => {
                       <thead>
                         <tr className="bg-gray-100 border-b">
                           <th className="text-left p-4 font-semibold text-gray-700">PRODUIT</th>
-                          <th className="text-center p-4 font-semibold text-gray-500">UNITÉ</th>
-                          <th className="text-right p-4 font-semibold text-blue-600">📊 THÉORIQUE</th>
+                          <th className="text-center p-4 font-semibold text-gray-500">UNITE</th>
+                          <th className="text-right p-4 font-semibold text-blue-600">📊 THEORIQUE</th>
                           <th className="text-center p-4 font-semibold text-green-600 min-w-[140px]">✏️ PHYSIQUE</th>
-                          <th className="text-center p-4 font-semibold text-gray-700">ÉCART</th>
-                          <th className="text-right p-4 font-semibold text-gray-500">VALEUR ÉCART</th>
+                          <th className="text-center p-4 font-semibold text-gray-700">ECART</th>
+                          <th className="text-right p-4 font-semibold text-gray-500">VALEUR ECART</th>
                           <th className="text-center p-4 font-semibold text-gray-500">STATUT</th>
                           <th className="text-center p-4 font-semibold text-gray-400 w-12"></th>
                         </tr>
@@ -707,7 +707,7 @@ const PhysicalInventory = () => {
                     <div>
                       <h3 className="font-bold text-gray-800">Résumé de l'inventaire</h3>
                       <p className="text-gray-600 text-sm mt-1">
-                        Sur {stats.entered} produits saisis, {stats.withDiff} présentent un écart 
+                        Sur {stats.entered} produits saisis, {stats.withDiff} présentent un ecart 
                         pour une valeur totale de <span className={`font-bold ${stats.totalDiffValue < 0 ? 'text-red-600' : 'text-green-600'}`}>
                           {stats.totalDiffValue >= 0 ? '+' : ''}{fmtMoney(stats.totalDiffValue)}
                         </span>.
@@ -729,7 +729,7 @@ const PhysicalInventory = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl max-h-[80vh] flex flex-col">
             <h3 className="text-xl font-bold text-gray-900 mb-2">➕ Ajouter un produit</h3>
-            <p className="text-gray-500 text-sm mb-4">Sélectionnez un produit qui n'est pas dans le stock théorique</p>
+            <p className="text-gray-500 text-sm mb-4">Sélectionnez un produit qui n'est pas dans le stock theorique</p>
             <input
               type="text"
               placeholder="🔍 Rechercher un produit..."
