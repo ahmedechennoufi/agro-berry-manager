@@ -164,11 +164,14 @@ const History = () => {
       const physData = physicalInventoryMonths[ym];
       if (physData && physData.physicalFarms.length > 0) {
         // Replace farm data with physical inventory where available
-        const updated = { ...m, isPhysical: true, physicalFarms: [...physData.physicalFarms] };
-        physData.physicalFarms.forEach(farmKey => {
-          updated[farmKey] = physData[farmKey];
-        });
-        // For farms without physical inventory, keep the original data
+        const updated = { 
+          ...m, 
+          isPhysical: true, 
+          physicalFarms: [...physData.physicalFarms],
+          AB1: physData.AB1 || m.AB1 || [],
+          AB2: physData.AB2 || m.AB2 || [],
+          AB3: physData.AB3 || m.AB3 || []
+        };
         months[idx] = updated;
       }
     });
