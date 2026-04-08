@@ -30817,6 +30817,17 @@
         }
       ],
       "sol": []
+    },
+    "AGRO BERRY 2": {
+      "horsSol": [
+        {
+          "product": "ACIDE PHOSPHORIQUE",
+          "qty": "",
+          "unit": "KG",
+          "_showDrop": false
+        }
+      ],
+      "sol": []
     }
   }
 }
