@@ -30876,9 +30876,20 @@
         },
         {
           "product": "SULFATE DE ZINC",
+          "qty": "0.5",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "NUTREL C",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
+        },
+        {
+          "product": "",
+          "qty": "",
+          "unit": "KG"
         }
       ],
       "sol": []
