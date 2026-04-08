@@ -30828,6 +30828,12 @@
         },
         {
           "product": "NITRATE DE CALCIUM",
+          "qty": "35",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "FEROXIM",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
