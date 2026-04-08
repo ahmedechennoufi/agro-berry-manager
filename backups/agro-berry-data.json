@@ -30834,6 +30834,12 @@
         },
         {
           "product": "FEROXIM",
+          "qty": "8",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "UREE",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
