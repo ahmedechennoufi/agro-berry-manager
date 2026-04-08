@@ -30822,6 +30822,12 @@
       "horsSol": [
         {
           "product": "ACIDE PHOSPHORIQUE",
+          "qty": "64",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "NITRATE DE CALCIUM",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
