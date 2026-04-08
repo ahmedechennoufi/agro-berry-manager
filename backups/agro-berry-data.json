@@ -30781,14 +30781,15 @@
         },
         {
           "product": "SULFATE DE POTASSE",
-          "qty": "",
+          "qty": "100",
           "unit": "KG",
           "_showDrop": false
         },
         {
-          "product": "",
+          "product": "UREE",
           "qty": "",
-          "unit": "KG"
+          "unit": "KG",
+          "_showDrop": false
         }
       ],
       "sol": []
