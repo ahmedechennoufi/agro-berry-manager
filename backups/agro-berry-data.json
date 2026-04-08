@@ -30882,14 +30882,15 @@
         },
         {
           "product": "NUTREL C",
-          "qty": "",
+          "qty": "8",
           "unit": "KG",
           "_showDrop": false
         },
         {
-          "product": "",
+          "product": "SOLUBOR",
           "qty": "",
-          "unit": "KG"
+          "unit": "KG",
+          "_showDrop": false
         }
       ],
       "sol": []
