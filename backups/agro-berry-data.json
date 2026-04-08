@@ -25660,17 +25660,6 @@
       "id": 1775458962830
     },
     {
-      "type": "transfer-out",
-      "product": "SUCRE",
-      "quantity": 7,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-06",
-      "toFarm": "AGRO BERRY 3",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1775462612683
-    },
-    {
       "type": "exit",
       "product": "ACIDE PHOSPHORIQUE",
       "quantity": 1008,
@@ -30925,6 +30914,7 @@
   "deletedMovementIds": [
     1775460555098,
     1775461560368,
-    1775462298520
+    1775462298520,
+    1775462612683
   ]
 }
