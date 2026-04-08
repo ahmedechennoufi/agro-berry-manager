@@ -30852,6 +30852,12 @@
         },
         {
           "product": "MAP",
+          "qty": "50",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "SULFATE MAGNESUIM",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
