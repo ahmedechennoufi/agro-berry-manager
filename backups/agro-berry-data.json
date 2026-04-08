@@ -25662,17 +25662,6 @@
     {
       "type": "transfer-out",
       "product": "SUCRE",
-      "quantity": 3,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-06",
-      "toFarm": "AGRO BERRY 1",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1775462298520
-    },
-    {
-      "type": "transfer-out",
-      "product": "SUCRE",
       "quantity": 7,
       "unit": "KG",
       "farm": "AGRO BERRY 2",
@@ -30935,6 +30924,7 @@
   },
   "deletedMovementIds": [
     1775460555098,
-    1775461560368
+    1775461560368,
+    1775462298520
   ]
 }
