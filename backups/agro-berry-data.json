@@ -30846,6 +30846,12 @@
         },
         {
           "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "qty": "75",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "MAP",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
