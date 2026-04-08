@@ -25660,18 +25660,6 @@
       "id": 1775458962830
     },
     {
-      "type": "consumption",
-      "product": "SUCRE",
-      "quantity": 5,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-06",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1775461560368
-    },
-    {
       "type": "transfer-out",
       "product": "SUCRE",
       "quantity": 3,
@@ -30946,6 +30934,7 @@
     }
   },
   "deletedMovementIds": [
-    1775460555098
+    1775460555098,
+    1775461560368
   ]
 }
