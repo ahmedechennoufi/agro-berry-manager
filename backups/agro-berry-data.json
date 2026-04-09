@@ -30888,12 +30888,19 @@
         },
         {
           "product": "SOLUBOR",
-          "qty": "",
+          "qty": "0.1",
           "unit": "KG",
           "_showDrop": false
         }
       ],
-      "sol": []
+      "sol": [
+        {
+          "product": "ACIDE PHOSPHORIQUE",
+          "qty": "",
+          "unit": "KG",
+          "_showDrop": false
+        }
+      ]
     }
   }
 }
