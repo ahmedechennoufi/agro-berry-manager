@@ -26370,6 +26370,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775725686923
+    },
+    {
+      "type": "consumption",
+      "product": "ANTISCALANT ZENTREAT",
+      "quantity": 30,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-31",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1775725741135
     }
   ],
   "stockAB1": [
