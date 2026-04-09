@@ -26538,17 +26538,6 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775731743682
-    },
-    {
-      "type": "transfer-out",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 128,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-09",
-      "toFarm": "AGRO BERRY 3",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1775731967133
     }
   ],
   "stockAB1": [
@@ -31733,6 +31722,7 @@
   "deletedMovementIds": [
     1775730676672,
     1775730832184,
-    1775730873641
+    1775730873641,
+    1775731967133
   ]
 }
