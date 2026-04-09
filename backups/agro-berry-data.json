@@ -31473,6 +31473,12 @@
           "qty": "64",
           "unit": "KG",
           "_showDrop": false
+        },
+        {
+          "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "qty": "",
+          "unit": "KG",
+          "_showDrop": false
         }
       ],
       "sol": [
@@ -31515,7 +31521,7 @@
         {
           "product": "VITAL CU",
           "qty": "0.3",
-          "unit": "KG",
+          "unit": "L",
           "_showDrop": false
         },
         {
@@ -31533,7 +31539,7 @@
         {
           "product": "SOLUBOR",
           "qty": "0.1",
-          "unit": "KG",
+          "unit": "L",
           "_showDrop": false
         }
       ]
