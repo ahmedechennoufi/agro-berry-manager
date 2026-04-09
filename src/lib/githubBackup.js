@@ -39,6 +39,7 @@ export const backupToGitHub = async (data) => {
   // Récupérer SHA + mouvements existants des magasiniers
   let sha = null;
   let magasinierMovements = [];
+  let existingMelangesConfig = data.melangesConfig || {};
   try {
     const { data: existing, sha: existingSha } = await getFileInfo(config);
     sha = existingSha;
@@ -48,13 +49,17 @@ export const backupToGitHub = async (data) => {
     magasinierMovements = (existing.movements || []).filter(m =>
       m.id && !adminIds.has(m.id) && !deletedIds.has(m.id)
     );
+    // Préserver melangesConfig depuis GitHub (priorité au fichier GitHub)
+    if (existing.melangesConfig && Object.keys(existing.melangesConfig).length > 0) {
+      existingMelangesConfig = existing.melangesConfig;
+    }
   } catch (e) { /* fichier n'existe pas encore */ }
 
   // Merger mouvements admin + magasiniers
   const mergedData = {
     ...data,
     movements: [...(data.movements || []), ...magasinierMovements],
-    melangesConfig: existing?.melangesConfig || data.melangesConfig || {}
+    melangesConfig: existingMelangesConfig
   };
 
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(mergedData, null, 2))));
