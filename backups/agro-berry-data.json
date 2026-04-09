@@ -31488,6 +31488,12 @@
         },
         {
           "product": "SULFATE MAGNESUIM",
+          "qty": "50",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "SULFATE DE POTASSE",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
