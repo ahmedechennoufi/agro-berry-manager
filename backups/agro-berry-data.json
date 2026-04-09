@@ -30846,6 +30846,12 @@
         },
         {
           "product": "UREE",
+          "qty": "20",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "SULFATE MAGNESUIM",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
