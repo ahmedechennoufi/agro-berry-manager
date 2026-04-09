@@ -25962,6 +25962,18 @@
       "notes": "rupture stock",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775718851594
+    },
+    {
+      "type": "consumption",
+      "product": "EXIREL",
+      "quantity": 4,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1775719806148
     }
   ],
   "stockAB1": [
