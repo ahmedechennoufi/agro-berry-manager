@@ -25830,6 +25830,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775715739841
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 40,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1775715764726
     }
   ],
   "stockAB1": [
