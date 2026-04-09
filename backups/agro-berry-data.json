@@ -25761,6 +25761,18 @@
       "supplier": "CASEM",
       "date": "2026-04-08",
       "id": 1775642406132
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 75,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1775715461982
     }
   ],
   "stockAB1": [
