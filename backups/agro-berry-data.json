@@ -26046,6 +26046,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775720486659
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.15,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-28",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1775720519182
     }
   ],
   "stockAB1": [
