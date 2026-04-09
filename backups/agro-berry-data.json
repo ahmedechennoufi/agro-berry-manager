@@ -25662,17 +25662,6 @@
     {
       "type": "transfer-out",
       "product": "SUCRE",
-      "quantity": 3,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-06",
-      "toFarm": "AGRO BERRY 1",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1775462298520
-    },
-    {
-      "type": "transfer-out",
-      "product": "SUCRE",
       "quantity": 7,
       "unit": "KG",
       "farm": "AGRO BERRY 2",
@@ -31712,6 +31701,7 @@
     1775730832184,
     1775730873641,
     1775731967133,
-    1775727816540
+    1775727816540,
+    1775462298520
   ]
 }
