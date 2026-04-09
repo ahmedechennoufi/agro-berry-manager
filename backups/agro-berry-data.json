@@ -26154,6 +26154,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775721104251
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 17.5,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-30",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1775721132290
     }
   ],
   "stockAB1": [
