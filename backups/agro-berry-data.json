@@ -31513,6 +31513,12 @@
         },
         {
           "product": "NUTREL C",
+          "qty": "6",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "FEROXIM",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
