@@ -26529,18 +26529,6 @@
     },
     {
       "type": "consumption",
-      "product": "VITAL CU",
-      "quantity": 1,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-09",
-      "culture": "Myrtille",
-      "destination": "",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1775730873641
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE DE POTASSE",
       "quantity": 75,
       "unit": "KG",
@@ -31744,6 +31732,7 @@
   },
   "deletedMovementIds": [
     1775730676672,
-    1775730832184
+    1775730832184,
+    1775730873641
   ]
 }
