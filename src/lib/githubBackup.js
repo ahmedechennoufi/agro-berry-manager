@@ -53,7 +53,8 @@ export const backupToGitHub = async (data) => {
   // Merger mouvements admin + magasiniers
   const mergedData = {
     ...data,
-    movements: [...(data.movements || []), ...magasinierMovements]
+    movements: [...(data.movements || []), ...magasinierMovements],
+    melangesConfig: existing?.melangesConfig || data.melangesConfig || {}
   };
 
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(mergedData, null, 2))));
