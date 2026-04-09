@@ -30944,6 +30944,12 @@
         },
         {
           "product": "FEROXIM",
+          "qty": "5",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "SOLUBOR",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
