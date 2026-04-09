@@ -26514,6 +26514,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775726415581
+    },
+    {
+      "type": "consumption",
+      "product": "SUCRE",
+      "quantity": 1,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-09",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1775727816540
     }
   ],
   "stockAB1": [
