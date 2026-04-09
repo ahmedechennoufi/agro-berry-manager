@@ -30822,6 +30822,12 @@
       "horsSol": [
         {
           "product": "ACIDE PHOSPHORIQUE",
+          "qty": "64",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
