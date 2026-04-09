@@ -25890,6 +25890,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775717734957
+    },
+    {
+      "type": "consumption",
+      "product": "OIKOS",
+      "quantity": 11.82,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1775718017143
     }
   ],
   "stockAB1": [
