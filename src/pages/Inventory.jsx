@@ -428,7 +428,7 @@ const Inventory = () => {
       </div>
 
       {/* Stock Table */}
-      <Card className="overflow-hidden p-0">
+      <div className="ios-card" style={{ padding: 0 }}>
         <div className="p-4 border-b bg-gray-50 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-gray-700 font-medium">{stockData.length} produits</span>
@@ -480,7 +480,7 @@ const Inventory = () => {
             </table>
           </div>
         )}
-      </Card>
+      </div>
 
       {/* Export Confirmation Modal */}
       {showExportModal && pendingMonth && (

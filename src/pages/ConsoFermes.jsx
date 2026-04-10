@@ -260,7 +260,7 @@ const ConsoFermes = () => {
       </div>
 
       {/* Table */}
-      <Card className="overflow-hidden p-0">
+      <div className="ios-card" style={{ padding: 0 }}>
         <div className="p-4 border-b">
           <span className="text-gray-500 text-sm font-medium">{tableData.length} produits</span>
         </div>
@@ -392,10 +392,10 @@ const ConsoFermes = () => {
             </table>
           </div>
         )}
-      </Card>
+      </div>
 
       {/* Détails des Entrées */}
-      <Card className="overflow-hidden p-0">
+      <div className="ios-card" style={{ padding: 0 }}>
         <div className="p-4 border-b bg-green-50">
           <h3 className="font-semibold text-green-700 flex items-center gap-2">📥 Détails des Entrées par Source</h3>
         </div>
@@ -458,10 +458,10 @@ const ConsoFermes = () => {
             </tbody>
           </table>
         </div>
-      </Card>
+      </div>
 
       {/* Détails des Sorties */}
-      <Card className="overflow-hidden p-0">
+      <div className="ios-card" style={{ padding: 0 }}>
         <div className="p-4 border-b bg-purple-50">
           <h3 className="font-semibold text-purple-700 flex items-center gap-2">↔️ Détails des Transferts entre Fermes (Sorties)</h3>
           <p className="text-xs text-purple-600 mt-1">Produits transférés d'une ferme vers une autre</p>
@@ -512,10 +512,10 @@ const ConsoFermes = () => {
             </tbody>
           </table>
         </div>
-      </Card>
+      </div>
 
       {/* Détails des Consommations */}
-      <Card className="overflow-hidden p-0">
+      <div className="ios-card" style={{ padding: 0 }}>
         <div className="p-4 border-b bg-orange-50">
           <h3 className="font-semibold text-orange-700 flex items-center gap-2">🔥 Détails des Consommations par Culture</h3>
         </div>
@@ -559,7 +559,7 @@ const ConsoFermes = () => {
             </tbody>
           </table>
         </div>
-      </Card>
+      </div>
     </div>
   );
 };

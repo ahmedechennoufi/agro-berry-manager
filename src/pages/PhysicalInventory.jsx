@@ -355,7 +355,7 @@ const PhysicalInventory = () => {
         {sorted.length === 0 ? (
           <Card className="p-12"><EmptyState icon="📭" message="Aucun inventaire sauvegardé" /></Card>
         ) : sorted.map(inv => (
-          <Card key={inv.id} className="p-0 overflow-hidden">
+          <div key={inv.id} className="ios-card" style={{ padding: 0 }}>
             <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b bg-gray-50">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-lg">🌿</div>
@@ -449,7 +449,7 @@ const PhysicalInventory = () => {
                 </table>
               </div>
             )}
-          </Card>
+          </div>
         ))}
       </div>
     );
@@ -619,7 +619,7 @@ const PhysicalInventory = () => {
               </div>
 
               {/* Comparison Table */}
-              <Card className="overflow-hidden p-0">
+              <div className="ios-card" style={{ padding: 0 }}>
                 <div className="p-4 border-b bg-gray-50 flex items-center justify-between">
                   <span className="text-gray-700 font-medium">{comparisonData.length} produits</span>
                   <span className="text-xs text-gray-500">
@@ -697,7 +697,7 @@ const PhysicalInventory = () => {
                     </table>
                   </div>
                 )}
-              </Card>
+              </div>
 
               {/* Summary */}
               {stats.entered > 0 && stats.withDiff > 0 && (

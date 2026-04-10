@@ -436,7 +436,7 @@ const History = () => {
       </Card>
 
       {/* Table */}
-      <div className="ios-card" style={{ overflow: 'hidden', padding: 0 }}>
+      <div className="ios-card" style={{ padding: 0, overflowX: 'auto' }}>
         {/* Table Header with Export Button */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderBottom: '1px solid var(--border)', background: 'var(--surface-2)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -470,8 +470,7 @@ const History = () => {
             <EmptyState icon="📦" message="Aucun produit trouvé" />
           </div>
         ) : (
-          <div style={{ overflowX: "auto" }}>
-            <table className="data-table" style={{ minWidth: 900 }}>
+          <table className="data-table" style={{ minWidth: 900 }}>
               <thead>
                 <tr>
                   <th style={{ textAlign: 'left' }}>PRODUIT</th>
@@ -521,7 +520,6 @@ const History = () => {
                 </tr>
               </tfoot>
             </table>
-          </div>
         )}
       </div>
 

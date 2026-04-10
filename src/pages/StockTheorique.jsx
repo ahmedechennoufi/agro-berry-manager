@@ -306,7 +306,7 @@ const StockTheorique = () => {
         const isExpanded = expandedFarm === farm.id || search.length > 0;
 
         return (
-          <Card key={farm.id} className="overflow-hidden p-0">
+          <div key={farm.id} className="ios-card" style={{ padding: 0 }}>
             {/* Farm Header */}
             <div
               className={`p-4 ${headerColors[i]} flex items-center justify-between cursor-pointer`}
@@ -370,7 +370,7 @@ const StockTheorique = () => {
                 Cliquer pour afficher les {farm.totalProducts} produits
               </div>
             )}
-          </Card>
+          </div>
         );
       })}
 

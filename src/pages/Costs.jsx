@@ -357,7 +357,7 @@ const Costs = () => {
       </div>
 
       {/* Products table */}
-      <Card className="overflow-hidden p-0">
+      <div className="ios-card" style={{ padding: 0 }}>
         <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 text-white flex justify-between items-center">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{getCategoryIcon(selectedCategory)}</span>
@@ -490,7 +490,7 @@ const Costs = () => {
             </table>
           </div>
         )}
-      </Card>
+      </div>
     </div>
   );
 };

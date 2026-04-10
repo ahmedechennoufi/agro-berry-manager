@@ -699,7 +699,7 @@ const Movements = () => {
       </Card>
 
       {/* Table */}
-      <Card className="overflow-hidden p-0">
+      <div className="ios-card" style={{ padding: 0 }}>
         {filteredMovements.length === 0 ? (
           <div className="p-6">
             <EmptyState icon="📋" message="Aucun mouvement trouvé" action={
@@ -842,7 +842,7 @@ const Movements = () => {
             )}
           </div>
         )}
-      </Card>
+      </div>
 
       {/* Main Modal */}
       <Modal isOpen={showModal} onClose={() => {
