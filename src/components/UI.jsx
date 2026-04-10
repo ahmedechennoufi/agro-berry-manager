@@ -1,101 +1,90 @@
 import React from 'react';
 
-// iOS Card
-export const Card = ({ children, className = '', onClick }) => (
-  <div 
+// ─── CARD ─────────────────────────────────────────
+export const Card = ({ children, className = '', onClick, style = {} }) => (
+  <div
     className={`ios-card p-5 ${onClick ? 'cursor-pointer' : ''} ${className}`}
     onClick={onClick}
+    style={style}
   >
     {children}
   </div>
 );
 
-// Stat Card with colored background
-export const StatCard = ({ icon, label, value, subValue, color = 'blue', trend, trendUp }) => {
-  const colorClasses = {
-    green: 'stat-card-green',
-    blue: 'stat-card-blue',
-    purple: 'stat-card-purple',
-    orange: 'stat-card-orange',
-    red: 'stat-card-red',
-    cyan: 'stat-card-cyan'
+// ─── STAT CARD ────────────────────────────────────
+export const StatCard = ({ icon, label, value, subValue, color = 'blue' }) => {
+  const colors = {
+    green:  { bg: '#f0faf2', text: '#1a8a36' },
+    blue:   { bg: '#f0f6ff', text: '#007aff' },
+    orange: { bg: '#fff8f0', text: '#c97300' },
+    red:    { bg: '#fff2f1', text: '#ff3b30' },
+    purple: { bg: '#f8f0ff', text: '#8a35b0' },
+    cyan:   { bg: '#f0f9ff', text: '#0078c0' },
+    gray:   { bg: '#f9f9fb', text: '#6e6e73' },
   };
-  
-  const textColors = {
-    green: 'text-green-700',
-    blue: 'text-blue-700',
-    purple: 'text-purple-700',
-    orange: 'text-orange-700',
-    red: 'text-red-700',
-    cyan: 'text-cyan-700'
-  };
-  
+  const c = colors[color] || colors.blue;
   return (
-    <div className={`stat-card ${colorClasses[color]}`}>
-      <div className="flex items-start justify-between mb-2">
-        <span className="text-2xl">{icon}</span>
-        {trend && (
-          <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
-            trendUp ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
-          }`}>
-            {trendUp ? '↑' : '↓'} {trend}
-          </span>
-        )}
-      </div>
-      <p className={`text-2xl font-bold ${textColors[color]} mb-1`}>{value}</p>
-      <p className="text-sm text-gray-600">{label}</p>
-      {subValue && <p className="text-xs text-gray-500 mt-1">{subValue}</p>}
+    <div style={{ background: c.bg, borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+      {icon && <span style={{ fontSize: 20, display: 'block', marginBottom: 10 }}>{icon}</span>}
+      <p style={{ fontSize: 22, fontWeight: 700, color: c.text, margin: '0 0 3px', letterSpacing: '-0.3px' }}>{value}</p>
+      <p style={{ fontSize: 12, color: '#6e6e73', margin: 0, fontWeight: 500 }}>{label}</p>
+      {subValue && <p style={{ fontSize: 11, color: '#aeaeb2', margin: '3px 0 0' }}>{subValue}</p>}
     </div>
   );
 };
 
-// Badge
-export const Badge = ({ children, color = 'blue' }) => {
-  const colorClass = `badge-${color}`;
-  return <span className={`badge ${colorClass}`}>{children}</span>;
-};
+// ─── BADGE ────────────────────────────────────────
+export const Badge = ({ children, color = 'blue' }) => (
+  <span className={`badge badge-${color}`}>{children}</span>
+);
 
-// Button
-export const Button = ({ children, onClick, variant = 'primary', className = '', disabled }) => {
-  const variantClass = variant === 'primary' ? 'btn-primary' : 
-                       variant === 'danger' ? 'btn-danger' :
-                       variant === 'blue' ? 'btn-blue' : 'btn-secondary';
+// ─── BUTTON ───────────────────────────────────────
+export const Button = ({ children, onClick, variant = 'primary', className = '', disabled, style = {} }) => {
+  const cls = variant === 'primary'   ? 'btn-primary'
+            : variant === 'danger'    ? 'btn-danger'
+            : variant === 'blue'      ? 'btn-blue'
+            : 'btn-secondary';
   return (
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`${variantClass} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={`${cls} ${className}`}
+      style={{ opacity: disabled ? 0.45 : 1, cursor: disabled ? 'not-allowed' : 'pointer', ...style }}
     >
       {children}
     </button>
   );
 };
 
-// Input
-export const Input = ({ label, type = 'text', value, onChange, placeholder, className = '', uppercase = true }) => (
+// ─── INPUT ────────────────────────────────────────
+export const Input = ({ label, type = 'text', value, onChange, placeholder, className = '', uppercase = true, required }) => (
   <div className={className}>
-    {label && <label className="block text-sm font-medium text-gray-600 mb-2">{label}</label>}
+    {label && (
+      <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6e6e73', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+        {label}{required && <span style={{ color: '#ff3b30', marginLeft: 3 }}>*</span>}
+      </label>
+    )}
     <input
       type={type}
       value={value}
-      onChange={(e) => {
-        const val = e.target.value;
-        // Convert to uppercase for text inputs (not for date, number, etc.)
-        onChange(type === 'text' && uppercase ? val.toUpperCase() : val);
-      }}
+      onChange={e => onChange(type === 'text' && uppercase ? e.target.value.toUpperCase() : e.target.value)}
       placeholder={placeholder}
       className={`input-field ${type === 'text' && uppercase ? 'uppercase' : ''}`}
     />
   </div>
 );
 
-// Select
-export const Select = ({ label, value, onChange, options, className = '' }) => (
+// ─── SELECT ───────────────────────────────────────
+export const Select = ({ label, value, onChange, options, className = '', required }) => (
   <div className={className}>
-    {label && <label className="block text-sm font-medium text-gray-600 mb-2">{label}</label>}
+    {label && (
+      <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6e6e73', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+        {label}{required && <span style={{ color: '#ff3b30', marginLeft: 3 }}>*</span>}
+      </label>
+    )}
     <select
       value={value}
-      onChange={(e) => onChange(e.target.value)}
+      onChange={e => onChange(e.target.value)}
       className="select-field"
     >
       {options.map(opt => (
@@ -105,19 +94,22 @@ export const Select = ({ label, value, onChange, options, className = '' }) => (
   </div>
 );
 
-// Modal
-export const Modal = ({ isOpen, onClose, title, children }) => {
+// ─── MODAL ────────────────────────────────────────
+export const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
   if (!isOpen) return null;
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
-          <button 
+      <div
+        className={`modal-content ${size === 'lg' ? 'modal-lg' : ''}`}
+        onClick={e => e.stopPropagation()}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 22 }}>
+          <h2 style={{ fontSize: 17, fontWeight: 700, color: '#1d1d1f', margin: 0 }}>{title}</h2>
+          <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors"
+            style={{ width: 28, height: 28, borderRadius: '50%', background: '#f2f2f7', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6e6e73', fontSize: 14, fontWeight: 600 }}
           >
-            ✕
+            ×
           </button>
         </div>
         {children}
@@ -126,140 +118,88 @@ export const Modal = ({ isOpen, onClose, title, children }) => {
   );
 };
 
-// Empty State
+// ─── EMPTY STATE ──────────────────────────────────
 export const EmptyState = ({ icon, message, action }) => (
-  <div className="text-center py-12">
-    <span className="text-5xl mb-4 block">{icon}</span>
-    <p className="text-gray-500 mb-4">{message}</p>
+  <div style={{ textAlign: 'center', padding: '48px 20px' }}>
+    <span style={{ fontSize: 40, display: 'block', marginBottom: 12, opacity: 0.4 }}>{icon}</span>
+    <p style={{ fontSize: 14, color: '#aeaeb2', marginBottom: 16 }}>{message}</p>
     {action}
   </div>
 );
 
-// Toast notification
+// ─── TOAST ────────────────────────────────────────
 export const Toast = ({ message, type = 'success', onClose }) => {
   React.useEffect(() => {
-    const timer = setTimeout(onClose, 3000);
-    return () => clearTimeout(timer);
+    const t = setTimeout(onClose, 3200);
+    return () => clearTimeout(t);
   }, [onClose]);
 
-  const colors = {
-    success: 'bg-green-500 text-white',
-    error: 'bg-red-500 text-white',
-    warning: 'bg-yellow-500 text-white'
-  };
+  const bg = type === 'success' ? '#34c759' : type === 'error' ? '#ff3b30' : '#ff9500';
 
   return (
-    <div className={`fixed bottom-6 right-6 px-5 py-3 rounded-xl shadow-lg animate-slide-up ${colors[type]}`}>
-      <div className="flex items-center gap-3">
-        <span>{type === 'success' ? '✓' : type === 'error' ? '✕' : '⚠'}</span>
-        <span className="font-medium">{message}</span>
-      </div>
+    <div className="animate-slide-up" style={{
+      position: 'fixed', bottom: 24, right: 24, zIndex: 9999,
+      background: bg, color: '#fff',
+      padding: '12px 18px', borderRadius: 12,
+      boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
+      fontSize: 13, fontWeight: 600,
+      display: 'flex', alignItems: 'center', gap: 8,
+      maxWidth: 320,
+    }}>
+      <span style={{ fontSize: 16 }}>{type === 'success' ? '✓' : type === 'error' ? '✕' : '!'}</span>
+      {message}
     </div>
   );
 };
 
-// Progress Bar
+// ─── PROGRESS BAR ─────────────────────────────────
 export const ProgressBar = ({ value, max, color = 'blue' }) => {
-  const percentage = max > 0 ? (value / max) * 100 : 0;
-  const colors = {
-    green: 'bg-green-500',
-    blue: 'bg-blue-500',
-    purple: 'bg-purple-500',
-    orange: 'bg-orange-500',
-    red: 'bg-red-500'
-  };
-  
+  const pct = max > 0 ? Math.min((value / max) * 100, 100) : 0;
+  const colors = { green: '#34c759', blue: '#007aff', purple: '#af52de', orange: '#ff9500', red: '#ff3b30' };
   return (
     <div className="progress-bar">
-      <div 
-        className={`progress-fill ${colors[color]}`}
-        style={{ width: `${Math.min(percentage, 100)}%` }}
-      />
+      <div className="progress-fill" style={{ width: `${pct}%`, background: colors[color] || colors.blue }} />
     </div>
   );
 };
 
-// Alert Box
-export const AlertBox = ({ type, title, children, icon }) => {
-  const styles = {
-    critical: 'alert-critical',
-    warning: 'alert-warning',
-    info: 'alert-info'
-  };
-  
-  const textColors = {
-    critical: 'text-red-700',
-    warning: 'text-yellow-800',
-    info: 'text-blue-700'
-  };
-  
-  return (
-    <div className={styles[type]}>
-      <div className={`flex items-center gap-2 font-semibold mb-2 ${textColors[type]}`}>
-        <span>{icon}</span>
-        <span>{title}</span>
-      </div>
-      <div className={`text-sm ${textColors[type]} opacity-90`}>{children}</div>
+// ─── ALERT BOX ────────────────────────────────────
+export const AlertBox = ({ type = 'info', title, children, icon }) => (
+  <div className={`alert-${type}`}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, marginBottom: 6, fontSize: 13 }}>
+      {icon && <span>{icon}</span>}
+      <span>{title}</span>
     </div>
-  );
-};
+    <div style={{ fontSize: 13, opacity: 0.85 }}>{children}</div>
+  </div>
+);
 
-// Filter Pills
+// ─── FILTER PILL ──────────────────────────────────
 export const FilterPill = ({ children, active, onClick }) => (
-  <button
-    onClick={onClick}
-    className={`filter-pill ${active ? 'active' : ''}`}
-  >
+  <button onClick={onClick} className={`filter-pill ${active ? 'active' : ''}`}>
     {children}
   </button>
 );
 
-// Tabs
+// ─── TABS ─────────────────────────────────────────
 export const Tabs = ({ tabs, activeTab, onChange }) => (
-  <div className="flex gap-1 p-1 bg-gray-100 rounded-xl">
+  <div style={{ display: 'flex', gap: 4, padding: 4, background: '#f2f2f7', borderRadius: 12 }}>
     {tabs.map(tab => (
       <button
         key={tab.id}
         onClick={() => onChange(tab.id)}
-        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-          activeTab === tab.id 
-            ? 'bg-white text-gray-900 shadow-sm' 
-            : 'text-gray-500 hover:text-gray-700'
-        }`}
+        style={{
+          flex: 1, padding: '7px 12px', borderRadius: 9, border: 'none', cursor: 'pointer',
+          fontSize: 13, fontWeight: activeTab === tab.id ? 600 : 400,
+          background: activeTab === tab.id ? '#fff' : 'transparent',
+          color: activeTab === tab.id ? '#1d1d1f' : '#6e6e73',
+          boxShadow: activeTab === tab.id ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
+          transition: 'all 0.15s', fontFamily: 'inherit',
+        }}
       >
-        {tab.icon && <span className="mr-2">{tab.icon}</span>}
+        {tab.icon && <span style={{ marginRight: 5 }}>{tab.icon}</span>}
         {tab.label}
       </button>
     ))}
-  </div>
-);
-
-// Data Table
-export const DataTable = ({ columns, data, onRowClick }) => (
-  <div className="overflow-x-auto">
-    <table className="data-table">
-      <thead>
-        <tr>
-          {columns.map((col, i) => (
-            <th key={i} className={col.align === 'right' ? 'text-right' : ''}>{col.label}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, i) => (
-          <tr 
-            key={i} 
-            onClick={() => onRowClick?.(row)}
-            className={onRowClick ? 'cursor-pointer' : ''}
-          >
-            {columns.map((col, j) => (
-              <td key={j} className={col.align === 'right' ? 'text-right' : ''}>
-                {col.render ? col.render(row) : row[col.key]}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
   </div>
 );
