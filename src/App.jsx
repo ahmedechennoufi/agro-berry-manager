@@ -239,10 +239,10 @@ function App() {
         <Sidebar
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
-          sidebarOpen={sidebarOpen}
-          setSidebarOpen={setSidebarOpen}
-          sidebarCollapsed={sidebarCollapsed}
-          setSidebarCollapsed={setSidebarCollapsed}
+          isOpen={sidebarOpen}
+          setIsOpen={setSidebarOpen}
+          isCollapsed={sidebarCollapsed}
+          setIsCollapsed={setSidebarCollapsed}
         />
         <main className="flex-1 overflow-auto">
           {renderPage()}
