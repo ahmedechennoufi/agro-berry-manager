@@ -1,10 +1,12 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { useApp } from '../App';
 import { Card, Button, Input, Select, StatCard, EmptyState, Badge } from '../components/UI';
 import { FARMS, CATEGORIES } from '../lib/constants';
 import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
 import { calculateFarmStock, getAveragePrice, getDefaultThreshold, getProducts, getLatestPhysicalInventoryForFarm } from '../lib/store';
 
 const Farms = () => {
+  const { movements } = useApp();
   const [selectedFarm, setSelectedFarm] = useState(null);
   const [search, setSearch] = useState('');
   const [filterCategory, setFilterCategory] = useState('ALL');
@@ -52,7 +54,7 @@ const Farms = () => {
         };
       })
       .filter(item => item.quantity !== 0 || item.status === 'epuise');
-  }, [selectedFarm, threshold, allProducts]);
+  }, [selectedFarm, threshold, allProducts, movements]);
 
   const filteredStock = useMemo(() => {
     let result = farmStockData.filter(item => {
@@ -97,7 +99,7 @@ const Farms = () => {
       }, 0);
       return { ...farm, nbProducts: items.length, totalQty, totalValue };
     });
-  }, []);
+  }, [movements]);
 
   const handleExport = async () => {
     if (!selectedFarm) return;

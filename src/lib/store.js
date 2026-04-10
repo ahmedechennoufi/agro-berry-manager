@@ -463,11 +463,20 @@ export const deleteMelangePersonnalise = (id) => {
 
 // === CALCULS DE STOCK ===
 
-// Stock global magasin (entrées - sorties)
+// Stock global magasin (stock initial fermes + entrées - sorties)
 export const calculateGlobalStock = () => {
   const movements = getMovements();
   const stockMap = {};
-  
+
+  // Initialiser avec le stock initial des fermes (AB1+AB2+AB3)
+  // Ces produits sont déjà distribués aux fermes → représentent le stock de départ du magasin
+  [...getStockAB1(), ...getStockAB2(), ...getStockAB3()].forEach(s => {
+    if (!s.product) return;
+    if (!stockMap[s.product]) stockMap[s.product] = { quantity: 0, totalValue: 0, count: 0 };
+    stockMap[s.product].quantity += s.quantity || 0;
+    stockMap[s.product].totalValue += (s.quantity || 0) * (s.price || 0);
+  });
+
   movements.forEach(m => {
     const product = m.product;
     if (!product) return;
