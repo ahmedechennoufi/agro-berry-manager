@@ -410,12 +410,12 @@ const Commandes = () => {
   // List view (no commande selected)
   if (!selectedCommande) {
     return (
-      <div className="space-y-6">
+      <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20 }}>
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
           <div>
             <h1 style={{ fontSize: 22, fontWeight: 700, color: "var(--text-1)", margin: 0 }}>📦 Commandes</h1>
-            <p className="text-gray-500 text-sm mt-1">Suivi des commandes mensuelles</p>
+            <p style={{ fontSize: 14, color: "var(--text-2)", marginTop: 4 }}>Suivi des commandes mensuelles</p>
           </div>
           <div style={{ display: "flex", gap: 8 }}>
             {commandes.length > 0 && (
@@ -433,7 +433,7 @@ const Commandes = () => {
 
         {/* Stats Cards */}
         {commandes.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14 }}>
             <StatCard 
               icon="📦" 
               label="Total Commandes" 
@@ -493,7 +493,7 @@ const Commandes = () => {
               
               return (
                 <Card key={c.id} className="hover:shadow-md transition-shadow cursor-pointer" onClick={() => setSelectedCommande(c)}>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
                     <div style={{ flex: 1 }}>
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-2xl">{allDone ? '✅' : pct > 0 ? '🟡' : '📦'}</span>
@@ -541,7 +541,7 @@ const Commandes = () => {
 
         {/* Modal Nouvelle Commande */}
         <Modal isOpen={showNewModal} onClose={() => setShowNewModal(false)} title="📦 Nouvelle Commande">
-          <div className="space-y-4">
+          <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">Mois de la commande</label>
               <input 
@@ -551,7 +551,7 @@ const Commandes = () => {
                 className="input-field"
               />
             </div>
-            <p className="text-sm text-gray-500">
+            <p style={{ fontSize: 13, color: "var(--text-2)" }}>
               Une commande sera créée pour <strong>{getMonthLabel(newMonth)}</strong>. 
               Vous pourrez ensuite y ajouter les produits commandés.
             </p>
@@ -567,22 +567,22 @@ const Commandes = () => {
 
   // Detail view (commande selected)
   return (
-    <div className="space-y-6">
+    <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20 }}>
       {/* Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <button 
             onClick={() => { setSelectedCommande(null); setSearch(''); setFilterStatus('ALL'); }}
-            className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
+            className="btn-secondary" style={{ width: 40, height: 40, padding: 0, borderRadius: "var(--radius)" }}
           >
             ←
           </button>
           <div>
             <h1 style={{ fontSize: 22, fontWeight: 700, color: "var(--text-1)", margin: 0 }}>📦 {getMonthLabel(selectedCommande.month)}</h1>
-            <p className="text-gray-500 text-sm">Suivi de la commande</p>
+            <p style={{ fontSize: 14, color: "var(--text-2)" }}>Suivi de la commande</p>
           </div>
         </div>
-        <div className="flex gap-2 flex-wrap">
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           <Button variant="secondary" onClick={() => exportCommandeExcel(selectedCommande)}>
             📥 Export Excel
           </Button>
@@ -596,7 +596,7 @@ const Commandes = () => {
 
       {/* Stats */}
       {stats && (
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 14 }}>
           <StatCard icon="📋" label="Total Produits" value={stats.total} color="blue" />
           <StatCard icon="✅" label="Complets" value={stats.complete} color="green" />
           <StatCard icon="🟡" label="Partiels" value={stats.partial} color="orange" />
@@ -609,7 +609,7 @@ const Commandes = () => {
       {stats && (
         <Card>
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-700">Progression globale</span>
+            <span style={{ fontSize: 13, fontWeight: 500, color: "var(--text-2)" }}>Progression globale</span>
             <span className="text-sm font-bold text-gray-900">{stats.percentage}%</span>
           </div>
           <div className="progress-bar">
@@ -760,7 +760,7 @@ const Commandes = () => {
 
       {/* Modal Ajouter Produit */}
       <Modal isOpen={showAddItemModal} onClose={() => setShowAddItemModal(false)} title="➕ Ajouter un produit">
-        <div className="space-y-4">
+        <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-2">Produit</label>
             <select
@@ -799,7 +799,7 @@ const Commandes = () => {
       {/* Modal Réception */}
       <Modal isOpen={showReceiveModal} onClose={() => setShowReceiveModal(false)} title="📥 Mise à jour réception">
         {receivingItem && (
-          <div className="space-y-4">
+          <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
             <div className="p-4 bg-gray-50 rounded-xl">
               <p style={{ fontWeight: 700, color: "var(--text-1)" }}>{receivingItem.product}</p>
               <div className="flex gap-4 mt-2 text-sm text-gray-600">
@@ -814,7 +814,7 @@ const Commandes = () => {
               onChange={(v) => setReceivingItem(prev => ({ ...prev, received: v }))}
               placeholder="Quantité reçue"
             />
-            <p className="text-xs text-gray-500">
+            <p style={{ fontSize: 11, color: "var(--text-2)" }}>
               💡 Entrez la quantité <strong>totale</strong> reçue à ce jour, pas juste la dernière livraison.
             </p>
             <div className="flex gap-3 pt-2">

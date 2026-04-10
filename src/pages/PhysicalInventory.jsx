@@ -351,17 +351,17 @@ const PhysicalInventory = () => {
   const renderHistory = () => {
     const sorted = [...savedInventories].sort((a, b) => b.date.localeCompare(a.date));
     return (
-      <div className="space-y-4">
+      <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
         {sorted.length === 0 ? (
           <Card className="p-12"><EmptyState icon="📭" message="Aucun inventaire sauvegardé" /></Card>
         ) : sorted.map(inv => (
           <div key={inv.id} className="ios-card" style={{ padding: 0 }}>
             <div style={{ padding: "14px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 10, borderBottom: "1px solid var(--border)", background: "var(--surface-2)" }}>
-              <div className="flex items-center gap-3">
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-lg">🌿</div>
                 <div>
                   <h3 className="font-bold text-gray-800">{inv.farmName}</h3>
-                  <p className="text-sm text-gray-500">📅 {inv.date.split('-').reverse().join('/')} — {inv.stats?.entered || 0} produits</p>
+                  <p style={{ fontSize: 13, color: "var(--text-2)" }}>📅 {inv.date.split('-').reverse().join('/')} — {inv.stats?.entered || 0} produits</p>
                 </div>
                 {activeReferences[inv.farm] === inv.id && (
                   <span className="px-2 py-1 rounded-lg bg-purple-100 text-purple-700 text-xs font-bold flex items-center gap-1">
@@ -396,19 +396,19 @@ const PhysicalInventory = () => {
             
             <div className="grid grid-cols-4 gap-0 border-b">
               <div className="p-3 text-center border-r">
-                <p className="text-xs text-gray-500">Produits</p>
+                <p style={{ fontSize: 11, color: "var(--text-2)" }}>Produits</p>
                 <p className="font-bold text-blue-600">{inv.stats?.total || 0}</p>
               </div>
               <div className="p-3 text-center border-r">
-                <p className="text-xs text-gray-500">Conformes</p>
+                <p style={{ fontSize: 11, color: "var(--text-2)" }}>Conformes</p>
                 <p className="font-bold text-green-600">{inv.stats?.ok || 0}</p>
               </div>
               <div className="p-3 text-center border-r">
-                <p className="text-xs text-gray-500">Ecarts</p>
+                <p style={{ fontSize: 11, color: "var(--text-2)" }}>Ecarts</p>
                 <p className="font-bold text-red-600">{inv.stats?.withDiff || 0}</p>
               </div>
               <div className="p-3 text-center">
-                <p className="text-xs text-gray-500">Valeur ecart</p>
+                <p style={{ fontSize: 11, color: "var(--text-2)" }}>Valeur ecart</p>
                 <p className={`font-bold ${(inv.stats?.totalDiffValue || 0) < 0 ? 'text-red-600' : 'text-green-600'}`}>
                   {fmtMoney(inv.stats?.totalDiffValue || 0)}
                 </p>
@@ -457,11 +457,11 @@ const PhysicalInventory = () => {
 
   // ========== MAIN RENDER ==========
   return (
-    <div className="space-y-5">
+    <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 18 }}>
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">🔍 Inventaire Physique</h1>
-          <p className="text-gray-500 text-sm mt-1">Comparer le stock theorique avec le comptage réel</p>
+          <p style={{ fontSize: 14, color: "var(--text-2)", marginTop: 4 }}>Comparer le stock theorique avec le comptage réel</p>
         </div>
       </div>
 
@@ -622,7 +622,7 @@ const PhysicalInventory = () => {
               <div className="ios-card" style={{ padding: 0 }}>
                 <div className="p-4 border-b bg-gray-50 flex items-center justify-between">
                   <span className="text-gray-700 font-medium">{comparisonData.length} produits</span>
-                  <span className="text-xs text-gray-500">
+                  <span style={{ fontSize: 11, color: "var(--text-2)" }}>
                     {FARMS.find(f => f.id === selectedFarm)?.name} — {inventoryDate.split('-').reverse().join('/')}
                   </span>
                 </div>

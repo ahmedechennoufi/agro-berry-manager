@@ -370,7 +370,7 @@ const History = () => {
   };
 
   return (
-    <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto" }} className="animate-fade-in">
+    <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20 }} className="animate-fade-in">
       {/* Header */}
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 28, flexWrap: "wrap", gap: 12 }}>
         <div>
@@ -439,7 +439,7 @@ const History = () => {
 
       {/* Search & Filter */}
       <Card>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
           <div style={{ flex: 1 }}>
             <Input 
               placeholder="🔍 Rechercher un produit..." 
