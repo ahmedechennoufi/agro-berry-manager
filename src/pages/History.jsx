@@ -382,14 +382,14 @@ const History = () => {
         <div style={{ display: "flex", gap: 8 }}>
           <button 
             onClick={handleExport} 
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg flex items-center gap-2"
+            className="btn-primary"
           >
             📥 Export Excel
           </button>
           {selectedData?.isCalculated && (
             <button 
               onClick={saveJanuarySnapshot} 
-              className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl shadow-lg"
+              className="btn-secondary"
             >
               💾 Sauvegarder
             </button>
@@ -398,21 +398,17 @@ const History = () => {
       </div>
 
       {/* Month Selector */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 10, marginBottom: 24 }}>
         {allMonths.map(m => (
           <button
             key={m.date}
             onClick={() => handleMonthClick(m)}
-            className={`p-4 rounded-xl font-medium transition-all text-center ${
-              selectedMonth === m.date
-                ? 'bg-green-500 text-white shadow-lg'
-                : 'bg-white text-gray-700 border border-gray-200 hover:border-green-300 hover:shadow'
-            }`}
+            className='ios-card' style={{ padding: '14px 16px', textAlign: 'center', cursor: 'pointer', border: selectedMonth === m.date ? '2px solid var(--green)' : '1px solid var(--border)', background: selectedMonth === m.date ? '#f0faf2' : 'var(--surface)', transition: 'all var(--transition)' }}
           >
-            <div className="text-lg font-bold uppercase">{m.month}</div>
-            <div className="text-sm opacity-70">{formatDate(m.date)}</div>
-            {m.isPhysical && <span className="text-xs">📋 Physique</span>}
-            {m.isCalculated && !m.isPhysical && <span className="text-xs">⚡ Calculé</span>}
+            <div style={{ fontSize: 13, fontWeight: 700, textTransform: "uppercase", color: "var(--text-1)" }}>{m.month}</div>
+            <div style={{ fontSize: 12, color: "var(--text-2)", marginTop: 2 }}>{formatDate(m.date)}</div>
+            {m.isPhysical && <span style={{ fontSize: 11, color: "var(--green)", display: "block", marginTop: 3 }}>📋 Physique</span>}
+            {m.isCalculated && !m.isPhysical && <span style={{ fontSize: 11, color: "var(--orange)", display: "block", marginTop: 3 }}>⚡ Calculé</span>}
           </button>
         ))}
       </div>
@@ -561,24 +557,24 @@ const History = () => {
 
       {/* Export Confirmation Modal */}
       {showExportModal && pendingMonth && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl p-6 max-w-md mx-4 shadow-2xl">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--text-1)", margin: "0 0 8px" }}>
               📥 {pendingMonth.month}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p style={{ color: "var(--text-2)", margin: "0 0 20px", fontSize: 14 }}>
               Voulez-vous exporter l'inventaire de ce mois en Excel ?
             </p>
             <div style={{ display: "flex", gap: 12 }}>
               <button
                 onClick={handleSelectOnly}
-                className="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-colors"
+                className="btn-secondary" style={{ flex: 1 }}
               >
                 Non, juste voir
               </button>
               <button
                 onClick={handleExportConfirm}
-                className="flex-1 px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors"
+                className="btn-primary" style={{ flex: 1 }}
               >
                 ✅ Oui, exporter
               </button>

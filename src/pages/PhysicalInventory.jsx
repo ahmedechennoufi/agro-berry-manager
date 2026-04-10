@@ -356,7 +356,7 @@ const PhysicalInventory = () => {
           <Card className="p-12"><EmptyState icon="📭" message="Aucun inventaire sauvegardé" /></Card>
         ) : sorted.map(inv => (
           <div key={inv.id} className="ios-card" style={{ padding: 0 }}>
-            <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b bg-gray-50">
+            <div style={{ padding: "14px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 10, borderBottom: "1px solid var(--border)", background: "var(--surface-2)" }}>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-lg">🌿</div>
                 <div>
@@ -726,8 +726,8 @@ const PhysicalInventory = () => {
 
       {/* Add Product Modal */}
       {showAddProduct && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl max-h-[80vh] flex flex-col">
+        <div className="modal-overlay">
+          <div className="modal-content">
             <h3 className="text-xl font-bold text-gray-900 mb-2">➕ Ajouter un produit</h3>
             <p className="text-gray-500 text-sm mb-4">Sélectionnez un produit qui n'est pas dans le stock theorique</p>
             <input
@@ -768,7 +768,7 @@ const PhysicalInventory = () => {
 
       {/* Delete Modal */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="modal-overlay">
           <div className="bg-white rounded-2xl p-6 max-w-md mx-4 shadow-2xl">
             <h3 className="text-xl font-bold text-gray-900 mb-2">🗑️ Supprimer l'inventaire ?</h3>
             <p className="text-gray-600 mb-6">Cette action est irréversible.</p>

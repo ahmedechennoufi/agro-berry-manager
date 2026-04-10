@@ -497,7 +497,7 @@ const Commandes = () => {
                     <div style={{ flex: 1 }}>
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-2xl">{allDone ? '✅' : pct > 0 ? '🟡' : '📦'}</span>
-                        <h3 className="text-lg font-bold text-gray-900">{getMonthLabel(c.month)}</h3>
+                        <h3 style={{ fontSize: 16, fontWeight: 700, color: "var(--text-1)", margin: 0 }}>{getMonthLabel(c.month)}</h3>
                         <Badge color={allDone ? 'green' : pct > 0 ? 'orange' : 'blue'}>
                           {allDone ? 'Complète' : pct > 0 ? 'En cours' : 'En attente'}
                         </Badge>
@@ -508,7 +508,7 @@ const Commandes = () => {
                         <span>📊 {pct}% réception</span>
                       </div>
                       <div className="mt-3 w-full max-w-md">
-                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="progress-bar">
                           <div 
                             className={`h-full rounded-full transition-all ${allDone ? 'bg-green-500' : pct > 0 ? 'bg-orange-400' : 'bg-gray-300'}`}
                             style={{ width: `${pct}%` }}
@@ -612,7 +612,7 @@ const Commandes = () => {
             <span className="text-sm font-medium text-gray-700">Progression globale</span>
             <span className="text-sm font-bold text-gray-900">{stats.percentage}%</span>
           </div>
-          <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
+          <div className="progress-bar">
             <div 
               className={`h-full rounded-full transition-all duration-500 ${
                 stats.percentage === 100 ? 'bg-green-500' : stats.percentage > 50 ? 'bg-blue-500' : stats.percentage > 0 ? 'bg-orange-400' : 'bg-gray-300'
@@ -718,7 +718,7 @@ const Commandes = () => {
                       </td>
                       <td className="text-center">
                         <div className="flex items-center gap-2">
-                          <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden min-w-[60px]">
+                          <div className="progress-bar" style={{ flex: 1, minWidth: 60 }}>
                             <div 
                               className={`h-full rounded-full ${
                                 pct >= 100 ? 'bg-green-500' : pct > 0 ? 'bg-orange-400' : 'bg-gray-200'
@@ -801,7 +801,7 @@ const Commandes = () => {
         {receivingItem && (
           <div className="space-y-4">
             <div className="p-4 bg-gray-50 rounded-xl">
-              <p className="font-bold text-gray-900">{receivingItem.product}</p>
+              <p style={{ fontWeight: 700, color: "var(--text-1)" }}>{receivingItem.product}</p>
               <div className="flex gap-4 mt-2 text-sm text-gray-600">
                 <span>Commandé: <strong>{Number(receivingItem.ordered || 0).toFixed(1)}</strong> KG</span>
                 <span>Reçu actuel: <strong>{Number(receivingItem.received || 0).toFixed(1)}</strong> KG</span>
