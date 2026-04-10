@@ -26544,6 +26544,28 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-04-08",
       "id": 1775820014785
+    },
+    {
+      "type": "consumption",
+      "product": "OIKOS",
+      "quantity": 9.25,
+      "price": 2500,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-12",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1775821958151
+    },
+    {
+      "type": "consumption",
+      "product": "OIKOS",
+      "quantity": 12.5,
+      "price": 2500,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-03-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1775821994286
     }
   ],
   "stockAB1": [
@@ -31482,5 +31504,5 @@
       "updatedAt": "2026-04-09T11:01:12.894Z"
     }
   ],
-  "exportDate": "2026-04-10T11:22:14.852Z"
+  "exportDate": "2026-04-10T11:55:14.290Z"
 }
