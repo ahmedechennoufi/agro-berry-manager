@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { useApp } from '../App';
-import { Badge } from '../components/UI';
 import { FARMS } from '../lib/constants';
 import { fmt, fmtMoney } from '../lib/utils';
 import { calculateFarmStock, getAlerts } from '../lib/store';
@@ -28,140 +27,166 @@ const Dashboard = () => {
   }, [movements]);
 
   const recentMovements = useMemo(() =>
-    [...movements].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 6)
+    [...movements].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 5)
   , [movements]);
 
-  const typeInfo = (type) => ({
-    entry:          { label: 'Entrée',    icon: '📥', color: 'text-green-600',  bg: 'bg-green-50'  },
-    exit:           { label: 'Sortie',    icon: '📤', color: 'text-blue-600',   bg: 'bg-blue-50'   },
-    consumption:    { label: 'Conso',     icon: '🔥', color: 'text-orange-600', bg: 'bg-orange-50' },
-    'transfer-in':  { label: 'Transfert', icon: '↔️', color: 'text-purple-600', bg: 'bg-purple-50' },
-    'transfer-out': { label: 'Transfert', icon: '↔️', color: 'text-purple-600', bg: 'bg-purple-50' },
-  }[type] || { label: type, icon: '📦', color: 'text-gray-600', bg: 'bg-gray-50' });
+  const typeLabel = (type) => ({
+    entry:          { label: 'Entree',       color: '#34c759' },
+    exit:           { label: 'Sortie',       color: '#007aff' },
+    consumption:    { label: 'Consommation', color: '#ff9500' },
+    'transfer-in':  { label: 'Transfert',    color: '#af52de' },
+    'transfer-out': { label: 'Transfert',    color: '#af52de' },
+  }[type] || { label: type, color: '#8e8e93' });
 
   const criticalAlerts = alerts.filter(a => a.severity === 'critical');
   const warningAlerts  = alerts.filter(a => a.severity === 'warning');
+  const totalAlerts = criticalAlerts.length + warningAlerts.length;
 
-  const farmBorder = { 'AGRO BERRY 1': 'border-l-green-400', 'AGRO BERRY 2': 'border-l-blue-400', 'AGRO BERRY 3': 'border-l-purple-400' };
+  const farmAccent = {
+    'AGRO BERRY 1': '#34c759',
+    'AGRO BERRY 2': '#007aff',
+    'AGRO BERRY 3': '#af52de',
+  };
+
+  const card = {
+    background: '#fff',
+    borderRadius: 16,
+    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+    border: '1px solid #f2f2f7',
+  };
+
+  const sectionLabel = {
+    fontSize: 12,
+    fontWeight: 600,
+    color: '#8e8e93',
+    textTransform: 'uppercase',
+    letterSpacing: '0.06em',
+    margin: 0,
+  };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div style={{ maxWidth: 1000, margin: '0 auto', padding: '32px 24px', fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif' }}>
 
       {/* Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">Tableau de bord</h1>
-        <p className="text-sm text-gray-400 mt-1">
+      <div style={{ marginBottom: 32 }}>
+        <h1 style={{ fontSize: 28, fontWeight: 700, color: '#1d1d1f', margin: 0, letterSpacing: '-0.5px' }}>
+          Tableau de bord
+        </h1>
+        <p style={{ fontSize: 14, color: '#8e8e93', marginTop: 6, marginBottom: 0 }}>
           {new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
         </p>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 28 }}>
         {[
-          { label: 'Produits',     value: products.length,                              icon: '📦', color: 'text-blue-600',   bg: 'bg-blue-50'   },
-          { label: 'Mouvements',   value: stats.totalMovements,                         icon: '🔄', color: 'text-purple-600', bg: 'bg-purple-50' },
-          { label: 'Total Achats', value: fmtMoney(stats.totalAchats),                  icon: '💰', color: 'text-green-600',  bg: 'bg-green-50'  },
-          { label: 'Alertes',      value: criticalAlerts.length + warningAlerts.length, icon: '⚠️', color: 'text-orange-600', bg: 'bg-orange-50' },
+          { label: 'Produits',   value: products.length,              sub: 'references',    accent: '#007aff' },
+          { label: 'Mouvements', value: stats.totalMovements,         sub: 'operations',    accent: '#af52de' },
+          { label: 'Achats',     value: fmtMoney(stats.totalAchats),  sub: 'total cumule',  accent: '#34c759' },
+          { label: 'Alertes',    value: totalAlerts,                   sub: criticalAlerts.length + ' critiques', accent: totalAlerts > 0 ? '#ff3b30' : '#34c759' },
         ].map((s, i) => (
-          <div key={i} className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm">
-            <div className={`w-9 h-9 rounded-xl ${s.bg} flex items-center justify-center text-lg mb-3`}>{s.icon}</div>
-            <p className={`text-xl font-bold ${s.color}`}>{s.value}</p>
-            <p className="text-xs text-gray-500 mt-0.5">{s.label}</p>
+          <div key={i} style={{ ...card, padding: '20px 22px' }}>
+            <p style={{ ...sectionLabel, marginBottom: 10 }}>{s.label}</p>
+            <p style={{ fontSize: 26, fontWeight: 700, color: s.accent, margin: '0 0 4px', letterSpacing: '-0.5px' }}>{s.value}</p>
+            <p style={{ fontSize: 12, color: '#aeaeb2', margin: 0 }}>{s.sub}</p>
           </div>
         ))}
       </div>
 
       {/* Fermes */}
-      <div>
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Stock par ferme</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {farmStats.map(farm => (
-            <div
-              key={farm.id}
-              onClick={() => { localStorage.setItem('selectedFarmId', farm.id); setPage('farms'); }}
-              className={`bg-white rounded-2xl border border-gray-100 border-l-4 ${farmBorder[farm.id]} p-4 shadow-sm cursor-pointer hover:shadow-md transition-shadow`}
-            >
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-semibold text-gray-800">{farm.name}</span>
-                <span className="text-xs text-gray-400">{farm.hectares} ha</span>
-              </div>
-              <div className="flex items-end justify-between">
-                <div>
-                  <p className="text-2xl font-bold text-gray-900">{farm.nbProducts}</p>
-                  <p className="text-xs text-gray-500">produits en stock</p>
-                </div>
-                <div className="flex flex-col items-end gap-1">
-                  {farm.emptyStock > 0 && (
-                    <span className="px-2 py-0.5 rounded-full bg-red-100 text-red-600 text-xs font-medium">
-                      🔴 {farm.emptyStock} épuisé
-                    </span>
-                  )}
-                  {farm.lowStock > 0 && (
-                    <span className="px-2 py-0.5 rounded-full bg-orange-100 text-orange-600 text-xs font-medium">
-                      ⚠️ {farm.lowStock} bas
-                    </span>
-                  )}
-                </div>
-              </div>
+      <p style={{ ...sectionLabel, marginBottom: 12 }}>Stock par ferme</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 28 }}>
+        {farmStats.map(farm => (
+          <div
+            key={farm.id}
+            onClick={() => { localStorage.setItem('selectedFarmId', farm.id); setPage('farms'); }}
+            style={{ ...card, padding: '20px 22px', borderTop: '3px solid ' + farmAccent[farm.id], cursor: 'pointer', transition: 'box-shadow 0.15s' }}
+            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.1)'}
+            onMouseLeave={e => e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 14 }}>
+              <span style={{ fontSize: 15, fontWeight: 600, color: '#1d1d1f' }}>{farm.name}</span>
+              <span style={{ fontSize: 12, color: '#aeaeb2' }}>{farm.hectares} ha</span>
             </div>
-          ))}
-        </div>
+            <p style={{ fontSize: 36, fontWeight: 700, color: '#1d1d1f', margin: '0 0 2px', letterSpacing: '-1px' }}>{farm.nbProducts}</p>
+            <p style={{ fontSize: 13, color: '#8e8e93', margin: '0 0 14px' }}>produits en stock</p>
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+              {farm.emptyStock > 0 && (
+                <span style={{ fontSize: 12, fontWeight: 500, color: '#ff3b30', background: '#fff2f1', borderRadius: 20, padding: '3px 10px' }}>
+                  {farm.emptyStock} epuise{farm.emptyStock > 1 ? 's' : ''}
+                </span>
+              )}
+              {farm.lowStock > 0 && (
+                <span style={{ fontSize: 12, fontWeight: 500, color: '#ff9500', background: '#fff8f0', borderRadius: 20, padding: '3px 10px' }}>
+                  {farm.lowStock} stock bas
+                </span>
+              )}
+              {farm.emptyStock === 0 && farm.lowStock === 0 && (
+                <span style={{ fontSize: 12, fontWeight: 500, color: '#34c759', background: '#f0faf2', borderRadius: 20, padding: '3px 10px' }}>
+                  OK
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
 
-      {/* Alertes critiques */}
-      {criticalAlerts.length > 0 && (
-        <div>
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Alertes critiques</h2>
-          <div className="bg-white rounded-2xl border border-red-100 shadow-sm divide-y divide-gray-50">
-            {criticalAlerts.slice(0, 6).map(a => (
-              <div key={a.id} className="flex items-center justify-between px-4 py-3">
-                <div className="flex items-center gap-3">
-                  <span>🔴</span>
-                  <span className="text-sm font-medium text-gray-800">{a.product}</span>
+      {/* Bottom Row */}
+      <div style={{ display: 'grid', gridTemplateColumns: criticalAlerts.length > 0 ? '1fr 1fr' : '1fr', gap: 16 }}>
+
+        {/* Alertes critiques */}
+        {criticalAlerts.length > 0 && (
+          <div style={{ ...card, overflow: 'hidden' }}>
+            <div style={{ padding: '14px 20px', borderBottom: '1px solid #f2f2f7' }}>
+              <p style={sectionLabel}>Alertes critiques</p>
+            </div>
+            {criticalAlerts.slice(0, 6).map((a, i) => (
+              <div key={a.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '11px 20px', borderBottom: i < Math.min(criticalAlerts.length, 6) - 1 ? '1px solid #f9f9f9' : 'none' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#ff3b30', flexShrink: 0 }} />
+                  <span style={{ fontSize: 14, fontWeight: 500, color: '#1d1d1f' }}>{a.product}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-400">{a.location}</span>
-                  <span className="px-2 py-0.5 rounded-full bg-red-100 text-red-600 text-xs font-medium">Épuisé</span>
-                </div>
+                <span style={{ fontSize: 12, color: '#aeaeb2', background: '#f9f9f9', borderRadius: 6, padding: '2px 8px' }}>{a.location}</span>
               </div>
             ))}
             {criticalAlerts.length > 6 && (
-              <div className="px-4 py-2 text-xs text-gray-400">+{criticalAlerts.length - 6} autres alertes</div>
+              <div style={{ padding: '10px 20px', color: '#aeaeb2', fontSize: 12 }}>+{criticalAlerts.length - 6} autres</div>
             )}
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Derniers mouvements */}
-      <div>
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Derniers mouvements</h2>
-          <button onClick={() => setPage('movements')} className="text-xs text-blue-600 hover:underline">Voir tout →</button>
-        </div>
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm divide-y divide-gray-50">
+        {/* Derniers mouvements */}
+        <div style={{ ...card, overflow: 'hidden' }}>
+          <div style={{ padding: '14px 20px', borderBottom: '1px solid #f2f2f7', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <p style={sectionLabel}>Derniers mouvements</p>
+            <button onClick={() => setPage('movements')} style={{ fontSize: 12, color: '#007aff', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 500, padding: 0 }}>
+              Voir tout
+            </button>
+          </div>
           {recentMovements.length === 0 ? (
-            <div className="py-8 text-center text-sm text-gray-400">Aucun mouvement</div>
+            <div style={{ padding: '32px 20px', textAlign: 'center', color: '#aeaeb2', fontSize: 14 }}>Aucun mouvement</div>
           ) : recentMovements.map((m, idx) => {
-            const t = typeInfo(m.type);
+            const t = typeLabel(m.type);
             return (
-              <div key={m.id || idx} className="flex items-center justify-between px-4 py-3">
-                <div className="flex items-center gap-3">
-                  <span className={`w-8 h-8 rounded-lg ${t.bg} flex items-center justify-center text-sm`}>{t.icon}</span>
-                  <div>
-                    <p className="text-sm font-medium text-gray-800">{m.product}</p>
-                    <p className="text-xs text-gray-400">{m.date} · {t.label}{m.farm ? ` · ${m.farm.replace('AGRO BERRY ', 'AB')}` : ''}</p>
+              <div key={m.id || idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 20px', borderBottom: idx < recentMovements.length - 1 ? '1px solid #f9f9f9' : 'none' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>
+                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: t.color, flexShrink: 0 }} />
+                  <div style={{ minWidth: 0 }}>
+                    <p style={{ fontSize: 14, fontWeight: 500, color: '#1d1d1f', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.product}</p>
+                    <p style={{ fontSize: 12, color: '#aeaeb2', margin: 0 }}>{m.date} · {t.label}{m.farm ? ' · ' + m.farm.replace('AGRO BERRY ', 'AB') : ''}</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className={`text-sm font-semibold ${t.color}`}>{m.type === 'entry' ? '+' : '-'}{fmt(m.quantity)}</p>
-                  {m.price > 0 && <p className="text-xs text-gray-400">{fmtMoney((m.quantity || 0) * (m.price || 0))}</p>}
+                <div style={{ textAlign: 'right', flexShrink: 0, marginLeft: 16 }}>
+                  <p style={{ fontSize: 14, fontWeight: 600, color: t.color, margin: 0 }}>
+                    {m.type === 'entry' ? '+' : '-'}{fmt(m.quantity)}
+                  </p>
                 </div>
               </div>
             );
           })}
         </div>
-      </div>
 
+      </div>
     </div>
   );
 };
