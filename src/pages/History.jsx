@@ -168,9 +168,9 @@ const History = () => {
           ...m, 
           isPhysical: true, 
           physicalFarms: [...physData.physicalFarms],
-          AB1: physData.AB1 || m.AB1 || [],
-          AB2: physData.AB2 || m.AB2 || [],
-          AB3: physData.AB3 || m.AB3 || []
+          AB1: physData.AB1.length > 0 ? physData.AB1 : (m.AB1 || []),
+          AB2: physData.AB2.length > 0 ? physData.AB2 : (m.AB2 || []),
+          AB3: physData.AB3.length > 0 ? physData.AB3 : (m.AB3 || [])
         };
         months[idx] = updated;
       }
@@ -391,29 +391,25 @@ const History = () => {
 
       {/* Stats Cards */}
       {selectedData && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
-            <p className="text-xs text-blue-600 font-medium mb-1">📦 Produits</p>
-            <p className="text-3xl font-bold text-blue-700">{stats.nbProducts}</p>
-          </Card>
-          <Card className="bg-gradient-to-br from-green-50 to-green-100">
-            <p className="text-xs text-green-600 font-medium mb-1">💰 Valeur Totale</p>
-            <p className="text-2xl font-bold text-green-700">{fmtMoney(stats.totalValue)}</p>
-          </Card>
-          <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
-            <p className="text-xs text-purple-600 font-medium mb-1">📊 Quantité Totale</p>
-            <p className="text-2xl font-bold text-purple-700">{fmt(stats.totalQty)}</p>
-          </Card>
-          <Card className="bg-gradient-to-br from-amber-50 to-amber-100">
-            <p className="text-xs text-amber-600 font-medium mb-1">📅 Date Inventaire</p>
-            <p className="text-2xl font-bold text-amber-700">{formatDate(stats.date)}</p>
-            {selectedData?.isPhysical && (
-              <p className="text-xs text-green-600 font-semibold mt-1">📋 Physique</p>
-            )}
-            {selectedData?.isCalculated && !selectedData?.isPhysical && (
-              <p className="text-xs text-amber-600 mt-1">Calculé</p>
-            )}
-          </Card>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 20 }}>
+          <div style={{ background: '#f0f6ff', borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(0,122,255,0.12)' }}>
+            <p style={{ fontSize: 11, color: 'var(--blue)', fontWeight: 600, margin: '0 0 8px', textTransform: 'uppercase' }}>📦 Produits</p>
+            <p style={{ fontSize: 28, fontWeight: 700, color: 'var(--blue)', margin: 0 }}>{stats.nbProducts}</p>
+          </div>
+          <div style={{ background: '#f0faf2', borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(52,199,89,0.12)' }}>
+            <p style={{ fontSize: 11, color: '#1a8a36', fontWeight: 600, margin: '0 0 8px', textTransform: 'uppercase' }}>💰 Valeur Totale</p>
+            <p style={{ fontSize: 22, fontWeight: 700, color: '#1a8a36', margin: 0 }}>{fmtMoney(stats.totalValue)}</p>
+          </div>
+          <div style={{ background: '#f8f0ff', borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(175,82,222,0.12)' }}>
+            <p style={{ fontSize: 11, color: 'var(--purple)', fontWeight: 600, margin: '0 0 8px', textTransform: 'uppercase' }}>📊 Quantité Totale</p>
+            <p style={{ fontSize: 22, fontWeight: 700, color: 'var(--purple)', margin: 0 }}>{fmt(stats.totalQty)}</p>
+          </div>
+          <div style={{ background: '#fff8f0', borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(255,149,0,0.12)' }}>
+            <p style={{ fontSize: 11, color: 'var(--orange)', fontWeight: 600, margin: '0 0 8px', textTransform: 'uppercase' }}>📅 Date Inventaire</p>
+            <p style={{ fontSize: 22, fontWeight: 700, color: 'var(--orange)', margin: 0 }}>{formatDate(stats.date)}</p>
+            {selectedData?.isPhysical && <p style={{ fontSize: 11, color: 'var(--green)', fontWeight: 600, margin: '4px 0 0' }}>📋 Inventaire Physique</p>}
+            {selectedData?.isCalculated && !selectedData?.isPhysical && <p style={{ fontSize: 11, color: 'var(--orange)', margin: '4px 0 0' }}>Calculé</p>}
+          </div>
         </div>
       )}
 
@@ -440,13 +436,13 @@ const History = () => {
       </Card>
 
       {/* Table */}
-      <Card className="overflow-hidden p-0">
+      <div className="ios-card" style={{ overflow: 'hidden', padding: 0 }}>
         {/* Table Header with Export Button */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
-          <div className="flex items-center gap-3">
-            <span className="text-gray-700 font-medium">{displayProducts.length} produits</span>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderBottom: '1px solid var(--border)', background: 'var(--surface-2)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={{ fontWeight: 600, color: 'var(--text-1)', fontSize: 13 }}>{displayProducts.length} produits</span>
             {selectedData?.isPhysical && (
-              <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+              <span className="badge badge-green">
                 📋 Inventaire Physique
                 {selectedData.physicalFarms && selectedData.physicalFarms.length < 3 && (
                   <> ({selectedData.physicalFarms.join(', ')})</>
@@ -454,14 +450,13 @@ const History = () => {
               </span>
             )}
             {selectedData?.isCalculated && !selectedData?.isPhysical && (
-              <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold">
-                📊 Calculé depuis mouvements
-              </span>
+              <span className="badge badge-orange">📊 Calculé depuis mouvements</span>
             )}
           </div>
-          <button 
-            onClick={handleExport} 
-            className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow flex items-center gap-2"
+          <button
+            onClick={handleExport}
+            className="btn-primary"
+            style={{ fontSize: 12, padding: '7px 14px' }}
           >
             📥 Exporter Excel
           </button>
@@ -476,75 +471,59 @@ const History = () => {
           </div>
         ) : (
           <div style={{ overflowX: "auto" }}>
-            <table className="w-full text-sm" style={{minWidth: '900px'}}>
+            <table className="data-table" style={{ minWidth: 900 }}>
               <thead>
-                <tr className="bg-gray-50 border-b border-gray-200">
-                  <th className="text-left p-4 font-semibold text-gray-700">PRODUIT</th>
-                  <th className="text-center p-4 font-semibold text-gray-700 w-20">UNITE</th>
-                  <th className="text-right p-4 font-semibold text-gray-700 w-28">
-                    <span style={{ color: "var(--green)" }}>🌿</span> AGB 1
-                  </th>
-                  <th className="text-right p-4 font-semibold text-gray-700 w-28">
-                    <span style={{ color: "var(--blue)" }}>🌱</span> AGB 2
-                  </th>
-                  <th className="text-right p-4 font-semibold text-gray-700 w-28">
-                    <span className="text-purple-600">🪴</span> AGB 3
-                  </th>
-                  <th className="text-right p-4 font-semibold text-gray-900 w-28 bg-gray-100">TOTAL</th>
-                  <th className="text-right p-4 font-semibold text-gray-700 w-24">PRIX UNIT.</th>
-                  <th className="text-right p-4 font-semibold text-green-600 w-32">VALEUR</th>
+                <tr>
+                  <th style={{ textAlign: 'left' }}>PRODUIT</th>
+                  <th style={{ textAlign: 'center', width: 80 }}>UNITÉ</th>
+                  <th style={{ textAlign: 'right', width: 110, color: 'var(--green)' }}>🌿 AGB 1</th>
+                  <th style={{ textAlign: 'right', width: 110, color: 'var(--blue)' }}>🌱 AGB 2</th>
+                  <th style={{ textAlign: 'right', width: 110, color: 'var(--purple)' }}>🪴 AGB 3</th>
+                  <th style={{ textAlign: 'right', width: 110, color: 'var(--text-1)', background: 'var(--surface-2)' }}>TOTAL</th>
+                  <th style={{ textAlign: 'right', width: 100 }}>PRIX UNIT.</th>
+                  <th style={{ textAlign: 'right', width: 130, color: 'var(--green)' }}>VALEUR</th>
                 </tr>
               </thead>
               <tbody>
                 {displayProducts.map((p, idx) => (
-                  <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <td className="p-4 font-medium text-gray-900">{p.product}</td>
-                    <td className="p-4 text-center text-gray-500">{p.unit}</td>
-                    <td className={`p-4 text-right ${p.AB1 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
-                      {p.AB1 !== 0 ? fmt(p.AB1) : <span style={{ color: "var(--text-3)" }}>-</span>}
+                  <tr key={idx}>
+                    <td style={{ fontWeight: 600, color: 'var(--text-1)' }}>{p.product}</td>
+                    <td style={{ textAlign: 'center', color: 'var(--text-2)' }}>{p.unit}</td>
+                    <td style={{ textAlign: 'right', color: p.AB1 < 0 ? 'var(--red)' : p.AB1 > 0 ? 'var(--green)' : 'var(--text-3)', fontWeight: p.AB1 > 0 ? 600 : 400 }}>
+                      {p.AB1 !== 0 ? fmt(p.AB1) : '-'}
                     </td>
-                    <td className={`p-4 text-right ${p.AB2 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
-                      {p.AB2 !== 0 ? fmt(p.AB2) : <span style={{ color: "var(--text-3)" }}>-</span>}
+                    <td style={{ textAlign: 'right', color: p.AB2 < 0 ? 'var(--red)' : p.AB2 > 0 ? 'var(--blue)' : 'var(--text-3)', fontWeight: p.AB2 > 0 ? 600 : 400 }}>
+                      {p.AB2 !== 0 ? fmt(p.AB2) : '-'}
                     </td>
-                    <td className={`p-4 text-right ${p.AB3 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
-                      {p.AB3 !== 0 ? fmt(p.AB3) : <span style={{ color: "var(--text-3)" }}>-</span>}
+                    <td style={{ textAlign: 'right', color: p.AB3 < 0 ? 'var(--red)' : p.AB3 > 0 ? 'var(--purple)' : 'var(--text-3)', fontWeight: p.AB3 > 0 ? 600 : 400 }}>
+                      {p.AB3 !== 0 ? fmt(p.AB3) : '-'}
                     </td>
-                    <td className={`p-4 text-right font-bold bg-gray-50 ${p.total < 0 ? 'text-red-600' : 'text-gray-900'}`}>
+                    <td style={{ textAlign: 'right', fontWeight: 700, color: p.total < 0 ? 'var(--red)' : 'var(--text-1)', background: 'var(--surface-2)' }}>
                       {fmt(p.total)}
                     </td>
-                    <td className="p-4 text-right text-gray-600">{fmt(p.price)}</td>
-                    <td className="p-4 text-right font-bold text-green-600">
+                    <td style={{ textAlign: 'right', color: 'var(--text-2)' }}>{fmt(p.price)}</td>
+                    <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--green)' }}>
                       {fmtMoney(p.value)}
                     </td>
                   </tr>
                 ))}
               </tbody>
               <tfoot>
-                <tr className="bg-green-50 font-bold border-t-2 border-green-200">
-                  <td className="p-4 text-gray-900">TOTAL ({displayProducts.length} produits)</td>
-                  <td className="p-4"></td>
-                  <td className="p-4 text-right text-gray-700">
-                    {fmt(displayProducts.reduce((s, p) => s + p.AB1, 0))}
-                  </td>
-                  <td className="p-4 text-right text-gray-700">
-                    {fmt(displayProducts.reduce((s, p) => s + p.AB2, 0))}
-                  </td>
-                  <td className="p-4 text-right text-gray-700">
-                    {fmt(displayProducts.reduce((s, p) => s + p.AB3, 0))}
-                  </td>
-                  <td className="p-4 text-right text-gray-900 bg-green-100">
-                    {fmt(stats.totalQty)}
-                  </td>
-                  <td className="p-4"></td>
-                  <td className="p-4 text-right text-green-700 text-lg">
-                    {fmtMoney(stats.totalValue)}
-                  </td>
+                <tr style={{ background: '#f0faf2', fontWeight: 700, borderTop: '2px solid rgba(52,199,89,0.25)' }}>
+                  <td style={{ color: 'var(--text-1)' }}>TOTAL ({displayProducts.length} produits)</td>
+                  <td></td>
+                  <td style={{ textAlign: 'right', color: 'var(--text-2)' }}>{fmt(displayProducts.reduce((s, p) => s + p.AB1, 0))}</td>
+                  <td style={{ textAlign: 'right', color: 'var(--text-2)' }}>{fmt(displayProducts.reduce((s, p) => s + p.AB2, 0))}</td>
+                  <td style={{ textAlign: 'right', color: 'var(--text-2)' }}>{fmt(displayProducts.reduce((s, p) => s + p.AB3, 0))}</td>
+                  <td style={{ textAlign: 'right', color: 'var(--text-1)', background: '#dcfce7' }}>{fmt(stats.totalQty)}</td>
+                  <td></td>
+                  <td style={{ textAlign: 'right', color: 'var(--green)', fontSize: 15 }}>{fmtMoney(stats.totalValue)}</td>
                 </tr>
               </tfoot>
             </table>
           </div>
         )}
-      </Card>
+      </div>
 
       {/* Export Confirmation Modal */}
       {showExportModal && pendingMonth && (
