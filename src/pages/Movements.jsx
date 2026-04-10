@@ -854,9 +854,30 @@ const Movements = () => {
         modalType === 'exit' ? '📤 Nouvelle Sortie' : 
         modalType === 'transfer' ? '↔️ Nouveau Transfert' :
         '🔥 Nouvelle Consommation'
-      } size="md">
+      } size={modalType === 'consumption' && consoMode === 'melange' ? 'lg' : 'md'}>
         <div className="space-y-4">
           
+          {/* Consumption Mode Selector */}
+          {modalType === 'consumption' && (
+            <div className="flex gap-2 p-1 bg-gray-100 rounded-xl">
+              <button
+                onClick={() => setConsoMode('simple')}
+                className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 ${
+                  consoMode === 'simple' ? 'bg-white text-orange-600 shadow' : 'text-gray-600 hover:text-gray-800'
+                }`}
+              >
+                🔥 Conso Simple
+              </button>
+              <button
+                onClick={() => setConsoMode('melange')}
+                className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 ${
+                  consoMode === 'melange' ? 'bg-white text-purple-600 shadow' : 'text-gray-600 hover:text-gray-800'
+                }`}
+              >
+                🧪 Mélange
+              </button>
+            </div>
+          )}
 
           {/* Transfer Form */}
           {modalType === 'transfer' && (
@@ -1065,9 +1086,422 @@ const Movements = () => {
             </>
           )}
 
+          {/* Melange Form */}
+          {modalType === 'consumption' && consoMode === 'melange' && (
+            <>
+              <div className="grid grid-cols-2 gap-4">
+                <Select label="Ferme" value={form.farm} onChange={(v) => setForm({ ...form, farm: v })}
+                  options={FARMS.map(f => ({ value: f.id, label: f.name }))} />
+                <Select label="Culture" value={form.culture} onChange={(v) => setForm({ ...form, culture: v })}
+                  options={CULTURES.filter(c => FARM_CULTURES[form.farm]?.includes(c.id)).map(c => ({ value: c.id, label: `${c.icon} ${c.name}` }))} />
+              </div>
+
+              <Input label="Date" type="date" value={form.date} onChange={(v) => setForm({ ...form, date: v })} />
+
+              {/* Melange Selection */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Type de mélange</label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  {availableMelanges.map(([key, m]) => (
+                    <button
+                      key={key}
+                      onClick={() => setSelectedMelange(key)}
+                      className={`p-3 rounded-xl border text-left transition-all ${
+                        selectedMelange === key 
+                          ? 'border-purple-500 bg-purple-50 ring-2 ring-purple-200' 
+                          : 'border-gray-200 hover:border-purple-300'
+                      }`}
+                    >
+                      <span className="text-lg">{m.type === 'Hydro' ? '💧' : '🌍'}</span>
+                      <p className="font-medium text-sm text-gray-800">{key}</p>
+                      <p className="text-xs text-gray-500">{m.produits.length} produits</p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Products Table */}
+              {currentMelange && (
+                <div className="border rounded-xl overflow-hidden">
+                  <div className="bg-purple-500 text-white p-3 flex justify-between items-center">
+                    <div>
+                      <p className="font-bold">{selectedMelange}</p>
+                      <p className="text-sm text-white/80">{enabledProduits.length} produits sélectionnés</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm text-white/80">Total</p>
+                      <p className="font-bold">{fmtMoney(totalMelangeCost)}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="max-h-48 overflow-y-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-gray-50 sticky top-0">
+                        <tr>
+                          <th className="p-2 text-left w-8">✓</th>
+                          <th className="p-2 text-left">Produit</th>
+                          <th className="p-2 text-right w-24">Qté</th>
+                          <th className="p-2 text-right w-20">Stock</th>
+                          <th className="p-2 text-right w-24">Coût</th>
+                          <th className="p-2 w-8"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {editableProduits.map(p => {
+                          const insuffisant = p.enabled && p.qte > p.stock;
+                          return (
+                            <tr key={p.id} className={`border-t ${insuffisant ? 'bg-orange-50' : ''} ${p.isCustom ? 'bg-blue-50' : ''}`}>
+                              <td className="p-2">
+                                <input 
+                                  type="checkbox" 
+                                  checked={p.enabled} 
+                                  onChange={() => toggleProduit(p.id)}
+                                  className="w-4 h-4 rounded text-purple-600"
+                                />
+                              </td>
+                              <td className="p-2 font-medium">
+                                {p.nom}
+                                {p.isCustom && <span className="ml-1 text-xs text-blue-500">+</span>}
+                              </td>
+                              <td className="p-2">
+                                <input
+                                  type="number"
+                                  value={p.qte}
+                                  onChange={(e) => updateProduit(p.id, 'qte', e.target.value)}
+                                  className="w-full p-1 text-right border rounded"
+                                  disabled={!p.enabled}
+                                />
+                              </td>
+                              <td className={`p-2 text-right ${insuffisant ? 'text-orange-600 font-bold' : 'text-gray-500'}`}>
+                                {fmt(p.stock)}
+                              </td>
+                              <td className="p-2 text-right text-green-600 font-medium">
+                                {p.enabled ? fmtMoney(p.qte * p.price) : '-'}
+                              </td>
+                              <td className="p-2">
+                                {p.isCustom && (
+                                  <button onClick={() => removeProduit(p.id)} className="text-red-500 hover:text-red-700">✕</button>
+                                )}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Add Product */}
+                  <div className="p-3 bg-gray-50 border-t">
+                    <p className="text-xs font-medium text-gray-500 mb-2">➕ Ajouter un produit</p>
+                    <div className="flex gap-2">
+                      <Select 
+                        value={newProductName} 
+                        onChange={setNewProductName}
+                        options={[
+                          { value: '', label: 'Produit...' },
+                          ...products
+                            .filter(p => !editableProduits.find(ep => ep.nom.toUpperCase() === p.name.toUpperCase()))
+                            .map(p => ({ value: p.name, label: p.name }))
+                        ]}
+                        className="flex-1"
+                      />
+                      <Input 
+                        type="number" 
+                        value={newProductQty} 
+                        onChange={setNewProductQty} 
+                        placeholder="Qté" 
+                        className="w-20"
+                      />
+                      <Button onClick={addProduit} className="px-3">+</Button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex gap-3 pt-2">
+                <Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">Annuler</Button>
+                <Button onClick={handleMelangeSubmit} className="flex-1 bg-purple-600 hover:bg-purple-700">
+                  🧪 Appliquer Mélange
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       </Modal>
 
+      {/* History Modal */}
+      <Modal isOpen={showHistoryModal} onClose={() => { setShowHistoryModal(false); setExpandedMelangeId(null); }} title="🧪 Historique des Mélanges" size="lg">
+        <div className="space-y-4">
+          {melangeHistory.length === 0 ? (
+            <EmptyState icon="🧪" message="Aucun mélange appliqué" />
+          ) : (
+            <div className="space-y-3 max-h-[60vh] overflow-y-auto">
+              {melangeHistory.map(m => (
+                <div 
+                  key={m.id} 
+                  className={`p-4 rounded-xl border ${m.cancelled ? 'bg-gray-100 opacity-60' : 'bg-white'}`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">{m.type === 'Hydro' ? '💧' : '🌍'}</span>
+                        <span className="font-bold text-gray-800">{m.name}</span>
+                        {m.cancelled && <Badge color="gray">Annulé</Badge>}
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1">
+                        {FARMS.find(f => f.id === m.farm)?.name} • {m.culture} • {m.date}
+                      </p>
+                      <p className="text-xs text-gray-400 mt-1">
+                        {m.produits?.length || 0} produits • {fmt(m.totalQty)} unités
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-bold text-green-600">{fmtMoney(m.totalCost)}</p>
+                      {!m.cancelled && (
+                        <div className="flex gap-2 mt-2 justify-end">
+                          <button 
+                            onClick={() => handleEditMelange(m)}
+                            className="text-xs text-blue-500 hover:text-blue-700"
+                          >
+                            ✏️ Modifier
+                          </button>
+                          <button 
+                            onClick={() => handleCancelMelange(m.id)}
+                            className="text-xs text-red-500 hover:text-red-700"
+                          >
+                            ❌ Annuler
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {m.produits && m.produits.length > 0 && (
+                    <div className="mt-3 pt-3 border-t">
+                      <div className="flex flex-wrap gap-2">
+                        {(expandedMelangeId === m.id ? m.produits : m.produits.slice(0, 5)).map((p, i) => (
+                          <span key={i} className="text-xs bg-gray-100 px-2 py-1 rounded">
+                            {p.nom}: {fmt(p.qte)}
+                          </span>
+                        ))}
+                        {m.produits.length > 5 && (
+                          <button 
+                            onClick={() => setExpandedMelangeId(expandedMelangeId === m.id ? null : m.id)}
+                            className="text-xs text-blue-500 hover:text-blue-700 font-medium cursor-pointer"
+                          >
+                            {expandedMelangeId === m.id ? '↑ Réduire' : `+${m.produits.length - 5} autres →`}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+          
+          <div className="flex justify-end pt-2">
+            <Button variant="secondary" onClick={() => { setShowHistoryModal(false); setExpandedMelangeId(null); }}>Fermer</Button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* Edit Melange Modal */}
+      <Modal isOpen={!!editingMelange} onClose={handleCancelEditMelange} title="✏️ Modifier le Mélange" size="lg">
+        {editingMelange && (
+          <div className="space-y-4">
+            <div className="p-3 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{editingMelange.type === 'Hydro' ? '💧' : '🌍'}</span>
+                <span className="font-bold text-gray-800">{editingMelange.name}</span>
+              </div>
+              <p className="text-sm text-gray-500 mt-1">
+                {FARMS.find(f => f.id === editingMelange.farm)?.name} • {editingMelange.culture} • {editingMelange.date}
+              </p>
+            </div>
+
+            <div className="space-y-2 max-h-[40vh] overflow-y-auto">
+              <p className="text-sm font-medium text-gray-600">Produits et quantités :</p>
+              {editMelangeProducts.map((p, idx) => (
+                <div key={idx} className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
+                  <span className="flex-1 text-sm font-medium truncate">{p.nom}</span>
+                  <input
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={p.qte}
+                    onChange={(e) => {
+                      const newProducts = [...editMelangeProducts];
+                      newProducts[idx].qte = parseFloat(e.target.value) || 0;
+                      setEditMelangeProducts(newProducts);
+                    }}
+                    className="w-20 px-2 py-1 text-right border rounded-lg focus:ring-2 focus:ring-green-500"
+                  />
+                  <span className="text-xs text-gray-500 w-16">{fmtMoney(p.price)}/u</span>
+                  <span className="text-xs text-green-600 font-medium w-20 text-right">
+                    {fmtMoney(p.qte * p.price)}
+                  </span>
+                  <button
+                    onClick={() => {
+                      const newProducts = editMelangeProducts.filter((_, i) => i !== idx);
+                      setEditMelangeProducts(newProducts);
+                    }}
+                    className="p-1 text-red-500 hover:bg-red-50 rounded"
+                    title="Supprimer"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Add product section */}
+            <div className="p-3 bg-blue-50 rounded-xl">
+              <p className="text-sm font-medium text-gray-600 mb-2">➕ Ajouter un produit :</p>
+              <div className="flex gap-2">
+                <select
+                  id="addProductSelect"
+                  className="flex-1 px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  defaultValue=""
+                >
+                  <option value="" disabled>Sélectionner un produit...</option>
+                  {products
+                    .filter(p => !editMelangeProducts.some(ep => ep.nom === p.name))
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map(p => (
+                      <option key={p.id} value={p.name}>{p.name}</option>
+                    ))
+                  }
+                </select>
+                <button
+                  onClick={() => {
+                    const select = document.getElementById('addProductSelect');
+                    const productName = select.value;
+                    if (!productName) return;
+                    
+                    const product = products.find(p => p.name === productName);
+                    if (product && !editMelangeProducts.some(p => p.nom === productName)) {
+                      setEditMelangeProducts([
+                        ...editMelangeProducts,
+                        { nom: productName, qte: 0, price: product.price || 0 }
+                      ]);
+                      select.value = '';
+                    }
+                  }}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-sm font-medium"
+                >
+                  Ajouter
+                </button>
+              </div>
+            </div>
+
+            <div className="p-3 bg-green-50 rounded-xl">
+              <div className="flex justify-between items-center">
+                <span className="font-medium text-gray-700">Total :</span>
+                <span className="font-bold text-green-600 text-lg">
+                  {fmtMoney(editMelangeProducts.reduce((sum, p) => sum + (p.qte * p.price), 0))}
+                </span>
+              </div>
+              <p className="text-xs text-gray-500 mt-1">
+                {editMelangeProducts.filter(p => p.qte > 0).length} produits • {fmt(editMelangeProducts.reduce((sum, p) => sum + (parseFloat(p.qte) || 0), 0))} unités
+              </p>
+            </div>
+
+            <div className="flex justify-end gap-3 pt-2">
+              <Button variant="secondary" onClick={handleCancelEditMelange}>Annuler</Button>
+              <Button variant="primary" onClick={handleSaveEditMelange}>💾 Enregistrer</Button>
+            </div>
+          </div>
+        )}
+      </Modal>
+
+      {/* Edit Modal */}
+      <Modal isOpen={showEditModal} onClose={() => { setShowEditModal(false); setEditingMovement(null); }} title="✏️ Modifier le mouvement">
+        {editingMovement && (
+          <div className="space-y-4">
+            <Select 
+              label="Produit" 
+              value={editingMovement.product || ''} 
+              onChange={(v) => setEditingMovement({...editingMovement, product: v})}
+              options={[
+                { value: '', label: 'Sélectionner un produit...' },
+                ...products.map(p => ({ value: p.name, label: p.name })).sort((a, b) => a.label.localeCompare(b.label))
+              ]} 
+            />
+            
+            <div className="p-3 bg-gray-50 rounded-xl">
+              <p className="text-sm text-gray-600">Type</p>
+              <p className="font-bold text-gray-800">
+                {editingMovement.type === 'entry' ? '📥 Entrée' : 
+                 editingMovement.type === 'exit' ? '📤 Sortie' : 
+                 editingMovement.type === 'consumption' ? '🔥 Consommation' : 
+                 '↔️ Transfert'}
+              </p>
+            </div>
+            
+            <Input 
+              label="Date" 
+              type="date" 
+              value={editingMovement.date || ''} 
+              onChange={(v) => setEditingMovement({...editingMovement, date: v})} 
+            />
+            
+            <div className="grid grid-cols-2 gap-4">
+              <Input 
+                label="Quantité" 
+                type="number" 
+                value={editingMovement.quantity} 
+                onChange={(v) => setEditingMovement({...editingMovement, quantity: v})} 
+              />
+              <Input 
+                label="Prix unitaire" 
+                type="number" 
+                value={editingMovement.price} 
+                onChange={(v) => setEditingMovement({...editingMovement, price: v})} 
+              />
+            </div>
+            
+            {editingMovement.type === 'entry' && (
+              <Select 
+                label="Fournisseur" 
+                value={editingMovement.supplier || ''} 
+                onChange={(v) => setEditingMovement({...editingMovement, supplier: v})}
+                options={[
+                  { value: '', label: 'Sélectionner...' },
+                  ...[...new Set(suppliers)].sort().map(s => ({ value: s, label: s }))
+                ]} 
+              />
+            )}
+            
+            {(editingMovement.type === 'exit' || editingMovement.type === 'consumption') && (
+              <Select 
+                label="Ferme" 
+                value={editingMovement.farm || ''} 
+                onChange={(v) => setEditingMovement({...editingMovement, farm: v})}
+                options={FARMS.map(f => ({ value: f.id, label: f.name }))} 
+              />
+            )}
+            
+            {editingMovement.type === 'consumption' && (
+              <Select 
+                label="Culture" 
+                value={editingMovement.culture || ''} 
+                onChange={(v) => setEditingMovement({...editingMovement, culture: v})}
+                options={CULTURES.map(c => ({ value: c.id, label: `${c.icon} ${c.name}` }))} 
+              />
+            )}
+            
+            <div className="flex gap-3 pt-2">
+              <Button variant="secondary" onClick={() => { setShowEditModal(false); setEditingMovement(null); }} className="flex-1">
+                Annuler
+              </Button>
+              <Button onClick={handleEditSubmit} className="flex-1 bg-blue-600 hover:bg-blue-700">
+                💾 Enregistrer
+              </Button>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };
