@@ -26526,6 +26526,24 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1775731743682
+    },
+    {
+      "type": "entry",
+      "product": "CHLORO MIX ",
+      "quantity": 500,
+      "price": 85,
+      "supplier": "BEST BIO Z",
+      "date": "2026-04-10",
+      "id": 1775819965639
+    },
+    {
+      "type": "entry",
+      "product": "ALFABET",
+      "quantity": 7,
+      "price": 500,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-04-08",
+      "id": 1775820014785
     }
   ],
   "stockAB1": [
@@ -31464,5 +31482,5 @@
       "updatedAt": "2026-04-09T11:01:12.894Z"
     }
   ],
-  "exportDate": "2026-04-10T07:12:07.890Z"
+  "exportDate": "2026-04-10T11:22:14.852Z"
 }
