@@ -21,7 +21,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 67; // v5.6.2 - Fix LUNA FUSIONE → LUNA FUSION
+const CURRENT_DATA_VERSION = 68; // v5.6.3 - Fix UNITÉ → U (encodage)
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
@@ -113,6 +113,17 @@ const migrateProductNames = () => {
   }
   
   console.log('✅ Migration orthographe produits effectuée');
+  
+  // Fix unit encoding: UNITÉ → U
+  const prods = JSON.parse(localStorage.getItem(STORAGE_KEYS.products) || '[]');
+  let unitFixed = false;
+  prods.forEach(p => {
+    if (p.unit === 'UNIT\u00C9' || p.unit === 'UNIT\u00c9') { p.unit = 'U'; unitFixed = true; }
+  });
+  if (unitFixed) {
+    localStorage.setItem(STORAGE_KEYS.products, JSON.stringify(prods));
+    console.log('✅ Migration unité UNITÉ→U effectuée');
+  }
 };
 
 // === INITIALISATION ===

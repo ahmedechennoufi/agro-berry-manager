@@ -105,7 +105,7 @@
     {
       "id": 1766484423653,
       "name": "BEESURE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -117,7 +117,7 @@
     {
       "id": 1766938903995,
       "name": "BIDON D'EAU",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -153,25 +153,25 @@
     {
       "id": 1766490321668,
       "name": "BRIQUE ROUGE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1769174052158,
       "name": "CASQUE ANTI BRUIT SNR 26",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1769174109017,
       "name": "CASQUE ANTI BRUIT SNR 35",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766938646403,
       "name": "CHAUX",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -195,31 +195,31 @@
     {
       "id": 1766938517871,
       "name": "COLLE SILICONE BLANC",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766938703726,
       "name": "COMPTEUR D'EAU D110 COMPLET",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766396295064,
       "name": "CORDE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766485230522,
-      "name": "CORNIÈRE",
-      "unit": "UNITÉ",
+      "name": "CORNI\u00c8RE",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766395979763,
       "name": "COUVRE SOL",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
@@ -261,7 +261,7 @@
     {
       "id": 1766485606669,
       "name": "FICELLE NOIR 1000",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
@@ -285,7 +285,7 @@
     {
       "id": 1769174019899,
       "name": "GILET JAUNE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -387,7 +387,7 @@
     {
       "id": 1766938605573,
       "name": "MANOMETRE 6 BAR AVEC MANCHON",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -513,31 +513,31 @@
     {
       "id": 1766396382102,
       "name": "PAILLAGE NOIR",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766938934662,
       "name": "PEINTURE ANTI ROUILLE ROUGE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766939064564,
       "name": "PEINTURE BLANC MATE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766938978796,
       "name": "PEINTURE BLEU",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766939117532,
       "name": "PEINTURE ROUGE IMPERMEABLE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -555,7 +555,7 @@
     {
       "id": 1766939006316,
       "name": "PINCEAU DE PEINTURE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -579,19 +579,19 @@
     {
       "id": 1766396355915,
       "name": "PLASTIQUE BLANC",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766396444251,
       "name": "POTS 10 L",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766396460047,
       "name": "POTS 40 L",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
@@ -633,7 +633,7 @@
     {
       "id": 1766938960613,
       "name": "ROBINET",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -645,19 +645,19 @@
     {
       "id": 1766486640679,
       "name": "RONDELLE PLAT",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766486573960,
       "name": "ROUE 200 SIPLEME",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
       "id": 1766939029564,
       "name": "ROULEAU DE PEINTURE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -681,7 +681,7 @@
     {
       "id": 1766487580209,
       "name": "SEAU DE 3L",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -699,13 +699,13 @@
     {
       "id": 1766396259532,
       "name": "SOLARIG",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766938632902,
       "name": "SOLENOIDE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -819,7 +819,7 @@
     {
       "id": 1766489774153,
       "name": "TOLE NOIR (2000/1000/20)",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -831,13 +831,13 @@
     {
       "id": 1766396330784,
       "name": "TOURBE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
       "id": 1766396414133,
       "name": "TUYAUX D'IRRIGATION",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "INVESTISSEMENT"
     },
     {
@@ -849,7 +849,7 @@
     {
       "id": 1766938885712,
       "name": "VANNE D63 AUTOMATIQUE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -861,7 +861,7 @@
     {
       "id": 1766486744188,
       "name": "VIS POELIER",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {
@@ -891,7 +891,7 @@
     {
       "id": 1766939046631,
       "name": "WHITE SPIRITE",
-      "unit": "UNITÉ",
+      "unit": "U",
       "category": "AUTRES"
     },
     {

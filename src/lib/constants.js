@@ -67,7 +67,7 @@ export const CATEGORIES = [
 export const UNITS = [
   { id: 'KG', name: 'Kilogramme (KG)' },
   { id: 'L', name: 'Litre (L)' },
-  { id: 'UNITÉ', name: 'Unité' },
+  { id: 'U', name: 'Unité' },
   { id: 'BOITE', name: 'Boîte' },
   { id: 'SAC', name: 'Sac' }
 ];
