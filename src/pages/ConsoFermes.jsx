@@ -266,7 +266,7 @@ const ConsoFermes = () => {
         </div>
         {tableData.length === 0 ? <div className="p-8"><EmptyState icon="📭" message="Aucune donnée pour cette période" /></div> : (
           <div style={{ overflowX: "auto" }}>
-            <table className="w-full text-sm min-w-[1600px]">
+            <table style={{ minWidth: 1600, fontSize: 13, borderCollapse: "collapse" }}>
               <thead>
                 <tr className="bg-gray-50 border-b">
                   <th className="text-left p-3 font-semibold text-gray-700" rowSpan={2}>ARTICLE</th>
@@ -400,7 +400,7 @@ const ConsoFermes = () => {
           <h3 className="font-semibold text-green-700 flex items-center gap-2">📥 Détails des Entrées par Source</h3>
         </div>
         <div style={{ overflowX: "auto" }}>
-          <table className="w-full text-sm" style={{minWidth:"900px"}}>
+          <table style={{ minWidth: 900, fontSize: 13, borderCollapse: "collapse" }}>
             <thead>
               <tr className="bg-gray-50 border-b">
                 <th className="text-left p-3 font-semibold text-gray-700">Article</th>
@@ -467,7 +467,7 @@ const ConsoFermes = () => {
           <p className="text-xs text-purple-600 mt-1">Produits transférés d'une ferme vers une autre</p>
         </div>
         <div style={{ overflowX: "auto" }}>
-          <table className="w-full text-sm" style={{minWidth:"900px"}}>
+          <table style={{ minWidth: 900, fontSize: 13, borderCollapse: "collapse" }}>
             <thead>
               <tr className="bg-gray-50 border-b">
                 <th className="text-left p-3 font-semibold text-gray-700">Article</th>
@@ -520,7 +520,7 @@ const ConsoFermes = () => {
           <h3 className="font-semibold text-orange-700 flex items-center gap-2">🔥 Détails des Consommations par Culture</h3>
         </div>
         <div style={{ overflowX: "auto" }}>
-          <table className="w-full text-sm" style={{minWidth:"900px"}}>
+          <table style={{ minWidth: 900, fontSize: 13, borderCollapse: "collapse" }}>
             <thead>
               <tr className="bg-gray-50 border-b">
                 <th className="text-left p-3 font-semibold text-gray-700">Article</th>

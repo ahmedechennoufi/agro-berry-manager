@@ -1135,7 +1135,7 @@ const Movements = () => {
                   </div>
                   
                   <div className="max-h-48 overflow-y-auto">
-                    <table className="w-full text-sm">
+                    <table style={{ width: "auto", minWidth: 900, borderCollapse: "collapse", fontSize: 13 }}>
                       <thead style={{ background: "var(--surface-2)", position: "sticky", top: 0 }}>
                         <tr>
                           <th className="p-2 text-left w-8">✓</th>

@@ -436,7 +436,7 @@ const History = () => {
       </Card>
 
       {/* Table */}
-      <div className="ios-card" style={{ padding: 0, overflowX: 'auto' }}>
+      <div className="ios-card" style={{ padding: 0 }}>
         {/* Table Header with Export Button */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderBottom: '1px solid var(--border)', background: 'var(--surface-2)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -470,38 +470,49 @@ const History = () => {
             <EmptyState icon="📦" message="Aucun produit trouvé" />
           </div>
         ) : (
-          <table className="data-table" style={{ minWidth: 900 }}>
+          <div style={{ overflowX: 'auto' }}>
+          <table style={{ minWidth: 870, borderCollapse: 'collapse', tableLayout: 'fixed', width: '100%' }}>
+            <colgroup>
+              <col />
+              <col style={{ width: 70 }} />
+              <col style={{ width: 100 }} />
+              <col style={{ width: 100 }} />
+              <col style={{ width: 100 }} />
+              <col style={{ width: 100 }} />
+              <col style={{ width: 90 }} />
+              <col style={{ width: 120 }} />
+            </colgroup>
               <thead>
-                <tr>
-                  <th style={{ textAlign: 'left' }}>PRODUIT</th>
-                  <th style={{ textAlign: 'center', width: 80 }}>UNITÉ</th>
-                  <th style={{ textAlign: 'right', width: 110, color: 'var(--green)' }}>🌿 AGB 1</th>
-                  <th style={{ textAlign: 'right', width: 110, color: 'var(--blue)' }}>🌱 AGB 2</th>
-                  <th style={{ textAlign: 'right', width: 110, color: 'var(--purple)' }}>🪴 AGB 3</th>
-                  <th style={{ textAlign: 'right', width: 110, color: 'var(--text-1)', background: 'var(--surface-2)' }}>TOTAL</th>
-                  <th style={{ textAlign: 'right', width: 100 }}>PRIX UNIT.</th>
-                  <th style={{ textAlign: 'right', width: 130, color: 'var(--green)' }}>VALEUR</th>
+                <tr style={{ background: 'var(--surface-2)', borderBottom: '1px solid var(--border)' }}>
+                  <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 11, fontWeight: 600, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>PRODUIT</th>
+                  <th style={{ textAlign: 'center', padding: '10px 16px', fontSize: 11, fontWeight: 600, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>UNITÉ</th>
+                  <th style={{ textAlign: 'right', padding: '10px 16px', fontSize: 11, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>🌿 AGB 1</th>
+                  <th style={{ textAlign: 'right', padding: '10px 16px', fontSize: 11, fontWeight: 600, color: 'var(--blue)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>🌱 AGB 2</th>
+                  <th style={{ textAlign: 'right', padding: '10px 16px', fontSize: 11, fontWeight: 600, color: 'var(--purple)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>🪴 AGB 3</th>
+                  <th style={{ textAlign: 'right', padding: '10px 16px', fontSize: 11, fontWeight: 600, color: 'var(--text-1)', background: 'var(--surface-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>TOTAL</th>
+                  <th style={{ textAlign: 'right', padding: '10px 16px', fontSize: 11, fontWeight: 600, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>PRIX UNIT.</th>
+                  <th style={{ textAlign: 'right', padding: '10px 16px', fontSize: 11, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>VALEUR</th>
                 </tr>
               </thead>
               <tbody>
                 {displayProducts.map((p, idx) => (
                   <tr key={idx}>
-                    <td style={{ fontWeight: 600, color: 'var(--text-1)' }}>{p.product}</td>
-                    <td style={{ textAlign: 'center', color: 'var(--text-2)' }}>{p.unit}</td>
-                    <td style={{ textAlign: 'right', color: p.AB1 < 0 ? 'var(--red)' : p.AB1 > 0 ? 'var(--green)' : 'var(--text-3)', fontWeight: p.AB1 > 0 ? 600 : 400 }}>
+                    <td style={{ padding: '12px 16px', fontWeight: 600, color: 'var(--text-1)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.product}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'center', color: 'var(--text-2)' }}>{p.unit}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', color: p.AB1 < 0 ? 'var(--red)' : p.AB1 > 0 ? 'var(--green)' : 'var(--text-3)', fontWeight: p.AB1 > 0 ? 600 : 400 }}>
                       {p.AB1 !== 0 ? fmt(p.AB1) : '-'}
                     </td>
-                    <td style={{ textAlign: 'right', color: p.AB2 < 0 ? 'var(--red)' : p.AB2 > 0 ? 'var(--blue)' : 'var(--text-3)', fontWeight: p.AB2 > 0 ? 600 : 400 }}>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', color: p.AB2 < 0 ? 'var(--red)' : p.AB2 > 0 ? 'var(--blue)' : 'var(--text-3)', fontWeight: p.AB2 > 0 ? 600 : 400 }}>
                       {p.AB2 !== 0 ? fmt(p.AB2) : '-'}
                     </td>
-                    <td style={{ textAlign: 'right', color: p.AB3 < 0 ? 'var(--red)' : p.AB3 > 0 ? 'var(--purple)' : 'var(--text-3)', fontWeight: p.AB3 > 0 ? 600 : 400 }}>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', color: p.AB3 < 0 ? 'var(--red)' : p.AB3 > 0 ? 'var(--purple)' : 'var(--text-3)', fontWeight: p.AB3 > 0 ? 600 : 400 }}>
                       {p.AB3 !== 0 ? fmt(p.AB3) : '-'}
                     </td>
-                    <td style={{ textAlign: 'right', fontWeight: 700, color: p.total < 0 ? 'var(--red)' : 'var(--text-1)', background: 'var(--surface-2)' }}>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 700, color: p.total < 0 ? 'var(--red)' : 'var(--text-1)', background: 'var(--surface-2)' }}>
                       {fmt(p.total)}
                     </td>
-                    <td style={{ textAlign: 'right', color: 'var(--text-2)' }}>{fmt(p.price)}</td>
-                    <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--green)' }}>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', color: 'var(--text-2)' }}>{fmt(p.price)}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 700, color: 'var(--green)' }}>
                       {fmtMoney(p.value)}
                     </td>
                   </tr>
@@ -509,7 +520,7 @@ const History = () => {
               </tbody>
               <tfoot>
                 <tr style={{ background: '#f0faf2', fontWeight: 700, borderTop: '2px solid rgba(52,199,89,0.25)' }}>
-                  <td style={{ color: 'var(--text-1)' }}>TOTAL ({displayProducts.length} produits)</td>
+                  <td style={{ padding: '12px 16px', color: 'var(--text-1)' }}>TOTAL ({displayProducts.length} produits)</td>
                   <td></td>
                   <td style={{ textAlign: 'right', color: 'var(--text-2)' }}>{fmt(displayProducts.reduce((s, p) => s + p.AB1, 0))}</td>
                   <td style={{ textAlign: 'right', color: 'var(--text-2)' }}>{fmt(displayProducts.reduce((s, p) => s + p.AB2, 0))}</td>
@@ -520,6 +531,7 @@ const History = () => {
                 </tr>
               </tfoot>
             </table>
+          </div>
         )}
       </div>
 

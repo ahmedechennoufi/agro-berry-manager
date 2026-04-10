@@ -227,8 +227,8 @@ body {
 
 /* ─── TABLE ──────────────────────────────────────── */
 .data-table {
-  width: 100%;
-  min-width: 700px;
+  width: auto;
+  min-width: 100%;
   border-collapse: collapse;
 }
 

@@ -157,7 +157,7 @@ const StockTheorique = () => {
 
     return (
       <div style={{ overflowX: "auto" }}>
-        <table className="w-full text-sm">
+        <table style={{ width: "auto", minWidth: 900, borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
             <tr className="bg-gray-50 border-b">
               <th className="text-left p-3 font-semibold text-gray-700">PRODUIT</th>

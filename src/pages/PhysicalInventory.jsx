@@ -417,7 +417,7 @@ const PhysicalInventory = () => {
 
             {viewingInventory?.id === inv.id && inv.comparison && (
               <div style={{ overflowX: "auto" }}>
-                <table className="w-full text-sm">
+                <table style={{ width: "auto", minWidth: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                   <thead>
                     <tr className="bg-gray-100 border-b">
                       <th className="text-left p-3 font-semibold text-gray-700">PRODUIT</th>
@@ -630,7 +630,7 @@ const PhysicalInventory = () => {
                   <div className="p-8"><EmptyState icon="📭" message="Aucun produit trouvé" /></div>
                 ) : (
                   <div style={{ overflowX: "auto" }}>
-                    <table className="w-full text-sm">
+                    <table style={{ width: "auto", minWidth: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                       <thead>
                         <tr className="bg-gray-100 border-b">
                           <th className="text-left p-4 font-semibold text-gray-700">PRODUIT</th>
