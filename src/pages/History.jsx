@@ -96,15 +96,34 @@ const History = () => {
       
       ['AB1', 'AB2', 'AB3'].forEach(farmKey => {
         const inv = farms[farmKey];
-        if (inv && inv.data) {
+        if (inv) {
           monthData.physicalFarms.push(farmKey);
-          Object.entries(inv.data).forEach(([product, qty]) => {
-            const quantity = parseFloat(qty) || 0;
-            if (quantity > 0) {
-              const price = getAveragePrice(product) || 0;
-              monthData[farmKey].push({ product, quantity, price });
-            }
-          });
+          const productMap = {};
+          
+          // 1. First use inv.data (raw input quantities - source of truth for physical count)
+          if (inv.data) {
+            Object.entries(inv.data).forEach(([product, qty]) => {
+              const quantity = parseFloat(qty);
+              if (!isNaN(quantity) && qty !== '' && qty !== null && qty !== undefined) {
+                const price = getAveragePrice(product) || 0;
+                productMap[product.toUpperCase()] = { product, quantity, price };
+              }
+            });
+          }
+          
+          // 2. Also use inv.comparison as backup (includes products with hasPhysical=true)
+          if (inv.comparison && Array.isArray(inv.comparison)) {
+            inv.comparison.forEach(item => {
+              const key = (item.name || '').toUpperCase();
+              if (!productMap[key] && item.physical !== undefined && item.physical !== null) {
+                const quantity = parseFloat(item.physical) || 0;
+                const price = getAveragePrice(item.name) || 0;
+                productMap[key] = { product: item.name, quantity, price };
+              }
+            });
+          }
+          
+          monthData[farmKey] = Object.values(productMap).filter(p => p.quantity > 0);
         }
       });
       
@@ -163,14 +182,23 @@ const History = () => {
       const ym = m.date.substring(0, 7); // YYYY-MM
       const physData = physicalInventoryMonths[ym];
       if (physData && physData.physicalFarms.length > 0) {
-        // Replace farm data with physical inventory where available
+        // Merge: physical inventory takes priority, historical data fills gaps
+        const mergeAB = (physAB, histAB) => {
+          if (!physAB || physAB.length === 0) return histAB || [];
+          if (!histAB || histAB.length === 0) return physAB;
+          // Merge: physical counts override historical, historical fills missing products
+          const map = {};
+          histAB.forEach(item => { map[item.product?.toUpperCase()] = item; });
+          physAB.forEach(item => { map[item.product?.toUpperCase()] = item; });
+          return Object.values(map);
+        };
         const updated = { 
           ...m, 
           isPhysical: true, 
           physicalFarms: [...physData.physicalFarms],
-          AB1: physData.AB1.length > 0 ? physData.AB1 : (m.AB1 || []),
-          AB2: physData.AB2.length > 0 ? physData.AB2 : (m.AB2 || []),
-          AB3: physData.AB3.length > 0 ? physData.AB3 : (m.AB3 || [])
+          AB1: mergeAB(physData.AB1, m.AB1),
+          AB2: mergeAB(physData.AB2, m.AB2),
+          AB3: mergeAB(physData.AB3, m.AB3)
         };
         months[idx] = updated;
       }
