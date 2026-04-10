@@ -8,7 +8,6 @@ import Movements from './pages/Movements';
 import Farms from './pages/Farms';
 import Transfers from './pages/Transfers';
 import Saisie from './pages/Saisie';
-import Melange from './pages/Melange';
 import Inventory from './pages/Inventory';
 import PhysicalInventory from './pages/PhysicalInventory';
 import Commandes from './pages/Commandes';
@@ -193,7 +192,6 @@ function App() {
       case 'farms': return <Farms />;
       case 'transfers': return <Transfers />;
       case 'saisie': return <Saisie />;
-      case 'melange': return <Melange />;
       case 'inventory': return <Inventory />;
       case 'physical-inventory': return <PhysicalInventory />;
       case 'commandes': return <Commandes />;
