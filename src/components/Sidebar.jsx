@@ -7,11 +7,9 @@ const menuItems = [
   { id: 'consofermes', icon: '🔥', label: 'Consommation' },
   { id: 'stock', icon: '📦', label: 'Stock Global' },
   { id: 'farms', icon: '🌱', label: 'Stock Fermes' },
-  { id: 'costs', icon: '💰', label: 'Coût Production' },
   { id: 'inventory', icon: '📅', label: 'Historique Stock' },
   { id: 'physical-inventory', icon: '🔍', label: 'Inventaire Physique' },
   { id: 'commandes', icon: '📦', label: 'Commandes' },
-  { id: 'ecarts', icon: '🔎', label: 'Contrôle Écarts' },
   { id: 'products', icon: '📋', label: 'Produits' },
   { id: 'settings', icon: '⚙️', label: 'Paramètres' }
 ];
