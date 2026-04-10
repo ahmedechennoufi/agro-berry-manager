@@ -400,7 +400,7 @@ const ConsoFermes = () => {
           <h3 className="font-semibold text-green-700 flex items-center gap-2">📥 Détails des Entrées par Source</h3>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" style={{minWidth:"900px"}}>
             <thead>
               <tr className="bg-gray-50 border-b">
                 <th className="text-left p-3 font-semibold text-gray-700">Article</th>
@@ -467,7 +467,7 @@ const ConsoFermes = () => {
           <p className="text-xs text-purple-600 mt-1">Produits transférés d'une ferme vers une autre</p>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" style={{minWidth:"900px"}}>
             <thead>
               <tr className="bg-gray-50 border-b">
                 <th className="text-left p-3 font-semibold text-gray-700">Article</th>
@@ -520,7 +520,7 @@ const ConsoFermes = () => {
           <h3 className="font-semibold text-orange-700 flex items-center gap-2">🔥 Détails des Consommations par Culture</h3>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" style={{minWidth:"900px"}}>
             <thead>
               <tr className="bg-gray-50 border-b">
                 <th className="text-left p-3 font-semibold text-gray-700">Article</th>

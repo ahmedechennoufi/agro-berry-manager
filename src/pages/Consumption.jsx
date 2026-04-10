@@ -206,7 +206,7 @@ const Consumption = () => {
           <EmptyState icon="🔥" message={`Aucune consommation pour ${selectedMonthLabel}`} />
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full" style={{minWidth:"600px"}}>
               <thead>
                 <tr className="border-b border-gray-100">
                   <th className="text-left py-3 px-4 font-medium text-gray-600">Produit</th>

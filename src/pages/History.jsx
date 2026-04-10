@@ -476,7 +476,7 @@ const History = () => {
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-sm" style={{minWidth: '900px'}}>
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200">
                   <th className="text-left p-4 font-semibold text-gray-700">PRODUIT</th>
