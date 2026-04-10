@@ -159,14 +159,14 @@ const Transfers = () => {
   };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto" }} className="animate-fade-in">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 28, flexWrap: "wrap", gap: 12 }}>
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Transferts</h1>
-          <p className="text-gray-500 mt-1">Transferts entre fermes • {filteredTransfers.length} opérations</p>
+          <h1 style={{ fontSize: 26, fontWeight: 700, color: "var(--text-1)", margin: 0, letterSpacing: "-0.3px" }}>Transferts</h1>
+          <p style={{ fontSize: 14, color: "var(--text-2)", margin: "4px 0 0" }}>Transferts entre fermes • {filteredTransfers.length} opérations</p>
         </div>
-        <div className="flex gap-2">
+        <div style={{ display: "flex", gap: 8 }}>
           <Button variant="secondary" onClick={handleExport}>📥 Export</Button>
           <Button onClick={() => setShowModal(true)}>+ Transfert</Button>
         </div>
@@ -205,7 +205,7 @@ const Transfers = () => {
       {/* Filters */}
       <Card>
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex-1">
+          <div style={{ flex: 1 }}>
             <Input placeholder="🔍 Rechercher un produit..." value={search} onChange={setSearch} />
           </div>
           <Select 
@@ -227,7 +227,7 @@ const Transfers = () => {
             <Button onClick={() => setShowModal(true)}>+ Nouveau Transfert</Button>
           } />
         ) : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="data-table">
               <thead>
                 <tr>
@@ -243,7 +243,7 @@ const Transfers = () => {
                 {filteredTransfers.map((t, idx) => (
                   <tr key={t.id || idx}>
                     <td className="text-gray-600 whitespace-nowrap">{t.date}</td>
-                    <td className="font-medium text-gray-900">{t.product}</td>
+                    <td style={{ fontWeight: 600, color: "var(--text-1)" }}>{t.product}</td>
                     <td className="text-right font-semibold">{fmt(t.quantity)}</td>
                     <td className="text-center">
                       <Badge color={getFarmColor(t.fromFarm)}>{getFarmShort(t.fromFarm)}</Badge>
@@ -305,7 +305,7 @@ const Transfers = () => {
             }`}>
               <div className="flex items-center gap-2">
                 <span className="text-xl">📦</span>
-                <span className="text-gray-700">
+                <span style={{ color: "var(--text-2)" }}>
                   Stock {FARMS.find(f => f.id === form.fromFarm)?.short || form.fromFarm}:
                 </span>
               </div>
@@ -338,8 +338,8 @@ const Transfers = () => {
           />
           
           <div className="flex gap-3 pt-2">
-            <Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">Annuler</Button>
-            <Button onClick={handleSubmit} className="flex-1" disabled={form.fromFarm === form.toFarm}>
+            <Button variant="secondary" onClick={() => setShowModal(false)} style={{ flex: 1 }}>Annuler</Button>
+            <Button onClick={handleSubmit} style={{ flex: 1 }} disabled={form.fromFarm === form.toFarm}>
               Enregistrer
             </Button>
           </div>

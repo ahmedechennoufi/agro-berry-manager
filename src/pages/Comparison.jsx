@@ -55,7 +55,7 @@ const Comparison = () => {
       {/* Header */}
       <div>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Comparaison</h1>
-        <p className="text-gray-500">Comparer le stock entre deux périodes</p>
+        <p style={{ color: "var(--text-2)" }}>Comparer le stock entre deux périodes</p>
       </div>
 
       {/* Selectors */}
@@ -66,7 +66,7 @@ const Comparison = () => {
             value={month1}
             onChange={setMonth1}
             options={monthOptions}
-            className="flex-1"
+            style={{ flex: 1 }}
           />
           <span className="text-2xl text-gray-400 hidden md:block">vs</span>
           <Select
@@ -74,7 +74,7 @@ const Comparison = () => {
             value={month2}
             onChange={setMonth2}
             options={monthOptions}
-            className="flex-1"
+            style={{ flex: 1 }}
           />
         </div>
       </Card>
@@ -106,7 +106,7 @@ const Comparison = () => {
         {comparisonData.length === 0 ? (
           <EmptyState icon="📊" message="Aucune donnée à comparer" />
         ) : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-100">

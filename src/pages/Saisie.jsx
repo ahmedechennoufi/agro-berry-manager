@@ -150,7 +150,7 @@ const Saisie = () => {
                 onChange={(v) => updateLigne(l.id, 'produit', v)} 
                 placeholder="Nom du produit" 
                 list="produits-list" 
-                className="flex-1" 
+                style={{ flex: 1 }} 
               />
               <Input 
                 label={i === 0 ? "Quantité" : ""} 
@@ -214,9 +214,9 @@ const Saisie = () => {
             </div>
           </div>
           
-          <div className="flex gap-3">
-            <Button variant="secondary" onClick={() => setShowConfirm(false)} className="flex-1">Annuler</Button>
-            <Button onClick={confirmSubmit} className="flex-1">Confirmer</Button>
+          <div style={{ display: "flex", gap: 12 }}>
+            <Button variant="secondary" onClick={() => setShowConfirm(false)} style={{ flex: 1 }}>Annuler</Button>
+            <Button onClick={confirmSubmit} style={{ flex: 1 }}>Confirmer</Button>
           </div>
         </div>
       </Modal>

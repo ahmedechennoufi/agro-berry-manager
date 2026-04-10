@@ -262,7 +262,7 @@ const Settings = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-2 bg-green-50 p-3 rounded-xl">
               <span className="text-green-500 text-lg">🟢</span>
-              <div className="flex-1">
+              <div style={{ flex: 1 }}>
                 <p className="text-sm font-medium text-green-800">Connecté à GitHub</p>
                 <p className="text-xs text-green-600">{ghOwner}/{ghRepo}</p>
               </div>
@@ -276,11 +276,11 @@ const Settings = () => {
 
             {/* Auto-backup status */}
             <div className="bg-blue-50 p-3 rounded-xl flex items-center gap-2">
-              <span className="text-blue-500">🔄</span>
+              <span style={{ color: "var(--blue)" }}>🔄</span>
               <p className="text-xs text-blue-700">Auto-backup activé — sauvegarde 2 min après chaque modification</p>
             </div>
 
-            <div className="flex gap-2">
+            <div style={{ display: "flex", gap: 8 }}>
               <button onClick={handleGitHubBackup} disabled={ghBacking}
                 className="flex-1 bg-blue-500 text-white py-3 px-4 rounded-xl font-medium text-sm hover:bg-blue-600 active:scale-[0.98] transition-all disabled:opacity-50">
                 {ghBacking ? '⏳ Sauvegarde...' : '☁️ Sauvegarder'}
@@ -291,7 +291,7 @@ const Settings = () => {
               </button>
             </div>
 
-            <div className="flex gap-2">
+            <div style={{ display: "flex", gap: 8 }}>
               <button onClick={() => setGhConfigOpen(true)} className="flex-1 text-ios-gray text-xs py-2 hover:text-ios-dark">
                 ⚙️ Modifier config
               </button>
@@ -342,7 +342,7 @@ const Settings = () => {
                   </p>
                 )}
 
-                <div className="flex gap-2">
+                <div style={{ display: "flex", gap: 8 }}>
                   <button onClick={handleTestConnection} disabled={ghStatus === 'testing'}
                     className="flex-1 bg-blue-500 text-white py-2 px-3 rounded-lg font-medium text-sm hover:bg-blue-600 disabled:opacity-50">
                     {ghStatus === 'testing' ? '⏳ Test...' : '🔗 Connecter'}

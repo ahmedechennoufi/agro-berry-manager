@@ -139,10 +139,10 @@ const Consumption = () => {
 
   return (
     <div className="fade-in space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 28, flexWrap: "wrap", gap: 12 }}>
         <div>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">🔥 Consommation</h1>
-          <p className="text-gray-500">{allConsumptions.length} consommations enregistrées au total</p>
+          <p style={{ color: "var(--text-2)" }}>{allConsumptions.length} consommations enregistrées au total</p>
         </div>
         <Button onClick={() => setShowModal(true)}>🔥 Saisir Consommation</Button>
       </div>
@@ -205,7 +205,7 @@ const Consumption = () => {
         {consoByProduct.length === 0 ? (
           <EmptyState icon="🔥" message={`Aucune consommation pour ${selectedMonthLabel}`} />
         ) : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="w-full" style={{minWidth:"600px"}}>
               <thead>
                 <tr className="border-b border-gray-100">
@@ -283,8 +283,8 @@ const Consumption = () => {
             options={DESTINATIONS.map(d => ({ value: d.id, label: `${d.icon} ${d.name}` }))}
           />
           <div className="flex gap-3 pt-4">
-            <Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">Annuler</Button>
-            <Button onClick={handleSubmit} className="flex-1">Enregistrer</Button>
+            <Button variant="secondary" onClick={() => setShowModal(false)} style={{ flex: 1 }}>Annuler</Button>
+            <Button onClick={handleSubmit} style={{ flex: 1 }}>Enregistrer</Button>
           </div>
         </div>
       </Modal>

@@ -369,7 +369,7 @@ const Ecarts = () => {
             {filteredData.length === 0 ? (
               <EmptyState icon={filterType === 'anomaly' ? '✅' : '📋'} message={filterType === 'anomaly' ? 'Aucune anomalie détectée !' : 'Aucun produit trouvé'} />
             ) : (
-              <div className="overflow-x-auto">
+              <div style={{ overflowX: "auto" }}>
                 <table className="data-table">
                   <thead>
                     <tr>
@@ -415,7 +415,7 @@ const Ecarts = () => {
                                   <span className="text-xs ml-1">({Math.round(ecartPct)}%)</span>
                                 )}
                               </span>
-                            ) : <span className="text-gray-300">—</span>}
+                            ) : <span style={{ color: "var(--text-3)" }}>—</span>}
                           </td>
                           <td className="text-center">
                             {item.hasEntry ? (
@@ -436,7 +436,7 @@ const Ecarts = () => {
                               <span className={`text-sm font-medium ${item.ecartValue < 0 ? 'text-red-600' : 'text-green-600'}`}>
                                 {fmtMoney(item.ecartValue)}
                               </span>
-                            ) : <span className="text-gray-300">—</span>}
+                            ) : <span style={{ color: "var(--text-3)" }}>—</span>}
                           </td>
                           <td className="text-center">
                             <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${statusColor}`}>

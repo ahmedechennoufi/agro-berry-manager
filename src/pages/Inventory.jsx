@@ -344,7 +344,7 @@ const Inventory = () => {
       </div>
 
       {/* Month Tabs */}
-      <div className="flex flex-wrap gap-2">
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
         {SEASON_MONTHS.map(m => {
           const hasData = stockHistoryData[m.id] !== undefined;
           const monthIdx = SEASON_MONTHS.findIndex(mo => mo.id === m.id);
@@ -412,7 +412,7 @@ const Inventory = () => {
           placeholder="🔍 Rechercher un produit..." 
           value={search} 
           onChange={setSearch} 
-          className="flex-1" 
+          style={{ flex: 1 }} 
         />
         <Select 
           value={selectedFarm} 
@@ -449,7 +449,7 @@ const Inventory = () => {
         {stockData.length === 0 ? (
           <div className="p-8"><EmptyState icon="📭" message="Aucun stock pour ce mois" /></div>
         ) : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-gray-100 border-b">
@@ -492,7 +492,7 @@ const Inventory = () => {
             <p className="text-gray-600 mb-6">
               Voulez-vous exporter l'inventaire de ce mois en Excel ?
             </p>
-            <div className="flex gap-3">
+            <div style={{ display: "flex", gap: 12 }}>
               <button
                 onClick={handleSelectOnly}
                 className="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-colors"

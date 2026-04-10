@@ -414,10 +414,10 @@ const Commandes = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">📦 Commandes</h1>
+            <h1 style={{ fontSize: 22, fontWeight: 700, color: "var(--text-1)", margin: 0 }}>📦 Commandes</h1>
             <p className="text-gray-500 text-sm mt-1">Suivi des commandes mensuelles</p>
           </div>
-          <div className="flex gap-2">
+          <div style={{ display: "flex", gap: 8 }}>
             {commandes.length > 0 && (
               <Button variant="secondary" onClick={exportAllCommandesExcel}>
                 📊 Export Récap Excel
@@ -494,7 +494,7 @@ const Commandes = () => {
               return (
                 <Card key={c.id} className="hover:shadow-md transition-shadow cursor-pointer" onClick={() => setSelectedCommande(c)}>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div className="flex-1">
+                    <div style={{ flex: 1 }}>
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-2xl">{allDone ? '✅' : pct > 0 ? '🟡' : '📦'}</span>
                         <h3 className="text-lg font-bold text-gray-900">{getMonthLabel(c.month)}</h3>
@@ -516,7 +516,7 @@ const Commandes = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="flex gap-2">
+                    <div style={{ display: "flex", gap: 8 }}>
                       <button 
                         onClick={(e) => { e.stopPropagation(); exportCommandeExcel(c); }}
                         className="px-3 py-2 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 text-sm font-medium transition-colors"
@@ -556,8 +556,8 @@ const Commandes = () => {
               Vous pourrez ensuite y ajouter les produits commandés.
             </p>
             <div className="flex gap-3 pt-2">
-              <Button onClick={handleCreateCommande} className="flex-1">Créer</Button>
-              <Button variant="secondary" onClick={() => setShowNewModal(false)} className="flex-1">Annuler</Button>
+              <Button onClick={handleCreateCommande} style={{ flex: 1 }}>Créer</Button>
+              <Button variant="secondary" onClick={() => setShowNewModal(false)} style={{ flex: 1 }}>Annuler</Button>
             </div>
           </div>
         </Modal>
@@ -578,7 +578,7 @@ const Commandes = () => {
             ←
           </button>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">📦 {getMonthLabel(selectedCommande.month)}</h1>
+            <h1 style={{ fontSize: 22, fontWeight: 700, color: "var(--text-1)", margin: 0 }}>📦 {getMonthLabel(selectedCommande.month)}</h1>
             <p className="text-gray-500 text-sm">Suivi de la commande</p>
           </div>
         </div>
@@ -630,7 +630,7 @@ const Commandes = () => {
 
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-3">
-        <div className="flex-1">
+        <div style={{ flex: 1 }}>
           <input 
             type="text"
             value={search}
@@ -672,7 +672,7 @@ const Commandes = () => {
             )}
           />
         ) : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="data-table">
               <thead>
                 <tr>
@@ -693,7 +693,7 @@ const Commandes = () => {
                   
                   return (
                     <tr key={idx}>
-                      <td className="font-medium text-gray-900">{item.product}</td>
+                      <td style={{ fontWeight: 600, color: "var(--text-1)" }}>{item.product}</td>
                       <td className="text-right">{Number(item.ordered || 0).toFixed(1)}</td>
                       <td className="text-right font-semibold">
                         <span className={status.color === 'green' ? 'text-green-600' : status.color === 'orange' ? 'text-orange-600' : 'text-gray-400'}>
@@ -786,10 +786,10 @@ const Commandes = () => {
             placeholder="Ex: 100"
           />
           <div className="flex gap-3 pt-2">
-            <Button onClick={handleAddItem} className="flex-1" disabled={!itemForm.product || !itemForm.ordered}>
+            <Button onClick={handleAddItem} style={{ flex: 1 }} disabled={!itemForm.product || !itemForm.ordered}>
               Ajouter
             </Button>
-            <Button variant="secondary" onClick={() => setShowAddItemModal(false)} className="flex-1">
+            <Button variant="secondary" onClick={() => setShowAddItemModal(false)} style={{ flex: 1 }}>
               Annuler
             </Button>
           </div>
@@ -818,13 +818,13 @@ const Commandes = () => {
               💡 Entrez la quantité <strong>totale</strong> reçue à ce jour, pas juste la dernière livraison.
             </p>
             <div className="flex gap-3 pt-2">
-              <Button onClick={handleReceive} className="flex-1">
+              <Button onClick={handleReceive} style={{ flex: 1 }}>
                 Confirmer
               </Button>
               <Button 
                 variant="secondary" 
                 onClick={() => { setShowReceiveModal(false); setReceivingItem(null); }} 
-                className="flex-1"
+                style={{ flex: 1 }}
               >
                 Annuler
               </Button>

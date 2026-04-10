@@ -176,7 +176,7 @@ const Melange = () => {
           <h1 className="text-3xl font-bold text-gray-900">Mélanges</h1>
           <p className="text-gray-500 mt-1">Appliquer un mélange à une ferme</p>
         </div>
-        <div className="flex gap-2">
+        <div style={{ display: "flex", gap: 8 }}>
           <Button 
             variant={viewMode === 'predefinis' ? 'primary' : 'secondary'} 
             onClick={() => setViewMode('predefinis')}
@@ -202,7 +202,7 @@ const Melange = () => {
           </div>
         </div>
         
-        <div className="flex flex-wrap gap-3">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
           {/* Farm Selection */}
           <div className="flex gap-1 bg-white/10 p-1 rounded-xl">
             {FARMS.map(farm => (
@@ -453,11 +453,11 @@ const Melange = () => {
             </p>
           </div>
           
-          <div className="flex gap-3">
-            <Button variant="secondary" onClick={() => setShowConfirm(false)} className="flex-1">
+          <div style={{ display: "flex", gap: 12 }}>
+            <Button variant="secondary" onClick={() => setShowConfirm(false)} style={{ flex: 1 }}>
               Annuler
             </Button>
-            <Button onClick={confirmApply} className="flex-1">
+            <Button onClick={confirmApply} style={{ flex: 1 }}>
               ✅ Confirmer
             </Button>
           </div>
@@ -474,15 +474,15 @@ const Melange = () => {
             placeholder="Ex: Mon mélange personnalisé" 
           />
           <div className="p-3 bg-gray-50 rounded-xl text-sm">
-            <p className="text-gray-600">
+            <p style={{ color: "var(--text-2)" }}>
               {enabledProduits.length} produits • {currentMelange?.type} • {selectedCulture}
             </p>
           </div>
-          <div className="flex gap-3">
-            <Button variant="secondary" onClick={() => setShowSaveModal(false)} className="flex-1">
+          <div style={{ display: "flex", gap: 12 }}>
+            <Button variant="secondary" onClick={() => setShowSaveModal(false)} style={{ flex: 1 }}>
               Annuler
             </Button>
-            <Button onClick={handleSaveMelange} className="flex-1">
+            <Button onClick={handleSaveMelange} style={{ flex: 1 }}>
               Sauvegarder
             </Button>
           </div>

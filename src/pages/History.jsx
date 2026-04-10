@@ -342,16 +342,16 @@ const History = () => {
   };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto" }} className="animate-fade-in">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 28, flexWrap: "wrap", gap: 12 }}>
         <div>
           <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-2">
             📅 Historique Stock
           </h1>
-          <p className="text-gray-500 mt-1">Stock des mois précédents - Campagne 2025-2026</p>
+          <p style={{ fontSize: 14, color: "var(--text-2)", margin: "4px 0 0" }}>Stock des mois précédents - Campagne 2025-2026</p>
         </div>
-        <div className="flex gap-2">
+        <div style={{ display: "flex", gap: 8 }}>
           <button 
             onClick={handleExport} 
             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg flex items-center gap-2"
@@ -420,7 +420,7 @@ const History = () => {
       {/* Search & Filter */}
       <Card>
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex-1">
+          <div style={{ flex: 1 }}>
             <Input 
               placeholder="🔍 Rechercher un produit..." 
               value={search} 
@@ -475,17 +475,17 @@ const History = () => {
             <EmptyState icon="📦" message="Aucun produit trouvé" />
           </div>
         ) : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="w-full text-sm" style={{minWidth: '900px'}}>
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200">
                   <th className="text-left p-4 font-semibold text-gray-700">PRODUIT</th>
                   <th className="text-center p-4 font-semibold text-gray-700 w-20">UNITE</th>
                   <th className="text-right p-4 font-semibold text-gray-700 w-28">
-                    <span className="text-green-600">🌿</span> AGB 1
+                    <span style={{ color: "var(--green)" }}>🌿</span> AGB 1
                   </th>
                   <th className="text-right p-4 font-semibold text-gray-700 w-28">
-                    <span className="text-blue-600">🌱</span> AGB 2
+                    <span style={{ color: "var(--blue)" }}>🌱</span> AGB 2
                   </th>
                   <th className="text-right p-4 font-semibold text-gray-700 w-28">
                     <span className="text-purple-600">🪴</span> AGB 3
@@ -501,13 +501,13 @@ const History = () => {
                     <td className="p-4 font-medium text-gray-900">{p.product}</td>
                     <td className="p-4 text-center text-gray-500">{p.unit}</td>
                     <td className={`p-4 text-right ${p.AB1 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
-                      {p.AB1 !== 0 ? fmt(p.AB1) : <span className="text-gray-300">-</span>}
+                      {p.AB1 !== 0 ? fmt(p.AB1) : <span style={{ color: "var(--text-3)" }}>-</span>}
                     </td>
                     <td className={`p-4 text-right ${p.AB2 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
-                      {p.AB2 !== 0 ? fmt(p.AB2) : <span className="text-gray-300">-</span>}
+                      {p.AB2 !== 0 ? fmt(p.AB2) : <span style={{ color: "var(--text-3)" }}>-</span>}
                     </td>
                     <td className={`p-4 text-right ${p.AB3 < 0 ? 'text-red-600 font-semibold' : 'text-gray-700'}`}>
-                      {p.AB3 !== 0 ? fmt(p.AB3) : <span className="text-gray-300">-</span>}
+                      {p.AB3 !== 0 ? fmt(p.AB3) : <span style={{ color: "var(--text-3)" }}>-</span>}
                     </td>
                     <td className={`p-4 text-right font-bold bg-gray-50 ${p.total < 0 ? 'text-red-600' : 'text-gray-900'}`}>
                       {fmt(p.total)}
@@ -556,7 +556,7 @@ const History = () => {
             <p className="text-gray-600 mb-6">
               Voulez-vous exporter l'inventaire de ce mois en Excel ?
             </p>
-            <div className="flex gap-3">
+            <div style={{ display: "flex", gap: 12 }}>
               <button
                 onClick={handleSelectOnly}
                 className="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-colors"

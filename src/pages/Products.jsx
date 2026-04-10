@@ -28,12 +28,12 @@ const Products = () => {
     setShowModal(false); setEditingProduct(null); setForm({ name: '', unit: 'KG', category: 'ENGRAIS', threshold: '' });
   };
 
-  const handleEdit = (p) => { 
-    setEditingProduct(p); 
-    setForm({ name: p.name, unit: p.unit, category: p.category, threshold: p.threshold ?? '' }); 
-    setShowModal(true); 
+  const handleEdit = (p) => {
+    setEditingProduct(p);
+    setForm({ name: p.name, unit: p.unit, category: p.category, threshold: p.threshold ?? '' });
+    setShowModal(true);
   };
-  
+
   const handleDelete = (id) => { if (confirm('Supprimer ce produit ?')) deleteProduct(id); };
   const openNew = () => { setEditingProduct(null); setForm({ name: '', unit: 'KG', category: 'ENGRAIS', threshold: '' }); setShowModal(true); };
 
@@ -48,115 +48,126 @@ const Products = () => {
   };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div style={{ padding: '28px 32px', maxWidth: 1200, margin: '0 auto' }} className="animate-fade-in">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 28, flexWrap: 'wrap', gap: 12 }}>
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Produits</h1>
-          <p className="text-gray-500 mt-1">{products.length} produits • Seuil alerte: {getDefaultThreshold()}</p>
+          <h1 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-1)', margin: 0, letterSpacing: '-0.3px' }}>Produits</h1>
+          <p style={{ fontSize: 14, color: 'var(--text-2)', margin: '4px 0 0' }}>
+            {products.length} produits · Seuil alerte: {getDefaultThreshold()}
+          </p>
         </div>
-        {!readOnly && <div className="flex gap-2">
-          <Button variant="secondary" onClick={() => setShowSettingsModal(true)}>⚙️ Seuils</Button>
-          <Button onClick={openNew}>+ Nouveau</Button>
-        </div>}
+        {!readOnly && (
+          <div style={{ display: 'flex', gap: 8 }}>
+            <Button variant="secondary" onClick={() => setShowSettingsModal(true)}>⚙️ Seuils</Button>
+            <Button onClick={openNew}>+ Nouveau</Button>
+          </div>
+        )}
       </div>
-      
+
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-3">
-        <div className="flex-1">
-          <Input placeholder="🔍 Rechercher un produit..." value={search} onChange={setSearch} />
+      <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
+        <div style={{ flex: 1, minWidth: 200 }}>
+          <Input placeholder="🔍 Rechercher un produit..." value={search} onChange={setSearch} uppercase={false} />
         </div>
-        <Select 
-          value={filterCategory} 
+        <Select
+          value={filterCategory}
           onChange={setFilterCategory}
-          options={[{ value: 'ALL', label: 'Toutes catégories' }, ...CATEGORIES.map(c => ({ value: c.id, label: `${c.icon} ${c.name}` }))]} 
-          className="sm:w-56"
+          options={[{ value: 'ALL', label: 'Toutes catégories' }, ...CATEGORIES.map(c => ({ value: c.id, label: `${c.icon} ${c.name}` }))]}
         />
       </div>
 
       {/* Category stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 24 }}>
         {CATEGORIES.map(cat => {
           const count = products.filter(p => p.category === cat.id).length;
           const isActive = filterCategory === cat.id;
           return (
-            <Card 
+            <div
               key={cat.id}
               onClick={() => setFilterCategory(isActive ? 'ALL' : cat.id)}
-              className={`cursor-pointer text-center transition-all ${isActive ? 'ring-2 ring-blue-500 bg-blue-50' : 'hover:shadow-md'}`}
+              className="ios-card"
+              style={{
+                padding: '18px 20px', textAlign: 'center', cursor: 'pointer',
+                border: isActive ? '2px solid var(--blue)' : '1px solid var(--border)',
+                background: isActive ? '#f0f6ff' : 'var(--surface)',
+                transition: 'all var(--transition)',
+              }}
             >
-              <span className="text-3xl">{cat.icon}</span>
-              <p className="text-2xl font-bold text-gray-900 mt-2">{count}</p>
-              <p className="text-sm text-gray-500">{cat.name}</p>
-            </Card>
+              <span style={{ fontSize: 26, display: 'block', marginBottom: 8 }}>{cat.icon}</span>
+              <p style={{ fontSize: 22, fontWeight: 700, color: isActive ? 'var(--blue)' : 'var(--text-1)', margin: '0 0 4px' }}>{count}</p>
+              <p style={{ fontSize: 12, color: 'var(--text-2)', margin: 0 }}>{cat.name}</p>
+            </div>
           );
         })}
       </div>
-      
+
       {/* Products Grid */}
       {filteredProducts.length === 0 ? (
         <Card>
           <EmptyState icon="📦" message="Aucun produit trouvé" action={!readOnly && <Button onClick={openNew}>+ Ajouter</Button>} />
         </Card>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 12 }}>
           {filteredProducts.map(p => (
-            <Card key={p.id} className="group">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl bg-gray-100">
+            <div key={p.id} className="ios-card" style={{ padding: '16px 18px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, background: 'var(--surface-2)', flexShrink: 0 }}>
                     {CATEGORIES.find(c => c.id === p.category)?.icon || '📦'}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">{p.name}</p>
-                    <div className="flex items-center gap-2 mt-1">
+                    <p style={{ fontWeight: 600, color: 'var(--text-1)', margin: '0 0 5px', fontSize: 14 }}>{p.name}</p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                       <Badge color={getCategoryColor(p.category)}>{p.category}</Badge>
-                      <span className="text-xs text-gray-500">{p.unit}</span>
+                      <span style={{ fontSize: 11, color: 'var(--text-2)' }}>{p.unit}</span>
                     </div>
-                    {p.threshold && <p className="text-xs text-orange-500 mt-1">⚠️ Seuil: {p.threshold}</p>}
+                    {p.threshold && (
+                      <p style={{ fontSize: 11, color: 'var(--orange)', margin: '5px 0 0' }}>⚠️ Seuil: {p.threshold}</p>
+                    )}
                   </div>
                 </div>
-                <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {!readOnly && <>
-                    <button onClick={() => handleEdit(p)} className="p-2 rounded-lg hover:bg-gray-100 text-blue-500">✏️</button>
-                    <button onClick={() => handleDelete(p.id)} className="p-2 rounded-lg hover:bg-gray-100 text-red-500">🗑</button>
-                  </>}
-                </div>
+                {!readOnly && (
+                  <div style={{ display: 'flex', gap: 2, flexShrink: 0 }}>
+                    <button onClick={() => handleEdit(p)} style={{ width: 30, height: 30, borderRadius: 8, background: 'none', border: 'none', cursor: 'pointer', color: 'var(--blue)', fontSize: 14 }}>✏️</button>
+                    <button onClick={() => handleDelete(p.id)} style={{ width: 30, height: 30, borderRadius: 8, background: 'none', border: 'none', cursor: 'pointer', color: 'var(--red)', fontSize: 14 }}>🗑</button>
+                  </div>
+                )}
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       )}
-      
+
       {/* Modal Nouveau/Modifier */}
       <Modal isOpen={showModal} onClose={() => setShowModal(false)} title={editingProduct ? 'Modifier Produit' : 'Nouveau Produit'}>
-        <div className="space-y-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <Input label="Nom du produit" value={form.name} onChange={(v) => setForm({ ...form, name: v })} placeholder="Ex: MAP, SULFATE..." />
-          <div className="grid grid-cols-2 gap-4">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             <Select label="Unité" value={form.unit} onChange={(v) => setForm({ ...form, unit: v })} options={UNITS.map(u => ({ value: u.id, label: u.name }))} />
             <Select label="Catégorie" value={form.category} onChange={(v) => setForm({ ...form, category: v })} options={CATEGORIES.map(c => ({ value: c.id, label: `${c.icon} ${c.name}` }))} />
           </div>
-          <Input label={`Seuil d'alerte (défaut: ${getDefaultThreshold()})`} type="number" value={form.threshold} onChange={(v) => setForm({ ...form, threshold: v })} placeholder="Laisser vide pour défaut" />
-          <div className="p-3 rounded-xl bg-orange-50 border border-orange-200">
-            <p className="text-sm text-orange-700">⚠️ Alerte affichée quand le stock descend en dessous du seuil.</p>
+          <Input label={`Seuil d'alerte (défaut: ${getDefaultThreshold()})`} type="number" value={form.threshold} onChange={(v) => setForm({ ...form, threshold: v })} placeholder="Laisser vide pour défaut" uppercase={false} />
+          <div className="alert-warning">
+            <p style={{ fontSize: 13, margin: 0 }}>⚠️ Alerte affichée quand le stock descend en dessous du seuil.</p>
           </div>
-          <div className="flex gap-3 pt-2">
-            <Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">Annuler</Button>
-            <Button onClick={handleSubmit} className="flex-1">{editingProduct ? 'Enregistrer' : 'Créer'}</Button>
+          <div style={{ display: 'flex', gap: 10, paddingTop: 4 }}>
+            <Button variant="secondary" onClick={() => setShowModal(false)} style={{ flex: 1 }}>Annuler</Button>
+            <Button onClick={handleSubmit} style={{ flex: 1 }}>{editingProduct ? 'Enregistrer' : 'Créer'}</Button>
           </div>
         </div>
       </Modal>
 
       {/* Modal Paramètres */}
       <Modal isOpen={showSettingsModal} onClose={() => setShowSettingsModal(false)} title="Paramètres d'alerte">
-        <div className="space-y-4">
-          <Input label="Seuil par défaut global" type="number" value={defaultThresholdValue} onChange={setDefaultThresholdValue} placeholder="10" />
-          <div className="p-4 rounded-xl bg-blue-50 border border-blue-200">
-            <p className="text-sm text-blue-700">ℹ️ Ce seuil s'applique à tous les produits sans seuil personnalisé.</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <Input label="Seuil par défaut global" type="number" value={defaultThresholdValue} onChange={setDefaultThresholdValue} placeholder="10" uppercase={false} />
+          <div className="alert-info">
+            <p style={{ fontSize: 13, margin: 0 }}>ℹ️ Ce seuil s'applique à tous les produits sans seuil personnalisé.</p>
           </div>
-          <div className="flex gap-3 pt-2">
-            <Button variant="secondary" onClick={() => setShowSettingsModal(false)} className="flex-1">Annuler</Button>
-            <Button onClick={handleSaveDefaultThreshold} className="flex-1">Enregistrer</Button>
+          <div style={{ display: 'flex', gap: 10, paddingTop: 4 }}>
+            <Button variant="secondary" onClick={() => setShowSettingsModal(false)} style={{ flex: 1 }}>Annuler</Button>
+            <Button onClick={handleSaveDefaultThreshold} style={{ flex: 1 }}>Enregistrer</Button>
           </div>
         </div>
       </Modal>

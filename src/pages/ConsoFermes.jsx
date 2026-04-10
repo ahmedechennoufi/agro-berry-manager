@@ -235,7 +235,7 @@ const ConsoFermes = () => {
             Stock Initial + Entrées - Sorties - Conso = Stock Final
           </p>
         </div>
-        <div className="flex gap-3">
+        <div style={{ display: "flex", gap: 12 }}>
           <Select value={selectedMonth} onChange={setSelectedMonth}
             options={CONSO_MONTHS.map(m => ({ value: m.id, label: m.name }))} className="w-56" />
           <Button variant="secondary" onClick={handleExport}>📥 Export</Button>
@@ -253,7 +253,7 @@ const ConsoFermes = () => {
 
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-3">
-        <Input placeholder="🔍 Rechercher..." value={search} onChange={setSearch} className="flex-1" />
+        <Input placeholder="🔍 Rechercher..." value={search} onChange={setSearch} style={{ flex: 1 }} />
         <Select value={filterCategory} onChange={setFilterCategory}
           options={[{ value: 'ALL', label: 'Toutes catégories' }, ...CATEGORIES.map(c => ({ value: c.id, label: c.name }))]}
           className="sm:w-48" />
@@ -265,7 +265,7 @@ const ConsoFermes = () => {
           <span className="text-gray-500 text-sm font-medium">{tableData.length} produits</span>
         </div>
         {tableData.length === 0 ? <div className="p-8"><EmptyState icon="📭" message="Aucune donnée pour cette période" /></div> : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="w-full text-sm min-w-[1600px]">
               <thead>
                 <tr className="bg-gray-50 border-b">
@@ -308,9 +308,9 @@ const ConsoFermes = () => {
                   const entTot = d.entMAG || 0;
                   const sortTot = (d.sortAB1 || 0) + (d.sortAB2 || 0) + (d.sortAB3 || 0);
                   const consTot = d.consAB1 + d.consAB2 + d.consAB3;
-                  const V = (val, color) => val > 0.01 ? <span className={color}>{fmt(val)}</span> : <span className="text-gray-300">-</span>;
+                  const V = (val, color) => val > 0.01 ? <span className={color}>{fmt(val)}</span> : <span style={{ color: "var(--text-3)" }}>-</span>;
                   const VE = (entVal, transVal, color) => {
-                    if (entVal <= 0.01) return <span className="text-gray-300">-</span>;
+                    if (entVal <= 0.01) return <span style={{ color: "var(--text-3)" }}>-</span>;
                     const fournVal = entVal - (transVal || 0);
                     if (transVal > 0) {
                       return (
@@ -399,7 +399,7 @@ const ConsoFermes = () => {
         <div className="p-4 border-b bg-green-50">
           <h3 className="font-semibold text-green-700 flex items-center gap-2">📥 Détails des Entrées par Source</h3>
         </div>
-        <div className="overflow-x-auto">
+        <div style={{ overflowX: "auto" }}>
           <table className="w-full text-sm" style={{minWidth:"900px"}}>
             <thead>
               <tr className="bg-gray-50 border-b">
@@ -437,7 +437,7 @@ const ConsoFermes = () => {
                           e.fromFarm?.includes('2') ? 'bg-green-100 text-green-700' :
                           'bg-purple-100 text-purple-700'}`}>{sourceName}</span>
                       ) : (
-                        <span className="text-gray-700">{sourceName}</span>
+                        <span style={{ color: "var(--text-2)" }}>{sourceName}</span>
                       )}
                     </td>
                     <td className="p-3 text-center">
@@ -466,7 +466,7 @@ const ConsoFermes = () => {
           <h3 className="font-semibold text-purple-700 flex items-center gap-2">↔️ Détails des Transferts entre Fermes (Sorties)</h3>
           <p className="text-xs text-purple-600 mt-1">Produits transférés d'une ferme vers une autre</p>
         </div>
-        <div className="overflow-x-auto">
+        <div style={{ overflowX: "auto" }}>
           <table className="w-full text-sm" style={{minWidth:"900px"}}>
             <thead>
               <tr className="bg-gray-50 border-b">
@@ -519,7 +519,7 @@ const ConsoFermes = () => {
         <div className="p-4 border-b bg-orange-50">
           <h3 className="font-semibold text-orange-700 flex items-center gap-2">🔥 Détails des Consommations par Culture</h3>
         </div>
-        <div className="overflow-x-auto">
+        <div style={{ overflowX: "auto" }}>
           <table className="w-full text-sm" style={{minWidth:"900px"}}>
             <thead>
               <tr className="bg-gray-50 border-b">

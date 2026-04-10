@@ -324,7 +324,7 @@ const Costs = () => {
       </div>
 
       {/* Category tabs */}
-      <div className="flex flex-wrap gap-2">
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
         {availableCategories.map(cat => (
           <button
             key={cat.id}
@@ -346,12 +346,12 @@ const Costs = () => {
       </div>
 
       {/* Search & Export */}
-      <div className="flex gap-3">
+      <div style={{ display: "flex", gap: 12 }}>
         <Input 
           placeholder="🔍 Rechercher un produit..." 
           value={search} 
           onChange={setSearch} 
-          className="flex-1"
+          style={{ flex: 1 }}
         />
         <Button variant="secondary" onClick={handleExport}>📥 Export</Button>
       </div>
@@ -381,7 +381,7 @@ const Costs = () => {
             <EmptyState icon="📭" message="Aucune consommation enregistrée pour cette catégorie" />
           </div>
         ) : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-gray-50 border-b">
@@ -450,10 +450,10 @@ const Costs = () => {
                               {seasonMonths.map(m => (
                                 <React.Fragment key={m.idx}>
                                   <td className="p-2 text-center border-l">
-                                    {p.qte[m.idx] > 0 ? fmt(p.qte[m.idx]) : <span className="text-gray-300">-</span>}
+                                    {p.qte[m.idx] > 0 ? fmt(p.qte[m.idx]) : <span style={{ color: "var(--text-3)" }}>-</span>}
                                   </td>
                                   <td className="p-2 text-center text-orange-500">
-                                    {p.qte[m.idx] > 0 ? fmtMoney(p.qte[m.idx] * p.prix) : <span className="text-gray-300">-</span>}
+                                    {p.qte[m.idx] > 0 ? fmtMoney(p.qte[m.idx] * p.prix) : <span style={{ color: "var(--text-3)" }}>-</span>}
                                   </td>
                                 </React.Fragment>
                               ))}
@@ -474,10 +474,10 @@ const Costs = () => {
                       {seasonMonths.map(m => (
                         <React.Fragment key={m.idx}>
                           <td className="p-2 text-center border-l">
-                            {p.qte[m.idx] > 0 ? fmt(p.qte[m.idx]) : <span className="text-gray-300">-</span>}
+                            {p.qte[m.idx] > 0 ? fmt(p.qte[m.idx]) : <span style={{ color: "var(--text-3)" }}>-</span>}
                           </td>
                           <td className="p-2 text-center text-orange-500">
-                            {p.qte[m.idx] > 0 ? fmtMoney(p.qte[m.idx] * p.prix) : <span className="text-gray-300">-</span>}
+                            {p.qte[m.idx] > 0 ? fmtMoney(p.qte[m.idx] * p.prix) : <span style={{ color: "var(--text-3)" }}>-</span>}
                           </td>
                         </React.Fragment>
                       ))}

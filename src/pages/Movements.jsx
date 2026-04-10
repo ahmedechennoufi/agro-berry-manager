@@ -633,26 +633,26 @@ const Movements = () => {
   const activeMelanges = melangeHistory.filter(m => !m.cancelled).length;
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div style={{ padding: '28px 32px', maxWidth: 1400, margin: '0 auto' }} className="animate-fade-in">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 28, flexWrap: 'wrap', gap: 12 }}>
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Mouvements</h1>
-          <p className="text-gray-500 mt-1">{filteredMovements.length} mouvements affichés</p>
+          <h1 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-1)', margin: 0, letterSpacing: '-0.3px' }}>Mouvements</h1>
+          <p style={{ fontSize: 14, color: 'var(--text-2)', margin: '4px 0 0' }}>{filteredMovements.length} mouvements affichés</p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           <Button variant="secondary" onClick={handleExport}>📥 Export</Button>
           {!readOnly && <>
             <Button onClick={() => openModal('entry')}>📥 Entrée</Button>
             <Button variant="blue" onClick={() => openModal('exit')}>📤 Sortie</Button>
             <Button variant="danger" onClick={() => openModal('consumption')}>🔥 Conso</Button>
-            <Button className="bg-purple-600 hover:bg-purple-700" onClick={() => openModal('transfer')}>↔️ Transfert</Button>
+            <Button variant="secondary" onClick={() => openModal('transfer')}>↔️ Transfert</Button>
           </>}
         </div>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 14, marginBottom: 20 }}>
         <StatCard icon="📥" label="Entrées" value={fmtMoney(stats.totalEntries)} subValue={`${stats.nbEntries} opérations`} color="green" />
         <StatCard icon="📤" label="Sorties" value={fmt(stats.totalExits)} subValue={`${stats.nbExits} opérations`} color="blue" />
         <StatCard icon="🔥" label="Consommation" value={fmtMoney(stats.totalConso)} subValue={`${stats.nbConsos} opérations`} color="red" />
@@ -662,8 +662,8 @@ const Movements = () => {
 
       {/* Filters */}
       <Card>
-        <div className="flex flex-wrap gap-3 mb-4">
-          <div className="flex-1 min-w-[200px]">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 16 }}>
+          <div style={{ flex: 1, minWidth: 200 }}>
             <Input placeholder="🔍 Rechercher produit..." value={search} onChange={setSearch} />
           </div>
           <Select value={filterType} onChange={setFilterType} className="w-36"
@@ -682,7 +682,7 @@ const Movements = () => {
           <Button variant="secondary" onClick={resetFilters}>🔄 Reset</Button>
         </div>
         
-        <div className="flex flex-wrap gap-3">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
           <Select value={filterCategory} onChange={setFilterCategory} className="w-44"
             options={[
               { value: 'ALL', label: '📁 Toutes catégories' },
@@ -707,7 +707,7 @@ const Movements = () => {
             } />
           </div>
         ) : (
-          <div className="overflow-x-auto">
+          <div style={{ overflowX: "auto" }}>
             <table className="data-table">
               <thead>
                 <tr>
@@ -733,11 +733,11 @@ const Movements = () => {
                   } else if (m.type === 'transfer-out') {
                     const from = m.farm?.replace('AGRO BERRY ', 'AB') || '?';
                     const to = m.toFarm?.replace('AGRO BERRY ', 'AB') || '?';
-                    detailText = <span><span className="text-orange-600 font-medium">De:</span> {from} <span className="text-green-600 font-medium">→ Vers:</span> {to}</span>;
+                    detailText = <span><span style={{ color: "var(--orange)", fontWeight: 600 }}>De:</span> {from} <span style={{ color: "var(--green)", fontWeight: 600 }}>→ Vers:</span> {to}</span>;
                   } else if (m.type === 'transfer-in') {
                     const from = m.fromFarm?.replace('AGRO BERRY ', 'AB') || '?';
                     const to = m.farm?.replace('AGRO BERRY ', 'AB') || '?';
-                    detailText = <span><span className="text-orange-600 font-medium">De:</span> {from} <span className="text-green-600 font-medium">→ Vers:</span> {to}</span>;
+                    detailText = <span><span style={{ color: "var(--orange)", fontWeight: 600 }}>De:</span> {from} <span style={{ color: "var(--green)", fontWeight: 600 }}>→ Vers:</span> {to}</span>;
                   } else if (m.farm) {
                     const farmShort = m.farm.replace('AGRO BERRY ', 'AB');
                     // Show culture with destination type for Myrtille
@@ -747,26 +747,26 @@ const Movements = () => {
                       cultureText = `${m.culture} ${destShort}`;
                     }
                     detailText = cultureText 
-                      ? <span>→ {farmShort} <span className="text-purple-500">• {cultureText}</span></span>
+                      ? <span>→ {farmShort} <span style={{ color: "var(--purple)" }}>• {cultureText}</span></span>
                       : `→ ${farmShort}`;
                   }
                   
                   return (
                     <tr key={m.id || idx}>
-                      <td className="text-gray-600 text-sm whitespace-nowrap">{m.date}</td>
+                      <td style={{ color: "var(--text-2)", fontSize: 13, whiteSpace: "nowrap" }}>{m.date}</td>
                       <td><Badge color={typeInfo.color}>{typeInfo.icon} {typeInfo.label}</Badge></td>
-                      <td className="font-medium text-gray-900">{m.product}</td>
-                      <td className="text-right font-semibold">{fmt(m.quantity)}</td>
-                      <td className="text-right text-gray-600">{fmtMoney(m.price)}</td>
-                      <td className="text-right font-semibold text-green-600">{fmtMoney(value)}</td>
-                      <td className="text-gray-500 text-sm">
+                      <td style={{ fontWeight: 600, color: "var(--text-1)" }}>{m.product}</td>
+                      <td style={{ textAlign: "right", fontWeight: 600, color: "var(--text-1)" }}>{fmt(m.quantity)}</td>
+                      <td style={{ textAlign: "right", color: "var(--text-2)" }}>{fmtMoney(m.price)}</td>
+                      <td style={{ textAlign: "right", fontWeight: 600, color: "var(--green)" }}>{fmtMoney(value)}</td>
+                      <td style={{ color: "var(--text-2)", fontSize: 13 }}>
                         {detailText}
-                        {m.notes && <span className="text-xs text-purple-500 ml-1">🧪</span>}
+                        {m.notes && <span style={{ fontSize: 11, color: "var(--purple)", marginLeft: 4 }}>🧪</span>}
                       </td>
                       <td>
                         {!readOnly && <>
-                          <button onClick={() => handleEdit(m)} className="p-1.5 rounded hover:bg-blue-50 text-blue-500 mr-1">✏️</button>
-                          <button onClick={() => handleDelete(m.id)} className="p-1.5 rounded hover:bg-red-50 text-red-500">🗑</button>
+                          <button onClick={() => handleEdit(m)} style={{ padding: "4px 6px", borderRadius: 6, background: "none", border: "none", cursor: "pointer", color: "var(--blue)", marginRight: 4 }}>✏️</button>
+                          <button onClick={() => handleDelete(m.id)} style={{ padding: "4px 6px", borderRadius: 6, background: "none", border: "none", cursor: "pointer", color: "var(--red)" }}>🗑</button>
                         </>}
                       </td>
                     </tr>
@@ -777,22 +777,22 @@ const Movements = () => {
             
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="flex items-center justify-between px-4 py-3 border-t bg-gray-50">
-                <div className="text-sm text-gray-600">
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 16px", borderTop: "1px solid var(--border)", background: "var(--surface-2)" }}>
+                <div style={{ fontSize: 13, color: "var(--text-2)" }}>
                   Affichage {((currentPage - 1) * itemsPerPage) + 1} - {Math.min(currentPage * itemsPerPage, filteredMovements.length)} sur {filteredMovements.length} mouvements
                 </div>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setCurrentPage(1)}
                     disabled={currentPage === 1}
-                    className="px-3 py-1.5 text-sm rounded-lg border bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-secondary" style={{ fontSize: 12, padding: "6px 12px" }}
                   >
                     ««
                   </button>
                   <button
                     onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                     disabled={currentPage === 1}
-                    className="px-3 py-1.5 text-sm rounded-lg border bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-secondary" style={{ fontSize: 12, padding: "6px 12px" }}
                   >
                     ‹ Précédent
                   </button>
@@ -826,14 +826,14 @@ const Movements = () => {
                   <button
                     onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-1.5 text-sm rounded-lg border bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-secondary" style={{ fontSize: 12, padding: "6px 12px" }}
                   >
                     Suivant ›
                   </button>
                   <button
                     onClick={() => setCurrentPage(totalPages)}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-1.5 text-sm rounded-lg border bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-secondary" style={{ fontSize: 12, padding: "6px 12px" }}
                   >
                     »»
                   </button>
@@ -859,7 +859,7 @@ const Movements = () => {
           
           {/* Consumption Mode Selector */}
           {modalType === 'consumption' && (
-            <div className="flex gap-2 p-1 bg-gray-100 rounded-xl">
+            <div style={{ display: 'flex', gap: 4, padding: 4, background: 'var(--surface-2)', borderRadius: 12 }}>
               <button
                 onClick={() => setConsoMode('simple')}
                 className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 ${
@@ -903,15 +903,15 @@ const Movements = () => {
               {/* Stock disponible dans la ferme source */}
               {form.product && form.fromFarm && (
                 <div className={`p-4 rounded-xl border-2 flex items-center justify-between ${
-                  (productStockInSource || 0) > 0 ? 'bg-green-50 border-green-200' : 'bg-orange-50 border-orange-200'
+                  (productStockInSource || 0) > 0 ? 'rgba(52,199,89,0.08)' : 'rgba(255,149,0,0.08)'
                 }`}>
                   <div className="flex items-center gap-2">
                     <span className="text-xl">📦</span>
-                    <span className="text-gray-700">
+                    <span style={{ color: "var(--text-2)" }}>
                       Stock {FARMS.find(f => f.id === form.fromFarm)?.short || form.fromFarm}:
                     </span>
                   </div>
-                  <span className={`text-xl font-bold ${(productStockInSource || 0) > 0 ? 'text-green-600' : 'text-orange-600'}`}>
+                  <span style={{ fontSize: 20, fontWeight: 700, color: (productStockInSource || 0) > 0 ? 'var(--green)' : 'var(--orange)' }}>
                     {fmt(productStockInSource || 0)} {getProductUnit(form.product)}
                   </span>
                 </div>
@@ -919,13 +919,13 @@ const Movements = () => {
 
               {/* Alerte stock insuffisant */}
               {form.product && form.quantity && productStockInSource !== null && parseFloat(form.quantity) > productStockInSource && (
-                <div className="p-3 bg-orange-50 border border-orange-200 rounded-xl">
-                  <p className="text-sm text-orange-600">⚠️ Stock insuffisant ! Disponible: {fmt(productStockInSource)} {getProductUnit(form.product)}</p>
+                <div className="alert-warning">
+                  <p style={{ fontSize: 13, margin: 0, color: "var(--orange)" }}>⚠️ Stock insuffisant ! Disponible: {fmt(productStockInSource)} {getProductUnit(form.product)}</p>
                 </div>
               )}
               
               <div className="flex gap-3 pt-2">
-                <Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">Annuler</Button>
+                <Button variant="secondary" onClick={() => setShowModal(false)} style={{ flex: 1 }}>Annuler</Button>
                 <Button onClick={handleTransferSubmit} className="flex-1 bg-purple-600 hover:bg-purple-700">
                   Enregistrer
                 </Button>
@@ -1004,13 +1004,13 @@ const Movements = () => {
               {/* Stock display for exit (warehouse stock) */}
               {modalType === 'exit' && form.product && (
                 <div className={`p-4 rounded-xl border-2 flex items-center justify-between ${
-                  (productStockInWarehouse || 0) > 0 ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
+                  (productStockInWarehouse || 0) > 0 ? 'rgba(52,199,89,0.08)' : 'rgba(255,59,48,0.08)'
                 }`}>
                   <div className="flex items-center gap-2">
                     <span className="text-xl">🏭</span>
-                    <span className="text-gray-700">Stock Magasin:</span>
+                    <span style={{ color: "var(--text-2)" }}>Stock Magasin:</span>
                   </div>
-                  <span className={`text-xl font-bold ${(productStockInWarehouse || 0) > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  <span style={{ fontSize: 20, fontWeight: 700, color: (productStockInWarehouse || 0) > 0 ? 'var(--green)' : 'var(--red)' }}>
                     {fmt(productStockInWarehouse || 0)} {getProductUnit(form.product)}
                   </span>
                 </div>
@@ -1018,8 +1018,8 @@ const Movements = () => {
 
               {/* Stock warning for exit */}
               {modalType === 'exit' && form.product && form.quantity && productStockInWarehouse !== null && parseFloat(form.quantity) > productStockInWarehouse && (
-                <div className="p-3 bg-red-50 border border-red-200 rounded-xl">
-                  <p className="text-sm text-red-600 font-medium">⛔ Stock magasin insuffisant ! Disponible: {fmt(productStockInWarehouse)} {getProductUnit(form.product)}</p>
+                <div className="alert-critical">
+                  <p style={{ fontSize: 13, margin: 0, color: "var(--red)" }}>⛔ Stock magasin insuffisant ! Disponible: {fmt(productStockInWarehouse)} {getProductUnit(form.product)}</p>
                 </div>
               )}
               
@@ -1037,15 +1037,15 @@ const Movements = () => {
               {/* Stock display for consumption */}
               {modalType === 'consumption' && form.product && form.farm && (
                 <div className={`p-4 rounded-xl border-2 flex items-center justify-between ${
-                  (productStockForConso || 0) > 0 ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
+                  (productStockForConso || 0) > 0 ? 'rgba(52,199,89,0.08)' : 'rgba(255,59,48,0.08)'
                 }`}>
                   <div className="flex items-center gap-2">
                     <span className="text-xl">📦</span>
-                    <span className="text-gray-700">
+                    <span style={{ color: "var(--text-2)" }}>
                       Stock {FARMS.find(f => f.id === form.farm)?.short || form.farm}:
                     </span>
                   </div>
-                  <span className={`text-xl font-bold ${(productStockForConso || 0) > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  <span style={{ fontSize: 20, fontWeight: 700, color: (productStockForConso || 0) > 0 ? 'var(--green)' : 'var(--red)' }}>
                     {fmt(productStockForConso || 0)} {getProductUnit(form.product)}
                   </span>
                 </div>
@@ -1053,8 +1053,8 @@ const Movements = () => {
 
               {/* Stock warning for consumption */}
               {modalType === 'consumption' && form.product && form.quantity && productStockForConso !== null && parseFloat(form.quantity) > productStockForConso && (
-                <div className="p-3 bg-red-50 border border-red-200 rounded-xl">
-                  <p className="text-sm text-red-600 font-medium">⛔ Stock insuffisant ! Disponible: {fmt(productStockForConso)} {getProductUnit(form.product)}</p>
+                <div className="alert-critical">
+                  <p style={{ fontSize: 13, margin: 0, color: "var(--red)" }}>⛔ Stock insuffisant ! Disponible: {fmt(productStockForConso)} {getProductUnit(form.product)}</p>
                 </div>
               )}
               
@@ -1080,8 +1080,8 @@ const Movements = () => {
                   setShowModal(false);
                   setShowNewSupplier(false);
                   setNewSupplierName('');
-                }} className="flex-1">Annuler</Button>
-                <Button onClick={handleSubmit} className="flex-1">Enregistrer</Button>
+                }} style={{ flex: 1 }}>Annuler</Button>
+                <Button onClick={handleSubmit} style={{ flex: 1 }}>Enregistrer</Button>
               </div>
             </>
           )}
@@ -1100,7 +1100,7 @@ const Movements = () => {
 
               {/* Melange Selection */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Type de mélange</label>
+                <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--text-2)", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em" }}>Type de mélange</label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                   {availableMelanges.map(([key, m]) => (
                     <button
@@ -1113,8 +1113,8 @@ const Movements = () => {
                       }`}
                     >
                       <span className="text-lg">{m.type === 'Hydro' ? '💧' : '🌍'}</span>
-                      <p className="font-medium text-sm text-gray-800">{key}</p>
-                      <p className="text-xs text-gray-500">{m.produits.length} produits</p>
+                      <p style={{ fontWeight: 600, fontSize: 14, color: "var(--text-1)" }}>{key}</p>
+                      <p style={{ fontSize: 11, color: "var(--text-3)" }}>{m.produits.length} produits</p>
                     </button>
                   ))}
                 </div>
@@ -1136,7 +1136,7 @@ const Movements = () => {
                   
                   <div className="max-h-48 overflow-y-auto">
                     <table className="w-full text-sm">
-                      <thead className="bg-gray-50 sticky top-0">
+                      <thead style={{ background: "var(--surface-2)", position: "sticky", top: 0 }}>
                         <tr>
                           <th className="p-2 text-left w-8">✓</th>
                           <th className="p-2 text-left">Produit</th>
@@ -1161,7 +1161,7 @@ const Movements = () => {
                               </td>
                               <td className="p-2 font-medium">
                                 {p.nom}
-                                {p.isCustom && <span className="ml-1 text-xs text-blue-500">+</span>}
+                                {p.isCustom && <span style={{ marginLeft: 4, fontSize: 11, color: "var(--blue)" }}>+</span>}
                               </td>
                               <td className="p-2">
                                 <input
@@ -1193,7 +1193,7 @@ const Movements = () => {
                   {/* Add Product */}
                   <div className="p-3 bg-gray-50 border-t">
                     <p className="text-xs font-medium text-gray-500 mb-2">➕ Ajouter un produit</p>
-                    <div className="flex gap-2">
+                    <div style={{ display: "flex", gap: 8 }}>
                       <Select 
                         value={newProductName} 
                         onChange={setNewProductName}
@@ -1203,7 +1203,7 @@ const Movements = () => {
                             .filter(p => !editableProduits.find(ep => ep.nom.toUpperCase() === p.name.toUpperCase()))
                             .map(p => ({ value: p.name, label: p.name }))
                         ]}
-                        className="flex-1"
+                        style={{ flex: 1 }}
                       />
                       <Input 
                         type="number" 
@@ -1219,7 +1219,7 @@ const Movements = () => {
               )}
 
               <div className="flex gap-3 pt-2">
-                <Button variant="secondary" onClick={() => setShowModal(false)} className="flex-1">Annuler</Button>
+                <Button variant="secondary" onClick={() => setShowModal(false)} style={{ flex: 1 }}>Annuler</Button>
                 <Button onClick={handleMelangeSubmit} className="flex-1 bg-purple-600 hover:bg-purple-700">
                   🧪 Appliquer Mélange
                 </Button>
@@ -1245,23 +1245,23 @@ const Movements = () => {
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="text-lg">{m.type === 'Hydro' ? '💧' : '🌍'}</span>
-                        <span className="font-bold text-gray-800">{m.name}</span>
+                        <span style={{ fontWeight: 700, color: "var(--text-1)" }}>{m.name}</span>
                         {m.cancelled && <Badge color="gray">Annulé</Badge>}
                       </div>
-                      <p className="text-sm text-gray-500 mt-1">
+                      <p style={{ fontSize: 13, color: "var(--text-2)", marginTop: 4 }}>
                         {FARMS.find(f => f.id === m.farm)?.name} • {m.culture} • {m.date}
                       </p>
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p style={{ fontSize: 11, color: "var(--text-3)", marginTop: 4 }}>
                         {m.produits?.length || 0} produits • {fmt(m.totalQty)} unités
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-green-600">{fmtMoney(m.totalCost)}</p>
+                      <p style={{ fontWeight: 700, color: "var(--green)" }}>{fmtMoney(m.totalCost)}</p>
                       {!m.cancelled && (
                         <div className="flex gap-2 mt-2 justify-end">
                           <button 
                             onClick={() => handleEditMelange(m)}
-                            className="text-xs text-blue-500 hover:text-blue-700"
+                            style={{ fontSize: 11, color: "var(--blue)", background: "none", border: "none", cursor: "pointer" }}
                           >
                             ✏️ Modifier
                           </button>
@@ -1278,7 +1278,7 @@ const Movements = () => {
                   
                   {m.produits && m.produits.length > 0 && (
                     <div className="mt-3 pt-3 border-t">
-                      <div className="flex flex-wrap gap-2">
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                         {(expandedMelangeId === m.id ? m.produits : m.produits.slice(0, 5)).map((p, i) => (
                           <span key={i} className="text-xs bg-gray-100 px-2 py-1 rounded">
                             {p.nom}: {fmt(p.qte)}
@@ -1313,9 +1313,9 @@ const Movements = () => {
             <div className="p-3 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl">
               <div className="flex items-center gap-2">
                 <span className="text-lg">{editingMelange.type === 'Hydro' ? '💧' : '🌍'}</span>
-                <span className="font-bold text-gray-800">{editingMelange.name}</span>
+                <span style={{ fontWeight: 700, color: "var(--text-1)" }}>{editingMelange.name}</span>
               </div>
-              <p className="text-sm text-gray-500 mt-1">
+              <p style={{ fontSize: 13, color: "var(--text-2)", marginTop: 4 }}>
                 {FARMS.find(f => f.id === editingMelange.farm)?.name} • {editingMelange.culture} • {editingMelange.date}
               </p>
             </div>
@@ -1358,7 +1358,7 @@ const Movements = () => {
             {/* Add product section */}
             <div className="p-3 bg-blue-50 rounded-xl">
               <p className="text-sm font-medium text-gray-600 mb-2">➕ Ajouter un produit :</p>
-              <div className="flex gap-2">
+              <div style={{ display: "flex", gap: 8 }}>
                 <select
                   id="addProductSelect"
                   className="flex-1 px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
@@ -1430,8 +1430,8 @@ const Movements = () => {
             />
             
             <div className="p-3 bg-gray-50 rounded-xl">
-              <p className="text-sm text-gray-600">Type</p>
-              <p className="font-bold text-gray-800">
+              <p style={{ fontSize: 13, color: "var(--text-2)" }}>Type</p>
+              <p style={{ fontWeight: 700, color: "var(--text-1)" }}>
                 {editingMovement.type === 'entry' ? '📥 Entrée' : 
                  editingMovement.type === 'exit' ? '📤 Sortie' : 
                  editingMovement.type === 'consumption' ? '🔥 Consommation' : 
@@ -1492,7 +1492,7 @@ const Movements = () => {
             )}
             
             <div className="flex gap-3 pt-2">
-              <Button variant="secondary" onClick={() => { setShowEditModal(false); setEditingMovement(null); }} className="flex-1">
+              <Button variant="secondary" onClick={() => { setShowEditModal(false); setEditingMovement(null); }} style={{ flex: 1 }}>
                 Annuler
               </Button>
               <Button onClick={handleEditSubmit} className="flex-1 bg-blue-600 hover:bg-blue-700">

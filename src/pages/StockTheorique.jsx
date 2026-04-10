@@ -156,7 +156,7 @@ const StockTheorique = () => {
     );
 
     return (
-      <div className="overflow-x-auto">
+      <div style={{ overflowX: "auto" }}>
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50 border-b">
@@ -380,8 +380,8 @@ const StockTheorique = () => {
         <p className="text-xs text-gray-600">
           <span className="font-bold text-indigo-600">Stock théorique</span> =
           Stock physique du 25/{prevMonthLabel}
-          <span className="text-green-600"> + Entrées du magasin</span>
-          <span className="text-blue-500"> + Transferts reçus</span>
+          <span style={{ color: "var(--green)" }}> + Entrées du magasin</span>
+          <span style={{ color: "var(--blue)" }}> + Transferts reçus</span>
           <span className="text-orange-500"> − Transferts envoyés</span>
           <span className="text-red-500"> − Consommations</span>
           <br/>

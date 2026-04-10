@@ -416,7 +416,7 @@ const PhysicalInventory = () => {
             </div>
 
             {viewingInventory?.id === inv.id && inv.comparison && (
-              <div className="overflow-x-auto">
+              <div style={{ overflowX: "auto" }}>
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-gray-100 border-b">
@@ -466,7 +466,7 @@ const PhysicalInventory = () => {
       </div>
 
       {/* Mode Tabs */}
-      <div className="flex gap-2">
+      <div style={{ display: "flex", gap: 8 }}>
         <button onClick={() => setMode('new')}
           className={`px-5 py-3 rounded-xl font-medium transition-all ${
             mode === 'new' ? 'bg-green-500 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-gray-50 border'}`}>
@@ -580,7 +580,7 @@ const PhysicalInventory = () => {
 
               {/* Action Buttons */}
               {stats.entered > 0 && (
-                <div className="flex flex-wrap gap-2">
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                   <button onClick={handleSaveInventory}
                     className={`px-5 py-2.5 ${editingInventoryId ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-green-500 hover:bg-green-600'} text-white rounded-xl font-medium transition-colors text-sm shadow-lg`}>
                     {editingInventoryId ? '✏️ Mettre à jour' : '💾 Sauvegarder'}
@@ -602,7 +602,7 @@ const PhysicalInventory = () => {
 
               {/* Filters */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <Input placeholder="🔍 Rechercher un produit..." value={search} onChange={setSearch} className="flex-1" />
+                <Input placeholder="🔍 Rechercher un produit..." value={search} onChange={setSearch} style={{ flex: 1 }} />
                 <select value={filterDiff} onChange={(e) => setFilterDiff(e.target.value)}
                   className="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-700 font-medium text-sm sm:w-52">
                   <option value="ALL">📊 Tous les produits</option>
@@ -629,7 +629,7 @@ const PhysicalInventory = () => {
                 {comparisonData.length === 0 ? (
                   <div className="p-8"><EmptyState icon="📭" message="Aucun produit trouvé" /></div>
                 ) : (
-                  <div className="overflow-x-auto">
+                  <div style={{ overflowX: "auto" }}>
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-gray-100 border-b">
@@ -772,7 +772,7 @@ const PhysicalInventory = () => {
           <div className="bg-white rounded-2xl p-6 max-w-md mx-4 shadow-2xl">
             <h3 className="text-xl font-bold text-gray-900 mb-2">🗑️ Supprimer l'inventaire ?</h3>
             <p className="text-gray-600 mb-6">Cette action est irréversible.</p>
-            <div className="flex gap-3">
+            <div style={{ display: "flex", gap: 12 }}>
               <button onClick={() => setShowDeleteConfirm(null)}
                 className="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-colors">Annuler</button>
               <button onClick={() => handleDeleteInventory(showDeleteConfirm)}
