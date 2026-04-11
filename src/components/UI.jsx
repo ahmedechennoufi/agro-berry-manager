@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 // ─── CARD ─────────────────────────────────────────
 export const Card = ({ children, className = '', onClick, style = {} }) => (
@@ -97,8 +98,8 @@ export const Select = ({ label, value, onChange, options, className = '', requir
 // ─── MODAL ────────────────────────────────────────
 export const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
   if (!isOpen) return null;
-  return (
-    <div className="modal-overlay" onClick={onClose}>
+  const modal = (
+    <div className="modal-overlay" onClick={onClose} style={{ position: 'fixed', inset: 0, zIndex: 9999 }}>
       <div
         className={`modal-content ${size === 'lg' ? 'modal-lg' : ''}`}
         onClick={e => e.stopPropagation()}
@@ -116,6 +117,7 @@ export const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
       </div>
     </div>
   );
+  return ReactDOM.createPortal(modal, document.body);
 };
 
 // ─── EMPTY STATE ──────────────────────────────────
