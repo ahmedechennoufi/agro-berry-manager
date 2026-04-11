@@ -344,7 +344,7 @@ const Inventory = () => {
       </div>
 
       {/* Month Tabs */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
         {SEASON_MONTHS.map(m => {
           const hasData = stockHistoryData[m.id] !== undefined;
           const monthIdx = SEASON_MONTHS.findIndex(mo => mo.id === m.id);
@@ -361,18 +361,25 @@ const Inventory = () => {
             <button
               key={m.id}
               onClick={() => handleMonthClick(m)}
-              className={`px-4 py-3 rounded-xl font-medium transition-all ${
-                selectedMonth === m.id
-                  ? 'bg-green-500 text-white shadow-lg'
-                  : isAvailable
-                    ? 'bg-white text-gray-600 hover:bg-gray-50 border'
-                    : 'bg-gray-100 text-gray-400 border cursor-not-allowed'
-              }`}
+              style={{
+                padding: '7px 13px',
+                borderRadius: 18,
+                border: selectedMonth === m.id ? '2px solid #1a8a36' : '1.5px solid #e5e7eb',
+                background: selectedMonth === m.id ? '#1a8a36' : isAvailable ? 'white' : '#f3f4f6',
+                color: selectedMonth === m.id ? 'white' : isAvailable ? '#374151' : '#9ca3af',
+                cursor: isAvailable ? 'pointer' : 'not-allowed',
+                fontSize: 12,
+                fontWeight: 600,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 5,
+                whiteSpace: 'nowrap',
+                transition: 'all .15s'
+              }}
             >
-              <div className="text-sm font-bold">{m.name.toUpperCase()}</div>
-              <div className="text-xs opacity-75">{m.date.split('-').reverse().join('/')}</div>
+              <span>{m.name.toUpperCase()}</span>
               {hasPhysForMonth && (
-                <div className={`text-xs mt-1 ${selectedMonth === m.id ? 'text-green-100' : 'text-green-600'}`}>📋 Physique</div>
+                <span style={{ fontSize: 10, background: selectedMonth === m.id ? 'rgba(255,255,255,.25)' : '#dcfce7', color: selectedMonth === m.id ? 'white' : '#16a34a', borderRadius: 7, padding: '1px 5px' }}>📋</span>
               )}
             </button>
           );
@@ -450,10 +457,10 @@ const Inventory = () => {
           <div className="p-8"><EmptyState icon="📭" message="Aucun stock pour ce mois" /></div>
         ) : (
           <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "auto", minWidth: 900, borderCollapse: "collapse", fontSize: 13 }}>
+            <table style={{ width: "100%", minWidth: 680, borderCollapse: "collapse", fontSize: 13 }}>
               <thead>
                 <tr className="bg-gray-100 border-b">
-                  <th className="text-left p-4 font-semibold text-gray-700">PRODUIT</th>
+                  <th className="text-left p-4 font-semibold text-gray-700" style={{ position:"sticky", left:0, background:"#f3f4f6", zIndex:2 }}>PRODUIT</th>
                   <th className="text-center p-4 font-semibold text-gray-500">UNITÉ</th>
                   <th className="text-right p-4 font-semibold text-blue-600">🌿 AGB 1</th>
                   <th className="text-right p-4 font-semibold text-green-600">🌱 AGB 2</th>
@@ -466,7 +473,7 @@ const Inventory = () => {
               <tbody>
                 {stockData.map((p, idx) => (
                   <tr key={idx} className="border-b hover:bg-gray-50">
-                    <td className="p-4 font-medium text-gray-800">{p.name}</td>
+                    <td className="p-4 font-medium text-gray-800" style={{ position:"sticky", left:0, background:"white", zIndex:1 }}>{p.name}</td>
                     <td className="p-4 text-center text-gray-500">{p.unit}</td>
                     <td className="p-4 text-right text-blue-600">{p.AB1 > 0.01 ? fmt(p.AB1) : '-'}</td>
                     <td className="p-4 text-right text-green-600">{p.AB2 > 0.01 ? fmt(p.AB2) : '-'}</td>
