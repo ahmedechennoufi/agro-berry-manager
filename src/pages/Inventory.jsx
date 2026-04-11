@@ -464,34 +464,56 @@ const Inventory = () => {
         {stockData.length === 0 ? (
           <div className="p-8"><EmptyState icon="📭" message="Aucun stock pour ce mois" /></div>
         ) : (
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", minWidth: 680, borderCollapse: "collapse", fontSize: 13 }}>
+          <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+            <table style={{ width: "100%", minWidth: 750, borderCollapse: "collapse", fontSize: 13, tableLayout: "fixed" }}>
+              <colgroup>
+                <col style={{ width: "28%" }} />
+                <col style={{ width: "6%" }} />
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "16%" }} />
+              </colgroup>
               <thead>
-                <tr className="bg-gray-100 border-b">
-                  <th className="text-left p-4 font-semibold text-gray-700" style={{ position:"sticky", left:0, background:"#f3f4f6", zIndex:2, minWidth:200 }}>PRODUIT</th>
-                  <th className="text-center p-4 font-semibold text-gray-500">UNITÉ</th>
-                  <th className="text-right p-4 font-semibold text-blue-600">🌿 AGB 1</th>
-                  <th className="text-right p-4 font-semibold text-green-600">🌱 AGB 2</th>
-                  <th className="text-right p-4 font-semibold text-purple-600">🌾 AGB 3</th>
-                  <th className="text-right p-4 font-semibold text-gray-700">TOTAL</th>
-                  <th className="text-right p-4 font-semibold text-gray-500">PRIX UNIT.</th>
-                  <th className="text-right p-4 font-semibold text-green-600">VALEUR</th>
+                <tr style={{ background: "#f3f4f6", borderBottom: "2px solid #e5e7eb" }}>
+                  <th style={{ textAlign:"left", padding:"10px 12px", fontWeight:700, color:"#374151", fontSize:11, textTransform:"uppercase", letterSpacing:".4px", position:"sticky", left:0, background:"#f3f4f6", zIndex:3 }}>Produit</th>
+                  <th style={{ textAlign:"center", padding:"10px 6px", fontWeight:600, color:"#6b7280", fontSize:11 }}>Unité</th>
+                  <th style={{ textAlign:"right", padding:"10px 12px", fontWeight:700, color:"#16a34a", fontSize:11 }}>🌿 AGB 1</th>
+                  <th style={{ textAlign:"right", padding:"10px 12px", fontWeight:700, color:"#2563eb", fontSize:11 }}>🌱 AGB 2</th>
+                  <th style={{ textAlign:"right", padding:"10px 12px", fontWeight:700, color:"#7c3aed", fontSize:11 }}>🌾 AGB 3</th>
+                  <th style={{ textAlign:"right", padding:"10px 12px", fontWeight:700, color:"#111827", fontSize:11 }}>Total</th>
+                  <th style={{ textAlign:"right", padding:"10px 12px", fontWeight:600, color:"#6b7280", fontSize:11 }}>Prix</th>
+                  <th style={{ textAlign:"right", padding:"10px 12px", fontWeight:700, color:"#16a34a", fontSize:11 }}>Valeur</th>
                 </tr>
               </thead>
               <tbody>
                 {stockData.map((p, idx) => (
-                  <tr key={idx} className="border-b hover:bg-gray-50">
-                    <td className="p-4 font-medium text-gray-800" style={{ position:"sticky", left:0, background:"white", zIndex:1 }}>{p.name}</td>
-                    <td className="p-4 text-center text-gray-500">{p.unit}</td>
-                    <td className="p-4 text-right text-blue-600">{p.AB1 > 0.01 ? fmt(p.AB1) : '-'}</td>
-                    <td className="p-4 text-right text-green-600">{p.AB2 > 0.01 ? fmt(p.AB2) : '-'}</td>
-                    <td className="p-4 text-right text-purple-600">{p.AB3 > 0.01 ? fmt(p.AB3) : '-'}</td>
-                    <td className="p-4 text-right font-bold text-gray-800">{fmt(p.total)}</td>
-                    <td className="p-4 text-right text-gray-500">{fmt(p.price)}</td>
-                    <td className="p-4 text-right font-bold text-green-600">{fmtMoney(p.value)}</td>
+                  <tr key={idx} style={{ borderBottom:"1px solid #f3f4f6", background: idx%2===0?"white":"#fafafa" }}>
+                    <td style={{ padding:"9px 12px", fontWeight:600, color:"#111827", fontSize:13, position:"sticky", left:0, background: idx%2===0?"white":"#fafafa", zIndex:1, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{p.name}</td>
+                    <td style={{ padding:"9px 6px", textAlign:"center", color:"#9ca3af", fontSize:12 }}>{p.unit}</td>
+                    <td style={{ padding:"9px 12px", textAlign:"right", fontWeight: p.AB1>0.01?600:400, color: p.AB1>0.01?"#16a34a":"#d1d5db" }}>{p.AB1 > 0.01 ? fmt(p.AB1) : '—'}</td>
+                    <td style={{ padding:"9px 12px", textAlign:"right", fontWeight: p.AB2>0.01?600:400, color: p.AB2>0.01?"#2563eb":"#d1d5db" }}>{p.AB2 > 0.01 ? fmt(p.AB2) : '—'}</td>
+                    <td style={{ padding:"9px 12px", textAlign:"right", fontWeight: p.AB3>0.01?600:400, color: p.AB3>0.01?"#7c3aed":"#d1d5db" }}>{p.AB3 > 0.01 ? fmt(p.AB3) : '—'}</td>
+                    <td style={{ padding:"9px 12px", textAlign:"right", fontWeight:700, color: p.total<0?"#ef4444":"#111827" }}>{fmt(p.total)}</td>
+                    <td style={{ padding:"9px 12px", textAlign:"right", color:"#6b7280", fontSize:12 }}>{p.price > 0 ? fmt(p.price) : '—'}</td>
+                    <td style={{ padding:"9px 12px", textAlign:"right", fontWeight:700, color:"#16a34a" }}>{fmtMoney(p.value)}</td>
                   </tr>
                 ))}
               </tbody>
+              <tfoot>
+                <tr style={{ background:"#f0fdf4", fontWeight:700, borderTop:"2px solid #bbf7d0" }}>
+                  <td style={{ padding:"10px 12px", color:"#111827", fontSize:12, position:"sticky", left:0, background:"#f0fdf4" }}>TOTAL — {stockData.length} produits</td>
+                  <td></td>
+                  <td style={{ padding:"10px 12px", textAlign:"right", color:"#16a34a" }}>{fmt(stockData.reduce((s,p)=>s+p.AB1,0))}</td>
+                  <td style={{ padding:"10px 12px", textAlign:"right", color:"#2563eb" }}>{fmt(stockData.reduce((s,p)=>s+p.AB2,0))}</td>
+                  <td style={{ padding:"10px 12px", textAlign:"right", color:"#7c3aed" }}>{fmt(stockData.reduce((s,p)=>s+p.AB3,0))}</td>
+                  <td style={{ padding:"10px 12px", textAlign:"right", color:"#111827" }}>{fmt(totals.totalQty)}</td>
+                  <td></td>
+                  <td style={{ padding:"10px 12px", textAlign:"right", color:"#16a34a", fontSize:14 }}>{fmtMoney(totals.totalValue)}</td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         )}
