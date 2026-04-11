@@ -1573,3 +1573,4 @@ export const getInventaireForPeriod = (periodDate) => {
 
 // Initialiser au chargement
 initializeData();
+// build 1775895416

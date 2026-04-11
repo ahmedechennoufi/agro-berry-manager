@@ -381,6 +381,9 @@ const Inventory = () => {
               {hasPhysForMonth && (
                 <span style={{ fontSize: 10, background: selectedMonth === m.id ? 'rgba(255,255,255,.25)' : '#dcfce7', color: selectedMonth === m.id ? 'white' : '#16a34a', borderRadius: 7, padding: '1px 5px' }}>📋</span>
               )}
+              {!hasPhysForMonth && stockHistoryData[m.id] !== undefined && (
+                <span style={{ fontSize: 10, background: selectedMonth === m.id ? 'rgba(255,255,255,.2)' : '#fef3c7', color: selectedMonth === m.id ? '#fff' : '#d97706', borderRadius: 7, padding: '1px 5px' }}>📁</span>
+              )}
             </button>
           );
         })}
@@ -445,6 +448,11 @@ const Inventory = () => {
                 {physicalInfo.farms.length < 3 && ` (${physicalInfo.farms.join(', ')})`}
               </span>
             )}
+            {!physicalInfo.hasPhysical && hasImportedData && (
+              <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded font-bold">
+                📁 Données Historiques (snapshot)
+              </span>
+            )}
             {!physicalInfo.hasPhysical && !hasImportedData && (
               <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">
                 📊 Calculé depuis mouvements
@@ -460,7 +468,7 @@ const Inventory = () => {
             <table style={{ width: "100%", minWidth: 680, borderCollapse: "collapse", fontSize: 13 }}>
               <thead>
                 <tr className="bg-gray-100 border-b">
-                  <th className="text-left p-4 font-semibold text-gray-700" style={{ position:"sticky", left:0, background:"#f3f4f6", zIndex:2 }}>PRODUIT</th>
+                  <th className="text-left p-4 font-semibold text-gray-700" style={{ position:"sticky", left:0, background:"#f3f4f6", zIndex:2, minWidth:200 }}>PRODUIT</th>
                   <th className="text-center p-4 font-semibold text-gray-500">UNITÉ</th>
                   <th className="text-right p-4 font-semibold text-blue-600">🌿 AGB 1</th>
                   <th className="text-right p-4 font-semibold text-green-600">🌱 AGB 2</th>

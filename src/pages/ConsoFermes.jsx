@@ -266,10 +266,10 @@ const ConsoFermes = () => {
         </div>
         {tableData.length === 0 ? <div className="p-8"><EmptyState icon="📭" message="Aucune donnée pour cette période" /></div> : (
           <div style={{ overflowX: "auto" }}>
-            <table style={{ minWidth: 1600, fontSize: 13, borderCollapse: "collapse" }}>
+            <table style={{ width: "100%", minWidth: 1400, fontSize: 12, borderCollapse: "collapse" }}>
               <thead>
                 <tr className="bg-gray-50 border-b">
-                  <th className="text-left p-3 font-semibold text-gray-700" rowSpan={2}>ARTICLE</th>
+                  <th className="text-left p-3 font-semibold text-gray-700" rowSpan={2} style={{ position:"sticky", left:0, background:"#f9fafb", zIndex:3 }}>ARTICLE</th>
                   <th className="text-center p-2 font-medium text-gray-500 text-xs" rowSpan={2}>Unité</th>
                   <th className="text-center p-2 font-medium text-gray-500 text-xs" rowSpan={2}>Prix</th>
                   <th colSpan={4} className="text-center p-2 font-bold text-blue-700 bg-blue-100 border-l-4 border-blue-300">📦 STOCK INITIAL</th>
@@ -324,8 +324,8 @@ const ConsoFermes = () => {
                   };
                   return (
                     <tr key={idx} className="border-b hover:bg-gray-50">
-                      <td className="p-3">
-                        <div className="font-semibold text-gray-800">{d.name}</div>
+                      <td className="p-3" style={{ position:"sticky", left:0, background: idx%2===0 ? "white" : "#f9fafb", zIndex:1, minWidth:160 }}>
+                        <div className="font-semibold text-gray-800" style={{fontSize:12}}>{d.name}</div>
                         <div className="text-xs text-gray-400">{d.category}</div>
                       </td>
                       <td className="p-2 text-center text-gray-500 text-xs">{d.unit}</td>
@@ -364,7 +364,7 @@ const ConsoFermes = () => {
                 })}
                 {/* TOTAUX Row */}
                 <tr className="border-t-2 border-gray-300 bg-gray-100 font-bold">
-                  <td className="p-3 text-right" colSpan={3}>TOTAUX</td>
+                  <td className="p-3 text-right" colSpan={3} style={{ position:"sticky", left:0, background:"#f3f4f6", zIndex:1 }}>TOTAUX</td>
                   <td colSpan={3} className="p-2 text-center bg-blue-50"></td>
                   <td className="p-2 text-center bg-blue-200 text-blue-800"><div>{fmt(totals.initQty)}</div></td>
                   <td colSpan={4} className="p-2 text-center bg-green-50"></td>
@@ -377,7 +377,7 @@ const ConsoFermes = () => {
                 </tr>
                 {/* VALEUR Row */}
                 <tr className="bg-gray-50 font-bold">
-                  <td className="p-3 text-right" colSpan={3}>VALEUR (MAD)</td>
+                  <td className="p-3 text-right" colSpan={3} style={{ position:"sticky", left:0, background:"#f9fafb", zIndex:1 }}>VALEUR (MAD)</td>
                   <td colSpan={3} className="p-2 text-center bg-blue-50"></td>
                   <td className="p-2 text-center bg-blue-100 text-blue-700 text-sm"><div>{fmtMoney(totals.initVal)}</div></td>
                   <td colSpan={4} className="p-2 text-center bg-green-50"></td>
