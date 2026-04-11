@@ -21,7 +21,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 68; // v5.6.3 - Fix UNITÉ → U (encodage)
+const CURRENT_DATA_VERSION = 69; // v5.6.4 - Fix toutes unités corrompues
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
@@ -114,15 +114,27 @@ const migrateProductNames = () => {
   
   console.log('✅ Migration orthographe produits effectuée');
   
-  // Fix unit encoding: UNITÉ → U
+  // Fix unit encoding: toute unité corrompue ou non reconnue → id valide
+  const VALID_UNITS = ['KG', 'L', 'U', 'BOITE', 'SAC'];
+  const UNIT_NAME_MAP = {
+    'kilogramme (kg)': 'KG', 'kg': 'KG',
+    'litre (l)': 'L', 'l': 'L',
+    'unité': 'U', 'unite': 'U', 'u': 'U',
+    'boîte': 'BOITE', 'boite': 'BOITE',
+    'sac': 'SAC'
+  };
   const prods = JSON.parse(localStorage.getItem(STORAGE_KEYS.products) || '[]');
   let unitFixed = false;
   prods.forEach(p => {
-    if (p.unit === 'UNIT\u00C9' || p.unit === 'UNIT\u00c9') { p.unit = 'U'; unitFixed = true; }
+    if (!VALID_UNITS.includes(p.unit)) {
+      const normalized = UNIT_NAME_MAP[(p.unit || '').toLowerCase().trim()];
+      p.unit = normalized || 'U';
+      unitFixed = true;
+    }
   });
   if (unitFixed) {
     localStorage.setItem(STORAGE_KEYS.products, JSON.stringify(prods));
-    console.log('✅ Migration unité UNITÉ→U effectuée');
+    console.log('✅ Migration unités corrompues → ids valides');
   }
 };
 

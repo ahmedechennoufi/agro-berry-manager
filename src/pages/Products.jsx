@@ -120,7 +120,7 @@ const Products = () => {
                     <p style={{ fontWeight: 600, color: 'var(--text-1)', margin: '0 0 5px', fontSize: 14 }}>{p.name}</p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                       <Badge color={getCategoryColor(p.category)}>{p.category}</Badge>
-                      <span style={{ fontSize: 11, color: 'var(--text-2)' }}>{p.unit}</span>
+                      <span style={{ fontSize: 11, color: 'var(--text-2)' }}>{UNITS.find(u => u.id === p.unit)?.id || (['KG','L','U','BOITE','SAC'].includes(p.unit) ? p.unit : 'U')}</span>
                     </div>
                     {p.threshold && (
                       <p style={{ fontSize: 11, color: 'var(--orange)', margin: '5px 0 0' }}>⚠️ Seuil: {p.threshold}</p>
