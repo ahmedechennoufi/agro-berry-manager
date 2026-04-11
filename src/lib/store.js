@@ -21,7 +21,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 69; // v5.6.4 - Fix toutes unités corrompues
+const CURRENT_DATA_VERSION = 70; // v5.6.5 - Fix CORNIERE encodage
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
@@ -32,7 +32,9 @@ const migrateProductNames = () => {
     'CODACIDE': 'CODACIDE OIL',
     'FOLIASTIM PURE': 'FOLIASTIM',
     'MICROMIX': 'MICRO MIX',
-    'LUNA FUSIONE': 'LUNA FUSION'
+    'LUNA FUSIONE': 'LUNA FUSION',
+    'CORNIÈRE': 'CORNIERE',
+    'CORNIèRE': 'CORNIERE'
     // Add more renames here if needed
   };
   
