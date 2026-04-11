@@ -31541,7 +31541,9 @@
       "updatedAt": "2026-04-09T11:01:12.894Z"
     }
   ],
-  "deletedMovementIds": [],
-  "exportDate": "2026-04-11T10:05:18.551Z",
+  "deletedMovementIds": [
+    1775902068034
+  ],
+  "exportDate": "2026-04-11T10:07:58.637Z",
   "melangesConfig": {}
 }
