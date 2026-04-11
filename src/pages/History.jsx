@@ -1,12 +1,22 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useApp } from '../App';
-import { Card, Button, Select, Input, Badge, EmptyState } from '../components/UI';
-import { FARMS } from '../lib/constants';
 import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
 import { calculateFarmStock, getPhysicalInventories, getAveragePrice } from '../lib/store';
 import stockHistoryData from '../lib/stockHistory.json';
 
 const STORAGE_KEY = 'agro_stock_history_v1';
+
+const fmtDate = (d) => {
+  if (!d) return '';
+  const [y, m, dd] = d.split('-');
+  return `${dd}/${m}/${y}`;
+};
+
+const FC = {
+  AB1: { text: '#1a8a36', bg: '#f0faf2', border: 'rgba(52,199,89,.2)' },
+  AB2: { text: '#0066cc', bg: '#f0f6ff', border: 'rgba(0,122,255,.2)' },
+  AB3: { text: '#7c3aed', bg: '#f5f0ff', border: 'rgba(124,58,237,.2)' },
+};
 
 const History = () => {
   const { movements, products } = useApp();
@@ -14,571 +24,282 @@ const History = () => {
   const [selectedFarm, setSelectedFarm] = useState('ALL');
   const [search, setSearch] = useState('');
   const [history, setHistory] = useState([]);
-  const [showExportModal, setShowExportModal] = useState(false);
-  const [pendingMonth, setPendingMonth] = useState(null);
 
-  // Load history from localStorage + initial data
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
-    let savedHistory = saved ? JSON.parse(saved) : [];
-    
-    // Month name to date mapping
-    const monthDates = {
-      'SEPTEMBRE': { date: '2025-09-25', month: 'Septembre 2025' },
-      'OCTOBRE': { date: '2025-10-25', month: 'Octobre 2025' },
-      'NOVEMBRE': { date: '2025-11-25', month: 'Novembre 2025' },
-      'DECEMBRE': { date: '2025-12-25', month: 'Décembre 2025' },
-      'DECEMBRE_2025': { date: '2025-12-25', month: 'Décembre 2025' },
-      'JANVIER': { date: '2026-01-25', month: 'Janvier 2026' },
-      'FEVRIER': { date: '2026-02-25', month: 'Février 2026' },
-      'MARS': { date: '2026-03-25', month: 'Mars 2026' },
-      'AVRIL': { date: '2026-04-25', month: 'Avril 2026' }
+    let hist = saved ? JSON.parse(saved) : [];
+    const md = {
+      'SEPTEMBRE':    { date: '2025-09-25', month: 'Septembre 2025' },
+      'OCTOBRE':      { date: '2025-10-25', month: 'Octobre 2025' },
+      'NOVEMBRE':     { date: '2025-11-25', month: 'Novembre 2025' },
+      'DECEMBRE':     { date: '2025-12-25', month: 'Décembre 2025' },
+      'DECEMBRE_2025':{ date: '2025-12-25', month: 'Décembre 2025' },
+      'JANVIER':      { date: '2026-01-25', month: 'Janvier 2026' },
+      'FEVRIER':      { date: '2026-02-25', month: 'Février 2026' },
+      'MARS':         { date: '2026-03-25', month: 'Mars 2026' },
+      'AVRIL':        { date: '2026-04-25', month: 'Avril 2026' },
     };
-    
-    // Convert stockHistoryData object to array
-    const stockHistoryArray = Object.entries(stockHistoryData)
-      .filter(([key]) => key !== 'DECEMBRE_2025') // Skip duplicate
-      .map(([key, value]) => ({
-        ...value,
-        month: value.name || monthDates[key]?.month || key,
-        date: value.date || monthDates[key]?.date || '2025-01-25'
-      }));
-    
-    // Merge with initial data (don't duplicate)
-    const existingDates = savedHistory.map(h => h.date);
-    stockHistoryArray.forEach(h => {
-      if (!existingDates.includes(h.date)) {
-        savedHistory.push(h);
-      }
-    });
-    
-    // Sort by date
-    savedHistory.sort((a, b) => a.date.localeCompare(b.date));
-    setHistory(savedHistory);
-    
-    // Save merged
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedHistory));
-    
-    // Select latest month
-    if (savedHistory.length > 0) {
-      setSelectedMonth(savedHistory[savedHistory.length - 1].date);
-    }
+    const fromJson = Object.entries(stockHistoryData)
+      .filter(([k]) => k !== 'DECEMBRE_2025')
+      .map(([k, v]) => ({ ...v, month: v.name || md[k]?.month || k, date: v.date || md[k]?.date || '2025-01-25' }));
+    const existing = new Set(hist.map(h => h.date));
+    fromJson.forEach(h => { if (!existing.has(h.date)) hist.push(h); });
+    hist.sort((a, b) => a.date.localeCompare(b.date));
+    setHistory(hist);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(hist));
+    if (hist.length) setSelectedMonth(hist[hist.length - 1].date);
   }, []);
 
-  // Build month data from physical inventories
   const physicalInventoryMonths = useMemo(() => {
     const physInvs = getPhysicalInventories();
     if (!physInvs.length) return {};
-    
-    // Group physical inventories by month (YYYY-MM)
     const byMonth = {};
     physInvs.forEach(inv => {
       if (!inv.date || !inv.data || !inv.farm) return;
-      const ym = inv.date.substring(0, 7); // YYYY-MM
+      const ym = inv.date.substring(0, 7);
       if (!byMonth[ym]) byMonth[ym] = {};
-      
-      // Map farm to AB key
-      const farmKey = inv.farm === 'AGRO BERRY 1' ? 'AB1' 
-        : inv.farm === 'AGRO BERRY 2' ? 'AB2' 
-        : inv.farm === 'AGRO BERRY 3' ? 'AB3' : null;
-      if (!farmKey) return;
-      
-      // Keep the latest inventory per farm per month
-      if (!byMonth[ym][farmKey] || inv.date >= (byMonth[ym][farmKey].date || '')) {
-        byMonth[ym][farmKey] = inv;
-      }
+      const fk = inv.farm === 'AGRO BERRY 1' ? 'AB1' : inv.farm === 'AGRO BERRY 2' ? 'AB2' : inv.farm === 'AGRO BERRY 3' ? 'AB3' : null;
+      if (!fk) return;
+      if (!byMonth[ym][fk] || inv.date >= (byMonth[ym][fk].date || '')) byMonth[ym][fk] = inv;
     });
-    
-    // Build month data for months that have at least one farm inventory
     const result = {};
     Object.entries(byMonth).forEach(([ym, farms]) => {
-      const monthData = { AB1: [], AB2: [], AB3: [], isPhysical: true, physicalFarms: [] };
-      
-      ['AB1', 'AB2', 'AB3'].forEach(farmKey => {
-        const inv = farms[farmKey];
-        if (inv) {
-          monthData.physicalFarms.push(farmKey);
-          const productMap = {};
-          
-          // 1. First use inv.data (raw input quantities - source of truth for physical count)
-          if (inv.data) {
-            Object.entries(inv.data).forEach(([product, qty]) => {
-              const quantity = parseFloat(qty);
-              if (!isNaN(quantity) && qty !== '' && qty !== null && qty !== undefined) {
-                const price = getAveragePrice(product) || 0;
-                productMap[product.toUpperCase()] = { product, quantity, price };
-              }
-            });
-          }
-          
-          // 2. Also use inv.comparison as backup (includes products with hasPhysical=true)
-          if (inv.comparison && Array.isArray(inv.comparison)) {
-            inv.comparison.forEach(item => {
-              const key = (item.name || '').toUpperCase();
-              if (!productMap[key] && item.physical !== undefined && item.physical !== null) {
-                const quantity = parseFloat(item.physical) || 0;
-                const price = getAveragePrice(item.name) || 0;
-                productMap[key] = { product: item.name, quantity, price };
-              }
-            });
-          }
-          
-          monthData[farmKey] = Object.values(productMap).filter(p => p.quantity > 0);
+      const m = { AB1: [], AB2: [], AB3: [], isPhysical: true, physicalFarms: [] };
+      ['AB1','AB2','AB3'].forEach(fk => {
+        const inv = farms[fk];
+        if (!inv) return;
+        m.physicalFarms.push(fk);
+        const map = {};
+        if (inv.data) {
+          Object.entries(inv.data).forEach(([prod, qty]) => {
+            const q = parseFloat(qty);
+            if (!isNaN(q) && qty !== '' && qty !== null && q > 0)
+              map[prod.toUpperCase()] = { product: prod, quantity: q, price: getAveragePrice(prod) || 0 };
+          });
         }
+        if (inv.comparison) {
+          inv.comparison.forEach(item => {
+            const k = (item.name||'').toUpperCase();
+            if (!map[k] && item.physical != null) {
+              const q = parseFloat(item.physical) || 0;
+              if (q > 0) map[k] = { product: item.name, quantity: q, price: getAveragePrice(item.name)||0 };
+            }
+          });
+        }
+        m[fk] = Object.values(map);
       });
-      
-      result[ym] = monthData;
+      result[ym] = m;
     });
-    
     return result;
-  }, [movements]); // recalc when movements change (which triggers re-render)
+  }, [movements]);
 
-  // Calculate current stock (using calculateFarmStock which already uses physical inventory as base)
   const currentStock = useMemo(() => {
-    const ab1 = calculateFarmStock('AGRO BERRY 1');
-    const ab2 = calculateFarmStock('AGRO BERRY 2');
-    const ab3 = calculateFarmStock('AGRO BERRY 3');
-    
-    const formatStock = (stock) => {
-      return Object.entries(stock)
-        .map(([product, data]) => ({
-          product,
-          quantity: data.quantity,
-          price: data.price || 0
-        }));
-    };
-
-    // Use the 25th of the CURRENT month dynamically (not hardcoded January)
+    const toArr = (s) => Object.entries(s).map(([product,d]) => ({ product, quantity: d.quantity, price: d.price||0 }));
     const now = new Date();
-    const y = now.getFullYear();
-    const m = String(now.getMonth() + 1).padStart(2, '0');
-    const currentDate = `${y}-${m}-25`;
-    const currentMonthName = now.toLocaleString('fr-FR', { month: 'long', year: 'numeric' });
-    
     return {
-      date: currentDate,
-      month: currentMonthName,
-      AB1: formatStock(ab1),
-      AB2: formatStock(ab2),
-      AB3: formatStock(ab3),
-      isCalculated: true
+      date: `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-25`,
+      month: now.toLocaleString('fr-FR', { month:'long', year:'numeric' }),
+      AB1: toArr(calculateFarmStock('AGRO BERRY 1')),
+      AB2: toArr(calculateFarmStock('AGRO BERRY 2')),
+      AB3: toArr(calculateFarmStock('AGRO BERRY 3')),
+      isCalculated: true,
     };
   }, [movements]);
 
-  // All months including current live stock, with physical inventory overlay for past months
   const allMonths = useMemo(() => {
-    const now = new Date();
-    const currentMonthDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-25`;
-
-    // Exclude any saved snapshot for the current month — always use live calculated
-    const months = history.filter(m => m.date !== currentMonthDate);
-
-    // Always add the current month as live calculated data
+    const cur = currentStock.date;
+    const months = history.filter(m => m.date !== cur);
     months.push(currentStock);
-    
-    // Overlay physical inventory data on PAST months only (not the current live month)
     months.forEach((m, idx) => {
-      if (!m.date || m.date === currentMonthDate) return; // Skip current month
-      const ym = m.date.substring(0, 7); // YYYY-MM
-      const physData = physicalInventoryMonths[ym];
-      if (physData && physData.physicalFarms.length > 0) {
-        // Merge: physical inventory takes priority, historical data fills gaps
-        const mergeAB = (physAB, histAB) => {
-          if (!physAB || physAB.length === 0) return histAB || [];
-          if (!histAB || histAB.length === 0) return physAB;
-          // Merge: physical counts override historical, historical fills missing products
+      if (!m.date || m.date === cur) return;
+      const ym = m.date.substring(0,7);
+      const phys = physicalInventoryMonths[ym];
+      if (phys?.physicalFarms.length) {
+        const merge = (pAB, hAB) => {
+          if (!pAB?.length) return hAB||[];
+          if (!hAB?.length) return pAB;
           const map = {};
-          histAB.forEach(item => { map[item.product?.toUpperCase()] = item; });
-          physAB.forEach(item => { map[item.product?.toUpperCase()] = item; });
+          (hAB||[]).forEach(i => { map[i.product?.toUpperCase()] = i; });
+          (pAB||[]).forEach(i => { map[i.product?.toUpperCase()] = i; });
           return Object.values(map);
         };
-        const updated = { 
-          ...m, 
-          isPhysical: true, 
-          physicalFarms: [...physData.physicalFarms],
-          AB1: mergeAB(physData.AB1, m.AB1),
-          AB2: mergeAB(physData.AB2, m.AB2),
-          AB3: mergeAB(physData.AB3, m.AB3)
-        };
-        months[idx] = updated;
+        months[idx] = { ...m, isPhysical:true, physicalFarms:[...phys.physicalFarms], AB1:merge(phys.AB1,m.AB1), AB2:merge(phys.AB2,m.AB2), AB3:merge(phys.AB3,m.AB3) };
       }
     });
-    
-    return months.sort((a, b) => a.date.localeCompare(b.date));
+    return months.sort((a,b) => a.date.localeCompare(b.date));
   }, [history, currentStock, physicalInventoryMonths]);
 
-  // Get selected month data
-  const selectedData = useMemo(() => {
-    return allMonths.find(m => m.date === selectedMonth) || null;
-  }, [allMonths, selectedMonth]);
+  const selectedData = useMemo(() => allMonths.find(m => m.date === selectedMonth)||null, [allMonths, selectedMonth]);
 
-  // Get unit for product
-  const getProductUnit = (productName) => {
-    const product = products.find(p => p.name?.toUpperCase() === productName?.toUpperCase());
-    return product?.unit || 'KG';
-  };
+  const getUnit = (name) => products.find(p => p.name?.toUpperCase()===name?.toUpperCase())?.unit||'KG';
 
-  // Get products for display
   const displayProducts = useMemo(() => {
     if (!selectedData) return [];
-    
-    const productMap = {};
-    
-    ['AB1', 'AB2', 'AB3'].forEach(farm => {
-      (selectedData[farm] || []).forEach(item => {
-        const key = item.product.toUpperCase();
-        if (!productMap[key]) {
-          productMap[key] = { 
-            product: key, 
-            AB1: 0, 
-            AB2: 0, 
-            AB3: 0, 
-            price: item.price || 0,
-            unit: getProductUnit(item.product)
-          };
-        }
-        productMap[key][farm] = item.quantity;
-        if (item.price > 0) productMap[key].price = item.price;
+    const map = {};
+    ['AB1','AB2','AB3'].forEach(fk => {
+      (selectedData[fk]||[]).forEach(item => {
+        const key = item.product?.toUpperCase();
+        if (!key) return;
+        if (!map[key]) map[key] = { product: item.product||key, AB1:0, AB2:0, AB3:0, price:0, unit: getUnit(item.product) };
+        map[key][fk] = item.quantity||0;
+        if (item.price > 0) map[key].price = item.price;
       });
     });
-    
-    let productsList = Object.values(productMap);
-    
-    // Filter by farm
-    if (selectedFarm !== 'ALL') {
-      const farmKey = selectedFarm.replace('AGRO BERRY ', 'AB');
-      productsList = productsList.filter(p => p[farmKey] > 0);
-    }
-    
-    // Filter by search
-    if (search) {
-      productsList = productsList.filter(p => 
-        p.product.toLowerCase().includes(search.toLowerCase())
-      );
-    }
-    
-    // Calculate totals
-    productsList.forEach(p => {
-      p.total = p.AB1 + p.AB2 + p.AB3;
-      p.value = p.total * p.price;
-    });
-    
-    return productsList.sort((a, b) => b.value - a.value);
+    let list = Object.values(map);
+    if (selectedFarm !== 'ALL') { const fk = selectedFarm.replace('AGRO BERRY ','AB'); list = list.filter(p => p[fk]>0); }
+    if (search) list = list.filter(p => p.product.toLowerCase().includes(search.toLowerCase()));
+    list.forEach(p => { p.total = p.AB1+p.AB2+p.AB3; p.value = p.total*p.price; });
+    return list.sort((a,b) => b.value-a.value);
   }, [selectedData, selectedFarm, search, products]);
 
-  // Stats
-  const stats = useMemo(() => {
-    const totalQty = displayProducts.reduce((s, p) => s + p.total, 0);
-    const totalValue = displayProducts.reduce((s, p) => s + p.value, 0);
-    
-    return {
-      nbProducts: displayProducts.length,
-      totalValue,
-      totalQty,
-      date: selectedData?.date || ''
-    };
-  }, [displayProducts, selectedData]);
+  const stats = useMemo(() => ({
+    nb: displayProducts.length,
+    qty: displayProducts.reduce((s,p)=>s+p.total,0),
+    value: displayProducts.reduce((s,p)=>s+p.value,0),
+  }), [displayProducts]);
 
-  // Save current month snapshot
-  const saveJanuarySnapshot = () => {
-    const newHistory = history.filter(h => h.date !== currentStock.date);
-    newHistory.push({ ...currentStock, isCalculated: false });
-    newHistory.sort((a, b) => a.date.localeCompare(b.date));
-    
-    setHistory(newHistory);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(newHistory));
+  const saveSnapshot = () => {
+    const next = history.filter(h=>h.date!==currentStock.date);
+    next.push({ ...currentStock, isCalculated:false });
+    next.sort((a,b)=>a.date.localeCompare(b.date));
+    setHistory(next);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
     setSelectedMonth(currentStock.date);
   };
 
-  // Handle month click - show export option
-  const handleMonthClick = (monthData) => {
-    setPendingMonth(monthData);
-    setShowExportModal(true);
-  };
-
-  // Export specific month data
-  const exportMonthData = async (monthData) => {
-    if (!monthData) return;
-    
-    const productMap = {};
-    ['AB1', 'AB2', 'AB3'].forEach(farm => {
-      (monthData[farm] || []).forEach(item => {
-        const key = item.product?.toUpperCase();
-        if (!productMap[key]) {
-          productMap[key] = { product: item.product, AB1: 0, AB2: 0, AB3: 0, price: item.price || 0 };
-        }
-        productMap[key][farm] = item.quantity || 0;
-        if (item.price) productMap[key].price = item.price;
-      });
-    });
-    
-    const data = Object.values(productMap).map(p => {
-      const total = (p.AB1 || 0) + (p.AB2 || 0) + (p.AB3 || 0);
-      const unit = products.find(pr => pr.name?.toUpperCase() === p.product?.toUpperCase())?.unit || 'KG';
-      return {
-        Produit: p.product,
-        Unite: unit,
-        'AGB 1': p.AB1,
-        'AGB 2': p.AB2,
-        'AGB 3': p.AB3,
-        'Total': total,
-        'Prix Unit.': p.price,
-        'Valeur': total * p.price
-      };
-    });
-    
-    await downloadExcel(data, `stock-${monthData.month || 'inventaire'}.xlsx`);
-  };
-
-  // Confirm export and select month
-  const handleExportConfirm = async () => {
-    if (pendingMonth) {
-      await exportMonthData(pendingMonth);
-      setSelectedMonth(pendingMonth.date);
-    }
-    setShowExportModal(false);
-    setPendingMonth(null);
-  };
-
-  // Just select month without export
-  const handleSelectOnly = () => {
-    if (pendingMonth) {
-      setSelectedMonth(pendingMonth.date);
-    }
-    setShowExportModal(false);
-    setPendingMonth(null);
-  };
-
   const handleExport = async () => {
-    const data = displayProducts.map(p => ({
-      Produit: p.product,
-      Unite: p.unit,
-      'AGB 1': p.AB1,
-      'AGB 2': p.AB2,
-      'AGB 3': p.AB3,
-      'Total': p.total,
-      'Prix Unit.': p.price,
-      'Valeur': p.value
-    }));
-    await downloadExcel(data, `historique-${selectedData?.month || 'stock'}.xlsx`);
+    const rows = displayProducts.map(p => ({ Produit:p.product, Unité:p.unit, 'AGB 1':p.AB1, 'AGB 2':p.AB2, 'AGB 3':p.AB3, Total:p.total, 'Prix Unit.':p.price, 'Valeur MAD':p.value }));
+    await downloadExcel(rows, `stock-${selectedData?.month||'historique'}.xlsx`);
   };
 
-  const formatDate = (dateStr) => {
-    if (!dateStr) return '';
-    const [year, month, day] = dateStr.split('-');
-    return `${day}/${month}/${year}`;
-  };
+  const colStyle = (fk, val) => val===0 ? { color:'var(--text-3)' } : val<0 ? { color:'var(--red)', fontWeight:700 } : { color: FC[fk].text, fontWeight:600 };
 
   return (
-    <div style={{ padding: "28px 32px", maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20 }} className="animate-fade-in">
+    <div style={{ padding:'20px 20px', maxWidth:1400, margin:'0 auto', display:'flex', flexDirection:'column', gap:14 }}>
+
       {/* Header */}
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 28, flexWrap: "wrap", gap: 12 }}>
+      <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8 }}>
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-2">
-            📅 Historique Stock
-          </h1>
-          <p style={{ fontSize: 14, color: "var(--text-2)", margin: "4px 0 0" }}>Stock des mois précédents - Campagne 2025-2026</p>
+          <h1 style={{ fontSize:20, fontWeight:700, color:'var(--text-1)', margin:0 }}>📅 Historique Stock</h1>
+          <p style={{ fontSize:12, color:'var(--text-2)', margin:'2px 0 0' }}>Campagne 2025-2026</p>
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
-          <button 
-            onClick={handleExport} 
-            className="btn-primary"
-          >
-            📥 Export Excel
-          </button>
-          {selectedData?.isCalculated && (
-            <button 
-              onClick={saveJanuarySnapshot} 
-              className="btn-secondary"
-            >
-              💾 Sauvegarder
+        <div style={{ display:'flex', gap:8 }}>
+          {selectedData?.isCalculated && <button onClick={saveSnapshot} style={{ background:'var(--surface-2)', border:'1px solid var(--border)', borderRadius:9, padding:'7px 13px', fontSize:12, cursor:'pointer', color:'var(--text-1)', fontWeight:600 }}>💾 Sauvegarder</button>}
+          {selectedData && <button onClick={handleExport} style={{ background:'#1a8a36', color:'#fff', border:'none', borderRadius:9, padding:'7px 14px', fontSize:12, cursor:'pointer', fontWeight:600 }}>📥 Excel</button>}
+        </div>
+      </div>
+
+      {/* Month pills */}
+      <div style={{ display:'flex', gap:7, flexWrap:'wrap' }}>
+        {allMonths.map(m => {
+          const active = selectedMonth===m.date;
+          return (
+            <button key={m.date} onClick={()=>setSelectedMonth(m.date)} style={{ padding:'7px 13px', borderRadius:18, border: active ? '2px solid #1a8a36' : '1.5px solid var(--border)', background: active ? '#1a8a36' : 'var(--surface)', color: active ? '#fff' : 'var(--text-1)', cursor:'pointer', fontSize:12, fontWeight:600, display:'flex', alignItems:'center', gap:4, whiteSpace:'nowrap', transition:'all .15s' }}>
+              <span style={{ textTransform:'uppercase', letterSpacing:.3 }}>{m.month}</span>
+              {m.isPhysical && <span style={{ fontSize:10, background: active?'rgba(255,255,255,.25)':'#e8f8ed', color: active?'#fff':'#1a8a36', borderRadius:7, padding:'1px 5px' }}>📋</span>}
+              {m.isCalculated && !m.isPhysical && <span style={{ fontSize:10, background: active?'rgba(255,255,255,.25)':'#fff8f0', color: active?'#fff':'var(--orange)', borderRadius:7, padding:'1px 5px' }}>⚡</span>}
             </button>
-          )}
-        </div>
+          );
+        })}
       </div>
 
-      {/* Month Selector */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 10, marginBottom: 24 }}>
-        {allMonths.map(m => (
-          <button
-            key={m.date}
-            onClick={() => handleMonthClick(m)}
-            className='ios-card' style={{ padding: '14px 16px', textAlign: 'center', cursor: 'pointer', border: selectedMonth === m.date ? '2px solid var(--green)' : '1px solid var(--border)', background: selectedMonth === m.date ? '#f0faf2' : 'var(--surface)', transition: 'all var(--transition)' }}
-          >
-            <div style={{ fontSize: 13, fontWeight: 700, textTransform: "uppercase", color: "var(--text-1)" }}>{m.month}</div>
-            <div style={{ fontSize: 12, color: "var(--text-2)", marginTop: 2 }}>{formatDate(m.date)}</div>
-            {m.isPhysical && <span style={{ fontSize: 11, color: "var(--green)", display: "block", marginTop: 3 }}>📋 Physique</span>}
-            {m.isCalculated && !m.isPhysical && <span style={{ fontSize: 11, color: "var(--orange)", display: "block", marginTop: 3 }}>⚡ Calculé</span>}
-          </button>
-        ))}
-      </div>
-
-      {/* Stats Cards */}
+      {/* Stats */}
       {selectedData && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 20 }}>
-          <div style={{ background: '#f0f6ff', borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(0,122,255,0.12)' }}>
-            <p style={{ fontSize: 11, color: 'var(--blue)', fontWeight: 600, margin: '0 0 8px', textTransform: 'uppercase' }}>📦 Produits</p>
-            <p style={{ fontSize: 28, fontWeight: 700, color: 'var(--blue)', margin: 0 }}>{stats.nbProducts}</p>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(130px, 1fr))', gap:10 }}>
+          <div style={{ background:FC.AB2.bg, borderRadius:11, padding:'12px 14px', border:`1px solid ${FC.AB2.border}` }}>
+            <div style={{ fontSize:10, color:FC.AB2.text, fontWeight:600, textTransform:'uppercase', marginBottom:3 }}>📦 Produits</div>
+            <div style={{ fontSize:24, fontWeight:700, color:FC.AB2.text }}>{stats.nb}</div>
           </div>
-          <div style={{ background: '#f0faf2', borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(52,199,89,0.12)' }}>
-            <p style={{ fontSize: 11, color: '#1a8a36', fontWeight: 600, margin: '0 0 8px', textTransform: 'uppercase' }}>💰 Valeur Totale</p>
-            <p style={{ fontSize: 22, fontWeight: 700, color: '#1a8a36', margin: 0 }}>{fmtMoney(stats.totalValue)}</p>
+          <div style={{ background:FC.AB3.bg, borderRadius:11, padding:'12px 14px', border:`1px solid ${FC.AB3.border}` }}>
+            <div style={{ fontSize:10, color:FC.AB3.text, fontWeight:600, textTransform:'uppercase', marginBottom:3 }}>📊 Quantité</div>
+            <div style={{ fontSize:18, fontWeight:700, color:FC.AB3.text }}>{fmt(stats.qty)}</div>
           </div>
-          <div style={{ background: '#f8f0ff', borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(175,82,222,0.12)' }}>
-            <p style={{ fontSize: 11, color: 'var(--purple)', fontWeight: 600, margin: '0 0 8px', textTransform: 'uppercase' }}>📊 Quantité Totale</p>
-            <p style={{ fontSize: 22, fontWeight: 700, color: 'var(--purple)', margin: 0 }}>{fmt(stats.totalQty)}</p>
+          <div style={{ background:FC.AB1.bg, borderRadius:11, padding:'12px 14px', border:`1px solid ${FC.AB1.border}`, gridColumn:'span 2' }}>
+            <div style={{ fontSize:10, color:FC.AB1.text, fontWeight:600, textTransform:'uppercase', marginBottom:3 }}>💰 Valeur Totale</div>
+            <div style={{ fontSize:18, fontWeight:700, color:FC.AB1.text }}>{fmtMoney(stats.value)}</div>
           </div>
-          <div style={{ background: '#fff8f0', borderRadius: 14, padding: '18px 20px', border: '1px solid rgba(255,149,0,0.12)' }}>
-            <p style={{ fontSize: 11, color: 'var(--orange)', fontWeight: 600, margin: '0 0 8px', textTransform: 'uppercase' }}>📅 Date Inventaire</p>
-            <p style={{ fontSize: 22, fontWeight: 700, color: 'var(--orange)', margin: 0 }}>{formatDate(stats.date)}</p>
-            {selectedData?.isPhysical && <p style={{ fontSize: 11, color: 'var(--green)', fontWeight: 600, margin: '4px 0 0' }}>📋 Inventaire Physique</p>}
-            {selectedData?.isCalculated && !selectedData?.isPhysical && <p style={{ fontSize: 11, color: 'var(--orange)', margin: '4px 0 0' }}>Calculé</p>}
+          <div style={{ background:'#fff8f0', borderRadius:11, padding:'12px 14px', border:'1px solid rgba(255,149,0,.2)' }}>
+            <div style={{ fontSize:10, color:'var(--orange)', fontWeight:600, textTransform:'uppercase', marginBottom:3 }}>📅 Date</div>
+            <div style={{ fontSize:15, fontWeight:700, color:'var(--orange)' }}>{fmtDate(selectedData.date)}</div>
+            {selectedData.isPhysical && <div style={{ fontSize:10, color:'#1a8a36', fontWeight:600, marginTop:2 }}>📋 Physique</div>}
           </div>
         </div>
       )}
 
-      {/* Search & Filter */}
-      <Card>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-          <div style={{ flex: 1 }}>
-            <Input 
-              placeholder="🔍 Rechercher un produit..." 
-              value={search} 
-              onChange={setSearch}
-            />
-          </div>
-          <Select 
-            value={selectedFarm} 
-            onChange={setSelectedFarm}
-            options={[
-              { value: 'ALL', label: 'Toutes les fermes' },
-              ...FARMS.map(f => ({ value: f.id, label: f.name }))
-            ]}
-            className="md:w-52"
-          />
+      {/* Filters */}
+      {selectedData && (
+        <div style={{ display:'flex', gap:8, flexWrap:'wrap', alignItems:'center' }}>
+          <input placeholder="🔍 Rechercher..." value={search} onChange={e=>setSearch(e.target.value)}
+            style={{ flex:1, minWidth:150, padding:'8px 12px', borderRadius:9, border:'1.5px solid var(--border)', fontSize:12, color:'var(--text-1)', background:'var(--surface)', outline:'none' }} />
+          {['ALL','AGRO BERRY 1','AGRO BERRY 2','AGRO BERRY 3'].map(f => {
+            const label = f==='ALL'?'Toutes':f.replace('AGRO BERRY ','AGB ');
+            const fk = f.replace('AGRO BERRY ','AB');
+            const col = f==='ALL' ? { text:'#555', bg:'#f0f0f0' } : { text:FC[fk].text, bg:FC[fk].bg };
+            const active = selectedFarm===f;
+            return <button key={f} onClick={()=>setSelectedFarm(f)} style={{ padding:'8px 12px', borderRadius:9, border:`1.5px solid ${active?col.text:'var(--border)'}`, background:active?col.bg:'var(--surface)', color:active?col.text:'var(--text-2)', fontWeight:active?700:500, fontSize:12, cursor:'pointer' }}>{label}</button>;
+          })}
         </div>
-      </Card>
+      )}
 
       {/* Table */}
-      <div className="ios-card" style={{ padding: 0 }}>
-        {/* Table Header with Export Button */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderBottom: '1px solid var(--border)', background: 'var(--surface-2)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontWeight: 600, color: 'var(--text-1)', fontSize: 13 }}>{displayProducts.length} produits</span>
-            {selectedData?.isPhysical && (
-              <span className="badge badge-green">
-                📋 Inventaire Physique
-                {selectedData.physicalFarms && selectedData.physicalFarms.length < 3 && (
-                  <> ({selectedData.physicalFarms.join(', ')})</>
-                )}
-              </span>
-            )}
-            {selectedData?.isCalculated && !selectedData?.isPhysical && (
-              <span className="badge badge-orange">📊 Calculé depuis mouvements</span>
-            )}
-          </div>
-          <button
-            onClick={handleExport}
-            className="btn-primary"
-            style={{ fontSize: 12, padding: '7px 14px' }}
-          >
-            📥 Exporter Excel
-          </button>
+      {!selectedData ? (
+        <div style={{ background:'var(--surface)', borderRadius:13, padding:40, textAlign:'center' }}>
+          <div style={{ fontSize:38 }}>📅</div>
+          <div style={{ fontSize:14, fontWeight:600, color:'var(--text-2)', marginTop:8 }}>Sélectionnez un mois</div>
         </div>
-        {!selectedData ? (
-          <div className="p-6">
-            <EmptyState icon="📅" message="Sélectionnez un mois" />
+      ) : displayProducts.length===0 ? (
+        <div style={{ background:'var(--surface)', borderRadius:13, padding:40, textAlign:'center' }}>
+          <div style={{ fontSize:38 }}>📦</div>
+          <div style={{ fontSize:14, fontWeight:600, color:'var(--text-2)', marginTop:8 }}>Aucun produit trouvé</div>
+        </div>
+      ) : (
+        <div style={{ background:'var(--surface)', borderRadius:13, overflow:'hidden', border:'1px solid var(--border)' }}>
+          <div style={{ display:'flex', alignItems:'center', padding:'9px 14px', background:'var(--surface-2)', borderBottom:'1px solid var(--border)' }}>
+            <span style={{ fontSize:12, fontWeight:600, color:'var(--text-2)' }}>{displayProducts.length} produits</span>
+            {selectedData.isPhysical && <span style={{ marginLeft:8, fontSize:10, background:'#e8f8ed', color:'#1a8a36', borderRadius:7, padding:'2px 7px', fontWeight:600 }}>📋 Inventaire Physique</span>}
+            {selectedData.isCalculated && !selectedData.isPhysical && <span style={{ marginLeft:8, fontSize:10, background:'#fff8f0', color:'var(--orange)', borderRadius:7, padding:'2px 7px', fontWeight:600 }}>⚡ Calculé</span>}
           </div>
-        ) : displayProducts.length === 0 ? (
-          <div className="p-6">
-            <EmptyState icon="📦" message="Aucun produit trouvé" />
-          </div>
-        ) : (
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 900, borderCollapse: 'collapse', fontSize: 14 }}>
+          <div style={{ overflowX:'auto', WebkitOverflowScrolling:'touch' }}>
+            <table style={{ width:'100%', minWidth:680, borderCollapse:'collapse', fontSize:13 }}>
               <thead>
-                <tr style={{ background: 'var(--surface-2)', borderBottom: '1px solid var(--border)' }}>
-                  <th style={{ textAlign: 'left', padding: '14px 16px', fontWeight: 600, color: 'var(--text-2)', minWidth: 220 }}>PRODUIT</th>
-                  <th style={{ textAlign: 'center', padding: '14px 16px', fontWeight: 600, color: 'var(--text-2)', width: 80 }}>UNITÉ</th>
-                  <th style={{ textAlign: 'right', padding: '14px 16px', fontWeight: 600, color: 'var(--text-2)', width: 110 }}>
-                    <span style={{ color: 'var(--green)' }}>🌿</span> AGB 1
-                  </th>
-                  <th style={{ textAlign: 'right', padding: '14px 16px', fontWeight: 600, color: 'var(--text-2)', width: 110 }}>
-                    <span style={{ color: 'var(--blue)' }}>🌱</span> AGB 2
-                  </th>
-                  <th style={{ textAlign: 'right', padding: '14px 16px', fontWeight: 600, color: 'var(--text-2)', width: 110 }}>
-                    <span style={{ color: 'var(--purple)' }}>🪴</span> AGB 3
-                  </th>
-                  <th style={{ textAlign: 'right', padding: '14px 16px', fontWeight: 700, color: 'var(--text-1)', background: 'var(--surface-2)', width: 110 }}>TOTAL</th>
-                  <th style={{ textAlign: 'right', padding: '14px 16px', fontWeight: 600, color: 'var(--text-2)', width: 100 }}>PRIX UNIT.</th>
-                  <th style={{ textAlign: 'right', padding: '14px 16px', fontWeight: 700, color: 'var(--green)', width: 130 }}>VALEUR</th>
+                <tr style={{ background:'var(--surface-2)', borderBottom:'2px solid var(--border)' }}>
+                  <th style={{ textAlign:'left', padding:'10px 14px', fontWeight:700, color:'var(--text-2)', fontSize:11, textTransform:'uppercase', minWidth:170, position:'sticky', left:0, background:'var(--surface-2)', zIndex:2 }}>Produit</th>
+                  <th style={{ textAlign:'center', padding:'10px 8px', fontWeight:700, color:'var(--text-2)', fontSize:11, width:50 }}>Unité</th>
+                  <th style={{ textAlign:'right', padding:'10px 12px', fontWeight:700, color:FC.AB1.text, fontSize:11, width:85 }}>🌿 AGB 1</th>
+                  <th style={{ textAlign:'right', padding:'10px 12px', fontWeight:700, color:FC.AB2.text, fontSize:11, width:85 }}>🌱 AGB 2</th>
+                  <th style={{ textAlign:'right', padding:'10px 12px', fontWeight:700, color:FC.AB3.text, fontSize:11, width:85 }}>🪴 AGB 3</th>
+                  <th style={{ textAlign:'right', padding:'10px 12px', fontWeight:700, color:'var(--text-1)', fontSize:11, width:85 }}>Total</th>
+                  <th style={{ textAlign:'right', padding:'10px 12px', fontWeight:700, color:'var(--text-2)', fontSize:11, width:75 }}>Prix</th>
+                  <th style={{ textAlign:'right', padding:'10px 14px', fontWeight:700, color:'#1a8a36', fontSize:11, width:105 }}>Valeur</th>
                 </tr>
               </thead>
               <tbody>
-                {displayProducts.map((p, idx) => (
-                  <tr key={idx} style={{ borderBottom: '1px solid var(--border)' }}>
-                    <td style={{ padding: '12px 16px', fontWeight: 600, color: 'var(--text-1)' }}>{p.product}</td>
-                    <td style={{ padding: '12px 16px', textAlign: 'center', color: 'var(--text-2)' }}>{p.unit}</td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', color: p.AB1 < 0 ? 'var(--red)' : p.AB1 > 0 ? 'var(--green)' : 'var(--text-3)', fontWeight: p.AB1 > 0 ? 600 : 400 }}>
-                      {p.AB1 !== 0 ? fmt(p.AB1) : <span style={{ color: 'var(--text-3)' }}>-</span>}
-                    </td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', color: p.AB2 < 0 ? 'var(--red)' : p.AB2 > 0 ? 'var(--blue)' : 'var(--text-3)', fontWeight: p.AB2 > 0 ? 600 : 400 }}>
-                      {p.AB2 !== 0 ? fmt(p.AB2) : <span style={{ color: 'var(--text-3)' }}>-</span>}
-                    </td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', color: p.AB3 < 0 ? 'var(--red)' : p.AB3 > 0 ? 'var(--purple)' : 'var(--text-3)', fontWeight: p.AB3 > 0 ? 600 : 400 }}>
-                      {p.AB3 !== 0 ? fmt(p.AB3) : <span style={{ color: 'var(--text-3)' }}>-</span>}
-                    </td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 700, background: 'var(--surface-2)', color: p.total < 0 ? 'var(--red)' : 'var(--text-1)' }}>
-                      {fmt(p.total)}
-                    </td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', color: 'var(--text-2)' }}>{fmt(p.price)}</td>
-                    <td style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 700, color: 'var(--green)' }}>
-                      {fmtMoney(p.value)}
-                    </td>
+                {displayProducts.map((p, i) => (
+                  <tr key={i} style={{ borderBottom:'1px solid var(--border)', background: i%2===0 ? 'var(--surface)' : 'var(--surface-2)' }}>
+                    <td style={{ padding:'9px 14px', fontWeight:600, color:'var(--text-1)', position:'sticky', left:0, background: i%2===0?'var(--surface)':'var(--surface-2)', zIndex:1 }}>{p.product}</td>
+                    <td style={{ padding:'9px 8px', textAlign:'center', color:'var(--text-3)', fontSize:11 }}>{p.unit}</td>
+                    <td style={{ padding:'9px 12px', textAlign:'right', ...colStyle('AB1',p.AB1) }}>{p.AB1 ? fmt(p.AB1) : <span style={{color:'var(--text-3)'}}>—</span>}</td>
+                    <td style={{ padding:'9px 12px', textAlign:'right', ...colStyle('AB2',p.AB2) }}>{p.AB2 ? fmt(p.AB2) : <span style={{color:'var(--text-3)'}}>—</span>}</td>
+                    <td style={{ padding:'9px 12px', textAlign:'right', ...colStyle('AB3',p.AB3) }}>{p.AB3 ? fmt(p.AB3) : <span style={{color:'var(--text-3)'}}>—</span>}</td>
+                    <td style={{ padding:'9px 12px', textAlign:'right', fontWeight:700, color: p.total<0?'var(--red)':'var(--text-1)', background: i%2===0?'#f9fafb':'#f3f4f6' }}>{fmt(p.total)}</td>
+                    <td style={{ padding:'9px 12px', textAlign:'right', color:'var(--text-2)', fontSize:12 }}>{p.price ? fmt(p.price) : <span style={{color:'var(--text-3)'}}>—</span>}</td>
+                    <td style={{ padding:'9px 14px', textAlign:'right', fontWeight:700, color:'#1a8a36' }}>{fmtMoney(p.value)}</td>
                   </tr>
                 ))}
               </tbody>
               <tfoot>
-                <tr style={{ background: '#f0faf2', fontWeight: 700, borderTop: '2px solid rgba(52,199,89,0.2)' }}>
-                  <td style={{ padding: '12px 16px', color: 'var(--text-1)' }}>TOTAL ({displayProducts.length} produits)</td>
+                <tr style={{ background:'#f0faf2', fontWeight:700, borderTop:'2px solid rgba(52,199,89,.3)' }}>
+                  <td style={{ padding:'11px 14px', color:'var(--text-1)', fontSize:12, position:'sticky', left:0, background:'#f0faf2' }}>TOTAL — {displayProducts.length} produits</td>
                   <td></td>
-                  <td style={{ padding: '12px 16px', textAlign: 'right', color: 'var(--text-2)' }}>{fmt(displayProducts.reduce((s, p) => s + p.AB1, 0))}</td>
-                  <td style={{ padding: '12px 16px', textAlign: 'right', color: 'var(--text-2)' }}>{fmt(displayProducts.reduce((s, p) => s + p.AB2, 0))}</td>
-                  <td style={{ padding: '12px 16px', textAlign: 'right', color: 'var(--text-2)' }}>{fmt(displayProducts.reduce((s, p) => s + p.AB3, 0))}</td>
-                  <td style={{ padding: '12px 16px', textAlign: 'right', background: '#dcfce7', color: 'var(--text-1)' }}>{fmt(stats.totalQty)}</td>
+                  <td style={{ padding:'11px 12px', textAlign:'right', color:FC.AB1.text }}>{fmt(displayProducts.reduce((s,p)=>s+p.AB1,0))}</td>
+                  <td style={{ padding:'11px 12px', textAlign:'right', color:FC.AB2.text }}>{fmt(displayProducts.reduce((s,p)=>s+p.AB2,0))}</td>
+                  <td style={{ padding:'11px 12px', textAlign:'right', color:FC.AB3.text }}>{fmt(displayProducts.reduce((s,p)=>s+p.AB3,0))}</td>
+                  <td style={{ padding:'11px 12px', textAlign:'right', color:'var(--text-1)' }}>{fmt(stats.qty)}</td>
                   <td></td>
-                  <td style={{ padding: '12px 16px', textAlign: 'right', color: 'var(--green)', fontSize: 15 }}>{fmtMoney(stats.totalValue)}</td>
+                  <td style={{ padding:'11px 14px', textAlign:'right', color:'#1a8a36', fontSize:13 }}>{fmtMoney(stats.value)}</td>
                 </tr>
               </tfoot>
             </table>
-          </div>
-        )}
-      </div>
-
-      {/* Export Confirmation Modal */}
-      {showExportModal && pendingMonth && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--text-1)", margin: "0 0 8px" }}>
-              📥 {pendingMonth.month}
-            </h3>
-            <p style={{ color: "var(--text-2)", margin: "0 0 20px", fontSize: 14 }}>
-              Voulez-vous exporter l'inventaire de ce mois en Excel ?
-            </p>
-            <div style={{ display: "flex", gap: 12 }}>
-              <button
-                onClick={handleSelectOnly}
-                className="btn-secondary" style={{ flex: 1 }}
-              >
-                Non, juste voir
-              </button>
-              <button
-                onClick={handleExportConfirm}
-                className="btn-primary" style={{ flex: 1 }}
-              >
-                ✅ Oui, exporter
-              </button>
-            </div>
           </div>
         </div>
       )}
@@ -587,4 +308,4 @@ const History = () => {
 };
 
 export default History;
-// v2.1
+// v3.0 - responsive sticky col pill months
