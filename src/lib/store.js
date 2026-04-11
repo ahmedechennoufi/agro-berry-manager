@@ -1000,13 +1000,19 @@ export const getConsoFermesData = (monthIndex) => {
     const qty = m.quantity || 0;
     const farm = m.farm || '';
 
-    // Transferts entrants = ENTRÉES (entre fermes)
+    // Sorties magasin → ferme = ENTRÉES ferme (livraison depuis magasin)
+    if (m.type === 'exit') {
+      if (farm.includes('1')) data.entAB1 += qty;
+      else if (farm.includes('2')) data.entAB2 += qty;
+      else if (farm.includes('3')) data.entAB3 += qty;
+    }
+    // Transferts entrants entre fermes = ENTRÉES ferme
     if (m.type === 'transfer-in') {
       if (farm.includes('1')) data.entAB1 += qty;
       else if (farm.includes('2')) data.entAB2 += qty;
       else if (farm.includes('3')) data.entAB3 += qty;
     }
-    // Transferts sortants = SORTIES
+    // Transferts sortants entre fermes = SORTIES ferme
     if (m.type === 'transfer-out') {
       if (farm.includes('1')) data.sortAB1 += qty;
       else if (farm.includes('2')) data.sortAB2 += qty;
