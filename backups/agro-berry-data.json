@@ -27332,6 +27332,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776077914951
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 50,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776078001252
     }
   ],
   "stockAB1": [
