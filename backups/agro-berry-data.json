@@ -26510,18 +26510,6 @@
       "id": 1775726415581
     },
     {
-      "type": "consumption",
-      "product": "SULFATE DE POTASSE",
-      "quantity": 75,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-01",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1775731743682
-    },
-    {
       "type": "entry",
       "product": "CHLORO MIX ",
       "quantity": 500,
@@ -30715,7 +30703,9 @@
       "updatedAt": "2026-04-09T11:01:12.894Z"
     }
   ],
-  "deletedMovementIds": [],
+  "deletedMovementIds": [
+    1775731743682
+  ],
   "exportDate": "2026-04-13T09:32:45.855Z",
   "melangesConfig": {}
 }
