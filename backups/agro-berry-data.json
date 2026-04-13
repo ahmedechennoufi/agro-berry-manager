@@ -13488,7 +13488,7 @@
     {
       "type": "entry",
       "product": "COUVRE SOL",
-      "quantity": 433,
+      "quantity": 438,
       "price": 0,
       "supplier": "AUTRE",
       "date": "2026-01-14",
@@ -30678,6 +30678,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-13T06:50:01.061Z",
+  "exportDate": "2026-04-13T09:30:16.198Z",
   "melangesConfig": {}
 }
