@@ -27665,6 +27665,18 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-04-13",
       "id": 1776082502661
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 25,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-09",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776083637735
     }
   ],
   "stockAB1": [
