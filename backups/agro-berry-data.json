@@ -27212,6 +27212,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776077028815
+    },
+    {
+      "type": "consumption",
+      "product": "TIMOREX GOLD",
+      "quantity": 0.04,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-06",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776077071143
     }
   ],
   "stockAB1": [
