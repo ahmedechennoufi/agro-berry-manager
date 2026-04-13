@@ -27656,6 +27656,15 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776079937780
+    },
+    {
+      "type": "exit",
+      "product": "OIKOS",
+      "quantity": 4,
+      "price": 2500,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-13",
+      "id": 1776082502661
     }
   ],
   "stockAB1": [
@@ -31735,9 +31744,7 @@
       "updatedAt": "2026-04-09T11:01:12.894Z"
     }
   ],
-  "deletedMovementIds": [
-    1775731743682
-  ],
-  "exportDate": "2026-04-13T09:32:45.855Z",
+  "deletedMovementIds": [],
+  "exportDate": "2026-04-13T12:15:02.668Z",
   "melangesConfig": {}
 }
