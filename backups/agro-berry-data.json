@@ -26768,6 +26768,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776074895101
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 1.1,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-03",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776074913883
     }
   ],
   "stockAB1": [
