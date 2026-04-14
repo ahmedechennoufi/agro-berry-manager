@@ -28326,6 +28326,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1776161052838
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 64,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-04",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1776161081535
     }
   ],
   "stockAB1": [
