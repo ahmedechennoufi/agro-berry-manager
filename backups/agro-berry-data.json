@@ -31448,7 +31448,7 @@
         "NITRATE DE POTASSE": "1543",
         "NOVA": "23.6",
         "NUTRIVANT FRUIT 0-20-40": "50",
-        "OIKOS": "31",
+        "OIKOS": "9.25",
         "OXYLOUKKOS": "22",
         "PERFECTOSE": "3.5",
         "PERMACLEAN": "358.5",
@@ -31482,26 +31482,26 @@
       },
       "comparison": [
         {
-          "name": "BOITE BOTREFIN 600G",
-          "unit": "UNITÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
-          "theoretical": 12.799999999999997,
-          "physical": 24,
-          "diff": 11.200000000000003,
-          "diffPercent": 87.50000000000004,
-          "diffValue": 8960.000000000002,
-          "status": "excedent"
+          "name": "OIKOS",
+          "unit": "L",
+          "theoretical": 13.25,
+          "physical": 9.25,
+          "diff": -4,
+          "diffPercent": -30.18867924528302,
+          "diffValue": -10000,
+          "status": "manquant"
         }
       ],
       "stats": {
-        "total": 85,
-        "entered": 85,
-        "withDiff": 28,
-        "ok": 57,
-        "totalDiffValue": 54225.197237509914,
+        "total": 83,
+        "entered": 83,
+        "withDiff": 29,
+        "ok": 54,
+        "totalDiffValue": 33323.18834088132,
         "progress": 100
       },
       "createdAt": "2026-04-02T17:30:55.224Z",
-      "updatedAt": "2026-04-07T12:32:21.733Z"
+      "updatedAt": "2026-04-14T06:29:56.573Z"
     }
   ],
   "commandes": [
@@ -31853,6 +31853,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-13T12:15:02.668Z",
+  "exportDate": "2026-04-14T06:29:57.969Z",
   "melangesConfig": {}
 }
