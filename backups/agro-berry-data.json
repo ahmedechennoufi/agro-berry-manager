@@ -32343,7 +32343,43 @@
         },
         {
           "product": "FEROXIM",
-          "qty": "",
+          "qty": "14",
+          "unit": "L",
+          "_showDrop": false
+        },
+        {
+          "product": "MAP",
+          "qty": "105",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "SULFATE MAGNESUIM",
+          "qty": "105",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "VITAL CU",
+          "qty": "0.7",
+          "unit": "L",
+          "_showDrop": false
+        },
+        {
+          "product": "SOLUBOR",
+          "qty": "0.14",
+          "unit": "L",
+          "_showDrop": false
+        },
+        {
+          "product": "SULFATE DE ZINC",
+          "qty": "0.7",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "CHLORO MIX ",
+          "qty": "16.8",
           "unit": "KG",
           "_showDrop": false
         }
