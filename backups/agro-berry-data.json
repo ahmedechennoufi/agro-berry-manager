@@ -28218,6 +28218,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1776160596637
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 100,
+      "unit": "KG",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-02",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1776160673628
     }
   ],
   "stockAB1": [
