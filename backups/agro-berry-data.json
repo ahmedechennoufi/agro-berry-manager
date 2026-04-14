@@ -32124,5 +32124,17 @@
     1776156105469
   ],
   "exportDate": "2026-04-14T06:49:01.088Z",
-  "melangesConfig": {}
+  "melangesConfig": {
+    "AGRO BERRY 3": {
+      "horsSol": [
+        {
+          "product": "ACIDE PHOSPHORIQUE",
+          "qty": "",
+          "unit": "KG",
+          "_showDrop": false
+        }
+      ],
+      "sol": []
+    }
+  }
 }
