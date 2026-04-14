@@ -1135,7 +1135,7 @@
     },
     {
       "name": "ANTISCALANT ZENTREAT",
-      "unit": "L",
+      "unit": "KG",
       "category": "ACIDES",
       "threshold": 1,
       "id": 1772376132110
@@ -31748,6 +31748,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-14T06:33:36.091Z",
+  "exportDate": "2026-04-14T06:43:03.456Z",
   "melangesConfig": {}
 }
