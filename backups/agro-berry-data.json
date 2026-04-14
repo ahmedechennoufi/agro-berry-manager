@@ -28062,6 +28062,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776154643164
+    },
+    {
+      "type": "consumption",
+      "product": "PERFECTOSE",
+      "quantity": 37.5,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-12",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776154671541
     }
   ],
   "stockAB1": [
