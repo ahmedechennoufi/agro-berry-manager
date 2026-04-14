@@ -28038,6 +28038,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776151380604
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 12,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776151405088
     }
   ],
   "stockAB1": [
