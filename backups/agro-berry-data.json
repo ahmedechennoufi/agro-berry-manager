@@ -28134,6 +28134,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776157032260
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 4,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776157066505
     }
   ],
   "stockAB1": [
