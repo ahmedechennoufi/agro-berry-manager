@@ -28181,6 +28181,18 @@
       "toFarm": "AGRO BERRY 2",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1776160049720
+    },
+    {
+      "type": "transfer-out",
+      "product": "MAP",
+      "quantity": 200,
+      "unit": "KG",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-14",
+      "toFarm": "AGRO BERRY 2",
+      "notes": "BL N° 22255",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1776160113503
     }
   ],
   "stockAB1": [
