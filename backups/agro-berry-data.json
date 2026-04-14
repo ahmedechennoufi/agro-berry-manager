@@ -27966,6 +27966,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776151243558
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 25,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776151259133
     }
   ],
   "stockAB1": [
