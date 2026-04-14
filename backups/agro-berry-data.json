@@ -32325,6 +32325,24 @@
         },
         {
           "product": "SULFATE DE POTASSE",
+          "qty": "140",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "qty": "105",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "NITRATE DE CALCIUM",
+          "qty": "56",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "FEROXIM",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
