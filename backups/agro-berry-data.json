@@ -32319,6 +32319,12 @@
       "horsSol": [
         {
           "product": "ACIDE PHOSPHORIQUE",
+          "qty": "64",
+          "unit": "KG",
+          "_showDrop": false
+        },
+        {
+          "product": "SULFATE DE POTASSE",
           "qty": "",
           "unit": "KG",
           "_showDrop": false
