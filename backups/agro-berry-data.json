@@ -33846,6 +33846,17 @@
     },
     {
       "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-04",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776253752805
+    },
+    {
+      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.25,
       "unit": "KG",
@@ -37393,6 +37404,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T11:48:56.206Z",
+  "exportDate": "2026-04-15T11:49:12.807Z",
   "melangesConfig": {}
 }
