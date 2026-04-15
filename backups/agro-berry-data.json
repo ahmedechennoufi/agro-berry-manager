@@ -45021,6 +45021,17 @@
     },
     {
       "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 100,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-04",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776256426150
+    },
+    {
+      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.25,
       "unit": "KG",
@@ -48568,6 +48579,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T12:33:24.919Z",
+  "exportDate": "2026-04-15T12:33:46.153Z",
   "melangesConfig": {}
 }
