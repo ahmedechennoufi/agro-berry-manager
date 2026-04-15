@@ -32112,7 +32112,7 @@
       "quantity": 1,
       "price": 11.9,
       "farm": "AGRO BERRY 1",
-      "date": "2026-04-04",
+      "date": "2026-04-01",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776253477283
@@ -33839,7 +33839,7 @@
       "quantity": 8,
       "price": 102,
       "farm": "AGRO BERRY 1",
-      "date": "2026-04-04",
+      "date": "2026-04-01",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776253736203
@@ -40918,6 +40918,162 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653816
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.15,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653821
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 75,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653826
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653830
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653834
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 5,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653838
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653842
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 6,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653846
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 50,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653849
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653852
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.3,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653856
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 1.1,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653859
+    },
+    {
+      "type": "consumption",
+      "product": "INACOP",
+      "quantity": 0.6,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776255653862
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.25,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
       "id": 1776252331528
     },
     {
@@ -44457,6 +44613,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T12:20:41.346Z",
+  "exportDate": "2026-04-15T12:20:53.872Z",
   "melangesConfig": {}
 }
