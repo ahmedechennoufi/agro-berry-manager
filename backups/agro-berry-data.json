@@ -41350,6 +41350,15 @@
       "supplier": "SAOAS",
       "date": "2026-04-15",
       "id": 1776245652479
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 576,
+      "price": 9.77648370019504,
+      "farm": "SUREXPORT",
+      "date": "2026-04-11",
+      "id": 1776247793449
     }
   ],
   "stockAB1": [
@@ -44744,6 +44753,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T09:34:12.487Z",
+  "exportDate": "2026-04-15T10:09:53.458Z",
   "melangesConfig": {}
 }
