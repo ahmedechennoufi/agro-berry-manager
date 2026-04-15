@@ -41305,6 +41305,15 @@
       "supplier": "SAOAS",
       "date": "2026-03-24",
       "id": 1776235991966
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 2000,
+      "price": 7.11,
+      "supplier": "CAS",
+      "date": "2026-04-05",
+      "id": 1776245425867
     }
   ],
   "stockAB1": [
@@ -44699,6 +44708,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T07:46:34.173Z",
+  "exportDate": "2026-04-15T09:30:25.874Z",
   "melangesConfig": {}
 }
