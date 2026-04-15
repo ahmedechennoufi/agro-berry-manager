@@ -52865,6 +52865,17 @@
     },
     {
       "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 6,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-04",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776257920462
+    },
+    {
+      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.25,
       "unit": "KG",
@@ -56412,6 +56423,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T12:58:24.185Z",
+  "exportDate": "2026-04-15T12:58:40.465Z",
   "melangesConfig": {}
 }
