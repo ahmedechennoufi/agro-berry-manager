@@ -34492,6 +34492,17 @@
     },
     {
       "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.4754355400696864,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-04",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776253874497
+    },
+    {
+      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.25,
       "unit": "KG",
@@ -38039,6 +38050,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T11:50:59.428Z",
+  "exportDate": "2026-04-15T11:51:14.500Z",
   "melangesConfig": {}
 }
