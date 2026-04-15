@@ -53043,6 +53043,17 @@
     },
     {
       "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "price": 9.77648370019504,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-04",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776257953999
+    },
+    {
+      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.25,
       "unit": "KG",
@@ -56590,6 +56601,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T12:58:57.942Z",
+  "exportDate": "2026-04-15T12:59:14.002Z",
   "melangesConfig": {}
 }
