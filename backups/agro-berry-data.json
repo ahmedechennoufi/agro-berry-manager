@@ -28378,6 +28378,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776252541059
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 32,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776252557276
     }
   ],
   "stockAB1": [
