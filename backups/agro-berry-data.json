@@ -56117,6 +56117,17 @@
     },
     {
       "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-07",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776258516987
+    },
+    {
+      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.25,
       "unit": "KG",
@@ -59664,6 +59675,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T13:08:20.822Z",
+  "exportDate": "2026-04-15T13:08:36.991Z",
   "melangesConfig": {}
 }
