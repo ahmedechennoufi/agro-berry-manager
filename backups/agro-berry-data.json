@@ -34496,7 +34496,7 @@
       "quantity": 35,
       "price": 3.4754355400696864,
       "farm": "AGRO BERRY 1",
-      "date": "2026-04-04",
+      "date": "2026-04-01",
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776253874497
@@ -44457,6 +44457,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T12:20:19.678Z",
+  "exportDate": "2026-04-15T12:20:27.313Z",
   "melangesConfig": {}
 }
