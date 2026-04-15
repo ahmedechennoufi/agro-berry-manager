@@ -41323,6 +41323,15 @@
       "supplier": "CAS",
       "date": "2026-04-05",
       "id": 1776245440468
+    },
+    {
+      "type": "entry",
+      "product": "MICROS",
+      "quantity": 160,
+      "price": 141.67,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-04-14",
+      "id": 1776245553314
     }
   ],
   "stockAB1": [
@@ -44630,7 +44639,7 @@
         {
           "product": "SULFATE DE POTASSE",
           "ordered": 9000,
-          "received": 5450
+          "received": 7450
         },
         {
           "product": "NUTREL C",
@@ -44680,7 +44689,7 @@
         {
           "product": "NITRATE DE POTASSE",
           "ordered": 500,
-          "received": 0
+          "received": 500
         },
         {
           "product": "ALFABET",
@@ -44695,7 +44704,7 @@
         {
           "product": "MICROS",
           "ordered": 160,
-          "received": 0
+          "received": 160
         },
         {
           "product": "ISABION",
@@ -44713,10 +44722,10 @@
           "received": 320
         }
       ],
-      "updatedAt": "2026-04-09T11:01:12.894Z"
+      "updatedAt": "2026-04-15T09:31:34.977Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T09:30:40.476Z",
+  "exportDate": "2026-04-15T09:32:33.323Z",
   "melangesConfig": {}
 }
