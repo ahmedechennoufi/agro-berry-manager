@@ -57475,6 +57475,17 @@
     },
     {
       "type": "consumption",
+      "product": "ANTISCALANT PERMATREAT",
+      "quantity": 26.5,
+      "price": 110,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-08",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776258762278
+    },
+    {
+      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.25,
       "unit": "KG",
@@ -61022,6 +61033,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T13:12:20.944Z",
+  "exportDate": "2026-04-15T13:12:42.282Z",
   "melangesConfig": {}
 }
