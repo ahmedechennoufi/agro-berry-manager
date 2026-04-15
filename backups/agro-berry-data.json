@@ -31440,6 +31440,17 @@
     },
     {
       "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 100,
+      "price": 3.907692307692308,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-04",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776253373148
+    },
+    {
+      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.25,
       "unit": "KG",
@@ -34987,6 +34998,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T11:42:33.532Z",
+  "exportDate": "2026-04-15T11:42:53.150Z",
   "melangesConfig": {}
 }
