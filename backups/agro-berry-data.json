@@ -41332,6 +41332,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-04-14",
       "id": 1776245553314
+    },
+    {
+      "type": "entry",
+      "product": "APHIDIUS COLEMANI",
+      "quantity": 44,
+      "price": 95,
+      "supplier": "SAOAS",
+      "date": "2026-04-15",
+      "id": 1776245635768
     }
   ],
   "stockAB1": [
@@ -44726,6 +44735,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T09:33:08.556Z",
+  "exportDate": "2026-04-15T09:33:55.776Z",
   "melangesConfig": {}
 }
