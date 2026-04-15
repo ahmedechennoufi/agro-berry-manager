@@ -1229,7 +1229,7 @@
       "id": 1774787068689
     },
     {
-      "name": "APHIDIUS COLIMANI",
+      "name": "APHIDIUS COLEMANI",
       "unit": "U",
       "category": "AUTRES",
       "threshold": null,
@@ -41272,7 +41272,7 @@
     },
     {
       "type": "entry",
-      "product": "APHIDIUS COLIMANI",
+      "product": "APHIDIUS COLEMANI",
       "quantity": 44,
       "price": 0,
       "supplier": "SAOAS",
@@ -41290,7 +41290,7 @@
     },
     {
       "type": "entry",
-      "product": "APHIDIUS COLIMANI",
+      "product": "APHIDIUS COLEMANI",
       "quantity": 44,
       "price": 0,
       "supplier": "SAOAS",
@@ -44726,6 +44726,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T09:32:33.323Z",
+  "exportDate": "2026-04-15T09:33:08.556Z",
   "melangesConfig": {}
 }
