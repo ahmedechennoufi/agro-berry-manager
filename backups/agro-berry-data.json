@@ -41314,6 +41314,15 @@
       "supplier": "CAS",
       "date": "2026-04-05",
       "id": 1776245425867
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 500,
+      "price": 10.85,
+      "supplier": "CAS",
+      "date": "2026-04-05",
+      "id": 1776245440468
     }
   ],
   "stockAB1": [
@@ -44708,6 +44717,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-15T09:30:25.874Z",
+  "exportDate": "2026-04-15T09:30:40.476Z",
   "melangesConfig": {}
 }
