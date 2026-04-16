@@ -30696,6 +30696,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776341445055
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 35,
+      "price": 3.907692307692308,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-09",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776342037756
     }
   ],
   "stockAB1": [
@@ -34008,7 +34019,7 @@
         {
           "product": "NUTREL C",
           "ordered": 1000,
-          "received": 0
+          "received": 1000
         },
         {
           "product": "ACIDE PHOSPHORIQUE",
@@ -34058,7 +34069,7 @@
         {
           "product": "ALFABET",
           "ordered": 7,
-          "received": 0
+          "received": 7
         },
         {
           "product": "SOUFRE",
@@ -34086,10 +34097,10 @@
           "received": 320
         }
       ],
-      "updatedAt": "2026-04-15T09:31:34.977Z"
+      "updatedAt": "2026-04-16T12:17:10.891Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:10:45.057Z",
+  "exportDate": "2026-04-16T12:20:37.759Z",
   "melangesConfig": {}
 }
