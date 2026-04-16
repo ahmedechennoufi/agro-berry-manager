@@ -30088,6 +30088,15 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776338002367
+    },
+    {
+      "type": "entry",
+      "product": "VYTEGRIS MULTI",
+      "quantity": 10,
+      "price": 0,
+      "supplier": "AGRIMATCO",
+      "date": "2026-04-03",
+      "id": 1776338097305
     }
   ],
   "stockAB1": [
@@ -33482,6 +33491,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T11:13:22.369Z",
+  "exportDate": "2026-04-16T11:14:57.310Z",
   "melangesConfig": {}
 }
