@@ -31004,6 +31004,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776343635755
+    },
+    {
+      "type": "consumption",
+      "product": "NUTRIVANT FRUIT 0-20-40",
+      "quantity": 6,
+      "price": 59.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776343656504
     }
   ],
   "stockAB1": [
@@ -34398,6 +34409,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:47:15.757Z",
+  "exportDate": "2026-04-16T12:47:36.507Z",
   "melangesConfig": {}
 }
