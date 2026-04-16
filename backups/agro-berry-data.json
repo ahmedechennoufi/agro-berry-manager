@@ -30993,6 +30993,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776343599891
+    },
+    {
+      "type": "consumption",
+      "product": "SWITCH",
+      "quantity": 4,
+      "price": 1800,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776343635755
     }
   ],
   "stockAB1": [
@@ -34387,6 +34398,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:46:39.893Z",
+  "exportDate": "2026-04-16T12:47:15.757Z",
   "melangesConfig": {}
 }
