@@ -30938,6 +30938,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776343062154
+    },
+    {
+      "type": "consumption",
+      "product": "PERFECTOSE",
+      "quantity": 28.5,
+      "price": 63.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776343127440
     }
   ],
   "stockAB1": [
@@ -34332,6 +34343,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:37:42.156Z",
+  "exportDate": "2026-04-16T12:38:47.442Z",
   "melangesConfig": {}
 }
