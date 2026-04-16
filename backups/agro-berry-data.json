@@ -1234,6 +1234,13 @@
       "category": "AUTRES",
       "threshold": null,
       "id": 1776235462389
+    },
+    {
+      "name": "SEAMAC",
+      "unit": "L",
+      "category": "ENGRAIS",
+      "threshold": null,
+      "id": 1776338164336
     }
   ],
   "movements": [
@@ -33500,6 +33507,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T11:15:12.415Z",
+  "exportDate": "2026-04-16T11:16:04.341Z",
   "melangesConfig": {}
 }
