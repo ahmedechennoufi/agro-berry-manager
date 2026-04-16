@@ -30982,6 +30982,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776343558999
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.4754355400696864,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776343599891
     }
   ],
   "stockAB1": [
@@ -34376,6 +34387,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:45:59.001Z",
+  "exportDate": "2026-04-16T12:46:39.893Z",
   "melangesConfig": {}
 }
