@@ -30949,6 +30949,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776343127440
+    },
+    {
+      "type": "consumption",
+      "product": "OIKOS",
+      "quantity": 9.5,
+      "price": 2500,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-11",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776343159022
     }
   ],
   "stockAB1": [
@@ -34343,6 +34354,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:38:47.442Z",
+  "exportDate": "2026-04-16T12:39:19.024Z",
   "melangesConfig": {}
 }
