@@ -58969,6 +58969,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1776330156379
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.7,
+      "unit": "KG",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-12",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1776330187683
     }
   ],
   "stockAB1": [
