@@ -30751,6 +30751,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776342202555
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 0.5,
+      "price": 11.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-09",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776342226454
     }
   ],
   "stockAB1": [
@@ -34145,6 +34156,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:23:22.558Z",
+  "exportDate": "2026-04-16T12:23:46.456Z",
   "melangesConfig": {}
 }
