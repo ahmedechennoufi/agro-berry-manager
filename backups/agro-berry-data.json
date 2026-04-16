@@ -30729,6 +30729,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776342087740
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 25,
+      "price": 4.26,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-09",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776342104327
     }
   ],
   "stockAB1": [
@@ -34123,6 +34134,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:21:27.743Z",
+  "exportDate": "2026-04-16T12:21:44.329Z",
   "melangesConfig": {}
 }
