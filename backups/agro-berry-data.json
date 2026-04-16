@@ -30762,6 +30762,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776342226454
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 5,
+      "price": 102,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-09",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776342244861
     }
   ],
   "stockAB1": [
@@ -34156,6 +34167,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T12:23:46.456Z",
+  "exportDate": "2026-04-16T12:24:04.864Z",
   "melangesConfig": {}
 }
