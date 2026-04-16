@@ -30575,6 +30575,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776340523508
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 50,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-07",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776340543669
     }
   ],
   "stockAB1": [
@@ -33969,6 +33980,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T11:55:23.510Z",
+  "exportDate": "2026-04-16T11:55:43.671Z",
   "melangesConfig": {}
 }
