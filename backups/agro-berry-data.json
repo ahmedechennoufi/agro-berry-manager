@@ -30022,6 +30022,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776337875877
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 100,
+      "price": 7.11,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776337895533
     }
   ],
   "stockAB1": [
@@ -33416,6 +33427,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-16T11:11:15.880Z",
+  "exportDate": "2026-04-16T11:11:35.535Z",
   "melangesConfig": {}
 }
