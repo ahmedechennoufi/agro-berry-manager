@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProducts, updateProduct } from '../lib/store';
+import { getProducts, updateProduct, calculateFarmStock } from '../lib/store';
 
 export default function SeuilsReserve() {
   const [products, setProducts] = useState([]);
@@ -10,15 +10,29 @@ export default function SeuilsReserve() {
   const [factorGlobal, setFactorGlobal] = useState(5);
 
   useEffect(() => {
-    const prods = getProducts().sort((a, b) => a.name.localeCompare(b.name));
+    // Charger le stock AGB1 (magasin central)
+    const ab1Stock = calculateFarmStock('AGRO BERRY 1');
+    const allProducts = getProducts();
+
+    // Garder seulement les produits présents dans le stock AGB1
+    const stockProductNames = Object.keys(ab1Stock).filter(name => {
+      const s = ab1Stock[name];
+      return s && s.quantity > 0;
+    });
+
+    const prods = allProducts
+      .filter(p => stockProductNames.includes(p.name))
+      .sort((a, b) => a.name.localeCompare(b.name));
+
     setProducts(prods);
     // Init rows avec valeurs existantes
     const init = {};
     prods.forEach(p => {
+      const stockQty = ab1Stock[p.name]?.quantity || 0;
       init[p.id] = {
         qtyPerApp: '',
         factor: 5,
-        // Calculer qtyPerApp inverse si threshold existe
+        stockQty,
         currentThreshold: p.threshold ?? ''
       };
     });
@@ -180,7 +194,12 @@ export default function SeuilsReserve() {
               }}
             >
               {/* Nom */}
-              <div style={{ fontSize: 13, fontWeight: 600, color: '#1d1d1f' }}>{p.name}</div>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: '#1d1d1f' }}>{p.name}</div>
+                <div style={{ fontSize: 11, color: '#6e6e73', marginTop: 2 }}>
+                  Stock: {row.stockQty % 1 === 0 ? row.stockQty : row.stockQty?.toFixed(2)} {p.unit || 'KG'}
+                </div>
+              </div>
 
               {/* Unité */}
               <div style={{ fontSize: 12, color: '#6e6e73' }}>{p.unit || 'KG'}</div>
