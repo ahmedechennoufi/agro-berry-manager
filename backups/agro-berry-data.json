@@ -31048,6 +31048,17 @@
       "date": "2026-04-07",
       "transferId": 1776408623052,
       "id": 1776408623053
+    },
+    {
+      "type": "transfer-in",
+      "product": "MAP",
+      "quantity": 1000,
+      "price": 12.8,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-04-07",
+      "transferId": 1776408623052,
+      "id": 1776408623061
     }
   ],
   "stockAB1": [
@@ -34442,6 +34453,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-17T06:50:23.060Z",
+  "exportDate": "2026-04-17T06:50:23.064Z",
   "melangesConfig": {}
 }
