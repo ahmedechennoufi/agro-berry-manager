@@ -1436,6 +1436,35 @@ export const getAlerts = () => {
     });
   });
   
+  // 2. Alertes Réserve AGB1 — produits qui ne couvrent pas les mélanges restants
+  const ab1Stock = calculateFarmStock('AGRO BERRY 1');
+  Object.entries(ab1Stock).forEach(([productName, data]) => {
+    const product = products.find(p => p.name === productName);
+    if (!product?.qtyPerApp || !product?.threshold) return;
+    const stock = data.quantity || 0;
+    const qtyPerApp = product.qtyPerApp;
+    const threshold = product.threshold;
+    const melangesCouverts = Math.floor(stock / qtyPerApp);
+    const factor = Math.round(threshold / qtyPerApp);
+
+    if (stock < threshold) {
+      alerts.push({
+        id: `reserve-ab1-${productName}`,
+        type: 'reserve',
+        severity: stock <= 0 ? 'critical' : 'warning',
+        icon: stock <= 0 ? '🔴' : '🟡',
+        title: 'Réserve insuffisante — AGB1',
+        message: `${productName} : couvre seulement ${melangesCouverts} mélange${melangesCouverts > 1 ? 's' : ''} sur ${factor} (stock: ${stock % 1 === 0 ? stock : stock.toFixed(1)}, besoin: ${threshold} ${product.unit || 'KG'})`,
+        product: productName,
+        location: 'AGB1',
+        current: stock,
+        threshold,
+        melangesCouverts,
+        melangesRequis: factor
+      });
+    }
+  });
+
   // 3. Alertes Consommation élevée (comparaison entre fermes)
   const consoByFarm = { 'AGRO BERRY 1': 0, 'AGRO BERRY 2': 0, 'AGRO BERRY 3': 0 };
   const thisMonth = new Date().toISOString().slice(0, 7); // YYYY-MM

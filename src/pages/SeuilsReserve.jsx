@@ -29,9 +29,11 @@ export default function SeuilsReserve() {
     const init = {};
     prods.forEach(p => {
       const stockQty = ab1Stock[p.name]?.quantity || 0;
+      // Pré-remplir qtyPerApp si déjà enregistré
+      const savedFactor = p.threshold && p.qtyPerApp ? Math.round(p.threshold / p.qtyPerApp) : 5;
       init[p.id] = {
-        qtyPerApp: '',
-        factor: 5,
+        qtyPerApp: p.qtyPerApp ? String(p.qtyPerApp) : '',
+        factor: savedFactor,
         stockQty,
         currentThreshold: p.threshold ?? ''
       };
@@ -64,18 +66,18 @@ export default function SeuilsReserve() {
 
   const handleSave = () => {
     setSaving(true);
-    let count = 0;
     products.forEach(p => {
       const threshold = getThreshold(p.id);
+      const row = rows[p.id];
+      const qtyPerApp = parseFloat(row?.qtyPerApp) || null;
       if (threshold !== null) {
-        updateProduct(p.id, { threshold });
-        count++;
+        // Sauvegarder threshold ET qtyPerApp pour les alertes
+        updateProduct(p.id, { threshold, qtyPerApp });
       }
     });
     setSaving(false);
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
-    // Refresh products
     setProducts(getProducts().sort((a, b) => a.name.localeCompare(b.name)));
   };
 
