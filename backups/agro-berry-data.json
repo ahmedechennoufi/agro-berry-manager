@@ -23506,11 +23506,11 @@
       "id": 1774859354330
     },
     {
-      "type": "entry",
+      "type": "exit",
       "product": "MAP",
       "quantity": 2500,
       "price": 12.8,
-      "farm": "",
+      "farm": "AGRO BERRY 1",
       "date": "2026-03-26",
       "id": 1774859365467
     },
