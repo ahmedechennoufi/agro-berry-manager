@@ -31059,6 +31059,15 @@
       "date": "2026-04-07",
       "transferId": 1776408623052,
       "id": 1776408623061
+    },
+    {
+      "type": "exit",
+      "product": "MAP",
+      "quantity": 500,
+      "price": 12.8,
+      "farm": "SUREXPORT",
+      "date": "2026-04-11",
+      "id": 1776409251087
     }
   ],
   "stockAB1": [
@@ -34453,6 +34462,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-17T06:57:22.546Z",
+  "exportDate": "2026-04-17T07:00:51.092Z",
   "melangesConfig": {}
 }
