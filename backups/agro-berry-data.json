@@ -23508,7 +23508,7 @@
     {
       "type": "exit",
       "product": "MAP",
-      "quantity": 3000,
+      "quantity": 2500,
       "price": 12.8,
       "farm": "AGRO BERRY 1",
       "date": "2026-03-26",
@@ -34453,6 +34453,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-17T06:50:23.064Z",
+  "exportDate": "2026-04-17T06:57:22.546Z",
   "melangesConfig": {}
 }
