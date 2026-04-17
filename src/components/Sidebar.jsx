@@ -10,6 +10,7 @@ const menuItems = [
   { id: 'physical-inventory', label: 'Inventaire Physique' },
   { id: 'commandes',          label: 'Commandes'       },
   { id: 'products',           label: 'Produits'        },
+  { id: 'seuils',             label: 'Réserve & Seuils'},
   { id: 'settings',           label: 'Parametres'      },
 ];
 
@@ -24,6 +25,7 @@ const Icon = ({ id, size = 15 }) => {
     'physical-inventory':'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2',
     commandes:           'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2',
     products:            'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10',
+    seuils:              'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     settings:            'M12 15a3 3 0 100-6 3 3 0 000 6z',
   };
   const d = icons[id] || icons.dashboard;

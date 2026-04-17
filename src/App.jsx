@@ -14,6 +14,7 @@ import PhysicalInventory from './pages/PhysicalInventory';
 import Commandes from './pages/Commandes';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
+import SeuilsReserve from './pages/SeuilsReserve';
 import * as store from './lib/store';
 import { isGitHubConfigured, backupToGitHub, restoreFromGitHub, syncMovementsFromGitHub } from './lib/githubBackup';
 
@@ -197,6 +198,7 @@ function App() {
       case 'physical-inventory': return <PhysicalInventory />;
       case 'commandes': return <Commandes />;
       case 'products': return <Products />;
+      case 'seuils': return <SeuilsReserve />;
       case 'settings': return <Settings />;
       default: return <Dashboard />;
     }
