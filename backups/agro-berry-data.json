@@ -31064,6 +31064,18 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-04-17",
       "id": 1776421781782
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 140,
+      "unit": "KG",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-16",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1776425319356
     }
   ],
   "stockAB1": [
