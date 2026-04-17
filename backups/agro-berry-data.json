@@ -31046,6 +31046,15 @@
       "farm": "SUREXPORT",
       "date": "2026-04-11",
       "id": 1776409251087
+    },
+    {
+      "type": "exit",
+      "product": "PIXEL",
+      "quantity": 12,
+      "price": 190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-14",
+      "id": 1776420953654
     }
   ],
   "stockAB1": [
@@ -34439,6 +34448,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-17T07:36:16.928Z",
+  "exportDate": "2026-04-17T10:15:53.660Z",
   "melangesConfig": {}
 }
