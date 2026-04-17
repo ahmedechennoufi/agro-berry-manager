@@ -30956,7 +30956,7 @@
       "quantity": 9.5,
       "price": 2500,
       "farm": "AGRO BERRY 1",
-      "date": "2026-04-11",
+      "date": "2026-04-13",
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776343159022
@@ -34462,6 +34462,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-17T07:00:51.092Z",
+  "exportDate": "2026-04-17T07:03:32.945Z",
   "melangesConfig": {}
 }
