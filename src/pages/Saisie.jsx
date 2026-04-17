@@ -3,7 +3,7 @@ import { useApp } from '../App';
 import { Card, Button, Input, Select, Modal } from '../components/UI';
 import { FARMS, CULTURES, DESTINATIONS, PRODUITS_CONNUS } from '../lib/constants';
 import { today, getMonthIdx } from '../lib/utils';
-import { getAveragePrice, addConsommation } from '../lib/store';
+import { getAveragePrice, addConsommation, calculateFarmStock } from '../lib/store';
 
 const Saisie = () => {
   const { products, addMovement, showNotif, loadData, triggerAutoBackup } = useApp();
@@ -60,6 +60,24 @@ const Saisie = () => {
   };
 
   const confirmSubmit = () => {
+    // Vérifier stock suffisant pour chaque ligne
+    const farmStock = calculateFarmStock(form.farm);
+    const errors = [];
+    validLignes.forEach(l => {
+      const productName = l.produit.toUpperCase();
+      const qty = parseFloat(l.qte);
+      const stockData = farmStock[productName];
+      const stockQty = stockData ? (stockData.quantity || 0) : 0;
+      if (qty > stockQty + 0.001) {
+        errors.push(`${l.produit} : stock insuffisant (disponible: ${stockQty % 1 === 0 ? stockQty : stockQty.toFixed(2)}, demandé: ${qty})`);
+      }
+    });
+    if (errors.length > 0) {
+      showNotif('❌ Stock insuffisant :\n' + errors.join('\n'), 'error');
+      setShowConfirm(false);
+      return;
+    }
+
     const moisIdx = getMonthIdx(form.date);
     
     validLignes.forEach(l => {
