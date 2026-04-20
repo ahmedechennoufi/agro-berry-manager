@@ -43,15 +43,19 @@ function App() {
   };
 
   // Sauvegarde IMMÉDIATE sur GitHub + mise à jour state
-  const saveToGitHub = async () => {
-    if (!isGitHubConfigured()) return;
+  const saveToGitHub = async (showSuccessNotif = false) => {
+    if (!isGitHubConfigured()) {
+      showNotif('⚠️ GitHub non configuré ! Le magasinier ne verra pas ce changement. Va dans Paramètres → GitHub pour configurer.', 'error');
+      return;
+    }
     setSaving(true);
     try {
       await backupToGitHub(store.exportAllData());
       store.clearDeletedMovementIds(); // Vider après backup réussi
+      if (showSuccessNotif) showNotif('✅ Sauvegardé sur GitHub (magasinier sera à jour)', 'success');
     } catch (err) {
       console.warn('Sauvegarde GitHub échouée:', err.message);
-      showNotif('⚠️ Sauvegarde GitHub échouée: ' + err.message, 'error');
+      showNotif('❌ Sauvegarde GitHub ÉCHOUÉE: ' + err.message + ' — le magasinier ne verra pas ce changement !', 'error');
     } finally {
       setSaving(false);
     }
@@ -149,7 +153,7 @@ function App() {
   const addMovement = async (movement) => {
     const newMovement = store.addMovement(movement);
     setMovements(prev => [...prev, newMovement]);
-    await saveToGitHub();
+    await saveToGitHub(true); // Show success notif so user knows magasinier will see it
     return newMovement;
   };
 
@@ -230,6 +234,14 @@ function App() {
         {newMovementsCount > 0 && (
           <div style={{ position:'fixed', top:16, right:16, zIndex:9999, background:'#1d9e75', color:'white', padding:'8px 16px', borderRadius:20, fontSize:13, fontWeight:500, boxShadow:'0 4px 12px rgba(0,0,0,0.15)' }}>
             ✅ {newMovementsCount} nouveau(x) mouvement(s) des fermes
+          </div>
+        )}
+
+        {/* Bandeau d'alerte si GitHub non configuré */}
+        {!isGitHubConfigured() && (
+          <div style={{ position:'fixed', top:0, left:0, right:0, zIndex:9998, background:'#dc2626', color:'white', padding:'10px 16px', fontSize:13, fontWeight:600, textAlign:'center', boxShadow:'0 2px 8px rgba(0,0,0,0.2)', cursor:'pointer' }}
+               onClick={() => setCurrentPage('settings')}>
+            ⚠️ GITHUB NON CONFIGURÉ — Les sorties ne sont PAS synchronisées avec les magasiniers ! Cliquez ici pour configurer.
           </div>
         )}
 
