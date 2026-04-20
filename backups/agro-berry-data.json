@@ -31196,6 +31196,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776676574894
+    },
+    {
+      "type": "consumption",
+      "product": "INACOP",
+      "quantity": 0.6,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-13",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776676591608
     }
   ],
   "stockAB1": [
