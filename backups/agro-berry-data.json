@@ -31208,6 +31208,15 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776676591608
+    },
+    {
+      "type": "entry",
+      "product": "SEAMAC",
+      "quantity": 5,
+      "price": 0,
+      "supplier": "AGRIMATCO",
+      "date": "2026-04-08",
+      "id": 1776677571859
     }
   ],
   "stockAB1": [
@@ -34603,6 +34612,6 @@
   "deletedMovementIds": [
     1776670693247
   ],
-  "exportDate": "2026-04-20T09:31:29.660Z",
+  "exportDate": "2026-04-20T09:32:51.866Z",
   "melangesConfig": {}
 }
