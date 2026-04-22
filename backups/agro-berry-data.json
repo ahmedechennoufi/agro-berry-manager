@@ -31629,18 +31629,6 @@
       "date": "2026-04-16",
       "transferId": 1776854005972,
       "id": 1776854005973
-    },
-    {
-      "type": "consumption",
-      "product": "INACOP",
-      "quantity": 0.3,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-17",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776854158702
     }
   ],
   "stockAB1": [
@@ -35034,7 +35022,8 @@
     }
   ],
   "deletedMovementIds": [
-    1776852054024
+    1776852054024,
+    1776854158702
   ],
   "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
