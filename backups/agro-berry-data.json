@@ -31785,6 +31785,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776855175231
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 37.5,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-18",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776855192250
     }
   ],
   "stockAB1": [
