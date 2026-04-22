@@ -31139,18 +31139,6 @@
     },
     {
       "type": "consumption",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 64,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-17",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776426456079
-    },
-    {
-      "type": "consumption",
       "product": "TIOSOL",
       "quantity": 1.1,
       "unit": "KG",
@@ -35758,7 +35746,8 @@
     1776854158702,
     1776426398287,
     1776426367815,
-    1776426162455
+    1776426162455,
+    1776426456079
   ],
   "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
