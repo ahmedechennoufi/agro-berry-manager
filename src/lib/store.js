@@ -21,7 +21,7 @@ const STORAGE_KEYS = {
 };
 
 // ⬇️ Increment this number each time initialData.json is updated
-const CURRENT_DATA_VERSION = 70; // v5.6.5 - Fix CORNIERE encodage
+const CURRENT_DATA_VERSION = 71; // v5.7.0 - Fix boucle duplication sync GitHub
 
 // Migration: fix product name spelling
 const migrateProductNames = () => {
@@ -210,6 +210,28 @@ export const initializeData = () => {
       console.log(`✅ Mise à jour terminée`);
     }
     
+    // v71: Dédoublonnage des mouvements (fix boucle sync GitHub)
+    if (savedVersion < 71) {
+      console.log('🧹 Dédoublonnage des mouvements...');
+      const movements = JSON.parse(localStorage.getItem(STORAGE_KEYS.movements) || '[]');
+      const seen = new Map();
+      let duplicatesRemoved = 0;
+      for (const m of movements) {
+        // Signature = date + product + farm + type + quantity (ignore les IDs car ils ont été écrasés)
+        const sig = `${m.date}|${m.product}|${m.farm}|${m.type}|${m.quantity}|${m.culture || ''}|${m.destination || ''}`;
+        if (!seen.has(sig)) {
+          seen.set(sig, m);
+        } else {
+          duplicatesRemoved++;
+        }
+      }
+      if (duplicatesRemoved > 0) {
+        const deduped = Array.from(seen.values());
+        localStorage.setItem(STORAGE_KEYS.movements, JSON.stringify(deduped));
+        console.log(`✅ ${duplicatesRemoved} doublon(s) supprimé(s)`);
+      }
+    }
+    
     localStorage.setItem(STORAGE_KEYS.dataVersion, String(CURRENT_DATA_VERSION));
     
     // Run migrations
@@ -396,7 +418,9 @@ export const getMovements = () => getItem(STORAGE_KEYS.movements);
 
 export const addMovement = (movement) => {
   const movements = getMovements();
-  const newMovement = { ...movement, id: Date.now() };
+  // Préserver l'ID si déjà fourni (cas d'un mouvement venant de la sync GitHub)
+  // Sinon générer un nouvel ID unique
+  const newMovement = { ...movement, id: movement.id || Date.now() };
   movements.push(newMovement);
   setItem(STORAGE_KEYS.movements, movements);
   return newMovement;
