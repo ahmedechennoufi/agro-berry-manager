@@ -32145,6 +32145,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776856913533
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 25,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-19",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776856987449
     }
   ],
   "stockAB1": [
