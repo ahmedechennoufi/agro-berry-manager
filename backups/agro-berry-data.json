@@ -29713,18 +29713,6 @@
     },
     {
       "type": "consumption",
-      "product": "SULFATE DE POTASSE",
-      "quantity": 140,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-14",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776330295259
-    },
-    {
-      "type": "consumption",
       "product": "ACIDE PHOSPHORIQUE",
       "quantity": 64,
       "unit": "KG",
@@ -35516,7 +35504,8 @@
     1776331082667,
     1776331108259,
     1776331126162,
-    1776331160851
+    1776331160851,
+    1776330295259
   ],
   "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
