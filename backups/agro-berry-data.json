@@ -29713,18 +29713,6 @@
     },
     {
       "type": "consumption",
-      "product": "VITAL CU",
-      "quantity": 0.7,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-14",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776330512571
-    },
-    {
-      "type": "consumption",
       "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
       "quantity": 75,
       "price": 7.25,
@@ -35450,7 +35438,8 @@
     1776330407267,
     1776330430499,
     1776330469547,
-    1776330488451
+    1776330488451,
+    1776330512571
   ],
   "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
