@@ -31857,6 +31857,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776855395648
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.05,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-18",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776855443981
     }
   ],
   "stockAB1": [
