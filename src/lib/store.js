@@ -544,7 +544,9 @@ export const calculateFarmStock = (farmId, beforeDate = null) => {
     movements.forEach(m => {
       const product = m.product;
       if (!product) return;
-      if (!m.date || m.date < inventoryDate) return;
+      // Exclure mouvements AVANT ou LE JOUR MÊME de l'inventaire physique
+      // (le comptage physique reflète déjà l'état à la fin de cette journée)
+      if (!m.date || m.date <= inventoryDate) return;
       
       if (!stockMap[product]) stockMap[product] = { quantity: 0, price: m.price || 0, hasMovements: false };
       
