@@ -31596,18 +31596,6 @@
       "date": "2026-04-16",
       "transferId": 1776851088495,
       "id": 1776851088500
-    },
-    {
-      "type": "consumption",
-      "product": "BLAKJAK",
-      "quantity": 1,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-22",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776852054024
     }
   ],
   "stockAB1": [
@@ -35000,7 +34988,9 @@
       "updatedAt": "2026-04-16T12:17:10.891Z"
     }
   ],
-  "deletedMovementIds": [],
+  "deletedMovementIds": [
+    1776852054024
+  ],
   "exportDate": "2026-04-22T09:45:08.390Z",
   "melangesConfig": {}
 }
