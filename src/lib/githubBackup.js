@@ -29,8 +29,9 @@ const getFileInfo = async (config) => {
   return { data, sha: file.sha };
 };
 
-// === SAUVEGARDE IMMÉDIATE ===
-export const backupToGitHub = async (data) => {
+// === SAUVEGARDE IMMÉDIATE (avec retry automatique en cas de conflit) ===
+export const backupToGitHub = async (data, retryCount = 0) => {
+  const MAX_RETRIES = 4;
   const config = getGitHubConfig();
   if (!config.token || !config.owner || !config.repo) throw new Error('GitHub non configuré');
 
@@ -82,11 +83,18 @@ export const backupToGitHub = async (data) => {
 
   if (!putRes.ok) {
     const err = await putRes.json().catch(() => ({}));
-    if (putRes.status === 409) throw new Error('Conflit GitHub - réessayez');
+    // Retry automatique en cas de conflit 409 (SHA obsolète = le magasinier a push entre-temps)
+    if (putRes.status === 409 && retryCount < MAX_RETRIES) {
+      console.log(`🔄 Conflit GitHub, retry ${retryCount + 1}/${MAX_RETRIES}...`);
+      // Attendre un peu pour laisser GitHub se stabiliser (backoff exponentiel)
+      await new Promise(r => setTimeout(r, 300 * (retryCount + 1)));
+      return backupToGitHub(data, retryCount + 1);
+    }
+    if (putRes.status === 409) throw new Error('Conflit GitHub persistant après plusieurs tentatives - réessayez manuellement');
     throw new Error(err.message || `Erreur GitHub (${putRes.status})`);
   }
 
-  return { success: true, date: new Date().toISOString() };
+  return { success: true, date: new Date().toISOString(), retries: retryCount };
 };
 
 // === RESTAURER DEPUIS GITHUB ===
