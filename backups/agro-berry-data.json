@@ -31596,6 +31596,29 @@
       "date": "2026-04-16",
       "transferId": 1776851088495,
       "id": 1776851088500
+    },
+    {
+      "type": "consumption",
+      "product": "BLAKJAK",
+      "quantity": 1,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-22",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1776852054024
+    },
+    {
+      "type": "transfer-out",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 100,
+      "price": 4.26,
+      "farm": "AGRO BERRY 2",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-04-16",
+      "transferId": 1776853926560,
+      "id": 1776853926562
     }
   ],
   "stockAB1": [
@@ -34988,9 +35011,7 @@
       "updatedAt": "2026-04-16T12:17:10.891Z"
     }
   ],
-  "deletedMovementIds": [
-    1776852054024
-  ],
-  "exportDate": "2026-04-22T09:45:08.390Z",
+  "deletedMovementIds": [],
+  "exportDate": "2026-04-22T10:32:06.564Z",
   "melangesConfig": {}
 }
