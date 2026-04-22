@@ -31619,6 +31619,28 @@
       "date": "2026-04-16",
       "transferId": 1776853926560,
       "id": 1776853926562
+    },
+    {
+      "type": "transfer-in",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 100,
+      "price": 4.26,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 2",
+      "date": "2026-04-16",
+      "transferId": 1776853926560,
+      "id": 1776853926566
+    },
+    {
+      "type": "transfer-out",
+      "product": "CHLORO MIX ",
+      "quantity": 15,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-04-16",
+      "transferId": 1776854005972,
+      "id": 1776854005973
     }
   ],
   "stockAB1": [
@@ -35012,6 +35034,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-22T10:32:06.564Z",
+  "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
 }
