@@ -31067,18 +31067,6 @@
     },
     {
       "type": "consumption",
-      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
-      "quantity": 105,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-16",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776425482368
-    },
-    {
-      "type": "consumption",
       "product": "FEROXIM",
       "quantity": 14,
       "unit": "L",
@@ -35736,7 +35724,8 @@
     1776426367815,
     1776426162455,
     1776426456079,
-    1776425391752
+    1776425391752,
+    1776425482368
   ],
   "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
