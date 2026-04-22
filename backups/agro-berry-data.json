@@ -29845,18 +29845,6 @@
     },
     {
       "type": "consumption",
-      "product": "HUWA SAN",
-      "quantity": 2,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-14",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776330641371
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE DE POTASSE",
       "quantity": 140,
       "unit": "KG",
@@ -35670,7 +35658,8 @@
     1776426014056,
     1776426061655,
     1776426112727,
-    1776330876891
+    1776330876891,
+    1776330641371
   ],
   "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
