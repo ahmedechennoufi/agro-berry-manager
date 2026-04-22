@@ -31585,6 +31585,17 @@
       "date": "2026-04-16",
       "transferId": 1776851088495,
       "id": 1776851088496
+    },
+    {
+      "type": "transfer-in",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 100,
+      "price": 7.11,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 2",
+      "date": "2026-04-16",
+      "transferId": 1776851088495,
+      "id": 1776851088500
     }
   ],
   "stockAB1": [
@@ -34978,6 +34989,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-22T09:44:48.499Z",
+  "exportDate": "2026-04-22T09:45:08.390Z",
   "melangesConfig": {}
 }
