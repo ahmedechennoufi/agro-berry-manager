@@ -29761,18 +29761,6 @@
     },
     {
       "type": "consumption",
-      "product": "FEROXIM",
-      "quantity": 14,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-15",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776330448603
-    },
-    {
-      "type": "consumption",
       "product": "MAP",
       "quantity": 105,
       "unit": "KG",
@@ -35626,7 +35614,8 @@
     1776330641371,
     1776330612947,
     1776330564915,
-    1776330541443
+    1776330541443,
+    1776330448603
   ],
   "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
