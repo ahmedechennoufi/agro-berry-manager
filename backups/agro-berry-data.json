@@ -31163,18 +31163,6 @@
     },
     {
       "type": "consumption",
-      "product": "SULFATE DE ZINC",
-      "quantity": 0.7,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-16",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776426398287
-    },
-    {
-      "type": "consumption",
       "product": "ACIDE PHOSPHORIQUE",
       "quantity": 64,
       "unit": "KG",
@@ -35791,7 +35779,8 @@
   ],
   "deletedMovementIds": [
     1776852054024,
-    1776854158702
+    1776854158702,
+    1776426398287
   ],
   "exportDate": "2026-04-22T10:33:25.975Z",
   "melangesConfig": {}
