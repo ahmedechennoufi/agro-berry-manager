@@ -31641,6 +31641,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1776854315684
+    },
+    {
+      "type": "consumption",
+      "product": "KELPAK",
+      "quantity": 1.5,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-17",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776854351901
     }
   ],
   "stockAB1": [
