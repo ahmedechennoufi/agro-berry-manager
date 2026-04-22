@@ -31629,6 +31629,18 @@
       "date": "2026-04-16",
       "transferId": 1776854005972,
       "id": 1776854005973
+    },
+    {
+      "type": "consumption",
+      "product": "INACOP",
+      "quantity": 0.3,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-17",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1776854315684
     }
   ],
   "stockAB1": [
