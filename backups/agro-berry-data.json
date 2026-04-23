@@ -31067,18 +31067,6 @@
     },
     {
       "type": "consumption",
-      "product": "MAP",
-      "quantity": 105,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-16",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776426061655
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE MAGNESUIM",
       "quantity": 105,
       "unit": "KG",
@@ -36242,7 +36230,8 @@
     1776425391752,
     1776425482368,
     1776425553968,
-    1776426014056
+    1776426014056,
+    1776426061655
   ],
   "exportDate": "2026-04-23T08:11:47.883Z",
   "melangesConfig": {}
