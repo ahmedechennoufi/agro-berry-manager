@@ -34350,6 +34350,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776944311570
+    },
+    {
+      "type": "consumption",
+      "product": "KELPAK",
+      "quantity": 6,
+      "price": 115,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776944576294
     }
   ],
   "stockAB1": [
@@ -37743,6 +37754,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T11:38:31.573Z",
+  "exportDate": "2026-04-23T11:42:56.296Z",
   "melangesConfig": {}
 }
