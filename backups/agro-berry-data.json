@@ -32874,6 +32874,15 @@
       "supplier": "BEST BIO Z",
       "date": "2026-04-10",
       "id": 1776926664499
+    },
+    {
+      "type": "exit",
+      "product": "CHLORO MIX ",
+      "quantity": 100,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-18",
+      "id": 1776926719385
     }
   ],
   "stockAB1": [
@@ -36267,6 +36276,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T06:44:24.507Z",
+  "exportDate": "2026-04-23T06:45:19.392Z",
   "melangesConfig": {}
 }
