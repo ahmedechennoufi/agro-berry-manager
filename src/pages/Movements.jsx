@@ -29,6 +29,8 @@ const Movements = () => {
   const [consoMode, setConsoMode] = useState('simple');
   const [showNewSupplier, setShowNewSupplier] = useState(false);
   const [newSupplierName, setNewSupplierName] = useState('');
+  const [showCustomFarm, setShowCustomFarm] = useState(false);
+  const [customFarmName, setCustomFarmName] = useState('');
   const [form, setForm] = useState({
     product: '', quantity: '', price: '', supplier: '', farm: '', date: today(), culture: '', destination: 'Sol',
     fromFarm: FARMS[0]?.id || '', toFarm: FARMS[1]?.id || ''
@@ -201,6 +203,8 @@ const Movements = () => {
   const openModal = (type) => {
     setModalType(type);
     setConsoMode('simple');
+    setShowCustomFarm(false);
+    setCustomFarmName('');
     setForm({
       product: '', quantity: '', price: '', supplier: '', farm: FARMS[0]?.id || '', 
       date: today(), culture: 'Myrtille', destination: 'Sol',
@@ -212,6 +216,12 @@ const Movements = () => {
   const handleSubmit = () => {
     if (!form.product || !form.quantity) {
       showNotif('Produit et quantité requis', 'error');
+      return;
+    }
+    
+    // Validate custom farm name if enabled
+    if (showCustomFarm && !customFarmName.trim()) {
+      showNotif('Nom de la ferme requis', 'error');
       return;
     }
     
@@ -269,6 +279,8 @@ const Movements = () => {
     setShowModal(false);
     setShowNewSupplier(false);
     setNewSupplierName('');
+    setShowCustomFarm(false);
+    setCustomFarmName('');
   };
 
   // Transfer submit
@@ -986,19 +998,46 @@ const Movements = () => {
               )}
               
               {modalType !== 'entry' && (
-                <Select label="Ferme destination" value={form.farm} onChange={(v) => {
-                    const newForm = { ...form, farm: v };
-                    const farmCultures = FARM_CULTURES[v] || ['Myrtille'];
-                    if (!farmCultures.includes(form.culture)) {
-                      newForm.culture = farmCultures[0];
-                    }
-                    // AGB3 Myrtille: pas de Sol → basculer vers Hydro
-                    if (v === 'AGRO BERRY 3' && (newForm.culture === 'Myrtille') && newForm.destination === 'Sol') {
-                      newForm.destination = 'Hydro';
-                    }
-                    setForm(newForm);
-                  }}
-                  options={FARMS.map(f => ({ value: f.id, label: f.name }))} />
+                <>
+                  <Select label="Ferme destination" value={showCustomFarm ? '__CUSTOM__' : form.farm} onChange={(v) => {
+                      if (v === '__CUSTOM__') {
+                        // Mode "autre ferme" : on affiche le champ texte, pas d'auto-remplissage culture
+                        setShowCustomFarm(true);
+                        setForm({ ...form, farm: customFarmName });
+                        return;
+                      }
+                      setShowCustomFarm(false);
+                      setCustomFarmName('');
+                      const newForm = { ...form, farm: v };
+                      const farmCultures = FARM_CULTURES[v] || ['Myrtille'];
+                      if (!farmCultures.includes(form.culture)) {
+                        newForm.culture = farmCultures[0];
+                      }
+                      // AGB3 Myrtille: pas de Sol → basculer vers Hydro
+                      if (v === 'AGRO BERRY 3' && (newForm.culture === 'Myrtille') && newForm.destination === 'Sol') {
+                        newForm.destination = 'Hydro';
+                      }
+                      setForm(newForm);
+                    }}
+                    options={[
+                      ...FARMS.map(f => ({ value: f.id, label: f.name })),
+                      ...(modalType === 'exit' ? [{ value: '__CUSTOM__', label: '➕ Autre ferme...' }] : [])
+                    ]} />
+                  
+                  {showCustomFarm && (
+                    <Input
+                      label="Nom de la ferme *"
+                      type="text"
+                      value={customFarmName}
+                      onChange={(v) => {
+                        const upper = v.toUpperCase();
+                        setCustomFarmName(upper);
+                        setForm({ ...form, farm: upper });
+                      }}
+                      placeholder="Ex: CLIENT X, ENTREPOT, AB4..."
+                    />
+                  )}
+                </>
               )}
               
               {/* Stock display for exit (warehouse stock) */}
