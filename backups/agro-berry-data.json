@@ -31598,18 +31598,6 @@
       "id": 1776851088500
     },
     {
-      "type": "consumption",
-      "product": "BLAKJAK",
-      "quantity": 1,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-22",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776852054024
-    },
-    {
       "type": "transfer-out",
       "product": "NITRATE DE CALCIUM",
       "quantity": 100,
@@ -36311,7 +36299,9 @@
       "updatedAt": "2026-04-16T12:17:10.891Z"
     }
   ],
-  "deletedMovementIds": [],
-  "exportDate": "2026-04-23T06:47:57.829Z",
+  "deletedMovementIds": [
+    1776852054024
+  ],
+  "exportDate": "2026-04-23T07:36:52.671Z",
   "melangesConfig": {}
 }
