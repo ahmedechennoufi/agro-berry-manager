@@ -33791,6 +33791,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776942490600
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 70,
+      "price": 3.4754355400696864,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776942502749
     }
   ],
   "stockAB1": [
@@ -37184,6 +37195,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T11:08:10.602Z",
+  "exportDate": "2026-04-23T11:08:22.752Z",
   "melangesConfig": {}
 }
