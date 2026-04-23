@@ -34471,6 +34471,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776945807065
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 44,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-06",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776945842885
     }
   ],
   "stockAB1": [
@@ -37864,6 +37875,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T12:03:27.068Z",
+  "exportDate": "2026-04-23T12:04:02.887Z",
   "melangesConfig": {}
 }
