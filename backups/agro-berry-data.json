@@ -34361,6 +34361,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776944576294
+    },
+    {
+      "type": "consumption",
+      "product": "SCELTA",
+      "quantity": 4,
+      "price": 1190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-02",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776944607796
     }
   ],
   "stockAB1": [
@@ -37754,6 +37765,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T11:42:56.296Z",
+  "exportDate": "2026-04-23T11:43:27.800Z",
   "melangesConfig": {}
 }
