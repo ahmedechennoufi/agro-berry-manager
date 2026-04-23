@@ -33998,6 +33998,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776943377667
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-14",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776943414945
     }
   ],
   "stockAB1": [
@@ -37391,6 +37402,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T11:22:57.669Z",
+  "exportDate": "2026-04-23T11:23:34.948Z",
   "melangesConfig": {}
 }
