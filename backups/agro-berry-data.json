@@ -31067,18 +31067,6 @@
     },
     {
       "type": "consumption",
-      "product": "SOLUBOR",
-      "quantity": 0.14,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-16",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776426367815
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE DE ZINC",
       "quantity": 0.7,
       "unit": "KG",
@@ -36209,7 +36197,8 @@
     1776426014056,
     1776426061655,
     1776426112727,
-    1776426162455
+    1776426162455,
+    1776426367815
   ],
   "exportDate": "2026-04-23T08:11:47.883Z",
   "melangesConfig": {}
