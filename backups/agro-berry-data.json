@@ -34900,6 +34900,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776949962940
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 3.75,
+      "price": 1920,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-19",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776950134013
     }
   ],
   "stockAB1": [
@@ -38293,6 +38304,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T13:12:42.942Z",
+  "exportDate": "2026-04-23T13:15:34.015Z",
   "melangesConfig": {}
 }
