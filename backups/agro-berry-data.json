@@ -34207,6 +34207,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1776943918089
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 19.25,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-18",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1776943950582
     }
   ],
   "stockAB1": [
@@ -37600,6 +37611,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T11:31:58.092Z",
+  "exportDate": "2026-04-23T11:32:30.584Z",
   "melangesConfig": {}
 }
