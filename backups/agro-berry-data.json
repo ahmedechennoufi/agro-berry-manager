@@ -32883,6 +32883,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-04-18",
       "id": 1776926719385
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 2000,
+      "price": 3.907692307692308,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-18",
+      "id": 1776926790915
     }
   ],
   "stockAB1": [
@@ -36276,6 +36285,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T06:45:19.392Z",
+  "exportDate": "2026-04-23T06:46:30.922Z",
   "melangesConfig": {}
 }
