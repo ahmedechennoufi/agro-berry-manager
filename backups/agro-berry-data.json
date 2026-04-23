@@ -33943,6 +33943,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776943154832
+    },
+    {
+      "type": "consumption",
+      "product": "CHLORO MIX ",
+      "quantity": 8,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-21",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776943190866
     }
   ],
   "stockAB1": [
@@ -37336,6 +37347,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T11:19:14.834Z",
+  "exportDate": "2026-04-23T11:19:50.868Z",
   "melangesConfig": {}
 }
