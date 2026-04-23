@@ -34526,6 +34526,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776946084337
+    },
+    {
+      "type": "consumption",
+      "product": "FOLICIST",
+      "quantity": 3.6,
+      "price": 196.35,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-07",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776946160406
     }
   ],
   "stockAB1": [
@@ -37919,6 +37930,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T12:08:04.340Z",
+  "exportDate": "2026-04-23T12:09:20.409Z",
   "melangesConfig": {}
 }
