@@ -41,14 +41,19 @@ export const backupToGitHub = async (data, retryCount = 0) => {
   let sha = null;
   let magasinierMovements = [];
   let existingMelangesConfig = data.melangesConfig || {};
+  let mergedDeletedIds = [...(data.deletedMovementIds || [])];
   try {
     const { data: existing, sha: existingSha } = await getFileInfo(config);
     sha = existingSha;
     const adminIds = new Set((data.movements || []).map(m => m.id));
-    const deletedIds = new Set((data.deletedMovementIds || []));
-    // Garder les mouvements magasiniers sauf ceux supprimés par l'admin
+    // Fusionner les IDs supprimés : admin + magasinier (depuis GitHub)
+    const remoteDeletedIds = existing.deletedMovementIds || [];
+    const allDeletedIds = new Set([...mergedDeletedIds, ...remoteDeletedIds]);
+    mergedDeletedIds = Array.from(allDeletedIds);
+    
+    // Garder les mouvements magasiniers sauf ceux supprimés (admin OU magasinier)
     magasinierMovements = (existing.movements || []).filter(m =>
-      m.id && !adminIds.has(m.id) && !deletedIds.has(m.id)
+      m.id && !adminIds.has(m.id) && !allDeletedIds.has(m.id)
     );
     // Préserver melangesConfig depuis GitHub (priorité au fichier GitHub)
     if (existing.melangesConfig && Object.keys(existing.melangesConfig).length > 0) {
@@ -56,11 +61,16 @@ export const backupToGitHub = async (data, retryCount = 0) => {
     }
   } catch (e) { /* fichier n'existe pas encore */ }
 
+  // Filtrer aussi les mouvements admin qui ont été supprimés par le magasinier
+  const deletedSet = new Set(mergedDeletedIds);
+  const adminMovements = (data.movements || []).filter(m => !deletedSet.has(m.id));
+
   // Merger mouvements admin + magasiniers
   const mergedData = {
     ...data,
-    movements: [...(data.movements || []), ...magasinierMovements],
-    melangesConfig: existingMelangesConfig
+    movements: [...adminMovements, ...magasinierMovements],
+    melangesConfig: existingMelangesConfig,
+    deletedMovementIds: mergedDeletedIds
   };
 
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(mergedData, null, 2))));
@@ -106,14 +116,22 @@ export const restoreFromGitHub = async () => {
 };
 
 // === SYNC MOUVEMENTS MAGASINIERS ===
-export const syncMovementsFromGitHub = async (getCurrentMovementsFn, addMovementFn) => {
+export const syncMovementsFromGitHub = async (getCurrentMovementsFn, addMovementFn, getLocalDeletedIdsFn) => {
   const config = getGitHubConfig();
   if (!config.token || !config.owner || !config.repo) return 0;
   try {
     const { data } = await getFileInfo(config);
     const backupMovements = data.movements || [];
     const localIds = new Set(getCurrentMovementsFn().map(m => m.id));
-    const newMovements = backupMovements.filter(m => m.id && !localIds.has(m.id));
+    // Ne pas réimporter les mouvements supprimés localement (par admin ou magasinier)
+    const locallyDeleted = getLocalDeletedIdsFn ? new Set(getLocalDeletedIdsFn()) : new Set();
+    const remotelyDeleted = new Set(data.deletedMovementIds || []);
+    const newMovements = backupMovements.filter(m => 
+      m.id && 
+      !localIds.has(m.id) && 
+      !locallyDeleted.has(m.id) &&
+      !remotelyDeleted.has(m.id)
+    );
     for (const mv of newMovements) {
       try { addMovementFn(mv); } catch (e) { console.warn('Erreur import:', e); }
     }

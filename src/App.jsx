@@ -65,7 +65,11 @@ function App() {
   const syncFromGitHub = async (silent = false) => {
     if (!isGitHubConfigured()) return 0;
     try {
-      const count = await syncMovementsFromGitHub(store.getMovements, (mv) => store.addMovement(mv));
+      const count = await syncMovementsFromGitHub(
+        store.getMovements, 
+        (mv) => store.addMovement(mv),
+        store.getDeletedMovementIds
+      );
       if (count > 0) {
         loadData();
         setNewMovementsCount(count);
