@@ -33736,6 +33736,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776942410044
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 1.5,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776942422967
     }
   ],
   "stockAB1": [
@@ -37129,6 +37140,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T11:06:50.052Z",
+  "exportDate": "2026-04-23T11:07:02.970Z",
   "melangesConfig": {}
 }
