@@ -28290,7 +28290,7 @@
     {
       "type": "exit",
       "product": "SULFATE MAGNESUIM",
-      "quantity": 2000,
+      "quantity": 3000,
       "price": 3.907692307692308,
       "farm": "AGRO BERRY 1",
       "date": "2026-04-15",
@@ -32827,6 +32827,17 @@
       "date": "2026-04-20",
       "transferId": 1776926102213,
       "id": 1776926102214
+    },
+    {
+      "type": "transfer-in",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 150,
+      "price": 4.26,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-04-20",
+      "transferId": 1776926102213,
+      "id": 1776926102217
     }
   ],
   "stockAB1": [
@@ -36220,6 +36231,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T06:35:02.216Z",
+  "exportDate": "2026-04-23T06:39:18.007Z",
   "melangesConfig": {}
 }
