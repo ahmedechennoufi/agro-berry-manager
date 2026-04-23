@@ -33703,6 +33703,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776941773988
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 75,
+      "price": 12.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-18",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776941789852
     }
   ],
   "stockAB1": [
@@ -37096,6 +37107,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T10:56:13.991Z",
+  "exportDate": "2026-04-23T10:56:29.855Z",
   "melangesConfig": {}
 }
