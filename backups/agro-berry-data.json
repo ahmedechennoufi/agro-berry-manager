@@ -32893,6 +32893,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1776941040110
+    },
+    {
+      "type": "consumption",
+      "product": "FEROXIM",
+      "quantity": 14,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-21",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1776941054592
     }
   ],
   "stockAB1": [
