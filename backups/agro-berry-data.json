@@ -34537,6 +34537,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776946160406
+    },
+    {
+      "type": "consumption",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 4.5,
+      "price": 800,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-07",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776946236037
     }
   ],
   "stockAB1": [
@@ -37930,6 +37941,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T12:09:20.409Z",
+  "exportDate": "2026-04-23T12:10:36.040Z",
   "melangesConfig": {}
 }
