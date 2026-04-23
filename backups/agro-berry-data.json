@@ -32425,18 +32425,6 @@
       "date": "2026-04-22",
       "transferId": 1776936476234,
       "id": 1776936476238
-    },
-    {
-      "type": "consumption",
-      "product": "CHLORO MIX ",
-      "quantity": 15,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-16",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776936414623
     }
   ],
   "stockAB1": [
@@ -35873,7 +35861,8 @@
     1776426162455,
     1776426367815,
     1776426398287,
-    1776925537194
+    1776925537194,
+    1776936414623
   ],
   "exportDate": "2026-04-23T09:27:56.241Z",
   "melangesConfig": {}
