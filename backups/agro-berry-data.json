@@ -32302,18 +32302,6 @@
       "id": 1776861371795
     },
     {
-      "type": "consumption",
-      "product": "NITRATE DE CALCIUM",
-      "quantity": 56,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-16",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776925537194
-    },
-    {
       "type": "transfer-out",
       "product": "NITRATE DE CALCIUM",
       "quantity": 150,
@@ -35884,7 +35872,8 @@
     1776426112727,
     1776426162455,
     1776426367815,
-    1776426398287
+    1776426398287,
+    1776925537194
   ],
   "exportDate": "2026-04-23T09:27:56.241Z",
   "melangesConfig": {}
