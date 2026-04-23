@@ -34548,6 +34548,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776946236037
+    },
+    {
+      "type": "consumption",
+      "product": "KELPAK",
+      "quantity": 6.75,
+      "price": 115,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-07",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776946272484
     }
   ],
   "stockAB1": [
@@ -37941,6 +37952,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T12:10:36.040Z",
+  "exportDate": "2026-04-23T12:11:12.487Z",
   "melangesConfig": {}
 }
