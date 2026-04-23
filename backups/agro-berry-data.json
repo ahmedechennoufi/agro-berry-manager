@@ -32689,6 +32689,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1776940040061
+    },
+    {
+      "type": "consumption",
+      "product": "PERFECTOSE",
+      "quantity": 96,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-18",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1776940058277
     }
   ],
   "stockAB1": [
