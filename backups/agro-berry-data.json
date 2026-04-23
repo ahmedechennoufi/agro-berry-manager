@@ -34933,6 +34933,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776950224458
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE NITRIQUE",
+      "quantity": 33,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-21",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776950255134
     }
   ],
   "stockAB1": [
@@ -38326,6 +38337,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T13:17:04.461Z",
+  "exportDate": "2026-04-23T13:17:35.136Z",
   "melangesConfig": {}
 }
