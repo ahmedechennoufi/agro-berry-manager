@@ -33615,6 +33615,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1776941608548
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE DE ZINC",
+      "quantity": 1,
+      "price": 11.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-16",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1776941625919
     }
   ],
   "stockAB1": [
@@ -37008,6 +37019,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T10:53:28.551Z",
+  "exportDate": "2026-04-23T10:53:45.922Z",
   "melangesConfig": {}
 }
