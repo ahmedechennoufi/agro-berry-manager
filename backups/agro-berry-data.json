@@ -34841,7 +34841,7 @@
       "quantity": 35,
       "price": 3.4754355400696864,
       "farm": "AGRO BERRY 1",
-      "date": "2026-04-16",
+      "date": "2026-04-17",
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776949227641
@@ -38249,6 +38249,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T13:01:26.464Z",
+  "exportDate": "2026-04-23T13:02:55.703Z",
   "melangesConfig": {}
 }
