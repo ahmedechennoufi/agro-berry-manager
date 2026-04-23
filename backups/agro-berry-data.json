@@ -34570,6 +34570,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776946302722
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 25,
+      "price": 12.8,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-08",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1776946400293
     }
   ],
   "stockAB1": [
@@ -37963,6 +37974,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-23T12:11:42.724Z",
+  "exportDate": "2026-04-23T12:13:20.295Z",
   "melangesConfig": {}
 }
