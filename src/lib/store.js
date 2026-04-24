@@ -15,6 +15,7 @@ const STORAGE_KEYS = {
   stockHistory: 'agro_stock_history_v3',
   physicalInventories: 'agro_physical_inventories_v3',
   commandes: 'agro_commandes_v3',
+  melangesConfigAB1: 'agro_melanges_config_ab1_v1',
   initialized: 'agro_initialized_v3',
   dataVersion: 'agro_data_version',
   deletedMovementIds: 'agro_deleted_movement_ids_v3'
@@ -1628,6 +1629,36 @@ export const getInventaireForPeriod = (periodDate) => {
   const targetStr = targetDate.toISOString().split('T')[0];
   
   return inventaires.find(inv => inv.date <= targetStr) || null;
+};
+
+// === MÉLANGES CONFIG (AGB1) ===
+// Structure: { horsSol: [{product, qty, unit}], sol: [{product, qty, unit}] }
+export const getMelangesConfigAB1 = () => {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.melangesConfigAB1);
+    if (!raw) return { horsSol: [], sol: [] };
+    const parsed = JSON.parse(raw);
+    return { horsSol: parsed.horsSol || [], sol: parsed.sol || [] };
+  } catch { return { horsSol: [], sol: [] }; }
+};
+
+export const setMelangesConfigAB1 = (config) => {
+  const clean = { horsSol: config.horsSol || [], sol: config.sol || [] };
+  localStorage.setItem(STORAGE_KEYS.melangesConfigAB1, JSON.stringify(clean));
+  return clean;
+};
+
+// Calcul des seuils (×5 mélanges) à partir de la config
+export const calcSeuilsFromMelanges = (config, multiplier = 5) => {
+  const seuils = {};
+  const all = [...(config.horsSol || []), ...(config.sol || [])];
+  all.forEach(({ product, qty, unit }) => {
+    if (!product) return;
+    const key = String(product).toUpperCase().trim();
+    if (!seuils[key]) seuils[key] = { qty: 0, unit: unit || 'KG' };
+    seuils[key].qty += (parseFloat(qty) || 0) * multiplier;
+  });
+  return seuils;
 };
 
 // Initialiser au chargement

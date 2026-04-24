@@ -10,6 +10,8 @@ const menuItems = [
   { id: 'physical-inventory', label: 'Inventaire Physique' },
   { id: 'commandes',          label: 'Commandes'       },
   { id: 'products',           label: 'Produits'        },
+  { id: 'melanges',           label: '⚗ Mélanges AGB1' },
+  { id: 'alertes',            label: '⚠ Alertes AGB1'  },
   { id: 'settings',           label: 'Parametres'      },
 ];
 
@@ -24,6 +26,8 @@ const Icon = ({ id, size = 15 }) => {
     'physical-inventory':'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2',
     commandes:           'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2',
     products:            'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10',
+    melanges:            'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z',
+    alertes:             'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
     settings:            'M12 15a3 3 0 100-6 3 3 0 000 6z',
   };
   const d = icons[id] || icons.dashboard;
