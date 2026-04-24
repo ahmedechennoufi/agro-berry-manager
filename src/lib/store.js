@@ -1632,26 +1632,46 @@ export const getInventaireForPeriod = (periodDate) => {
 };
 
 // === MÉLANGES CONFIG (AGB1) ===
-// Structure: { horsSol: [{product, qty, unit}], sol: [{product, qty, unit}] }
+// Structure: { myrtilleHorsSol: [{product, qty, unit}], myrtilleSol: [...], fraise: [...] }
 export const getMelangesConfigAB1 = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEYS.melangesConfigAB1);
-    if (!raw) return { horsSol: [], sol: [] };
+    if (!raw) return { myrtilleHorsSol: [], myrtilleSol: [], fraise: [] };
     const parsed = JSON.parse(raw);
-    return { horsSol: parsed.horsSol || [], sol: parsed.sol || [] };
-  } catch { return { horsSol: [], sol: [] }; }
+    // Migration ancienne structure (horsSol, sol) → nouvelle
+    if (parsed.horsSol !== undefined || parsed.sol !== undefined) {
+      return {
+        myrtilleHorsSol: parsed.horsSol || [],
+        myrtilleSol: parsed.sol || [],
+        fraise: parsed.fraise || []
+      };
+    }
+    return {
+      myrtilleHorsSol: parsed.myrtilleHorsSol || [],
+      myrtilleSol: parsed.myrtilleSol || [],
+      fraise: parsed.fraise || []
+    };
+  } catch { return { myrtilleHorsSol: [], myrtilleSol: [], fraise: [] }; }
 };
 
 export const setMelangesConfigAB1 = (config) => {
-  const clean = { horsSol: config.horsSol || [], sol: config.sol || [] };
+  const clean = {
+    myrtilleHorsSol: config.myrtilleHorsSol || [],
+    myrtilleSol: config.myrtilleSol || [],
+    fraise: config.fraise || []
+  };
   localStorage.setItem(STORAGE_KEYS.melangesConfigAB1, JSON.stringify(clean));
   return clean;
 };
 
-// Calcul des seuils (×5 mélanges) à partir de la config
+// Calcul des seuils (×5 mélanges) à partir de la config (toutes sections confondues)
 export const calcSeuilsFromMelanges = (config, multiplier = 5) => {
   const seuils = {};
-  const all = [...(config.horsSol || []), ...(config.sol || [])];
+  const all = [
+    ...(config.myrtilleHorsSol || []),
+    ...(config.myrtilleSol || []),
+    ...(config.fraise || [])
+  ];
   all.forEach(({ product, qty, unit }) => {
     if (!product) return;
     const key = String(product).toUpperCase().trim();

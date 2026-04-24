@@ -43,11 +43,13 @@ const Melanges = () => {
 
   const seuils = store.calcSeuilsFromMelanges(config, MULTIPLIER);
 
-  const renderSection = (type) => {
-    const label = type === 'horsSol' ? '💧 Hors Sol' : '🌱 Sol';
-    const color = type === 'horsSol' ? '#1e40af' : '#15803d';
-    const bg = type === 'horsSol' ? 'linear-gradient(135deg,#eff6ff,#dbeafe)' : 'linear-gradient(135deg,#f0fdf4,#dcfce7)';
-    const border = type === 'horsSol' ? 'rgba(59,130,246,0.2)' : 'rgba(34,197,94,0.2)';
+  const SECTIONS = [
+    { key: 'myrtilleHorsSol', label: '🫐 Myrtille · 💧 Hors Sol', color: '#1e40af', bg: 'linear-gradient(135deg,#eff6ff,#dbeafe)', border: 'rgba(59,130,246,0.2)' },
+    { key: 'myrtilleSol',     label: '🫐 Myrtille · 🌱 Sol',     color: '#15803d', bg: 'linear-gradient(135deg,#f0fdf4,#dcfce7)', border: 'rgba(34,197,94,0.2)' },
+    { key: 'fraise',          label: '🍓 Fraise',                 color: '#be123c', bg: 'linear-gradient(135deg,#fff1f2,#ffe4e6)', border: 'rgba(244,63,94,0.2)' }
+  ];
+
+  const renderSection = ({ key: type, label, color, bg, border }) => {
     const items = config[type] || [];
 
     const updateItem = (idx, field, val) => {
@@ -62,7 +64,7 @@ const Melanges = () => {
     };
 
     return (
-      <div key={type} style={{ marginBottom: 24, background: '#fff', border: '1px solid ' + border, borderRadius: 16, overflow: 'visible', boxShadow: '0 1px 6px rgba(0,0,0,0.04)' }}>
+      <div style={{ marginBottom: 24, background: '#fff', border: '1px solid ' + border, borderRadius: 16, overflow: 'visible', boxShadow: '0 1px 6px rgba(0,0,0,0.04)' }}>
         <div style={{ padding: '14px 20px', background: bg, borderBottom: '1px solid ' + border, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ fontWeight: 700, color, fontSize: 15 }}>{label}</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -170,8 +172,7 @@ const Melanges = () => {
         </button>
       </div>
 
-      {renderSection('horsSol')}
-      {renderSection('sol')}
+      {SECTIONS.map(section => <React.Fragment key={section.key}>{renderSection(section)}</React.Fragment>)}
 
       <div style={{ background: 'linear-gradient(135deg,#f0fff4,#dcfce7)', border: '1px solid rgba(34,197,94,0.2)', borderRadius: 14, padding: '16px 20px' }}>
         <div style={{ fontWeight: 700, color: '#16a34a', fontSize: 13, marginBottom: 12 }}>📊 Aperçu des seuils calculés ×{MULTIPLIER}</div>
