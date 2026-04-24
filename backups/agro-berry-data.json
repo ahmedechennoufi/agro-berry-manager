@@ -34416,6 +34416,15 @@
       "supplier": "CAS",
       "date": "2026-04-24",
       "id": 1777026295608
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 900,
+      "price": 5,
+      "supplier": "CAS",
+      "date": "2026-04-24",
+      "id": 1777026340075
     }
   ],
   "stockAB1": [
@@ -37809,6 +37818,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-24T10:24:55.615Z",
+  "exportDate": "2026-04-24T10:25:40.081Z",
   "melangesConfig": {}
 }
