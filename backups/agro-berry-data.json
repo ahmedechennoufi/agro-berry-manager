@@ -34434,6 +34434,15 @@
       "supplier": "CAS",
       "date": "2026-04-24",
       "id": 1777026594615
+    },
+    {
+      "type": "exit",
+      "product": "MICROS",
+      "quantity": 45,
+      "price": 141.67,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-06",
+      "id": 1777026890981
     }
   ],
   "stockAB1": [
@@ -37827,6 +37836,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-24T10:29:54.622Z",
+  "exportDate": "2026-04-24T10:34:50.986Z",
   "melangesConfig": {}
 }
