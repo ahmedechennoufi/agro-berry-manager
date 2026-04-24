@@ -34407,6 +34407,15 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1776950255134
+    },
+    {
+      "type": "entry",
+      "product": "MAP",
+      "quantity": 7000,
+      "price": 15.25,
+      "supplier": "CAS",
+      "date": "2026-04-24",
+      "id": 1777026295608
     }
   ],
   "stockAB1": [
@@ -37799,9 +37808,7 @@
       "updatedAt": "2026-04-16T12:17:10.891Z"
     }
   ],
-  "deletedMovementIds": [
-    1776939822377
-  ],
-  "exportDate": "2026-04-23T13:20:32.776Z",
+  "deletedMovementIds": [],
+  "exportDate": "2026-04-24T10:24:55.615Z",
   "melangesConfig": {}
 }
