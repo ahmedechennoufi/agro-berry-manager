@@ -34425,6 +34425,15 @@
       "supplier": "CAS",
       "date": "2026-04-24",
       "id": 1777026340075
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 1500,
+      "price": 7.11,
+      "supplier": "CAS",
+      "date": "2026-04-24",
+      "id": 1777026594615
     }
   ],
   "stockAB1": [
@@ -37818,6 +37827,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-24T10:25:40.081Z",
+  "exportDate": "2026-04-24T10:29:54.622Z",
   "melangesConfig": {}
 }
