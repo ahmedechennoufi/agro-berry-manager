@@ -34501,6 +34501,15 @@
       "date": "2026-04-25",
       "transferId": 1777114122599,
       "id": 1777114122603
+    },
+    {
+      "type": "exit",
+      "product": "ALFABET",
+      "quantity": 1,
+      "price": 500,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-25",
+      "id": 1777114134812
     }
   ],
   "stockAB1": [
@@ -37894,6 +37903,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T10:48:42.606Z",
+  "exportDate": "2026-04-25T10:48:54.818Z",
   "melangesConfig": {}
 }
