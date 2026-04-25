@@ -34519,6 +34519,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-04-25",
       "id": 1777114165313
+    },
+    {
+      "type": "exit",
+      "product": "ALGOBAZ",
+      "quantity": 40,
+      "price": 208.34,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-25",
+      "id": 1777114183194
     }
   ],
   "stockAB1": [
@@ -37912,6 +37921,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T10:49:25.320Z",
+  "exportDate": "2026-04-25T10:49:43.201Z",
   "melangesConfig": {}
 }
