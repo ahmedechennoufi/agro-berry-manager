@@ -34751,6 +34751,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1777118730705
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 35,
+      "price": 7.25,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-23",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1777118867844
     }
   ],
   "stockAB1": [
@@ -38144,6 +38155,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T12:05:30.707Z",
+  "exportDate": "2026-04-25T12:07:47.847Z",
   "melangesConfig": {}
 }
