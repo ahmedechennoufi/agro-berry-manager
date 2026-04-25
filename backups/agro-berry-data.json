@@ -34579,6 +34579,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-04-20",
       "id": 1777114923178
+    },
+    {
+      "type": "exit",
+      "product": "COUVRE SOL",
+      "quantity": 229,
+      "price": 0,
+      "farm": "TEXTILE",
+      "date": "2026-04-15",
+      "id": 1777115014841
     }
   ],
   "stockAB1": [
@@ -37972,6 +37981,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T11:02:03.185Z",
+  "exportDate": "2026-04-25T11:03:34.849Z",
   "melangesConfig": {}
 }
