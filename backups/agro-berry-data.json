@@ -34490,6 +34490,17 @@
       "date": "2026-04-25",
       "transferId": 1777114122599,
       "id": 1777114122599
+    },
+    {
+      "type": "transfer-in",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 150,
+      "price": 4.26,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-04-25",
+      "transferId": 1777114122599,
+      "id": 1777114122603
     }
   ],
   "stockAB1": [
@@ -37883,6 +37894,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T10:48:42.602Z",
+  "exportDate": "2026-04-25T10:48:42.606Z",
   "melangesConfig": {}
 }
