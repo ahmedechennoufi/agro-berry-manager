@@ -34570,6 +34570,15 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1777114586071
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 500,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-20",
+      "id": 1777114923178
     }
   ],
   "stockAB1": [
@@ -37963,6 +37972,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T10:56:26.073Z",
+  "exportDate": "2026-04-25T11:02:03.185Z",
   "melangesConfig": {}
 }
