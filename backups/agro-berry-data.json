@@ -34550,6 +34550,15 @@
       "date": "2026-04-25",
       "transferId": 1777114203879,
       "id": 1777114203884
+    },
+    {
+      "type": "exit",
+      "product": "APHIDIUS COLEMANI",
+      "quantity": 132,
+      "price": 95,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-25",
+      "id": 1777114555277
     }
   ],
   "stockAB1": [
@@ -37943,6 +37952,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T10:54:41.396Z",
+  "exportDate": "2026-04-25T10:55:55.284Z",
   "melangesConfig": {}
 }
