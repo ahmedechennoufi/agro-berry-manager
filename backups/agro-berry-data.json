@@ -34588,6 +34588,15 @@
       "farm": "TEXTILE",
       "date": "2026-04-15",
       "id": 1777115014841
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 100,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-23",
+      "id": 1777115045927
     }
   ],
   "stockAB1": [
@@ -37981,6 +37990,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T11:03:34.849Z",
+  "exportDate": "2026-04-25T11:04:05.933Z",
   "melangesConfig": {}
 }
