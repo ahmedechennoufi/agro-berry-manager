@@ -34685,6 +34685,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1777118445641
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "price": 68,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-23",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1777118467107
     }
   ],
   "stockAB1": [
@@ -38078,6 +38089,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T12:00:45.644Z",
+  "exportDate": "2026-04-25T12:01:07.109Z",
   "melangesConfig": {}
 }
