@@ -106,7 +106,7 @@ const Stock = () => {
       headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
       r++;
 
-      filteredData.forEach(item => {
+      filteredStock.forEach(item => {
         ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.name, s: { ...cellStyle, font: { sz: 10, bold: true } } };
         ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: item.category || '', s: cellStyle };
         ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: item.unit, s: { ...cellStyle, alignment: { horizontal: 'center' } } };
