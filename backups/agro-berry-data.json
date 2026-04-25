@@ -34762,6 +34762,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1777118867844
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 50,
+      "price": 14.047272727272727,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-23",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1777118884858
     }
   ],
   "stockAB1": [
@@ -38155,6 +38166,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T12:07:47.847Z",
+  "exportDate": "2026-04-25T12:08:04.860Z",
   "melangesConfig": {}
 }
