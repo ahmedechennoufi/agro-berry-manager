@@ -26208,7 +26208,7 @@
     {
       "type": "entry",
       "product": "CHLORO MIX ",
-      "quantity": 500,
+      "quantity": 1000,
       "price": 85,
       "supplier": "BEST BIO Z",
       "date": "2026-04-10",
@@ -37943,6 +37943,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-04-25T10:50:03.886Z",
+  "exportDate": "2026-04-25T10:54:41.396Z",
   "melangesConfig": {}
 }
