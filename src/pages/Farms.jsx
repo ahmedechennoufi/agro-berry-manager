@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useApp } from '../App';
 import { Card, Button, Input, Select, StatCard, EmptyState, Badge } from '../components/UI';
 import { FARMS, CATEGORIES } from '../lib/constants';
-import { fmt, fmtMoney, downloadExcel } from '../lib/utils';
+import { fmt, fmtMoney } from '../lib/utils';
 import { calculateFarmStock, getAveragePrice, getDefaultThreshold, getProducts, getLatestPhysicalInventoryForFarm } from '../lib/store';
 
 const FARM_COLORS = {
@@ -87,8 +87,194 @@ const Farms = () => {
 
   const handleExport = async () => {
     if (!selectedFarm) return;
-    const data = filteredStock.map(s => ({ Produit: s.name, Quantité: s.quantity, Prix: s.price, Valeur: s.value, Statut: s.status === 'epuise' ? 'Épuisé' : s.status === 'bas' ? 'Stock bas' : 'Normal' }));
-    await downloadExcel(data, `stock-${selectedFarm.short}.xlsx`);
+    try {
+      const XLSX = (await import('xlsx-js-style')).default || await import('xlsx-js-style');
+      const wb = XLSX.utils.book_new();
+      const now = new Date();
+      const date = now.toLocaleDateString('fr-FR');
+      const time = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+
+      const refInventory = getLatestPhysicalInventoryForFarm(selectedFarm.id);
+      const refDateLabel = refInventory ? refInventory.date.split('-').reverse().join('/') : null;
+
+      // ========== PALETTE & STYLES ==========
+      const farmColor = (FARM_COLORS[selectedFarm.id]?.accent || '#1d9e75').replace('#', '');
+      const COL_BRAND = farmColor;
+      const COL_DARK = '1d1d1f';
+      const COL_GRAY = '6e6e73';
+      const COL_LINE = 'E5E7EB';
+      const COL_ROW_ALT = 'F9FAFB';
+      const COL_KPI_BG = 'F0FDF4';
+      const COL_KPI_BORDER = 'BBF7D0';
+
+      const border = { top: { style: 'thin', color: { rgb: COL_LINE } }, bottom: { style: 'thin', color: { rgb: COL_LINE } }, left: { style: 'thin', color: { rgb: COL_LINE } }, right: { style: 'thin', color: { rgb: COL_LINE } } };
+
+      const titleStyle = { font: { name: 'Calibri', bold: true, sz: 22, color: { rgb: 'FFFFFF' } }, fill: { fgColor: { rgb: COL_BRAND } }, alignment: { horizontal: 'left', vertical: 'center', indent: 1 } };
+      const subtitleStyle = { font: { name: 'Calibri', sz: 11, color: { rgb: 'FFFFFF' } }, fill: { fgColor: { rgb: COL_BRAND } }, alignment: { horizontal: 'left', vertical: 'center', indent: 1 } };
+
+      const refBannerStyle = { font: { name: 'Calibri', sz: 10, italic: true, color: { rgb: COL_GRAY } }, fill: { fgColor: { rgb: 'F3F4F6' } }, alignment: { horizontal: 'left', vertical: 'center', indent: 1 } };
+
+      const kpiLabelStyle = { font: { name: 'Calibri', sz: 9, color: { rgb: COL_GRAY }, bold: true }, fill: { fgColor: { rgb: COL_KPI_BG } }, alignment: { horizontal: 'center', vertical: 'center' }, border: { top: { style: 'medium', color: { rgb: COL_KPI_BORDER } }, left: { style: 'medium', color: { rgb: COL_KPI_BORDER } }, right: { style: 'medium', color: { rgb: COL_KPI_BORDER } } } };
+      const kpiValueStyle = { font: { name: 'Calibri', sz: 18, color: { rgb: COL_BRAND }, bold: true }, fill: { fgColor: { rgb: COL_KPI_BG } }, alignment: { horizontal: 'center', vertical: 'center' }, border: { left: { style: 'medium', color: { rgb: COL_KPI_BORDER } }, right: { style: 'medium', color: { rgb: COL_KPI_BORDER } }, bottom: { style: 'medium', color: { rgb: COL_KPI_BORDER } } } };
+
+      const sectionTitle = { font: { name: 'Calibri', bold: true, sz: 12, color: { rgb: COL_DARK } }, alignment: { horizontal: 'left', vertical: 'center', indent: 1 } };
+
+      const headerStyle = { font: { name: 'Calibri', bold: true, sz: 11, color: { rgb: 'FFFFFF' } }, fill: { fgColor: { rgb: COL_DARK } }, alignment: { horizontal: 'center', vertical: 'center' }, border };
+
+      const baseCell = { font: { name: 'Calibri', sz: 10, color: { rgb: COL_DARK } }, alignment: { vertical: 'center', indent: 1 }, border };
+      const baseAlt = { ...baseCell, fill: { fgColor: { rgb: COL_ROW_ALT } } };
+      const numCell = { ...baseCell, alignment: { horizontal: 'right', vertical: 'center', indent: 1 }, numFmt: '#,##0.00' };
+      const numCellAlt = { ...numCell, fill: { fgColor: { rgb: COL_ROW_ALT } } };
+      const moneyCell = { ...numCell, font: { name: 'Calibri', sz: 10, color: { rgb: COL_BRAND }, bold: true }, numFmt: '#,##0 "MAD"' };
+      const moneyCellAlt = { ...moneyCell, fill: { fgColor: { rgb: COL_ROW_ALT } } };
+      const productCell = { ...baseCell, font: { name: 'Calibri', sz: 10, bold: true, color: { rgb: COL_DARK } } };
+      const productCellAlt = { ...productCell, fill: { fgColor: { rgb: COL_ROW_ALT } } };
+      const centerCell = { ...baseCell, alignment: { horizontal: 'center', vertical: 'center' } };
+      const centerCellAlt = { ...centerCell, fill: { fgColor: { rgb: COL_ROW_ALT } } };
+
+      const epuiseStyle = { ...baseCell, font: { name: 'Calibri', sz: 10, color: { rgb: 'FFFFFF' }, bold: true }, fill: { fgColor: { rgb: 'DC2626' } }, alignment: { horizontal: 'center', vertical: 'center' } };
+      const basStyle = { ...baseCell, font: { name: 'Calibri', sz: 10, color: { rgb: 'FFFFFF' }, bold: true }, fill: { fgColor: { rgb: 'D97706' } }, alignment: { horizontal: 'center', vertical: 'center' } };
+      const okStyle = { ...baseCell, font: { name: 'Calibri', sz: 10, color: { rgb: '15803D' }, bold: true }, fill: { fgColor: { rgb: 'DCFCE7' } }, alignment: { horizontal: 'center', vertical: 'center' } };
+
+      const totalLabel = { font: { name: 'Calibri', bold: true, sz: 11, color: { rgb: 'FFFFFF' } }, fill: { fgColor: { rgb: COL_BRAND } }, alignment: { horizontal: 'left', vertical: 'center', indent: 1 }, border };
+      const totalNum = { font: { name: 'Calibri', bold: true, sz: 11, color: { rgb: 'FFFFFF' } }, fill: { fgColor: { rgb: COL_BRAND } }, alignment: { horizontal: 'right', vertical: 'center', indent: 1 }, numFmt: '#,##0.00', border };
+      const totalMoney = { ...totalNum, numFmt: '#,##0 "MAD"' };
+
+      const footerStyle = { font: { name: 'Calibri', sz: 9, italic: true, color: { rgb: COL_GRAY } }, alignment: { horizontal: 'center', vertical: 'center' } };
+
+      // ========== BUILD WORKSHEET ==========
+      const ws = {};
+      const merges = [];
+      const NUM_COLS = 6;
+      let r = 0;
+
+      // --- TITLE BANNER ---
+      for (let c = 0; c < NUM_COLS; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? `🌱  STOCK FERME  —  ${selectedFarm.name.toUpperCase()}` : '', s: titleStyle };
+      merges.push({ s: { r, c: 0 }, e: { r, c: NUM_COLS - 1 } });
+      r++;
+      for (let c = 0; c < NUM_COLS; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? `${selectedFarm.hectares} hectares · Généré le ${date} à ${time}` : '', s: subtitleStyle };
+      merges.push({ s: { r, c: 0 }, e: { r, c: NUM_COLS - 1 } });
+      r++;
+
+      // --- REF INVENTORY BANNER ---
+      if (refDateLabel) {
+        for (let c = 0; c < NUM_COLS; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? `📋  Basé sur l'inventaire physique du ${refDateLabel} + mouvements depuis cette date` : '', s: refBannerStyle };
+        merges.push({ s: { r, c: 0 }, e: { r, c: NUM_COLS - 1 } });
+        r++;
+      }
+      r++; // spacer
+
+      // --- KPI CARDS ---
+      // Layout: 0-1 = Produits, 2-3 = Quantité, 4-5 = Valeur
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: '📦  PRODUITS EN STOCK', s: kpiLabelStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: '', s: kpiLabelStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: '📊  QUANTITÉ TOTALE', s: kpiLabelStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: '', s: kpiLabelStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: '💰  VALEUR TOTALE', s: kpiLabelStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: '', s: kpiLabelStyle };
+      merges.push({ s: { r, c: 0 }, e: { r, c: 1 } });
+      merges.push({ s: { r, c: 2 }, e: { r, c: 3 } });
+      merges.push({ s: { r, c: 4 }, e: { r, c: 5 } });
+      r++;
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: stats.totalProducts, s: kpiValueStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: '', s: kpiValueStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: stats.totalQuantity, s: { ...kpiValueStyle, numFmt: '#,##0.00' } };
+      ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: '', s: kpiValueStyle };
+      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: stats.totalValue, s: { ...kpiValueStyle, numFmt: '#,##0 "MAD"' } };
+      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: '', s: kpiValueStyle };
+      merges.push({ s: { r, c: 0 }, e: { r, c: 1 } });
+      merges.push({ s: { r, c: 2 }, e: { r, c: 3 } });
+      merges.push({ s: { r, c: 4 }, e: { r, c: 5 } });
+      r++;
+      r++; // spacer
+
+      // --- SECTION HEADER ---
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: `📋  Détail des produits  (${filteredStock.length})`, s: sectionTitle };
+      merges.push({ s: { r, c: 0 }, e: { r, c: NUM_COLS - 1 } });
+      r++;
+
+      // --- TABLE HEADERS ---
+      const headers = ['Produit', 'Unité', 'Quantité', 'Prix moyen', 'Valeur', 'Statut'];
+      headers.forEach((h, c) => { ws[XLSX.utils.encode_cell({ r, c })] = { v: h, s: headerStyle }; });
+      r++;
+
+      // --- DATA ROWS ---
+      filteredStock.forEach((item, idx) => {
+        const isAlt = idx % 2 === 1;
+        ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: item.name, s: isAlt ? productCellAlt : productCell };
+        ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: item.unit || 'KG', s: isAlt ? centerCellAlt : centerCell };
+        ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: item.quantity, s: isAlt ? numCellAlt : numCell };
+        ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: item.price, s: { ...(isAlt ? numCellAlt : numCell), numFmt: '#,##0.00 "MAD"' } };
+        ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: item.value, s: isAlt ? moneyCellAlt : moneyCell };
+
+        let statusLabel, statusStyle;
+        if (item.status === 'epuise') { statusLabel = '🔴 Épuisé'; statusStyle = epuiseStyle; }
+        else if (item.status === 'bas') { statusLabel = '🟠 Bas'; statusStyle = basStyle; }
+        else { statusLabel = '🟢 OK'; statusStyle = okStyle; }
+        ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: statusLabel, s: statusStyle };
+        r++;
+      });
+
+      // --- TOTAL ROW ---
+      ws[XLSX.utils.encode_cell({ r, c: 0 })] = { v: `TOTAL  (${filteredStock.length} produit${filteredStock.length > 1 ? 's' : ''})`, s: totalLabel };
+      ws[XLSX.utils.encode_cell({ r, c: 1 })] = { v: '', s: totalLabel };
+      merges.push({ s: { r, c: 0 }, e: { r, c: 1 } });
+      ws[XLSX.utils.encode_cell({ r, c: 2 })] = { v: stats.totalQuantity, s: totalNum };
+      ws[XLSX.utils.encode_cell({ r, c: 3 })] = { v: '', s: totalLabel };
+      ws[XLSX.utils.encode_cell({ r, c: 4 })] = { v: stats.totalValue, s: totalMoney };
+      ws[XLSX.utils.encode_cell({ r, c: 5 })] = { v: '', s: totalLabel };
+      r++;
+      r++; // spacer
+
+      // --- FOOTER ---
+      const epuiseN = filteredStock.filter(x => x.status === 'epuise').length;
+      const basN = filteredStock.filter(x => x.status === 'bas').length;
+      const okN = filteredStock.filter(x => x.status === 'normal').length;
+      const breakdown = `🔴 Épuisé : ${epuiseN}   ·   🟠 Stock bas : ${basN}   ·   🟢 Normal : ${okN}`;
+      for (let c = 0; c < NUM_COLS; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? breakdown : '', s: footerStyle };
+      merges.push({ s: { r, c: 0 }, e: { r, c: NUM_COLS - 1 } });
+      r++;
+      for (let c = 0; c < NUM_COLS; c++) ws[XLSX.utils.encode_cell({ r, c })] = { v: c === 0 ? `Document généré automatiquement par Agro Berry Manager · ${date}` : '', s: footerStyle };
+      merges.push({ s: { r, c: 0 }, e: { r, c: NUM_COLS - 1 } });
+      r++;
+
+      // ========== WORKSHEET CONFIG ==========
+      ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r - 1, c: NUM_COLS - 1 } });
+      ws['!cols'] = [
+        { wch: 36 }, // Produit
+        { wch: 9 },  // Unité
+        { wch: 14 }, // Quantité
+        { wch: 16 }, // Prix moyen
+        { wch: 18 }, // Valeur
+        { wch: 14 }, // Statut
+      ];
+      ws['!rows'] = [
+        { hpt: 36 }, // Title
+        { hpt: 22 }, // Subtitle
+      ];
+      if (refDateLabel) ws['!rows'].push({ hpt: 20 }); // ref banner
+      ws['!rows'].push({ hpt: 10 }); // spacer
+      ws['!rows'].push({ hpt: 18 }); // KPI label
+      ws['!rows'].push({ hpt: 36 }); // KPI value
+      ws['!rows'].push({ hpt: 10 }); // spacer
+      ws['!rows'].push({ hpt: 22 }); // section title
+      ws['!rows'].push({ hpt: 24 }); // header
+      for (let i = 0; i < filteredStock.length; i++) ws['!rows'].push({ hpt: 22 });
+      ws['!rows'].push({ hpt: 26 }); // total
+      ws['!rows'].push({ hpt: 10 }); // spacer
+      ws['!rows'].push({ hpt: 18 }); // footer 1
+      ws['!rows'].push({ hpt: 16 }); // footer 2
+
+      ws['!merges'] = merges;
+      ws['!margins'] = { left: 0.4, right: 0.4, top: 0.5, bottom: 0.5, header: 0.3, footer: 0.3 };
+
+      XLSX.utils.book_append_sheet(wb, ws, `Stock ${selectedFarm.short || selectedFarm.id}`);
+      const filename = `Stock-${selectedFarm.short || selectedFarm.id}_${now.toISOString().split('T')[0]}.xlsx`;
+      XLSX.writeFile(wb, filename);
+    } catch (err) {
+      console.error('Erreur export:', err);
+      alert("Erreur lors de l'export Excel: " + err.message);
+    }
   };
 
   const resetFilters = () => { setSearch(''); setFilterCategory('ALL'); setFilterStock('ALL'); };
@@ -183,7 +369,7 @@ const Farms = () => {
         </div>
         <div style={{ display: 'flex', gap: 8 }}>
           <Button variant="secondary" onClick={resetFilters}>🔄 Reset</Button>
-          <Button variant="secondary" onClick={handleExport}>📥 Export</Button>
+          <Button variant="primary" onClick={handleExport} style={{ background: '#16a34a', color: '#fff', border: 'none' }}>📊 Export Excel</Button>
         </div>
       </div>
 
