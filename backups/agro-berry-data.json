@@ -34530,17 +34530,6 @@
       "id": 1777114183194
     },
     {
-      "type": "transfer-out",
-      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
-      "quantity": 150,
-      "price": 7.25,
-      "farm": "AGRO BERRY 1",
-      "toFarm": "AGRO BERRY 3",
-      "date": "2026-04-25",
-      "transferId": 1777114203879,
-      "id": 1777114203880
-    },
-    {
       "type": "transfer-in",
       "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
       "quantity": 150,
@@ -38950,7 +38939,9 @@
       "updatedAt": "2026-04-16T12:17:10.891Z"
     }
   ],
-  "deletedMovementIds": [],
-  "exportDate": "2026-04-25T12:16:19.507Z",
+  "deletedMovementIds": [
+    1777114203880
+  ],
+  "exportDate": "2026-04-27T06:37:18.768Z",
   "melangesConfig": {}
 }
