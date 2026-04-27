@@ -35548,6 +35548,17 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1777277571308
+    },
+    {
+      "type": "transfer-out",
+      "product": "ACIDE CHLORHYDRIQUE",
+      "quantity": 48,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-25",
+      "toFarm": "AGRO BERRY 1",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1777281158038
     }
   ],
   "stockAB1": [
