@@ -34530,17 +34530,6 @@
       "id": 1777114183194
     },
     {
-      "type": "transfer-in",
-      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
-      "quantity": 150,
-      "price": 7.25,
-      "farm": "AGRO BERRY 3",
-      "fromFarm": "AGRO BERRY 1",
-      "date": "2026-04-25",
-      "transferId": 1777114203879,
-      "id": 1777114203884
-    },
-    {
       "type": "exit",
       "product": "APHIDIUS COLEMANI",
       "quantity": 132,
@@ -38940,8 +38929,9 @@
     }
   ],
   "deletedMovementIds": [
-    1777114203880
+    1777114203880,
+    1777114203884
   ],
-  "exportDate": "2026-04-27T06:37:18.768Z",
+  "exportDate": "2026-04-27T06:37:18.780Z",
   "melangesConfig": {}
 }
