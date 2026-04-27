@@ -36403,18 +36403,6 @@
       "quantity": 32,
       "unit": "KG",
       "farm": "AGRO BERRY 2",
-      "date": "2026-03-30",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1777288709372
-    },
-    {
-      "type": "consumption",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 32,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
       "date": "2026-04-03",
       "culture": "Myrtille",
       "destination": "Sol",
@@ -39829,7 +39817,8 @@
     1777114203884,
     1774865272330,
     1775718851594,
-    1777288694989
+    1777288694989,
+    1777288709372
   ],
   "exportDate": "2026-04-27T11:19:46.602Z",
   "melangesConfig": {}
