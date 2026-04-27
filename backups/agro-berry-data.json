@@ -35571,6 +35571,18 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1777281593625
+    },
+    {
+      "type": "consumption",
+      "product": "BENEVIA",
+      "quantity": 3.75,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1777282314843
     }
   ],
   "stockAB1": [
