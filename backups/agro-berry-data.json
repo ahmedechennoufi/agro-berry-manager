@@ -25632,18 +25632,6 @@
     },
     {
       "type": "consumption",
-      "product": "EXIREL",
-      "quantity": 4,
-      "unit": "L",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-03-28",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1775719806148
-    },
-    {
-      "type": "consumption",
       "product": "MAP",
       "quantity": 25,
       "unit": "KG",
@@ -39928,7 +39916,8 @@
     1777288694989,
     1777288709372,
     1777289339764,
-    1777292226830
+    1777292226830,
+    1775719806148
   ],
   "exportDate": "2026-04-27T11:19:46.602Z",
   "melangesConfig": {}
