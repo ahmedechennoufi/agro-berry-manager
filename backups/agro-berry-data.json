@@ -35943,6 +35943,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777285690395
+    },
+    {
+      "type": "consumption",
+      "product": "SOLUBOR",
+      "quantity": 0.1,
+      "unit": "KG",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-24",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777285735714
     }
   ],
   "stockAB1": [
