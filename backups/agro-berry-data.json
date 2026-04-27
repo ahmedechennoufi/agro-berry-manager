@@ -36110,6 +36110,17 @@
       "toFarm": "AGRO BERRY 3",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1777287923295
+    },
+    {
+      "type": "transfer-out",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 64,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-01",
+      "toFarm": "AGRO BERRY 3",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1777287945142
     }
   ],
   "stockAB1": [
