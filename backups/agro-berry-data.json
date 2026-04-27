@@ -25631,18 +25631,6 @@
       "id": 1775718765333
     },
     {
-      "type": "transfer-out",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 128,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-01",
-      "toFarm": "AGRO BERRY 3",
-      "notes": "rupture stock",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1775718851594
-    },
-    {
       "type": "consumption",
       "product": "EXIREL",
       "quantity": 4,
@@ -39495,7 +39483,8 @@
   "deletedMovementIds": [
     1777114203880,
     1777114203884,
-    1774865272330
+    1774865272330,
+    1775718851594
   ],
   "exportDate": "2026-04-27T06:37:18.780Z",
   "melangesConfig": {}
