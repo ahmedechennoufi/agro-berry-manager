@@ -25385,7 +25385,7 @@
     {
       "type": "exit",
       "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 1008,
+      "quantity": 1024,
       "price": 9.77648370019504,
       "farm": "AGRO BERRY 2",
       "date": "2026-04-07",
@@ -25448,7 +25448,7 @@
     {
       "type": "exit",
       "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 1008,
+      "quantity": 1024,
       "price": 9.77648370019504,
       "farm": "AGRO BERRY 3",
       "date": "2026-04-07",
@@ -35636,10 +35636,10 @@
     {
       "type": "consumption",
       "product": "NITRATE DE CALCIUM",
-      "quantity": 36,
+      "quantity": 56,
       "unit": "KG",
       "farm": "AGRO BERRY 3",
-      "date": "2026-04-24",
+      "date": "2026-04-23",
       "culture": "Myrtille",
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
@@ -39818,6 +39818,6 @@
     1774865272330,
     1775718851594
   ],
-  "exportDate": "2026-04-27T06:37:18.780Z",
+  "exportDate": "2026-04-27T11:19:46.602Z",
   "melangesConfig": {}
 }
