@@ -35919,6 +35919,18 @@
       "destination": "Hydro",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1777285549770
+    },
+    {
+      "type": "consumption",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 75,
+      "unit": "KG",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-24",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777285672089
     }
   ],
   "stockAB1": [
