@@ -28416,18 +28416,6 @@
     },
     {
       "type": "consumption",
-      "product": "VITAL CU",
-      "quantity": 0.15,
-      "unit": "L",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-13",
-      "culture": "Myrtille",
-      "destination": "Pesticide",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1776252979381
-    },
-    {
-      "type": "consumption",
       "product": "INACOP",
       "quantity": 0.6,
       "unit": "KG",
@@ -40035,7 +40023,8 @@
     1777289339764,
     1777292226830,
     1775719806148,
-    1776676591608
+    1776676591608,
+    1776252979381
   ],
   "exportDate": "2026-04-28T08:16:32.131Z",
   "melangesConfig": {}
