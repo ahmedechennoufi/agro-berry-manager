@@ -31163,18 +31163,6 @@
       "id": 1776676574894
     },
     {
-      "type": "consumption",
-      "product": "INACOP",
-      "quantity": 0.6,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-13",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1776676591608
-    },
-    {
       "type": "entry",
       "product": "SEAMAC",
       "quantity": 5,
@@ -40022,7 +40010,8 @@
     1777288709372,
     1777289339764,
     1777292226830,
-    1775719806148
+    1775719806148,
+    1776676591608
   ],
   "exportDate": "2026-04-28T08:16:32.131Z",
   "melangesConfig": {}
