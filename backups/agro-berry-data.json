@@ -26590,7 +26590,7 @@
     {
       "type": "consumption",
       "product": "SULFATE DE POTASSE",
-      "quantity": 5,
+      "quantity": 50,
       "unit": "KG",
       "farm": "AGRO BERRY 2",
       "date": "2026-04-05",
