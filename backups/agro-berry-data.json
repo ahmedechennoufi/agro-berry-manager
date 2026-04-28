@@ -36609,6 +36609,18 @@
       "supplier": "CAS",
       "date": "2026-04-27",
       "id": 1777364192122
+    },
+    {
+      "type": "consumption",
+      "product": "INACOP",
+      "quantity": 0.27,
+      "unit": "KG",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1777366409568
     }
   ],
   "stockAB1": [
