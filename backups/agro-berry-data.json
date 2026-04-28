@@ -26590,7 +26590,7 @@
     {
       "type": "consumption",
       "product": "SULFATE DE POTASSE",
-      "quantity": 50,
+      "quantity": 5,
       "unit": "KG",
       "farm": "AGRO BERRY 2",
       "date": "2026-04-05",
@@ -36612,6 +36612,15 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1777358488472
+    },
+    {
+      "type": "entry",
+      "product": "MAP",
+      "quantity": 3000,
+      "price": 15.25,
+      "supplier": "CAS",
+      "date": "2026-04-27",
+      "id": 1777364192122
     }
   ],
   "stockAB1": [
@@ -40015,6 +40024,6 @@
     1777292226830,
     1775719806148
   ],
-  "exportDate": "2026-04-27T11:19:46.602Z",
+  "exportDate": "2026-04-28T08:16:32.131Z",
   "melangesConfig": {}
 }
