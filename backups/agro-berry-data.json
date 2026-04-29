@@ -36674,6 +36674,15 @@
       "supplier": "SANSAN",
       "date": "2026-04-24",
       "id": 1777457078525
+    },
+    {
+      "type": "entry",
+      "product": "TOURBE",
+      "quantity": 23980,
+      "price": 0,
+      "supplier": "PELEMIX",
+      "date": "2026-04-29",
+      "id": 1777457173774
     }
   ],
   "stockAB1": [
@@ -37933,7 +37942,8 @@
     "AGROGAILES",
     "WE GREENS",
     "SUREXPORT FRUIT",
-    "SANSAN"
+    "SANSAN",
+    "PELEMIX"
   ],
   "consommations": [],
   "melanges": [],
@@ -40080,6 +40090,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-29T10:05:31.607Z",
+  "exportDate": "2026-04-29T10:06:13.782Z",
   "melangesConfig": {}
 }
