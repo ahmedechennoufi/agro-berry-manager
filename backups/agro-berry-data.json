@@ -36710,6 +36710,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-04-29",
       "id": 1777457262044
+    },
+    {
+      "type": "exit",
+      "product": "ORISURE ",
+      "quantity": 20,
+      "price": 165,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-29",
+      "id": 1777457274594
     }
   ],
   "stockAB1": [
@@ -40117,6 +40126,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-29T10:07:42.053Z",
+  "exportDate": "2026-04-29T10:07:54.600Z",
   "melangesConfig": {}
 }
