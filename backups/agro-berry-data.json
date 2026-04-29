@@ -1241,6 +1241,13 @@
       "category": "ENGRAIS",
       "threshold": null,
       "id": 1776338164336
+    },
+    {
+      "name": "PEAU",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1777456942019
     }
   ],
   "movements": [
@@ -26590,7 +26597,7 @@
     {
       "type": "consumption",
       "product": "SULFATE DE POTASSE",
-      "quantity": 50,
+      "quantity": 5,
       "unit": "KG",
       "farm": "AGRO BERRY 2",
       "date": "2026-04-05",
@@ -40038,6 +40045,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-28T08:16:32.131Z",
+  "exportDate": "2026-04-29T10:02:22.024Z",
   "melangesConfig": {}
 }
