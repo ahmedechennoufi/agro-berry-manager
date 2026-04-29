@@ -36649,6 +36649,15 @@
       "supplier": "SANSAN",
       "date": "2026-04-20",
       "id": 1777457019391
+    },
+    {
+      "type": "entry",
+      "product": "PEAU",
+      "quantity": 8450,
+      "price": 0,
+      "supplier": "SANSAN",
+      "date": "2026-04-22",
+      "id": 1777457045493
     }
   ],
   "stockAB1": [
@@ -40055,6 +40064,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-29T10:03:39.404Z",
+  "exportDate": "2026-04-29T10:04:05.501Z",
   "melangesConfig": {}
 }
