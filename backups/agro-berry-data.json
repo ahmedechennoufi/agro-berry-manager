@@ -36640,6 +36640,15 @@
       "destination": "Sol",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1777369886552
+    },
+    {
+      "type": "entry",
+      "product": "PEAU",
+      "quantity": 8450,
+      "price": 0,
+      "supplier": "SANSAN",
+      "date": "2026-04-20",
+      "id": 1777457019391
     }
   ],
   "stockAB1": [
@@ -37898,7 +37907,8 @@
     "MANVERT",
     "AGROGAILES",
     "WE GREENS",
-    "SUREXPORT FRUIT"
+    "SUREXPORT FRUIT",
+    "SANSAN"
   ],
   "consommations": [],
   "melanges": [],
@@ -40045,6 +40055,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-29T10:02:22.024Z",
+  "exportDate": "2026-04-29T10:03:39.404Z",
   "melangesConfig": {}
 }
