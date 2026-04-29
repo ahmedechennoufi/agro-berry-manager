@@ -36683,6 +36683,15 @@
       "supplier": "PELEMIX",
       "date": "2026-04-29",
       "id": 1777457173774
+    },
+    {
+      "type": "entry",
+      "product": "APHIDIUS COLEMANI",
+      "quantity": 44,
+      "price": 95,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-04-29",
+      "id": 1777457230088
     }
   ],
   "stockAB1": [
@@ -40090,6 +40099,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-29T10:06:13.782Z",
+  "exportDate": "2026-04-29T10:07:10.095Z",
   "melangesConfig": {}
 }
