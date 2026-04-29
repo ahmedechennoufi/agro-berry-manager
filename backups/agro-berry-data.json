@@ -1248,6 +1248,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1777456942019
+    },
+    {
+      "name": "TOURBE",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1777457131603
     }
   ],
   "movements": [
@@ -40073,6 +40080,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-29T10:04:38.532Z",
+  "exportDate": "2026-04-29T10:05:31.607Z",
   "melangesConfig": {}
 }
