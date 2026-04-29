@@ -36701,6 +36701,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-04-29",
       "id": 1777457246037
+    },
+    {
+      "type": "exit",
+      "product": "APHIDIUS COLEMANI",
+      "quantity": 44,
+      "price": 95,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-29",
+      "id": 1777457262044
     }
   ],
   "stockAB1": [
@@ -40108,6 +40117,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-29T10:07:26.044Z",
+  "exportDate": "2026-04-29T10:07:42.053Z",
   "melangesConfig": {}
 }
