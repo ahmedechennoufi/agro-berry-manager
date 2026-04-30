@@ -36944,6 +36944,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1777538375243
+    },
+    {
+      "type": "consumption",
+      "product": "QUEL B",
+      "quantity": 16,
+      "price": 50,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1777538419763
     }
   ],
   "stockAB1": [
@@ -40356,6 +40367,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T08:39:35.245Z",
+  "exportDate": "2026-04-30T08:40:19.766Z",
   "melangesConfig": {}
 }
