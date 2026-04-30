@@ -36781,6 +36781,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1777529436117
+    },
+    {
+      "type": "consumption",
+      "product": "VYTEGRIS MULTI",
+      "quantity": 8,
+      "price": 152.4,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-10",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1777529856445
     }
   ],
   "stockAB1": [
@@ -40188,6 +40199,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T06:10:36.119Z",
+  "exportDate": "2026-04-30T06:17:36.447Z",
   "melangesConfig": {}
 }
