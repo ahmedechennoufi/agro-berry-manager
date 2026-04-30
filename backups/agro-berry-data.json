@@ -30798,17 +30798,6 @@
     },
     {
       "type": "consumption",
-      "product": "UREE",
-      "quantity": 25,
-      "price": 5.841785714285714,
-      "farm": "AGRO BERRY 1",
-      "date": "2026-04-11",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1776342722730
-    },
-    {
-      "type": "consumption",
       "product": "NITRATE DE CALCIUM",
       "quantity": 25,
       "price": 4.26,
@@ -40240,6 +40229,7 @@
     }
   ],
   "deletedMovementIds": [
+    1776342722730,
     1777114203880,
     1777114203884,
     1774865272330,
@@ -40252,6 +40242,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T06:41:11.426Z",
+  "exportDate": "2026-04-30T07:20:13.206Z",
   "melangesConfig": {}
 }
