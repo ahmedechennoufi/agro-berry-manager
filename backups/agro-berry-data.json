@@ -36955,6 +36955,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1777538419763
+    },
+    {
+      "type": "consumption",
+      "product": "KAISER",
+      "quantity": 0.5,
+      "price": 4400,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1777538448081
     }
   ],
   "stockAB1": [
@@ -40367,6 +40378,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T08:40:19.766Z",
+  "exportDate": "2026-04-30T08:40:48.084Z",
   "melangesConfig": {}
 }
