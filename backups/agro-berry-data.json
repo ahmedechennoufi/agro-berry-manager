@@ -36741,6 +36741,15 @@
       "date": "2026-04-28",
       "transferId": 1777466499310,
       "id": 1777466499315
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE ZINC",
+      "quantity": 50,
+      "price": 12,
+      "supplier": "CAS",
+      "date": "2026-04-29",
+      "id": 1777528941525
     }
   ],
   "stockAB1": [
@@ -40148,6 +40157,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-29T12:41:39.317Z",
+  "exportDate": "2026-04-30T06:02:21.534Z",
   "melangesConfig": {}
 }
