@@ -36889,6 +36889,17 @@
       "culture": "Myrtille",
       "destination": "Hydro",
       "id": 1777538214065
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 19.25,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-25",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "id": 1777538239310
     }
   ],
   "stockAB1": [
@@ -40301,6 +40312,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T08:36:54.068Z",
+  "exportDate": "2026-04-30T08:37:19.312Z",
   "melangesConfig": {}
 }
