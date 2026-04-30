@@ -36814,6 +36814,17 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "id": 1777530714587
+    },
+    {
+      "type": "consumption",
+      "product": "ANTISCALANT PERMATREAT",
+      "quantity": 26.5,
+      "price": 110,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1777530748574
     }
   ],
   "stockAB1": [
@@ -40221,6 +40232,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T06:31:54.589Z",
+  "exportDate": "2026-04-30T06:32:28.577Z",
   "melangesConfig": {}
 }
