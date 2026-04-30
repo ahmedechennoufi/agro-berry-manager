@@ -36759,6 +36759,17 @@
       "supplier": "CAS",
       "date": "2026-04-29",
       "id": 1777528966857
+    },
+    {
+      "type": "consumption",
+      "product": "UREE",
+      "quantity": 35,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1777529415148
     }
   ],
   "stockAB1": [
@@ -40166,6 +40177,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T06:02:46.865Z",
+  "exportDate": "2026-04-30T06:10:15.151Z",
   "melangesConfig": {}
 }
