@@ -36966,6 +36966,17 @@
       "culture": "Fraise",
       "destination": "Sol",
       "id": 1777538448081
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 7.5,
+      "price": 60,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-25",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "id": 1777538462505
     }
   ],
   "stockAB1": [
@@ -40378,6 +40389,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T08:40:48.084Z",
+  "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
 }
