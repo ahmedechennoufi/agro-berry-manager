@@ -36834,6 +36834,17 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-04-20",
       "id": 1777531105999
+    },
+    {
+      "type": "consumption",
+      "product": "ISABION",
+      "quantity": 24.75,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-25",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1777531271424
     }
   ],
   "stockAB1": [
@@ -40241,6 +40252,6 @@
     1776676591608,
     1776252979381
   ],
-  "exportDate": "2026-04-30T06:38:26.002Z",
+  "exportDate": "2026-04-30T06:41:11.426Z",
   "melangesConfig": {}
 }
