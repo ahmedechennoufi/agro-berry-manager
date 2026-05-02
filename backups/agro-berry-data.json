@@ -36989,6 +36989,18 @@
       "destination": "Pesticide",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1777701869439
+    },
+    {
+      "type": "consumption",
+      "product": "BIOFORGE",
+      "quantity": 0.5,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-04-15",
+      "culture": "Myrtille",
+      "destination": "Foliaire",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1777701895974
     }
   ],
   "stockAB1": [
