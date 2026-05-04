@@ -35128,17 +35128,6 @@
       "id": 1777271305169
     },
     {
-      "type": "transfer-out",
-      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
-      "quantity": 150,
-      "unit": "KG",
-      "farm": "AGRO BERRY 2",
-      "date": "2026-04-23",
-      "toFarm": "AGRO BERRY 3",
-      "saisiepar": "agb2@agroberry.ma",
-      "id": 1777271403352
-    },
-    {
       "type": "consumption",
       "product": "SULFATE DE POTASSE",
       "quantity": 75,
@@ -40408,7 +40397,8 @@
     1775120539351,
     1776330612947,
     1776854158702,
-    1777285266639
+    1777285266639,
+    1777271403352
   ],
   "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
