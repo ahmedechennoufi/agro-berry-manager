@@ -27957,18 +27957,6 @@
     {
       "type": "consumption",
       "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 32,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-03",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776161021479
-    },
-    {
-      "type": "consumption",
-      "product": "ACIDE PHOSPHORIQUE",
       "quantity": 64,
       "unit": "KG",
       "farm": "AGRO BERRY 3",
@@ -40414,7 +40402,8 @@
     1776252979381,
     1777286309352,
     1776330237955,
-    1776160830701
+    1776160830701,
+    1776161021479
   ],
   "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
