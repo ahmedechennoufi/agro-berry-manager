@@ -35882,18 +35882,6 @@
     },
     {
       "type": "consumption",
-      "product": "NOVA",
-      "quantity": 56,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-25",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1777286309352
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE DE POTASSE",
       "quantity": 140,
       "unit": "KG",
@@ -40423,7 +40411,8 @@
     1777292226830,
     1775719806148,
     1776676591608,
-    1776252979381
+    1776252979381,
+    1777286309352
   ],
   "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
