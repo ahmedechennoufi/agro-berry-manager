@@ -31519,18 +31519,6 @@
       "product": "INACOP",
       "quantity": 0.3,
       "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-17",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776854158702
-    },
-    {
-      "type": "consumption",
-      "product": "INACOP",
-      "quantity": 0.3,
-      "unit": "KG",
       "farm": "AGRO BERRY 2",
       "date": "2026-04-17",
       "culture": "Myrtille",
@@ -40407,7 +40395,8 @@
     1776161021479,
     1776329904475,
     1775120539351,
-    1776330612947
+    1776330612947,
+    1776854158702
   ],
   "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
