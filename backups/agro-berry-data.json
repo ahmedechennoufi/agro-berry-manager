@@ -36978,6 +36978,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777886699276
+    },
+    {
+      "type": "consumption",
+      "product": "HUWA SAN",
+      "quantity": 2,
+      "unit": "KG",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-21",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777887267692
     }
   ],
   "stockAB1": [
