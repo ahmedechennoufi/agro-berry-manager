@@ -36990,6 +36990,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777886503861
+    },
+    {
+      "type": "consumption",
+      "product": "NOVA",
+      "quantity": 64,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-12",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777886699276
     }
   ],
   "stockAB1": [
