@@ -29741,18 +29741,6 @@
     },
     {
       "type": "consumption",
-      "product": "CHLORO MIX ",
-      "quantity": 10.2,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-14",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776330612947
-    },
-    {
-      "type": "consumption",
       "product": "HUWA SAN",
       "quantity": 2,
       "unit": "KG",
@@ -40418,7 +40406,8 @@
     1776160830701,
     1776161021479,
     1776329904475,
-    1775120539351
+    1775120539351,
+    1776330612947
   ],
   "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
