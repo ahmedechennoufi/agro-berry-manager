@@ -36989,6 +36989,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777885589754
+    },
+    {
+      "type": "consumption",
+      "product": "VYTEGRIS MULTI",
+      "quantity": 1.16,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-10",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777886503861
     }
   ],
   "stockAB1": [
