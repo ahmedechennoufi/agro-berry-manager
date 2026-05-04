@@ -24079,17 +24079,6 @@
     },
     {
       "type": "consumption",
-      "product": "NITRATE DE CALCIUM",
-      "quantity": 40,
-      "price": 4.26,
-      "farm": "AGRO BERRY 3",
-      "date": "2026-03-30",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1775120655398
-    },
-    {
-      "type": "consumption",
       "product": "FEROXIM",
       "quantity": 12,
       "price": 101,
@@ -40493,7 +40482,8 @@
     1777271403352,
     1777891017126,
     1777466499311,
-    1775125779783
+    1775125779783,
+    1775120655398
   ],
   "exportDate": "2026-05-04T10:58:22.832Z",
   "melangesConfig": {}
