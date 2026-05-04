@@ -29656,18 +29656,6 @@
     },
     {
       "type": "consumption",
-      "product": "NOVA",
-      "quantity": 64,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-12",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776330237955
-    },
-    {
-      "type": "consumption",
       "product": "ACIDE PHOSPHORIQUE",
       "quantity": 64,
       "unit": "KG",
@@ -40412,7 +40400,8 @@
     1775719806148,
     1776676591608,
     1776252979381,
-    1777286309352
+    1777286309352,
+    1776330237955
   ],
   "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
