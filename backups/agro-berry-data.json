@@ -27920,18 +27920,6 @@
     },
     {
       "type": "consumption",
-      "product": "VITAL CU",
-      "quantity": 1,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-02",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776160830701
-    },
-    {
-      "type": "consumption",
       "product": "SOLUBOR",
       "quantity": 0.1,
       "unit": "KG",
@@ -40425,7 +40413,8 @@
     1776676591608,
     1776252979381,
     1777286309352,
-    1776330237955
+    1776330237955,
+    1776160830701
   ],
   "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
