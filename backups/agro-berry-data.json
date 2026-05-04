@@ -29488,18 +29488,6 @@
     },
     {
       "type": "consumption",
-      "product": "VYTEGRIS MULTI",
-      "quantity": 1.16,
-      "unit": "L",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-10",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1776329904475
-    },
-    {
-      "type": "consumption",
       "product": "SULFATE DE POTASSE",
       "quantity": 140,
       "unit": "KG",
@@ -40415,7 +40403,8 @@
     1777286309352,
     1776330237955,
     1776160830701,
-    1776161021479
+    1776161021479,
+    1776329904475
   ],
   "exportDate": "2026-04-30T08:41:02.508Z",
   "melangesConfig": {}
