@@ -36978,6 +36978,17 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777887267692
+    },
+    {
+      "type": "transfer-out",
+      "product": "NOVA",
+      "quantity": 4,
+      "unit": "L",
+      "farm": "AGRO BERRY 2",
+      "date": "2026-03-28",
+      "toFarm": "AGRO BERRY 3",
+      "saisiepar": "agb2@agroberry.ma",
+      "id": 1777889206403
     }
   ],
   "stockAB1": [
