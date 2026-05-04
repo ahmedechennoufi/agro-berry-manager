@@ -36978,6 +36978,28 @@
       "toFarm": "AGRO BERRY 3",
       "saisiepar": "agb2@agroberry.ma",
       "id": 1777889206403
+    },
+    {
+      "type": "transfer-out",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 150,
+      "price": 7.25,
+      "farm": "AGRO BERRY 2",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-04-23",
+      "transferId": 1777891089313,
+      "id": 1777891089314
+    },
+    {
+      "type": "transfer-in",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 150,
+      "price": 7.25,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 2",
+      "date": "2026-04-23",
+      "transferId": 1777891089313,
+      "id": 1777891089318
     }
   ],
   "stockAB1": [
@@ -40401,6 +40423,6 @@
     1777271403352,
     1777891017126
   ],
-  "exportDate": "2026-04-30T08:41:02.508Z",
+  "exportDate": "2026-05-04T10:38:09.321Z",
   "melangesConfig": {}
 }
