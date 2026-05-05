@@ -37076,6 +37076,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777976751913
+    },
+    {
+      "type": "consumption",
+      "product": "BOITE BOTREFIN 600G",
+      "quantity": 12.3,
+      "unit": "U",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-15",
+      "culture": "Myrtille",
+      "destination": "Foliaire",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777977155764
     }
   ],
   "stockAB1": [
