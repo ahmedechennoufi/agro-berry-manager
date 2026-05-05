@@ -20199,17 +20199,6 @@
     },
     {
       "type": "consumption",
-      "product": "BOITE BOTREFIN 600G",
-      "quantity": 7.2,
-      "price": 800,
-      "farm": "AGRO BERRY 3",
-      "date": "2026-03-16",
-      "culture": "Myrtille",
-      "destination": "Hydro",
-      "id": 1774187272379
-    },
-    {
-      "type": "consumption",
       "product": "BENEVIA",
       "quantity": 3.975,
       "price": 1920,
@@ -40529,7 +40518,8 @@
     1777285216320,
     1777284779752,
     1776941167624,
-    1774509094299
+    1774509094299,
+    1774187272379
   ],
   "exportDate": "2026-05-05T09:53:49.881Z",
   "melangesConfig": {}
