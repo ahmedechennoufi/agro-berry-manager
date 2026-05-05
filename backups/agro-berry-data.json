@@ -37085,6 +37085,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777975097365
+    },
+    {
+      "type": "consumption",
+      "product": "ADICLEAN",
+      "quantity": 78,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-25",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777975640284
     }
   ],
   "stockAB1": [
