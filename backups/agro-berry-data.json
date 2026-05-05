@@ -37091,6 +37091,15 @@
       "supplier": "GLOBAL WATECH",
       "date": "2026-04-07",
       "id": 1777974771901
+    },
+    {
+      "type": "exit",
+      "product": "ADICLEAN",
+      "quantity": 900,
+      "price": 48,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-07",
+      "id": 1777974800307
     }
   ],
   "stockAB1": [
@@ -40520,6 +40529,6 @@
     1775119319053,
     1777286372506
   ],
-  "exportDate": "2026-05-05T09:52:51.910Z",
+  "exportDate": "2026-05-05T09:53:20.314Z",
   "melangesConfig": {}
 }
