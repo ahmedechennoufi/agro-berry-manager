@@ -23469,7 +23469,7 @@
     {
       "type": "consumption",
       "product": "ANTISCALANT PERMATREAT",
-      "quantity": 27.5,
+      "quantity": 80,
       "price": 110,
       "farm": "AGRO BERRY 3",
       "date": "2026-03-18",
@@ -32642,7 +32642,7 @@
     {
       "type": "consumption",
       "product": "SULFATE DE ZINC",
-      "quantity": 0.55,
+      "quantity": 0.7,
       "unit": "KG",
       "farm": "AGRO BERRY 3",
       "date": "2026-04-20",
@@ -32786,7 +32786,7 @@
     {
       "type": "consumption",
       "product": "SULFATE DE ZINC",
-      "quantity": 0.1,
+      "quantity": 0.7,
       "unit": "KG",
       "farm": "AGRO BERRY 3",
       "date": "2026-04-21",
@@ -35505,7 +35505,7 @@
     {
       "type": "consumption",
       "product": "SULFATE DE ZINC",
-      "quantity": 0.1,
+      "quantity": 0.7,
       "unit": "KG",
       "farm": "AGRO BERRY 3",
       "date": "2026-04-23",
@@ -35709,7 +35709,7 @@
     {
       "type": "consumption",
       "product": "SULFATE DE ZINC",
-      "quantity": 0.1,
+      "quantity": 0.5,
       "unit": "KG",
       "farm": "AGRO BERRY 3",
       "date": "2026-04-24",
@@ -35757,7 +35757,7 @@
     {
       "type": "consumption",
       "product": "FEROXIM",
-      "quantity": 8.6,
+      "quantity": 14,
       "unit": "L",
       "farm": "AGRO BERRY 3",
       "date": "2026-04-25",
@@ -35805,7 +35805,7 @@
     {
       "type": "consumption",
       "product": "SOLUBOR",
-      "quantity": 2.82,
+      "quantity": 0.14,
       "unit": "KG",
       "farm": "AGRO BERRY 3",
       "date": "2026-04-25",
@@ -35817,7 +35817,7 @@
     {
       "type": "consumption",
       "product": "SULFATE DE ZINC",
-      "quantity": 0.1,
+      "quantity": 0.7,
       "unit": "KG",
       "farm": "AGRO BERRY 3",
       "date": "2026-04-25",
@@ -37073,6 +37073,15 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777899060009
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE CHLORHYDRIQUE",
+      "quantity": 504,
+      "price": 47,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-04-29",
+      "id": 1777974675402
     }
   ],
   "stockAB1": [
@@ -40502,6 +40511,6 @@
     1775119319053,
     1777286372506
   ],
-  "exportDate": "2026-05-04T10:58:22.832Z",
+  "exportDate": "2026-05-05T09:51:15.410Z",
   "melangesConfig": {}
 }
