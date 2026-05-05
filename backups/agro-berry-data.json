@@ -37097,6 +37097,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777975640284
+    },
+    {
+      "type": "consumption",
+      "product": "EXIREL",
+      "quantity": 15.4,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-25",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777976751913
     }
   ],
   "stockAB1": [
