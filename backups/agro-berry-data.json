@@ -37065,6 +37065,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777976751913
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 26.74,
+      "unit": "KG",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-06",
+      "culture": "Myrtille",
+      "destination": "Pesticide",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1777977462328
     }
   ],
   "stockAB1": [
