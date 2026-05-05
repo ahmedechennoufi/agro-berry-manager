@@ -35384,18 +35384,6 @@
     },
     {
       "type": "consumption",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 32,
-      "unit": "KG",
-      "farm": "AGRO BERRY 3",
-      "date": "2026-04-23",
-      "culture": "Myrtille",
-      "destination": "Hors Sol",
-      "saisiepar": "agb3@agroberry.ma",
-      "id": 1777284779752
-    },
-    {
-      "type": "consumption",
       "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
       "quantity": 75,
       "unit": "KG",
@@ -40537,7 +40525,8 @@
     1775118152442,
     1775119319053,
     1777286372506,
-    1777285216320
+    1777285216320,
+    1777284779752
   ],
   "exportDate": "2026-05-05T09:53:49.881Z",
   "melangesConfig": {}
