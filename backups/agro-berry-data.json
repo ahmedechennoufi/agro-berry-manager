@@ -36901,17 +36901,6 @@
       "id": 1777892252222
     },
     {
-      "type": "transfer-in",
-      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
-      "quantity": 100,
-      "price": 7.25,
-      "farm": "AGRO BERRY 3",
-      "fromFarm": "AGRO BERRY 1",
-      "date": "2026-04-28",
-      "transferId": 1777892252221,
-      "id": 1777892252226
-    },
-    {
       "type": "transfer-out",
       "product": "NITRATE DE CALCIUM",
       "quantity": 50,
