@@ -37088,6 +37088,15 @@
       "destination": "Pesticide",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1777977462328
+    },
+    {
+      "type": "exit",
+      "product": "PIXEL",
+      "quantity": 12,
+      "price": 190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-06",
+      "id": 1778052186990
     }
   ],
   "stockAB1": [
@@ -41511,6 +41520,6 @@
     1774187168976,
     1777977155764
   ],
-  "exportDate": "2026-05-06T07:22:53.829Z",
+  "exportDate": "2026-05-06T07:23:06.997Z",
   "melangesConfig": {}
 }
