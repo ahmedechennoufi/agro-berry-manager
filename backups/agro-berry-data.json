@@ -37190,6 +37190,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778145833905
+    },
+    {
+      "type": "consumption",
+      "product": "BORTRAC",
+      "quantity": 0.1,
+      "unit": "L",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778145850154
     }
   ],
   "stockAB1": [
