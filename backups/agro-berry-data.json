@@ -37574,6 +37574,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778146657719
+    },
+    {
+      "type": "consumption",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 44,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778146680919
     }
   ],
   "stockAB1": [
