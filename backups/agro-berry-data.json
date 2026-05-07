@@ -37226,6 +37226,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778145907688
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE CHLORHYDRIQUE",
+      "quantity": 24,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-27",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778145922219
     }
   ],
   "stockAB1": [
