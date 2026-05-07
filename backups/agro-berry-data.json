@@ -37135,6 +37135,15 @@
       "id": 1778145409938
     },
     {
+      "type": "exit",
+      "product": "SULFATE DE ZINC",
+      "quantity": 50,
+      "price": 11.95,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-27",
+      "id": 1778145567480
+    },
+    {
       "type": "consumption",
       "product": "SULFATE DE POTASSE",
       "quantity": 100,
@@ -41580,6 +41589,6 @@
     1774187168976,
     1777977155764
   ],
-  "exportDate": "2026-05-06T07:23:06.997Z",
+  "exportDate": "2026-05-07T09:19:27.487Z",
   "melangesConfig": {}
 }
