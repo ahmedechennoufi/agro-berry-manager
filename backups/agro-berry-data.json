@@ -37586,6 +37586,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778146680919
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE NITRIQUE",
+      "quantity": 33,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-28",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778146699836
     }
   ],
   "stockAB1": [
