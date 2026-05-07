@@ -37634,6 +37634,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778146816053
+    },
+    {
+      "type": "consumption",
+      "product": "KAISER",
+      "quantity": 0.2,
+      "unit": "L",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-29",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778146839402
     }
   ],
   "stockAB1": [
