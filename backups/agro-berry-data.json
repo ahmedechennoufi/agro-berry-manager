@@ -37514,6 +37514,18 @@
       "destination": "Hydro",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778146472951
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-27",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778146502804
     }
   ],
   "stockAB1": [
