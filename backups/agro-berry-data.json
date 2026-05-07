@@ -37274,6 +37274,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778146023720
+    },
+    {
+      "type": "consumption",
+      "product": "MAP",
+      "quantity": 75,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778146046586
     }
   ],
   "stockAB1": [
