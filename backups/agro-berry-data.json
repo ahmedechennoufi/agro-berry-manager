@@ -37646,6 +37646,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778146839402
+    },
+    {
+      "type": "consumption",
+      "product": "TIOSOL",
+      "quantity": 3,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-29",
+      "culture": "Fraise",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778146852935
     }
   ],
   "stockAB1": [
