@@ -37478,6 +37478,18 @@
       "destination": "Hydro",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778146415404
+    },
+    {
+      "type": "consumption",
+      "product": "FERRILENE",
+      "quantity": 5,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-29",
+      "culture": "Myrtille",
+      "destination": "Hydro",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778146432836
     }
   ],
   "stockAB1": [
