@@ -37959,6 +37959,15 @@
       "supplier": "AUTRE",
       "date": "2025-10-01",
       "id": 1778237571689
+    },
+    {
+      "type": "exit",
+      "product": "SOLARIG",
+      "quantity": 400,
+      "price": 0,
+      "farm": "CROWN BERRY",
+      "date": "2026-05-08",
+      "id": 1778237588890
     }
   ],
   "stockAB1": [
@@ -42383,6 +42392,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-08T10:52:51.696Z",
+  "exportDate": "2026-05-08T10:53:08.899Z",
   "melangesConfig": {}
 }
