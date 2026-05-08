@@ -37950,6 +37950,15 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778232339955
+    },
+    {
+      "type": "entry",
+      "product": "SOLARIG",
+      "quantity": 758,
+      "price": 0,
+      "supplier": "AUTRE",
+      "date": "2025-10-01",
+      "id": 1778237571689
     }
   ],
   "stockAB1": [
@@ -42374,6 +42383,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-08T09:06:18.636Z",
+  "exportDate": "2026-05-08T10:52:51.696Z",
   "melangesConfig": {}
 }
