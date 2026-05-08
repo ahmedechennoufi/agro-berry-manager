@@ -37842,6 +37842,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778231671470
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778231689272
     }
   ],
   "stockAB1": [
