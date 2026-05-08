@@ -37854,6 +37854,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778231689272
+    },
+    {
+      "type": "consumption",
+      "product": "MICROS",
+      "quantity": 34.5,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-02",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778231705337
     }
   ],
   "stockAB1": [
