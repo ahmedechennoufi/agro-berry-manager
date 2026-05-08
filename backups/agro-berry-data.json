@@ -37721,18 +37721,6 @@
       "culture": "Myrtille",
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
-      "id": 1778231327972
-    },
-    {
-      "type": "consumption",
-      "product": "MAP",
-      "quantity": 75,
-      "unit": "KG",
-      "farm": "AGRO BERRY 1",
-      "date": "2026-05-01",
-      "culture": "Myrtille",
-      "destination": "Sol",
-      "saisiepar": "agb1@agroberry.ma",
       "id": 1778231426806
     }
   ],
@@ -42155,7 +42143,8 @@
     1774509094299,
     1774187272379,
     1774187168976,
-    1777977155764
+    1777977155764,
+    1778231327972
   ],
   "exportDate": "2026-05-08T09:06:18.636Z",
   "melangesConfig": {}
