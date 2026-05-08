@@ -37689,6 +37689,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-05-08",
       "id": 1778231163147
+    },
+    {
+      "type": "exit",
+      "product": "PIXEL",
+      "quantity": 12,
+      "price": 190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-08",
+      "id": 1778231178630
     }
   ],
   "stockAB1": [
@@ -42112,6 +42121,6 @@
     1774187168976,
     1777977155764
   ],
-  "exportDate": "2026-05-08T09:06:03.153Z",
+  "exportDate": "2026-05-08T09:06:18.636Z",
   "melangesConfig": {}
 }
