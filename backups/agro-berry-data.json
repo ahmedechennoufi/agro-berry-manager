@@ -37982,6 +37982,28 @@
       "id": 1778245511023
     },
     {
+      "type": "transfer-out",
+      "product": "LUNA FUSION",
+      "quantity": 10,
+      "price": 4568,
+      "farm": "AGRO BERRY 1",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-05-04",
+      "transferId": 1778246281651,
+      "id": 1778246281652
+    },
+    {
+      "type": "transfer-in",
+      "product": "LUNA FUSION",
+      "quantity": 10,
+      "price": 4568,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-05-04",
+      "transferId": 1778246281651,
+      "id": 1778246281656
+    },
+    {
       "type": "consumption",
       "product": "ACIDE SULFURIQUE",
       "quantity": 35,
@@ -42416,6 +42438,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-08T10:53:08.899Z",
+  "exportDate": "2026-05-08T13:18:01.658Z",
   "melangesConfig": {}
 }
