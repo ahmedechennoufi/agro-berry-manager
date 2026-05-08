@@ -37866,6 +37866,18 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778231705337
+    },
+    {
+      "type": "consumption",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 75,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-04",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778231753490
     }
   ],
   "stockAB1": [
