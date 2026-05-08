@@ -37658,6 +37658,17 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778146852935
+    },
+    {
+      "type": "transfer-out",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 200,
+      "unit": "KG",
+      "farm": "AGRO BERRY 1",
+      "date": "2026-04-06",
+      "toFarm": "AGRO BERRY 3",
+      "saisiepar": "agb1@agroberry.ma",
+      "id": 1778230998514
     }
   ],
   "stockAB1": [
