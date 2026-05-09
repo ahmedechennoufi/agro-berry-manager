@@ -38014,6 +38014,15 @@
       "destination": "Sol",
       "saisiepar": "agb1@agroberry.ma",
       "id": 1778246222613
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 60,
+      "price": 128,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-09",
+      "id": 1778330638061
     }
   ],
   "stockAB1": [
@@ -42438,6 +42447,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-08T13:18:01.654Z",
+  "exportDate": "2026-05-09T12:43:58.068Z",
   "melangesConfig": {}
 }
