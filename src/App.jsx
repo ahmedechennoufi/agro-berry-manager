@@ -18,6 +18,12 @@ import Melanges from './pages/Melanges';
 import Alertes from './pages/Alertes';
 import * as store from './lib/store';
 import { isGitHubConfigured, backupToGitHub, restoreFromGitHub, syncMovementsFromGitHub } from './lib/githubBackup';
+import {
+  saveMovementToFirestore,
+  updateMovementInFirestore,
+  deleteMovementFromFirestore,
+  isFirestoreSyncReady,
+} from './lib/firestoreSync';
 
 const AppContext = createContext();
 export const useApp = () => useContext(AppContext);
@@ -158,6 +164,13 @@ function App() {
     const newMovement = store.addMovement(movement);
     setMovements(prev => [...prev, newMovement]);
     await saveToGitHub(true); // Show success notif so user knows magasinier will see it
+    // Dual-write Firestore (best-effort, ne bloque pas l'UI)
+    if (isFirestoreSyncReady()) {
+      saveMovementToFirestore(newMovement).catch(err => {
+        console.warn('⚠️ Sync Firestore (add) échouée:', err?.message || err);
+        showNotif('⚠️ Sync Firestore échouée : ' + (err?.message || 'erreur'), 'error');
+      });
+    }
     return newMovement;
   };
 
@@ -174,6 +187,12 @@ function App() {
     setMovements(store.getMovements());
     showNotif('Mouvement modifié');
     await saveToGitHub();
+    // Dual-write Firestore — on push le mouvement complet pour rester cohérent
+    if (isFirestoreSyncReady() && updatedMovement) {
+      updateMovementInFirestore(id, updatedMovement).catch(err => {
+        console.warn('⚠️ Sync Firestore (update) échouée:', err?.message || err);
+      });
+    }
   };
 
   const deleteMovement = async (id) => {
@@ -181,6 +200,12 @@ function App() {
     setMovements(store.getMovements());
     showNotif('Mouvement supprimé');
     await saveToGitHub();
+    // Dual-write Firestore
+    if (isFirestoreSyncReady()) {
+      deleteMovementFromFirestore(id).catch(err => {
+        console.warn('⚠️ Sync Firestore (delete) échouée:', err?.message || err);
+      });
+    }
   };
 
   const readOnly = isReadOnly();

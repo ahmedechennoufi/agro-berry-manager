@@ -8,6 +8,7 @@ import {
   backupToGitHub, restoreFromGitHub, testGitHubConnection, getLastBackupInfo,
   getAutoBackupStatus
 } from '../lib/githubBackup';
+import FirebaseAuthPanel from '../components/FirebaseAuthPanel';
 
 const Settings = () => {
   const { products, movements, loadData, showNotif, readOnly } = useApp();
@@ -252,6 +253,9 @@ const Settings = () => {
           </div>
         </div>
       </Card>
+
+      {/* 🔥 Firebase / Firestore — sync avec magasinier */}
+      <FirebaseAuthPanel showNotif={showNotif} />
 
       {/* ☁️ GitHub Backup */}
       <Card className="border-2 border-blue-100">
