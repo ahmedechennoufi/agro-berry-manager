@@ -38138,6 +38138,18 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1778491076392
+    },
+    {
+      "type": "consumption",
+      "product": "VITAL CU",
+      "quantity": 0.7,
+      "unit": "L",
+      "farm": "AGRO BERRY 3",
+      "date": "2026-04-27",
+      "culture": "Myrtille",
+      "destination": "Hors Sol",
+      "saisiepar": "agb3@agroberry.ma",
+      "id": 1778491089027
     }
   ],
   "stockAB1": [
