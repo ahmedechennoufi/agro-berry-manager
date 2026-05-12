@@ -38294,6 +38294,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-05-12",
       "id": 1778587720283
+    },
+    {
+      "type": "entry",
+      "product": "VITAL CU",
+      "quantity": 100,
+      "price": 141.67,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-05-12",
+      "id": 1778587833646
     }
   ],
   "stockAB1": [
@@ -42718,6 +42727,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-12T12:08:40.291Z",
+  "exportDate": "2026-05-12T12:10:33.652Z",
   "melangesConfig": {}
 }
