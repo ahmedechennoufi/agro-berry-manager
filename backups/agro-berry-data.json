@@ -38276,6 +38276,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-05-12",
       "id": 1778587598797
+    },
+    {
+      "type": "entry",
+      "product": "FEROXIM",
+      "quantity": 1000,
+      "price": 101,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-05-12",
+      "id": 1778587672996
     }
   ],
   "stockAB1": [
@@ -42700,6 +42709,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-12T12:06:38.804Z",
+  "exportDate": "2026-05-12T12:07:53.003Z",
   "melangesConfig": {}
 }
