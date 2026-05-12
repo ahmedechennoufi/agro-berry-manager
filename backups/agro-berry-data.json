@@ -38258,6 +38258,15 @@
       "supplier": "CASEM",
       "date": "2026-05-12",
       "id": 1778586930716
+    },
+    {
+      "type": "entry",
+      "product": "NOVA",
+      "quantity": 160,
+      "price": 85,
+      "supplier": "CASEM",
+      "date": "2026-05-12",
+      "id": 1778586958382
     }
   ],
   "stockAB1": [
@@ -42682,6 +42691,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-12T11:55:30.724Z",
+  "exportDate": "2026-05-12T11:55:58.388Z",
   "melangesConfig": {}
 }
