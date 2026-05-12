@@ -38222,6 +38222,15 @@
       "destination": "Hors Sol",
       "saisiepar": "agb3@agroberry.ma",
       "id": 1778491188077
+    },
+    {
+      "type": "entry",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 3000,
+      "price": 7.25,
+      "supplier": "PROMAGRI",
+      "date": "2026-05-11",
+      "id": 1778586672110
     }
   ],
   "stockAB1": [
@@ -42646,6 +42655,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-11T09:12:40.211Z",
+  "exportDate": "2026-05-12T11:51:12.118Z",
   "melangesConfig": {}
 }
