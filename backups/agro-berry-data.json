@@ -38267,6 +38267,15 @@
       "supplier": "CASEM",
       "date": "2026-05-12",
       "id": 1778586958382
+    },
+    {
+      "type": "entry",
+      "product": "FEROXIM",
+      "quantity": 265,
+      "price": 101,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-05-12",
+      "id": 1778587598797
     }
   ],
   "stockAB1": [
@@ -42691,6 +42700,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-12T11:55:58.388Z",
+  "exportDate": "2026-05-12T12:06:38.804Z",
   "melangesConfig": {}
 }
