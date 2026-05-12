@@ -38249,6 +38249,15 @@
       "supplier": "CASEM",
       "date": "2026-05-12",
       "id": 1778586878666
+    },
+    {
+      "type": "entry",
+      "product": "ISABION",
+      "quantity": 160,
+      "price": 128,
+      "supplier": "CASEM",
+      "date": "2026-05-12",
+      "id": 1778586930716
     }
   ],
   "stockAB1": [
@@ -42673,6 +42682,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-12T11:54:38.674Z",
+  "exportDate": "2026-05-12T11:55:30.724Z",
   "melangesConfig": {}
 }
