@@ -38285,6 +38285,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-05-12",
       "id": 1778587672996
+    },
+    {
+      "type": "entry",
+      "product": "PERFECTOSE",
+      "quantity": 250,
+      "price": 63.34,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-05-12",
+      "id": 1778587720283
     }
   ],
   "stockAB1": [
@@ -42709,6 +42718,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-12T12:07:53.003Z",
+  "exportDate": "2026-05-12T12:08:40.291Z",
   "melangesConfig": {}
 }
