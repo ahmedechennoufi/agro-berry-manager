@@ -36901,6 +36901,17 @@
       "id": 1777892252222
     },
     {
+      "type": "transfer-in",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 100,
+      "price": 7.25,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 1",
+      "date": "2026-04-28",
+      "transferId": 1777892252221,
+      "id": 1777892252226
+    },
+    {
       "type": "transfer-out",
       "product": "NITRATE DE CALCIUM",
       "quantity": 50,
@@ -38337,6 +38348,15 @@
       "supplier": "SANSAN",
       "date": "2026-05-13",
       "id": 1778669917119
+    },
+    {
+      "type": "entry",
+      "product": "BIOFORGE",
+      "quantity": 240,
+      "price": 500,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-05-13",
+      "id": 1778674044416
     }
   ],
   "stockAB1": [
@@ -42761,6 +42781,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-13T10:58:37.126Z",
+  "exportDate": "2026-05-13T12:07:24.419Z",
   "melangesConfig": {}
 }
