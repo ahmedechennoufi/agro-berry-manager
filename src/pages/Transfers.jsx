@@ -269,7 +269,7 @@ const Transfers = () => {
             onChange={(v) => setForm({ ...form, product: v })}
             options={[
               { value: '', label: 'Sélectionner un produit...' },
-              ...products.map(p => ({ value: p.name, label: p.name }))
+              ...products.map(p => ({ value: p.name, label: p.name })).sort((a, b) => a.label.localeCompare(b.label))
             ]} 
           />
           

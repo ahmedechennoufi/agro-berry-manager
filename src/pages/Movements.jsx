@@ -897,7 +897,7 @@ const Movements = () => {
               <Input label="Date" type="date" value={form.date} onChange={(v) => setForm({ ...form, date: v })} />
               
               <Select label="Produit *" value={form.product} onChange={(v) => setForm({ ...form, product: v })}
-                options={[{ value: '', label: 'Sélectionner...' }, ...products.map(p => ({ value: p.name, label: p.name }))]} />
+                options={[{ value: '', label: 'Sélectionner...' }, ...products.map(p => ({ value: p.name, label: p.name })).sort((a, b) => a.label.localeCompare(b.label))]} />
               
               <Input label="Quantité *" type="number" value={form.quantity} onChange={(v) => setForm({ ...form, quantity: v })} placeholder="0" />
               
@@ -949,7 +949,7 @@ const Movements = () => {
           {modalType !== 'transfer' && (modalType !== 'consumption' || consoMode === 'simple') && (
             <>
               <Select label="Produit *" value={form.product} onChange={(v) => setForm({ ...form, product: v })}
-                options={[{ value: '', label: 'Sélectionner...' }, ...products.map(p => ({ value: p.name, label: p.name }))]} />
+                options={[{ value: '', label: 'Sélectionner...' }, ...products.map(p => ({ value: p.name, label: p.name })).sort((a, b) => a.label.localeCompare(b.label))]} />
               
               {modalType === 'entry' ? (
                 <div className="grid grid-cols-2 gap-4">
@@ -1241,6 +1241,7 @@ const Movements = () => {
                           ...products
                             .filter(p => !editableProduits.find(ep => ep.nom.toUpperCase() === p.name.toUpperCase()))
                             .map(p => ({ value: p.name, label: p.name }))
+                            .sort((a, b) => a.label.localeCompare(b.label))
                         ]}
                         style={{ flex: 1 }}
                       />

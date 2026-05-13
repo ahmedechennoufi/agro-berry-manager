@@ -247,7 +247,7 @@ const Consumption = () => {
             onChange={(v) => setForm({ ...form, product: v, quantity: '' })}
             options={[
               { value: '', label: 'Sélectionner...' },
-              ...products.map(p => ({ value: p.name, label: p.name }))
+              ...products.map(p => ({ value: p.name, label: p.name })).sort((a, b) => a.label.localeCompare(b.label))
             ]}
             required
           />
