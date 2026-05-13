@@ -38330,6 +38330,15 @@
       "supplier": "SANSAN",
       "date": "2026-05-12",
       "id": 1778669832384
+    },
+    {
+      "type": "entry",
+      "product": "TOURBE",
+      "quantity": 23980,
+      "price": 0,
+      "supplier": "PELEMIX",
+      "date": "2026-05-13",
+      "id": 1778669857067
     }
   ],
   "stockAB1": [
@@ -42754,6 +42763,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-13T10:57:12.393Z",
+  "exportDate": "2026-05-13T10:57:37.073Z",
   "melangesConfig": {}
 }
