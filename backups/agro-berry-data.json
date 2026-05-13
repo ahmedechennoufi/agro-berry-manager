@@ -38364,6 +38364,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-05-13",
       "id": 1778674044416
+    },
+    {
+      "type": "entry",
+      "product": "TACHIGAREN",
+      "quantity": 320,
+      "price": 0,
+      "supplier": "AGRIMATCO",
+      "date": "2026-05-13",
+      "id": 1778676462913
     }
   ],
   "stockAB1": [
@@ -42788,6 +42797,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-13T12:11:10.134Z",
+  "exportDate": "2026-05-13T12:47:42.921Z",
   "melangesConfig": {}
 }
