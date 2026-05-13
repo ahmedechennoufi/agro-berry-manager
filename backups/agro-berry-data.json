@@ -1255,6 +1255,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1777457131603
+    },
+    {
+      "name": "TACHIGAREN",
+      "unit": "U",
+      "category": "PHYTOSANITAIRES",
+      "threshold": null,
+      "id": 1778674083728
     }
   ],
   "movements": [
@@ -42781,6 +42788,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-13T12:07:24.419Z",
+  "exportDate": "2026-05-13T12:08:03.733Z",
   "melangesConfig": {}
 }
