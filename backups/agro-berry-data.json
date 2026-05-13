@@ -1259,8 +1259,8 @@
     {
       "name": "TACHIGAREN",
       "unit": "U",
-      "category": "PHYTOSANITAIRES",
-      "threshold": null,
+      "category": "ENGRAIS",
+      "threshold": 2,
       "id": 1778674083728
     }
   ],
@@ -42788,6 +42788,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-13T12:09:01.333Z",
+  "exportDate": "2026-05-13T12:11:10.134Z",
   "melangesConfig": {}
 }
