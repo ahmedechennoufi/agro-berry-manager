@@ -38303,6 +38303,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-05-12",
       "id": 1778587833646
+    },
+    {
+      "type": "entry",
+      "product": "PEAU",
+      "quantity": 33800,
+      "price": 0,
+      "supplier": "SANSAN",
+      "date": "2026-05-08",
+      "id": 1778669552884
     }
   ],
   "stockAB1": [
@@ -42727,6 +42736,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-12T12:10:33.652Z",
+  "exportDate": "2026-05-13T10:52:32.892Z",
   "melangesConfig": {}
 }
