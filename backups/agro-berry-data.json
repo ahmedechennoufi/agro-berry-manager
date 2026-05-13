@@ -38339,6 +38339,15 @@
       "supplier": "PELEMIX",
       "date": "2026-05-13",
       "id": 1778669857067
+    },
+    {
+      "type": "entry",
+      "product": "PEAU",
+      "quantity": 8450,
+      "price": 0,
+      "supplier": "SANSAN",
+      "date": "2026-05-13",
+      "id": 1778669917119
     }
   ],
   "stockAB1": [
@@ -42763,6 +42772,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-13T10:57:37.073Z",
+  "exportDate": "2026-05-13T10:58:37.126Z",
   "melangesConfig": {}
 }
