@@ -38349,15 +38349,6 @@
     },
     {
       "type": "entry",
-      "product": "PEAU",
-      "quantity": 8450,
-      "price": 0,
-      "supplier": "SANSAN",
-      "date": "2026-05-13",
-      "id": 1778669917119
-    },
-    {
-      "type": "entry",
       "product": "BIOFORGE",
       "quantity": 240,
       "price": 500,
@@ -42890,6 +42881,7 @@
     }
   ],
   "deletedMovementIds": [
+    1778669917119,
     1777118941706,
     1776944177755,
     1776943727625,
@@ -42932,6 +42924,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-14T08:37:29.417Z",
+  "exportDate": "2026-05-14T08:38:17.453Z",
   "melangesConfig": {}
 }
