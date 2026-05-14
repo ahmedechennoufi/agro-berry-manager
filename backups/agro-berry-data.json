@@ -38490,6 +38490,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-05-12",
       "id": 1778747380096
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 50,
+      "price": 0,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-05-12",
+      "id": 1778747427277
     }
   ],
   "stockAB1": [
@@ -42914,6 +42923,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-14T08:29:40.103Z",
+  "exportDate": "2026-05-14T08:30:27.283Z",
   "melangesConfig": {}
 }
