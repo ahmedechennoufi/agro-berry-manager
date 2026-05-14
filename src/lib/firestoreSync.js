@@ -28,6 +28,37 @@ import {
 export const isFirestoreSyncReady = () => !!auth.currentUser;
 
 /**
+ * Nettoie un objet avant envoi à Firestore.
+ * Firestore REJETTE les valeurs `undefined` ("Unsupported field value: undefined").
+ * On supprime récursivement les undefined dans les objets ET dans les tableaux.
+ * Les `null` sont conservés (Firestore les accepte).
+ *
+ * Exemples typiques de undefined dans nos mouvements :
+ *   - supplier  : présent sur les Entrées, undefined sur les Sorties/Conso
+ *   - destination, fermeDest, culture, etc. (selon le type)
+ */
+function cleanForFirestore(value) {
+  if (value === undefined) return undefined; // sera filtré par le parent
+  if (value === null) return null;
+  if (Array.isArray(value)) {
+    return value
+      .map(cleanForFirestore)
+      .filter((v) => v !== undefined);
+  }
+  if (typeof value === "object") {
+    // Conserve les Date / Timestamp tels quels
+    if (value instanceof Date) return value;
+    const out = {};
+    for (const [k, v] of Object.entries(value)) {
+      const cleaned = cleanForFirestore(v);
+      if (cleaned !== undefined) out[k] = cleaned;
+    }
+    return out;
+  }
+  return value;
+}
+
+/**
  * Sauvegarde 1 mouvement dans Firestore.
  * doc id = movement.id (numérique stable, comme magasinier).
  * Idempotent : un retry réécrit le même doc, pas de doublon.
@@ -38,7 +69,11 @@ export async function saveMovementToFirestore(movement) {
     console.warn("⚠️ saveMovementToFirestore: movement sans id, ignoré", movement);
     return;
   }
-  await setDoc(doc(db, "movements", String(movement.id)), movement, { merge: false });
+  await setDoc(
+    doc(db, "movements", String(movement.id)),
+    cleanForFirestore(movement),
+    { merge: false }
+  );
 }
 
 /**
@@ -48,7 +83,11 @@ export async function saveMovementToFirestore(movement) {
 export async function updateMovementInFirestore(mvId, updates) {
   if (!auth.currentUser) return;
   if (!mvId) return;
-  await setDoc(doc(db, "movements", String(mvId)), updates, { merge: true });
+  await setDoc(
+    doc(db, "movements", String(mvId)),
+    cleanForFirestore(updates),
+    { merge: true }
+  );
 }
 
 /**
@@ -92,7 +131,7 @@ export async function migrateMovementsToFirestore(movements, onProgress) {
     const chunk = valid.slice(i, i + BATCH_SIZE);
     const batch = writeBatch(db);
     for (const mv of chunk) {
-      batch.set(doc(db, "movements", String(mv.id)), mv);
+      batch.set(doc(db, "movements", String(mv.id)), cleanForFirestore(mv));
     }
     try {
       await batch.commit();
