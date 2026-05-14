@@ -38391,6 +38391,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-05-12",
       "id": 1778746018087
+    },
+    {
+      "type": "exit",
+      "product": "ISABION",
+      "quantity": 76,
+      "price": 128,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-05-12",
+      "id": 1778746046452
     }
   ],
   "stockAB1": [
@@ -42815,6 +42824,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-14T08:06:58.094Z",
+  "exportDate": "2026-05-14T08:07:26.459Z",
   "melangesConfig": {}
 }
