@@ -38517,6 +38517,15 @@
       "supplier": "PELEMIX",
       "date": "2026-05-14",
       "id": 1778747948807
+    },
+    {
+      "type": "entry",
+      "product": "MICROS",
+      "quantity": 160,
+      "price": 141.67,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-05-14",
+      "id": 1778756383001
     }
   ],
   "stockAB1": [
@@ -42942,6 +42951,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-14T08:39:08.814Z",
+  "exportDate": "2026-05-14T10:59:43.010Z",
   "melangesConfig": {}
 }
