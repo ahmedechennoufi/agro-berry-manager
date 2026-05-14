@@ -38388,7 +38388,7 @@
       "product": "NOVA",
       "quantity": 20,
       "price": 85,
-      "farm": "AGRO BERRY 1",
+      "farm": "AGRO BERRY 3",
       "date": "2026-05-12",
       "id": 1778746018087
     },
@@ -42824,6 +42824,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-14T08:07:26.459Z",
+  "exportDate": "2026-05-14T08:08:15.444Z",
   "melangesConfig": {}
 }
