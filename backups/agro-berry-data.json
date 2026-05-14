@@ -38499,6 +38499,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-05-12",
       "id": 1778747427277
+    },
+    {
+      "type": "entry",
+      "product": "PEAU",
+      "quantity": 8450,
+      "price": 0,
+      "supplier": "SANSAN",
+      "date": "2026-05-13",
+      "id": 1778747849409
     }
   ],
   "stockAB1": [
@@ -42923,6 +42932,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-14T08:30:27.283Z",
+  "exportDate": "2026-05-14T08:37:29.417Z",
   "melangesConfig": {}
 }
