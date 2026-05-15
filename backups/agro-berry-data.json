@@ -38535,6 +38535,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-05-14",
       "id": 1778756440746
+    },
+    {
+      "type": "exit",
+      "product": "SUCRE",
+      "quantity": 50,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-15",
+      "id": 1778825716165
     }
   ],
   "stockAB1": [
@@ -42960,6 +42969,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-14T11:01:05.415Z",
+  "exportDate": "2026-05-15T06:15:16.171Z",
   "melangesConfig": {}
 }
