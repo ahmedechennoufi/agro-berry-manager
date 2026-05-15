@@ -38553,6 +38553,15 @@
       "supplier": "PELEMIX",
       "date": "2026-05-15",
       "id": 1778843032129
+    },
+    {
+      "type": "entry",
+      "product": "CHLORO MIX ",
+      "quantity": 1005,
+      "price": 85,
+      "supplier": "BEST BIO Z",
+      "date": "2026-05-15",
+      "id": 1778843130198
     }
   ],
   "stockAB1": [
@@ -42978,6 +42987,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-15T11:03:52.136Z",
+  "exportDate": "2026-05-15T11:05:30.206Z",
   "melangesConfig": {}
 }
