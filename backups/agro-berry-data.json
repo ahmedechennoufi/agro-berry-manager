@@ -38580,6 +38580,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-05-15",
       "id": 1778917836699
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 50,
+      "price": 40,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-05-15",
+      "id": 1778917866100
     }
   ],
   "stockAB1": [
@@ -43117,6 +43126,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-16T07:50:36.707Z",
+  "exportDate": "2026-05-16T07:51:06.108Z",
   "melangesConfig": {}
 }
