@@ -38571,6 +38571,15 @@
       "supplier": "PROMAGRI",
       "date": "2026-05-12",
       "id": 1778849175874
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 4000,
+      "price": 420,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-05-15",
+      "id": 1778917836699
     }
   ],
   "stockAB1": [
@@ -42958,12 +42967,12 @@
         {
           "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
           "ordered": 5000,
-          "received": 0
+          "received": 3000
         },
         {
           "product": "MAP",
           "ordered": 6500,
-          "received": 0
+          "received": 5000
         },
         {
           "product": "SULFATE MAGNESUIM",
@@ -42973,12 +42982,12 @@
         {
           "product": "SULFATE DE POTASSE",
           "ordered": 8000,
-          "received": 0
+          "received": 8000
         },
         {
           "product": "NUTREL C",
           "ordered": 1000,
-          "received": 0
+          "received": 1000
         },
         {
           "product": "ACIDE PHOSPHORIQUE",
@@ -42993,27 +43002,27 @@
         {
           "product": "SULFATE DE ZINC",
           "ordered": 50,
-          "received": 0
+          "received": 50
         },
         {
           "product": "FEROXIM",
           "ordered": 1000,
-          "received": 0
+          "received": 1000
         },
         {
           "product": "NITRATE DE CALCIUM",
           "ordered": 4000,
-          "received": 0
+          "received": 4000
         },
         {
           "product": "SULFATE DE CUIVRE",
           "ordered": 50,
-          "received": 0
+          "received": 50
         },
         {
           "product": "VITAL CU",
           "ordered": 100,
-          "received": 0
+          "received": 100
         },
         {
           "product": "NITRATE DE POTASSE",
@@ -43028,22 +43037,22 @@
         {
           "product": "ISABION",
           "ordered": 160,
-          "received": 0
+          "received": 160
         },
         {
           "product": "PERFECTOSE",
           "ordered": 250,
-          "received": 0
+          "received": 250
         },
         {
           "product": "NOVA",
           "ordered": 160,
-          "received": 0
+          "received": 160
         },
         {
           "product": "BIOFORGE",
           "ordered": 240,
-          "received": 0
+          "received": 240
         },
         {
           "product": "KELPAK",
@@ -43053,15 +43062,15 @@
         {
           "product": "TACHIGAREN",
           "ordered": 160,
-          "received": 0
+          "received": 160
         },
         {
           "product": "INACOP",
           "ordered": 220,
-          "received": 0
+          "received": 220
         }
       ],
-      "updatedAt": "2026-05-15T12:25:43.321Z"
+      "updatedAt": "2026-05-16T07:38:42.146Z"
     }
   ],
   "deletedMovementIds": [
@@ -43108,6 +43117,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-15T12:46:15.881Z",
+  "exportDate": "2026-05-16T07:50:36.707Z",
   "melangesConfig": {}
 }
