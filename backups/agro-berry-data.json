@@ -38673,6 +38673,17 @@
       "date": "2026-05-08",
       "transferId": 1778936073698,
       "id": 1778936073703
+    },
+    {
+      "type": "transfer-out",
+      "product": "CHLORO MIX ",
+      "quantity": 15,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-04-29",
+      "transferId": 1778936172949,
+      "id": 1778936172950
     }
   ],
   "stockAB1": [
@@ -43210,6 +43221,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-16T12:54:33.706Z",
+  "exportDate": "2026-05-16T12:56:12.952Z",
   "melangesConfig": {}
 }
