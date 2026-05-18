@@ -38695,6 +38695,15 @@
       "date": "2026-04-29",
       "transferId": 1778936172949,
       "id": 1778936172954
+    },
+    {
+      "type": "entry",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 5000,
+      "price": 9.5,
+      "supplier": "PROMAGRI",
+      "date": "2026-05-15",
+      "id": 1779089794064
     }
   ],
   "stockAB1": [
@@ -43232,6 +43241,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-16T12:56:12.956Z",
+  "exportDate": "2026-05-18T07:36:34.073Z",
   "melangesConfig": {}
 }
