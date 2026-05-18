@@ -38704,6 +38704,15 @@
       "supplier": "PROMAGRI",
       "date": "2026-05-15",
       "id": 1779089794064
+    },
+    {
+      "type": "entry",
+      "product": "INACOP",
+      "quantity": 220,
+      "price": 150,
+      "supplier": "ALFACHIMIE",
+      "date": "2026-05-13",
+      "id": 1779094546249
     }
   ],
   "stockAB1": [
@@ -43241,6 +43250,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-18T07:36:34.073Z",
+  "exportDate": "2026-05-18T08:55:46.256Z",
   "melangesConfig": {}
 }
