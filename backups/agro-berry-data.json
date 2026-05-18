@@ -38724,6 +38724,17 @@
       "date": "2026-05-12",
       "transferId": 1779101071552,
       "id": 1779101071554
+    },
+    {
+      "type": "transfer-in",
+      "product": "NOVA",
+      "quantity": 20,
+      "price": 85,
+      "farm": "AGRO BERRY 2",
+      "fromFarm": "AGRO BERRY 3",
+      "date": "2026-05-12",
+      "transferId": 1779101071552,
+      "id": 1779101071558
     }
   ],
   "stockAB1": [
@@ -43261,6 +43272,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-18T10:44:31.556Z",
+  "exportDate": "2026-05-18T10:44:31.560Z",
   "melangesConfig": {}
 }
