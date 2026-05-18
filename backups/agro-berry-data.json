@@ -38359,7 +38359,7 @@
     {
       "type": "entry",
       "product": "TACHIGAREN",
-      "quantity": 320,
+      "quantity": 160,
       "price": 0,
       "supplier": "AGRIMATCO",
       "date": "2026-05-13",
@@ -43250,6 +43250,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-18T08:55:46.256Z",
+  "exportDate": "2026-05-18T09:57:45.058Z",
   "melangesConfig": {}
 }
