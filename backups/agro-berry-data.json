@@ -38766,6 +38766,15 @@
       "supplier": "WE GREENS",
       "date": "2026-05-15",
       "id": 1779188895769
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 800,
+      "price": 260.1,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-05-15",
+      "id": 1779188922787
     }
   ],
   "stockAB1": [
@@ -43303,6 +43312,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-19T11:08:15.777Z",
+  "exportDate": "2026-05-19T11:08:42.798Z",
   "melangesConfig": {}
 }
