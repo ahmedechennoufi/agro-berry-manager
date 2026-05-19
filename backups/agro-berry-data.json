@@ -38757,6 +38757,15 @@
       "date": "2026-05-12",
       "transferId": 1779101112657,
       "id": 1779101112662
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 800,
+      "price": 260.1,
+      "supplier": "WE GREENS",
+      "date": "2026-05-15",
+      "id": 1779188895769
     }
   ],
   "stockAB1": [
@@ -43294,6 +43303,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-18T10:45:12.665Z",
+  "exportDate": "2026-05-19T11:08:15.777Z",
   "melangesConfig": {}
 }
