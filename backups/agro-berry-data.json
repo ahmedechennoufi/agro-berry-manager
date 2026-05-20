@@ -38811,6 +38811,15 @@
       "supplier": "FRABAGRI",
       "date": "2026-05-19",
       "id": 1779268757071
+    },
+    {
+      "type": "exit",
+      "product": "INACOP",
+      "quantity": 70,
+      "price": 150,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-05-20",
+      "id": 1779275818143
     }
   ],
   "stockAB1": [
@@ -43348,6 +43357,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-20T09:19:17.078Z",
+  "exportDate": "2026-05-20T11:16:58.149Z",
   "melangesConfig": {}
 }
