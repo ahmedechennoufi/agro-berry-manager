@@ -38919,6 +38919,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-05-20",
       "id": 1779276107294
+    },
+    {
+      "type": "exit",
+      "product": "INACOP",
+      "quantity": 90,
+      "price": 150,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-05-20",
+      "id": 1779276160959
     }
   ],
   "stockAB1": [
@@ -43456,6 +43465,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-20T11:21:47.301Z",
+  "exportDate": "2026-05-20T11:22:40.965Z",
   "melangesConfig": {}
 }
