@@ -38910,6 +38910,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-05-20",
       "id": 1779276065609
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE ZINC",
+      "quantity": 25,
+      "price": 11.95,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-05-20",
+      "id": 1779276107294
     }
   ],
   "stockAB1": [
@@ -43447,6 +43456,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-20T11:21:05.615Z",
+  "exportDate": "2026-05-20T11:21:47.301Z",
   "melangesConfig": {}
 }
