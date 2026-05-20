@@ -38793,6 +38793,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-05-18",
       "id": 1779262641697
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 500,
+      "price": 10.85,
+      "supplier": "FRABAGRI",
+      "date": "2026-05-19",
+      "id": 1779268729425
     }
   ],
   "stockAB1": [
@@ -43330,6 +43339,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-20T07:37:21.703Z",
+  "exportDate": "2026-05-20T09:18:49.433Z",
   "melangesConfig": {}
 }
