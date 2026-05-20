@@ -38865,6 +38865,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-05-20",
       "id": 1779275971060
+    },
+    {
+      "type": "exit",
+      "product": "NOVA",
+      "quantity": 60,
+      "price": 85,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-05-20",
+      "id": 1779275989642
     }
   ],
   "stockAB1": [
@@ -43402,6 +43411,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-20T11:19:31.067Z",
+  "exportDate": "2026-05-20T11:19:49.648Z",
   "melangesConfig": {}
 }
