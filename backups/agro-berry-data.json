@@ -38982,6 +38982,15 @@
       "supplier": "PELEMIX",
       "date": "2026-05-21",
       "id": 1779428988268
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 150,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-22",
+      "id": 1779449029498
     }
   ],
   "stockAB1": [
@@ -43519,6 +43528,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-22T05:49:48.275Z",
+  "exportDate": "2026-05-22T11:23:49.506Z",
   "melangesConfig": {}
 }
