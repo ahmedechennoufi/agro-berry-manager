@@ -38973,6 +38973,15 @@
       "supplier": "PELEMIX",
       "date": "2026-05-21",
       "id": 1779352326504
+    },
+    {
+      "type": "entry",
+      "product": "TOURBE",
+      "quantity": 23980,
+      "price": 0,
+      "supplier": "PELEMIX",
+      "date": "2026-05-21",
+      "id": 1779428988268
     }
   ],
   "stockAB1": [
@@ -43360,7 +43369,7 @@
         {
           "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
           "ordered": 5000,
-          "received": 3000
+          "received": 8000
         },
         {
           "product": "MAP",
@@ -43420,12 +43429,12 @@
         {
           "product": "NITRATE DE POTASSE",
           "ordered": 500,
-          "received": 0
+          "received": 500
         },
         {
           "product": "MICROS",
           "ordered": 160,
-          "received": 0
+          "received": 160
         },
         {
           "product": "ISABION",
@@ -43463,7 +43472,7 @@
           "received": 220
         }
       ],
-      "updatedAt": "2026-05-16T07:38:42.146Z"
+      "updatedAt": "2026-05-21T11:53:01.790Z"
     }
   ],
   "deletedMovementIds": [
@@ -43510,6 +43519,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-21T08:32:06.510Z",
+  "exportDate": "2026-05-22T05:49:48.275Z",
   "melangesConfig": {}
 }
