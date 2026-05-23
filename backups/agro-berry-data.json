@@ -38991,6 +38991,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-05-22",
       "id": 1779449029498
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 2500,
+      "price": 4.106941838649156,
+      "supplier": "FRABAGRI",
+      "date": "2026-05-22",
+      "id": 1779518449371
     }
   ],
   "stockAB1": [
@@ -43528,6 +43537,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-22T11:23:49.506Z",
+  "exportDate": "2026-05-23T06:40:49.382Z",
   "melangesConfig": {}
 }
