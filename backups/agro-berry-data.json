@@ -39009,6 +39009,15 @@
       "supplier": "FRABAGRI",
       "date": "2026-05-22",
       "id": 1779518477319
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 1000,
+      "price": 3.4754355400696864,
+      "supplier": "FRABAGRI",
+      "date": "2026-05-22",
+      "id": 1779536639494
     }
   ],
   "stockAB1": [
@@ -43546,6 +43555,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-23T06:41:17.326Z",
+  "exportDate": "2026-05-23T11:43:59.501Z",
   "melangesConfig": {}
 }
