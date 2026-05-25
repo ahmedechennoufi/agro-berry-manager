@@ -39018,6 +39018,15 @@
       "supplier": "FRABAGRI",
       "date": "2026-05-22",
       "id": 1779536639494
+    },
+    {
+      "type": "entry",
+      "product": "TOURBE",
+      "quantity": 23980,
+      "price": 0,
+      "supplier": "PELEMIX",
+      "date": "2026-05-23",
+      "id": 1779694694593
     }
   ],
   "stockAB1": [
@@ -43555,6 +43564,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-23T11:43:59.501Z",
+  "exportDate": "2026-05-25T07:38:14.604Z",
   "melangesConfig": {}
 }
