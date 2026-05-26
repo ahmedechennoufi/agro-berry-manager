@@ -39054,6 +39054,15 @@
       "supplier": "PELEMIX",
       "date": "2026-05-24",
       "id": 1779694745641
+    },
+    {
+      "type": "exit",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 500,
+      "price": 7.911764705882353,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-05-25",
+      "id": 1779774220697
     }
   ],
   "stockAB1": [
@@ -43591,6 +43600,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-05-26T05:43:04.162Z",
+  "exportDate": "2026-05-26T05:43:40.705Z",
   "melangesConfig": {}
 }
