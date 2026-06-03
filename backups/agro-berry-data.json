@@ -39255,6 +39255,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-06-01",
       "id": 1780494852107
+    },
+    {
+      "type": "exit",
+      "product": "BIOFORGE",
+      "quantity": 30,
+      "price": 500,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-06-01",
+      "id": 1780494940410
     }
   ],
   "stockAB1": [
@@ -43794,6 +43803,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-03T13:54:12.113Z",
+  "exportDate": "2026-06-03T13:55:40.417Z",
   "melangesConfig": {}
 }
