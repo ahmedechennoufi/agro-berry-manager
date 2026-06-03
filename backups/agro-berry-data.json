@@ -39195,6 +39195,39 @@
       "date": "2026-05-24",
       "transferId": 1780469934418,
       "id": 1780469934419
+    },
+    {
+      "type": "transfer-in",
+      "product": "UREE",
+      "quantity": 100,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 2",
+      "date": "2026-05-24",
+      "transferId": 1780469934418,
+      "id": 1780469934423
+    },
+    {
+      "type": "transfer-out",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7.911764705882353,
+      "farm": "AGRO BERRY 2",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-05-24",
+      "transferId": 1780469949855,
+      "id": 1780469949856
+    },
+    {
+      "type": "transfer-in",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 50,
+      "price": 7.911764705882353,
+      "farm": "AGRO BERRY 3",
+      "fromFarm": "AGRO BERRY 2",
+      "date": "2026-05-24",
+      "transferId": 1780469949855,
+      "id": 1780469949860
     }
   ],
   "stockAB1": [
@@ -43734,6 +43767,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-03T06:58:54.422Z",
+  "exportDate": "2026-06-03T06:59:09.863Z",
   "melangesConfig": {}
 }
