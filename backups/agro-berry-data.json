@@ -39184,6 +39184,17 @@
       "date": "2026-05-24",
       "transferId": 1780469918655,
       "id": 1780469918661
+    },
+    {
+      "type": "transfer-out",
+      "product": "UREE",
+      "quantity": 100,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 2",
+      "toFarm": "AGRO BERRY 3",
+      "date": "2026-05-24",
+      "transferId": 1780469934418,
+      "id": 1780469934419
     }
   ],
   "stockAB1": [
@@ -43723,6 +43734,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-03T06:58:38.664Z",
+  "exportDate": "2026-06-03T06:58:54.422Z",
   "melangesConfig": {}
 }
