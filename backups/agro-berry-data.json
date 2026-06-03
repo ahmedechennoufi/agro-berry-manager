@@ -39164,17 +39164,6 @@
       "id": 1780381531355
     },
     {
-      "type": "transfer-out",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 60,
-      "price": 9.77648370019504,
-      "farm": "AGRO BERRY 2",
-      "toFarm": "AGRO BERRY 3",
-      "date": "2026-06-03",
-      "transferId": 1780469197549,
-      "id": 1780469197550
-    },
-    {
       "type": "transfer-in",
       "product": "ACIDE PHOSPHORIQUE",
       "quantity": 60,
@@ -43678,6 +43667,7 @@
     }
   ],
   "deletedMovementIds": [
+    1780469197550,
     1778669917119,
     1777118941706,
     1776944177755,
@@ -43721,6 +43711,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-03T06:46:37.557Z",
+  "exportDate": "2026-06-03T06:46:54.797Z",
   "melangesConfig": {}
 }
