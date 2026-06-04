@@ -1262,6 +1262,13 @@
       "category": "ENGRAIS",
       "threshold": 2,
       "id": 1778674083728
+    },
+    {
+      "name": "PATTES",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1780569404464
     }
   ],
   "movements": [
@@ -43821,6 +43828,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-04T05:39:03.594Z",
+  "exportDate": "2026-06-04T10:36:44.471Z",
   "melangesConfig": {}
 }
