@@ -39289,6 +39289,15 @@
       "supplier": "PELEMIX",
       "date": "2026-06-03",
       "id": 1780551543587
+    },
+    {
+      "type": "entry",
+      "product": "PATTES",
+      "quantity": 2400,
+      "price": 0,
+      "supplier": "UPP",
+      "date": "2026-06-04",
+      "id": 1780569447387
     }
   ],
   "stockAB1": [
@@ -40549,7 +40558,8 @@
     "WE GREENS",
     "SUREXPORT FRUIT",
     "SANSAN",
-    "PELEMIX"
+    "PELEMIX",
+    "UPP"
   ],
   "consommations": [],
   "melanges": [],
@@ -43828,6 +43838,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-04T10:36:44.471Z",
+  "exportDate": "2026-06-04T10:37:27.396Z",
   "melangesConfig": {}
 }
