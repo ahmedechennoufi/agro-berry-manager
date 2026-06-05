@@ -39536,7 +39536,7 @@
     {
       "type": "entry",
       "product": "ISABION",
-      "quantity": 16,
+      "quantity": 26,
       "price": 128,
       "supplier": "AUTRE",
       "date": "2026-05-11",
@@ -44081,6 +44081,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-05T08:01:49.597Z",
+  "exportDate": "2026-06-05T08:02:11.648Z",
   "melangesConfig": {}
 }
