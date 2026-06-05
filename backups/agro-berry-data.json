@@ -3278,7 +3278,7 @@
     {
       "type": "entry",
       "product": "KRISANT",
-      "quantity": 10,
+      "quantity": 11,
       "price": 850,
       "supplier": "ALFACHIMIE",
       "date": "2026-02-11",
@@ -44090,6 +44090,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-05T08:03:03.799Z",
+  "exportDate": "2026-06-05T08:03:50.116Z",
   "melangesConfig": {}
 }
