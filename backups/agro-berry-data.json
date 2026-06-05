@@ -39334,6 +39334,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-05-18",
       "id": 1780642236769
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 2250,
+      "price": 9.77648370019504,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-18",
+      "id": 1780642352452
     }
   ],
   "stockAB1": [
@@ -43874,6 +43883,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-05T06:50:36.776Z",
+  "exportDate": "2026-06-05T06:52:32.459Z",
   "melangesConfig": {}
 }
