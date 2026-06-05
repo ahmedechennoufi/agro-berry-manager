@@ -39298,6 +39298,15 @@
       "supplier": "UPP",
       "date": "2026-06-04",
       "id": 1780569447387
+    },
+    {
+      "type": "entry",
+      "product": "VYTEGRIS MULTI",
+      "quantity": 9,
+      "price": 152.4,
+      "supplier": "AUTRE",
+      "date": "2026-05-19",
+      "id": 1780642069801
     }
   ],
   "stockAB1": [
@@ -43838,6 +43847,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-04T11:11:11.583Z",
+  "exportDate": "2026-06-05T06:47:49.809Z",
   "melangesConfig": {}
 }
