@@ -39325,6 +39325,15 @@
       "supplier": "AUTRE",
       "date": "2026-05-25",
       "id": 1780642225254
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE CHLORHYDRIQUE",
+      "quantity": 144,
+      "price": 38.86538461538461,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-18",
+      "id": 1780642236769
     }
   ],
   "stockAB1": [
@@ -43865,6 +43874,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-05T06:50:25.262Z",
+  "exportDate": "2026-06-05T06:50:36.776Z",
   "melangesConfig": {}
 }
