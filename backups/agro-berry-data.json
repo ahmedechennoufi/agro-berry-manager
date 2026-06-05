@@ -39433,6 +39433,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-05-18",
       "id": 1780645027694
+    },
+    {
+      "type": "exit",
+      "product": "PERFECTOSE",
+      "quantity": 100,
+      "price": 63.339999999999996,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-05-19",
+      "id": 1780645242827
     }
   ],
   "stockAB1": [
@@ -43973,6 +43982,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-05T07:37:07.702Z",
+  "exportDate": "2026-06-05T07:40:42.835Z",
   "melangesConfig": {}
 }
