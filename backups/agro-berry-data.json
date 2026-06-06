@@ -39649,6 +39649,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-05-12",
       "id": 1780731752577
+    },
+    {
+      "type": "entry",
+      "product": "ALGOBAZ",
+      "quantity": 100,
+      "price": 208.34,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-06-06",
+      "id": 1780739026828
     }
   ],
   "stockAB1": [
@@ -44189,6 +44198,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-06T07:42:32.584Z",
+  "exportDate": "2026-06-06T09:43:46.838Z",
   "melangesConfig": {}
 }
