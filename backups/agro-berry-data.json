@@ -39658,6 +39658,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-06-06",
       "id": 1780739026828
+    },
+    {
+      "type": "entry",
+      "product": "VITAL CU",
+      "quantity": 100,
+      "price": 141.67,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-06-06",
+      "id": 1780739048210
     }
   ],
   "stockAB1": [
@@ -44198,6 +44207,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-06T09:43:46.838Z",
+  "exportDate": "2026-06-06T09:44:08.217Z",
   "melangesConfig": {}
 }
