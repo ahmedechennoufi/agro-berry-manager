@@ -39667,6 +39667,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-06-06",
       "id": 1780739048210
+    },
+    {
+      "type": "entry",
+      "product": "FEROXIM",
+      "quantity": 500,
+      "price": 101,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-06-06",
+      "id": 1780739068278
     }
   ],
   "stockAB1": [
@@ -44207,6 +44216,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-06T09:44:08.217Z",
+  "exportDate": "2026-06-06T09:44:28.286Z",
   "melangesConfig": {}
 }
