@@ -1269,6 +1269,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1780569404464
+    },
+    {
+      "name": "FERTIACTYL GZ ",
+      "unit": "L",
+      "category": "PHYTOSANITAIRES",
+      "threshold": null,
+      "id": 1780901181206
     }
   ],
   "movements": [
@@ -44213,6 +44220,98 @@
         }
       ],
       "updatedAt": "2026-05-21T11:53:01.790Z"
+    },
+    {
+      "id": 1780900898893,
+      "month": "2026-06",
+      "items": [
+        {
+          "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "ordered": 8000,
+          "received": 0
+        },
+        {
+          "product": "MAP",
+          "ordered": 3100,
+          "received": 0
+        },
+        {
+          "product": "SULFATE MAGNESUIM",
+          "ordered": 3300,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE POTASSE",
+          "ordered": 2700,
+          "received": 0
+        },
+        {
+          "product": "NUTREL C",
+          "ordered": 800,
+          "received": 0
+        },
+        {
+          "product": "ACIDE PHOSPHORIQUE",
+          "ordered": 7000,
+          "received": 0
+        },
+        {
+          "product": "ACIDE SULFURIQUE",
+          "ordered": 1500,
+          "received": 0
+        },
+        {
+          "product": "UREE",
+          "ordered": 5000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE ZINC",
+          "ordered": 50,
+          "received": 0
+        },
+        {
+          "product": "FEROXIM",
+          "ordered": 500,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE CALCIUM",
+          "ordered": 1500,
+          "received": 0
+        },
+        {
+          "product": "VITAL CU",
+          "ordered": 1500,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE POTASSE",
+          "ordered": 1500,
+          "received": 0
+        },
+        {
+          "product": "AMMONITRATE",
+          "ordered": 825,
+          "received": 0
+        },
+        {
+          "product": "BASSO",
+          "ordered": 240,
+          "received": 0
+        },
+        {
+          "product": "BIOENERGY",
+          "ordered": 160,
+          "received": 0
+        },
+        {
+          "product": "ROMBI SAL",
+          "ordered": 200,
+          "received": 0
+        }
+      ],
+      "updatedAt": "2026-06-08T06:45:26.305Z"
     }
   ],
   "deletedMovementIds": [
@@ -44261,6 +44360,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-06T10:55:05.088Z",
+  "exportDate": "2026-06-08T06:46:21.213Z",
   "melangesConfig": {}
 }
