@@ -39728,6 +39728,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-06",
       "id": 1780743147945
+    },
+    {
+      "type": "exit",
+      "product": "KELPAK",
+      "quantity": 5,
+      "price": 115,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-08",
+      "id": 1780908473874
     }
   ],
   "stockAB1": [
@@ -44273,17 +44282,12 @@
         {
           "product": "FEROXIM",
           "ordered": 500,
-          "received": 0
-        },
-        {
-          "product": "NITRATE DE CALCIUM",
-          "ordered": 1500,
-          "received": 0
+          "received": 500
         },
         {
           "product": "VITAL CU",
           "ordered": 1500,
-          "received": 0
+          "received": 100
         },
         {
           "product": "NITRATE DE POTASSE",
@@ -44309,9 +44313,59 @@
           "product": "ROMBI SAL",
           "ordered": 200,
           "received": 0
+        },
+        {
+          "product": "FERTIACTYL GZ ",
+          "ordered": 48,
+          "received": 0
+        },
+        {
+          "product": "ZM CORRECTOR",
+          "ordered": 60,
+          "received": 60
+        },
+        {
+          "product": "BASTION",
+          "ordered": 60,
+          "received": 0
+        },
+        {
+          "product": "ACIDE NITRIQUE",
+          "ordered": 500,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE MAGNESIUM",
+          "ordered": 1525,
+          "received": 0
+        },
+        {
+          "product": "ALGOBAZ",
+          "ordered": 100,
+          "received": 100
+        },
+        {
+          "product": "SCELTA",
+          "ordered": 20,
+          "received": 0
+        },
+        {
+          "product": "TIOSOL",
+          "ordered": 150,
+          "received": 150
+        },
+        {
+          "product": "MERJANE",
+          "ordered": 230,
+          "received": 240
+        },
+        {
+          "product": "NITRATE DE CALCIUM",
+          "ordered": 1980,
+          "received": 0
         }
       ],
-      "updatedAt": "2026-06-08T06:45:26.305Z"
+      "updatedAt": "2026-06-08T06:55:15.888Z"
     }
   ],
   "deletedMovementIds": [
@@ -44360,6 +44414,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-08T06:46:21.213Z",
+  "exportDate": "2026-06-08T08:47:53.880Z",
   "melangesConfig": {}
 }
