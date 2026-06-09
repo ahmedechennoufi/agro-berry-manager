@@ -39773,6 +39773,15 @@
       "supplier": "CAS",
       "date": "2026-06-08",
       "id": 1780985633488
+    },
+    {
+      "type": "entry",
+      "product": "AMMONITRATE",
+      "quantity": 850,
+      "price": 5.85,
+      "supplier": "CAS",
+      "date": "2026-06-08",
+      "id": 1780985663155
     }
   ],
   "stockAB1": [
@@ -44450,6 +44459,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-09T06:13:53.494Z",
+  "exportDate": "2026-06-09T06:14:23.162Z",
   "melangesConfig": {}
 }
