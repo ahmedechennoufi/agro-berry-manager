@@ -23,9 +23,20 @@ const getFileInfo = async (config) => {
   const res = await fetch(url, {
     headers: { 'Authorization': `token ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
   });
-  if (!res.ok) throw new Error(`GitHub erreur ${res.status}`);
+  // 404 = fichier n'existe pas encore (normal pour la 1ère sauvegarde)
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    const errBody = await res.json().catch(() => ({}));
+    throw new Error(errBody.message || `GitHub erreur ${res.status}`);
+  }
   const file = await res.json();
-  const data = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
+  // Parser le contenu séparément pour ne pas perdre le SHA si le contenu est corrompu
+  let data = null;
+  try {
+    data = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
+  } catch (parseErr) {
+    console.warn('Contenu GitHub illisible, SHA récupéré quand même:', parseErr.message);
+  }
   return { data, sha: file.sha };
 };
 
@@ -42,9 +53,12 @@ export const backupToGitHub = async (data, retryCount = 0) => {
   let magasinierMovements = [];
   let existingMelangesConfig = data.melangesConfig || {};
   let mergedDeletedIds = [...(data.deletedMovementIds || [])];
-  try {
-    const { data: existing, sha: existingSha } = await getFileInfo(config);
-    sha = existingSha;
+  
+  // getFileInfo retourne null si fichier inexistant (404), ou throw si erreur réelle
+  const fileInfo = await getFileInfo(config);
+  if (fileInfo && fileInfo.data) {
+    sha = fileInfo.sha;
+    const existing = fileInfo.data;
     const adminIds = new Set((data.movements || []).map(m => m.id));
     // Fusionner les IDs supprimés : admin + magasinier (depuis GitHub)
     const remoteDeletedIds = existing.deletedMovementIds || [];
@@ -59,7 +73,10 @@ export const backupToGitHub = async (data, retryCount = 0) => {
     if (existing.melangesConfig && Object.keys(existing.melangesConfig).length > 0) {
       existingMelangesConfig = existing.melangesConfig;
     }
-  } catch (e) { /* fichier n'existe pas encore */ }
+  } else if (fileInfo && !fileInfo.data) {
+    // Fichier existe sur GitHub mais contenu illisible — récupérer quand même le SHA
+    sha = fileInfo.sha;
+  }
 
   // Filtrer aussi les mouvements admin qui ont été supprimés par le magasinier
   const deletedSet = new Set(mergedDeletedIds);
@@ -111,8 +128,10 @@ export const backupToGitHub = async (data, retryCount = 0) => {
 export const restoreFromGitHub = async () => {
   const config = getGitHubConfig();
   if (!config.token || !config.owner || !config.repo) throw new Error('GitHub non configuré');
-  const { data } = await getFileInfo(config);
-  return data;
+  const fileInfo = await getFileInfo(config);
+  if (!fileInfo) throw new Error('Aucune sauvegarde trouvée sur GitHub');
+  if (!fileInfo.data) throw new Error('Sauvegarde GitHub illisible ou corrompue');
+  return fileInfo.data;
 };
 
 // === SYNC MOUVEMENTS MAGASINIERS ===
@@ -120,12 +139,13 @@ export const syncMovementsFromGitHub = async (getCurrentMovementsFn, addMovement
   const config = getGitHubConfig();
   if (!config.token || !config.owner || !config.repo) return 0;
   try {
-    const { data } = await getFileInfo(config);
-    const backupMovements = data.movements || [];
+    const fileInfo = await getFileInfo(config);
+    if (!fileInfo || !fileInfo.data) return 0;
+    const backupMovements = fileInfo.data.movements || [];
     const localIds = new Set(getCurrentMovementsFn().map(m => m.id));
     // Ne pas réimporter les mouvements supprimés localement (par admin ou magasinier)
     const locallyDeleted = getLocalDeletedIdsFn ? new Set(getLocalDeletedIdsFn()) : new Set();
-    const remotelyDeleted = new Set(data.deletedMovementIds || []);
+    const remotelyDeleted = new Set(fileInfo.data.deletedMovementIds || []);
     const newMovements = backupMovements.filter(m => 
       m.id && 
       !localIds.has(m.id) && 
