@@ -39863,6 +39863,15 @@
       "supplier": "FRABAGRI",
       "date": "2026-06-09",
       "id": 1781004139269
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE MANGANAISE",
+      "quantity": 3500,
+      "price": 25,
+      "supplier": "FRABAGRI",
+      "date": "2026-06-09",
+      "id": 1781004324487
     }
   ],
   "stockAB1": [
@@ -44495,6 +44504,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-09T11:22:19.277Z",
+  "exportDate": "2026-06-09T11:25:24.494Z",
   "melangesConfig": {}
 }
