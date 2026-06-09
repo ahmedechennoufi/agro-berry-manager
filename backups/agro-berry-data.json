@@ -39782,6 +39782,15 @@
       "supplier": "CAS",
       "date": "2026-06-08",
       "id": 1780985663155
+    },
+    {
+      "type": "entry",
+      "product": "MAP",
+      "quantity": 3100,
+      "price": 15.208045977011494,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-09",
+      "id": 1780993580437
     }
   ],
   "stockAB1": [
@@ -44459,6 +44468,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-09T06:14:23.162Z",
+  "exportDate": "2026-06-09T08:26:20.447Z",
   "melangesConfig": {}
 }
