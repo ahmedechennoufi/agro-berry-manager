@@ -39746,6 +39746,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-08",
       "id": 1780910230855
+    },
+    {
+      "type": "entry",
+      "product": "RAIZANTE",
+      "quantity": 60,
+      "price": 83,
+      "supplier": "CAS",
+      "date": "2026-06-08",
+      "id": 1780985589306
     }
   ],
   "stockAB1": [
@@ -44246,7 +44255,7 @@
         {
           "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
           "ordered": 8000,
-          "received": 0
+          "received": 8000
         },
         {
           "product": "MAP",
@@ -44374,7 +44383,7 @@
           "received": 0
         }
       ],
-      "updatedAt": "2026-06-08T06:55:15.888Z"
+      "updatedAt": "2026-06-08T11:29:38.826Z"
     }
   ],
   "deletedMovementIds": [
@@ -44423,6 +44432,6 @@
     1777977155764,
     1778231327972
   ],
-  "exportDate": "2026-06-08T09:17:10.862Z",
+  "exportDate": "2026-06-09T06:13:09.312Z",
   "melangesConfig": {}
 }
