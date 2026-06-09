@@ -39854,6 +39854,15 @@
       "supplier": "FRABAGRI",
       "date": "2026-06-09",
       "id": 1781001911261
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 990,
+      "price": 9.77648370019504,
+      "supplier": "FRABAGRI",
+      "date": "2026-06-09",
+      "id": 1781004139269
     }
   ],
   "stockAB1": [
@@ -44486,6 +44495,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-09T11:21:20.301Z",
+  "exportDate": "2026-06-09T11:22:19.277Z",
   "melangesConfig": {}
 }
