@@ -39881,6 +39881,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-09",
       "id": 1781005886278
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 25,
+      "price": 5.841785714285715,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-09",
+      "id": 1781077054521
     }
   ],
   "stockAB1": [
@@ -44386,17 +44395,17 @@
         {
           "product": "MAP",
           "ordered": 3100,
-          "received": 0
+          "received": 3100
         },
         {
           "product": "SULFATE MAGNESUIM",
           "ordered": 3300,
-          "received": 0
+          "received": 3500
         },
         {
           "product": "SULFATE DE POTASSE",
           "ordered": 2700,
-          "received": 0
+          "received": 2700
         },
         {
           "product": "NUTREL C",
@@ -44406,7 +44415,7 @@
         {
           "product": "ACIDE PHOSPHORIQUE",
           "ordered": 7000,
-          "received": 0
+          "received": 7966
         },
         {
           "product": "ACIDE SULFURIQUE",
@@ -44416,12 +44425,12 @@
         {
           "product": "UREE",
           "ordered": 5000,
-          "received": 0
+          "received": 1800
         },
         {
           "product": "SULFATE DE ZINC",
           "ordered": 50,
-          "received": 0
+          "received": 50
         },
         {
           "product": "FEROXIM",
@@ -44436,7 +44445,7 @@
         {
           "product": "NITRATE DE POTASSE",
           "ordered": 1500,
-          "received": 0
+          "received": 1500
         },
         {
           "product": "AMMONITRATE",
@@ -44481,7 +44490,7 @@
         {
           "product": "NITRATE DE MAGNESIUM",
           "ordered": 1525,
-          "received": 0
+          "received": 1525
         },
         {
           "product": "ALGOBAZ",
@@ -44509,10 +44518,10 @@
           "received": 0
         }
       ],
-      "updatedAt": "2026-06-08T11:29:38.826Z"
+      "updatedAt": "2026-06-10T05:50:23.899Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-09T11:51:26.287Z",
+  "exportDate": "2026-06-10T07:37:34.530Z",
   "melangesConfig": {}
 }
