@@ -39989,6 +39989,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-11",
       "id": 1781160744189
+    },
+    {
+      "type": "entry",
+      "product": "BASSO",
+      "quantity": 240,
+      "price": 15,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-10",
+      "id": 1781161842789
     }
   ],
   "stockAB1": [
@@ -44621,6 +44630,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-11T06:52:24.195Z",
+  "exportDate": "2026-06-11T07:10:42.796Z",
   "melangesConfig": {}
 }
