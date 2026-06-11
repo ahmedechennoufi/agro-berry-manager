@@ -40016,6 +40016,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-10",
       "id": 1781161906105
+    },
+    {
+      "type": "exit",
+      "product": "MERJANE",
+      "quantity": 80,
+      "price": 105,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-08",
+      "id": 1781171273420
     }
   ],
   "stockAB1": [
@@ -44648,6 +44657,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-11T07:11:46.111Z",
+  "exportDate": "2026-06-11T09:47:53.429Z",
   "melangesConfig": {}
 }
