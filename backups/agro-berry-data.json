@@ -39998,6 +39998,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-10",
       "id": 1781161842789
+    },
+    {
+      "type": "entry",
+      "product": "SCELTA",
+      "quantity": 20,
+      "price": 1190,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-10",
+      "id": 1781161867806
     }
   ],
   "stockAB1": [
@@ -44630,6 +44639,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-11T07:10:42.796Z",
+  "exportDate": "2026-06-11T07:11:07.814Z",
   "melangesConfig": {}
 }
