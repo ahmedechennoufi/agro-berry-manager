@@ -39953,6 +39953,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-10",
       "id": 1781155729585
+    },
+    {
+      "type": "entry",
+      "product": "PERMACLEAN",
+      "quantity": 106,
+      "price": 94.12,
+      "supplier": "AUTRE",
+      "date": "2026-05-25",
+      "id": 1781157383651
     }
   ],
   "stockAB1": [
@@ -44585,6 +44594,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-11T05:28:49.598Z",
+  "exportDate": "2026-06-11T05:56:23.655Z",
   "melangesConfig": {}
 }
