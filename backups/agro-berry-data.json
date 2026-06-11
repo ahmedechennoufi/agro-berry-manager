@@ -39944,6 +39944,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-10",
       "id": 1781087114767
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 1470,
+      "price": 3.4754355400696864,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-10",
+      "id": 1781155729585
     }
   ],
   "stockAB1": [
@@ -44576,6 +44585,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-10T10:25:14.772Z",
+  "exportDate": "2026-06-11T05:28:49.598Z",
   "melangesConfig": {}
 }
