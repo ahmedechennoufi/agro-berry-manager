@@ -1276,6 +1276,13 @@
       "category": "PHYTOSANITAIRES",
       "threshold": null,
       "id": 1780901181206
+    },
+    {
+      "name": "VYTEGRIS PLEX",
+      "unit": "L",
+      "category": "ENGRAIS",
+      "threshold": null,
+      "id": 1781172466939
     }
   ],
   "movements": [
@@ -44657,6 +44664,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-11T09:47:53.429Z",
+  "exportDate": "2026-06-11T10:07:46.945Z",
   "melangesConfig": {}
 }
