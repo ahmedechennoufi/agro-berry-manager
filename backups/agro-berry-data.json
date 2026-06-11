@@ -39962,6 +39962,15 @@
       "supplier": "AUTRE",
       "date": "2026-05-25",
       "id": 1781157383651
+    },
+    {
+      "type": "exit",
+      "product": "PERMACLEAN",
+      "quantity": 106,
+      "price": 94.12,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-05-25",
+      "id": 1781157408789
     }
   ],
   "stockAB1": [
@@ -44594,6 +44603,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-11T05:56:23.655Z",
+  "exportDate": "2026-06-11T05:56:48.795Z",
   "melangesConfig": {}
 }
