@@ -40007,6 +40007,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-10",
       "id": 1781161867806
+    },
+    {
+      "type": "entry",
+      "product": "BIOENERGY",
+      "quantity": 160,
+      "price": 47.5,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-10",
+      "id": 1781161906105
     }
   ],
   "stockAB1": [
@@ -44639,6 +44648,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-11T07:11:07.814Z",
+  "exportDate": "2026-06-11T07:11:46.111Z",
   "melangesConfig": {}
 }
