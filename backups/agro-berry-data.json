@@ -40261,7 +40261,7 @@
     {
       "type": "exit",
       "product": "VITAL CU",
-      "quantity": 50,
+      "quantity": 40,
       "price": 141.67,
       "farm": "AGRO BERRY 3",
       "date": "2026-06-12",
@@ -44916,6 +44916,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T11:01:51.986Z",
+  "exportDate": "2026-06-12T11:06:44.223Z",
   "melangesConfig": {}
 }
