@@ -40059,6 +40059,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-09",
       "id": 1781245867042
+    },
+    {
+      "type": "exit",
+      "product": "BIOFORGE",
+      "quantity": 2,
+      "price": 500,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-12",
+      "id": 1781260004604
     }
   ],
   "stockAB1": [
@@ -44691,6 +44700,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T06:31:07.049Z",
+  "exportDate": "2026-06-12T10:26:44.611Z",
   "melangesConfig": {}
 }
