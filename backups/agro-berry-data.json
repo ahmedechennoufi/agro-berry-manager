@@ -40194,6 +40194,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-06-12",
       "id": 1781261599568
+    },
+    {
+      "type": "exit",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 1000,
+      "price": 7.911764705882353,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-12",
+      "id": 1781261618546
     }
   ],
   "stockAB1": [
@@ -44826,6 +44835,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T10:53:19.575Z",
+  "exportDate": "2026-06-12T10:53:38.552Z",
   "melangesConfig": {}
 }
