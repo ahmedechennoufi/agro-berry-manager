@@ -40185,6 +40185,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-06-12",
       "id": 1781261383048
+    },
+    {
+      "type": "exit",
+      "product": "MERJANE",
+      "quantity": 80,
+      "price": 105,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-06-12",
+      "id": 1781261599568
     }
   ],
   "stockAB1": [
@@ -44816,9 +44825,7 @@
       "updatedAt": "2026-06-10T05:50:23.899Z"
     }
   ],
-  "deletedMovementIds": [
-    1781261538549
-  ],
-  "exportDate": "2026-06-12T10:53:02.179Z",
+  "deletedMovementIds": [],
+  "exportDate": "2026-06-12T10:53:19.575Z",
   "melangesConfig": {}
 }
