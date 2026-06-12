@@ -40293,6 +40293,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-06-12",
       "id": 1781265877105
+    },
+    {
+      "type": "exit",
+      "product": "JOKER",
+      "quantity": 35,
+      "price": 850,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-12",
+      "id": 1781265892193
     }
   ],
   "stockAB1": [
@@ -44925,6 +44934,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T12:04:37.115Z",
+  "exportDate": "2026-06-12T12:04:52.200Z",
   "melangesConfig": {}
 }
