@@ -40050,6 +40050,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-11",
       "id": 1781172524318
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 3300,
+      "price": 4.106941838649155,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-09",
+      "id": 1781245867042
     }
   ],
   "stockAB1": [
@@ -44682,6 +44691,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-11T10:08:44.325Z",
+  "exportDate": "2026-06-12T06:31:07.049Z",
   "melangesConfig": {}
 }
