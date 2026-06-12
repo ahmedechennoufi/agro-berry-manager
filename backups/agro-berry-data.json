@@ -39829,7 +39829,7 @@
     {
       "type": "entry",
       "product": "UREE",
-      "quantity": 300,
+      "quantity": 50,
       "price": 5.841785714285714,
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-09",
@@ -44952,6 +44952,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T12:05:46.116Z",
+  "exportDate": "2026-06-12T12:19:19.759Z",
   "melangesConfig": {}
 }
