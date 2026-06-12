@@ -40185,6 +40185,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-06-12",
       "id": 1781261383048
+    },
+    {
+      "type": "exit",
+      "product": "TIOSOL",
+      "quantity": 60,
+      "price": 60,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-06-12",
+      "id": 1781261538549
     }
   ],
   "stockAB1": [
@@ -44817,6 +44826,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T10:49:43.054Z",
+  "exportDate": "2026-06-12T10:52:18.556Z",
   "melangesConfig": {}
 }
