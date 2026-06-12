@@ -40221,6 +40221,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-06-12",
       "id": 1781261691797
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 350,
+      "price": 8.263267326732674,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-12",
+      "id": 1781261769099
     }
   ],
   "stockAB1": [
@@ -44853,6 +44862,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T10:54:51.803Z",
+  "exportDate": "2026-06-12T10:56:09.106Z",
   "melangesConfig": {}
 }
