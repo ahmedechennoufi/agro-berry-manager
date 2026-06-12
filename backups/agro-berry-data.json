@@ -40338,6 +40338,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-12",
       "id": 1781266841882
+    },
+    {
+      "type": "entry",
+      "product": "TIOSOL",
+      "quantity": 40,
+      "price": 60,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-06-12",
+      "id": 1781266864126
     }
   ],
   "stockAB1": [
@@ -44970,6 +44979,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T12:20:41.888Z",
+  "exportDate": "2026-06-12T12:21:04.132Z",
   "melangesConfig": {}
 }
