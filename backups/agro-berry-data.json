@@ -40356,6 +40356,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-12",
       "id": 1781266876022
+    },
+    {
+      "type": "exit",
+      "product": "KELPAK",
+      "quantity": 5,
+      "price": 115,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-13",
+      "id": 1781330858084
     }
   ],
   "stockAB1": [
@@ -44988,6 +44997,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-12T12:21:16.029Z",
+  "exportDate": "2026-06-13T06:07:38.091Z",
   "melangesConfig": {}
 }
