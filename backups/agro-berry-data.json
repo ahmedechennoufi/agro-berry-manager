@@ -40401,6 +40401,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-13",
       "id": 1781351581584
+    },
+    {
+      "type": "exit",
+      "product": "TACHIGAREN",
+      "quantity": 12,
+      "price": 0,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-15",
+      "id": 1781516896147
     }
   ],
   "stockAB1": [
@@ -45033,6 +45042,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-13T11:53:01.590Z",
+  "exportDate": "2026-06-15T09:48:16.166Z",
   "melangesConfig": {}
 }
