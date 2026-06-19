@@ -40554,6 +40554,15 @@
       "supplier": "CASEM",
       "date": "2026-06-19",
       "id": 1781860192448
+    },
+    {
+      "type": "exit",
+      "product": "HUWA SAN",
+      "quantity": 300,
+      "price": 64.9047619047619,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-19",
+      "id": 1781860308905
     }
   ],
   "stockAB1": [
@@ -45186,6 +45195,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-19T09:09:52.458Z",
+  "exportDate": "2026-06-19T09:11:48.912Z",
   "melangesConfig": {}
 }
