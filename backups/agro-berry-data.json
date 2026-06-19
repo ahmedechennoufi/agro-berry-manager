@@ -40563,6 +40563,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-19",
       "id": 1781860308905
+    },
+    {
+      "type": "exit",
+      "product": "INACOP",
+      "quantity": 5,
+      "price": 150,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-19",
+      "id": 1781860446473
     }
   ],
   "stockAB1": [
@@ -45195,6 +45204,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-19T09:11:48.912Z",
+  "exportDate": "2026-06-19T09:14:06.481Z",
   "melangesConfig": {}
 }
