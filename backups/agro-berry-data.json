@@ -40759,6 +40759,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-06-20",
       "id": 1782293411066
+    },
+    {
+      "type": "entry",
+      "product": "KAISER",
+      "quantity": 2,
+      "price": 4400,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-20",
+      "id": 1782293490265
     }
   ],
   "stockAB1": [
@@ -45392,6 +45401,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:30:11.073Z",
+  "exportDate": "2026-06-24T09:31:30.274Z",
   "melangesConfig": {}
 }
