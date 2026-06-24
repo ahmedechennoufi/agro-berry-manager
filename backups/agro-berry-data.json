@@ -40644,6 +40644,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-24",
       "id": 1782291726491
+    },
+    {
+      "type": "exit",
+      "product": "CHLORO MIX ",
+      "quantity": 10,
+      "price": 85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782291753239
     }
   ],
   "stockAB1": [
@@ -45276,6 +45285,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:02:06.498Z",
+  "exportDate": "2026-06-24T09:02:33.245Z",
   "melangesConfig": {}
 }
