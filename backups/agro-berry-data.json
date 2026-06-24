@@ -40716,6 +40716,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-24",
       "id": 1782292341822
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 50,
+      "price": 40,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782292404254
     }
   ],
   "stockAB1": [
@@ -45349,6 +45358,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:12:21.829Z",
+  "exportDate": "2026-06-24T09:13:24.261Z",
   "melangesConfig": {}
 }
