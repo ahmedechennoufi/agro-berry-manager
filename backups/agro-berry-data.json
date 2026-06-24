@@ -1283,6 +1283,13 @@
       "category": "ENGRAIS",
       "threshold": null,
       "id": 1781172466939
+    },
+    {
+      "name": "RHIZOCELL",
+      "unit": "KG",
+      "category": "ENGRAIS",
+      "threshold": null,
+      "id": 1782293382427
     }
   ],
   "movements": [
@@ -45376,6 +45383,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:27:52.531Z",
+  "exportDate": "2026-06-24T09:29:42.433Z",
   "melangesConfig": {}
 }
