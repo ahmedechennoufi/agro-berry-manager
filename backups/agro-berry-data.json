@@ -40680,6 +40680,15 @@
       "supplier": "FIXATIONSTOCK",
       "date": "2026-06-24",
       "id": 1782291963353
+    },
+    {
+      "type": "exit",
+      "product": "MERJANE",
+      "quantity": 20,
+      "price": 105,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782291994532
     }
   ],
   "stockAB1": [
@@ -45313,6 +45322,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:06:03.362Z",
+  "exportDate": "2026-06-24T09:06:34.539Z",
   "melangesConfig": {}
 }
