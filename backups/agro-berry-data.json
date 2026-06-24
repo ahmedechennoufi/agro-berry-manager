@@ -40768,6 +40768,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-20",
       "id": 1782293490265
+    },
+    {
+      "type": "entry",
+      "product": "ACRAMITE",
+      "quantity": 5,
+      "price": 1900,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-20",
+      "id": 1782293516882
     }
   ],
   "stockAB1": [
@@ -45401,6 +45410,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:31:30.274Z",
+  "exportDate": "2026-06-24T09:31:56.889Z",
   "melangesConfig": {}
 }
