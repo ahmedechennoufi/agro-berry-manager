@@ -40662,6 +40662,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-24",
       "id": 1782291798409
+    },
+    {
+      "type": "exit",
+      "product": "BIOENERGY",
+      "quantity": 160,
+      "price": 47.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782291878689
     }
   ],
   "stockAB1": [
@@ -45294,6 +45303,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:03:18.417Z",
+  "exportDate": "2026-06-24T09:04:38.696Z",
   "melangesConfig": {}
 }
