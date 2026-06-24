@@ -40813,6 +40813,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-22",
       "id": 1782293630039
+    },
+    {
+      "type": "exit",
+      "product": "KAISER",
+      "quantity": 2,
+      "price": 4400,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-20",
+      "id": 1782293708142
     }
   ],
   "stockAB1": [
@@ -45446,6 +45455,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:33:50.046Z",
+  "exportDate": "2026-06-24T09:35:08.149Z",
   "melangesConfig": {}
 }
