@@ -40635,6 +40635,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-24",
       "id": 1782291616823
+    },
+    {
+      "type": "exit",
+      "product": "SCELTA",
+      "quantity": 20,
+      "price": 1190,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782291726491
     }
   ],
   "stockAB1": [
@@ -45267,6 +45276,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:00:16.829Z",
+  "exportDate": "2026-06-24T09:02:06.498Z",
   "melangesConfig": {}
 }
