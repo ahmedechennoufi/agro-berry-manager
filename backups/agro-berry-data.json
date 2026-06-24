@@ -40822,6 +40822,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-20",
       "id": 1782293708142
+    },
+    {
+      "type": "exit",
+      "product": "ACRAMITE",
+      "quantity": 5,
+      "price": 1900,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-22",
+      "id": 1782293732758
     }
   ],
   "stockAB1": [
@@ -45455,6 +45464,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:35:08.149Z",
+  "exportDate": "2026-06-24T09:35:32.766Z",
   "melangesConfig": {}
 }
