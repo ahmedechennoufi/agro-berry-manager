@@ -40671,6 +40671,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-24",
       "id": 1782291878689
+    },
+    {
+      "type": "entry",
+      "product": "BIOFORGE",
+      "quantity": 3,
+      "price": 500,
+      "supplier": "FIXATIONSTOCK",
+      "date": "2026-06-24",
+      "id": 1782291963353
     }
   ],
   "stockAB1": [
@@ -41932,7 +41941,8 @@
     "SUREXPORT FRUIT",
     "SANSAN",
     "PELEMIX",
-    "UPP"
+    "UPP",
+    "FIXATIONSTOCK"
   ],
   "consommations": [],
   "melanges": [],
@@ -45303,6 +45313,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:04:38.696Z",
+  "exportDate": "2026-06-24T09:06:03.362Z",
   "melangesConfig": {}
 }
