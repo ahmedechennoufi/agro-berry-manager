@@ -40608,6 +40608,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-24",
       "id": 1782291428068
+    },
+    {
+      "type": "exit",
+      "product": "MAP",
+      "quantity": 400,
+      "price": 15.208045977011494,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782291479425
     }
   ],
   "stockAB1": [
@@ -45240,6 +45249,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T08:57:08.079Z",
+  "exportDate": "2026-06-24T08:57:59.431Z",
   "melangesConfig": {}
 }
