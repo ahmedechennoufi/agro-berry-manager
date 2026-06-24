@@ -40795,6 +40795,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-06-22",
       "id": 1782293590304
+    },
+    {
+      "type": "exit",
+      "product": "RHIZOCELL",
+      "quantity": 32,
+      "price": 0,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-22",
+      "id": 1782293608290
     }
   ],
   "stockAB1": [
@@ -45428,6 +45437,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:33:10.311Z",
+  "exportDate": "2026-06-24T09:33:28.297Z",
   "melangesConfig": {}
 }
