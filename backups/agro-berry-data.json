@@ -40707,6 +40707,15 @@
       "supplier": "FIXATIONSTOCK",
       "date": "2026-06-24",
       "id": 1782292259585
+    },
+    {
+      "type": "exit",
+      "product": "BASSO",
+      "quantity": 240,
+      "price": 15,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782292341822
     }
   ],
   "stockAB1": [
@@ -45340,6 +45349,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:10:59.593Z",
+  "exportDate": "2026-06-24T09:12:21.829Z",
   "melangesConfig": {}
 }
