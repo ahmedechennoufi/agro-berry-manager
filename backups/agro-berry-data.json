@@ -40777,6 +40777,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-20",
       "id": 1782293516882
+    },
+    {
+      "type": "entry",
+      "product": "AFRAW",
+      "quantity": 12,
+      "price": 550,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-06-20",
+      "id": 1782293541583
     }
   ],
   "stockAB1": [
@@ -45410,6 +45419,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:31:56.889Z",
+  "exportDate": "2026-06-24T09:32:21.591Z",
   "melangesConfig": {}
 }
