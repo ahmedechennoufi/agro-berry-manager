@@ -40831,6 +40831,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-22",
       "id": 1782293732758
+    },
+    {
+      "type": "exit",
+      "product": "AFRAW",
+      "quantity": 12,
+      "price": 550,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-22",
+      "id": 1782293764090
     }
   ],
   "stockAB1": [
@@ -45464,6 +45473,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:35:32.766Z",
+  "exportDate": "2026-06-24T09:36:04.097Z",
   "melangesConfig": {}
 }
