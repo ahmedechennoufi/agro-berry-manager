@@ -40750,6 +40750,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-24",
       "id": 1782293272523
+    },
+    {
+      "type": "entry",
+      "product": "RHIZOCELL",
+      "quantity": 78,
+      "price": 0,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-06-20",
+      "id": 1782293411066
     }
   ],
   "stockAB1": [
@@ -45383,6 +45392,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:29:42.433Z",
+  "exportDate": "2026-06-24T09:30:11.073Z",
   "melangesConfig": {}
 }
