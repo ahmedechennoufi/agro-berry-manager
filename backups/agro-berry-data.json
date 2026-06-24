@@ -40599,6 +40599,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-22",
       "id": 1782106709452
+    },
+    {
+      "type": "exit",
+      "product": "SULFATE DE MANGANAISE",
+      "quantity": 3500,
+      "price": 25,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782291428068
     }
   ],
   "stockAB1": [
@@ -45231,6 +45240,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-22T05:38:29.460Z",
+  "exportDate": "2026-06-24T08:57:08.079Z",
   "melangesConfig": {}
 }
