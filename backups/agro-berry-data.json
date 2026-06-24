@@ -40786,6 +40786,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-06-20",
       "id": 1782293541583
+    },
+    {
+      "type": "exit",
+      "product": "RHIZOCELL",
+      "quantity": 24,
+      "price": 0,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-06-22",
+      "id": 1782293590304
     }
   ],
   "stockAB1": [
@@ -45419,6 +45428,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-24T09:32:21.591Z",
+  "exportDate": "2026-06-24T09:33:10.311Z",
   "melangesConfig": {}
 }
