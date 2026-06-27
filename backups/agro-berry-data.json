@@ -40876,6 +40876,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-06-27",
       "id": 1782538764866
+    },
+    {
+      "type": "entry",
+      "product": "TOURBE",
+      "quantity": 23980,
+      "price": 0,
+      "supplier": "PELEMIX",
+      "date": "2026-06-27",
+      "id": 1782557699479
     }
   ],
   "stockAB1": [
@@ -45509,6 +45518,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-27T05:39:24.872Z",
+  "exportDate": "2026-06-27T10:54:59.488Z",
   "melangesConfig": {}
 }
