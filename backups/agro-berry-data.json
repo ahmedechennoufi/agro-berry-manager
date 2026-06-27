@@ -40885,6 +40885,15 @@
       "supplier": "PELEMIX",
       "date": "2026-06-27",
       "id": 1782557699479
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 70,
+      "price": 3.4754355400696864,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-27",
+      "id": 1782557753500
     }
   ],
   "stockAB1": [
@@ -45518,6 +45527,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-27T10:54:59.488Z",
+  "exportDate": "2026-06-27T10:55:53.507Z",
   "melangesConfig": {}
 }
