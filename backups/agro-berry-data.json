@@ -40861,12 +40861,12 @@
     },
     {
       "type": "exit",
-      "product": "ACIDE SULFURIQUE",
-      "quantity": 105,
-      "price": 3.4754355400696864,
+      "product": "ZM CORRECTOR",
+      "quantity": 10,
+      "price": 76,
       "farm": "AGRO BERRY 1",
-      "date": "2026-06-25",
-      "id": 1782387190829
+      "date": "2026-06-27",
+      "id": 1782538758016
     }
   ],
   "stockAB1": [
@@ -45500,6 +45500,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-25T11:33:10.836Z",
+  "exportDate": "2026-06-27T05:39:18.023Z",
   "melangesConfig": {}
 }
