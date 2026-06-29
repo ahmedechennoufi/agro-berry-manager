@@ -40903,6 +40903,17 @@
       "supplier": "PELEMIX",
       "date": "2026-06-28",
       "id": 1782730005100
+    },
+    {
+      "type": "consumption",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 175,
+      "price": 3.4754355400696864,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-29",
+      "culture": "Myrtille",
+      "destination": "Sol",
+      "id": 1782734679106
     }
   ],
   "stockAB1": [
@@ -45536,6 +45547,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-06-29T10:46:45.110Z",
+  "exportDate": "2026-06-29T12:04:39.109Z",
   "melangesConfig": {}
 }
