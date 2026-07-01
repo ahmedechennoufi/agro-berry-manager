@@ -1325,6 +1325,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782888917243
+    },
+    {
+      "name": "CPEC 110*2",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782888952743
     }
   ],
   "movements": [
@@ -45609,6 +45616,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T06:55:17.249Z",
+  "exportDate": "2026-07-01T06:55:52.750Z",
   "melangesConfig": {}
 }
