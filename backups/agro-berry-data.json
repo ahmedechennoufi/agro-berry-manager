@@ -1304,6 +1304,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782888877426
+    },
+    {
+      "name": "POLYMA TUBE D 75",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782888889926
     }
   ],
   "movements": [
@@ -45588,6 +45595,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T06:54:37.432Z",
+  "exportDate": "2026-07-01T06:54:49.931Z",
   "melangesConfig": {}
 }
