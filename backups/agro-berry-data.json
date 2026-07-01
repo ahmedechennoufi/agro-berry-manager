@@ -1486,6 +1486,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889641310
+    },
+    {
+      "name": "TE PVC 63",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890185042
     }
   ],
   "movements": [
@@ -45770,6 +45777,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:07:21.317Z",
+  "exportDate": "2026-07-01T07:16:25.050Z",
   "melangesConfig": {}
 }
