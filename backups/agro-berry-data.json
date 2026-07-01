@@ -41221,6 +41221,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-01",
       "id": 1782885950070
+    },
+    {
+      "type": "exit",
+      "product": "FERRILENE",
+      "quantity": 5,
+      "price": 110.5,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-01",
+      "id": 1782902793394
     }
   ],
   "stockAB1": [
@@ -45854,6 +45863,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:23:24.582Z",
+  "exportDate": "2026-07-01T10:46:33.402Z",
   "melangesConfig": {}
 }
