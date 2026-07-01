@@ -1388,6 +1388,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889253475
+    },
+    {
+      "name": "TE TUBING 8*1/8",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889286941
     }
   ],
   "movements": [
@@ -45672,6 +45679,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:00:53.480Z",
+  "exportDate": "2026-07-01T07:01:26.946Z",
   "melangesConfig": {}
 }
