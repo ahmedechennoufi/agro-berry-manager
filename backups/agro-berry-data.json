@@ -1311,6 +1311,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782888889926
+    },
+    {
+      "name": "POLYMA TUBE D 63",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782888902626
     }
   ],
   "movements": [
@@ -45595,6 +45602,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T06:54:49.931Z",
+  "exportDate": "2026-07-01T06:55:02.632Z",
   "melangesConfig": {}
 }
