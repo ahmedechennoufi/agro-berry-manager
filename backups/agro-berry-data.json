@@ -1472,6 +1472,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889515093
+    },
+    {
+      "name": "MANCHON POLY EGALE 50",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889619726
     }
   ],
   "movements": [
@@ -45756,6 +45763,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:05:15.099Z",
+  "exportDate": "2026-07-01T07:06:59.733Z",
   "melangesConfig": {}
 }
