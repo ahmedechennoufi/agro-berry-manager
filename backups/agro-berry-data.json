@@ -1332,6 +1332,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782888952743
+    },
+    {
+      "name": "CPEC 90 *2",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782888978227
     }
   ],
   "movements": [
@@ -45616,6 +45623,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T06:55:52.750Z",
+  "exportDate": "2026-07-01T06:56:18.233Z",
   "melangesConfig": {}
 }
