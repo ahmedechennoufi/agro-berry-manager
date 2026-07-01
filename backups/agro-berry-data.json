@@ -1479,6 +1479,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889619726
+    },
+    {
+      "name": "MANCHON MIXTE 110*4",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889641310
     }
   ],
   "movements": [
@@ -45763,6 +45770,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:06:59.733Z",
+  "exportDate": "2026-07-01T07:07:21.317Z",
   "melangesConfig": {}
 }
