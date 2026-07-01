@@ -1360,6 +1360,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889150358
+    },
+    {
+      "name": "EMBOUT FILETE 63 * 75*2",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889181958
     }
   ],
   "movements": [
@@ -45644,6 +45651,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T06:59:10.363Z",
+  "exportDate": "2026-07-01T06:59:41.964Z",
   "melangesConfig": {}
 }
