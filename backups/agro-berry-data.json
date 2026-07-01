@@ -1535,6 +1535,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890429460
+    },
+    {
+      "name": "COUDE POLY EGALE 63",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890459977
     }
   ],
   "movements": [
@@ -45819,6 +45826,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:20:29.465Z",
+  "exportDate": "2026-07-01T07:20:59.982Z",
   "melangesConfig": {}
 }
