@@ -1500,6 +1500,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890199440
+    },
+    {
+      "name": "REDUCTION PVC 75*50",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890256641
     }
   ],
   "movements": [
@@ -45784,6 +45791,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:16:39.445Z",
+  "exportDate": "2026-07-01T07:17:36.648Z",
   "melangesConfig": {}
 }
