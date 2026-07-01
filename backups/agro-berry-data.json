@@ -1423,6 +1423,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889362808
+    },
+    {
+      "name": "BOUCHON PVC D 160",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889381660
     }
   ],
   "movements": [
@@ -45707,6 +45714,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:02:42.812Z",
+  "exportDate": "2026-07-01T07:03:01.666Z",
   "melangesConfig": {}
 }
