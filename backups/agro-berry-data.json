@@ -1409,6 +1409,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889326308
+    },
+    {
+      "name": "TUBING 6*8 NOIR",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889350791
     }
   ],
   "movements": [
@@ -45693,6 +45700,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:02:06.313Z",
+  "exportDate": "2026-07-01T07:02:30.795Z",
   "melangesConfig": {}
 }
