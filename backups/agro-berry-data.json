@@ -1290,6 +1290,13 @@
       "category": "ENGRAIS",
       "threshold": null,
       "id": 1782293382427
+    },
+    {
+      "name": "POLYMA TUBE D110",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782888848093
     }
   ],
   "movements": [
@@ -45574,6 +45581,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T06:05:50.077Z",
+  "exportDate": "2026-07-01T06:54:08.101Z",
   "melangesConfig": {}
 }
