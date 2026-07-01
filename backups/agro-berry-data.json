@@ -41239,6 +41239,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-01",
       "id": 1782902798460
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 35,
+      "price": 3.4754355400696864,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-01",
+      "id": 1782902804476
     }
   ],
   "stockAB1": [
@@ -45872,6 +45881,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T10:46:38.465Z",
+  "exportDate": "2026-07-01T10:46:44.482Z",
   "melangesConfig": {}
 }
