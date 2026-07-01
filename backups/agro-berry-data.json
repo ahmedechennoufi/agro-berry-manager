@@ -1458,6 +1458,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889466392
+    },
+    {
+      "name": "MANCHON MIXTE 50 1 1/2",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889490877
     }
   ],
   "movements": [
@@ -45742,6 +45749,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:04:26.397Z",
+  "exportDate": "2026-07-01T07:04:50.883Z",
   "melangesConfig": {}
 }
