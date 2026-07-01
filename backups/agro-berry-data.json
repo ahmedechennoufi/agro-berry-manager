@@ -1556,6 +1556,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890526310
+    },
+    {
+      "name": "MANCHON MIXTE 63*2",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890566160
     }
   ],
   "movements": [
@@ -45840,6 +45847,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:22:06.316Z",
+  "exportDate": "2026-07-01T07:22:46.165Z",
   "melangesConfig": {}
 }
