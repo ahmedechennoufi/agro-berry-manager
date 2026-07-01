@@ -1374,6 +1374,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889211641
+    },
+    {
+      "name": "EMBOUT FILETE 75*90*2",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889232526
     }
   ],
   "movements": [
@@ -45658,6 +45665,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:00:11.646Z",
+  "exportDate": "2026-07-01T07:00:32.530Z",
   "melangesConfig": {}
 }
