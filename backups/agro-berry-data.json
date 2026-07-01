@@ -1549,6 +1549,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890492676
+    },
+    {
+      "name": "RACCORD POLY MALE 63*2",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890526310
     }
   ],
   "movements": [
@@ -45833,6 +45840,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:21:32.681Z",
+  "exportDate": "2026-07-01T07:22:06.316Z",
   "melangesConfig": {}
 }
