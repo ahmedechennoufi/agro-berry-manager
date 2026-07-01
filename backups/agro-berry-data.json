@@ -1507,6 +1507,20 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890256641
+    },
+    {
+      "name": "COUDE POLYEGALE 75",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890312474
+    },
+    {
+      "name": "COUDE POLY EGALE 75",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890349710
     }
   ],
   "movements": [
@@ -45791,6 +45805,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:17:36.648Z",
+  "exportDate": "2026-07-01T07:19:09.715Z",
   "melangesConfig": {}
 }
