@@ -1563,6 +1563,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890566160
+    },
+    {
+      "name": "RACCORD POLY MALE 110*4",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890604577
     }
   ],
   "movements": [
@@ -45847,6 +45854,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:22:46.165Z",
+  "exportDate": "2026-07-01T07:23:24.582Z",
   "melangesConfig": {}
 }
