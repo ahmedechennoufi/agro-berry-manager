@@ -1528,6 +1528,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890391945
+    },
+    {
+      "name": "MANCHON REDUIT POLY 110* 90",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890429460
     }
   ],
   "movements": [
@@ -45812,6 +45819,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:19:51.952Z",
+  "exportDate": "2026-07-01T07:20:29.465Z",
   "melangesConfig": {}
 }
