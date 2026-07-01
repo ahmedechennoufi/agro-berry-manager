@@ -1402,6 +1402,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889313342
+    },
+    {
+      "name": "COUDE TUBING 8*1/4",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889326308
     }
   ],
   "movements": [
@@ -45686,6 +45693,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:01:53.347Z",
+  "exportDate": "2026-07-01T07:02:06.313Z",
   "melangesConfig": {}
 }
