@@ -1451,6 +1451,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889450060
+    },
+    {
+      "name": "COUDE PVC 90 D50",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889466392
     }
   ],
   "movements": [
@@ -45735,6 +45742,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:04:10.064Z",
+  "exportDate": "2026-07-01T07:04:26.397Z",
   "melangesConfig": {}
 }
