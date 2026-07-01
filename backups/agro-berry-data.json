@@ -1416,6 +1416,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889350791
+    },
+    {
+      "name": "TEFLON GM",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889362808
     }
   ],
   "movements": [
@@ -45700,6 +45707,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:02:30.795Z",
+  "exportDate": "2026-07-01T07:02:42.812Z",
   "melangesConfig": {}
 }
