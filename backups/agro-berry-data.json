@@ -1297,6 +1297,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782888848093
+    },
+    {
+      "name": "POLYMA TUBE D 90",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782888877426
     }
   ],
   "movements": [
@@ -45581,6 +45588,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T06:54:08.101Z",
+  "exportDate": "2026-07-01T06:54:37.432Z",
   "melangesConfig": {}
 }
