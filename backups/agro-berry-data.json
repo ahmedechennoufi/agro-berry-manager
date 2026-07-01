@@ -1493,6 +1493,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890185042
+    },
+    {
+      "name": "TE PVC 75",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890199440
     }
   ],
   "movements": [
@@ -45777,6 +45784,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:16:25.050Z",
+  "exportDate": "2026-07-01T07:16:39.445Z",
   "melangesConfig": {}
 }
