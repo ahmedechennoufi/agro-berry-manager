@@ -1465,6 +1465,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782889490877
+    },
+    {
+      "name": "BOUCHON COMPRESSION POLY 50",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889515093
     }
   ],
   "movements": [
@@ -45749,6 +45756,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:04:50.883Z",
+  "exportDate": "2026-07-01T07:05:15.099Z",
   "melangesConfig": {}
 }
