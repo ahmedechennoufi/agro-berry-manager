@@ -1542,6 +1542,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890459977
+    },
+    {
+      "name": "REDUCTION PVC 63*50",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782890492676
     }
   ],
   "movements": [
@@ -45826,6 +45833,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T07:20:59.982Z",
+  "exportDate": "2026-07-01T07:21:32.681Z",
   "melangesConfig": {}
 }
