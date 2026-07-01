@@ -1339,6 +1339,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782888978227
+    },
+    {
+      "name": "CPEC 75*2",
+      "unit": "U",
+      "category": "INVESTISSEMENT",
+      "threshold": null,
+      "id": 1782889108309
     }
   ],
   "movements": [
@@ -45623,6 +45630,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-01T06:56:18.233Z",
+  "exportDate": "2026-07-01T06:58:28.315Z",
   "melangesConfig": {}
 }
