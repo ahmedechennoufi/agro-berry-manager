@@ -41275,6 +41275,15 @@
       "supplier": "GWA TECH",
       "date": "2026-06-23",
       "id": 1782990963156
+    },
+    {
+      "type": "entry",
+      "product": "ALFABET",
+      "quantity": 1.33,
+      "price": 500,
+      "supplier": "FIXATIONSTOCK",
+      "date": "2026-06-30",
+      "id": 1782992426608
     }
   ],
   "stockAB1": [
@@ -45909,6 +45918,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-02T11:16:03.167Z",
+  "exportDate": "2026-07-02T11:40:26.616Z",
   "melangesConfig": {}
 }
