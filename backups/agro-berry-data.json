@@ -41266,6 +41266,15 @@
       "supplier": "PELEMIX",
       "date": "2026-07-01",
       "id": 1782976838859
+    },
+    {
+      "type": "entry",
+      "product": "ADICLEAN",
+      "quantity": 1000,
+      "price": 48,
+      "supplier": "GWA TECH",
+      "date": "2026-06-23",
+      "id": 1782990963156
     }
   ],
   "stockAB1": [
@@ -42528,7 +42537,8 @@
     "SANSAN",
     "PELEMIX",
     "UPP",
-    "FIXATIONSTOCK"
+    "FIXATIONSTOCK",
+    "GWA TECH"
   ],
   "consommations": [],
   "melanges": [],
@@ -45899,6 +45909,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-02T07:20:38.865Z",
+  "exportDate": "2026-07-02T11:16:03.167Z",
   "melangesConfig": {}
 }
