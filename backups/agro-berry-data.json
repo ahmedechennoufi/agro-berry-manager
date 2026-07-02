@@ -41293,6 +41293,15 @@
       "supplier": "GWA TECH",
       "date": "2026-06-30",
       "id": 1782992802371
+    },
+    {
+      "type": "exit",
+      "product": "ANTISCALANT ADIC RO30",
+      "quantity": 1000,
+      "price": 48,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-30",
+      "id": 1782993123393
     }
   ],
   "stockAB1": [
@@ -45927,6 +45936,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-02T11:46:42.379Z",
+  "exportDate": "2026-07-02T11:52:03.401Z",
   "melangesConfig": {}
 }
