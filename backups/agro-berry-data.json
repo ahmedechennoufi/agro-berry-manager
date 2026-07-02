@@ -41284,6 +41284,15 @@
       "supplier": "FIXATIONSTOCK",
       "date": "2026-06-30",
       "id": 1782992426608
+    },
+    {
+      "type": "exit",
+      "product": "ALFABET",
+      "quantity": 1.33,
+      "price": 500,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-30",
+      "id": 1782992442039
     }
   ],
   "stockAB1": [
@@ -45918,6 +45927,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-02T11:40:26.616Z",
+  "exportDate": "2026-07-02T11:40:42.044Z",
   "melangesConfig": {}
 }
