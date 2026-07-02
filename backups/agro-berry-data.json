@@ -41302,6 +41302,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-06-30",
       "id": 1782993123393
+    },
+    {
+      "type": "entry",
+      "product": "ANTISCALANT ADIC RO30",
+      "quantity": 400,
+      "price": 48,
+      "supplier": "FIXATIONSTOCK",
+      "date": "2026-06-30",
+      "id": 1782993158337
     }
   ],
   "stockAB1": [
@@ -45936,6 +45945,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-02T11:52:03.401Z",
+  "exportDate": "2026-07-02T11:52:38.344Z",
   "melangesConfig": {}
 }
