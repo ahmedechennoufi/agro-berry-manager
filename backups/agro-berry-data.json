@@ -41293,6 +41293,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-06-30",
       "id": 1782992442039
+    },
+    {
+      "type": "exit",
+      "product": "ADICLEAN",
+      "quantity": 1000,
+      "price": 48,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-30",
+      "id": 1782992724645
     }
   ],
   "stockAB1": [
@@ -45927,6 +45936,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-02T11:40:42.044Z",
+  "exportDate": "2026-07-02T11:45:24.653Z",
   "melangesConfig": {}
 }
