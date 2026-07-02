@@ -41257,6 +41257,15 @@
       "supplier": "PELEMIX",
       "date": "2026-07-02",
       "id": 1782976818678
+    },
+    {
+      "type": "entry",
+      "product": "TOURBE",
+      "quantity": 23980,
+      "price": 0,
+      "supplier": "PELEMIX",
+      "date": "2026-07-01",
+      "id": 1782976838859
     }
   ],
   "stockAB1": [
@@ -45890,6 +45899,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-02T07:20:18.685Z",
+  "exportDate": "2026-07-02T07:20:38.865Z",
   "melangesConfig": {}
 }
