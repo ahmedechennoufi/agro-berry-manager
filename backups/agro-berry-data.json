@@ -41452,7 +41452,7 @@
       "product": "BIOFORGE",
       "quantity": 27,
       "price": 500,
-      "farm": "AGRO BERRY 3",
+      "farm": "AGRO BERRY 2",
       "date": "2026-06-30",
       "id": 1783077882244
     }
@@ -46089,6 +46089,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-03T11:24:42.251Z",
+  "exportDate": "2026-07-03T11:25:07.561Z",
   "melangesConfig": {}
 }
