@@ -41473,6 +41473,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-06-30",
       "id": 1783078333741
+    },
+    {
+      "type": "entry",
+      "product": "JOKER",
+      "quantity": 39.1,
+      "price": 850,
+      "supplier": "FIXATIONSTOCK",
+      "date": "2026-06-26",
+      "id": 1783078886472
     }
   ],
   "stockAB1": [
@@ -46107,6 +46116,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-03T11:32:13.748Z",
+  "exportDate": "2026-07-03T11:41:26.481Z",
   "melangesConfig": {}
 }
