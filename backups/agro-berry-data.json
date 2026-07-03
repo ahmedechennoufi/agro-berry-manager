@@ -41509,6 +41509,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-06-26",
       "id": 1783079031862
+    },
+    {
+      "type": "entry",
+      "product": "KELP BIO",
+      "quantity": 20,
+      "price": 104.17,
+      "supplier": "FIXATIONSTOCK",
+      "date": "2026-06-26",
+      "id": 1783079190790
     }
   ],
   "stockAB1": [
@@ -46143,6 +46152,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-03T11:43:51.869Z",
+  "exportDate": "2026-07-03T11:46:30.798Z",
   "melangesConfig": {}
 }
