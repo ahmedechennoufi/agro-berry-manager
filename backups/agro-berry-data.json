@@ -41338,6 +41338,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-06-30",
       "id": 1783071008947
+    },
+    {
+      "type": "entry",
+      "product": "HUWA SAN",
+      "quantity": 65,
+      "price": 64.9047619047619,
+      "supplier": "FIXATIONSTOCK",
+      "date": "2026-06-30",
+      "id": 1783071451310
     }
   ],
   "stockAB1": [
@@ -45972,6 +45981,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-03T09:30:08.957Z",
+  "exportDate": "2026-07-03T09:37:31.318Z",
   "melangesConfig": {}
 }
