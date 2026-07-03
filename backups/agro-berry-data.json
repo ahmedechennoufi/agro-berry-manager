@@ -41446,6 +41446,15 @@
       "supplier": "FIXATIONSTOCK",
       "date": "2026-06-30",
       "id": 1783077854486
+    },
+    {
+      "type": "exit",
+      "product": "BIOFORGE",
+      "quantity": 27,
+      "price": 500,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-06-30",
+      "id": 1783077882244
     }
   ],
   "stockAB1": [
@@ -46080,6 +46089,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-03T11:24:14.495Z",
+  "exportDate": "2026-07-03T11:24:42.251Z",
   "melangesConfig": {}
 }
