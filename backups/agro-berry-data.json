@@ -41572,6 +41572,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-04",
       "id": 1783149739305
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE MAGNESIUM",
+      "quantity": 50,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-04",
+      "id": 1783149747556
     }
   ],
   "stockAB1": [
@@ -46206,6 +46215,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-04T07:22:19.310Z",
+  "exportDate": "2026-07-04T07:22:27.561Z",
   "melangesConfig": {}
 }
