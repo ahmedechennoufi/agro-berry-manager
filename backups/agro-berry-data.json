@@ -41581,6 +41581,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-04",
       "id": 1783149747556
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 25,
+      "price": 10.85,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-04",
+      "id": 1783149757322
     }
   ],
   "stockAB1": [
@@ -46215,6 +46224,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-04T07:22:27.561Z",
+  "exportDate": "2026-07-04T07:22:37.328Z",
   "melangesConfig": {}
 }
