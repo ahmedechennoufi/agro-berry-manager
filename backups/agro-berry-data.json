@@ -41710,12 +41710,12 @@
     },
     {
       "type": "exit",
-      "product": "NITRATE DE POTASSE",
+      "product": "NITRATE DE MAGNESIUM",
       "quantity": 75,
-      "price": 10.85,
+      "price": 6.9,
       "farm": "AGRO BERRY 1",
       "date": "2026-07-06",
-      "id": 1783337543783
+      "id": 1783337553574
     }
   ],
   "stockAB1": [
@@ -46349,7 +46349,9 @@
       "updatedAt": "2026-06-10T05:50:23.899Z"
     }
   ],
-  "deletedMovementIds": [],
-  "exportDate": "2026-07-06T11:32:23.789Z",
+  "deletedMovementIds": [
+    1783337543783
+  ],
+  "exportDate": "2026-07-06T11:32:59.177Z",
   "melangesConfig": {}
 }
