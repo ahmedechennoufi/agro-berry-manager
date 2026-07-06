@@ -41608,6 +41608,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-06",
       "id": 1783319410617
+    },
+    {
+      "type": "entry",
+      "product": "OIKOS",
+      "quantity": 0.33,
+      "price": 2500,
+      "supplier": "FIXATIONSTOCK",
+      "date": "2026-06-26",
+      "id": 1783319503263
     }
   ],
   "stockAB1": [
@@ -46242,6 +46251,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-06T06:30:10.623Z",
+  "exportDate": "2026-07-06T06:31:43.270Z",
   "melangesConfig": {}
 }
