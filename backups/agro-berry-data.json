@@ -41626,6 +41626,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-06-26",
       "id": 1783319517180
+    },
+    {
+      "type": "entry",
+      "product": "SAPHYR",
+      "quantity": 3,
+      "price": 420,
+      "supplier": "FIXATIONSTOCK",
+      "date": "2026-06-26",
+      "id": 1783319840527
     }
   ],
   "stockAB1": [
@@ -46260,6 +46269,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-06T06:31:57.186Z",
+  "exportDate": "2026-07-06T06:37:20.533Z",
   "melangesConfig": {}
 }
