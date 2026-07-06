@@ -41617,6 +41617,15 @@
       "supplier": "FIXATIONSTOCK",
       "date": "2026-06-26",
       "id": 1783319503263
+    },
+    {
+      "type": "exit",
+      "product": "OIKOS",
+      "quantity": 0.33,
+      "price": 2500,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-06-26",
+      "id": 1783319517180
     }
   ],
   "stockAB1": [
@@ -46251,6 +46260,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-06T06:31:43.270Z",
+  "exportDate": "2026-07-06T06:31:57.186Z",
   "melangesConfig": {}
 }
