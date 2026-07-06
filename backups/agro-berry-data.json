@@ -41590,6 +41590,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-04",
       "id": 1783149757322
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 2000,
+      "price": 6.8,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-04",
+      "id": 1783319395263
     }
   ],
   "stockAB1": [
@@ -46224,6 +46233,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-04T07:22:37.328Z",
+  "exportDate": "2026-07-06T06:29:55.273Z",
   "melangesConfig": {}
 }
