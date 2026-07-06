@@ -41599,6 +41599,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-07-04",
       "id": 1783319395263
+    },
+    {
+      "type": "exit",
+      "product": "VITAMINA MIX",
+      "quantity": 20,
+      "price": 54.17000000000001,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-06",
+      "id": 1783319410617
     }
   ],
   "stockAB1": [
@@ -46233,6 +46242,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-06T06:29:55.273Z",
+  "exportDate": "2026-07-06T06:30:10.623Z",
   "melangesConfig": {}
 }
