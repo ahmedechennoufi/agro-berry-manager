@@ -41671,6 +41671,15 @@
       "supplier": "FIXATIONSTOCK",
       "date": "2026-06-26",
       "id": 1783320355466
+    },
+    {
+      "type": "exit",
+      "product": "TOP RACINE",
+      "quantity": 20,
+      "price": 133,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-06-26",
+      "id": 1783320375026
     }
   ],
   "stockAB1": [
@@ -46305,6 +46314,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-06T06:45:55.473Z",
+  "exportDate": "2026-07-06T06:46:15.031Z",
   "melangesConfig": {}
 }
