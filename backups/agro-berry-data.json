@@ -41788,6 +41788,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-07-07",
       "id": 1783420669048
+    },
+    {
+      "type": "entry",
+      "product": "SAPHYR",
+      "quantity": 25,
+      "price": 380,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-07-07",
+      "id": 1783420731864
     }
   ],
   "stockAB1": [
@@ -46422,6 +46431,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-07T10:37:49.054Z",
+  "exportDate": "2026-07-07T10:38:51.871Z",
   "melangesConfig": {}
 }
