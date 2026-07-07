@@ -41761,6 +41761,24 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-07",
       "id": 1783420551090
+    },
+    {
+      "type": "exit",
+      "product": "NITRATE DE MAGNESIUM",
+      "quantity": 875,
+      "price": 6.9,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-07",
+      "id": 1783420568855
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 512,
+      "price": 9.776483700195039,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-07",
+      "id": 1783420576851
     }
   ],
   "stockAB1": [
@@ -46395,6 +46413,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-07T10:35:51.097Z",
+  "exportDate": "2026-07-07T10:36:16.855Z",
   "melangesConfig": {}
 }
