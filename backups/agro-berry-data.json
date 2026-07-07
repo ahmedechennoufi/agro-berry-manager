@@ -41797,6 +41797,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-07-07",
       "id": 1783420731864
+    },
+    {
+      "type": "entry",
+      "product": "TOURBE",
+      "quantity": 23980,
+      "price": 0,
+      "supplier": "PELEMIX",
+      "date": "2026-07-07",
+      "id": 1783420890289
     }
   ],
   "stockAB1": [
@@ -46431,6 +46440,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-07T10:38:51.871Z",
+  "exportDate": "2026-07-07T10:41:30.298Z",
   "melangesConfig": {}
 }
