@@ -41806,6 +41806,15 @@
       "supplier": "PELEMIX",
       "date": "2026-07-07",
       "id": 1783420890289
+    },
+    {
+      "type": "entry",
+      "product": "MOVENTO",
+      "quantity": 135,
+      "price": 1252,
+      "supplier": "CAS",
+      "date": "2026-07-08",
+      "id": 1783503905584
     }
   ],
   "stockAB1": [
@@ -46440,6 +46449,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-07T10:41:30.298Z",
+  "exportDate": "2026-07-08T09:45:05.590Z",
   "melangesConfig": {}
 }
