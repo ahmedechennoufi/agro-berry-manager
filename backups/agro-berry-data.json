@@ -41815,6 +41815,15 @@
       "supplier": "CAS",
       "date": "2026-07-08",
       "id": 1783503905584
+    },
+    {
+      "type": "exit",
+      "product": "ALGOBAZ",
+      "quantity": 3,
+      "price": 208.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-08",
+      "id": 1783503944773
     }
   ],
   "stockAB1": [
@@ -46449,6 +46458,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-08T09:45:05.590Z",
+  "exportDate": "2026-07-08T09:45:44.779Z",
   "melangesConfig": {}
 }
