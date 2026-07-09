@@ -41842,6 +41842,15 @@
       "supplier": "PELEMIX",
       "date": "2026-07-08",
       "id": 1783504028435
+    },
+    {
+      "type": "exit",
+      "product": "ALGOBAZ",
+      "quantity": 12,
+      "price": 208.34,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-09",
+      "id": 1783593451868
     }
   ],
   "stockAB1": [
@@ -46476,6 +46485,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-08T09:47:08.441Z",
+  "exportDate": "2026-07-09T10:37:31.874Z",
   "melangesConfig": {}
 }
