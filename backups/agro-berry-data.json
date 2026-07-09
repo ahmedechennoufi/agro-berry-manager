@@ -41878,6 +41878,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-07-07",
       "id": 1783593961869
+    },
+    {
+      "type": "exit",
+      "product": "MOVENTO",
+      "quantity": 40,
+      "price": 1252,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-07-07",
+      "id": 1783593988317
     }
   ],
   "stockAB1": [
@@ -46512,6 +46521,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-09T10:46:01.876Z",
+  "exportDate": "2026-07-09T10:46:28.323Z",
   "melangesConfig": {}
 }
