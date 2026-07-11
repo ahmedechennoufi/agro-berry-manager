@@ -41887,6 +41887,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-07-07",
       "id": 1783593988317
+    },
+    {
+      "type": "entry",
+      "product": "DICARZOL",
+      "quantity": 50,
+      "price": 2000,
+      "supplier": "BEST BIO Z",
+      "date": "2026-07-08",
+      "id": 1783750809899
     }
   ],
   "stockAB1": [
@@ -46521,6 +46530,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-09T10:46:28.323Z",
+  "exportDate": "2026-07-11T06:20:09.911Z",
   "melangesConfig": {}
 }
