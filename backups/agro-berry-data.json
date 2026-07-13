@@ -1570,6 +1570,13 @@
       "category": "INVESTISSEMENT",
       "threshold": null,
       "id": 1782890604577
+    },
+    {
+      "name": "SPRAY OIL 7E",
+      "unit": "L",
+      "category": "PHYTOSANITAIRES",
+      "threshold": null,
+      "id": 1783940113428
     }
   ],
   "movements": [
@@ -46545,9 +46552,131 @@
         }
       ],
       "updatedAt": "2026-06-10T05:50:23.899Z"
+    },
+    {
+      "id": 1783939508986,
+      "month": "2026-07",
+      "items": [
+        {
+          "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "ordered": 6500,
+          "received": 0
+        },
+        {
+          "product": "MAP",
+          "ordered": 2000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE MAGNESUIM",
+          "ordered": 1000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE POTASSE",
+          "ordered": 3500,
+          "received": 0
+        },
+        {
+          "product": "VYTEGRIS PLEX",
+          "ordered": 1000,
+          "received": 0
+        },
+        {
+          "product": "ACIDE PHOSPHORIQUE",
+          "ordered": 6000,
+          "received": 0
+        },
+        {
+          "product": "ACIDE SULFURIQUE",
+          "ordered": 2000,
+          "received": 0
+        },
+        {
+          "product": "UREE",
+          "ordered": 10000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE ZINC",
+          "ordered": 50,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE CALCIUM",
+          "ordered": 1500,
+          "received": 0
+        },
+        {
+          "product": "VITAL CU",
+          "ordered": 100,
+          "received": 0
+        },
+        {
+          "product": "FEROXIM",
+          "ordered": 500,
+          "received": 0
+        },
+        {
+          "product": "HUWA SAN",
+          "ordered": 200,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE POTASSE",
+          "ordered": 100,
+          "received": 0
+        },
+        {
+          "product": "KELPAK",
+          "ordered": 270,
+          "received": 0
+        },
+        {
+          "product": "NITRATE DE MAGNESIUM",
+          "ordered": 1300,
+          "received": 0
+        },
+        {
+          "product": "ALGOBAZ",
+          "ordered": 200,
+          "received": 0
+        },
+        {
+          "product": "MICROS",
+          "ordered": 235,
+          "received": 0
+        },
+        {
+          "product": "ISABION",
+          "ordered": 160,
+          "received": 0
+        },
+        {
+          "product": "NOVA",
+          "ordered": 160,
+          "received": 0
+        },
+        {
+          "product": "ALIETTE FLASH",
+          "ordered": 312,
+          "received": 0
+        },
+        {
+          "product": "GREENSTIM",
+          "ordered": 270,
+          "received": 0
+        },
+        {
+          "product": "CODACIDE OIL",
+          "ordered": 250,
+          "received": 0
+        }
+      ],
+      "updatedAt": "2026-07-13T10:54:19.554Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-13T09:33:15.162Z",
+  "exportDate": "2026-07-13T10:55:13.435Z",
   "melangesConfig": {}
 }
