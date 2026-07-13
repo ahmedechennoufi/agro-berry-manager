@@ -41905,6 +41905,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-07-11",
       "id": 1783750820367
+    },
+    {
+      "type": "entry",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 6500,
+      "price": 9.5,
+      "supplier": "PROMAGRI",
+      "date": "2026-07-13",
+      "id": 1783935195152
     }
   ],
   "stockAB1": [
@@ -46539,6 +46548,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-11T06:20:20.375Z",
+  "exportDate": "2026-07-13T09:33:15.162Z",
   "melangesConfig": {}
 }
