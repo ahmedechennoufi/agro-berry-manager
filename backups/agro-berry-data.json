@@ -42002,6 +42002,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-07-14",
       "id": 1784028539030
+    },
+    {
+      "type": "entry",
+      "product": "ALGOBAZ",
+      "quantity": 200,
+      "price": 208,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-07-14",
+      "id": 1784028563832
     }
   ],
   "stockAB1": [
@@ -46763,6 +46772,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:28:59.036Z",
+  "exportDate": "2026-07-14T11:29:23.839Z",
   "melangesConfig": {}
 }
