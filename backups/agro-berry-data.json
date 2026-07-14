@@ -41930,6 +41930,15 @@
       "supplier": "CASEM",
       "date": "2026-07-14",
       "id": 1784028278203
+    },
+    {
+      "type": "entry",
+      "product": "ALIETTE FLASH",
+      "quantity": 98,
+      "price": 389,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-14",
+      "id": 1784028354737
     }
   ],
   "stockAB1": [
@@ -46669,7 +46678,7 @@
         {
           "product": "ALIETTE FLASH",
           "ordered": 312,
-          "received": 120
+          "received": 218
         },
         {
           "product": "GREENSTIM",
@@ -46687,10 +46696,10 @@
           "received": 180
         }
       ],
-      "updatedAt": "2026-07-14T11:14:53.346Z"
+      "updatedAt": "2026-07-14T11:25:21.277Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:24:38.211Z",
+  "exportDate": "2026-07-14T11:25:54.745Z",
   "melangesConfig": {}
 }
