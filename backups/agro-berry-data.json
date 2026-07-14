@@ -42029,6 +42029,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-07-14",
       "id": 1784028614063
+    },
+    {
+      "type": "entry",
+      "product": "ALIETTE FLASH",
+      "quantity": 120,
+      "price": 418,
+      "supplier": "CAS",
+      "date": "2026-07-14",
+      "id": 1784028646780
     }
   ],
   "stockAB1": [
@@ -46790,6 +46799,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:30:14.071Z",
+  "exportDate": "2026-07-14T11:30:46.788Z",
   "melangesConfig": {}
 }
