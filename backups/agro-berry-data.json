@@ -42038,6 +42038,15 @@
       "supplier": "CAS",
       "date": "2026-07-14",
       "id": 1784028646780
+    },
+    {
+      "type": "entry",
+      "product": "MAP",
+      "quantity": 2000,
+      "price": 15,
+      "supplier": "CAS",
+      "date": "2026-07-14",
+      "id": 1784028669129
     }
   ],
   "stockAB1": [
@@ -46799,6 +46808,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:30:46.788Z",
+  "exportDate": "2026-07-14T11:31:09.135Z",
   "melangesConfig": {}
 }
