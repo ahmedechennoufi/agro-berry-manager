@@ -41939,6 +41939,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-07-14",
       "id": 1784028354737
+    },
+    {
+      "type": "entry",
+      "product": "ISABION",
+      "quantity": 160,
+      "price": 128,
+      "supplier": "CASEM",
+      "date": "2026-07-14",
+      "id": 1784028383102
     }
   ],
   "stockAB1": [
@@ -46700,6 +46709,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:25:54.745Z",
+  "exportDate": "2026-07-14T11:26:23.109Z",
   "melangesConfig": {}
 }
