@@ -41957,6 +41957,15 @@
       "supplier": "CASEM",
       "date": "2026-07-14",
       "id": 1784028406581
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE POTASSE",
+      "quantity": 3500,
+      "price": 10.75,
+      "supplier": "CASEM",
+      "date": "2026-07-14",
+      "id": 1784028433398
     }
   ],
   "stockAB1": [
@@ -46718,6 +46727,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:26:46.588Z",
+  "exportDate": "2026-07-14T11:27:13.407Z",
   "melangesConfig": {}
 }
