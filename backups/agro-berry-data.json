@@ -42056,6 +42056,15 @@
       "supplier": "AGRIMATCO",
       "date": "2026-07-14",
       "id": 1784028824346
+    },
+    {
+      "type": "entry",
+      "product": "VYTEGRIS PLEX",
+      "quantity": 1020,
+      "price": 76,
+      "supplier": "AGRIMATCO",
+      "date": "2026-07-14",
+      "id": 1784028861615
     }
   ],
   "stockAB1": [
@@ -46817,6 +46826,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:33:44.353Z",
+  "exportDate": "2026-07-14T11:34:21.624Z",
   "melangesConfig": {}
 }
