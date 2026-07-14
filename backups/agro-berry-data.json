@@ -42011,6 +42011,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-07-14",
       "id": 1784028563832
+    },
+    {
+      "type": "entry",
+      "product": "GREENSTIM",
+      "quantity": 270,
+      "price": 270,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-07-14",
+      "id": 1784028592464
     }
   ],
   "stockAB1": [
@@ -46772,6 +46781,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:29:23.839Z",
+  "exportDate": "2026-07-14T11:29:52.471Z",
   "melangesConfig": {}
 }
