@@ -41984,6 +41984,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-07-14",
       "id": 1784028496014
+    },
+    {
+      "type": "entry",
+      "product": "MICROS",
+      "quantity": 35,
+      "price": 141.67,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-07-14",
+      "id": 1784028518467
     }
   ],
   "stockAB1": [
@@ -46745,6 +46754,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:28:16.023Z",
+  "exportDate": "2026-07-14T11:28:38.472Z",
   "melangesConfig": {}
 }
