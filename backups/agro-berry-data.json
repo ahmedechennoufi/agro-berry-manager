@@ -41975,6 +41975,15 @@
       "supplier": "CASEM",
       "date": "2026-07-14",
       "id": 1784028459699
+    },
+    {
+      "type": "entry",
+      "product": "MICROS",
+      "quantity": 200,
+      "price": 141.67,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-07-14",
+      "id": 1784028496014
     }
   ],
   "stockAB1": [
@@ -46736,6 +46745,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:27:39.707Z",
+  "exportDate": "2026-07-14T11:28:16.023Z",
   "melangesConfig": {}
 }
