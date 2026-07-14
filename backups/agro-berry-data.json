@@ -41966,6 +41966,15 @@
       "supplier": "CASEM",
       "date": "2026-07-14",
       "id": 1784028433398
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE ZINC",
+      "quantity": 50,
+      "price": 16,
+      "supplier": "CASEM",
+      "date": "2026-07-14",
+      "id": 1784028459699
     }
   ],
   "stockAB1": [
@@ -46727,6 +46736,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:27:13.407Z",
+  "exportDate": "2026-07-14T11:27:39.707Z",
   "melangesConfig": {}
 }
