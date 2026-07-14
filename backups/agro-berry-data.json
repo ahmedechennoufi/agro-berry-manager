@@ -42047,6 +42047,15 @@
       "supplier": "CAS",
       "date": "2026-07-14",
       "id": 1784028669129
+    },
+    {
+      "type": "entry",
+      "product": "CODACIDE OIL",
+      "quantity": 250,
+      "price": 76.5,
+      "supplier": "AGRIMATCO",
+      "date": "2026-07-14",
+      "id": 1784028824346
     }
   ],
   "stockAB1": [
@@ -46808,6 +46817,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:31:09.135Z",
+  "exportDate": "2026-07-14T11:33:44.353Z",
   "melangesConfig": {}
 }
