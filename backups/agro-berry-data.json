@@ -41921,6 +41921,15 @@
       "supplier": "PROMAGRI",
       "date": "2026-07-13",
       "id": 1783935195152
+    },
+    {
+      "type": "entry",
+      "product": "HUWA SAN",
+      "quantity": 225,
+      "price": 64.90476190476191,
+      "supplier": "CASEM",
+      "date": "2026-07-14",
+      "id": 1784028278203
     }
   ],
   "stockAB1": [
@@ -46560,12 +46569,12 @@
         {
           "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
           "ordered": 6500,
-          "received": 0
+          "received": 6500
         },
         {
           "product": "MAP",
           "ordered": 2000,
-          "received": 0
+          "received": 2000
         },
         {
           "product": "SULFATE MAGNESUIM",
@@ -46575,12 +46584,12 @@
         {
           "product": "SULFATE DE POTASSE",
           "ordered": 3500,
-          "received": 0
+          "received": 3500
         },
         {
           "product": "VYTEGRIS PLEX",
           "ordered": 1000,
-          "received": 0
+          "received": 1020
         },
         {
           "product": "ACIDE PHOSPHORIQUE",
@@ -46600,7 +46609,7 @@
         {
           "product": "SULFATE DE ZINC",
           "ordered": 50,
-          "received": 0
+          "received": 50
         },
         {
           "product": "NITRATE DE CALCIUM",
@@ -46610,17 +46619,17 @@
         {
           "product": "VITAL CU",
           "ordered": 100,
-          "received": 0
+          "received": 100
         },
         {
           "product": "FEROXIM",
           "ordered": 500,
-          "received": 0
+          "received": 500
         },
         {
           "product": "HUWA SAN",
           "ordered": 200,
-          "received": 0
+          "received": 225
         },
         {
           "product": "NITRATE DE POTASSE",
@@ -46640,43 +46649,48 @@
         {
           "product": "ALGOBAZ",
           "ordered": 200,
-          "received": 0
+          "received": 200
         },
         {
           "product": "MICROS",
           "ordered": 235,
-          "received": 0
+          "received": 235
         },
         {
           "product": "ISABION",
           "ordered": 160,
-          "received": 0
+          "received": 160
         },
         {
           "product": "NOVA",
           "ordered": 160,
-          "received": 0
+          "received": 160
         },
         {
           "product": "ALIETTE FLASH",
           "ordered": 312,
-          "received": 0
+          "received": 120
         },
         {
           "product": "GREENSTIM",
           "ordered": 270,
-          "received": 0
+          "received": 270
         },
         {
           "product": "CODACIDE OIL",
           "ordered": 250,
-          "received": 0
+          "received": 250
+        },
+        {
+          "product": "SPRAY OIL 7E",
+          "ordered": 180,
+          "received": 180
         }
       ],
-      "updatedAt": "2026-07-13T10:54:19.554Z"
+      "updatedAt": "2026-07-14T11:14:53.346Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-13T10:55:13.435Z",
+  "exportDate": "2026-07-14T11:24:38.211Z",
   "melangesConfig": {}
 }
