@@ -41993,6 +41993,15 @@
       "supplier": "ALMASSIRAGRI",
       "date": "2026-07-14",
       "id": 1784028518467
+    },
+    {
+      "type": "entry",
+      "product": "FEROXIM",
+      "quantity": 500,
+      "price": 101,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-07-14",
+      "id": 1784028539030
     }
   ],
   "stockAB1": [
@@ -46754,6 +46763,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:28:38.472Z",
+  "exportDate": "2026-07-14T11:28:59.036Z",
   "melangesConfig": {}
 }
