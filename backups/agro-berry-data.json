@@ -42065,6 +42065,15 @@
       "supplier": "AGRIMATCO",
       "date": "2026-07-14",
       "id": 1784028861615
+    },
+    {
+      "type": "entry",
+      "product": "SPRAY OIL 7E",
+      "quantity": 180,
+      "price": 44.4,
+      "supplier": "AGRIMATCO",
+      "date": "2026-07-14",
+      "id": 1784028896596
     }
   ],
   "stockAB1": [
@@ -46826,6 +46835,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:34:21.624Z",
+  "exportDate": "2026-07-14T11:34:56.602Z",
   "melangesConfig": {}
 }
