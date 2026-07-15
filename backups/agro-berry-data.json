@@ -42074,6 +42074,15 @@
       "supplier": "AGRIMATCO",
       "date": "2026-07-14",
       "id": 1784028896596
+    },
+    {
+      "type": "exit",
+      "product": "ALIETTE FLASH",
+      "quantity": 128,
+      "price": 404.9633027522936,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-07-15",
+      "id": 1784110077932
     }
   ],
   "stockAB1": [
@@ -46835,6 +46844,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-14T11:34:56.602Z",
+  "exportDate": "2026-07-15T10:07:57.940Z",
   "melangesConfig": {}
 }
