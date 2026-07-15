@@ -42101,6 +42101,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-07-15",
       "id": 1784110761879
+    },
+    {
+      "type": "exit",
+      "product": "SPRAY OIL 7E",
+      "quantity": 60,
+      "price": 44.4,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-07-15",
+      "id": 1784110784565
     }
   ],
   "stockAB1": [
@@ -46862,6 +46871,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-15T10:19:21.886Z",
+  "exportDate": "2026-07-15T10:19:44.571Z",
   "melangesConfig": {}
 }
