@@ -42092,6 +42092,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-15",
       "id": 1784110095301
+    },
+    {
+      "type": "exit",
+      "product": "ALIETTE FLASH",
+      "quantity": 28,
+      "price": 404.9633027522936,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-07-15",
+      "id": 1784110761879
     }
   ],
   "stockAB1": [
@@ -46853,6 +46862,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-15T10:08:15.308Z",
+  "exportDate": "2026-07-15T10:19:21.886Z",
   "melangesConfig": {}
 }
