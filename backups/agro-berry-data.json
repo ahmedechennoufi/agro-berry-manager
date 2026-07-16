@@ -42128,6 +42128,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-16",
       "id": 1784192271713
+    },
+    {
+      "type": "exit",
+      "product": "ZM CORRECTOR",
+      "quantity": 5,
+      "price": 76,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-16",
+      "id": 1784192279862
     }
   ],
   "stockAB1": [
@@ -46889,6 +46898,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-16T08:57:51.721Z",
+  "exportDate": "2026-07-16T08:57:59.868Z",
   "melangesConfig": {}
 }
