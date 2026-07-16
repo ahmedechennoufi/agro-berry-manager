@@ -42173,6 +42173,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-07-16",
       "id": 1784193937957
+    },
+    {
+      "type": "exit",
+      "product": "DICARZOL",
+      "quantity": 10.5,
+      "price": 2000,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-16",
+      "id": 1784193949319
     }
   ],
   "stockAB1": [
@@ -46934,6 +46943,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-16T09:25:37.965Z",
+  "exportDate": "2026-07-16T09:25:49.325Z",
   "melangesConfig": {}
 }
