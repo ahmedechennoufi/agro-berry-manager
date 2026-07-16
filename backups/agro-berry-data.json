@@ -42137,6 +42137,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-16",
       "id": 1784192279862
+    },
+    {
+      "type": "exit",
+      "product": "ROMBI SAL",
+      "quantity": 20,
+      "price": 26.965384615384615,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-16",
+      "id": 1784192313626
     }
   ],
   "stockAB1": [
@@ -46898,6 +46907,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-16T08:57:59.868Z",
+  "exportDate": "2026-07-16T08:58:33.632Z",
   "melangesConfig": {}
 }
