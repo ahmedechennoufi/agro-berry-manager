@@ -42191,6 +42191,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-17",
       "id": 1784270061380
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 1984,
+      "price": 9.776483700195039,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-17",
+      "id": 1784281869398
     }
   ],
   "stockAB1": [
@@ -46952,6 +46961,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-17T06:34:21.389Z",
+  "exportDate": "2026-07-17T09:51:09.407Z",
   "melangesConfig": {}
 }
