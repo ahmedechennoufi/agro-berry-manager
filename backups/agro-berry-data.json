@@ -42245,6 +42245,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-07-18",
       "id": 1784352729306
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE POTASSE",
+      "quantity": 100,
+      "price": 10.85,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-18",
+      "id": 1784352744117
     }
   ],
   "stockAB1": [
@@ -47006,6 +47015,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-18T05:32:09.313Z",
+  "exportDate": "2026-07-18T05:32:24.123Z",
   "melangesConfig": {}
 }
