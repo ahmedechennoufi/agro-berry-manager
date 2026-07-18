@@ -42209,6 +42209,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-07-17",
       "id": 1784281886347
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 4000,
+      "price": 9.776483700195039,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-18",
+      "id": 1784352577138
     }
   ],
   "stockAB1": [
@@ -46873,7 +46882,7 @@
         {
           "product": "ACIDE PHOSPHORIQUE",
           "ordered": 6000,
-          "received": 0
+          "received": 6000
         },
         {
           "product": "ACIDE SULFURIQUE",
@@ -46883,7 +46892,7 @@
         {
           "product": "UREE",
           "ordered": 10000,
-          "received": 0
+          "received": 10000
         },
         {
           "product": "SULFATE DE ZINC",
@@ -46966,10 +46975,10 @@
           "received": 180
         }
       ],
-      "updatedAt": "2026-07-14T11:25:21.277Z"
+      "updatedAt": "2026-07-18T05:29:01.280Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-17T09:51:26.355Z",
+  "exportDate": "2026-07-18T05:29:37.146Z",
   "melangesConfig": {}
 }
