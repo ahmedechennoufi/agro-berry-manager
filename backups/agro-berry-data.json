@@ -42236,6 +42236,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-07-18",
       "id": 1784352706506
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 1500,
+      "price": 209.44,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-18",
+      "id": 1784352729306
     }
   ],
   "stockAB1": [
@@ -46997,6 +47006,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-18T05:31:46.514Z",
+  "exportDate": "2026-07-18T05:32:09.313Z",
   "melangesConfig": {}
 }
