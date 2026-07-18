@@ -42218,6 +42218,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-07-18",
       "id": 1784352577138
+    },
+    {
+      "type": "entry",
+      "product": "UREE",
+      "quantity": 7000,
+      "price": 5.841785714285714,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-18",
+      "id": 1784352596951
     }
   ],
   "stockAB1": [
@@ -46979,6 +46988,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-18T05:29:37.146Z",
+  "exportDate": "2026-07-18T05:29:56.956Z",
   "melangesConfig": {}
 }
