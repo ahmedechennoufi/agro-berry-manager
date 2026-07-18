@@ -42227,6 +42227,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-07-18",
       "id": 1784352596951
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 1000,
+      "price": 4.106941838649155,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-18",
+      "id": 1784352706506
     }
   ],
   "stockAB1": [
@@ -46876,7 +46885,7 @@
         {
           "product": "SULFATE MAGNESUIM",
           "ordered": 1000,
-          "received": 0
+          "received": 1000
         },
         {
           "product": "SULFATE DE POTASSE",
@@ -46911,7 +46920,7 @@
         {
           "product": "NITRATE DE CALCIUM",
           "ordered": 1500,
-          "received": 0
+          "received": 1500
         },
         {
           "product": "VITAL CU",
@@ -46931,7 +46940,7 @@
         {
           "product": "NITRATE DE POTASSE",
           "ordered": 100,
-          "received": 0
+          "received": 100
         },
         {
           "product": "KELPAK",
@@ -46984,10 +46993,10 @@
           "received": 180
         }
       ],
-      "updatedAt": "2026-07-18T05:29:01.280Z"
+      "updatedAt": "2026-07-18T05:31:18.647Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-18T05:29:56.956Z",
+  "exportDate": "2026-07-18T05:31:46.514Z",
   "melangesConfig": {}
 }
