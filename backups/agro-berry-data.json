@@ -42407,6 +42407,24 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-07-20",
       "id": 1784543902236
+    },
+    {
+      "type": "exit",
+      "product": "VITAL CU",
+      "quantity": 60,
+      "price": 141.52111111111108,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-07-20",
+      "id": 1784543927256
+    },
+    {
+      "type": "exit",
+      "product": "FEROXIM",
+      "quantity": 250,
+      "price": 101,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-07-20",
+      "id": 1784544266515
     }
   ],
   "stockAB1": [
@@ -47168,6 +47186,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:38:22.242Z",
+  "exportDate": "2026-07-20T10:44:26.522Z",
   "melangesConfig": {}
 }
