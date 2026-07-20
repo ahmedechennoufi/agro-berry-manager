@@ -42290,6 +42290,15 @@
       "supplier": "FRABAGRI",
       "date": "2026-07-18",
       "id": 1784543484867
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE MAGNESIUM",
+      "quantity": 1300,
+      "price": 6.9,
+      "supplier": "FRABAGRI",
+      "date": "2026-07-18",
+      "id": 1784543501148
     }
   ],
   "stockAB1": [
@@ -47051,6 +47060,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:31:24.874Z",
+  "exportDate": "2026-07-20T10:31:41.153Z",
   "melangesConfig": {}
 }
