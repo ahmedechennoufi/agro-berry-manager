@@ -42299,6 +42299,15 @@
       "supplier": "FRABAGRI",
       "date": "2026-07-18",
       "id": 1784543501148
+    },
+    {
+      "type": "exit",
+      "product": "KELPAK",
+      "quantity": 90,
+      "price": 115,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-07-20",
+      "id": 1784543515465
     }
   ],
   "stockAB1": [
@@ -47060,6 +47069,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:31:41.153Z",
+  "exportDate": "2026-07-20T10:31:55.469Z",
   "melangesConfig": {}
 }
