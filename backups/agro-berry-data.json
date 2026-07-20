@@ -42452,6 +42452,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-07-20",
       "id": 1784544389135
+    },
+    {
+      "type": "exit",
+      "product": "MICROS",
+      "quantity": 100,
+      "price": 141.67,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-07-20",
+      "id": 1784544424018
     }
   ],
   "stockAB1": [
@@ -47213,6 +47222,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:46:29.142Z",
+  "exportDate": "2026-07-20T10:47:04.025Z",
   "melangesConfig": {}
 }
