@@ -42353,6 +42353,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-07-20",
       "id": 1784543630122
+    },
+    {
+      "type": "exit",
+      "product": "CODACIDE OIL",
+      "quantity": 75,
+      "price": 76.91818181818182,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-07-20",
+      "id": 1784543651584
     }
   ],
   "stockAB1": [
@@ -47114,6 +47123,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:33:50.128Z",
+  "exportDate": "2026-07-20T10:34:11.589Z",
   "melangesConfig": {}
 }
