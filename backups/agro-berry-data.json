@@ -42344,6 +42344,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-07-20",
       "id": 1784543613752
+    },
+    {
+      "type": "exit",
+      "product": "GREENSTIM",
+      "quantity": 90,
+      "price": 270,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-07-20",
+      "id": 1784543630122
     }
   ],
   "stockAB1": [
@@ -47105,6 +47114,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:33:33.758Z",
+  "exportDate": "2026-07-20T10:33:50.128Z",
   "melangesConfig": {}
 }
