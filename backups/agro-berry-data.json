@@ -42254,6 +42254,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-07-18",
       "id": 1784352744117
+    },
+    {
+      "type": "exit",
+      "product": "VITAL CU",
+      "quantity": 80,
+      "price": 141.52111111111108,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-07-20",
+      "id": 1784543398402
     }
   ],
   "stockAB1": [
@@ -47015,6 +47024,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-18T05:32:24.123Z",
+  "exportDate": "2026-07-20T10:29:58.410Z",
   "melangesConfig": {}
 }
