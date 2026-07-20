@@ -42482,12 +42482,12 @@
     },
     {
       "type": "exit",
-      "product": "GREENSTIM",
+      "product": "CODACIDE OIL",
       "quantity": 100,
-      "price": 270,
+      "price": 76.91818181818182,
       "farm": "AGRO BERRY 3",
       "date": "2026-07-20",
-      "id": 1784544599015
+      "id": 1784544634502
     }
   ],
   "stockAB1": [
@@ -47248,7 +47248,9 @@
       "updatedAt": "2026-07-18T05:31:18.647Z"
     }
   ],
-  "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:49:59.021Z",
+  "deletedMovementIds": [
+    1784544599015
+  ],
+  "exportDate": "2026-07-20T10:51:02.101Z",
   "melangesConfig": {}
 }
