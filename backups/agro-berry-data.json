@@ -42312,7 +42312,7 @@
     {
       "type": "exit",
       "product": "MICROS",
-      "quantity": 70,
+      "quantity": 75,
       "price": 141.67,
       "farm": "AGRO BERRY 2",
       "date": "2026-07-20",
@@ -47078,6 +47078,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:32:11.757Z",
+  "exportDate": "2026-07-20T10:32:30.608Z",
   "melangesConfig": {}
 }
