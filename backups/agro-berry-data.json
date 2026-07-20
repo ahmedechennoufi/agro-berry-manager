@@ -42263,6 +42263,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-07-20",
       "id": 1784543398402
+    },
+    {
+      "type": "exit",
+      "product": "FEROXIM",
+      "quantity": 250,
+      "price": 101,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-07-20",
+      "id": 1784543411504
     }
   ],
   "stockAB1": [
@@ -47024,6 +47033,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:29:58.410Z",
+  "exportDate": "2026-07-20T10:30:11.514Z",
   "melangesConfig": {}
 }
