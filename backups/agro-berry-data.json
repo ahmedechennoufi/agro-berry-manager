@@ -42542,6 +42542,15 @@
       "supplier": "ALFACHIMIE",
       "date": "2026-07-21",
       "id": 1784633855218
+    },
+    {
+      "type": "entry",
+      "product": "VYTEGRIS PLEX",
+      "quantity": 1030,
+      "price": 76,
+      "supplier": "AGRIMATCO",
+      "date": "2026-07-21",
+      "id": 1784634127301
     }
   ],
   "stockAB1": [
@@ -47303,6 +47312,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-21T11:37:35.223Z",
+  "exportDate": "2026-07-21T11:42:07.307Z",
   "melangesConfig": {}
 }
