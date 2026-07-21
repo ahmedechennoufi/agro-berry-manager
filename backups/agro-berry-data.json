@@ -42497,6 +42497,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-07-20",
       "id": 1784544709084
+    },
+    {
+      "type": "entry",
+      "product": "EFFICIENT",
+      "quantity": 270,
+      "price": 58.34,
+      "supplier": "ALFACHIMIE",
+      "date": "2026-07-21",
+      "id": 1784633726020
     }
   ],
   "stockAB1": [
@@ -47258,6 +47267,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-20T10:51:49.090Z",
+  "exportDate": "2026-07-21T11:35:26.039Z",
   "melangesConfig": {}
 }
