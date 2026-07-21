@@ -42524,6 +42524,15 @@
       "supplier": "ALFACHIMIE",
       "date": "2026-07-21",
       "id": 1784633781388
+    },
+    {
+      "type": "entry",
+      "product": "VITAL CU",
+      "quantity": 240,
+      "price": 141.67,
+      "supplier": "ALFACHIMIE",
+      "date": "2026-07-21",
+      "id": 1784633817069
     }
   ],
   "stockAB1": [
@@ -47285,6 +47294,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-21T11:36:21.396Z",
+  "exportDate": "2026-07-21T11:36:57.076Z",
   "melangesConfig": {}
 }
