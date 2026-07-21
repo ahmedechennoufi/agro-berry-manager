@@ -42533,6 +42533,15 @@
       "supplier": "ALFACHIMIE",
       "date": "2026-07-21",
       "id": 1784633817069
+    },
+    {
+      "type": "entry",
+      "product": "FEROXIM",
+      "quantity": 1000,
+      "price": 101,
+      "supplier": "ALFACHIMIE",
+      "date": "2026-07-21",
+      "id": 1784633855218
     }
   ],
   "stockAB1": [
@@ -47294,6 +47303,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-21T11:36:57.076Z",
+  "exportDate": "2026-07-21T11:37:35.223Z",
   "melangesConfig": {}
 }
