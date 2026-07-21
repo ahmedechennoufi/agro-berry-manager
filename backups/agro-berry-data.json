@@ -42506,6 +42506,15 @@
       "supplier": "ALFACHIMIE",
       "date": "2026-07-21",
       "id": 1784633726020
+    },
+    {
+      "type": "entry",
+      "product": "ALGOBAZ",
+      "quantity": 100,
+      "price": 208.34,
+      "supplier": "ALFACHIMIE",
+      "date": "2026-07-21",
+      "id": 1784633753770
     }
   ],
   "stockAB1": [
@@ -47267,6 +47276,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-21T11:35:26.039Z",
+  "exportDate": "2026-07-21T11:35:53.778Z",
   "melangesConfig": {}
 }
