@@ -42515,6 +42515,15 @@
       "supplier": "ALFACHIMIE",
       "date": "2026-07-21",
       "id": 1784633753770
+    },
+    {
+      "type": "entry",
+      "product": "GREENSTIM",
+      "quantity": 270,
+      "price": 270,
+      "supplier": "ALFACHIMIE",
+      "date": "2026-07-21",
+      "id": 1784633781388
     }
   ],
   "stockAB1": [
@@ -47276,6 +47285,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-21T11:35:53.778Z",
+  "exportDate": "2026-07-21T11:36:21.396Z",
   "melangesConfig": {}
 }
