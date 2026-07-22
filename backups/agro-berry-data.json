@@ -42614,15 +42614,6 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-07-22",
       "id": 1784716117697
-    },
-    {
-      "type": "exit",
-      "product": "VITAL CU",
-      "quantity": 80,
-      "price": 141.57289855072463,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-07-22",
-      "id": 1784716183849
     }
   ],
   "stockAB1": [
@@ -47384,8 +47375,8 @@
     }
   ],
   "deletedMovementIds": [
-    1784716205100
+    1784716183849
   ],
-  "exportDate": "2026-07-22T10:31:18.647Z",
+  "exportDate": "2026-07-22T10:31:24.092Z",
   "melangesConfig": {}
 }
