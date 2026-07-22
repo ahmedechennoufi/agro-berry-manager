@@ -42578,6 +42578,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-07-17",
       "id": 1784715875001
+    },
+    {
+      "type": "exit",
+      "product": "VYTEGRIS PLEX",
+      "quantity": 300,
+      "price": 76,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-07-22",
+      "id": 1784715891437
     }
   ],
   "stockAB1": [
@@ -47339,6 +47348,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-07-22T10:24:35.008Z",
+  "exportDate": "2026-07-22T10:24:51.444Z",
   "melangesConfig": {}
 }
