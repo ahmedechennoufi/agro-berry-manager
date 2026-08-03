@@ -42632,6 +42632,60 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-07-22",
       "id": 1784716781430
+    },
+    {
+      "type": "entry",
+      "product": "MICROS",
+      "quantity": 40,
+      "price": 170,
+      "supplier": "ALMASSIRAGRI",
+      "date": "2026-07-23",
+      "id": 1784870311865
+    },
+    {
+      "type": "entry",
+      "product": "NITRATE DE CALCIUM",
+      "quantity": 3600,
+      "price": 209.44,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-23",
+      "id": 1784870398385
+    },
+    {
+      "type": "entry",
+      "product": "UREE",
+      "quantity": 10000,
+      "price": 5.841785714285714,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-23",
+      "id": 1784870426064
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 5984,
+      "price": 9.776483700195039,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-07-23",
+      "id": 1784870528715
+    },
+    {
+      "type": "exit",
+      "product": "ACIDE PHOSPHORIQUE",
+      "quantity": 3840,
+      "price": 9.776483700195037,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-25",
+      "id": 1784968123775
+    },
+    {
+      "type": "entry",
+      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+      "quantity": 14000,
+      "price": 9.5,
+      "supplier": "PROMAGRI",
+      "date": "2026-07-28",
+      "id": 1785754290070
     }
   ],
   "stockAB1": [
@@ -47392,10 +47446,7 @@
       "updatedAt": "2026-07-18T05:31:18.647Z"
     }
   ],
-  "deletedMovementIds": [
-    1784870220001,
-    1784870260679
-  ],
-  "exportDate": "2026-07-24T05:18:06.605Z",
+  "deletedMovementIds": [],
+  "exportDate": "2026-08-03T10:51:30.094Z",
   "melangesConfig": {}
 }
