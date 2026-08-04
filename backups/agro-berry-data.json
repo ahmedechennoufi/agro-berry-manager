@@ -42690,7 +42690,7 @@
     {
       "type": "entry",
       "product": "KOBUS",
-      "quantity": 50,
+      "quantity": 12.5,
       "price": 1300,
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-08-03",
@@ -47413,12 +47413,12 @@
         {
           "product": "KELPAK",
           "ordered": 270,
-          "received": 0
+          "received": 270
         },
         {
           "product": "NITRATE DE MAGNESIUM",
           "ordered": 1300,
-          "received": 0
+          "received": 1300
         },
         {
           "product": "ALGOBAZ",
@@ -47443,7 +47443,7 @@
         {
           "product": "ALIETTE FLASH",
           "ordered": 312,
-          "received": 218
+          "received": 312
         },
         {
           "product": "GREENSTIM",
@@ -47461,10 +47461,122 @@
           "received": 180
         }
       ],
-      "updatedAt": "2026-07-18T05:31:18.647Z"
+      "updatedAt": "2026-08-04T08:58:26.939Z"
+    },
+    {
+      "id": 1785834030525,
+      "month": "2026-08",
+      "items": [
+        {
+          "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
+          "ordered": 18000,
+          "received": 18000
+        },
+        {
+          "product": "MAP",
+          "ordered": 7000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE MAGNESUIM",
+          "ordered": 7000,
+          "received": 0
+        },
+        {
+          "product": "SULFATE DE POTASSE",
+          "ordered": 5500,
+          "received": 0
+        },
+        {
+          "product": "VYTEGRIS PLEX",
+          "ordered": 1000,
+          "received": 0
+        },
+        {
+          "product": "ACIDE PHOSPHORIQUE",
+          "ordered": 6000,
+          "received": 6000
+        },
+        {
+          "product": "ACIDE SULFURIQUE",
+          "ordered": 1500,
+          "received": 0
+        },
+        {
+          "product": "UREE",
+          "ordered": 10000,
+          "received": 10000
+        },
+        {
+          "product": "SULFATE DE ZINC",
+          "ordered": 100,
+          "received": 0
+        },
+        {
+          "product": "FEROXIM",
+          "ordered": 1000,
+          "received": 1000
+        },
+        {
+          "product": "NITRATE DE CALCIUM",
+          "ordered": 3600,
+          "received": 3600
+        },
+        {
+          "product": "SULFATE DE CUIVRE",
+          "ordered": 200,
+          "received": 0
+        },
+        {
+          "product": "VITAL CU",
+          "ordered": 240,
+          "received": 240
+        },
+        {
+          "product": "NOVA",
+          "ordered": 160,
+          "received": 0
+        },
+        {
+          "product": "MICROS",
+          "ordered": 40,
+          "received": 40
+        },
+        {
+          "product": "ALGOBAZ",
+          "ordered": 100,
+          "received": 100
+        },
+        {
+          "product": "ISABION",
+          "ordered": 200,
+          "received": 0
+        },
+        {
+          "product": "KELPAK",
+          "ordered": 300,
+          "received": 0
+        },
+        {
+          "product": "GREENSTIM",
+          "ordered": 270,
+          "received": 270
+        },
+        {
+          "product": "EFFICIENT",
+          "ordered": 270,
+          "received": 270
+        },
+        {
+          "product": "RAIZANTE",
+          "ordered": 200,
+          "received": 0
+        }
+      ],
+      "updatedAt": "2026-08-04T09:06:45.676Z"
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-04T08:51:39.796Z",
+  "exportDate": "2026-08-04T10:38:40.812Z",
   "melangesConfig": {}
 }
