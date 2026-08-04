@@ -42695,6 +42695,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-08-03",
       "id": 1785833457713
+    },
+    {
+      "type": "entry",
+      "product": "TIOSOL",
+      "quantity": 40,
+      "price": 60,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-08-03",
+      "id": 1785833499787
     }
   ],
   "stockAB1": [
@@ -47456,6 +47465,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-04T08:50:57.727Z",
+  "exportDate": "2026-08-04T08:51:39.796Z",
   "melangesConfig": {}
 }
