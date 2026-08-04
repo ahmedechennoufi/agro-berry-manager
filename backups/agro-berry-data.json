@@ -42686,6 +42686,15 @@
       "supplier": "PROMAGRI",
       "date": "2026-07-28",
       "id": 1785754290070
+    },
+    {
+      "type": "entry",
+      "product": "KOBUS",
+      "quantity": 50,
+      "price": 1300,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-08-03",
+      "id": 1785833457713
     }
   ],
   "stockAB1": [
@@ -47447,6 +47456,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-04T08:32:11.748Z",
+  "exportDate": "2026-08-04T08:50:57.727Z",
   "melangesConfig": {}
 }
