@@ -1577,6 +1577,13 @@
       "category": "PHYTOSANITAIRES",
       "threshold": null,
       "id": 1783940113428
+    },
+    {
+      "name": "METAM SODIUM",
+      "unit": "KG",
+      "category": "ENGRAIS",
+      "threshold": null,
+      "id": 1785929360646
     }
   ],
   "movements": [
@@ -47595,6 +47602,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-05T11:28:31.127Z",
+  "exportDate": "2026-08-05T11:29:20.654Z",
   "melangesConfig": {}
 }
