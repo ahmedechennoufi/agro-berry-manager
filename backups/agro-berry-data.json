@@ -42738,6 +42738,15 @@
       "supplier": "PHYTOLOUKKOS",
       "date": "2026-08-05",
       "id": 1785929392148
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE MAGNESUIM",
+      "quantity": 7000,
+      "price": 4.106941838649155,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-08-05",
+      "id": 1785929415932
     }
   ],
   "stockAB1": [
@@ -47611,6 +47620,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-05T11:29:52.153Z",
+  "exportDate": "2026-08-05T11:30:15.937Z",
   "melangesConfig": {}
 }
