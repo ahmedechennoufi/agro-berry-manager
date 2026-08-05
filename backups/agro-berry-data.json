@@ -42704,6 +42704,15 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-08-03",
       "id": 1785833499787
+    },
+    {
+      "type": "entry",
+      "product": "DICARZOL",
+      "quantity": 50,
+      "price": 2000,
+      "supplier": "BEST BIO Z",
+      "date": "2026-08-03",
+      "id": 1785929296135
     }
   ],
   "stockAB1": [
@@ -47577,6 +47586,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-04T10:38:40.812Z",
+  "exportDate": "2026-08-05T11:28:16.150Z",
   "melangesConfig": {}
 }
