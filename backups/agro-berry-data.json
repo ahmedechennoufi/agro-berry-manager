@@ -42729,6 +42729,15 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-08-04",
       "id": 1785929311121
+    },
+    {
+      "type": "entry",
+      "product": "METAM SODIUM",
+      "quantity": 4572,
+      "price": 0,
+      "supplier": "PHYTOLOUKKOS",
+      "date": "2026-08-05",
+      "id": 1785929392148
     }
   ],
   "stockAB1": [
@@ -47602,6 +47611,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-05T11:29:20.654Z",
+  "exportDate": "2026-08-05T11:29:52.153Z",
   "melangesConfig": {}
 }
