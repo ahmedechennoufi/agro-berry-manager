@@ -42756,6 +42756,15 @@
       "supplier": "CAS",
       "date": "2026-08-07",
       "id": 1786096435857
+    },
+    {
+      "type": "entry",
+      "product": "RAIZANTE",
+      "quantity": 200,
+      "price": 83.4,
+      "supplier": "CAS",
+      "date": "2026-08-07",
+      "id": 1786096468249
     }
   ],
   "stockAB1": [
@@ -47629,6 +47638,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-07T09:53:55.880Z",
+  "exportDate": "2026-08-07T09:54:28.257Z",
   "melangesConfig": {}
 }
