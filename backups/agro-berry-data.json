@@ -42756,6 +42756,24 @@
       "supplier": "OMNIUM AGRICOLE DU SOUSS",
       "date": "2026-08-03",
       "id": 1786431619017
+    },
+    {
+      "type": "entry",
+      "product": "KOBUS",
+      "quantity": 50,
+      "price": 60,
+      "supplier": "OMNIUM AGRICOLE DU SOUSS",
+      "date": "2026-08-03",
+      "id": 1786431653291
+    },
+    {
+      "type": "exit",
+      "product": "KOBUS",
+      "quantity": 60,
+      "price": 793.8775510204082,
+      "farm": "AGRO BERRY 2",
+      "date": "2026-08-03",
+      "id": 1786431692146
     }
   ],
   "stockAB1": [
@@ -47629,6 +47647,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-11T07:00:19.026Z",
+  "exportDate": "2026-08-11T07:01:32.152Z",
   "melangesConfig": {}
 }
