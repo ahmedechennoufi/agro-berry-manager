@@ -41633,15 +41633,6 @@
       "id": 1783319517180
     },
     {
-      "type": "entry",
-      "product": "SAPHYR",
-      "quantity": 3,
-      "price": 420,
-      "supplier": "FIXATIONSTOCK",
-      "date": "2026-06-26",
-      "id": 1783319840527
-    },
-    {
       "type": "exit",
       "product": "SAPHYR",
       "quantity": 3,
@@ -47629,8 +47620,9 @@
     }
   ],
   "deletedMovementIds": [
-    1783072952227
+    1783072952227,
+    1783319840527
   ],
-  "exportDate": "2026-08-11T06:24:15.842Z",
+  "exportDate": "2026-08-11T06:24:18.186Z",
   "melangesConfig": {}
 }
