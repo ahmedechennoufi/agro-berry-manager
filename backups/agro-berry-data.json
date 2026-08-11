@@ -42801,6 +42801,15 @@
       "supplier": "FRABAGRI",
       "date": "2026-08-11",
       "id": 1786446600808
+    },
+    {
+      "type": "entry",
+      "product": "KELPAK",
+      "quantity": 300,
+      "price": 115,
+      "supplier": "FRABAGRI",
+      "date": "2026-08-11",
+      "id": 1786446622361
     }
   ],
   "stockAB1": [
@@ -47674,6 +47683,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-11T11:10:00.811Z",
+  "exportDate": "2026-08-11T11:10:22.368Z",
   "melangesConfig": {}
 }
