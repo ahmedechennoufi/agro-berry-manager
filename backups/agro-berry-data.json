@@ -42783,6 +42783,24 @@
       "farm": "AGRO BERRY 2",
       "date": "2026-08-03",
       "id": 1786431712814
+    },
+    {
+      "type": "entry",
+      "product": "ACIDE SULFURIQUE",
+      "quantity": 3465,
+      "price": 3.4754355400696864,
+      "supplier": "FRABAGRI",
+      "date": "2026-08-11",
+      "id": 1786446561710
+    },
+    {
+      "type": "entry",
+      "product": "SULFATE DE CUIVRE",
+      "quantity": 25,
+      "price": 40,
+      "supplier": "FRABAGRI",
+      "date": "2026-08-11",
+      "id": 1786446600808
     }
   ],
   "stockAB1": [
@@ -47656,6 +47674,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-11T07:01:52.820Z",
+  "exportDate": "2026-08-11T11:10:00.811Z",
   "melangesConfig": {}
 }
