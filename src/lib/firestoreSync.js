@@ -20,7 +20,20 @@ import {
   setDoc,
   deleteDoc,
   writeBatch,
+  getDocs,
+  collection,
 } from "firebase/firestore";
+
+/**
+ * Recupere l'ensemble des IDs de documents deja presents dans une collection.
+ * Utilise pour eviter de re-ecrire (donc re-facturer) des documents deja migres
+ * lors d'une nouvelle tentative de migration (retry apres quota epuise, etc).
+ * Le cout est en LECTURES (quota bien plus large : 50k/jour gratuit vs 20k pour les ecritures).
+ */
+async function getExistingDocIds(collectionName) {
+  const snap = await getDocs(collection(db, collectionName));
+  return new Set(snap.docs.map((d) => d.id));
+}
 
 /**
  * Indique si l'admin est connecté à Firestore (donc dual-write activé).
@@ -116,15 +129,33 @@ export async function migrateMovementsToFirestore(movements, onProgress) {
     throw new Error("Connecte-toi d'abord à Firestore avant de migrer.");
   }
   if (!Array.isArray(movements) || movements.length === 0) {
-    return { success: 0, failed: 0, errors: [] };
+    return { success: 0, failed: 0, errors: [], skipped: 0 };
   }
 
   // Filtrer les mouvements valides (avec id)
-  const valid = movements.filter((m) => m && m.id);
+  const candidates = movements.filter((m) => m && m.id);
+
+  // Ne pousser que ce qui manque reellement dans Firestore — evite de re-facturer
+  // (en ecritures) des documents deja migres a chaque nouvelle tentative.
+  let existingIds;
+  try {
+    existingIds = await getExistingDocIds("movements");
+  } catch (e) {
+    console.warn("[migration] impossible de lister les mouvements existants, migration complete par securite:", e.message);
+    existingIds = new Set();
+  }
+  const valid = candidates.filter((m) => !existingIds.has(String(m.id)));
+  const skipped = candidates.length - valid.length;
+  console.log(`[migration] ${candidates.length} candidats, ${skipped} deja presents (ignores), ${valid.length} a migrer`);
+
   const total = valid.length;
   let success = 0;
   let failed = 0;
   const errors = [];
+
+  if (total === 0) {
+    return { success: 0, failed: 0, errors: [], skipped };
+  }
 
   // Batches plus petits (200, pas 400) : plus de rounds mais moins de risque
   // qu'un seul commit() géant reste bloqué sans jamais aboutir.
