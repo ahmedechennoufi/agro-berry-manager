@@ -126,20 +126,47 @@ export async function migrateMovementsToFirestore(movements, onProgress) {
   let failed = 0;
   const errors = [];
 
-  const BATCH_SIZE = 400;
+  // Batches plus petits (200, pas 400) : plus de rounds mais moins de risque
+  // qu'un seul commit() géant reste bloqué sans jamais aboutir.
+  const BATCH_SIZE = 200;
+  // Timeout dur par batch : un commit() qui ne répond pas en 20s est traité
+  // comme échoué au lieu de bloquer la migration indéfiniment.
+  const BATCH_TIMEOUT_MS = 20000;
+
   for (let i = 0; i < valid.length; i += BATCH_SIZE) {
     const chunk = valid.slice(i, i + BATCH_SIZE);
-    const batch = writeBatch(db);
-    for (const mv of chunk) {
-      batch.set(doc(db, "movements", String(mv.id)), cleanForFirestore(mv));
-    }
+    console.log(`[migration] batch ${i}-${i + chunk.length}/${total}...`);
+
+    let batch;
     try {
-      await batch.commit();
+      batch = writeBatch(db);
+      for (const mv of chunk) {
+        // cleanForFirestore ou doc() peuvent throw sur une donnée corrompue —
+        // avant, ça cassait TOUTE la migration silencieusement sans jamais
+        // mettre à jour la progress bar. Maintenant on isole le mouvement fautif.
+        batch.set(doc(db, "movements", String(mv.id)), cleanForFirestore(mv));
+      }
+    } catch (e) {
+      failed += chunk.length;
+      errors.push({ batchStart: i, error: "Préparation batch échouée : " + e.message });
+      console.error(`[migration] batch ${i}-${i + chunk.length} — erreur de préparation:`, e);
+      if (onProgress) onProgress(success + failed, total);
+      continue;
+    }
+
+    try {
+      await Promise.race([
+        batch.commit(),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error(`Timeout ${BATCH_TIMEOUT_MS / 1000}s`)), BATCH_TIMEOUT_MS)
+        ),
+      ]);
       success += chunk.length;
+      console.log(`[migration] batch ${i}-${i + chunk.length} OK`);
     } catch (e) {
       failed += chunk.length;
       errors.push({ batchStart: i, error: e.message });
-      console.error(`Migration batch ${i}-${i + chunk.length} échoué:`, e);
+      console.error(`[migration] batch ${i}-${i + chunk.length} échoué:`, e);
     }
     if (onProgress) onProgress(success + failed, total);
   }
@@ -217,20 +244,40 @@ export async function migratePhysicalInventoriesToFirestore(inventories, onProgr
   let failed = 0;
   const errors = [];
 
-  const BATCH_SIZE = 400;
+  const BATCH_SIZE = 200;
+  const BATCH_TIMEOUT_MS = 20000;
+
   for (let i = 0; i < valid.length; i += BATCH_SIZE) {
     const chunk = valid.slice(i, i + BATCH_SIZE);
-    const batch = writeBatch(db);
-    for (const inv of chunk) {
-      batch.set(doc(db, "physicalInventories", String(inv.id)), cleanForFirestore(inv));
-    }
+    console.log(`[migration-inv] batch ${i}-${i + chunk.length}/${total}...`);
+
+    let batch;
     try {
-      await batch.commit();
+      batch = writeBatch(db);
+      for (const inv of chunk) {
+        batch.set(doc(db, "physicalInventories", String(inv.id)), cleanForFirestore(inv));
+      }
+    } catch (e) {
+      failed += chunk.length;
+      errors.push({ batchStart: i, error: "Préparation batch échouée : " + e.message });
+      console.error(`[migration-inv] batch ${i}-${i + chunk.length} — erreur de préparation:`, e);
+      if (onProgress) onProgress(success + failed, total);
+      continue;
+    }
+
+    try {
+      await Promise.race([
+        batch.commit(),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error(`Timeout ${BATCH_TIMEOUT_MS / 1000}s`)), BATCH_TIMEOUT_MS)
+        ),
+      ]);
       success += chunk.length;
+      console.log(`[migration-inv] batch ${i}-${i + chunk.length} OK`);
     } catch (e) {
       failed += chunk.length;
       errors.push({ batchStart: i, error: e.message });
-      console.error(`Migration inventaires batch ${i}-${i + chunk.length} échoué:`, e);
+      console.error(`[migration-inv] batch ${i}-${i + chunk.length} échoué:`, e);
     }
     if (onProgress) onProgress(success + failed, total);
   }
