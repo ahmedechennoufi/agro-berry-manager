@@ -4,6 +4,7 @@ import { Card, Select, Input, EmptyState, Button } from '../components/UI';
 import { FARMS } from '../lib/constants';
 import { calculateFarmStock, getAveragePrice, getProducts, getPhysicalInventories, savePhysicalInventory, updatePhysicalInventory, deletePhysicalInventory } from '../lib/store';
 import { fmt, fmtMoney, downloadPhysicalInventoryExcel } from '../lib/utils';
+import { savePhysicalInventoryToFirestore, deletePhysicalInventoryFromFirestore } from '../lib/firestoreSync';
 
 const PhysicalInventory = () => {
   const { products, triggerAutoBackup } = useApp();
@@ -258,15 +259,17 @@ const PhysicalInventory = () => {
 
     if (editingInventoryId) {
       // Update existing
-      updatePhysicalInventory(editingInventoryId, {
+      const updated = updatePhysicalInventory(editingInventoryId, {
         farm: selectedFarm, farmName, date: inventoryDate,
         data: physicalStock, comparison: comparisonResults, stats: { ...stats }
       });
       setEditingInventoryId(null);
       alert(`✅ Inventaire mis à jour pour ${farmName} (${inventoryDate}) !`);
+      // Dual-write Firestore : sinon le magasinier ne verra jamais la mise à jour
+      if (updated) savePhysicalInventoryToFirestore(updated).catch(err => console.warn("⚠️ Sync Firestore inventaire a échoué (non-critique):", err?.message || err));
     } else {
       // Create new
-      savePhysicalInventory({
+      const created = savePhysicalInventory({
         farm: selectedFarm, farmName, date: inventoryDate,
         data: physicalStock, comparison: comparisonResults, stats: { ...stats }
       });
@@ -274,6 +277,8 @@ const PhysicalInventory = () => {
         ? `\n\n📌 Ce stock physique est maintenant le stock de référence pour ${farmName} — il sera utilisé comme base du mois prochain.`
         : '';
       alert(`✅ Inventaire sauvegardé pour ${farmName} (${inventoryDate}) !${msg25}`);
+      // Dual-write Firestore : sinon le magasinier ne verra jamais ce nouvel inventaire
+      savePhysicalInventoryToFirestore(created).catch(err => console.warn("⚠️ Sync Firestore inventaire a échoué (non-critique):", err?.message || err));
     }
 
     setSavedInventories(getPhysicalInventories());
@@ -305,6 +310,7 @@ const PhysicalInventory = () => {
 
   const handleDeleteInventory = (id) => {
     deletePhysicalInventory(id);
+    deletePhysicalInventoryFromFirestore(id).catch(err => console.warn("⚠️ Suppression Firestore inventaire a échoué (non-critique):", err?.message || err));
     setSavedInventories(getPhysicalInventories());
     triggerAutoBackup();
     setShowDeleteConfirm(null);

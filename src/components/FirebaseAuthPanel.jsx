@@ -15,7 +15,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { migrateAdminMovementsToFirestore } from "../lib/firestoreSync";
+import { migrateAdminMovementsToFirestore, migratePhysicalInventoriesToFirestore } from "../lib/firestoreSync";
 import * as store from "../lib/store";
 
 export default function FirebaseAuthPanel({ showNotif }) {
@@ -28,6 +28,10 @@ export default function FirebaseAuthPanel({ showNotif }) {
   const [migrating, setMigrating] = useState(false);
   const [progress, setProgress] = useState({ done: 0, total: 0 });
   const [migrationResult, setMigrationResult] = useState(null);
+
+  const [migratingInv, setMigratingInv] = useState(false);
+  const [progressInv, setProgressInv] = useState({ done: 0, total: 0 });
+  const [migrationResultInv, setMigrationResultInv] = useState(null);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => setUser(u));
@@ -104,6 +108,50 @@ export default function FirebaseAuthPanel({ showNotif }) {
       if (showNotif) showNotif("❌ Migration échouée : " + err.message, "error");
     }
     setMigrating(false);
+  };
+
+  const countInventories = () => (store.getPhysicalInventories() || []).length;
+
+  const handleMigrateInventories = async () => {
+    const inventories = store.getPhysicalInventories();
+    const total = (inventories || []).length;
+    if (total === 0) {
+      if (showNotif) showNotif("Aucun inventaire physique à migrer", "info");
+      return;
+    }
+    if (
+      !window.confirm(
+        `Migrer ${total} inventaire(s) physique(s) vers Firestore ?\n\n` +
+          `Cela rendra ces inventaires (et le stock qui en découle) visibles dans l'app magasinier (AGB1/AGB2/AGB3).\n\n` +
+          `Cette opération est idempotente — tu peux la relancer sans risque.`
+      )
+    )
+      return;
+
+    setMigratingInv(true);
+    setMigrationResultInv(null);
+    setProgressInv({ done: 0, total });
+
+    try {
+      const result = await migratePhysicalInventoriesToFirestore(
+        inventories,
+        (done, tot) => setProgressInv({ done, total: tot })
+      );
+      setMigrationResultInv(result);
+      if (result.failed === 0) {
+        if (showNotif) showNotif(`✅ Migration réussie : ${result.success} inventaire(s)`, "success");
+      } else {
+        if (showNotif)
+          showNotif(
+            `⚠️ Migration partielle : ${result.success} OK, ${result.failed} échoués`,
+            "error"
+          );
+      }
+    } catch (err) {
+      setMigrationResultInv({ success: 0, failed: 0, errors: [{ error: err.message }] });
+      if (showNotif) showNotif("❌ Migration échouée : " + err.message, "error");
+    }
+    setMigratingInv(false);
   };
 
   return (
@@ -262,6 +310,72 @@ export default function FirebaseAuthPanel({ showNotif }) {
 
           <div
             style={{
+              padding: 16,
+              borderRadius: 8,
+              background: "#fef2f2",
+              border: "1px solid #fecaca",
+              marginBottom: 12,
+            }}
+          >
+            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, color: "#991b1b" }}>
+              📦 Migration des inventaires physiques
+            </div>
+            <div style={{ fontSize: 12, color: "#7f1d1d", marginBottom: 12 }}>
+              <strong>{countInventories()}</strong> inventaire(s) physique(s) au total. Avant le
+              correctif du {new Date().toLocaleDateString('fr-FR')}, les inventaires n'étaient JAMAIS
+              synchronisés vers Firestore — le magasinier ne voyait donc pas le stock corrigé.
+              Clique pour les pousser tous (idempotent, sans risque).
+            </div>
+
+            {migratingInv && (
+              <div style={{ fontSize: 12, color: "#7f1d1d", marginBottom: 8, fontFamily: "monospace" }}>
+                ⏳ Migration en cours : {progressInv.done}/{progressInv.total} (
+                {progressInv.total > 0 ? Math.round((progressInv.done / progressInv.total) * 100) : 0}%)
+                <div style={{ height: 6, background: "#fecaca", borderRadius: 3, marginTop: 6, overflow: "hidden" }}>
+                  <div style={{ height: "100%", width: `${progressInv.total > 0 ? (progressInv.done / progressInv.total) * 100 : 0}%`, background: "#dc2626", transition: "width 0.3s" }} />
+                </div>
+              </div>
+            )}
+
+            {migrationResultInv && !migratingInv && (
+              <div
+                style={{
+                  fontSize: 12,
+                  color: "#065f46",
+                  marginBottom: 12,
+                  padding: 8,
+                  borderRadius: 6,
+                  background: migrationResultInv.failed === 0 ? "#d1fae5" : "#fee2e2",
+                }}
+              >
+                {migrationResultInv.failed === 0
+                  ? `✅ ${migrationResultInv.success} inventaire(s) migré(s) avec succès.`
+                  : `⚠️ ${migrationResultInv.success} OK, ${migrationResultInv.failed} échoués.`}
+              </div>
+            )}
+
+            <button
+              onClick={handleMigrateInventories}
+              disabled={migratingInv || countInventories() === 0}
+              style={{
+                padding: "10px 20px",
+                borderRadius: 8,
+                border: "none",
+                background: migratingInv || countInventories() === 0 ? "#d1d5db" : "#dc2626",
+                color: "white",
+                fontWeight: 600,
+                fontSize: 13,
+                cursor: migratingInv || countInventories() === 0 ? "not-allowed" : "pointer",
+              }}
+            >
+              {migratingInv
+                ? "Migration en cours..."
+                : `📤 Migrer ${countInventories()} inventaires vers Firestore`}
+            </button>
+          </div>
+
+          <div
+            style={{
               padding: 10,
               borderRadius: 6,
               background: "#eff6ff",
@@ -270,8 +384,8 @@ export default function FirebaseAuthPanel({ showNotif }) {
               color: "#1e40af",
             }}
           >
-            💡 <strong>Dual-write activé</strong> — tes prochaines saisies (ajout/édition/suppression)
-            iront dans Firestore + GitHub automatiquement.
+            💡 <strong>Dual-write activé</strong> — tes prochaines saisies (mouvements + inventaires
+            physiques : ajout/édition/suppression) iront dans Firestore + GitHub automatiquement.
           </div>
         </>
       ) : (

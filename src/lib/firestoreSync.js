@@ -155,3 +155,85 @@ export async function migrateAdminMovementsToFirestore(allMovements, onProgress)
   const adminOnly = (allMovements || []).filter((m) => m && m.id && !m.saisiepar);
   return migrateMovementsToFirestore(adminOnly, onProgress);
 }
+
+/**
+ * ===== INVENTAIRES PHYSIQUES =====
+ *
+ * AVANT ce correctif : les inventaires physiques saisis dans le Manager n'étaient
+ * sauvegardés QUE dans GitHub (jamais dans Firestore). Or l'app magasinier calcule
+ * son stock uniquement à partir des inventaires trouvés dans Firestore.
+ * Résultat : un inventaire saisi côté admin n'était JAMAIS visible côté magasinier.
+ *
+ * Ce module applique le même pattern dual-write que pour les mouvements.
+ */
+
+/**
+ * Sauvegarde 1 inventaire physique dans Firestore.
+ * doc id = inventory.id (timestamp string, généré par store.savePhysicalInventory).
+ * Idempotent : un retry réécrit le même doc, pas de doublon.
+ */
+export async function savePhysicalInventoryToFirestore(inventory) {
+  if (!auth.currentUser) return; // pas connecté → no-op
+  if (!inventory?.id) {
+    console.warn("⚠️ savePhysicalInventoryToFirestore: inventaire sans id, ignoré", inventory);
+    return;
+  }
+  await setDoc(
+    doc(db, "physicalInventories", String(inventory.id)),
+    cleanForFirestore(inventory),
+    { merge: false }
+  );
+}
+
+/**
+ * Supprime un inventaire physique de Firestore.
+ */
+export async function deletePhysicalInventoryFromFirestore(invId) {
+  if (!auth.currentUser) return;
+  if (!invId) return;
+  await deleteDoc(doc(db, "physicalInventories", String(invId)));
+}
+
+/**
+ * MIGRATION ONE-SHOT — pousse en batch tous les inventaires physiques existants
+ * (déjà sauvegardés en localStorage/GitHub côté Manager) vers Firestore.
+ * Idempotent, batches de 400.
+ *
+ * @param {Array} inventories - liste complète des inventaires à pousser
+ * @param {Function} onProgress - callback(done, total)
+ * @returns {Promise<{success: number, failed: number, errors: Array}>}
+ */
+export async function migratePhysicalInventoriesToFirestore(inventories, onProgress) {
+  if (!auth.currentUser) {
+    throw new Error("Connecte-toi d'abord à Firestore avant de migrer.");
+  }
+  if (!Array.isArray(inventories) || inventories.length === 0) {
+    return { success: 0, failed: 0, errors: [] };
+  }
+
+  const valid = inventories.filter((inv) => inv && inv.id);
+  const total = valid.length;
+  let success = 0;
+  let failed = 0;
+  const errors = [];
+
+  const BATCH_SIZE = 400;
+  for (let i = 0; i < valid.length; i += BATCH_SIZE) {
+    const chunk = valid.slice(i, i + BATCH_SIZE);
+    const batch = writeBatch(db);
+    for (const inv of chunk) {
+      batch.set(doc(db, "physicalInventories", String(inv.id)), cleanForFirestore(inv));
+    }
+    try {
+      await batch.commit();
+      success += chunk.length;
+    } catch (e) {
+      failed += chunk.length;
+      errors.push({ batchStart: i, error: e.message });
+      console.error(`Migration inventaires batch ${i}-${i + chunk.length} échoué:`, e);
+    }
+    if (onProgress) onProgress(success + failed, total);
+  }
+
+  return { success, failed, errors };
+}

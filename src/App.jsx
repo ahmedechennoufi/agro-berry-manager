@@ -100,6 +100,15 @@ function App() {
           if (data.stockAB1) localStorage.setItem('agro_stock_ab1_v3', JSON.stringify(data.stockAB1));
           if (data.stockAB2) localStorage.setItem('agro_stock_ab2_v3', JSON.stringify(data.stockAB2));
           if (data.stockAB3) localStorage.setItem('agro_stock_ab3_v3', JSON.stringify(data.stockAB3));
+          // Fix : les inventaires physiques n'étaient jamais restaurés depuis GitHub au démarrage
+          // (contrairement aux produits/mouvements/stock) — un inventaire créé sur un autre poste
+          // était donc invisible ici. On les restaure aussi, sans écraser un inventaire local plus récent.
+          if (data.physicalInventories?.length) {
+            const local = store.getPhysicalInventories();
+            const byId = new Map(local.map(inv => [inv.id, inv]));
+            data.physicalInventories.forEach(inv => { if (inv?.id) byId.set(inv.id, inv); });
+            localStorage.setItem('agro_physical_inventories_v3', JSON.stringify(Array.from(byId.values())));
+          }
           console.log('✅ Données chargées depuis GitHub');
         } catch (e) {
           console.warn('⚠️ Chargement GitHub échoué, utilisation localStorage:', e.message);
