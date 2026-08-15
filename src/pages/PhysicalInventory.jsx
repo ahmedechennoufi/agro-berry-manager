@@ -77,6 +77,157 @@ const AGB2_IMPORT_20260725 = {
   "VYTEGRIS PLEX": "115.0",
 };
 
+// Import ponctuel — inventaire papier AGB1 du 25/07/2026 (79 produits confirmés)
+// Exclus (pas de correspondance fiable / a confirmer) : BOTREFEN, CORAGEN, HYDROSOL (NOVATEC 08-10-34)
+const AGB1_IMPORT_20260725 = {
+  "ACIDE CHLORHYDRIQUE": "168.0",
+  "ACIDE NITRIQUE": "5.0",
+  "ACIDE PHOSPHORIQUE": "4512.0",
+  "ACRAMITE": "2.0",
+  "ACTARA": "0.25",
+  "AFRAW": "12.0",
+  "ALIETTE FLASH": "1.0",
+  "ANTISCALANT ADIC RO30": "556.5",
+  "ANTISCALANT PERMATREAT": "477.0",
+  "ASEP": "1.0",
+  "BASSO": "190.0",
+  "BENEVIA": "2.25",
+  "BIOENERGY": "157.9",
+  "BIOFORGE": "0.23",
+  "BLAKJAK": "5.0",
+  "BORTRAC": "10.0",
+  "CHLORO MIX": "1166.0",
+  "CIDELY TOP": "6.55",
+  "CLOSER": "0.94",
+  "EFFICIENT": "28.8",
+  "ENTEC 21% (NOVATEC SOLUB 21%)": "5697.5",
+  "EXIREL": "8.2",
+  "FEROXIM": "1484.5",
+  "FOLIASTIM": "6.8",
+  "FOLICIST": "60.0",
+  "GREENSTIM": "7.0",
+  "HUWA SAN": "178.5",
+  "INACOP": "2.3",
+  "JOKER": "112.96",
+  "KAISER": "1.35",
+  "KELP BIO": "80.0",
+  "KELPAK": "6.4",
+  "KOBUS": "0.85",
+  "KRISANT": "16.0",
+  "LUNA FUSION": "11.2",
+  "MANGAZINC": "44.0",
+  "MANVERT FOLIPLUS": "11.46",
+  "MAP": "4245.5",
+  "MAVRIK": "46.0",
+  "MERJANE": "33.7",
+  "MICROS": "123.5",
+  "MILBEKNOCK": "3.63",
+  "MKP": "675.0",
+  "MOVENTO": "40.0",
+  "NITRATE DE CALCIUM": "1340.0",
+  "NITRATE DE MAGNESIUM": "337.7",
+  "NOVA": "11.4",
+  "NUTRIVANT FRUIT (0-20-40)": "20.0",
+  "OXYLOUKKOS": "22.0",
+  "PERFECTOSE": "96.5",
+  "PERMACLEAN": "358.5",
+  "PITCA CALCIUM": "5.9",
+  "PIXEL": "11.35",
+  "PROBLAD": "3.0",
+  "PROCLAIM": "8.5",
+  "RADIANT": "37.16",
+  "RHIZOCELL": "7.0",
+  "SANYGENE FORTE": "0.1",
+  "SAPHYR": "25.0",
+  "SCELTA": "24.05",
+  "SIGNUM": "22.0",
+  "SIVANTO PRIME": "0.6",
+  "STROBY": "13.5",
+  "SULFATE DE CUIVRE": "150.0",
+  "SULFATE DE MANGANAISE": "100.0",
+  "SULFATE DE POTASSE": "1080.6",
+  "SULFATE DE ZINC": "45.0",
+  "SULFATE MAGNESUIM": "4026.5",
+  "SWITCH": "1.25",
+  "TACHIGAREN": "0.5",
+  "TALENDO": "13.4",
+  "TELDOR": "4.0",
+  "TIMOREX GOLD": "5.8",
+  "TIOSOL": "60.0",
+  "TOP RACINE": "49.7",
+  "UREE": "2870.0",
+  "VERIMARK": "2.82",
+  "VITAL CU": "126.0",
+  "VYTEGRIS PLEX": "235.0",
+};
+
+// Import ponctuel — inventaire papier AGB3 du 25/07/2026 (62 produits confirmés)
+// Exclus (pas de correspondance fiable / a confirmer) : BOTREFEN, SPRAY OIL, VYTEGRIS
+const AGB3_IMPORT_20260725 = {
+  "ACIDE CHLORHYDRIQUE": "360.0",
+  "ACIDE PHOSPHORIQUE": "2592.0",
+  "ACTARA": "5.0",
+  "ADICLEAN": "145.0",
+  "AFRAW": "1.2",
+  "ALFABET": "2.2",
+  "ALGOBAZ": "106.0",
+  "ANTISCALANT ADIC RO30": "1150.0",
+  "ANTISCALANT PERMATREAT": "189.5",
+  "BENEVIA": "1.1",
+  "BIOFORGE": "20.0",
+  "BLAKJAK": "14.0",
+  "BORTRAC": "10.0",
+  "CHLORO MIX": "170.0",
+  "CLEAN K": "0.5",
+  "CODACIDE OIL": "112.0",
+  "DICARZOL": "28.5",
+  "EFFICIENT": "6.5",
+  "ENTEC 21% (NOVATEC SOLUB 21%)": "2691.0",
+  "EXIREL": "34.2",
+  "FEROXIM": "315.0",
+  "FOLIASTIM": "18.0",
+  "FOLICIST": "1.2",
+  "GREENSTIM": "100.0",
+  "HUWA SAN": "144.0",
+  "HYDROMAG": "4.3",
+  "INACOP": "43.0",
+  "ISABION": "38.5",
+  "JOKER": "61.0",
+  "KALIGREEN": "1.5",
+  "KELP BIO": "35.5",
+  "KELPAK": "106.5",
+  "LUNA FUSION": "3.5",
+  "MAP": "1600.0",
+  "MAVRIK": "27.8",
+  "MERJANE": "17.5",
+  "MICROS": "9.0",
+  "MOVENTO": "19.25",
+  "NITRATE DE CALCIUM": "1745.0",
+  "NOVA": "80.0",
+  "PERFECTOSE": "8.0",
+  "PERMACLEAN": "106.0",
+  "PITCA CALCIUM": "1.2",
+  "PIXEL": "92.0",
+  "RADIANT": "1.0",
+  "SAPHYR": "35.0",
+  "SIGNUM": "19.5",
+  "SOLUBOR": "35.0",
+  "STROBY": "15.3",
+  "SULFATE DE POTASSE": "1145.0",
+  "SULFATE DE ZINC": "55.0",
+  "SULFATE MAGNESUIM": "1440.0",
+  "SUPER SIDY": "19.0",
+  "SWITCH": "1.5",
+  "TACHIGAREN": "0.4",
+  "TALENDO": "13.5",
+  "TIMOREX GOLD": "21.0",
+  "TIOSOL": "120.6",
+  "TOP RACINE": "55.0",
+  "UREE": "2485.0",
+  "VITAL CU": "91.0",
+  "VYTEGRIS PLEX": "714.0",
+};
+
 const PhysicalInventory = () => {
   const { products, triggerAutoBackup } = useApp();
   const [mode, setMode] = useState('new');
@@ -587,23 +738,32 @@ const PhysicalInventory = () => {
                   className="w-full px-4 py-3 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-xl font-medium transition-colors text-sm border border-blue-200">
                   📝 Pré-remplir avec stock theorique
                 </button>
-                {selectedFarm === 'AGRO BERRY 2' && (
-                  <button
-                    onClick={() => {
-                      if (!window.confirm(
-                        `Importer l'inventaire papier du 25/07/2026 pour AGRO BERRY 2 ?\n\n` +
-                        `${Object.keys(AGB2_IMPORT_20260725).length} produits seront pré-remplis avec les quantités du PDF.\n` +
-                        `Vérifiez chaque ligne avant de cliquer "Enregistrer" — rien n'est sauvegardé tant que vous ne validez pas.\n\n` +
-                        `Note : BOTREFEN a été exclu (nom sans correspondance fiable dans le catalogue) — à ajouter manuellement si besoin.`
-                      )) return;
-                      setInventoryDate('2026-07-25');
-                      setExtraProducts(Object.keys(AGB2_IMPORT_20260725));
-                      setPhysicalStock(AGB2_IMPORT_20260725);
-                    }}
-                    className="w-full mt-2 px-4 py-3 bg-red-50 hover:bg-red-100 text-red-600 rounded-xl font-medium transition-colors text-sm border border-red-200">
-                    📥 Importer inventaire PDF 25/07 (AGB2)
-                  </button>
-                )}
+                {(() => {
+                  const IMPORT_MAP = {
+                    'AGRO BERRY 1': { data: AGB1_IMPORT_20260725, excluded: 'BOTREFEN, CORAGEN, HYDROSOL (NOVATEC 08-10-34)' },
+                    'AGRO BERRY 2': { data: AGB2_IMPORT_20260725, excluded: 'BOTREFEN' },
+                    'AGRO BERRY 3': { data: AGB3_IMPORT_20260725, excluded: 'BOTREFEN, SPRAY OIL, VYTEGRIS' },
+                  };
+                  const cfg = IMPORT_MAP[selectedFarm];
+                  if (!cfg) return null;
+                  return (
+                    <button
+                      onClick={() => {
+                        if (!window.confirm(
+                          `Importer l'inventaire papier du 25/07/2026 pour ${selectedFarm} ?\n\n` +
+                          `${Object.keys(cfg.data).length} produits seront pré-remplis avec les quantités du PDF.\n` +
+                          `Vérifiez chaque ligne avant de cliquer "Enregistrer" — rien n'est sauvegardé tant que vous ne validez pas.\n\n` +
+                          `Note : ${cfg.excluded} exclu(s) (nom sans correspondance fiable dans le catalogue) — à ajouter manuellement si besoin.`
+                        )) return;
+                        setInventoryDate('2026-07-25');
+                        setExtraProducts(Object.keys(cfg.data));
+                        setPhysicalStock(cfg.data);
+                      }}
+                      className="w-full mt-2 px-4 py-3 bg-red-50 hover:bg-red-100 text-red-600 rounded-xl font-medium transition-colors text-sm border border-red-200">
+                      📥 Importer inventaire PDF 25/07 ({FARMS.find(f => f.id === selectedFarm)?.short})
+                    </button>
+                  );
+                })()}
               </Card>
             )}
           </div>
