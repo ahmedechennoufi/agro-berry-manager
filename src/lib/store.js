@@ -1134,29 +1134,76 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
       });
     });
   } else {
-    // Essayer l'inventaire physique du localStorage pour la date prevInventoryDate
+    // Essayer l'inventaire physique pour la date prevInventoryDate
     const physInvs = physicalInventoriesData;
     const farmKeyMap = { 'AGRO BERRY 1': 'AB1', 'AGRO BERRY 2': 'AB2', 'AGRO BERRY 3': 'AB3' };
+    const farmNameByKey = { 'AB1': 'AGRO BERRY 1', 'AB2': 'AGRO BERRY 2', 'AB3': 'AGRO BERRY 3' };
 
-    // Chercher inventaires physiques dont la date est <= prevInventoryDate (le plus récent par ferme)
-    const latestPerFarm = {};
+    // Certains inventaires physiques sont dates volontairement quelques jours APRES la
+    // date "officielle" (ex: comptage reel fait le 27/07 mais reference systeme au 26/07,
+    // pour que le calcul de stock temps-reel cote magasinier fonctionne correctement).
+    // Pour cette page (qui raisonne par frontieres de mois fixes, ex: le 25 de chaque mois),
+    // on tolere une fenetre de grace : si aucun inventaire n'existe A ou AVANT prevInventoryDate,
+    // on prend le plus proche APRES (dans la fenetre), et on retranche les mouvements survenus
+    // entre les deux pour reconstituer le stock exact a prevInventoryDate.
+    const GRACE_DAYS = 10;
+    const graceLimit = (() => {
+      const d = new Date(prevInventoryDate);
+      d.setDate(d.getDate() + GRACE_DAYS);
+      return d.toISOString().slice(0, 10);
+    })();
+
+    const latestBefore = {};
+    const earliestAfterGrace = {};
     physInvs.forEach(inv => {
       if (!inv.date || !inv.farm || !inv.data) return;
-      if (inv.date > prevInventoryDate) return; // Ignorer les inventaires futurs
       const farmKey = farmKeyMap[inv.farm];
       if (!farmKey) return;
-      if (!latestPerFarm[farmKey] || inv.date > latestPerFarm[farmKey].date) {
-        latestPerFarm[farmKey] = inv;
+      if (inv.date <= prevInventoryDate) {
+        if (!latestBefore[farmKey] || inv.date > latestBefore[farmKey].date) latestBefore[farmKey] = inv;
+      } else if (inv.date <= graceLimit) {
+        if (!earliestAfterGrace[farmKey] || inv.date < earliestAfterGrace[farmKey].date) earliestAfterGrace[farmKey] = inv;
+      }
+    });
+
+    const latestPerFarm = {};
+    ['AB1', 'AB2', 'AB3'].forEach(farmKey => {
+      const before = latestBefore[farmKey];
+      const after = earliestAfterGrace[farmKey];
+      if (before && after) {
+        // Choisir le plus proche de prevInventoryDate en nombre de jours, pas juste "avant en priorite"
+        // (un inventaire "avant" mais tres ancien, ex: mars, ne doit pas ecraser un inventaire
+        // "juste apres", ex: 2-3 jours plus tard, bien plus pertinent).
+        const daysBefore = (new Date(prevInventoryDate) - new Date(before.date)) / 86400000;
+        const daysAfter = (new Date(after.date) - new Date(prevInventoryDate)) / 86400000;
+        latestPerFarm[farmKey] = daysAfter <= daysBefore ? { inv: after, adjust: true } : { inv: before, adjust: false };
+      } else if (before) {
+        latestPerFarm[farmKey] = { inv: before, adjust: false };
+      } else if (after) {
+        latestPerFarm[farmKey] = { inv: after, adjust: true };
       }
     });
 
     const hasPhysicalInv = Object.keys(latestPerFarm).length > 0;
 
     if (hasPhysicalInv) {
-      // Utiliser l'inventaire physique du localStorage
-      Object.entries(latestPerFarm).forEach(([farmKey, inv]) => {
+      Object.entries(latestPerFarm).forEach(([farmKey, { inv, adjust }]) => {
+        let adjustments = {};
+        if (adjust) {
+          const farmFullName = farmNameByKey[farmKey];
+          movements.forEach(m => {
+            if (m.farm !== farmFullName || !m.date) return;
+            if (m.date <= prevInventoryDate || m.date > inv.date) return;
+            const p = m.product;
+            const qty = m.quantity || 0;
+            adjustments[p] = (adjustments[p] || 0) + (
+              (m.type === 'transfer-in' || m.type === 'exit') ? qty :
+              (m.type === 'transfer-out' || m.type === 'consumption') ? -qty : 0
+            );
+          });
+        }
         Object.entries(inv.data).forEach(([product, qty]) => {
-          const quantity = parseFloat(qty) || 0;
+          const quantity = (parseFloat(qty) || 0) - (adjustments[product] || 0);
           if (!dataMap[product]) dataMap[product] = createEmptyRow(product, getAveragePrice(product, movements) || 0);
           dataMap[product][`init${farmKey}`] = quantity;
         });
