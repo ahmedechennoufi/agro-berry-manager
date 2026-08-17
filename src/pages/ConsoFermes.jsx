@@ -1,12 +1,62 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useApp } from '../App';
 import { Card, Select, Input, Button, EmptyState, StatCard } from '../components/UI';
 import { MONTHS, CATEGORIES } from '../lib/constants';
 import { fmt, fmtMoney, exportConsoFermes } from '../lib/utils';
 import { getConsoFermesDataByPeriod, getInventaires, getMovements, getProducts, getAveragePrice } from '../lib/store';
+import { db, auth } from '../firebase';
+import { collection, onSnapshot } from 'firebase/firestore';
 
 const ConsoFermes = () => {
-  const { products, movements } = useApp();
+  const { products: localProducts, movements: localMovements } = useApp();
+
+  // === Synchronisation live avec Firestore (comme l'app magasinier) ===
+  // Cette page n'utilise plus les donnees locales du Manager (localStorage/GitHub) pour ses
+  // calculs : elle lit movements/products/physicalInventories directement depuis Firestore,
+  // en temps reel, exactement comme l'app magasinier. Ca garantit que les chiffres affiches
+  // ici correspondent a ce que voient les magasiniers, meme si une migration GitHub->Firestore
+  // est en attente cote Manager.
+  const [fsMovements, setFsMovements] = useState(null);
+  const [fsProducts, setFsProducts] = useState(null);
+  const [fsPhysicalInventories, setFsPhysicalInventories] = useState(null);
+  const [fsError, setFsError] = useState(null);
+
+  useEffect(() => {
+    if (!auth.currentUser) {
+      setFsError("Non connecte a Firestore (Parametres) — affichage des donnees locales du Manager en attendant.");
+      return;
+    }
+    setFsError(null);
+    const unsubs = [
+      onSnapshot(collection(db, 'movements'), (snap) => {
+        setFsMovements(snap.docs.map(d => d.data()));
+      }, (err) => {
+        console.error('[ConsoFermes] erreur live movements:', err);
+        setFsError("Erreur de synchronisation Firestore : " + err.message);
+      }),
+      onSnapshot(collection(db, 'products'), (snap) => {
+        setFsProducts(snap.docs.map(d => d.data()));
+      }, (err) => {
+        console.error('[ConsoFermes] erreur live products:', err);
+        setFsError("Erreur de synchronisation Firestore : " + err.message);
+      }),
+      onSnapshot(collection(db, 'physicalInventories'), (snap) => {
+        setFsPhysicalInventories(snap.docs.map(d => d.data()));
+      }, (err) => {
+        console.error('[ConsoFermes] erreur live physicalInventories:', err);
+        setFsError("Erreur de synchronisation Firestore : " + err.message);
+      }),
+    ];
+    return () => unsubs.forEach(u => u());
+  }, []);
+
+  const fsReady = fsMovements !== null && fsProducts !== null && fsPhysicalInventories !== null;
+  // Tant que Firestore n'a pas encore livre sa premiere donnee (ou en cas d'erreur/deconnexion),
+  // on retombe sur les donnees locales pour ne jamais afficher une page vide.
+  const products = fsReady ? fsProducts : localProducts;
+  const movements = fsReady ? fsMovements : localMovements;
+  const physicalInventories = fsReady ? fsPhysicalInventories : null; // null => getConsoFermesDataByPeriod utilise le local
+
   const [selectedMonth, setSelectedMonth] = useState(() => {
     const now = new Date();
     const monthNames = ['JANVIER','FEVRIER','MARS','AVRIL','MAI','JUIN','JUILLET','AOUT','SEPTEMBRE','OCTOBRE','NOVEMBRE','DECEMBRE'];
@@ -53,7 +103,8 @@ const ConsoFermes = () => {
   }, [selectedMonth]);
 
   const tableData = useMemo(() => {
-    const dataMap = getConsoFermesDataByPeriod(periodDates.start, periodDates.end, periodDates.prevInv);
+    const dataMap = getConsoFermesDataByPeriod(periodDates.start, periodDates.end, periodDates.prevInv,
+      fsReady ? { movements, products, physicalInventories } : {});
     return Object.values(dataMap)
       .filter(d => {
         const hasData = d.initAB1 > 0 || d.initAB2 > 0 || d.initAB3 > 0 ||
@@ -68,7 +119,7 @@ const ConsoFermes = () => {
         return hasData && matchSearch && matchCategory;
       })
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [products, movements, periodDates, search, filterCategory]);
+  }, [products, movements, physicalInventories, fsReady, periodDates, search, filterCategory]);
 
   const totals = useMemo(() => {
     const t = {
@@ -121,8 +172,8 @@ const ConsoFermes = () => {
   }, [tableData]);
 
   const entryDetails = useMemo(() => {
-    const allMovements = getMovements();
-    const allProducts = getProducts();
+    const allMovements = movements;
+    const allProducts = products;
     const productMap = {};
     allProducts.forEach(p => { productMap[p.name] = p; });
     const supplierMap = {};
@@ -157,16 +208,16 @@ const ConsoFermes = () => {
           fromFarm: m.fromFarm,
           supplier: supplier,
           unit: prod.unit || 'KG',
-          price: getAveragePrice(m.product) || 0,
+          price: getAveragePrice(m.product, movements) || 0,
           quantity: m.quantity || 0
         };
       })
       .sort((a, b) => a.product.localeCompare(b.product));
-  }, [movements, periodDates]);
+  }, [movements, products, periodDates]);
 
   const sortieDetails = useMemo(() => {
-    const allMovements = getMovements();
-    const allProducts = getProducts();
+    const allMovements = movements;
+    const allProducts = products;
     const productMap = {};
     allProducts.forEach(p => { productMap[p.name] = p; });
     return allMovements
@@ -178,16 +229,16 @@ const ConsoFermes = () => {
           fromFarm: m.farm,
           toFarm: m.toFarm,
           unit: prod.unit || 'KG',
-          price: getAveragePrice(m.product) || 0,
+          price: getAveragePrice(m.product, movements) || 0,
           quantity: m.quantity || 0
         };
       })
       .sort((a, b) => a.product.localeCompare(b.product));
-  }, [movements, periodDates]);
+  }, [movements, products, periodDates]);
 
   const consoDetails = useMemo(() => {
-    const allMovements = getMovements();
-    const allProducts = getProducts();
+    const allMovements = movements;
+    const allProducts = products;
     const productMap = {};
     allProducts.forEach(p => { productMap[p.name] = p; });
     return allMovements
@@ -200,12 +251,12 @@ const ConsoFermes = () => {
           farm: m.farm,
           culture: m.culture || '-',
           unit: prod.unit || 'KG',
-          price: getAveragePrice(m.product) || 0,
+          price: getAveragePrice(m.product, movements) || 0,
           quantity: m.quantity || 0
         };
       })
       .sort((a, b) => a.product.localeCompare(b.product));
-  }, [movements, periodDates]);
+  }, [movements, products, periodDates]);
 
   const handleExport = async () => {
     try {
@@ -233,6 +284,15 @@ const ConsoFermes = () => {
             Période: <span className="font-medium text-gray-700">{formatPeriod()}</span>
             <span className="mx-2">•</span>
             Stock Initial + Entrées - Sorties - Conso = Stock Final
+          </p>
+          <p className="text-xs mt-1">
+            {fsReady ? (
+              <span style={{ color: "#059669" }}>🔥 Synchronisé en direct avec Firestore (comme l'app magasinier)</span>
+            ) : fsError ? (
+              <span style={{ color: "#d97706" }}>⚠️ {fsError}</span>
+            ) : (
+              <span style={{ color: "#6b7280" }}>⏳ Connexion à Firestore…</span>
+            )}
           </p>
         </div>
         <div style={{ display: "flex", gap: 12 }}>

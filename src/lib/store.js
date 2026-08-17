@@ -658,8 +658,8 @@ export const calculateWarehouseStock = () => {
 };
 
 // Prix moyen d'un produit
-export const getAveragePrice = (productName) => {
-  const movements = getMovements().filter(m => m.type === 'entry' && m.product === productName && m.price > 0);
+export const getAveragePrice = (productName, movementsOverride = null) => {
+  const movements = (movementsOverride || getMovements()).filter(m => m.type === 'entry' && m.product === productName && m.price > 0);
   if (movements.length === 0) {
     // Chercher dans stock initial
     const allStock = [...getStockAB1(), ...getStockAB2(), ...getStockAB3()];
@@ -1068,9 +1068,12 @@ export const getConsoFermesData = (monthIndex) => {
 };
 
 // === CONSOMMATION FERMES PAR PÉRIODE (26 → 25 du mois) ===
-export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate) => {
-  const movements = getMovements();
-  const products = getProducts();
+export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate, overrides = {}) => {
+  // overrides permet de brancher des donnees live (ex: Firestore temps reel, comme
+  // l'app magasinier) a la place des donnees locales du Manager (localStorage/GitHub).
+  const movements = overrides.movements || getMovements();
+  const products = overrides.products || getProducts();
+  const physicalInventoriesData = overrides.physicalInventories || getPhysicalInventories();
   const dataMap = {};
   
   // Import stock history data
@@ -1105,7 +1108,7 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
       name: p.name,
       category: p.category || 'AUTRES',
       unit: p.unit || 'KG',
-      price: getAveragePrice(p.name) || 0,
+      price: getAveragePrice(p.name, movements) || 0,
       initAB1: 0, initAB2: 0, initAB3: 0,
       entMAG: 0,
       entAB1: 0, entAB2: 0, entAB3: 0,
@@ -1132,7 +1135,7 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     });
   } else {
     // Essayer l'inventaire physique du localStorage pour la date prevInventoryDate
-    const physInvs = getPhysicalInventories();
+    const physInvs = physicalInventoriesData;
     const farmKeyMap = { 'AGRO BERRY 1': 'AB1', 'AGRO BERRY 2': 'AB2', 'AGRO BERRY 3': 'AB3' };
 
     // Chercher inventaires physiques dont la date est <= prevInventoryDate (le plus récent par ferme)
@@ -1154,7 +1157,7 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
       Object.entries(latestPerFarm).forEach(([farmKey, inv]) => {
         Object.entries(inv.data).forEach(([product, qty]) => {
           const quantity = parseFloat(qty) || 0;
-          if (!dataMap[product]) dataMap[product] = createEmptyRow(product, getAveragePrice(product) || 0);
+          if (!dataMap[product]) dataMap[product] = createEmptyRow(product, getAveragePrice(product, movements) || 0);
           dataMap[product][`init${farmKey}`] = quantity;
         });
       });
@@ -1186,7 +1189,7 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
   periodMovements.forEach(m => {
     const product = m.product;
     if (!product) return;
-    if (!dataMap[product]) dataMap[product] = createEmptyRow(product, m.price || getAveragePrice(product) || 0);
+    if (!dataMap[product]) dataMap[product] = createEmptyRow(product, m.price || getAveragePrice(product, movements) || 0);
     const data = dataMap[product];
     const qty = m.quantity || 0;
     const farm = m.farm || '';
