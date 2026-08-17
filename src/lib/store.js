@@ -1245,28 +1245,31 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     if (m.type === 'entry') {
       data.entMAG += qty;
     }
-    // ENTRÉES FERMES = transferts entrants + sorties magasin (livraisons fournisseurs)
-    if (m.type === 'transfer-in' || m.type === 'exit') {
+    // ENTRÉES FERMES = transferts entrants uniquement
+    if (m.type === 'transfer-in') {
       if (farm.includes('1')) data.entAB1 += qty;
       else if (farm.includes('2')) data.entAB2 += qty;
       else if (farm.includes('3')) data.entAB3 += qty;
-      
-      // Track transfers separately
-      if (m.type === 'transfer-in') {
-        if (farm.includes('1')) data.transInAB1 += qty;
-        else if (farm.includes('2')) data.transInAB2 += qty;
-        else if (farm.includes('3')) data.transInAB3 += qty;
-      }
-      // Track exits from magasin (type 'exit' only)
-      if (m.type === 'exit') {
-        data.exitMAG = (data.exitMAG || 0) + qty;
-      }
+      data.transInAB1 = (data.transInAB1 || 0) + (farm.includes('1') ? qty : 0);
+      data.transInAB2 = (data.transInAB2 || 0) + (farm.includes('2') ? qty : 0);
+      data.transInAB3 = (data.transInAB3 || 0) + (farm.includes('3') ? qty : 0);
     }
-    // SORTIES = Transferts sortants vers autres fermes
+    // Livraisons magasin -> ferme (type 'exit') : affichées dans la colonne SORTIES
+    // (point de vue magasin) mais restent AJOUTÉES au stock de la ferme destinataire
+    // dans le calcul du Stock Final — la colonne Sorties mélange donc deux flux
+    // différents à l'affichage (livraisons reçues + transferts sortants), suivis
+    // séparément (exitAB / transOutAB) pour que le calcul reste juste.
+    if (m.type === 'exit') {
+      data.exitAB1 = (data.exitAB1 || 0) + (farm.includes('1') ? qty : 0);
+      data.exitAB2 = (data.exitAB2 || 0) + (farm.includes('2') ? qty : 0);
+      data.exitAB3 = (data.exitAB3 || 0) + (farm.includes('3') ? qty : 0);
+      data.exitMAG = (data.exitMAG || 0) + qty;
+    }
+    // SORTIES (transferts sortants vers autres fermes) — soustraites, contrairement aux livraisons ci-dessus
     if (m.type === 'transfer-out') {
-      if (farm.includes('1')) data.sortAB1 += qty;
-      else if (farm.includes('2')) data.sortAB2 += qty;
-      else if (farm.includes('3')) data.sortAB3 += qty;
+      data.transOutAB1 = (data.transOutAB1 || 0) + (farm.includes('1') ? qty : 0);
+      data.transOutAB2 = (data.transOutAB2 || 0) + (farm.includes('2') ? qty : 0);
+      data.transOutAB3 = (data.transOutAB3 || 0) + (farm.includes('3') ? qty : 0);
     }
     // Consommations
     if (m.type === 'consumption') {
@@ -1276,11 +1279,16 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     }
   });
 
-  // Calcul stock final: Init + Entrées - Sorties - Conso
+  // Colonne SORTIES affichée = livraisons magasin->ferme + transferts sortants (les deux flux ensemble)
+  // Calcul stock final: Init + Entrées(transferts entrants) + Livraisons reçues - Transferts sortants - Conso
   Object.values(dataMap).forEach(data => {
-    data.finAB1 = data.initAB1 + data.entAB1 - data.sortAB1 - data.consAB1;
-    data.finAB2 = data.initAB2 + data.entAB2 - data.sortAB2 - data.consAB2;
-    data.finAB3 = data.initAB3 + data.entAB3 - data.sortAB3 - data.consAB3;
+    data.sortAB1 = (data.exitAB1 || 0) + (data.transOutAB1 || 0);
+    data.sortAB2 = (data.exitAB2 || 0) + (data.transOutAB2 || 0);
+    data.sortAB3 = (data.exitAB3 || 0) + (data.transOutAB3 || 0);
+
+    data.finAB1 = data.initAB1 + data.entAB1 + (data.exitAB1 || 0) - (data.transOutAB1 || 0) - data.consAB1;
+    data.finAB2 = data.initAB2 + data.entAB2 + (data.exitAB2 || 0) - (data.transOutAB2 || 0) - data.consAB2;
+    data.finAB3 = data.initAB3 + data.entAB3 + (data.exitAB3 || 0) - (data.transOutAB3 || 0) - data.consAB3;
     // Stock magasin = Entrées fournisseurs - Sorties vers fermes
     data.stockMAG = data.entMAG - (data.exitMAG || 0);
   });
