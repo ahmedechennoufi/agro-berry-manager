@@ -46876,6 +46876,15 @@
       "farm": "AGRO BERRY 1",
       "date": "2026-07-02",
       "id": 1786955812029
+    },
+    {
+      "type": "exit",
+      "product": "AMMONITRATE",
+      "quantity": 250,
+      "price": 5.3364864864864865,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-07-27",
+      "id": 1786956681826
     }
   ],
   "stockAB1": [
@@ -54082,6 +54091,6 @@
     }
   ],
   "deletedMovementIds": [],
-  "exportDate": "2026-08-17T08:42:09.938Z",
+  "exportDate": "2026-08-17T08:51:21.834Z",
   "melangesConfig": {}
 }
