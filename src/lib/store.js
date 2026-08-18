@@ -1298,11 +1298,13 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     data.sortAB2 = (data.exitAB2 || 0) + (data.transOutAB2 || 0);
     data.sortAB3 = (data.exitAB3 || 0) + (data.transOutAB3 || 0);
 
-    data.finAB1 = data.initAB1 + data.entAB1 + (data.exitAB1 || 0) - (data.transOutAB1 || 0) - data.consAB1;
-    data.finAB2 = data.initAB2 + data.entAB2 + (data.exitAB2 || 0) - (data.transOutAB2 || 0) - data.consAB2;
-    data.finAB3 = data.initAB3 + data.entAB3 + (data.exitAB3 || 0) - (data.transOutAB3 || 0) - data.consAB3;
+    data.finAB1 = Math.max(0, data.initAB1 + data.entAB1 + (data.exitAB1 || 0) - (data.transOutAB1 || 0) - data.consAB1);
+    data.finAB2 = Math.max(0, data.initAB2 + data.entAB2 + (data.exitAB2 || 0) - (data.transOutAB2 || 0) - data.consAB2);
+    data.finAB3 = Math.max(0, data.initAB3 + data.entAB3 + (data.exitAB3 || 0) - (data.transOutAB3 || 0) - data.consAB3);
     // Stock magasin = stock cumule avant la periode + Entrees fournisseurs - Sorties vers fermes (ce mois)
-    data.stockMAG = (magBeforePeriod[data.name] || 0) + data.entMAG - (data.exitMAG || 0);
+    // Toujours >= 0 : le stock reel n'est jamais negatif, meme si le calcul l'indiquait
+    // (signe qu'une entree manque quelque part dans l'historique).
+    data.stockMAG = Math.max(0, (magBeforePeriod[data.name] || 0) + data.entMAG - (data.exitMAG || 0));
   });
 
   return dataMap;
