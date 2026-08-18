@@ -1232,6 +1232,18 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     return m.date >= startDate && m.date <= endDate;
   });
 
+  // Stock magasin cumulé AVANT le début de la période (toutes les entrées/sorties
+  // historiques, pas seulement celles du mois affiché). Sans ça, un achat fait avant
+  // la période (ex: en juin) est invisible et le calcul peut afficher un négatif
+  // trompeur alors que le stock réel n'est jamais négatif.
+  const magBeforePeriod = {};
+  movements.forEach(m => {
+    if (!m.date || m.date >= startDate || !m.product) return;
+    if (!magBeforePeriod[m.product]) magBeforePeriod[m.product] = 0;
+    if (m.type === 'entry') magBeforePeriod[m.product] += (m.quantity || 0);
+    else if (m.type === 'exit') magBeforePeriod[m.product] -= (m.quantity || 0);
+  });
+
   // Mouvements de la période
   periodMovements.forEach(m => {
     const product = m.product;
@@ -1289,8 +1301,8 @@ export const getConsoFermesDataByPeriod = (startDate, endDate, prevInventoryDate
     data.finAB1 = data.initAB1 + data.entAB1 + (data.exitAB1 || 0) - (data.transOutAB1 || 0) - data.consAB1;
     data.finAB2 = data.initAB2 + data.entAB2 + (data.exitAB2 || 0) - (data.transOutAB2 || 0) - data.consAB2;
     data.finAB3 = data.initAB3 + data.entAB3 + (data.exitAB3 || 0) - (data.transOutAB3 || 0) - data.consAB3;
-    // Stock magasin = Entrées fournisseurs - Sorties vers fermes
-    data.stockMAG = data.entMAG - (data.exitMAG || 0);
+    // Stock magasin = stock cumule avant la periode + Entrees fournisseurs - Sorties vers fermes (ce mois)
+    data.stockMAG = (magBeforePeriod[data.name] || 0) + data.entMAG - (data.exitMAG || 0);
   });
 
   return dataMap;
