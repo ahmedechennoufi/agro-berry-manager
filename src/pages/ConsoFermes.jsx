@@ -97,7 +97,7 @@ const ConsoFermes = () => {
       'MAI':       { start: '2026-04-26', end: '2026-05-25', prevInv: '2026-04-25' },
       'JUIN':      { start: '2026-05-26', end: '2026-06-25', prevInv: '2026-05-25' },
       'JUILLET':   { start: '2026-06-26', end: '2026-07-25', prevInv: '2026-06-25' },
-      'AOUT':      { start: '2026-07-26', end: '2026-08-31', prevInv: '2026-07-25' }
+      'AOUT':      { start: '2026-08-01', end: '2026-08-31', prevInv: '2026-07-25' }
     };
     return monthMap[selectedMonth] || monthMap['JANVIER'];
   }, [selectedMonth]);
