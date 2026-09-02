@@ -41988,7 +41988,7 @@
       "quantity": 18000,
       "price": 9.5,
       "supplier": "PROMAGRI",
-      "date": "2026-07-24",
+      "date": "2026-07-28",
       "id": 1785754290070
     },
     {
@@ -53272,6 +53272,6 @@
   ],
   "commandes": [],
   "deletedMovementIds": [],
-  "exportDate": "2026-09-02T07:45:58.566Z",
+  "exportDate": "2026-09-02T07:48:23.745Z",
   "melangesConfig": {}
 }
