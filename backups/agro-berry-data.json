@@ -51500,10 +51500,11 @@
       "id": 1788176713166,
       "type": "entry",
       "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
-      "quantity": 925,
+      "quantity": 2050,
       "unit": "KG",
       "date": "2026-08-28",
-      "notes": "Ajustement inventaire physique (Stock Global 28/08/2026) - residuel apres transfert AGB2 (6000 Entec / 2000 Map / 1984 Ac.Phospho)"
+      "notes": "Ajustement inventaire physique (Stock Global 28/08/2026) - residuel apres transfert AGB2 (6000 Entec / 2000 Map / 1984 Ac.Phospho)",
+      "price": 0
     },
     {
       "id": 1788176713167,
@@ -53281,6 +53282,6 @@
   ],
   "commandes": [],
   "deletedMovementIds": [],
-  "exportDate": "2026-09-02T06:51:05.888Z",
+  "exportDate": "2026-09-02T07:26:34.206Z",
   "melangesConfig": {}
 }
