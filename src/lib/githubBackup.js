@@ -30,12 +30,24 @@ const getFileInfo = async (config) => {
     throw new Error(errBody.message || `GitHub erreur ${res.status}`);
   }
   const file = await res.json();
-  // Parser le contenu séparément pour ne pas perdre le SHA si le contenu est corrompu
   let data = null;
-  try {
-    data = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
-  } catch (parseErr) {
-    console.warn('Contenu GitHub illisible, SHA récupéré quand même:', parseErr.message);
+  if (file.content) {
+    // Fichier < 1 Mo : GitHub renvoie le contenu encodé en base64 directement.
+    try {
+      data = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
+    } catch (parseErr) {
+      console.warn('Contenu GitHub illisible (base64), SHA récupéré quand même:', parseErr.message);
+    }
+  } else if (file.download_url) {
+    // Fichier > 1 Mo : l'API Contents ne renvoie pas `content`, il faut le
+    // récupérer via l'URL brute (pas de limite de taille sur ce endpoint).
+    try {
+      const rawRes = await fetch(file.download_url);
+      if (rawRes.ok) data = await rawRes.json();
+      else console.warn('Fetch download_url échoué:', rawRes.status);
+    } catch (rawErr) {
+      console.warn('Contenu GitHub illisible (download_url), SHA récupéré quand même:', rawErr.message);
+    }
   }
   return { data, sha: file.sha };
 };
