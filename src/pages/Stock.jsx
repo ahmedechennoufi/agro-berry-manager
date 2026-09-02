@@ -4,6 +4,7 @@ import { Card, Button, Input, Select, StatCard, EmptyState, Badge } from '../com
 import { CATEGORIES } from '../lib/constants';
 import { fmt, fmtMoney } from '../lib/utils';
 import { calculateGlobalStock, getAveragePrice, getDefaultThreshold } from '../lib/store';
+import { syncGlobalStockToFirestore, isFirestoreSyncReady } from '../lib/firestoreSync';
 
 const Stock = () => {
   const { products, movements } = useApp();
@@ -12,6 +13,7 @@ const Stock = () => {
   const [filterStock, setFilterStock] = useState('ALL');
   const [sortBy, setSortBy] = useState('value');
   const [sortOrder, setSortOrder] = useState('desc');
+  const [syncStatus, setSyncStatus] = useState(null); // null | 'syncing' | 'success' | 'error'
   const threshold = getDefaultThreshold();
 
   const stockData = useMemo(() => {
@@ -72,6 +74,27 @@ const Stock = () => {
   };
 
   const resetFilters = () => { setSearch(''); setFilterCategory('ALL'); setFilterStock('ALL'); };
+
+  const handleSyncFirestore = async () => {
+    if (!isFirestoreSyncReady()) {
+      setSyncStatus('error');
+      alert('Connecte-toi à Firestore dans Paramètres avant de synchroniser.');
+      return;
+    }
+    setSyncStatus('syncing');
+    try {
+      const payload = {};
+      stockData.forEach(s => {
+        payload[s.name] = { quantity: s.quantity, price: s.price, value: s.value };
+      });
+      await syncGlobalStockToFirestore(payload);
+      setSyncStatus('success');
+      setTimeout(() => setSyncStatus(null), 4000);
+    } catch (err) {
+      console.error('Sync stock global Firestore error:', err);
+      setSyncStatus('error');
+    }
+  };
 
   const handleExportExcel = async () => {
     try {
@@ -291,7 +314,12 @@ const Stock = () => {
           <h1 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-1)', margin: 0, letterSpacing: '-0.3px' }}>Stock Global</h1>
           <p style={{ fontSize: 14, color: 'var(--text-2)', margin: '4px 0 0' }}>Inventaire du magasin central</p>
         </div>
-        <div style={{ display: 'flex', gap: 8 }}>
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+          {syncStatus === 'success' && <span style={{ fontSize: 13, color: '#16a34a', fontWeight: 600 }}>✅ Synchronisé</span>}
+          {syncStatus === 'error' && <span style={{ fontSize: 13, color: '#dc2626', fontWeight: 600 }}>❌ Échec</span>}
+          <Button variant="secondary" onClick={handleSyncFirestore} disabled={syncStatus === 'syncing'} style={{ background: '#0ea5e9', color: '#fff', border: 'none' }}>
+            {syncStatus === 'syncing' ? '⏳ Envoi...' : '🔥 Sync vers Magasinier'}
+          </Button>
           <Button variant="primary" onClick={handleExportExcel} style={{ background: '#16a34a', color: '#fff', border: 'none' }}>📊 Export Excel</Button>
           <Button variant="secondary" onClick={resetFilters}>🔄 Reset</Button>
         </div>

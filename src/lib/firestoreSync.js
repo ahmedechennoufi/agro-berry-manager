@@ -41,6 +41,26 @@ async function getExistingDocIds(collectionName) {
 export const isFirestoreSyncReady = () => !!auth.currentUser;
 
 /**
+ * Pousse le stock du magasin central (calcule cote Manager) vers un document
+ * Firestore partage, pour que l'app magasinier puisse l'afficher tel quel
+ * sans jamais avoir a le recalculer elle-meme (source unique de verite,
+ * evite les divergences liees a la synchro/migration des mouvements).
+ */
+export async function syncGlobalStockToFirestore(stockData) {
+  if (!auth.currentUser) return false; // pas connecté → no-op
+  await setDoc(
+    doc(db, "config", "globalStockCentral"),
+    cleanForFirestore({
+      data: stockData, // { [productName]: { quantity, price, value } }
+      updatedAt: new Date().toISOString(),
+      updatedBy: auth.currentUser.email || "manager",
+    }),
+    { merge: false }
+  );
+  return true;
+}
+
+/**
  * Nettoie un objet avant envoi à Firestore.
  * Firestore REJETTE les valeurs `undefined` ("Unsupported field value: undefined").
  * On supprime récursivement les undefined dans les objets ET dans les tableaux.
