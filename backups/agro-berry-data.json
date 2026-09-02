@@ -40227,6 +40227,15 @@
     },
     {
       "type": "exit",
+      "product": "MAP",
+      "quantity": 400,
+      "price": 15.208045977011494,
+      "farm": "AGRO BERRY 1",
+      "date": "2026-06-24",
+      "id": 1782291479425
+    },
+    {
+      "type": "exit",
       "product": "ACIDE PHOSPHORIQUE",
       "quantity": 8,
       "price": 9.77648370019504,
@@ -53271,9 +53280,7 @@
     }
   ],
   "commandes": [],
-  "deletedMovementIds": [
-    1782291479425
-  ],
-  "exportDate": "2026-09-02T06:26:36.832Z",
+  "deletedMovementIds": [],
+  "exportDate": "2026-09-02T06:51:05.888Z",
   "melangesConfig": {}
 }
