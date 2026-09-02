@@ -51497,16 +51497,6 @@
       "farm": "AGRO BERRY 2"
     },
     {
-      "id": 1788176713166,
-      "type": "entry",
-      "product": "ENTEC 21% (NOVATEC SOLUB 21%)",
-      "quantity": 925,
-      "unit": "KG",
-      "date": "2026-08-28",
-      "notes": "Ajustement inventaire physique (Stock Global 28/08/2026) - residuel apres transfert AGB2 (6000 Entec / 2000 Map / 1984 Ac.Phospho)",
-      "price": 0
-    },
-    {
       "id": 1788176713167,
       "type": "entry",
       "product": "MAP",
@@ -53281,7 +53271,9 @@
     }
   ],
   "commandes": [],
-  "deletedMovementIds": [],
-  "exportDate": "2026-09-02T07:27:05.348Z",
+  "deletedMovementIds": [
+    1788176713166
+  ],
+  "exportDate": "2026-09-02T07:27:26.729Z",
   "melangesConfig": {}
 }
