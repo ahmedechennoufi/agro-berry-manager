@@ -48724,15 +48724,6 @@
     },
     {
       "type": "exit",
-      "product": "EFFICIENT",
-      "quantity": 40,
-      "price": 58.34,
-      "farm": "AGRO BERRY 2",
-      "date": "2026-08-27",
-      "id": 1787897675074
-    },
-    {
-      "type": "exit",
       "product": "ISABION",
       "quantity": 60,
       "price": 128,
@@ -55914,7 +55905,8 @@
   "deletedMovementIds": [
     1788419043571,
     1788176713165,
-    1788176713164
+    1788176713164,
+    1787897675074
   ],
   "exportDate": "2026-09-03T07:04:44.462Z",
   "melangesConfig": {}
