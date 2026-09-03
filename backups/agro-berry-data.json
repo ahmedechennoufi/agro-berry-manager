@@ -51487,16 +51487,6 @@
       "farm": "AGRO BERRY 2"
     },
     {
-      "id": 1788176713165,
-      "type": "exit",
-      "product": "ACIDE PHOSPHORIQUE",
-      "quantity": 1984,
-      "unit": "KG",
-      "date": "2026-08-28",
-      "notes": "Transfert magasin central -> AGB2 (saisi via message, date par defaut = 28/08/2026 a confirmer)",
-      "farm": "AGRO BERRY 2"
-    },
-    {
       "id": 1788176713167,
       "type": "entry",
       "product": "MAP",
@@ -55932,7 +55922,8 @@
   ],
   "commandes": [],
   "deletedMovementIds": [
-    1788419043571
+    1788419043571,
+    1788176713165
   ],
   "exportDate": "2026-09-03T07:04:44.462Z",
   "melangesConfig": {}
