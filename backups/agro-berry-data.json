@@ -54447,6 +54447,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-09-01",
       "id": 1788418981654
+    },
+    {
+      "type": "exit",
+      "product": "UREE",
+      "quantity": 3000,
+      "price": 5.841785714285714,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-08-29",
+      "id": 1788419023606
     }
   ],
   "stockAB1": [
@@ -55789,6 +55798,6 @@
   ],
   "commandes": [],
   "deletedMovementIds": [],
-  "exportDate": "2026-09-03T07:03:01.662Z",
+  "exportDate": "2026-09-03T07:03:43.613Z",
   "melangesConfig": {}
 }
