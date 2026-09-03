@@ -54465,6 +54465,15 @@
       "farm": "AGRO BERRY 3",
       "date": "2026-08-29",
       "id": 1788419043571
+    },
+    {
+      "type": "exit",
+      "product": "EFFICIENT",
+      "quantity": 105,
+      "price": 58.34,
+      "farm": "AGRO BERRY 3",
+      "date": "2026-08-29",
+      "id": 1788419084453
     }
   ],
   "stockAB1": [
@@ -55807,6 +55816,6 @@
   ],
   "commandes": [],
   "deletedMovementIds": [],
-  "exportDate": "2026-09-03T07:04:03.578Z",
+  "exportDate": "2026-09-03T07:04:44.462Z",
   "melangesConfig": {}
 }
