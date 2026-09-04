@@ -65,6 +65,7 @@ export const backupToGitHub = async (data, retryCount = 0) => {
   let magasinierMovements = [];
   let existingMelangesConfig = data.melangesConfig || {};
   let mergedDeletedIds = [...(data.deletedMovementIds || [])];
+  let mergedPhysicalInventories = data.physicalInventories || [];
   
   // getFileInfo retourne null si fichier inexistant (404), ou throw si erreur réelle
   const fileInfo = await getFileInfo(config);
@@ -85,6 +86,14 @@ export const backupToGitHub = async (data, retryCount = 0) => {
     if (existing.melangesConfig && Object.keys(existing.melangesConfig).length > 0) {
       existingMelangesConfig = existing.melangesConfig;
     }
+    // Fusionner physicalInventories : local (data) + ceux de GitHub absents localement.
+    // SANS cette fusion, un navigateur dont l'etat local n'a pas (encore) les inventaires
+    // physiques (ex: apres un refresh partiel, plusieurs onglets, restauration incomplete)
+    // ecrasait silencieusement GitHub avec un tableau vide - perte de donnees deja vecue
+    // plusieurs fois. Meme pattern de protection que pour movements/melangesConfig ci-dessus.
+    const localInvIds = new Set((data.physicalInventories || []).map(inv => inv.id));
+    const githubOnlyInvs = (existing.physicalInventories || []).filter(inv => inv.id && !localInvIds.has(inv.id));
+    mergedPhysicalInventories = [...(data.physicalInventories || []), ...githubOnlyInvs];
   } else if (fileInfo && !fileInfo.data) {
     // Fichier existe sur GitHub mais contenu illisible — récupérer quand même le SHA
     sha = fileInfo.sha;
@@ -99,7 +108,8 @@ export const backupToGitHub = async (data, retryCount = 0) => {
     ...data,
     movements: [...adminMovements, ...magasinierMovements],
     melangesConfig: existingMelangesConfig,
-    deletedMovementIds: mergedDeletedIds
+    deletedMovementIds: mergedDeletedIds,
+    physicalInventories: mergedPhysicalInventories
   };
 
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(mergedData, null, 2))));
