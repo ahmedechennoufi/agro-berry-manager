@@ -50917,15 +50917,6 @@
     },
     {
       "type": "exit",
-      "product": "UREE",
-      "quantity": 3000,
-      "price": 5.841785714285714,
-      "farm": "AGRO BERRY 3",
-      "date": "2026-08-31",
-      "id": 1788590137715
-    },
-    {
-      "type": "exit",
       "product": "ACIDE PHOSPHORIQUE",
       "quantity": 1984,
       "price": 9.776483700195037,
@@ -52348,12 +52339,13 @@
   ],
   "commandes": [],
   "deletedMovementIds": [
+    1788590137715,
     1788419043571,
     1788176713165,
     1788176713164,
     1787897675074,
     1788346401945
   ],
-  "exportDate": "2026-09-05T06:35:58.197Z",
+  "exportDate": "2026-09-05T06:36:09.035Z",
   "melangesConfig": {}
 }
